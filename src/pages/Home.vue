@@ -49,7 +49,9 @@
               </p>
             </div>
           </div>
-          <b-container style="background-color:#f5f4fd; width: 1440px; margin-left: 5px;">
+          <b-container
+            style="background-color:#f5f4fd; width: 1440px; margin-left: 5px;"
+          >
             <div class="padding">
               <div class="conten_home_quotes">
                 <div class=" col-md-10">
@@ -68,25 +70,25 @@
 
           <br />
           <div class="margin">
-          <div class="conten_home_apaitu row mt-1">
-            <div class="col-md-6">
-              <img src="../assets/frame.png" width="575px" height="372px" />
+            <div class="conten_home_apaitu row mt-1">
+              <div class="col-md-6">
+                <img src="../assets/frame.png" width="550px" height="372px" />
+              </div>
+              <div class="col-md-6">
+                <br />
+                <h1
+                  style="width:400px; font-size: 30px; padding: 80px 0px 0px 0px"
+                >
+                  <b>Apa itu KAWAN MENULIS?</b>
+                </h1>
+                <br />
+                <p style="width: 432px">
+                  Merupakan website yang didesain untuk membantu mahasiswa
+                  tingkat perguruan tinggi dalam mendukung keterampilan menulis
+                  paragraf yang baik dan benar.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6">
-              <br />
-              <br />
-              <br />
-              <h1>
-                Apa itu KAWAN MENULIS?
-              </h1>
-              <br />
-              <p>
-                Merupakan website yang didesain untuk membantu mahasiswa tingkat
-                perguruan tinggi dalam mendukung keterampilan menulis paragraf
-                yang baik dan benar.
-              </p>
-            </div>
-          </div>
           </div>
           <div class="conten_home_how">
             <div class="col-md-8">
@@ -113,7 +115,7 @@
               <div class="row">
                 <div class="d-none d-md-block">
                   <strong class="d-flex justify-content-center ">
-                    <h4 style="margin-left: 220px;">
+                    <h4 style="margin-left: 220px; margin-top:29px;">
                       Bagaimana tahapan menulis Paragraf?
                     </h4>
                   </strong>
@@ -232,7 +234,10 @@
                 KETAHUI KEMAMPUAN MENULISMU
               </h4>
               <br />
-              <router-link class="button1 justify-content-center" to="diagnostik">
+              <router-link
+                class="button1 justify-content-center"
+                to="diagnostik"
+              >
                 <b>TES DIAGNOSTIK</b>
               </router-link>
               <br />
@@ -559,8 +564,7 @@ export default { name: "Home" };
     position: absolute;
     left: 29px;
     width: 2px;
-    height: 100%;
-    z-index: 400;
+    height: 960px;
   }
   ul.timeline > li {
     margin: 20px 0;
@@ -576,7 +580,6 @@ export default { name: "Home" };
     left: 20px;
     width: 20px;
     height: 20px;
-    z-index: 400;
   }
 }
 </style>

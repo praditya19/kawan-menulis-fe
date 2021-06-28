@@ -33,6 +33,9 @@
 export default { name: "Home" };
 </script>
 <style lang="scss" scoped="scoped">
+.image {
+  width: 1263px;
+}
 .image1 {
   display: flex;
   width: 550px;

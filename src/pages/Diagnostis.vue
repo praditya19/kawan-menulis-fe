@@ -1,10 +1,10 @@
 <template>
   <div>
-    <br><br>
+    <br /><br />
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar1">
       <!--Slide-->
-      
+
       <!--artikel -->
       <b-container fluid="sm">
         <div class="conten_home">
@@ -24,20 +24,27 @@
                 <b>Bacalah panduan di bawah ini terlebih dahulu:</b>
               </p>
               <p>
-                1. Hasil dari tes ini akan memberikan gambaran tentang pemahaman anda akan kalimat dan paragraf yang efektif. Untuk itu, ada diharapkan untuk menjawab semua pertanyaan ini dengan jujur tanpa melihat sumber-sumber lain.<br>
-                2. Tes ini tidak memiliki batas waktu, silahkan mengerjakan sesuai ketersediaan waktumu.<br>
-                3. Carilah tempat yang nyaman dan kondusif supaya kamu lebih fokus.<br>
-                4. Jika kamu keluar di tengah tes, maka seluruh proses tes dan jawaban akan hilang.<br>
-                5. Hasil tes bisa kamu dapatkan setelah mengisi semua pertanyaan dengan lengkap.
+                1. Hasil dari tes ini akan memberikan gambaran tentang pemahaman
+                anda akan kalimat dan paragraf yang efektif. Untuk itu, ada
+                diharapkan untuk menjawab semua pertanyaan ini dengan jujur
+                tanpa melihat sumber-sumber lain.<br />
+                2. Tes ini tidak memiliki batas waktu, silahkan mengerjakan
+                sesuai ketersediaan waktumu.<br />
+                3. Carilah tempat yang nyaman dan kondusif supaya kamu lebih
+                fokus.<br />
+                4. Jika kamu keluar di tengah tes, maka seluruh proses tes dan
+                jawaban akan hilang.<br />
+                5. Hasil tes bisa kamu dapatkan setelah mengisi semua pertanyaan
+                dengan lengkap.
               </p>
             </div>
           </div>
           <br />
           <router-link class="button1 justify-content-center" to="diagnostik2">
-                <b>Mulai Tes</b>
+            <b>Mulai Tes</b>
           </router-link>
           <br /><br />
-          </div>
+        </div>
       </b-container>
     </div>
   </div>
@@ -46,6 +53,9 @@
 export default { name: "Home" };
 </script>
 <style lang="scss" scoped="scoped">
+.image {
+  width: 1263px;
+}
 .image1 {
   display: flex;
   width: 550px;
@@ -184,13 +194,6 @@ export default { name: "Home" };
       font-family: Poppins;
       font-size: 30px;
       width: 900px;
-      font-weight: 700;
-      text-align: center;
-      font-weight: bold;
-    }
-    h7 {
-      font-family: Poppins;
-      font-size: 25px;
       font-weight: 700;
       text-align: center;
       font-weight: bold;

@@ -7,7 +7,7 @@
         <h1><b>Latihan Menulis</b></h1>
       </div>
       <b-container fluid="xl">
-        <b-row>
+        <b-row style="margin-top: -20px;">
           <b-col cols="6">
             <div class="mulai_menulis_form">
               <img src="@/assets/Group.png" alt="logo" class="image_slide_2" />
@@ -15,7 +15,7 @@
           </b-col>
           <b-col cols="6">
             <div class="mulai_menulis_form_data-diri">
-              <p>Data Diri</p>
+              <p><b>Data Diri</b></p>
             </div>
             <div class="mulai_menulis_form_data-diri_column">
               <div
@@ -93,11 +93,12 @@
   border-radius: 30px;
   display: flex;
   position: relative;
+  max-width: 990px;
   width: 190px;
   height: 60px;
   left: calc(50% - 190px / 2 + 87px);
   top: -10px;
-  margin-left: -60px;
+  margin-left: -200px;
   b {
     padding: 1% 3%;
   }
@@ -108,7 +109,7 @@
     left: 300px;
     width: 190px;
     height: 200px;
-    margin-left: -25%;
+    margin-left: -50px;
     b {
       color: #f1f1f1;
       margin-left: 35px;
@@ -122,6 +123,7 @@
   width: 100%;
   height: 100%;
   margin-top: 20px;
+  padding: 30px 0px 0px 0px;
   @media screen and (max-width: 768px) {
     display: inline-block;
     margin-top: 20%;
@@ -142,7 +144,7 @@
     height: 100%;
   }
   &_header {
-    padding: 50px 0px 40px 0px;
+    padding: 50px 0px 0px 0px;
     margin-left: 440px;
     font-family: Poppins;
     font-style: normal;
@@ -156,13 +158,13 @@
       font-family: Poppins;
       font-style: normal;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 30px;
       text-align: center;
       align-items: center;
       &_column {
         width: 100%;
         height: 5%;
-        padding: 10px 20px 10px 20px;
+        padding: 0px 20px 10px 20px;
         &_padding {
           padding: 8px 0px 8px 0px;
         }
