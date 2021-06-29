@@ -15,6 +15,8 @@ import Diagnostis7 from "@/components/Diagnostis7";
 import Diagnostis8 from "@/components/Diagnostis8";
 import Diagnostis9 from "@/components/Diagnostis9";
 import Diagnostis10 from "@/components/Diagnostis10";
+import Topik from "@/pages/Topik";
+import Topik2 from "@/pages/Topik2";
 
 Vue.use(Router);
 
@@ -123,6 +125,20 @@ let router = new Router({
       name: "Diagnostis10",
       components: {
         default: Diagnostis10,
+      },
+    },
+    {
+      path: "/topik",
+      name: "Topik",
+      components: {
+        default: Topik,
+      },
+    },
+    {
+      path: "/topik2",
+      name: "Topik2",
+      components: {
+        default: Topik2,
       },
     },
   ],

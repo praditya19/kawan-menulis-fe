@@ -357,7 +357,7 @@ export default { name: "Home" };
     padding: 100px 0px 0px 0px;
     width: 655px;
     height: 340px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
@@ -368,7 +368,7 @@ export default { name: "Home" };
     width: 579px;
     left: 731px;
     top: 423px;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-style: italic;
     font-weight: normal;
     font-size: 27px;
@@ -398,7 +398,7 @@ export default { name: "Home" };
       }
     }
     h4 {
-      font-family: Poppins;
+      font-family: 'Poppins';
       font-size: 25px;
       font-weight: 700;
       margin-top: 15px;
@@ -406,7 +406,7 @@ export default { name: "Home" };
       font-weight: bold;
     }
     p {
-      font-family: Poppins;
+      font-family: 'Poppins';
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -430,7 +430,7 @@ export default { name: "Home" };
       width: 1000px;
     }
     h4 {
-      font-family: Poppins;
+      font-family: 'Poppins';
       font-size: 40px;
       font-weight: 700;
       margin-top: 15px;
@@ -460,7 +460,7 @@ export default { name: "Home" };
       }
     }
     h1 {
-      font-family: Poppins;
+      font-family: 'Poppins';
       font-style: normal;
       font-weight: bold;
       font-size: 25px;
@@ -471,7 +471,7 @@ export default { name: "Home" };
       height: 37px;
     }
     p {
-      font-family: Poppins;
+      font-family: 'Poppins';
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -492,7 +492,7 @@ export default { name: "Home" };
     &_quotes {
       h1 {
         background-color: #c5dcff;
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -504,7 +504,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 990px;
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -523,7 +523,7 @@ export default { name: "Home" };
     }
     &_apaitu {
       h1 {
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -535,7 +535,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 900;
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
