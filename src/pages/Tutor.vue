@@ -24,21 +24,10 @@
             v-for="(user, index) in peoples"
             :key="index"
           >
-            <img :src="user.imageUrl" alt="logo" />
+            <img :src="user.avatar" alt="logo" />
             <h6>{{ user.name }}</h6>
-            <p>{{ user.email }}</p>
-          </div>
-          <div class="content_tutor_bawah">
-            <div class="content_tutor_tengah">
-              <img src="@/assets/Foto (8).png" alt="logo" />
-              <h6>RUTH CICILIA AJENG LIMANTARA</h6>
-              <p>ajenglimantara@gmail.com 01409190025@student.uph.edu</p>
-            </div>
-            <div class="content_tutor_tengah1">
-              <img src="@/assets/Foto (9).png" alt="logo" />
-              <h6>VRICILYA RITA JATINA SULI</h6>
-              <p>vricilyarita13@gmail.com 01409190016.student.uph.edu</p>
-            </div>
+            <p>{{ user.email1 }}</p>
+            <p>{{ user.email2 }}</p>
           </div>
         </div>
       </div>
@@ -153,6 +142,7 @@
         margin-left: 50px;
         width: 100px;
         height: 100px;
+        border-radius: 50px;
       }
       h6 {
         font-family: Poppins;
