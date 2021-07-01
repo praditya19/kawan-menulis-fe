@@ -3,13 +3,13 @@
     <div class="lebar1">
       <!--Slide-->
       <div class="atas">
-        <b-container fluid="xl">
+        <b-container fluid="xl  ">
           <b-row>
             <b-col cols="6">
               <img src="../assets/book.png" class="image1" />
             </b-col>
             <b-col cols="6">
-              <div class="d-flex h-100">
+              <div class="d-flex h-10">
                 <div class="justify-content-center align-self-center atas">
                   <h1>
                     <strong>Mari Mahir Menulis</strong>
@@ -82,7 +82,7 @@
                   <b>Apa itu KAWAN MENULIS?</b>
                 </h1>
                 <br />
-                <p style="width: 432px">
+                <p style="width: 400px">
                   Merupakan website yang didesain untuk membantu mahasiswa
                   tingkat perguruan tinggi dalam mendukung keterampilan menulis
                   paragraf yang baik dan benar.
@@ -261,8 +261,8 @@ export default { name: "Home" };
 }
 .image1 {
   display: flex;
-  width: 550px;
-  height: 407px;
+  width: 650px;
+  height: 405px;
   margin-top: 130px;
   margin-left: 30px;
   @media screen and (max-width: 768px) {
@@ -271,10 +271,10 @@ export default { name: "Home" };
   }
 }
 .image2 {
-  height: 180px;
-  width: 210px;
-  margin-left: -220px;
-  margin-top: 350px;
+  height: 219px;
+  width: 289px;
+  margin-left: -260px;
+  margin-top: 317px;
   @media screen and (max-width: 768px) {
     display: inline-block;
     margin-top: 79px;
@@ -290,7 +290,7 @@ export default { name: "Home" };
   width: 1180px;
 }
 .lebar1 {
-  width: 1263px;
+  width: 1348px;
   overflow-x: hidden;
 }
 .padding {
@@ -300,6 +300,7 @@ export default { name: "Home" };
   align-items: center;
   margin-top: 30px;
   margin-left: 110px;
+  width: 1100px;
 }
 .padding1 {
   padding: 40px 0px 40px 0px;
@@ -357,7 +358,7 @@ export default { name: "Home" };
     padding: 100px 0px 0px 0px;
     width: 655px;
     height: 340px;
-    font-family: 'Poppins';
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
@@ -368,7 +369,7 @@ export default { name: "Home" };
     width: 579px;
     left: 731px;
     top: 423px;
-    font-family: 'Poppins';
+    font-family: Poppins;
     font-style: italic;
     font-weight: normal;
     font-size: 27px;
@@ -398,7 +399,7 @@ export default { name: "Home" };
       }
     }
     h4 {
-      font-family: 'Poppins';
+      font-family: Poppins;
       font-size: 25px;
       font-weight: 700;
       margin-top: 15px;
@@ -406,7 +407,7 @@ export default { name: "Home" };
       font-weight: bold;
     }
     p {
-      font-family: 'Poppins';
+      font-family: Poppins;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -430,7 +431,7 @@ export default { name: "Home" };
       width: 1000px;
     }
     h4 {
-      font-family: 'Poppins';
+      font-family: Poppins;
       font-size: 40px;
       font-weight: 700;
       margin-top: 15px;
@@ -460,7 +461,7 @@ export default { name: "Home" };
       }
     }
     h1 {
-      font-family: 'Poppins';
+      font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       font-size: 25px;
@@ -471,7 +472,7 @@ export default { name: "Home" };
       height: 37px;
     }
     p {
-      font-family: 'Poppins';
+      font-family: Poppins;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -492,7 +493,7 @@ export default { name: "Home" };
     &_quotes {
       h1 {
         background-color: #c5dcff;
-        font-family: 'Poppins';
+        font-family: Poppins;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -504,7 +505,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 990px;
-        font-family: 'Poppins';
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -523,7 +524,7 @@ export default { name: "Home" };
     }
     &_apaitu {
       h1 {
-        font-family: 'Poppins';
+        font-family: Poppins;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -535,7 +536,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 900;
-        font-family: 'Poppins';
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -559,7 +560,7 @@ export default { name: "Home" };
   }
   ul.timeline:before {
     content: " ";
-    background: #d4d9df;
+    background: #738ded;
     display: inline-block;
     position: absolute;
     left: 29px;
@@ -572,11 +573,11 @@ export default { name: "Home" };
   }
   ul.timeline > li:before {
     content: " ";
-    background: white;
+    background: #738ded;
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    border: 3px solid #22c0e8;
+    border: 3px solid #738ded;
     left: 20px;
     width: 20px;
     height: 20px;

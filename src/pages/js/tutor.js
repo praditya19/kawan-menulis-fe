@@ -9,7 +9,6 @@ export default {
   },
   mounted() {
     this.getAllTutor();
-    console.log(this.kmClientId);
   },
   computed: {
     ...mapGetters(["isMobile", "kmClientId", "kmClientSecret"]),
@@ -27,7 +26,6 @@ export default {
           res.map((tutor) => {
             this.peoples.push(tutor);
           });
-          console.log(this.peoples);
         },
         fail: (res) => {
           console.log(res);

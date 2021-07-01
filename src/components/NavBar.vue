@@ -1,40 +1,40 @@
 <template>
   <div class="header__nav" ref="nav">
-    <div class="container">
-      <div class="header__nav-block">
-        <div class="logo">
-          <router-link to="/">
-            <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
-          </router-link>
-        </div>
-        <div class="header__nav-wrapper">
-          <div class="header__nav-wrapper--desktop">
-            <template>
-              <ul>
-                <li>
-                  <router-link to="/">Beranda</router-link>
-                </li>
-                <li>
-                  <router-link to="diagnostik">Tes Diagnostik</router-link>
-                </li>
-                <li>
-                  <router-link to="sumber-belajar">Sumber Belajar</router-link>
-                </li>
-                <li>
-                  <router-link to="tutor">Tutor</router-link>
-                </li>
-                <li>
-                  <router-link to="mulai-menulis" type="button" class="button"
-                    >Mulai Menulis</router-link
-                  >
-                </li>
-              </ul>
-            </template>
-          </div>
+    <!-- <div class="container"> -->
+    <div class="header__nav-block">
+      <div class="logo">
+        <router-link to="/">
+          <img src="@/assets/logo.png" alt="logo" width="147px" height="85px" />
+        </router-link>
+      </div>
+      <div class="header__nav-wrapper">
+        <div class="header__nav-wrapper--desktop">
+          <template>
+            <ul>
+              <li>
+                <router-link to="/">Beranda</router-link>
+              </li>
+              <li>
+                <router-link to="diagnostik">Tes Diagnostik</router-link>
+              </li>
+              <li>
+                <router-link to="sumber-belajar">Sumber Belajar</router-link>
+              </li>
+              <li>
+                <router-link to="tutor">Tutor</router-link>
+              </li>
+              <li>
+                <router-link to="mulai-menulis" type="button" class="button"
+                  >Mulai Menulis</router-link
+                >
+              </li>
+            </ul>
+          </template>
         </div>
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
@@ -44,24 +44,27 @@
   z-index: 10;
   transition: all 0.5s;
   width: 100%;
+  height: 100px;
   left: 0;
   background-color: #0a4da3;
   &-block {
+    padding: 0% 5% 0% 5%;
     display: flex;
     flex-direction: row;
   }
   .logo {
-    margin-top: 8px;
+    padding: 6px 10px 8px 10px;
   }
   &-wrapper {
     text-align: right;
     color: #fff;
     width: 100%;
     padding-left: 20px;
+    padding-top: 15px;
     @media screen and (max-width: 768px) {
       order: 1;
-      text-align: left;
-      padding-left: 0;
+      text-align: right;
+      padding-left: 400px;
     }
     &--desktop {
       & > ul {
@@ -118,7 +121,7 @@
             background-color: #00a279;
             border: none;
             color: white;
-            padding: 10px 23px;
+            padding: 7px 23px;
             text-align: center;
             text-decoration: none;
             display: inline-block;

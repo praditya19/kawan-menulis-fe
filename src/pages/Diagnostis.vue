@@ -23,24 +23,36 @@
               <p>
                 <b>Bacalah panduan di bawah ini terlebih dahulu:</b>
               </p>
-              <p>
-                1. Hasil dari tes ini akan memberikan gambaran tentang pemahaman
-                anda akan kalimat dan paragraf yang efektif. Untuk itu, ada
-                diharapkan untuk menjawab semua pertanyaan ini dengan jujur
-                tanpa melihat sumber-sumber lain.<br />
-                2. Tes ini tidak memiliki batas waktu, silahkan mengerjakan
-                sesuai ketersediaan waktumu.<br />
-                3. Carilah tempat yang nyaman dan kondusif supaya kamu lebih
-                fokus.<br />
-                4. Jika kamu keluar di tengah tes, maka seluruh proses tes dan
-                jawaban akan hilang.<br />
-                5. Hasil tes bisa kamu dapatkan setelah mengisi semua pertanyaan
-                dengan lengkap.
-              </p>
+              <div class="text">
+                <ol>
+                  <li>
+                    Hasil dari tes ini akan memberikan gambaran tentang
+                    pemahaman anda akan kalimat dan paragraf yang efektif. Untuk
+                    itu, ada diharapkan untuk menjawab semua pertanyaan ini
+                    dengan jujur tanpa melihat sumber-sumber lain.
+                  </li>
+                  <li>
+                    Tes ini tidak memiliki batas waktu, silahkan mengerjakan
+                    sesuai ketersediaan waktumu.
+                  </li>
+                  <li>
+                    Carilah tempat yang nyaman dan kondusif supaya kamu lebih
+                    fokus.
+                  </li>
+                  <li>
+                    Jika kamu keluar di tengah tes, maka seluruh proses tes dan
+                    jawaban akan hilang.
+                  </li>
+                  <li>
+                    Hasil tes bisa kamu dapatkan setelah mengisi semua
+                    pertanyaan dengan lengkap.
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
           <br />
-          <router-link class="button1 justify-content-center" to="diagnostik2">
+          <router-link class="button1 justify-content-center" to="/diagnostik-data-diri">
             <b>Mulai Tes</b>
           </router-link>
           <br /><br />

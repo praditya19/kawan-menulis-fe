@@ -3,11 +3,8 @@
     <br />
     <img src="@/assets/mulaimenulis.png" alt="logo" class="image" />
     <div class="container">
-      <div class="mulai_menulis_header">
-        <h1><b>Latihan Menulis</b></h1>
-      </div>
       <b-container fluid="xl">
-        <b-row style="margin-top: -20px;">
+        <b-row>
           <b-col cols="6">
             <div class="mulai_menulis_form">
               <img src="@/assets/Group.png" alt="logo" class="image_slide_2" />
@@ -98,7 +95,7 @@
                     </div>
                     <div class="button_tombol">
                       <button class="button" v-on:click="handleSubmit">
-                        <b>Selanjutnyaa</b>
+                        <b>Selanjutnya</b>
                       </button>
                     </div>
                   </b-form>
@@ -112,7 +109,7 @@
   </div>
 </template>
 
-<script src="./js/mulaiMenulisPage2" />
+<script src="./js/diagnostisDataDiri.js" />
 
 <style lang="scss" scoped>
 .padding {

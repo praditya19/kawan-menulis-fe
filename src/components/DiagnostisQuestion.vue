@@ -1,36 +1,37 @@
 <template>
   <div>
-    <br><br>
+    <br /><br />
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar1">
       <!--Slide-->
-      
+
       <!--artikel -->
       <b-container fluid="sm">
-        <div class="conten_home">
-          <div class="conten_home_top">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6">
-              <p>
-                8.  Paragraf yang efektif harus mengandung satu dan hanya satu gagasan utama
-              </p>
-              <b-button pill variant="outline-secondary">Benar</b-button><br/><br/>
-              <b-button pill variant="outline-secondary">Salah</b-button><br/><br/>
-            </div>
-            <div class="col-md-3">
-            </div>
+        <span> {{ show.position.order }}-{{ show.steps.length }} </span>
+        <b-progress
+          :value="show.position.order"
+          :max="show.steps.length"
+          class="mb-3"
+        ></b-progress>
+        <div v-for="(answerData, indexStepper) in answer" :key="indexStepper">
+          <div v-if="show.form[indexStepper].active">
+            <p>{{ answerData.question }}</p>
+            <b-button
+              pill
+              variant="outline-secondary"
+              v-for="answerList in answerData.answers"
+              :key="answerList.id"
+              >{{ answerList.answer }}</b-button
+            >
           </div>
-          <br />
-          <br /><br />
-          </div>
+        </div>
+        <b-button @click="back()" variant="outline-primary">Back</b-button>
+        <b-button @click="next()" variant="outline-primary">Next</b-button>
       </b-container>
     </div>
   </div>
 </template>
-<script>
-export default { name: "Home" };
-</script>
+<script src="./js/diagnostisQuestion.js" />
 <style lang="scss" scoped="scoped">
 .image {
   width: 1263px;
@@ -91,7 +92,7 @@ export default { name: "Home" };
 .button {
   background-color: #00a279;
   border: none;
-  color: white;
+  color: black;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
@@ -162,9 +163,66 @@ export default { name: "Home" };
       margin-left: 2px;
       text-align: justify;
     }
+
+    .wrapper-progressBar {
+      width: 100%;
+    }
+
+    .progressBar {
+      font-size: 0px;
+    }
+
+    .progressBar li {
+      list-style-type: none;
+      float: left;
+      width: 6%;
+      position: relative;
+      text-align: center;
+    }
+
+    .progressBar li:before {
+      content: " ";
+      line-height: 30px;
+      border-radius: 50%;
+      width: 0px;
+      height: 0px;
+      border: 1px solid #ddd;
+      display: block;
+      text-align: center;
+      margin: 0 auto 10px;
+      background-color: white;
+    }
+    .progressBar li:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: #ddd;
+      top: 15px;
+      left: -50%;
+      z-index: -1;
+    }
+
+    .progressBar li:first-child:after {
+      content: none;
+    }
+
+    .progressBar li.active {
+      color: dodgerblue;
+    }
+
+    .progressBar li.active:before {
+      border-color: dodgerblue;
+      background-color: dodgerblue;
+    }
+
+    .progressBar .active:after {
+      background-color: dodgerblue;
+    }
+
     img {
-      width: 304px;
-      height: 304px;
+      width: 34px;
+      height: 34px;
       @media screen and (max-width: 768px) {
         margin-left: 20px;
       }
@@ -178,6 +236,7 @@ export default { name: "Home" };
       font-weight: bold;
     }
     .btn-outline-secondary {
+      color: black;
       width: 100%;
       text-align: left;
     }

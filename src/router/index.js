@@ -6,15 +6,9 @@ import SumberBelajar from "@/pages/SumberBelajar";
 import MulaiMenulis from "@/pages/MulaiMenulis";
 import MulaiMenulisPage2 from "@/pages/MulaiMenulisPage2";
 import Diagnostis from "@/pages/Diagnostis";
-import Diagnostis2 from "@/components/Diagnostis2";
-import Diagnostis3 from "@/components/Diagnostis3";
-import Diagnostis4 from "@/components/Diagnostis4";
-import Diagnostis5 from "@/components/Diagnostis5";
-import Diagnostis6 from "@/components/Diagnostis6";
-import Diagnostis7 from "@/components/Diagnostis7";
-import Diagnostis8 from "@/components/Diagnostis8";
-import Diagnostis9 from "@/components/Diagnostis9";
-import Diagnostis10 from "@/components/Diagnostis10";
+import DiagnostisDataDiri from "@/components/DiagnostisDataDiri";
+import DiagnostisQuestion from "@/components/DiagnostisQuestion";
+import DiagnostisHasilTes from "@/components/DiagnostisHasilTes";
 import Topik from "@/pages/Topik";
 import Topik2 from "@/pages/Topik2";
 
@@ -65,66 +59,24 @@ let router = new Router({
       },
     },
     {
-      path: "/diagnostik2",
-      name: "Diagnostis2",
+      path: "/diagnostik-data-diri",
+      name: "DiagnostisDataDiri",
       components: {
-        default: Diagnostis2,
+        default: DiagnostisDataDiri,
       },
     },
     {
-      path: "/diagnostik3",
-      name: "Diagnostis3",
+      path: "/diagnostik-question",
+      name: "DiagnostisQuestion",
       components: {
-        default: Diagnostis3,
+        default: DiagnostisQuestion,
       },
     },
     {
-      path: "/diagnostik4",
-      name: "Diagnostis4",
+      path: "/diagnostikhasiltes",
+      name: "DiagnostisHasilTes",
       components: {
-        default: Diagnostis4,
-      },
-    },
-    {
-      path: "/diagnostik5",
-      name: "Diagnostis5",
-      components: {
-        default: Diagnostis5,
-      },
-    },
-    {
-      path: "/diagnostik6",
-      name: "Diagnostis6",
-      components: {
-        default: Diagnostis6,
-      },
-    },
-    {
-      path: "/diagnostik7",
-      name: "Diagnostis7",
-      components: {
-        default: Diagnostis7,
-      },
-    },
-    {
-      path: "/diagnostik8",
-      name: "Diagnostis8",
-      components: {
-        default: Diagnostis8,
-      },
-    },
-    {
-      path: "/diagnostik9",
-      name: "Diagnostis9",
-      components: {
-        default: Diagnostis9,
-      },
-    },
-    {
-      path: "/diagnostik10",
-      name: "Diagnostis10",
-      components: {
-        default: Diagnostis10,
+        default: DiagnostisHasilTes,
       },
     },
     {

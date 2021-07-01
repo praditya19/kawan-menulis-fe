@@ -33,7 +33,7 @@ export default {
             clientSecret: this.user.clientSecret,
           },
           success: () => {
-            this.$router.push("/topik");
+            this.$router.push("/diagnostik-question");
             window.location.reload();
           },
           fail: (res) => {

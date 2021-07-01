@@ -1,27 +1,50 @@
 <template>
   <div>
-    <br><br>
+    <br /><br />
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar1">
       <!--Slide-->
-      
+
       <!--artikel -->
       <b-container fluid="sm">
         <div class="conten_home">
           <div class="conten_home_top">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <center>
+                <h3>Selamat!</h3>
+                <h5>
+                  Kamu telah berhasil menyelesaikan Tes <br />Diagnostik
+                  Kemampuan Menulis
+                </h5>
+              </center>
+              <p>Hasil Tes Kemampuan: <b>Cukup (60)</b></p>
               <p>
-                2.  Apakah kalimat berikut ini adalah kalimat yang efektif – Saya tertidur.
+                Hasil diagnotik anda menyatakan bahwa anda perlu meningkatkan
+                pemahaman anda <br />tentang beberapa teori dasar penulisan
+                kalimat dan paragraf. Silahkan ikuti latihan menulis <br />yang
+                ada di situs ini. Kamu juga dapat belajar bersama dengan tutor.
+                Silahkan tentukan <br />pilihanmu.
               </p>
-              <b-button pill variant="outline-secondary">Benar</b-button><br/><br/>
-              <b-button pill variant="outline-secondary">Salah</b-button><br/><br/>
+              <div class="warp">
+                <div class="item">
+                  <a href="/">
+                    <button class="button">Download dan Kirim via Email</button>
+                  </a>
+                  <a href="/">
+                    <button class="button2">Mulai Latihan Menulis</button>
+                  </a>
+                  <a href="/">
+                    <button class="button5">Hubungi Tutor</button>
+                  </a>
+                </div>
+              </div>
             </div>
+            <div class="col-md-3"></div>
           </div>
           <br />
           <br /><br />
-          </div>
+        </div>
       </b-container>
     </div>
   </div>
@@ -117,7 +140,7 @@ export default { name: "Home" };
   border-radius: 30px;
   display: flex;
   position: relative;
-  margin-left: 500px;
+  margin-left: 100px;
 }
 .button1:hover {
   background-color: #f1f1f1;
@@ -160,6 +183,48 @@ export default { name: "Home" };
       margin-left: 2px;
       text-align: justify;
     }
+    .button {
+      display: block;
+      border: 0;
+      font-size: 15px;
+      text-align: center;
+      line-height: 1;
+      margin: 0 auto 15px auto;
+      padding: 10px 30px;
+      border-radius: 30px;
+      background: #00a279;
+      color: white;
+      width: 45%;
+    }
+
+    .button2 {
+      display: block;
+      border: 0;
+      font-size: 15px;
+      text-align: center;
+      line-height: 1;
+      margin: 0 auto 15px auto;
+      padding: 10px 30px;
+      border-radius: 30px;
+      background: #0a4da3;
+      color: white;
+      width: 45%;
+    }
+
+    .button5 {
+      display: block;
+      border: 0;
+      font-size: 15px;
+      text-align: center;
+      line-height: 1;
+      margin: 0 auto 15px auto;
+      padding: 10px 30px;
+      border-radius: 30px;
+      background: #454b56;
+      color: white;
+      width: 45%;
+    }
+
     img {
       width: 304px;
       height: 304px;
