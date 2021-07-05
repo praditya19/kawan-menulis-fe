@@ -4,6 +4,12 @@ export default {
   name: "diagnostik",
   data() {
     return {
+      clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+      clientSecret: "27e78980e2419b308c86559ef0fb0105",
+      scores: [],
+      answer: [],
+      answerId: "",
+      questionId: "",
       show: {
         position: {
           order: 0,
@@ -13,7 +19,6 @@ export default {
         steps: [],
         form: [],
       },
-      answer: [],
       kalimatUtamaPage1: true,
       kalimatUtamaPage2: false,
       kalimatUtamaPage3: false,
@@ -26,6 +31,24 @@ export default {
     ...mapGetters(["isMobile", "kmClientId", "kmClientSecret"]),
   },
   methods: {
+    ...mapActions(["createScores"]),
+    handleSubmit() {
+      this.createScores({
+        requestBody: {
+          answers: this.scores,
+          clientId: this.clientId,
+          clientSecret: this.clientSecret,
+        },
+        success: () => {
+          this.$router.push("/diagnostikhasiltes");
+          window.location.reload();
+        },
+        fail: (res) => {
+          console.log(res);
+        },
+      });
+    },
+
     ...mapActions(["getAnswerList"]),
     next() {
       const findPositions = this.show.steps.find(
@@ -44,6 +67,10 @@ export default {
       this.show.position.name = findPositions.name;
       this.show.position.order = findPositions.position;
       this.show.history.push({ name: findPositions.name });
+      this.scores.push({
+        questionId: this.questionId,
+        answerId: this.answerId
+      })
     },
 
     back() {
@@ -92,6 +119,7 @@ export default {
         success: (res) => {
           Promise.all(
             res.map((answer, index) => {
+              console.log(answer.id);
               this.answer.push(answer);
               const name = answer.question;
               const position = index + 1;
@@ -102,12 +130,17 @@ export default {
           ).then(() => {
             this.defaultSetupStepper();
           });
-          console.log(this.answer);
         },
         fail: (res) => {
           console.log(res);
         },
       });
     },
+
+    calc(id, questionId) {
+        this.answerId = id;
+        this.questionId = questionId;
+        console.log(id, questionId);
+    }
   },
 };

@@ -98,7 +98,7 @@
                     </div>
                     <div class="button_tombol">
                       <button class="button" v-on:click="handleSubmit">
-                        <b>Selanjutnyaa</b>
+                        <b>Selanjutnya</b>
                       </button>
                     </div>
                   </b-form>

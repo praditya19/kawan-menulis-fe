@@ -7,26 +7,58 @@
 
       <!--artikel -->
       <b-container fluid="sm">
-        <span> {{ show.position.order }}-{{ show.steps.length }} </span>
-        <b-progress
-          :value="show.position.order"
-          :max="show.steps.length"
-          class="mb-3"
-        ></b-progress>
-        <div v-for="(answerData, indexStepper) in answer" :key="indexStepper">
-          <div v-if="show.form[indexStepper].active">
-            <p>{{ answerData.question }}</p>
-            <b-button
-              pill
-              variant="outline-secondary"
-              v-for="answerList in answerData.answers"
-              :key="answerList.id"
-              >{{ answerList.answer }}</b-button
-            >
+        <div class="conten_home">
+          <div class="conten_home_top">
+            <div class="col-md-8">
+              <ValidationObserver ref="observer">
+                <b-form
+                  slot-scope="{ validate }"
+                  @submit.prevent="validate().then(handleSubmit)"
+                >
+                  <span class="col-xs-12 col-md-8 offset-md-2"
+                    >Pertanyaan {{ show.position.order }} dari
+                    {{ show.steps.length }}
+                  </span>
+                  <b-progress
+                    :value="show.position.order"
+                    :max="show.steps.length"
+                    class="mb-3 col-xs-12 col-md-8 offset-md-2 "
+                  ></b-progress>
+                  <div
+                    v-for="(answerData, indexStepper) in answer"
+                    :key="indexStepper"
+                  >
+                    <div v-if="show.form[indexStepper].active">
+                      <p>{{ answerData.question }}</p>
+                      <b-button
+                        pill
+                        variant="outline-primary"
+                        v-for="answerList in answerData.answers"
+                        :key="answerList.id"
+                        @click="calc(answerList.id, answerData.id)" 
+                        >{{ answerList.answer }}</b-button
+                      >
+                    </div>
+                  </div>
+                  <br />
+                  <center>
+                    <b-button @click="back()" variant="outline-secondary"
+                      >Back</b-button
+                    >
+                    <b-button @click="next()" variant="outline-secondary"
+                      >Next</b-button
+                    >
+                  </center>
+                  <div class="button_tombol">
+                    <button class="button" v-on:click="handleSubmit">
+                      <b>Selanjutnya</b>
+                    </button>
+                  </div>
+                </b-form>
+              </ValidationObserver>
+            </div>
           </div>
         </div>
-        <b-button @click="back()" variant="outline-primary">Back</b-button>
-        <b-button @click="next()" variant="outline-primary">Next</b-button>
       </b-container>
     </div>
   </div>
@@ -131,7 +163,7 @@
     padding: 100px 0px 0px 0px;
     width: 655px;
     height: 340px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
@@ -141,7 +173,7 @@
     width: 579px;
     left: 731px;
     top: 423px;
-    font-family: Poppins;
+    font-family: 'Poppins', sans-serif;
     font-style: italic;
     font-weight: normal;
     font-size: 27px;
@@ -228,27 +260,27 @@
       }
     }
     h4 {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-size: 30px;
       width: 900px;
       font-weight: 700;
       text-align: center;
       font-weight: bold;
     }
-    .btn-outline-secondary {
+    .btn-outline-primary {
       color: black;
       width: 100%;
       text-align: left;
     }
     h7 {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-size: 25px;
       font-weight: 700;
       text-align: center;
       font-weight: bold;
     }
     h1 {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-style: normal;
       font-size: 70px;
       text-align: center;
@@ -256,7 +288,7 @@
       font-weight: bold;
     }
     p {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -280,7 +312,7 @@
       width: 1000px;
     }
     h4 {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-size: 40px;
       font-weight: 700;
       margin-top: 15px;
@@ -310,7 +342,7 @@
       }
     }
     h1 {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-size: 25px;
       font-weight: 700;
       margin-top: 15px;
@@ -318,7 +350,7 @@
       font-weight: bold;
     }
     p {
-      font-family: Poppins;
+      font-family: 'Poppins', sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -339,7 +371,7 @@
     &_quotes {
       h1 {
         background-color: #c5dcff;
-        font-family: Poppins;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -351,7 +383,7 @@
         height: 144px;
         left: 749px;
         top: 990px;
-        font-family: Poppins;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -370,7 +402,7 @@
     }
     &_apaitu {
       h1 {
-        font-family: Poppins;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -382,7 +414,7 @@
         height: 144px;
         left: 749px;
         top: 900;
-        font-family: Poppins;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;

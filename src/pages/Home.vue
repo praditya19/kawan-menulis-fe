@@ -3,7 +3,7 @@
     <div class="lebar1">
       <!--Slide-->
       <div class="atas">
-        <b-container fluid="xl  ">
+        <div fluid="xl  ">
           <b-row>
             <b-col cols="6">
               <img src="../assets/book.png" class="image1" />
@@ -26,10 +26,10 @@
               </div>
             </b-col>
           </b-row>
-        </b-container>
+        </div>
       </div>
       <!--artikel -->
-      <b-container fluid="sm">
+      <div fluid>
         <div class="conten_home">
           <div class="conten_home_top">
             <div class="col-md-8">
@@ -49,9 +49,7 @@
               </p>
             </div>
           </div>
-          <b-container
-            style="background-color:#f5f4fd; width: 1440px; margin-left: 5px;"
-          >
+          <div style="background-color:#f5f4fd; width: 100%;">
             <div class="padding">
               <div class="conten_home_quotes">
                 <div class=" col-md-10">
@@ -66,23 +64,21 @@
                 </div>
               </div>
             </div>
-          </b-container>
+          </div>
 
           <br />
           <div class="margin">
             <div class="conten_home_apaitu row mt-1">
               <div class="col-md-6">
-                <img src="../assets/frame.png" width="550px" height="372px" />
+                <img src="../assets/frame.png" />
               </div>
               <div class="col-md-6">
                 <br />
-                <h1
-                  style="width:400px; font-size: 30px; padding: 80px 0px 0px 0px"
-                >
+                <h1>
                   <b>Apa itu KAWAN MENULIS?</b>
                 </h1>
                 <br />
-                <p style="width: 400px">
+                <p>
                   Merupakan website yang didesain untuk membantu mahasiswa
                   tingkat perguruan tinggi dalam mendukung keterampilan menulis
                   paragraf yang baik dan benar.
@@ -97,7 +93,6 @@
               <h1>
                 Bagaimana KAWAN MENULIS dapat membantu saya menulis?
               </h1>
-              <br />
               <p>
                 Website ini didesain dengan melihat kebutuhan generasi muda yang
                 penuh dengan daya kreasi dan inovasi. Kesempatan untuk melakukan
@@ -110,12 +105,12 @@
           <br />
           <br />
           <br />
-          <div style="background-color: #f5f4fd">
+          <div style="background-color: #f5f4fd;">
             <div class="conten_home_timeline">
               <div class="row">
                 <div class="d-none d-md-block">
                   <strong class="d-flex justify-content-center ">
-                    <h4 style="margin-left: 220px; margin-top:29px;">
+                    <h4 style="margin-left: 0px; margin-top:29px;">
                       Bagaimana tahapan menulis Paragraf?
                     </h4>
                   </strong>
@@ -217,6 +212,7 @@
                           (word processor). Mereka juga dapat meninjau paragraf
                           untuk pengeditan lebih lanjut atau menggunakan
                           pemeriksa ejaan kembali.
+                          <br />
                         </p>
                       </li>
                     </ul>
@@ -244,7 +240,7 @@
             </div>
           </div>
         </div>
-      </b-container>
+      </div>
     </div>
   </div>
 </template>
@@ -257,27 +253,56 @@ export default { name: "Home" };
   width: 874px;
 }
 .margin {
-  margin-left: 100px;
+  img {
+    margin-left: 80px;
+    width: 550px;
+    height: 372px;
+  }
+  h1 {
+    width: 400px;
+    font-size: 30px;
+    padding: 80px 0px 0px 0px;
+  }
+  p {
+    width: 400px;
+  }
+  @media (max-width: 768px) {
+    display: initial;
+    width: auto;
+    text-align: center;
+    background-color: black;
+    img {
+      width: 100%;
+      height: 100%;
+      margin-left: -5px;
+    }
+    h1 {
+      width: 100%;
+    }
+    p {
+      width: 100%;
+    }
+  }
 }
 .image1 {
   display: flex;
   width: 650px;
   height: 405px;
   margin-top: 130px;
-  margin-left: 30px;
   @media screen and (max-width: 768px) {
     display: inline-block;
-    margin-top: 79px;
+    margin-top: 120px;
+    margin-left: -12px;
   }
 }
 .image2 {
   height: 219px;
   width: 289px;
-  margin-left: -260px;
+  margin-left: -17em;
   margin-top: 317px;
   @media screen and (max-width: 768px) {
     display: inline-block;
-    margin-top: 79px;
+    margin-top: 307px;
   }
 }
 .tombol {
@@ -290,8 +315,11 @@ export default { name: "Home" };
   width: 1180px;
 }
 .lebar1 {
-  width: 1348px;
   overflow-x: hidden;
+  width: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 .padding {
   padding: 30px 0px;
@@ -299,8 +327,11 @@ export default { name: "Home" };
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  margin-left: 110px;
-  width: 1100px;
+  padding-left: 110px;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: 50px;
+  }
 }
 .padding1 {
   padding: 40px 0px 40px 0px;
@@ -347,18 +378,17 @@ export default { name: "Home" };
   border-radius: 30px;
   display: flex;
   position: relative;
-  margin-left: 400px;
+  margin-left: 200px;
 }
 .button1:hover {
   background-color: #00a279;
 }
 .atas {
-  margin-left: -30px;
   h1 {
     padding: 100px 0px 0px 0px;
     width: 655px;
     height: 340px;
-    font-family: Poppins;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
@@ -369,7 +399,7 @@ export default { name: "Home" };
     width: 579px;
     left: 731px;
     top: 423px;
-    font-family: Poppins;
+    font-family: "Poppins", sans-serif;
     font-style: italic;
     font-weight: normal;
     font-size: 27px;
@@ -377,9 +407,18 @@ export default { name: "Home" };
     margin-top: -80px;
     margin-left: 10px;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    .image1 {
+      width: 100%;
+    }
+  }
 }
 .conten_home {
   width: 100%;
+  @media screen and (max-width: 768px) {
+    width: auto;
+  }
   &_top {
     display: flex;
     justify-content: center;
@@ -387,9 +426,10 @@ export default { name: "Home" };
     margin-top: 30px;
     @media screen and (max-width: 768px) {
       display: inline-block;
-      padding: 2%;
+      padding: 0px 30px 0px 30px;
       margin-left: 2px;
       text-align: justify;
+      width: 100%;
     }
     img {
       width: 304px;
@@ -399,7 +439,7 @@ export default { name: "Home" };
       }
     }
     h4 {
-      font-family: Poppins;
+      font-family: "Poppins", sans-serif;
       font-size: 25px;
       font-weight: 700;
       margin-top: 15px;
@@ -407,12 +447,12 @@ export default { name: "Home" };
       font-weight: bold;
     }
     p {
-      font-family: Poppins;
+      font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
       line-height: 30px;
-      width: 900px;
+      width: 100%;
       font-weight: 500;
     }
   }
@@ -424,22 +464,22 @@ export default { name: "Home" };
     @media screen and (max-width: 768px) {
       display: inline-block;
       padding: 2%;
-      margin-left: 2px;
+      // margin-left: 2px;
       text-align: justify;
+      .button1 {
+        margin-right: 200px;
+      }
     }
     &_atas {
-      width: 1000px;
+      // width: 100%;
     }
     h4 {
-      font-family: Poppins;
+      font-family: "Poppins", sans-serif;
       font-size: 40px;
       font-weight: 700;
       margin-top: 15px;
       text-align: center;
-      width: 1058px;
-    }
-    router-link {
-      margin-left: 400px;
+      width: 100%;
     }
   }
   &_how {
@@ -452,6 +492,7 @@ export default { name: "Home" };
       padding: 2%;
       margin-left: 2px;
       text-align: justify;
+      width: 100%;
     }
     img {
       width: 304px;
@@ -461,23 +502,36 @@ export default { name: "Home" };
       }
     }
     h1 {
-      font-family: Poppins;
+      font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 25px;
       line-height: 37px;
       text-align: center;
       color: #000000;
-      width: 854px;
-      height: 37px;
+      width: 100%;
+      height: auto;
     }
     p {
-      font-family: Poppins;
+      font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
       line-height: 30px;
-      width: 800px;
+      width: 100%;
+      padding: 10px;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      h1 {
+        width: inherit;
+        margin-bottom: 30px;
+        padding: 0px 15px 0px 15px;
+      }
+      p {
+        width: inherit;
+        padding: 0px 15px 0px 15px;
+      }
     }
   }
   &_bottom {
@@ -493,7 +547,7 @@ export default { name: "Home" };
     &_quotes {
       h1 {
         background-color: #c5dcff;
-        font-family: Poppins;
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -505,7 +559,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 990px;
-        font-family: Poppins;
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -524,7 +578,7 @@ export default { name: "Home" };
     }
     &_apaitu {
       h1 {
-        font-family: Poppins;
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -536,12 +590,14 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 900;
-        font-family: Poppins;
+        font-family: "Poppins", sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
         line-height: 30px;
+        background-color: salmon;
       }
+
       background-color: #ffffff;
       flex: 25%;
       max-width: 20%;
@@ -555,6 +611,7 @@ export default { name: "Home" };
     }
   }
   ul.timeline {
+    counter-reset: my-sec-counter;
     list-style-type: none;
     position: relative;
   }
@@ -563,24 +620,27 @@ export default { name: "Home" };
     background: #738ded;
     display: inline-block;
     position: absolute;
-    left: 29px;
+    left: 35px;
     width: 2px;
     height: 960px;
   }
   ul.timeline > li {
     margin: 20px 0;
-    padding-left: 20px;
+    padding-left: 40px;
   }
   ul.timeline > li:before {
-    content: " ";
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter);
+    color: white;
+    padding-left: 7px;
     background: #738ded;
     display: inline-block;
     position: absolute;
     border-radius: 50%;
     border: 3px solid #738ded;
     left: 20px;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 31px;
   }
 }
 </style>
