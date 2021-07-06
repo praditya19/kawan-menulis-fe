@@ -13,6 +13,8 @@ import Topik from "@/pages/Topik";
 import Topik2 from "@/pages/Topik2";
 import MenulisIsi from "@/pages/MenulisIsi";
 import PramenulisLanjutan from "@/pages/PramenulisLanjutan";
+import KalimatUtama from "@/pages/KalimatUtama";
+import PraMenulis from "@/pages/PraMenulis";
 
 Vue.use(Router);
 
@@ -107,6 +109,20 @@ let router = new Router({
       name: "MenulisIsi",
       components: {
         default: MenulisIsi,
+      },
+    },
+    {
+      path: "/kalimat-utama",
+      name: "KalimatUtama",
+      components: {
+        default: KalimatUtama,
+      },
+    },
+    {
+      path: "/pra-menulis",
+      name: "PraMenulis",
+      components: {
+        default: PraMenulis,
       },
     },
   ],

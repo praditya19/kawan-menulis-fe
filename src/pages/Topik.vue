@@ -9,51 +9,8 @@
         <br />
 
         <!-- Stepper -->
-        <div class="container-progress">
-          <ul class="progressbar">
-            <li class="active active-step">
-              <label>Topik</label>
-            </li>
-            <li>
-              <label>Pramenulis</label>
-            </li>
-            <li>
-              <label>Menulis Kalimat Utama</label>
-            </li>
-            <li>
-              <label>Pramenulis lanjutan</label>
-            </li>
-            <li>
-              <label>Menulis Isi</label>
-            </li>
-            <li>
-              <label>Pengorganisasian</label>
-            </li>
-            <li>
-              <label>Menulis Kesimpulan</label>
-            </li>
-            <li>
-              <label>Revisi</label>
-            </li>
-            <li>
-              <label>Style</label>
-            </li>
-            <li>
-              <label>Struktu Kalimat</label>
-            </li>
-            <li>
-              <label>Grammar</label>
-            </li>
-            <li>
-              <label>Pemeriksaan Akhir</label>
-            </li>
-            <li>
-              <label>Final</label>
-            </li>
-            <li>
-              <label>Cetak</label>
-            </li>
-          </ul>
+        <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/1.png">
         </div>
         <!-- End Stepper  -->
 
@@ -155,14 +112,13 @@ h1 {
 
 // Stepper 1 -7
 
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family:  Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
+.steper {
+  text-align: center;
+  padding: 10px;
+  &_image {
+    width: 1000px;
+    height: auto;
+  }
 }
 
 .progressbar {
