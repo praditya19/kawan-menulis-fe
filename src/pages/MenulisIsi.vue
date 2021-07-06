@@ -537,7 +537,7 @@
     margin-top: -6px;
     margin-left: 25%;
     font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
   }
   &_tombol2 {
     padding: 40px 0px 0px 0px;
@@ -566,7 +566,7 @@
     align-items: center;
     color: #f1f1f1;
     font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
   }
   &_tombol3 {
     padding: 60px 0px 0px 0px;
@@ -764,7 +764,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family:  Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;
@@ -775,7 +775,7 @@
         max-width: 750px;
         width: 750px;
         height: 240px;
-        font-family: Poppins;
+        font-family:  Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 23px;
@@ -811,7 +811,7 @@
     }
     &_header {
       margin-top: 70px;
-      font-family: Poppins;
+      font-family:  Poppins;
       font-style: normal;
       font-weight: bold;
       margin-left: 30%;
@@ -834,7 +834,7 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: Poppins;
+  font-family:  Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;

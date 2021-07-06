@@ -24,6 +24,7 @@ export default {
         requestBody,
         success: (res) => {
           res.map((topics) => {
+            console.log(this.topics);
             this.topics.push(topics);
           });
         },

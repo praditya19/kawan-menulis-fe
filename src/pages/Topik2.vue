@@ -209,7 +209,7 @@
   &_kata1 {
     padding: 11px 0px 0px 20px;
     // text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
     font-weight: 700;
   }
 }
@@ -239,7 +239,7 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: Poppins;
+  font-family:  Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;

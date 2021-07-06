@@ -179,7 +179,7 @@
   &_header {
     padding: 50px 0px 0px 0px;
     margin-left: 440px;
-    font-family: Poppins;
+    font-family:  Poppins;
     font-style: normal;
     font-size: 60px;
     top: 449px;
@@ -188,7 +188,7 @@
     padding: 10px 40px 60px 40px;
     &_data-diri {
       padding: 40px 0px 0px 0px;
-      font-family: Poppins;
+      font-family:  Poppins;
       font-style: normal;
       font-size: 20px;
       p {

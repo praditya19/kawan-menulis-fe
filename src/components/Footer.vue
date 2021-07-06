@@ -102,7 +102,7 @@
 
 <style lang="scss" scoped>
 .mobile {
-  font-family: Alata;
+  font-family:  Poppins;
   font-style: normal;
   font-weight: normal;
   color: #ffffff;
@@ -123,12 +123,12 @@
       &--text {
         width: 60%;
         margin: 30px auto;
-        font-family: Roboto;
+        font-family:  Poppins;
         font-size: 12px;
         color: #ffffff;
       }
       &--name {
-        font-family: Alata;
+        font-family:  Poppins;
         line-height: 130%;
         margin-bottom: 10px;
       }
@@ -145,7 +145,7 @@
         padding-left: 10px;
       }
       font-size: 12px;
-      font-family: Roboto;
+      font-family:  Poppins;
       line-height: 120.9%;
       margin-bottom: 20px;
     }
@@ -178,7 +178,7 @@
   padding-top: 35px;
   padding-bottom: 35px;
   font-size: 12px;
-  font-family: Roboto;
+  font-family:  Poppins;
   line-height: 150%;
   @media screen and (max-width: 768px) {
     padding: 30px 0px 30px;
@@ -196,7 +196,7 @@
       p {
         width: 200px;
         height: 125px;
-        font-family: Poppins;
+        font-family:  Poppins;
         font-weight: 400;
         font-size: 15px;
       }
@@ -213,14 +213,14 @@
       font-size: 17px;
     }
     &--tesDiagnostik {
-      font-family: Alata;
+      font-family:  Poppins;
       font-size: 15px;
       line-height: 130%;
       margin-top: 20px;
       margin-bottom: 20px;
     }
     &--tesDiagnostik {
-      font-family: Roboto;
+      font-family:  Poppins;
     }
     &--belajarMenulis {
       display: inline-block;

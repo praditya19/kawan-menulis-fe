@@ -57,7 +57,7 @@
       top: 449px;
     }
     h6 {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:  Poppins;
       font-style: normal;
       font-weight: bold;
       font-size: 75px;
@@ -65,7 +65,7 @@
       height: 100px;
     }
     p {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 20px;
       font-weight: 400;
       width: 632px;
@@ -98,7 +98,7 @@
       }
       h6 {
         margin-left: 50px;
-        font-family: "Poppins";
+        font-family:  Poppins;
         font-size: 20px;
         font-weight: 700;
         text-align: center;

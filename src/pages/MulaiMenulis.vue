@@ -116,7 +116,7 @@
     }
   }
   &_padding {
-    font-family: "Times New Roman", Times, serif;
+    font-family:  Poppins;
     margin-left: 1%;
     p {
       padding: 30px 10px;
@@ -129,7 +129,7 @@
       width: 720px;
       height: 200px;
       font-size: 20px;
-      font-family: Poppins;
+      font-family:  Poppins;
     }
   }
   &_top {
@@ -149,13 +149,13 @@
       font-size: 32px;
     }
     p {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 15px;
       font-weight: 400;
     }
     &_container {
       display: flex;
-      font-family: Poppins;
+      font-family:  Poppins;
       p {
         width: 821px;
         font-size: 33px;
@@ -170,7 +170,7 @@
       }
       display: flex;
       margin-left: 32%;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:  Poppins;
       color: #073a93;
     }
   }

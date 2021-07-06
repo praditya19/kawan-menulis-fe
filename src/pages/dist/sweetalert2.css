@@ -273,7 +273,7 @@
     border: none;
     border-radius: 5px;
     background: #fff;
-    font-family: inherit;
+    font-family:  Poppins;
     font-size: 1rem;
   }
   .swal2-popup:focus {
@@ -433,8 +433,7 @@
     border-radius: 5px;
     background: transparent;
     color: #ccc;
-    font-family: serif;
-    font-family: monospace;
+    font-family:  Poppins;
     font-size: 2.5em;
     cursor: pointer;
     justify-self: end;
@@ -624,7 +623,7 @@
     border: 0.25em solid transparent;
     border-radius: 50%;
     border-color: #000;
-    font-family: inherit;
+    font-family:  Poppins;
     line-height: 5em;
     cursor: default;
     -webkit-user-select: none;

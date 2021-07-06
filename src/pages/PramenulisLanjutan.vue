@@ -331,7 +331,7 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   h5 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
   }
 }
 .button3 {
@@ -349,7 +349,7 @@
     font-size: 28px;
     align-items: center;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
   }
   &_button4 {
     background-color: #f1f7cc;
@@ -365,7 +365,7 @@
       padding: 0% 0% 0% 27%;
       color: #0a0808;
       align-items: center;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:  Poppins;
       font-size: 16px;
     }
   }
@@ -478,7 +478,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family:  Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;
@@ -488,7 +488,7 @@
       &_right {
         max-width: 750px;
         width: 750px;
-        font-family: Poppins;
+        font-family:  Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 23px;
@@ -524,7 +524,7 @@
     }
     &_header {
       margin-top: 70px;
-      font-family: Poppins;
+      font-family:  Poppins;
       font-style: normal;
       font-weight: bold;
       margin-left: 30%;
@@ -548,7 +548,7 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: Poppins;
+  font-family:  Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;

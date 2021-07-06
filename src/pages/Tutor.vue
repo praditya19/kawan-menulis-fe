@@ -63,7 +63,7 @@
     margin-left: 170px;
     padding: 2% 2%;
     h6 {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 14px;
       font-weight: 700;
       margin-top: 15px;
@@ -77,7 +77,7 @@
       height: 100px;
     }
     p {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 14px;
       font-weight: 400;
       width: 200px;
@@ -90,7 +90,7 @@
     margin-left: 130px;
     padding: 2% 2%;
     h6 {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 14px;
       font-weight: 700;
       margin-top: 15px;
@@ -104,7 +104,7 @@
       height: 100px;
     }
     p {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 14px;
       font-weight: 400;
       width: 200px;
@@ -122,12 +122,12 @@
       height: 304px;
     }
     h6 {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 75px;
       font-weight: 700;
     }
     p {
-      font-family: Poppins;
+      font-family:  Poppins;
       font-size: 20px;
       font-weight: 400;
     }
@@ -145,7 +145,7 @@
         border-radius: 50px;
       }
       h6 {
-        font-family: Poppins;
+        font-family:  Poppins;
         font-size: 14px;
         font-weight: 700;
         margin-top: 15px;
@@ -154,7 +154,7 @@
         margin-top: 2px;
       }
       p {
-        font-family: Poppins;
+        font-family:  Poppins;
         font-size: 14px;
         font-weight: 400;
         width: 200px;

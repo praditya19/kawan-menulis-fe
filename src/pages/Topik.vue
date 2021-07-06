@@ -145,7 +145,7 @@
 <style lang="scss" scoped>
 h1 {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  Poppins;
   font-weight: 700;
   // background: red;
 }
@@ -159,7 +159,7 @@ h1 {
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: Poppins;
+  font-family:  Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;
@@ -280,7 +280,7 @@ h1 {
 
 // Sebelum Menentukan Topik.....
 .paragraf {
-  font-family: Arial, Poppins;
+  font-family:  Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -294,7 +294,7 @@ h1 {
 .label1 {
   // background: red;
   label {
-    font-family: Arial, Poppins;
+    font-family:  Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -312,7 +312,7 @@ select {
   border: 1 px;
   background: #f4f4f4;
   font-size: 18px;
-  font-family: Poppins, Arial;
+  font-family:  Poppins;
   padding: 5px;
   // margin-right: 300px;
   margin-left: 185px;
@@ -326,7 +326,7 @@ select {
 .label2 {
   // background: red;
   label {
-    font-family: Arial, Poppins;
+    font-family:  Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -343,7 +343,7 @@ select {
     border: 1 px;
     background: #f4f4f4;
     font-size: 18px;
-    font-family: Poppins, Arial;
+    font-family:  Poppins;
     padding: 5px;
     margin-left: 185px;
     border-radius: 4px;
