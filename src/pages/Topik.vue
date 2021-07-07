@@ -1,3 +1,4 @@
+[15:54, 7/7/2021] +62 895-0473-1540:
 <template>
   <div class="container">
     <div class="row">
@@ -10,7 +11,7 @@
 
         <!-- Stepper -->
         <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/1.png">
+          <img class="steper_image" src="@/assets/icon_stepper/1.png" />
         </div>
         <!-- End Stepper  -->
 
@@ -30,8 +31,12 @@
 
         <div class="pilih">
           <select>
-            <option value="">Ekposisi</option>
-            <option value="">Deskripsi</option>
+            <option
+              v-for="(topicList, index) in topics"
+              :key="index"
+              v-bind:value="topicList.id"
+              >{{ topicList.paragraphType.name }}</option
+            >
           </select>
         </div>
         <br />
@@ -43,9 +48,11 @@
         <div class="tengah">
           <div class="pilih2">
             <select>
-              <option value=""
-                >Apakah kamu punya kemahiran dalam membuat sesuatu? Coba
-                sebutkan satu.</option
+              <option
+                v-for="(topicList, index) in topics"
+                :key="index"
+                v-bind:value="topicList.id"
+                >{{ topicList.name }}</option
               >
             </select>
             <!-- <b-button v-b-modal.modal-lg  class="button">Tips</b-button> -->
@@ -102,7 +109,7 @@
 <style lang="scss" scoped>
 h1 {
   text-align: center;
-  font-family:  Poppins;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   // background: red;
 }
@@ -121,122 +128,10 @@ h1 {
   }
 }
 
-.progressbar {
-  margin: 0 50px;
-  padding: 0;
-  counter-reset: step;
-  position: relative;
-  border: 2px solid #738ded;
-  border-left: none;
-  min-height: 200px;
-}
-
-.progressbar li {
-  list-style-type: none;
-  width: 16%;
-  /*float: left;*/
-  font-size: 16px;
-  position: absolute;
-  text-align: center;
-  text-transform: capitalize;
-  // background: red;
-  // margin-top: -20px;
-}
-
-/*First 4*/
-.progressbar li:nth-child(-n + 7) {
-  top: -46px;
-}
-
-/*Last 4*/
-.progressbar li:nth-last-child(-n + 7) {
-  bottom: -55px;
-}
-
-/*Left*/
-.progressbar li:nth-child(1),
-.progressbar li:nth-child(14) {
-  left: -45px;
-}
-
-/*Middle*/
-.progressbar li:nth-child(2),
-.progressbar li:nth-child(13) {
-  left: calc(15% - 45px);
-}
-
-/*Middle*/
-.progressbar li:nth-child(3),
-.progressbar li:nth-child(12) {
-  left: calc(30% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(4),
-.progressbar li:nth-child(11) {
-  left: calc(45% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(5),
-.progressbar li:nth-child(10) {
-  left: calc(60% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(6),
-.progressbar li:nth-child(9) {
-  left: calc(75% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(7),
-.progressbar li:nth-child(8) {
-  left: calc(90% - 45px);
-}
-.progressbar li:nth-last-child(-n + 7):before,
-.progressbar li:nth-child(-n + 7):after {
-  width: 32px;
-  height: 32px;
-  content: counter(step);
-  counter-increment: step;
-  line-height: 30px;
-  border: 2px solid #d4d4d4;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  padding: 0;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/*.progressbar li:first-child:after {
-  content: none;
-}*/
-
-.progressbar li.active {
-  color: white;
-}
-
-.progressbar li.active:before,
-.progressbar li.active:after {
-  border-color: #d4d4d4;
-  background: #738ded;
-}
-
-// .progressbar li.active + li:after {
-//   // background-color: dodgerblue;
-// }
-
-.progressbar label {
-  color: black;
-}
 
 // Sebelum Menentukan Topik.....
 .paragraf {
-  font-family:  Poppins;
+  font-family: Arial, Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -250,7 +145,7 @@ h1 {
 .label1 {
   // background: red;
   label {
-    font-family:  Poppins;
+    font-family: Arial, Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -268,7 +163,7 @@ select {
   border: 1 px;
   background: #f4f4f4;
   font-size: 18px;
-  font-family:  Poppins;
+  font-family: Poppins, Arial;
   padding: 5px;
   // margin-right: 300px;
   margin-left: 185px;
@@ -282,7 +177,7 @@ select {
 .label2 {
   // background: red;
   label {
-    font-family:  Poppins;
+    font-family: Arial, Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -299,7 +194,7 @@ select {
     border: 1 px;
     background: #f4f4f4;
     font-size: 18px;
-    font-family:  Poppins;
+    font-family: Poppins, Arial;
     padding: 5px;
     margin-left: 185px;
     border-radius: 4px;
@@ -332,7 +227,7 @@ select {
     cursor: pointer;
     border-radius: 42px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     width: 150px;
     // margin-left: 50%;
   }

@@ -1,21 +1,37 @@
 <template>
   <div>
-    <br /><br />
-    <img src="@/assets/Image.png" alt="logo" class="image" />
-    <b-container fluid="xl">
+    <div class="slide">
+      <img src="@/assets/Image.png" alt="logo" class="image" />
       <div class="content_tutor">
-        <div class="content_tutor_top">
-          <div>
-            <img src="@/assets/Ilustration.png" alt="logo" />
-          </div>
-          <div>
-            <h6>
-              Temukan Tutor
-            </h6>
-            <p>
-              Jika kamu ingin berdiskusi dan membutuhkan bantuan, para <br />
-              tutor siap membantumu dan belajar bersama.
-            </p>
+        <!-- <div class="content_tutor_top">
+            <div>
+              <img src="@/assets/Ilustration.png" alt="logo" />
+            </div>
+            <div>
+              <h6>
+                Temukan Tutor
+              </h6>
+              <p>
+                Jika kamu ingin berdiskusi dan membutuhkan bantuan, para <br />
+                tutor siap membantumu dan belajar bersama.
+              </p>
+            </div>
+          </div> -->
+        <div class="header">
+          <div class="content_tutor_header row mt-3">
+            <div class="col-md-4">
+              <img src="@/assets/Ilustration.png" />
+            </div>
+            <div class="col-md-8">
+              <br />
+              <h1>
+                <b>Temukan Tutor</b>
+              </h1>
+              <p>
+                Jika kamu ingin berdiskusi dan membutuhkan bantuan, para tutor
+                siap membantumu dan belajar bersama.
+              </p>
+            </div>
           </div>
         </div>
         <div class="content_tutor_bottom">
@@ -31,113 +47,84 @@
           </div>
         </div>
       </div>
-    </b-container>
+    </div>
   </div>
 </template>
 <script src="./js/tutor.js"></script>
 
 <style lang="scss" scoped>
-.tengah {
-  display: flex;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
+.slide {
+  overflow: hidden;
 }
 .image {
-  max-width: 1263px;
-  width: 1351px;
-  margin-top: 27px;
+  max-width: 100%;
+  width: 100%;
   height: 296px;
+  margin-top: 100px;
+  @media (max-width: 768px) {
+    height: 200px auto;
+  }
 }
-.content_tutor {
-  &_bawah {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0px 0px 0px 180px;
+
+.header {
+  img {
+    margin-left: 230px;
+    width: 304px;
+    height: 304px;
   }
-  &_tengah {
-    flex: 200px;
-    max-width: 200px;
-    margin-left: 170px;
-    padding: 2% 2%;
-    h6 {
-      font-family:  Poppins;
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 15px;
-      width: 200px;
-      text-align: center;
-      margin-top: 2px;
-    }
-    img {
-      margin-left: 60px;
-      width: 100px;
-      height: 100px;
-    }
-    p {
-      font-family:  Poppins;
-      font-size: 14px;
-      font-weight: 400;
-      width: 200px;
-      text-align: center;
-    }
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 75px;
+    padding-left: 80px;
   }
-  &_tengah1 {
-    flex: 200px;
-    max-width: 200px;
-    margin-left: 130px;
-    padding: 2% 2%;
-    h6 {
-      font-family:  Poppins;
-      font-size: 14px;
-      font-weight: 700;
-      margin-top: 15px;
-      width: 200px;
-      text-align: center;
-      margin-top: 2px;
-    }
-    img {
-      margin-left: 50px;
-      width: 100px;
-      height: 100px;
-    }
-    p {
-      font-family:  Poppins;
-      font-size: 14px;
-      font-weight: 400;
-      width: 200px;
-      text-align: center;
-    }
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 632px;
+    padding-left: 80px;
   }
-  &_top {
-    display: flex;
-    width: 990px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 0px 10px 0px 10px;
     img {
       width: 304px;
       height: 304px;
+      margin-left: -0px;
     }
-    h6 {
-      font-family:  Poppins;
-      font-size: 75px;
-      font-weight: 700;
+    h1 {
+      width: 100%;
+      font-size: 50px;
+      padding-left: 0px;
     }
     p {
-      font-family:  Poppins;
-      font-size: 20px;
-      font-weight: 400;
+      text-align: justify;
+      width: 100%;
+      padding-left: 0px;
     }
   }
+}
+
+.content_tutor {
   &_bottom {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    padding: 0px 100px 80px 100px;
+    @media screen and (max-width: 768px) {
+      padding: 0px 40px 0px 40px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
     &_profile {
+      background-color: #ffffff;
+      max-width: 250px;
+      margin-left: 60px;
+      padding: 10px 5px;
       img {
         margin-left: 50px;
         width: 100px;
@@ -145,7 +132,7 @@
         border-radius: 50px;
       }
       h6 {
-        font-family:  Poppins;
+        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 700;
         margin-top: 15px;
@@ -154,17 +141,16 @@
         margin-top: 2px;
       }
       p {
-        font-family:  Poppins;
+        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 400;
         width: 200px;
         text-align: center;
+        margin-bottom: 5px;
       }
-      background-color: #ffffff;
-      flex: 225px;
-      max-width: 250px;
-      margin-left: 60px;
-      padding: 10px 5px;
+      @media screen and (max-width: 768px) {
+        margin-left: 0px;
+      }
     }
   }
 }
