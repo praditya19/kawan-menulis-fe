@@ -8,6 +8,7 @@ export default {
       clientSecret: "27e78980e2419b308c86559ef0fb0105",
       scores: [],
       answer: [],
+      huruf: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
       answerId: "",
       questionId: "",
       show: {
@@ -39,8 +40,9 @@ export default {
           clientId: this.clientId,
           clientSecret: this.clientSecret,
         },
-        success: () => {
-          this.$router.push("/diagnostikhasiltes");
+        success: (res) => {
+          sessionStorage.setItem("result_student", JSON.stringify(res.body.score))
+          this.$router.push("/diagnostik-hasil-tes");
           window.location.reload();
         },
         fail: (res) => {
@@ -119,7 +121,7 @@ export default {
         success: (res) => {
           Promise.all(
             res.map((answer, index) => {
-              console.log(answer.id);
+              console.log(answer);
               this.answer.push(answer);
               const name = answer.question;
               const position = index + 1;

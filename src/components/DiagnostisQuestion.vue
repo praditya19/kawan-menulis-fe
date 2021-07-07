@@ -2,7 +2,7 @@
   <div>
     <br /><br />
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
-    <div class="lebar1">
+    <div class="lebar">
       <!--Slide-->
 
       <!--artikel -->
@@ -29,31 +29,44 @@
                     :key="indexStepper"
                   >
                     <div v-if="show.form[indexStepper].active">
-                      <p>{{ answerData.question }}</p>
+                      <p>
+                        {{ show.position.order }}. {{ answerData.question }}
+                      </p>
+
                       <b-button
-                        pill
                         variant="outline-primary"
                         v-for="answerList in answerData.answers"
                         :key="answerList.id"
-                        @click="calc(answerList.id, answerData.id)" 
-                        >{{ answerList.answer }}</b-button
+                        @click="calc(answerList.id, answerData.id)"
+                        >{{
+                          huruf[answerList.position - 1] +
+                            ". " +
+                            answerList.answer
+                        }}</b-button
                       >
                     </div>
                   </div>
                   <br />
                   <center>
-                    <b-button @click="back()" variant="outline-secondary"
-                      >Back</b-button
-                    >
-                    <b-button @click="next()" variant="outline-secondary"
-                      >Next</b-button
-                    >
+                    <div v-if="show.position.order !== show.steps.length" class="action">
+                      <b-button @click="back()" variant="outline-secondary">
+                        <b-icon icon="chevron-left" aria-hidden="true"></b-icon>
+                      </b-button>
+                      <b-button @click="next()" variant="outline-secondary">
+                        <b-icon
+                          icon="chevron-right"
+                          aria-hidden="true"
+                        ></b-icon>
+                      </b-button>
+                    </div>
+                    <div v-if="show.position.order === show.steps.length" class="action_submit">
+                      <b-button
+                        v-on:click="handleSubmit"
+                        class="submit"
+                        >Submit</b-button
+                      >
+                    </div>
                   </center>
-                  <div class="button_tombol">
-                    <button class="button" v-on:click="handleSubmit">
-                      <b>Selanjutnya</b>
-                    </button>
-                  </div>
                 </b-form>
               </ValidationObserver>
             </div>
@@ -68,27 +81,6 @@
 .image {
   width: 1263px;
 }
-.image1 {
-  display: flex;
-  width: 550px;
-  height: 407px;
-  margin-top: 130px;
-  margin-left: -48px;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-    margin-top: 79px;
-  }
-}
-.image2 {
-  height: 180px;
-  width: 210px;
-  margin-left: -170px;
-  margin-top: 360px;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-    margin-top: 79px;
-  }
-}
 .tombol {
   margin: 150px 0px 0px 0px;
   position: absolute;
@@ -96,91 +88,8 @@
   left: 200px;
 }
 .lebar {
-  width: 1180px;
-}
-.lebar1 {
   width: 1263px;
   overflow-x: hidden;
-}
-.padding {
-  padding: 40px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 110px;
-}
-.padding1 {
-  padding: 40px 0px 40px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 150px;
-  p {
-    width: 874px;
-  }
-}
-.button {
-  background-color: #00a279;
-  border: none;
-  color: black;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 150px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  margin-left: 170px;
-}
-.button:hover {
-  background-color: #f1f1f1;
-}
-.button1 {
-  background-color: #00a279;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-decoration: none;
-  width: 300px;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  margin-left: 500px;
-}
-.button1:hover {
-  background-color: #f1f1f1;
-}
-.atas {
-  margin-left: -50px;
-  h1 {
-    padding: 100px 0px 0px 0px;
-    width: 655px;
-    height: 340px;
-    font-family:  Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 75px;
-    margin-left: 70px;
-  }
-  p {
-    width: 579px;
-    left: 731px;
-    top: 423px;
-    font-family:  Poppins;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 27px;
-    line-height: 40px;
-    margin-top: -50px;
-    margin-left: 70px;
-  }
 }
 .conten_home {
   width: 100%;
@@ -252,13 +161,6 @@
       background-color: dodgerblue;
     }
 
-    img {
-      width: 34px;
-      height: 34px;
-      @media screen and (max-width: 768px) {
-        margin-left: 20px;
-      }
-    }
     h4 {
       font-family:  Poppins;
       font-size: 30px;
@@ -267,18 +169,22 @@
       text-align: center;
       font-weight: bold;
     }
+
     .btn-outline-primary {
       color: black;
       width: 100%;
+      margin: 4px 20px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+     .btn-outline-secondary {
+      color: black;
+      border-radius: 60%;
+      margin: 4px 20px;
       text-align: left;
     }
-    h7 {
-      font-family:  Poppins;
-      font-size: 25px;
-      font-weight: 700;
-      text-align: center;
-      font-weight: bold;
-    }
+
     h1 {
       font-family:  Poppins;
       font-style: normal;
@@ -287,6 +193,7 @@
       width: 900px;
       font-weight: bold;
     }
+
     p {
       font-family:  Poppins;
       font-style: normal;
@@ -297,140 +204,17 @@
       font-weight: 500;
     }
   }
-  &_foot {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      display: inline-block;
-      padding: 2%;
-      margin-left: 2px;
-      text-align: justify;
-    }
-    &_atas {
-      width: 1000px;
-    }
-    h4 {
-      font-family:  Poppins;
-      font-size: 40px;
-      font-weight: 700;
-      margin-top: 15px;
-      text-align: center;
-      width: 1058px;
-    }
-    router-link {
-      margin-left: 400px;
-    }
+
+  .action {
+    margin-bottom: 40px;
   }
-  &_how {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      display: inline-block;
-      padding: 2%;
-      margin-left: 2px;
-      text-align: justify;
-    }
-    img {
-      width: 304px;
-      height: 304px;
-      @media screen and (max-width: 768px) {
-        margin-left: 20px;
-      }
-    }
-    h1 {
-      font-family:  Poppins;
-      font-size: 25px;
-      font-weight: 700;
-      margin-top: 15px;
-      text-align: center;
-      font-weight: bold;
-    }
-    p {
-      font-family:  Poppins;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 30px;
-      width: 800px;
-    }
+
+  .action_submit {
+     margin-bottom: 40px;
   }
-  &_bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    @media screen and (max-width: 768px) {
-      display: inline-block;
-      padding: 10px;
-      margin-left: 15px;
-    }
-    &_quotes {
-      h1 {
-        background-color: #c5dcff;
-        font-family:  Poppins;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 25px;
-      }
-      p {
-        background-color: #c5dcff;
-        position: absolute;
-        width: 432px;
-        height: 144px;
-        left: 749px;
-        top: 990px;
-        font-family:  Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 30px;
-      }
-      background-color: #c5dcff;
-      flex: 25%;
-      max-width: 20%;
-      margin-left: 500px;
-      padding: 2%;
-      @media screen and (max-width: 768px) {
-        display: inline-block;
-        padding: 2% 30%;
-        margin-left: 5px;
-      }
-    }
-    &_apaitu {
-      h1 {
-        font-family:  Poppins;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 25px;
-        line-height: 32px;
-      }
-      p {
-        position: absolute;
-        width: 432px;
-        height: 144px;
-        left: 749px;
-        top: 900;
-        font-family:  Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 30px;
-      }
-      background-color: #ffffff;
-      flex: 25%;
-      max-width: 20%;
-      margin-left: 5%;
-      padding: 2%;
-      @media screen and (max-width: 768px) {
-        display: inline-block;
-        padding: 2% 30%;
-        margin-left: 5px;
-      }
-    }
+
+  .submit { 
+    background-color: blue;
   }
 }
 </style>

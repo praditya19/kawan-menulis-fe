@@ -77,7 +77,7 @@ let router = new Router({
       },
     },
     {
-      path: "/diagnostikhasiltes",
+      path: "/diagnostik-hasil-tes",
       name: "DiagnostisHasilTes",
       components: {
         default: DiagnostisHasilTes,

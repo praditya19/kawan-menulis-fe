@@ -983,7 +983,7 @@
     align-items: center;
     color: #f1f1f1;
     font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Poppins;
   }
   &_tombol3 {
     padding: 60px 0px 0px 0px;
@@ -1231,7 +1231,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family:  Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;

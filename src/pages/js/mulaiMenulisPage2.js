@@ -33,7 +33,8 @@ export default {
               clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
               clientSecret: "27e78980e2419b308c86559ef0fb0105",
             },
-            success: () => {
+            success: (res) => {
+              sessionStorage.setItem("student_id_for_topik", JSON.stringify(res.data.student))
               this.$router.push("/topik");
               window.location.reload();
             },

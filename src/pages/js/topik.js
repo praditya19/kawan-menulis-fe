@@ -5,16 +5,22 @@ export default {
   data() {
     return {
       topics: [],
+      studentDataSession: {}
     };
   },
   mounted() {
     this.getAllTopics();
+    this.getStudentDataSession();
   },
   computed: {
     ...mapGetters(["isMobile"]),
   },
   methods: {
     ...mapActions(["getTopicsList"]),
+    getStudentDataSession() {
+      var studentData = sessionStorage.getItem("student_id_for_topik")
+      this.studentDataSession = JSON.parse(studentData)
+    },
     getAllTopics() {
       const requestBody = {
         clientId: "8bb0dc63d320bba9723f66dd10c1adaf",

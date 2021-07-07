@@ -313,7 +313,7 @@
     width: 100%;
     font-size: 50px;
     font-weight: 700;
-    font-family: "Poppins", sans-serif;
+    font-family:  Poppins;
     text-align: center;
   }
   @media (max-width: 768px) {
@@ -390,7 +390,7 @@
   &_text {
     margin-left: 30px;
     width: 48%;
-    font-family: "Poppins", sans-serif;
+    font-family:  Poppins;
     font-size: 20px;
   }
 
@@ -398,7 +398,7 @@
   &_text2 {
     margin-left: 30px;
     width: 48%;
-    font-family: "Poppins", sans-serif;
+    font-family:  Poppins;
     font-size: 20px;
     strong {
       font-style: italic;
@@ -417,7 +417,7 @@
   &_text-bawah {
     width: 69.3%;
     height: 90px;
-    font-family: "Poppins", sans-serif;
+    font-family:  Poppins;
     font-size: 20px;
     letter-spacing: 0em;
     text-align: left;
@@ -538,7 +538,7 @@
 }
 
 .mb-4 {
-  font-family: "Poppins", sans-serif;
+  font-family:  Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -555,7 +555,7 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+  font-family:  Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;

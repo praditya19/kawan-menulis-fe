@@ -49,9 +49,8 @@
     </div>
   </div>
 </template>
-<script>
-export default { name: "Home" };
-</script>
+<script src="./js/diagnostisHasilTest.js" />
+
 <style lang="scss" scoped="scoped">
 .image {
   width: 1263px;
