@@ -34,7 +34,7 @@ export default {
               clientSecret: "27e78980e2419b308c86559ef0fb0105",
             },
             success: (res) => {
-              sessionStorage.setItem("student_id_for_topik", JSON.stringify(res.data.student))
+              sessionStorage.setItem("student_id_mulai-menulis", JSON.stringify(res.data.student))
               this.$router.push("/topik");
               window.location.reload();
             },

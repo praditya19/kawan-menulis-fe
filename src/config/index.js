@@ -6,7 +6,7 @@ const config = {
         learning: `${BASE_PATH}learningsources/list`,
         students: `${BASE_PATH}students`,
         question: `${BASE_PATH}questions`,
-        topics: `${BASE_PATH}topics`,
+        paragraphtypes: `${BASE_PATH}paragraphtypes`,
         scores: `${BASE_PATH}scores`,
     }}
 export default config

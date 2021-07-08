@@ -32,10 +32,10 @@
         <div class="pilih">
           <select>
             <option
-              v-for="(topicList, index) in topics"
+              v-for="(paragraphTypesList, index) in paragraphTypes"
               :key="index"
-              v-bind:value="topicList.id"
-              >{{ topicList.paragraphType.name }}</option
+              v-bind:value="paragraphTypesList.id"
+              >{{ paragraphTypesList.name }}</option
             >
           </select>
         </div>
@@ -49,10 +49,10 @@
           <div class="pilih2">
             <select>
               <option
-                v-for="(topicList, index) in topics"
+                v-for="(paragraphTypesList, index) in paragraphTypes"
                 :key="index"
-                v-bind:value="topicList.id"
-                >{{ topicList.name }}</option
+                v-bind:value="paragraphTypesList.topics.id"
+                >{{ paragraphTypesList.topics.name }}</option
               >
             </select>
             <!-- <b-button v-b-modal.modal-lg  class="button">Tips</b-button> -->

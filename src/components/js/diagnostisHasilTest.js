@@ -12,7 +12,7 @@ export default {
   computed: {
   },
   methods: {
-    ...mapActions(["getTopicsList"]),
+    ...mapActions(["getParagraphTypesList"]),
     getStudentResultSession() {
       var studentResult = sessionStorage.getItem("result_student")
       this.studentResultSession = JSON.parse(studentResult)

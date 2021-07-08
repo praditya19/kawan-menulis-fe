@@ -5,21 +5,21 @@ import config from "@/config";
 Vue.use && Vue.use(VueResource);
 
 const state = {
-  topicsList : []
+  paragraphtypesList : []
 };
 
 const mutations = {
-  setTopicsList(state,value){
-    state.tutorList = value
+  setparagraphtypesList(state,value){
+    state.paragraphtypesList = value
   }
 };
 
 const actions = {
-  getTopicsList: ({ commit }, { requestBody, success, fail }) => {
-    Vue.http.post(config.api.topics + "/list", requestBody).then(
+  getParagraphTypesList: ({ commit }, { requestBody, success, fail }) => {
+    Vue.http.post(config.api.paragraphtypes + "/list", requestBody).then(
       (response) => {
-        success && success(response.body.topics)
-        commit('setTopicsList', response.body.topics)
+        success && success(response.body.paragraphTypes)
+        commit('setparagraphtypesList', response.body.paragraphTypes)
       },
       (response) => {
         fail && fail(response);
