@@ -30,6 +30,7 @@
 
         <div class="pilih">
           <select v-model="paragraphSelect">
+          <option value="" disabled hidden>Pilih Jenis Paragraph</option>
             <option
               v-for="(paragraphTypesList, index) in paragraphTypes"
               :key="index"
@@ -47,6 +48,7 @@
         <div class="tengah">
           <div class="pilih2">
             <select v-model="topicsSelect">
+            <option value="" disabled hidden>Pilih Jenis Topik</option>
               <option
                 v-for="(topics, index) in topicsTypes"
                 :key="index"
