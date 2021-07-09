@@ -3,11 +3,19 @@
 export default {
   data() {
     return {
-      showModal1: false,
+      showModal: false,
       showModal2: false,
+      form: {
+        kalimatSederhana: "",
+      },
     };
   },
   mounted() {},
   computed: {},
-  methods: {},
+  methods: {
+    onSubmit() {
+      var convertToString = JSON.stringify(this.form.kalimatSederhana);
+      sessionStorage.setItem("topik", convertToString);
+    },
+  },
 };
