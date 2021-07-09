@@ -3,20 +3,6 @@
     <div class="slide">
       <img src="@/assets/Image.png" alt="logo" class="image" />
       <div class="content_tutor">
-        <!-- <div class="content_tutor_top">
-            <div>
-              <img src="@/assets/Ilustration.png" alt="logo" />
-            </div>
-            <div>
-              <h6>
-                Temukan Tutor
-              </h6>
-              <p>
-                Jika kamu ingin berdiskusi dan membutuhkan bantuan, para <br />
-                tutor siap membantumu dan belajar bersama.
-              </p>
-            </div>
-          </div> -->
         <div class="header">
           <div class="content_tutor_header row mt-3">
             <div class="col-md-4">
@@ -73,14 +59,14 @@
     height: 304px;
   }
   h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
     padding-left: 80px;
   }
   p {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 20px;
     font-weight: 400;
     width: 632px;
@@ -132,7 +118,7 @@
         border-radius: 50px;
       }
       h6 {
-        font-family: "Poppins", sans-serif;
+        font-family: Poppins;
         font-size: 14px;
         font-weight: 700;
         margin-top: 15px;
@@ -141,7 +127,7 @@
         margin-top: 2px;
       }
       p {
-        font-family: "Poppins", sans-serif;
+        font-family: Poppins;
         font-size: 14px;
         font-weight: 400;
         width: 200px;

@@ -419,7 +419,7 @@
     width: 100%;
     font-size: 50px;
     font-weight: 700;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     text-align: center;
   }
   @media (max-width: 768px) {
@@ -506,7 +506,7 @@
   &_text {
     margin-left: 30px;
     width: 48%;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 20px;
   }
 
@@ -514,7 +514,7 @@
   &_text2 {
     margin-left: 30px;
     width: 48%;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 20px;
     strong {
       font-style: italic;
@@ -533,7 +533,7 @@
   &_text-bawah {
     width: 69.3%;
     height: 90px;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 20px;
     letter-spacing: 0em;
     text-align: left;
@@ -664,7 +664,7 @@
 }
 
 .kalimat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   text-align: center;
   margin-top: 5px;
@@ -684,7 +684,7 @@
   width: 108px;
   height: 32.71px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 /* end style isi modal */
@@ -717,7 +717,7 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;

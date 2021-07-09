@@ -179,7 +179,7 @@
       }
     }
     &_data-diri {
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins,;
       font-style: normal;
       font-size: 15px;
       padding-top: 30px;

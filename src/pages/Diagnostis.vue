@@ -99,7 +99,7 @@ export default { name: "Home" };
     display: flex;
     padding-top: 15px;
     b {
-      font-family: "Poppins", sans-serif;
+      font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       font-size: 20px;
@@ -119,7 +119,7 @@ export default { name: "Home" };
     padding: 10px 10px 7px 10px;
   }
   p {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 25px;
@@ -131,7 +131,7 @@ export default { name: "Home" };
     }
   }
   li {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -153,7 +153,7 @@ export default { name: "Home" };
     width: 100%;
   }
   h4 {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 30px;
     width: 100%;
     font-weight: 700;
@@ -165,7 +165,7 @@ export default { name: "Home" };
   }
   p {
     width: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;

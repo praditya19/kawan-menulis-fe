@@ -3,7 +3,8 @@
 export default {
   data() {
     return {
-      showModal: false,
+      showModal1: false,
+      showModal2: false,
     };
   },
   mounted() {},

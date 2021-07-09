@@ -960,7 +960,7 @@
     align-items: center;
     color: #f1f1f1;
     font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
   }
   &_tombol3 {
     padding: 60px 0px 0px 0px;
@@ -1079,7 +1079,7 @@
 }
 
 .kalimat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   text-align: center;
   margin-top: 5px;
@@ -1099,7 +1099,7 @@
   width: 108px;
   height: 32.71px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 /* end style isi modal */
@@ -1140,7 +1140,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;

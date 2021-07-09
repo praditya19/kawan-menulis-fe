@@ -29,7 +29,7 @@
         </div>
 
         <div class="pilih">
-          <select>
+          <select v-model="paragraphSelect">
             <option
               v-for="(paragraphTypesList, index) in paragraphTypes"
               :key="index"
@@ -46,12 +46,12 @@
         <!-- <br> -->
         <div class="tengah">
           <div class="pilih2">
-            <select>
+            <select v-model="topicsSelect">
               <option
-                v-for="(paragraphTypesList, index) in paragraphTypes"
+                v-for="(topics, index) in topicsTypes"
                 :key="index"
-                v-bind:value="paragraphTypesList.topics.id"
-                >{{ paragraphTypesList.topics.name }}</option
+                :value="topicsTypes.id"
+                >{{ topics.name }}</option
               >
             </select>
 
@@ -280,7 +280,7 @@ select {
 }
 
 .kalimat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   text-align: center;
   margin-top: 5px;
@@ -300,7 +300,7 @@ select {
   width: 108px;
   height: 32.71px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 /* end style isi modal */

@@ -3,18 +3,6 @@
     <div class="slide">
       <img src="@/assets/simon-berger.png" alt="logo" class="image" />
       <div class="content_sumber-belajar">
-        <!-- <div class="content_sumber-belajar_top">
-          <img src="@/assets/Learning-amico 1.png" alt="logo" />
-          <div class="content_sumber-belajar_top_center">
-            <h6>
-              Sumber Belajar
-            </h6>
-            <p>
-              Temukan beragam berbagai panduan menulis dan beragam konten,<br />
-              informasi, dan ide untuk menghasilkan karya tulis.
-            </p>
-          </div>
-        </div> -->
         <div class="header">
           <div class="conten_sumber-belajar_header row mt-3">
             <div class="col-md-4">
@@ -71,14 +59,14 @@
     height: 243px;
   }
   h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
     padding-left: 50px;
   }
   p {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins;
     font-size: 20px;
     font-weight: 400;
     width: 632px;
@@ -123,7 +111,7 @@
         height: 130px;
       }
       h6 {
-        font-family: "Poppins", sans-serif;
+        font-family: Poppins;
         font-size: 20px;
         font-weight: 700;
         text-align: center;

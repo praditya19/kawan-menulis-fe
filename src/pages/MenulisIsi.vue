@@ -1210,7 +1210,7 @@
 }
 
 .kalimat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   text-align: center;
   margin-top: 5px;
@@ -1230,7 +1230,7 @@
   width: 108px;
   height: 32.71px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 /* end style isi modal */
@@ -1261,7 +1261,7 @@
   font-size: 20px;
   border: none;
   background: none;
-  font-family: Arial;
+  font-family: Poppins;
   margin-top: 5px;
 }
 </style>
