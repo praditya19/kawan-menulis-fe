@@ -4,50 +4,38 @@
     <div class="container thisMobile">
       <div class="row mobile">
         <div class="mobile__footer__menu">
-          <a href="/courses">Course Registration</a>
+          <a href="/">Beranda</a>
         </div>
         <div class="mobile__footer__menu">
-          <a href="/scholarship">Scholarship</a>
+          <a href="/diagnostik">Tes Diagnostik</a>
         </div>
         <div class="mobile__footer__menu">
-          <a href="/companies">Partnership Network</a>
+          <a href="#">Belajar Menulis</a>
         </div>
         <div class="mobile__footer__menu">
-          <a href="/about">About Us</a>
+          <a href="/sumber-belajar">Sumber Belajar</a>
         </div>
         <div class="mobile__footer__menu">
-          <a href="/event">Events</a>
+          <a href="/tutor">Tutor</a>
         </div>
         <div class="mobile__footer__menu">
-          <a href="/contact">Contact</a>
+          <a href="#">Tentang Kami</a>
         </div>
         <div class="mobile__footer__address">
           <div class="mobile__footer__address--text">
-            <div class="mobile__footer__address--name">
-              PT Generasi Teknologi Buana
-            </div>
             <div class="mobile__footer__address--address">
-              Wisma Barito Pacific, Tower A Level Ground, Jl. Letjen S. Parman,
-              Slipi, Jakarta Barat
+              Merupakan website yang didesain untuk membantu mahasiswa tingkat
+              perguruan tinggi dalam mendukung keterampilan menulis paragraf
+              yang baik dan benar.
             </div>
           </div>
         </div>
         <div class="mobile__footer__icon">
           <i class="icon-message"></i>
-          <a href="mailto:cs@g2academy.co" target="_top" class="email"
-            >cs@g2academy.co</a
+          <a href="#" target="_top">
+            Copyright © 2021. Tim Pengembang Proyek Menulis UPH Teachers
+            College. All rights reserved.</a
           >
-        </div>
-        <div class="mobile__footer__follow">
-          <div class="mobile__footer__follow--title">Ikuti kami</div>
-          <div class="mobile__footer__follow--icon">
-            <a href="https://www.facebook.com/G2AcademyIndonesia/">
-              <i class="icon-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/g2academyindonesia/">
-              <i class="icon-instagram"></i>
-            </a>
-          </div>
         </div>
         <div class="mobile__footer__logo">
           <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
@@ -102,11 +90,13 @@
 
 <style lang="scss" scoped>
 .mobile {
-  font-family:  Poppins;
+  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   color: #ffffff;
   text-align: center;
+  text-decoration: none;
+
   &__footer {
     &__menu {
       margin-top: 30px;
@@ -123,12 +113,12 @@
       &--text {
         width: 60%;
         margin: 30px auto;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-size: 12px;
         color: #ffffff;
       }
       &--name {
-        font-family:  Poppins;
+        font-family: Poppins;
         line-height: 130%;
         margin-bottom: 10px;
       }
@@ -145,7 +135,7 @@
         padding-left: 10px;
       }
       font-size: 12px;
-      font-family:  Poppins;
+      font-family: Poppins;
       line-height: 120.9%;
       margin-bottom: 20px;
     }
@@ -178,15 +168,15 @@
   padding-top: 35px;
   padding-bottom: 35px;
   font-size: 12px;
-  font-family:  Poppins;
+  font-family: Poppins;
   line-height: 150%;
   @media screen and (max-width: 768px) {
     padding: 30px 0px 30px;
   }
   &__logo {
     float: left;
-    width: 20%;
-    padding-right: 50px;
+    width: 17%;
+    padding: 0px 0px 0px 0px;
   }
   &__menu {
     float: left;
@@ -194,9 +184,9 @@
     &--menu {
       color: #ece7ff;
       p {
-        width: 200px;
+        width: 289px;
         height: 125px;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-weight: 400;
         font-size: 15px;
       }
@@ -213,14 +203,14 @@
       font-size: 17px;
     }
     &--tesDiagnostik {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-size: 15px;
       line-height: 130%;
       margin-top: 20px;
       margin-bottom: 20px;
     }
     &--tesDiagnostik {
-      font-family:  Poppins;
+      font-family: Poppins;
     }
     &--belajarMenulis {
       display: inline-block;

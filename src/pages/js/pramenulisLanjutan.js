@@ -4,6 +4,7 @@ export default {
   name: "PramenulisLanjutan",
   data() {
     return {
+      showModal: false,
       name: "",
       nameState: null,
       submittedNames: [],

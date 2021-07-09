@@ -6,10 +6,12 @@
         <h1><b>Latihan Menulis</b></h1>
       </div>
       <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/2.png">
+        <img class="steper_image" src="@/assets/icon_stepper/2.png" />
       </div>
     </div>
-    <div style="background-color:rgba(139, 181, 236, 0.1); height: 60px; width: 100%px;">
+    <div
+      style="background-color:rgba(139, 181, 236, 0.1); height: 60px; width: 100%px;"
+    >
       <div class="row">
         <div class="col-sm-4">
           <div class="content_padding_paragraf">
@@ -38,60 +40,55 @@
                   <b>TIPS</b>
                 </div>
               </b-button>
-                <!-- popup -->
-                <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Contoh:<br>
-                                        Minuman/makanan kesukaan<br>
-                                        Aktifasi sehari-hari<br>
-                                        Bagian dari pekerjaan<br>
-                                        Hobi</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Contoh:<br />
+                                  Minuman/makanan kesukaan<br />
+                                  Aktifasi sehari-hari<br />
+                                  Bagian dari pekerjaan<br />
+                                  Hobi
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
-<!-- Kalimat Samping Button Tips -->
+          <!-- Kalimat Samping Button Tips -->
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
@@ -104,19 +101,19 @@
                   </p>
                 </div>
               </div>
-                  <div style="padding: 10px 0px 10px 0px">
-                    <b-form-input
-                      v-model="dataForm.menulis"
-                      :state="validation"
-                      id="feedback-user"
-                    ></b-form-input>
-                    <b-form-invalid-feedback :state="validation">
-                      Your user ID must be 5-12 characters long.
-                    </b-form-invalid-feedback>
-                    <b-form-valid-feedback :state="validation">
-                      Looks Good.
-                    </b-form-valid-feedback>
-                  </div>
+              <div style="padding: 10px 0px 10px 0px">
+                <b-form-input
+                  v-model="dataForm.menulis"
+                  :state="validation"
+                  id="feedback-user"
+                ></b-form-input>
+                <b-form-invalid-feedback :state="validation">
+                  Your user ID must be 5-12 characters long.
+                </b-form-invalid-feedback>
+                <b-form-valid-feedback :state="validation">
+                  Looks Good.
+                </b-form-valid-feedback>
+              </div>
 
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis1Next">
@@ -175,62 +172,57 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
+              <b-button class="button" @click="showModal2 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
-                <!-- popup -->
-                <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Contoh: <br>
-                                        Air dengan suhu 80 derajat <br>
-                                        Tanah dan sisa makanan <br>
-                                        Wajan <br>
-                                        Sekop</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal2 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Contoh: <br />
+                                  Air dengan suhu 80 derajat <br />
+                                  Tanah dan sisa makanan <br />
+                                  Wajan <br />
+                                  Sekop
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal2 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
           <!-- Kalimat Samping Button Tips -->
@@ -245,13 +237,13 @@
                     Tuliskan dengan beberapa kata
                   </p>
                 </div>
-              </div>                  
-                  <div style="padding: 10px 0px 10px 0px">
-                    <b-form-input
-                      v-model="dataForm.menulis"
-                      id="feedback-user"
-                    ></b-form-input>
-                  </div>
+              </div>
+              <div style="padding: 10px 0px 10px 0px">
+                <b-form-input
+                  v-model="dataForm.menulis"
+                  id="feedback-user"
+                ></b-form-input>
+              </div>
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis2Next">
                   <button class="button2" type="submit">
@@ -316,62 +308,57 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
+              <b-button class="button" @click="showModal3 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
-                  <!-- popup -->
-                  <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Contoh: <br>
-                                        Menuangkan <br>
-                                        Mengaduk <br>
-                                        Mengucek <br>
-                                        Menggali</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal3 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Contoh: <br />
+                                  Menuangkan <br />
+                                  Mengaduk <br />
+                                  Mengucek <br />
+                                  Menggali
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal3 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
           <div class="col-sm-10">
@@ -385,13 +372,13 @@
                     Sebutkan beberapa kata kerja sesuai tahapan
                   </p>
                 </div>
-              </div>                  
-                  <div style="padding: 10px 0px 10px 0px">
-                    <b-form-input
-                      v-model="dataForm.menulis"
-                      id="feedback-user"
-                    ></b-form-input>
-                  </div>
+              </div>
+              <div style="padding: 10px 0px 10px 0px">
+                <b-form-input
+                  v-model="dataForm.menulis"
+                  id="feedback-user"
+                ></b-form-input>
+              </div>
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis3Next">
                   <button class="button2" type="submit">
@@ -463,61 +450,56 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
+              <b-button class="button" @click="showModal3 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
-                  <!-- popup -->
-                  <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Contoh: <br>
-                                        Suhu air yang terlalu panas <br>
-                                        Takaran bahan yang tidak seimbang <br>
-                                        Pilih warna yang terlalu mencolok</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal3 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Contoh: <br />
+                                  Suhu air yang terlalu panas <br />
+                                  Takaran bahan yang tidak seimbang <br />
+                                  Pilih warna yang terlalu mencolok
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal3 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
           <div class="col-sm-10">
@@ -531,13 +513,13 @@
                     Gunakan kata atau klausa sederhana
                   </p>
                 </div>
-              </div>                  
-                  <div style="padding: 10px 0px 10px 0px">
-                    <b-form-input
-                      v-model="dataForm.menulis"
-                      id="feedback-user"
-                    ></b-form-input>
-                  </div>
+              </div>
+              <div style="padding: 10px 0px 10px 0px">
+                <b-form-input
+                  v-model="dataForm.menulis"
+                  id="feedback-user"
+                ></b-form-input>
+              </div>
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis4Next">
                   <button class="button2" type="submit">
@@ -616,62 +598,57 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
+              <b-button class="button" @click="showModal5 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
-                  <!-- popup -->
-                  <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Contoh: <br>
-                                       Kualitas benih sayur <br>
-                                       Keadaan tanah <br>
-                                       Cara mengaduk <br>
-                                       Tingkat kematangan</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal5 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Contoh: <br />
+                                  Kualitas benih sayur <br />
+                                  Keadaan tanah <br />
+                                  Cara mengaduk <br />
+                                  Tingkat kematangan
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal5 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
           <div class="col-sm-10">
@@ -685,13 +662,13 @@
                     Gunakan kata atau klausa sederhana
                   </p>
                 </div>
-              </div>                  
-                  <div style="padding: 10px 0px 10px 0px">
-                    <b-form-input
-                      v-model="dataForm.menulis"
-                      id="feedback-user"
-                    ></b-form-input>
-                  </div>
+              </div>
+              <div style="padding: 10px 0px 10px 0px">
+                <b-form-input
+                  v-model="dataForm.menulis"
+                  id="feedback-user"
+                ></b-form-input>
+              </div>
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis5Next">
                   <button class="button2" type="submit">
@@ -782,53 +759,52 @@
                   <b>TIPS</b>
                 </div>
               </b-button>
-                <!-- popup -->
-                <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img
-                                        src="@/assets/checklist.png"
-                                      >
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="padding: 0% 0% 0% 12%; width: 85%;"
-                                      >
-                                        <p>Catatan yang telah kamu buat dapat membantu kamu berpikir tentang topikmu. Jika kamu memiliki lebih banyak ide, kamu dapat menambahkannya ke daftar catatan setelah Anda menulis kalimat utama pada tahap selanjutnya.</p>
-                                      </div>
-                                    </div>
+              <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
 
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Catatan yang telah kamu buat dapat membantu
+                                  kamu berpikir tentang topikmu. Jika kamu
+                                  memiliki lebih banyak ide, kamu dapat
+                                  menambahkannya ke daftar catatan setelah Anda
+                                  menulis kalimat utama pada tahap selanjutnya.
+                                </p>
                               </div>
                             </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
           <div class="col-sm-10">
@@ -840,11 +816,12 @@
                   </p>
                   <p>
                     Jika kamu ingin menambahkan ide yang lain, kamu dapat
-                    menambahkannya kemudian <br> pada tahapan selanjutnya.
+                    menambahkannya kemudian <br />
+                    pada tahapan selanjutnya.
                   </p>
                 </div>
-              </div>                  
-                  <div style="padding: 10px 0px 10px 0px"></div>
+              </div>
+              <div style="padding: 10px 0px 10px 0px"></div>
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis6Next">
                   <button class="button2" type="submit">
@@ -983,7 +960,7 @@
     align-items: center;
     color: #f1f1f1;
     font-size: 28px;
-    font-family:  Poppins;
+    font-family: Arial, Helvetica, sans-serif;
   }
   &_tombol3 {
     padding: 60px 0px 0px 0px;
@@ -1001,7 +978,7 @@
   border-bottom-right-radius: 30px;
 }
 .button {
-  background-color: #00A279;
+  background-color: #00a279;
   border: none;
   color: black;
   text-decoration: none;
@@ -1046,7 +1023,7 @@
   }
 }
 .button:hover {
-  background-color: #00A279;
+  background-color: #00a279;
 }
 // Stepper 1 -7
 .container {
@@ -1057,115 +1034,7 @@
   }
 }
 
-.progressbar1 {
-  counter-reset: step;
-  padding: 0px 0px 100px 0px;
-}
-.progressbar1 li {
-  list-style-type: none;
-  float: left;
-  width: 12.5%;
-  position: relative;
-  text-align: center;
-}
-.progressbar1 li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #ddd;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  color: white;
-}
-.progressbar1 li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  top: 15px;
-  left: -50%;
-  z-index: -1;
-}
-.progressbar1 li:first-child:after {
-  content: none;
-}
-.progressbar1 li {
-  color: #d4d4d4;
-}
-.progressbar1 li.active {
-  color: black;
-}
-.progressbar1 li.active:before {
-  // border-color: #738DED;
-  background-color: #738ded;
-}
-.progressbar1 li.active + li:after {
-  background-color: #738ded;
-}
-
-// Stepper 8-14
-.container2 {
-  width: 100%;
-}
-.progressbar2 {
-  counter-reset: step2 7;
-  margin-right: 150px;
-  margin-left: -110px;
-  padding: 0px 0px 80px 0px;
-}
-.progressbar2 li {
-  list-style-type: none;
-  float: right;
-  width: 12.5%;
-  position: relative;
-  text-align: center;
-}
-.progressbar2 li:before {
-  content: counter(step2);
-  counter-increment: step2 1;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #ddd;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  color: white;
-}
-.progressbar2 li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  top: 15px;
-  left: -50%;
-  z-index: -1;
-}
-.progressbar2 li:last-child:after {
-  content: none;
-}
-.progressbar2 li.active {
-  color: #738ded;
-}
-.progressbar2 li {
-  color: #d4d4d4;
-}
-.progressbar2 li.active:before {
-  border-color: #738ded;
-}
-.progressbar2 li.active + li:after {
-  background-color: #738ded;
-}
-
+// Stepper
 .steper {
   text-align: center;
   // background:red;
@@ -1176,44 +1045,84 @@
   }
 }
 
-.jenis  {
-  background-color:#C5DCFF; 
-  height: 50px; 
+// Jenis Paragraf .....
+.jenis {
+  background-color: #c5dcff;
+  height: 50px;
   width: 100%px;
 }
 
-.modal-content  {
-  background: #E8F1FD;
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
+}
+
+.modal-content {
+  background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
-  position: relative;
-  top: -350px;
-  left: 275px;
 }
 
 .modal-body {
+  background: #e8f1fd;
   width: 500px;
+  border-radius: 34px;
 }
 
-.image-container  {
-  // background: red;
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
   text-align: center;
-  padding: 0px;
+  /* background: red; */
 }
 
-.ok2  {
-  // background: red;
+.kalimat {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   text-align: center;
-  margin-top: -20px;
+  margin-top: 5px;
+  /* background: red; */
 }
 
-.mt-3 {
-  background: #0A4DA3;
+.tombol {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok {
+  background: #0a4da3;
   border-radius: 39px;
+  border: none;
   width: 108px;
-  padding-top: 5px;
-  
+  height: 32.71px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
 
 .content {
   width: 100%;
@@ -1231,7 +1140,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family:  Poppins;
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 20px;
           line-height: 24px;
           text-align: center;
@@ -1307,132 +1216,7 @@
   padding: 0;
 }
 
-.progressbar {
-  margin: 0 50px;
-  padding: 0;
-  counter-reset: step;
-  position: relative;
-  border: 2px solid #738ded;
-  border-left: none;
-  min-height: 110px;
-}
-
-.progressbar li {
-  list-style-type: none;
-  width: 16%;
-  /*float: left;*/
-  font-size: 16px;
-  position: absolute;
-  text-align: center;
-  text-transform: capitalize;
-}
-
-/*First 4*/
-.progressbar li:nth-child(-n + 7) {
-  top: -46px;
-}
-
-/*Last 4*/
-.progressbar li:nth-last-child(-n + 7) {
-  bottom: -55px;
-}
-
-/*Left*/
-.progressbar li:nth-child(1),
-.progressbar li:nth-child(14) {
-  left: -45px;
-}
-
-/*Middle*/
-.progressbar li:nth-child(2),
-.progressbar li:nth-child(13) {
-  left: calc(15% - 45px);
-}
-
-/*Middle*/
-.progressbar li:nth-child(3),
-.progressbar li:nth-child(12) {
-  left: calc(30% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(4),
-.progressbar li:nth-child(11) {
-  left: calc(45% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(5),
-.progressbar li:nth-child(10) {
-  left: calc(60% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(6),
-.progressbar li:nth-child(9) {
-  left: calc(75% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(7),
-.progressbar li:nth-child(8) {
-  left: calc(90% - 45px);
-}
-.progressbar li:nth-last-child(-n + 7):before,
-.progressbar li:nth-child(-n + 7):after {
-  width: 32px;
-  height: 32px;
-  content: counter(step);
-  counter-increment: step;
-  line-height: 30px;
-  border: 2px solid #d4d4d4;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  padding: 0;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/*.progressbar li:first-child:after {
-  content: none;
-}*/
-
-.progressbar li.active {
-  color: white;
-}
-
-.progressbar li.active:before,
-.progressbar li.active:after {
-  border-color: #d4d4d4;
-  background: #738ded;
-}
-
-.progressbar li.active + li:after {
-  background-color: dodgerblue;
-}
-
-.progressbar label {
-  color: black;
-}
-
 .content_padding_tulis_right_paragraf p {
   font-size: 20px;
 }
-
-// popup tips
-.ok{
-  // background: red;
-  
-.mt-3 {
-  // margin-bottom: 10px;
-  background:#0A4DA3;
-  margin: 0px 0px 5px 180px;
-  border-radius: 39px;
-  width: 108px;
-}
-}
-
 </style>

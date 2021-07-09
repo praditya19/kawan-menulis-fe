@@ -1,4 +1,3 @@
-[15:54, 7/7/2021] +62 895-0473-1540:
 <template>
   <div class="container">
     <div class="row">
@@ -55,44 +54,57 @@
                 >{{ paragraphTypesList.topics.name }}</option
               >
             </select>
-            <!-- <b-button v-b-modal.modal-lg  class="button">Tips</b-button> -->
-            <b-button
-              id="show-btn"
-              class="button"
-              @click="$bvModal.show('bv-modal-example')"
-              >Tips</b-button
-            >
 
-            <!-- popup -->
-            <div class="b-modal">
-              <b-modal id="bv-modal-example" hide-footer hide-header-close>
-                <template #modal-title>
-                  <div class="image-container">
-                    <img
-                      src="@/assets/checklist.png"
-                      style="text-align:center"
-                    />
+            <!-- Button Tips -->
+            <div class="button_tombol">
+              <b-button class="button" @click="showModal = true">Tips</b-button>
+
+              <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
+
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                  Topik ini akan memberimu kesempatan menulis
+                                  cara melakukan sesuatu yang kamu kuasai.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </template>
-                <div class="d-block text-center">
-                  <p>
-                    Topik ini akan memberimu kesempatan menulis cara melakukan
-                    sesuatu yang kamu kuasai.
-                  </p>
-                </div>
-                <div class="ok">
-                  <b-button
-                    class="mt-3"
-                    block
-                    @click="$bvModal.hide('bv-modal-example')"
-                    >OK</b-button
-                  >
-                </div>
-              </b-modal>
+                </transition>
+              </div>
             </div>
           </div>
         </div>
-        <br />
 
         <div class="mulai">
           <router-link to="topik2" type="button" class="button-mulai"
@@ -109,7 +121,7 @@
 <style lang="scss" scoped>
 h1 {
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-weight: 700;
   // background: red;
 }
@@ -117,8 +129,7 @@ h1 {
   margin-top: 1px;
 }
 
-// Stepper 1 -7
-
+// Stepper
 .steper {
   text-align: center;
   padding: 10px;
@@ -128,10 +139,9 @@ h1 {
   }
 }
 
-
 // Sebelum Menentukan Topik.....
 .paragraf {
-  font-family: Arial, Poppins;
+  font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -145,7 +155,7 @@ h1 {
 .label1 {
   // background: red;
   label {
-    font-family: Arial, Poppins;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -163,7 +173,7 @@ select {
   border: 1 px;
   background: #f4f4f4;
   font-size: 18px;
-  font-family: Poppins, Arial;
+  font-family: Poppins;
   padding: 5px;
   // margin-right: 300px;
   margin-left: 185px;
@@ -177,7 +187,7 @@ select {
 .label2 {
   // background: red;
   label {
-    font-family: Arial, Poppins;
+    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -194,11 +204,20 @@ select {
     border: 1 px;
     background: #f4f4f4;
     font-size: 18px;
-    font-family: Poppins, Arial;
+    font-family: Poppins;
     padding: 5px;
     margin-left: 185px;
     border-radius: 4px;
   }
+}
+
+.button_tombol {
+  // background: red;
+  position: absolute;
+  height: 50px;
+  width: 140px;
+  left: 1075px;
+  top: 553px;
 }
 
 .button {
@@ -215,6 +234,8 @@ select {
 .mulai {
   // background: red;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
   .button-mulai {
     background-color: #0a4da3;
     border: none;
@@ -227,29 +248,80 @@ select {
     cursor: pointer;
     border-radius: 42px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     width: 150px;
-    // margin-left: 50%;
   }
 }
 
-// popup tips
-.ok {
-  // background: red;
-
-  .mt-3 {
-    // margin-bottom: 10px;
-    background: #0a4da3;
-    margin: 0px 0px 5px 180px;
-    border-radius: 39px;
-    width: 108px;
-  }
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
 }
 
-// icon checklist
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
 .image-container {
-  width: 470px;
   text-align: center;
-  // background: red;
+  /* background: red; */
 }
+
+.kalimat {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+.tombol {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
 </style>

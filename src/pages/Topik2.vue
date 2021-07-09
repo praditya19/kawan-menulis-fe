@@ -2,49 +2,62 @@
   <div>
     <br /><br /><br /><br /><br />
     <div>
-      <!-- Clone -->
-      <div class="tips1">
-        <b-button
-          id="show-btn"
-          class="tips1_judul"
-          @click="$bvModal.show('bv-modal-example1')"
-          >Tips</b-button
-        >
-
-        <!-- popup -->
-        <b-modal id="bv-modal-example1" hide-footer hide-header-close>
-          <template #modal-title>
-            <div class="image-container1">
-              <img src="@/assets/checklist.png" style="text-align:center" />
-            </div>
-          </template>
-          <div class="d-block text-center">
-            <p>
-              Jika ingin mengganti jenis dan topik paragraf, silahkan klik
-              tombol panah kiri.
-            </p>
-          </div>
-          <div class="ok-judul">
-            <b-button
-              class="mt-judul"
-              block
-              @click="$bvModal.hide('bv-modal-example1')"
-              >OK</b-button
+      
+        <!-- Button Tips -->
+            <div class="tips1">
+            <b-button class="tips1_judul" @click="showModal = true"
+              >Tips</b-button
             >
-          </div>
-        </b-modal>
+            <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
+
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                <p>
+                                    Jika ingin mengganti jenis dan topik paragraf, silahkan klik tombol panah kiri.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </transition>
+              </div>
         <h1 class="tips1_kata1">Latihan Menulis</h1>
       </div>
     </div>
     <br />
 
     <div class="container">
-      <div class="row">
-        <!-- Stepper -->
-        <div class="steper">
-          <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-        </div>
-        <!-- End Stepper  -->
+      <div class="steper">
+          <img class="steper_image" src="@/assets/icon_stepper/1.png">
       </div>
     </div>
 
@@ -60,41 +73,57 @@
 
     <br />
     <!-- Button Tips -->
-    <div class="tips">
-      <b-button
-        id="show-btn"
-        class="tips_btn"
-        @click="$bvModal.show('bv-modal-example')"
-        >Tips</b-button
-      >
+            <div class="tips1">
+            <b-button class="tips1_judul" @click="showModal1 = true"
+              >Tips</b-button
+            >
 
-      <!-- popup -->
-      <b-modal id="bv-modal-example" hide-footer hide-header-close>
-        <template #modal-title>
-          <div class="image-container">
-            <img src="@/assets/checklist.png" style="text-align:center" />
-          </div>
-        </template>
-        <div class="d-block text-center">
-          <p>Ide lainnya:</p>
-          <p>Cara membuat layang-layang</p>
-          <p>Cara membuat kompos</p>
-          <p>Cara memasak telur dadar</p>
-          <p>Cara membersihkan noda dari pakaian</p>
-        </div>
-        <div class="ok">
-          <b-button
-            class="mt-3"
-            block
-            @click="$bvModal.hide('bv-modal-example')"
-            >OK</b-button
-          >
-        </div>
-      </b-modal>
-      <h6 class="tips_kata">
-        Kamu hendak menjelaskan cara melakukan sesuatu yang sangat kamu kuasai.
-      </h6>
-    </div>
+            <!-- popup -->
+              <div v-if="showModal1 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px;height:38.49px;"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
+
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                                Ide lainnya: <br> Cara membuat layang-layang <br> Cara membuat kompos <br> Cara memasak telur dadar <br> Cara membersihkan noda dari pakaian
+                              </div>
+                            </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal1 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </transition>
+              </div>
+            <h6 class="tips_kata">
+              Kamu hendak menjelaskan cara melakukan sesuatu yang sangat kamu kuasai.
+            </h6>
+      </div>      
+      
+    
 
     <!-- Cara apa yang ...... -->
     <div class="content-cara">
@@ -107,6 +136,7 @@
       </ul>
     </div>
     <br /><br />
+
     <!-- Gunakan kalimat klausa -->
     <div class="content-form">
       <form>
@@ -118,9 +148,8 @@
           <tr>
             <td>
               <input
-                style="width:900px"
+                style="width:600px"
                 type="text"
-                placeholder="Cara Membuat Kopi"
               />
             </td>
           </tr>
@@ -166,7 +195,7 @@
   &_kata1 {
     padding: 11px 0px 0px 20px;
     // text-align: center;
-    font-family:  Poppins;
+    font-family: Poppins;
     font-weight: 700;
   }
 }

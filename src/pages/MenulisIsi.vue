@@ -5,58 +5,20 @@
       <div class="content_padding_header">
         <h1><b>Latihan Menulis</b></h1>
       </div>
-      <div class="content_padding_stemper">
-        <!-- Stepper -->
-        <div class="container-progress">
-          <ul class="progressbar">
-            <li class="active active-step">
-              <label>Topik</label>
-            </li>
-            <li class="active active-step">
-              <label>Pramenulis</label>
-            </li>
-            <li class="active active-step">
-              <label>Menulis Kalimat Utama</label>
-            </li>
-            <li class="active active-step">
-              <label>Pramenulis lanjutan</label>
-            </li>
-            <li>
-              <label>Menulis Isi</label>
-            </li>
-            <li>
-              <label>Pengorganisasian</label>
-            </li>
-            <li>
-              <label>Menulis Kesimpulan</label>
-            </li>
-            <li>
-              <label>Revisi</label>
-            </li>
-            <li>
-              <label>Style</label>
-            </li>
-            <li>
-              <label>Struktu Kalimat</label>
-            </li>
-            <li>
-              <label>Grammar</label>
-            </li>
-            <li>
-              <label>Pemeriksaan Akhir</label>
-            </li>
-            <li>
-              <label>Final</label>
-            </li>
-            <li>
-              <label>Cetak</label>
-            </li>
-          </ul>
-        </div>
-        <!-- End Stepper  -->
+
+      <!-- Stepper -->
+      <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
       </div>
+      <!-- End Stepper  -->
     </div>
-    <div style="background-color:#C5DCFF; height: 60px; width: 100%px;">
+    <div
+      style="
+        background-color: rgba(139, 181, 236, 0.1);
+        height: 60px;
+        width: 100%px;
+      "
+    >
       <div class="row">
         <div class="col-sm-4">
           <div class="content_padding_paragraf">
@@ -73,51 +35,64 @@
         </div>
       </div>
     </div>
+
+    <!-- Screen1  -->
     <div class="container_bawah">
       <div class="content_padding_tulis" v-if="menulisIsi === true">
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <button class="button" @click="$bvModal.show('bv-modal-example')">
+              <button class="button" @click="showModal = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
-                  <!-- popup -->
-                  <b-modal
-                    id="bv-modal-example"
-                    hide-header
-                    hide-footer
-                    hide-header-close
-                    hide-modal-title
-                  >
-                    <div classs="modal-override">
-                      <div class="image-container">
-                        <img
-                          src="@/assets/checklist.png"
-                          style="text-align:center"
-                        />
-                      </div>
-                      <div class="d-block text-center">
-                        <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                          <p>
-                            Sekarang Anda akan mengubah kata dan frasa menjadi
-                            kalimat lengkap.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="ok">
-                        <b-button
-                          class="mt-3"
-                          block
-                          @click="$bvModal.hide('bv-modal-example')"
-                          >OK</b-button
-                        >
-                      </div>
-                    </div>
-                  </b-modal>
                 </div>
               </button>
+              <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px; height: 38.49px"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
+
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%">
+                                <p>
+                                  Sekarang Anda akan mengubah kata dan frasa
+                                  menjadi kalimat lengkap.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </transition>
+              </div>
             </div>
           </div>
+          <!-- Kalimat Samping Button Tips -->
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
@@ -138,6 +113,8 @@
                   </p>
                 </div>
               </div>
+
+              <!-- Button OK -->
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="menulisIsiNext">
                   <button class="button2" type="submit">
@@ -147,15 +124,22 @@
               </div>
             </div>
             <br />
+
+            <!-- Catatan  -->
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 120px 0px 0px 0px"
               >
                 <div class="row">
                   <div class="col-sm-4">
                     <div
-                      style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
+                      style="
+                        background-color: #484c52;
+                        height: 48px;
+                        width: 240px;
+                        border-radius: 20px 20px 0px 0px;
+                      "
                     >
                       <div class="content_padding_tulis_catatan">
                         <h4><b>Catatan Pra Menulis</b></h4>
@@ -164,46 +148,41 @@
                   </div>
                 </div>
                 <div
-                  style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
+                  style="
+                    background-color: #c1c8d3;
+                    width: 730px;
+                    padding: 13px;
+                    border-radius: 0px 0 30px 30px;
+                  "
                 >
-                  <div style="margin-left:30px; ">
+                  <div style="margin-left: 30px">
                     <b-form-group>
                       <div>
                         <div class="col-sm-12">
                           <ul>
                             <div class="dua">
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                               </h5>
                             </div>
                             <div class="dua">
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                               </h5>
                             </div>
                             <div class="dua">
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                               </h5>
                             </div>
                             <div class="dua">
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                               </h5>
                             </div>
                             <div class="dua">
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                               </h5>
                             </div>
                           </ul>
@@ -217,44 +196,69 @@
           </div>
         </div>
       </div>
+
+      <!-- Screen 2 -->
       <div class="content_padding_tulis" v-if="menulisIsiPage2 === true">
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <button class="button" @click="$bvModal.show('bv-modal-example')">
+              <button class="button" @click="showModal2 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
-                  <!-- popup -->
-                  <b-modal id="bv-modal-example" hide-footer hide-header-close>
-                    <template #modal-title>
-                      <div class="image-container">
-                        <img
-                          src="@/assets/checklist.png"
-                          style="text-align:center"
-                        />
-                      </div>
-                    </template>
-                    <div class="d-block text-center">
-                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        <p>
-                          Sekarang Anda akan mengubah kata dan frasa menjadi
-                          kalimat lengkap.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="ok">
-                      <b-button
-                        class="mt-3"
-                        block
-                        @click="$bvModal.hide('bv-modal-example')"
-                        >OK</b-button
-                      >
-                    </div>
-                  </b-modal>
                 </div>
               </button>
+              <!-- popup -->
+              <div v-if="showModal2 === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <div class="modal-body">
+                            <div class="image-container">
+                              <img
+                                style="width: 40px; height: 38.49px"
+                                src="@/assets/checklist.png"
+                              />
+                            </div>
+
+                            <div class="kalimat">
+                              <div style="padding: 0% 0% 0% 12%; width: 85%">
+                                <p>
+                                  Tinjau daftar pramenulis Anda dan pilih ide
+                                  yang akan Anda kembangkan menjadi kalimat
+                                  lengkap.
+                                </p>
+                                <p>
+                                  Ingat, sebuah kalimat harus memiliki subjek
+                                  dan kata kerja dan harus mengekpresikan
+                                  pemikiran yang lengkap.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div class="tombol">
+                              <button
+                                class="ok"
+                                block
+                                @click="showModal2 = false"
+                              >
+                                OK
+                              </button>
+                            </div>
+
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </transition>
+              </div>
             </div>
           </div>
+
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
@@ -280,29 +284,41 @@
               </div>
             </div>
             <br />
+
+            <!-- Form Centang -->
             <ValidationObserver ref="observer">
               <b-form @submit.stop.prevent>
                 <div class="col-sm-12">
                   <div
                     class="content_padding_tulis_right_paragraf_bawah2"
-                    style="padding: 0px 0px 20px 0px;"
+                    style="padding: 0px 0px 20px 0px"
                   >
                     <div class="row">
                       <div class="col-sm-4">
                         <div
-                          style="background-color:#484c52; height: 48px; width: 350px; border-radius: 20px 20px 0px 0px;"
+                          style="
+                            background-color: #484c52;
+                            height: 48px;
+                            width: 350px;
+                            border-radius: 20px 20px 0px 0px;
+                          "
                         >
                           <div class="content_padding_tulis_catatan">
-                            <h4><b>Catatan Pra Menulis - menulsi</b></h4>
+                            <h4><b>Catatan Pra Menulis - menulis</b></h4>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div
-                      style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
+                      style="
+                        background-color: #c1c8d3;
+                        width: 730px;
+                        padding: 13px;
+                        border-radius: 0px 0 30px 30px;
+                      "
                     >
-                      <div style="margin-left:30px; ">
+                      <div style="margin-left: 30px">
                         <div>
                           <div class="col-sm-12">
                             <div style="max-width: 90%">
@@ -311,17 +327,101 @@
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <h5 style="padding: 10px 0px 0px 0px">
-                                        <li>
-                                          &nbsp; &nbsp;Cara membuat Kopi
-                                        </li>
+                                        <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                                       </h5>
                                     </div>
-                                    <div class="col-sm-6">
-                                      <h2
-                                        style="color: blue; font-size: 20px; text-align: right; align-item: right; padding: 10px 0px 0px 0px"
+
+                                    <!-- Tips 1 -->
+                                    <div
+                                      class="col-sm-6"
+                                      style="text-align: right"
+                                    >
+                                      <button
+                                        class="tips-form"
+                                        @click="showModal3 = true"
                                       >
                                         Tips
-                                      </h2>
+                                      </button>
+                                      <!-- popup -->
+                                      <div v-if="showModal3 === true">
+                                        <transition name="model">
+                                          <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <!-- Modal Body -->
+                                                  <div class="modal-body">
+                                                    <div
+                                                      class="image-container"
+                                                    >
+                                                      <img
+                                                        style="
+                                                          width: 40px;
+                                                          height: 38.49px;
+                                                        "
+                                                        src="@/assets/checklist.png"
+                                                      />
+                                                    </div>
+
+                                                    <div class="kalimat">
+                                                      <div
+                                                        style="
+                                                          padding: 0% 0% 0% 12%;
+                                                          width: 85%;
+                                                        "
+                                                      >
+                                                        <p
+                                                          style="
+                                                            font-size: 16px;
+                                                          "
+                                                        >
+                                                          Uraikan dalam sebuah
+                                                          kalimat : <br />
+                                                          <strong
+                                                            >Mengapa kamu dapat
+                                                            mahir melakukan hal
+                                                            tersebut?</strong
+                                                          >
+                                                          <code
+                                                            style="color: red"
+                                                            ><strong
+                                                              >(Ambil dari
+                                                              Panduan Pramenulis
+                                                              1)</strong
+                                                            ></code
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          Ingat, sebuah kalimat
+                                                          harus memiliki subjek
+                                                          dan kata kerja dan
+                                                          harus mengekpresikan
+                                                          pemikiran yang
+                                                          lengkap.
+                                                        </p>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="tombol">
+                                                      <button
+                                                        class="ok"
+                                                        block
+                                                        @click="
+                                                          showModal3 = false
+                                                        "
+                                                      >
+                                                        OK
+                                                      </button>
+                                                    </div>
+
+                                                    <br />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </transition>
+                                      </div>
                                     </div>
                                     <b-form-input
                                       v-model="dataForm.menulis"
@@ -342,18 +442,104 @@
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <h5 style="padding: 10px 0px 0px 0px">
-                                        <li>
-                                          &nbsp; &nbsp;Cara membuat Kopi
-                                        </li>
+                                        <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                                       </h5>
                                     </div>
-                                    <div class="col-sm-6">
-                                      <h2
-                                        style="color: blue; font-size: 20px; text-align: right; align-item: right; padding: 10px 0px 0px 0px"
+
+                                    <!-- Tips 2 -->
+                                    <div
+                                      class="col-sm-6"
+                                      style="text-align: right"
+                                    >
+                                      <button
+                                        class="tips-form"
+                                        @click="showModal4 = true"
                                       >
                                         Tips
-                                      </h2>
+                                      </button>
+                                      <!-- popup -->
+                                      <div v-if="showModal4 === true">
+                                        <transition name="model">
+                                          <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <!-- Modal Body -->
+                                                  <div class="modal-body">
+                                                    <div
+                                                      class="image-container"
+                                                    >
+                                                      <img
+                                                        style="
+                                                          width: 40px;
+                                                          height: 38.49px;
+                                                        "
+                                                        src="@/assets/checklist.png"
+                                                      />
+                                                    </div>
+
+                                                    <div class="kalimat">
+                                                      <div
+                                                        style="
+                                                          padding: 0% 0% 0% 12%;
+                                                          width: 85%;
+                                                        "
+                                                      >
+                                                        <p
+                                                          style="
+                                                            font-size: 16px;
+                                                          "
+                                                        >
+                                                          Uraikan dalam sebuah
+                                                          kalimat : <br />
+                                                          <strong
+                                                            >Apa saja alat/bahan
+                                                            yang dibutuhkan
+                                                            untuk
+                                                            melakukannya?</strong
+                                                          >
+                                                          <code
+                                                            style="color: red"
+                                                            ><strong
+                                                              >(Ambil dari
+                                                              Panduan Pramenulis
+                                                              2)</strong
+                                                            ></code
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          Ingat, sebuah kalimat
+                                                          harus memiliki subjek
+                                                          dan kata kerja dan
+                                                          harus mengekpresikan
+                                                          pemikiran yang
+                                                          lengkap.
+                                                        </p>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="tombol">
+                                                      <button
+                                                        class="ok"
+                                                        block
+                                                        @click="
+                                                          showModal4 = false
+                                                        "
+                                                      >
+                                                        OK
+                                                      </button>
+                                                    </div>
+
+                                                    <br />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </transition>
+                                      </div>
                                     </div>
+
                                     <b-form-input
                                       v-model="dataForm.menulis"
                                       :state="validation"
@@ -373,17 +559,103 @@
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <h5 style="padding: 10px 0px 0px 0px">
-                                        <li>
-                                          &nbsp; &nbsp;Cara membuat Kopi
-                                        </li>
+                                        <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                                       </h5>
                                     </div>
-                                    <div class="col-sm-6">
-                                      <h2
-                                        style="color: blue; font-size: 20px; text-align: right; align-item: right; padding: 10px 0px 0px 0px"
+
+                                    <!-- Tips3 -->
+                                    <div
+                                      class="col-sm-6"
+                                      style="text-align: right"
+                                    >
+                                      <button
+                                        class="tips-form"
+                                        @click="showModal5 = true"
                                       >
                                         Tips
-                                      </h2>
+                                      </button>
+
+                                      <!-- popup -->
+                                      <div v-if="showModal5 === true">
+                                        <transition name="model">
+                                          <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <!-- Modal Body -->
+                                                  <div class="modal-body">
+                                                    <div
+                                                      class="image-container"
+                                                    >
+                                                      <img
+                                                        style="
+                                                          width: 40px;
+                                                          height: 38.49px;
+                                                        "
+                                                        src="@/assets/checklist.png"
+                                                      />
+                                                    </div>
+
+                                                    <div class="kalimat">
+                                                      <div
+                                                        style="
+                                                          padding: 0% 0% 0% 12%;
+                                                          width: 85%;
+                                                        "
+                                                      >
+                                                        <p
+                                                          style="
+                                                            font-size: 16px;
+                                                          "
+                                                        >
+                                                          Uraikan dalam sebuah
+                                                          kalimat : <br />
+                                                          <strong
+                                                            >Kata kerja apa saja
+                                                            yang akan dilakukan
+                                                            dalam proses
+                                                            itu?</strong
+                                                          >
+                                                          <code
+                                                            style="color: red"
+                                                            ><strong
+                                                              >(Ambil dari
+                                                              Panduan Pramenulis
+                                                              3)</strong
+                                                            ></code
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          Ingat, sebuah kalimat
+                                                          harus memiliki subjek
+                                                          dan kata kerja dan
+                                                          harus mengekpresikan
+                                                          pemikiran yang
+                                                          lengkap.
+                                                        </p>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="tombol">
+                                                      <button
+                                                        class="ok"
+                                                        block
+                                                        @click="
+                                                          showModal5 = false
+                                                        "
+                                                      >
+                                                        OK
+                                                      </button>
+                                                    </div>
+
+                                                    <br />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </transition>
+                                      </div>
                                     </div>
                                     <b-form-input
                                       v-model="dataForm.menulis"
@@ -400,22 +672,103 @@
                                     </b-form-valid-feedback>
                                   </div>
                                 </div>
+
+                                <!-- Tips4 -->
                                 <div class="dua">
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <h5 style="padding: 10px 0px 0px 0px">
-                                        <li>
-                                          &nbsp; &nbsp;Cara membuat Kopi
-                                        </li>
+                                        <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                                       </h5>
                                     </div>
-                                    <div class="col-sm-6">
-                                      <h2
-                                        style="color: blue; font-size: 20px; text-align: right; align-item: right; padding: 10px 0px 0px 0px"
+                                    <div
+                                      class="col-sm-6"
+                                      style="text-align: right"
+                                    >
+                                      <button
+                                        class="tips-form"
+                                        @click="showModal6 = true"
                                       >
                                         Tips
-                                      </h2>
+                                      </button>
+                                      <!-- popup -->
+                                      <div v-if="showModal6 === true">
+                                        <transition name="model">
+                                          <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <!-- Modal Body -->
+                                                  <div class="modal-body">
+                                                    <div
+                                                      class="image-container"
+                                                    >
+                                                      <img
+                                                        style="
+                                                          width: 40px;
+                                                          height: 38.49px;
+                                                        "
+                                                        src="@/assets/checklist.png"
+                                                      />
+                                                    </div>
+
+                                                    <div class="kalimat">
+                                                      <div
+                                                        style="
+                                                          padding: 0% 0% 0% 12%;
+                                                          width: 85%;
+                                                        "
+                                                      >
+                                                        <p>
+                                                          Uraikan dalam sebuah
+                                                          kalimat : <br />
+                                                          <strong
+                                                            >Hal apa saja yang
+                                                            perlu dihindari agar
+                                                            tidak gagal?</strong
+                                                          >
+                                                          <code
+                                                            style="color: red"
+                                                            ><strong
+                                                              >(Ambil dari
+                                                              Panduan Pramenulis
+                                                              4)</strong
+                                                            ></code
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          Ingat, sebuah kalimat
+                                                          harus memiliki subjek
+                                                          dan kata kerja dan
+                                                          harus mengekpresikan
+                                                          pemikiran yang
+                                                          lengkap.
+                                                        </p>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="tombol">
+                                                      <button
+                                                        class="ok"
+                                                        block
+                                                        @click="
+                                                          showModal6 = false
+                                                        "
+                                                      >
+                                                        OK
+                                                      </button>
+                                                    </div>
+
+                                                    <br />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </transition>
+                                      </div>
                                     </div>
+
                                     <b-form-input
                                       v-model="dataForm.menulis"
                                       :state="validation"
@@ -431,22 +784,104 @@
                                     </b-form-valid-feedback>
                                   </div>
                                 </div>
+
+                                <!-- Tips5  -->
                                 <div class="dua">
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <h5 style="padding: 10px 0px 0px 0px">
-                                        <li>
-                                          &nbsp; &nbsp;Cara membuat Kopi
-                                        </li>
+                                        <li>&nbsp; &nbsp;Cara membuat Kopi</li>
                                       </h5>
                                     </div>
-                                    <div class="col-sm-6">
-                                      <h2
-                                        style="color: blue; font-size: 20px; text-align: right; align-item: right; padding: 10px 0px 0px 0px"
+                                    <div
+                                      class="col-sm-6"
+                                      style="text-align: right"
+                                    >
+                                      <button
+                                        class="tips-form"
+                                        @click="showModal7 = true"
                                       >
                                         Tips
-                                      </h2>
+                                      </button>
+                                      <!-- popup -->
+                                      <div v-if="showModal7 === true">
+                                        <transition name="model">
+                                          <div class="modal-mask">
+                                            <div class="modal-wrapper">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <!-- Modal Body -->
+                                                  <div class="modal-body">
+                                                    <div
+                                                      class="image-container"
+                                                    >
+                                                      <img
+                                                        style="
+                                                          width: 40px;
+                                                          height: 38.49px;
+                                                        "
+                                                        src="@/assets/checklist.png"
+                                                      />
+                                                    </div>
+
+                                                    <div class="kalimat">
+                                                      <div
+                                                        style="
+                                                          padding: 0% 0% 0% 12%;
+                                                          width: 85%;
+                                                        "
+                                                      >
+                                                        <p>
+                                                          Uraikan dalam sebuah
+                                                          kalimat : <br />
+                                                          <strong
+                                                            >Hal apa saja yang
+                                                            perlu diperhatikan
+                                                            agar hasilnya
+                                                            maksimal?</strong
+                                                          >
+                                                          <code
+                                                            style="color: red"
+                                                            ><strong
+                                                              >(Ambil dari
+                                                              Panduan Pramenulis
+                                                              5)</strong
+                                                            ></code
+                                                          >
+                                                        </p>
+                                                        <p>
+                                                          Ingat, sebuah kalimat
+                                                          harus memiliki subjek
+                                                          dan kata kerja dan
+                                                          harus mengekpresikan
+                                                          pemikiran yang
+                                                          lengkap.
+                                                        </p>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="tombol">
+                                                      <button
+                                                        class="ok"
+                                                        block
+                                                        @click="
+                                                          showModal7 = false
+                                                        "
+                                                      >
+                                                        OK
+                                                      </button>
+                                                    </div>
+
+                                                    <br />
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </transition>
+                                      </div>
                                     </div>
+
                                     <b-form-input
                                       v-model="dataForm.menulis"
                                       :state="validation"
@@ -470,6 +905,8 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Button OK -->
                 <div class="col-sm-12">
                   <div class="button3_tombol3" @click="isPage">
                     <button class="button3" type="submit">
@@ -537,7 +974,7 @@
     margin-top: -6px;
     margin-left: 25%;
     font-size: 28px;
-    font-family:  Poppins;
+    font-family: Poppins;
   }
   &_tombol2 {
     padding: 40px 0px 0px 0px;
@@ -566,7 +1003,7 @@
     align-items: center;
     color: #f1f1f1;
     font-size: 28px;
-    font-family:  Poppins;
+    font-family: Poppins;
   }
   &_tombol3 {
     padding: 60px 0px 0px 0px;
@@ -639,113 +1076,9 @@
   }
 }
 
-.progressbar1 {
-  counter-reset: step;
-  padding: 0px 0px 100px 0px;
-}
-.progressbar1 li {
-  list-style-type: none;
-  float: left;
-  width: 12.5%;
-  position: relative;
-  text-align: center;
-}
-.progressbar1 li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #ddd;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  color: white;
-}
-.progressbar1 li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  top: 15px;
-  left: -50%;
-  z-index: -1;
-}
-.progressbar1 li:first-child:after {
-  content: none;
-}
-.progressbar1 li {
-  color: #d4d4d4;
-}
-.progressbar1 li.active {
-  color: black;
-}
-.progressbar1 li.active:before {
-  // border-color: #738DED;
-  background-color: #738ded;
-}
-.progressbar1 li.active + li:after {
-  background-color: #738ded;
-}
-
 // Stepper 8-14
 .container2 {
   width: 100%;
-}
-.progressbar2 {
-  counter-reset: step2 7;
-  margin-right: 150px;
-  margin-left: -110px;
-  padding: 0px 0px 80px 0px;
-}
-.progressbar2 li {
-  list-style-type: none;
-  float: right;
-  width: 12.5%;
-  position: relative;
-  text-align: center;
-}
-.progressbar2 li:before {
-  content: counter(step2);
-  counter-increment: step2 1;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #ddd;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px auto;
-  border-radius: 50%;
-  background-color: #d4d4d4;
-  color: white;
-}
-.progressbar2 li:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  top: 15px;
-  left: -50%;
-  z-index: -1;
-}
-.progressbar2 li:last-child:after {
-  content: none;
-}
-.progressbar2 li.active {
-  color: #738ded;
-}
-.progressbar2 li {
-  color: #d4d4d4;
-}
-.progressbar2 li.active:before {
-  border-color: #738ded;
-}
-.progressbar2 li.active + li:after {
-  background-color: #738ded;
 }
 
 .content {
@@ -764,7 +1097,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family:  Poppins;
+          font-family: Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;
@@ -775,7 +1108,7 @@
         max-width: 750px;
         width: 750px;
         height: 240px;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 23px;
@@ -811,7 +1144,7 @@
     }
     &_header {
       margin-top: 70px;
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       margin-left: 30%;
@@ -834,120 +1167,101 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family:  Poppins;
+  font-family: Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;
 }
 
-.progressbar {
-  margin: 0 50px;
-  padding: 0;
-  counter-reset: step;
-  position: relative;
-  border: 2px solid #738ded;
-  border-left: none;
-  min-height: 110px;
-}
-
-.progressbar li {
-  list-style-type: none;
-  width: 16%;
-  /*float: left;*/
-  font-size: 16px;
-  position: absolute;
+// Stepper
+.steper {
   text-align: center;
-  text-transform: capitalize;
+  padding: 10px;
+  &_image {
+    width: 1000px;
+    height: auto;
+  }
 }
 
-/*First 4*/
-.progressbar li:nth-child(-n + 7) {
-  top: -46px;
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
 }
 
-/*Last 4*/
-.progressbar li:nth-last-child(-n + 7) {
-  bottom: -55px;
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
 }
 
-/*Left*/
-.progressbar li:nth-child(1),
-.progressbar li:nth-child(14) {
-  left: -45px;
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
 }
 
-/*Middle*/
-.progressbar li:nth-child(2),
-.progressbar li:nth-child(13) {
-  left: calc(15% - 45px);
-}
+/* end style Modal */
 
-/*Middle*/
-.progressbar li:nth-child(3),
-.progressbar li:nth-child(12) {
-  left: calc(30% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(4),
-.progressbar li:nth-child(11) {
-  left: calc(45% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(5),
-.progressbar li:nth-child(10) {
-  left: calc(60% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(6),
-.progressbar li:nth-child(9) {
-  left: calc(75% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(7),
-.progressbar li:nth-child(8) {
-  left: calc(90% - 45px);
-}
-.progressbar li:nth-last-child(-n + 7):before,
-.progressbar li:nth-child(-n + 7):after {
-  width: 32px;
-  height: 32px;
-  content: counter(step);
-  counter-increment: step;
-  line-height: 30px;
-  border: 2px solid #d4d4d4;
-  display: block;
+/* Style Isi Modal */
+.image-container {
   text-align: center;
-  margin: 0 auto 10px auto;
-  padding: 0;
-  border-radius: 50%;
-  background-color: #d4d4d4;
+  /* background: red; */
+}
+
+.kalimat {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
 }
 
-/*.progressbar li:first-child:after {
-  content: none;
-}*/
-
-.progressbar li.active {
-  color: white;
+.tombol {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
 }
 
-.progressbar li.active:before,
-.progressbar li.active:after {
-  border-color: #d4d4d4;
-  background: #738ded;
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.progressbar li.active + li:after {
-  background-color: dodgerblue;
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
 }
 
-.progressbar label {
-  color: black;
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
+
+// Tips Form
+.tips-form {
+  color: blue;
+  font-size: 20px;
+  border: none;
+  background: none;
+  font-family: Arial;
+  margin-top: 5px;
 }
 </style>

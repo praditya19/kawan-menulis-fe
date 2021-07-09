@@ -4,6 +4,7 @@ export default {
   name: "MenulisIsi",
   data() {
     return {
+      showModal: false,
       dataForm: {
         menulis: null,
       },

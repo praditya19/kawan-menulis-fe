@@ -4,7 +4,8 @@ export default {
   data() {
     return {
       paragraphTypes: [],
-      studentDataSession: {}
+      studentDataSession: {},
+      showModal: false
     };
   },
   mounted() {

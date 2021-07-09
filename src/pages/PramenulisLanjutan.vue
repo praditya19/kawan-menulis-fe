@@ -2,102 +2,25 @@
   <div class="content">
     <br />
     <div class="content_padding">
-      <div class="modal-content rounded-100">
-        <!-- popup -->
-        <b-modal id="bv-modal-example" hide-footer hide-header-close>
-          <div class="text-center">
-            <p>
-              <b>
-                Tambahkan Catatan Pra Menulis
-              </b>
-            </p>
-          </div>
-          <form ref="form" @submit.prevent="handleSubmit">
-            <b-form-textarea
-              id="name-input"
-              v-model="name"
-              :state="nameState"
-              rows="3"
-              no-resize
-            >
-            </b-form-textarea>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="ok2">
-                  <b-button
-                    class="mt-3"
-                    block
-                    @click="$bvModal.hide('bv-modal-example')"
-                    >Batal</b-button
-                  >
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="ok">
-                  <b-button class="mt-3" block @click="handleOk"
-                    >Tambah</b-button
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </b-modal>
-      </div>
       <div class="content_padding_header">
         <h1><b>Latihan Menulis</b></h1>
       </div>
-      <div class="content_padding_stemper">
-        <!-- Stepper -->
-        <div class="container-progress">
-          <ul class="progressbar">
-            <li class="active active-step">
-              <label>Topik</label>
-            </li>
-            <li class="active active-step">
-              <label>Pramenulis</label>
-            </li>
-            <li class="active active-step">
-              <label>Menulis Kalimat Utama</label>
-            </li>
-            <li>
-              <label>Pramenulis lanjutan</label>
-            </li>
-            <li>
-              <label>Menulis Isi</label>
-            </li>
-            <li>
-              <label>Pengorganisasian</label>
-            </li>
-            <li>
-              <label>Menulis Kesimpulan</label>
-            </li>
-            <li>
-              <label>Revisi</label>
-            </li>
-            <li>
-              <label>Style</label>
-            </li>
-            <li>
-              <label>Struktu Kalimat</label>
-            </li>
-            <li>
-              <label>Grammar</label>
-            </li>
-            <li>
-              <label>Pemeriksaan Akhir</label>
-            </li>
-            <li>
-              <label>Final</label>
-            </li>
-            <li>
-              <label>Cetak</label>
-            </li>
-          </ul>
-        </div>
-        <!-- End Stepper  -->
+
+      <!-- Stepper -->
+      <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/4.png" />
       </div>
+      <!-- End Stepper  -->
     </div>
-    <div style="background-color:#C5DCFF; height: 60px; width: 100%px;">
+
+    <!-- Jenis Paragraf -->
+    <div
+      style="
+        background-color: rgba(139, 181, 236, 0.1);
+        height: 60px;
+        width: 100%px;
+      "
+    >
       <div class="row">
         <div class="col-sm-4">
           <div class="content_padding_paragraf">
@@ -114,16 +37,14 @@
         </div>
       </div>
     </div>
+
+    <!-- Button Tips dan Kalimat -->
     <div class="container_bawah">
       <div class="content_padding_tulis">
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <button class="button">
-                <div class="button_tombol_margin">
-                  <b>Tips</b>
-                </div>
-              </button>
+              <b-button class="button">Tips</b-button>
             </div>
           </div>
           <div class="col-sm-10">
@@ -146,9 +67,7 @@
               </div>
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    ketik OK ketika anda siap untuk melanjutkan
-                  </p>
+                  <p>ketik OK ketika anda siap untuk melanjutkan</p>
                 </div>
               </div>
               <div class="col-sm-12">
@@ -161,6 +80,7 @@
                 </div>
               </div>
               <div class="col-sm-12">
+                <!-- Catatan PRa Menulis -->
                 <div
                   class="content_padding_tulis_right_paragraf_bawah"
                   style="margin-top: -50px; margin-bottom: -40px"
@@ -168,43 +88,196 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div
-                        style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
+                        style="
+                          background-color: #484c52;
+                          height: 48px;
+                          width: 240px;
+                          border-radius: 20px 20px 0px 0px;
+                        "
                       >
                         <div class="content_padding_tulis_catatan">
                           <h4><b>Catatan Pra Menulis</b></h4>
                         </div>
                       </div>
                     </div>
+                    <!-- Tambah -->
                     <div class="col-sm-2">
                       <div class="content_padding_tulis_catatan">
                         <div class="button3_tombol3">
                           <button
                             class="button3"
                             id="show-btn"
-                            @click="$bvModal.show('bv-modal-example')"
+                            @click="showModal = true"
                           >
                             <b>Tambah</b>
                           </button>
+                          <!-- popup -->
+                          <div v-if="showModal === true">
+                            <transition name="model">
+                              <div class="modal-mask">
+                                <div class="modal-wrapper">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <!-- Modal Body -->
+                                      <div class="modal-body">
+                                        <div class="image-container">
+                                          <img
+                                            style="width: 40px; height: 38.49px"
+                                            src="@/assets/checklist.png"
+                                          />
+                                        </div>
+
+                                        <div class="kalimat">
+                                          <div
+                                            style="
+                                              padding: 0% 0% 0% 12%;
+                                              width: 85%;
+                                            "
+                                          >
+                                            <p style="color:black;">
+                                              Tambahan Catatan Pra Menulis
+                                            </p>
+                                            <form>
+                                              <table>
+                                                <tr>
+                                                  <td>
+                                                    <input
+                                                      style="
+                                                        width: 350px;
+                                                        height: 130px;
+                                                      "
+                                                      type="text"
+                                                    />
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </form>
+                                          </div>
+                                        </div>
+
+                                        <div class="tombol">
+                                          <button
+                                            class="ok"
+                                            block
+                                            @click="showModal = false"
+                                          >
+                                            Batal
+                                          </button>
+                                          <button
+                                            class="ok2"
+                                            block
+                                            @click="showModal = false"
+                                          >
+                                            OK
+                                          </button>
+                                        </div>
+
+                                        <br />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </transition>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-3">
+                    <!-- Ubah -->
+                    <div class="col-sm-2">
                       <div class="content_padding_tulis_catatan">
                         <div class="button3_tombol3">
                           <button
-                            class="button3_button4"
-                            @click="$bvModal.show('bv-modal-example')"
+                            class="button3"
+                            id="show-btn"
+                            @click="showModal2 = true"
                           >
                             <b>Ubah</b>
                           </button>
+                          <!-- popup -->
+                          <div v-if="showModal2 === true">
+                            <transition name="model">
+                              <div class="modal-mask">
+                                <div class="modal-wrapper">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <!-- Modal Body -->
+                                      <div class="modal-body">
+                                        <div class="image-container">
+                                          <img
+                                            style="width: 40px; height: 38.49px"
+                                            src="@/assets/checklist.png"
+                                          />
+                                        </div>
+
+                                        <div class="kalimat">
+                                          <div
+                                            style="
+                                              padding: 0% 0% 0% 12%;
+                                              width: 85%;
+                                            "
+                                          >
+                                            <p style="color:black;">
+                                              Ubah Catatan Pra Menulis
+                                            </p>
+                                            <form>
+                                              <table>
+                                                <tr>
+                                                  <td>
+                                                    <input
+                                                      style="
+                                                        width: 350px;
+                                                        height: 130px;
+                                                      "
+                                                      type="text"
+                                                    />
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </form>
+                                          </div>
+                                        </div>
+
+                                        <div class="tombol">
+                                          <button
+                                            class="ok"
+                                            block
+                                            @click="showModal2 = false"
+                                          >
+                                            Batal
+                                          </button>
+                                          <button
+                                            class="ok2"
+                                            block
+                                            @click="showModal2 = false"
+                                          >
+                                            OK
+                                          </button>
+                                        </div>
+
+                                        <br />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </transition>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <!-- Cara membuat Kopi -->
                   <div
-                    style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
+                    style="
+                      background-color: #c1c8d3;
+                      width: 730px;
+                      padding: 13px;
+                      border-radius: 0px 0 30px 30px;
+                    "
                   >
-                    <div style="margin-left:30px; ">
+                    <div style="margin-left: 30px">
                       <b-form-group>
                         <div class="col-sm-12">
                           <div class="dua">
@@ -288,14 +361,14 @@
 
 <style lang="scss" scoped>
 // popup
-.modal-content {
-  -webkit-border-radius: 100px !important;
-  -moz-border-radius: 100px !important;
-  border-radius: 100px !important;
-  -webkit-border: 100px !important;
-  -moz-border: 100px !important;
-  border: 100px !important;
-}
+// .modal-content {
+//   -webkit-border-radius: 100px !important;
+//   -moz-border-radius: 100px !important;
+//   border-radius: 100px !important;
+//   -webkit-border: 100px !important;
+//   -moz-border: 100px !important;
+//   border: 100px !important;
+// }
 .ok {
   .mt-3 {
     // margin-bottom: 10px;
@@ -331,7 +404,7 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   h5 {
-    font-family:  Poppins;
+    font-family: Poppins;
   }
 }
 .button3 {
@@ -349,7 +422,7 @@
     font-size: 28px;
     align-items: center;
     font-size: 16px;
-    font-family:  Poppins;
+    font-family: Poppins;
   }
   &_button4 {
     background-color: #f1f7cc;
@@ -365,7 +438,7 @@
       padding: 0% 0% 0% 27%;
       color: #0a0808;
       align-items: center;
-      font-family:  Poppins;
+      font-family: Poppins;
       font-size: 16px;
     }
   }
@@ -414,53 +487,32 @@
   }
 }
 .button2:hover {
-  background-color: #3698da;
+  background-color: #0a4da3;
 }
 .button {
-  background-color: #228f28;
+  background-color: #00a279;
   border: none;
-  color: black;
+  color: #fff;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
   align-items: center;
-  padding: 17px 0px;
+  // padding: 17px 0px;
   border-radius: 19px;
-  display: flex;
+  // display: flex;
   max-width: 990px;
   width: 150px;
   height: 50px;
   margin-left: 45px;
-  &_catatan {
-    height: 45px;
-    max-width: 200px;
-    color: rgb(5, 4, 4);
-  }
   &_tombol {
     position: absolute;
     width: 190px;
     height: 100px;
     margin-left: -80px;
-    b {
-      color: #f1f1f1;
-      margin-left: 35px;
-    }
-    &_margin {
-      b {
-        text-align: center;
-        align-items: center;
-      }
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      align-items: center;
-      margin-left: 13%;
-    }
   }
 }
 .button:hover {
-  background-color: #43d643;
+  background-color: #00a279;
 }
 .content {
   overflow-x: hidden;
@@ -478,7 +530,7 @@
       &_catatan {
         color: #f1f1f1;
         h4 {
-          font-family:  Poppins;
+          font-family: Poppins;
           font-size: 20px;
           line-height: 24px;
           text-align: center;
@@ -488,7 +540,7 @@
       &_right {
         max-width: 750px;
         width: 750px;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 23px;
@@ -524,7 +576,7 @@
     }
     &_header {
       margin-top: 70px;
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       margin-left: 30%;
@@ -548,120 +600,101 @@
   margin: 100px auto;
   font-size: 16px;
   font-weight: bold;
-  font-family:  Poppins;
+  font-family: Poppins;
   color: white;
   margin-top: 50px;
   padding: 0;
 }
 
-.progressbar {
-  margin: 0 50px;
-  padding: 0;
-  counter-reset: step;
-  position: relative;
-  border: 2px solid #738ded;
-  border-left: none;
-  min-height: 110px;
-}
-
-.progressbar li {
-  list-style-type: none;
-  width: 16%;
-  /*float: left;*/
-  font-size: 16px;
-  position: absolute;
+// Stepper
+.steper {
   text-align: center;
-  text-transform: capitalize;
+  padding: 10px;
+  &_image {
+    width: 1000px;
+    height: auto;
+  }
 }
 
-/*First 4*/
-.progressbar li:nth-child(-n + 7) {
-  top: -46px;
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
 }
 
-/*Last 4*/
-.progressbar li:nth-last-child(-n + 7) {
-  bottom: -55px;
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
 }
 
-/*Left*/
-.progressbar li:nth-child(1),
-.progressbar li:nth-child(14) {
-  left: -45px;
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
 }
 
-/*Middle*/
-.progressbar li:nth-child(2),
-.progressbar li:nth-child(13) {
-  left: calc(15% - 45px);
-}
+/* end style Modal */
 
-/*Middle*/
-.progressbar li:nth-child(3),
-.progressbar li:nth-child(12) {
-  left: calc(30% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(4),
-.progressbar li:nth-child(11) {
-  left: calc(45% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(5),
-.progressbar li:nth-child(10) {
-  left: calc(60% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(6),
-.progressbar li:nth-child(9) {
-  left: calc(75% - 45px);
-}
-
-/*Right*/
-.progressbar li:nth-child(7),
-.progressbar li:nth-child(8) {
-  left: calc(90% - 45px);
-}
-.progressbar li:nth-last-child(-n + 7):before,
-.progressbar li:nth-child(-n + 7):after {
-  width: 32px;
-  height: 32px;
-  content: counter(step);
-  counter-increment: step;
-  line-height: 30px;
-  border: 2px solid #d4d4d4;
-  display: block;
+/* Style Isi Modal */
+.image-container {
   text-align: center;
-  margin: 0 auto 10px auto;
-  padding: 0;
-  border-radius: 50%;
-  background-color: #d4d4d4;
+  /* background: red; */
+}
+
+.kalimat {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
 }
 
-/*.progressbar li:first-child:after {
-  content: none;
-}*/
-
-.progressbar li.active {
-  color: white;
+.tombol {
+  // background: red;
+  text-align: center;
+  padding: 5px;
 }
 
-.progressbar li.active:before,
-.progressbar li.active:after {
-  border-color: #d4d4d4;
-  background: #738ded;
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.progressbar li.active + li:after {
-  background-color: dodgerblue;
+.ok2 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.progressbar label {
-  color: black;
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
 }
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
 </style>

@@ -4,6 +4,7 @@ export default {
     name: "kalimatUtama",
     data () {
       return{
+        showModal: false,
         kalimatUtamaPage1 : true,
         kalimatUtamaPage2 : false,
         kalimatUtamaPage3 : false,  
