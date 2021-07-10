@@ -44,7 +44,6 @@
         <div class="label2">
           <label for=""><strong>Topik</strong></label>
         </div>
-       <div @click="coba">test</div>
          <br> 
         <div class="tengah">
           <div class="pilih2">
@@ -113,7 +112,7 @@
         </div>
 
         <div class="mulai">
-          <b-button class="button-mulai" href="/topik2">Mulai</b-button>
+          <b-button class="button-mulai" href="/topik2" @click="handlesubmit">Mulai</b-button>
         </div>
       </div>
     </div>

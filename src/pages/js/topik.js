@@ -78,7 +78,7 @@ export default {
     },
 
     ...mapActions(["createStudentsActions"]),
-    coba() {
+    handlesubmit() {
       this.createStudentsActions({
         requestBody: {
           clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
@@ -88,7 +88,7 @@ export default {
         },
         success: (res) => {
           console.log(res);
-          // sessionStorage.setItem("student_actions", JSON.stringify(res.body.studentAction))
+          sessionStorage.setItem("student_actions", JSON.stringify(res.body.studentAction))
         },
         fail: (res) => {
           console.log(res);
