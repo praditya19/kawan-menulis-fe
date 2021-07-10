@@ -103,7 +103,7 @@
               </div>
               <div style="padding: 10px 0px 10px 0px">
                 <b-form-input
-                  v-model="dataForm.menulis"
+                  v-model="dataForm.menulisPage1"
                   :state="validation"
                   id="feedback-user"
                 ></b-form-input>
@@ -148,10 +148,16 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="index in topicDataSesion"
+                              :key="index"
+                            >
                               <h5>
                                 <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
+                                  &nbsp; &nbsp;{{
+                                    indexOf(index.resultMenulis)
+                                  }}
                                 </li>
                               </h5>
                             </div>

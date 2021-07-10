@@ -1,20 +1,15 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div>
-        <br /><br /><br /><br /><br />
+  <div class="col-md-12">
+    <div class="all">
+      <p class="head">Latihan Menulis</p>
 
-        <h1>Latihan Menulis</h1>
+      <!-- Stepper -->
+      <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
+      </div>
+      <!-- End Stepper  -->
 
-        <br />
-
-        <!-- Stepper -->
-        <div class="steper">
-          <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-        </div>
-        <!-- End Stepper  -->
-
-        <!-- <br /><br /><br /><br /><br /> -->
+      <div class="tengah">
         <div class="paragraf">
           <p>
             Sebelum menentukan topik harap memilih
@@ -22,7 +17,6 @@
             dahulu.
           </p>
         </div>
-        <!-- <br /> -->
 
         <div class="label1">
           <label><strong>Jenis Paragraf</strong></label>
@@ -30,7 +24,7 @@
 
         <div class="pilih">
           <select v-model="paragraphSelect">
-            <option value="" disabled hidden>Pilih Jenis Paragraph</option>
+            <option value="" disabled hidden> Pilih Jenis Paragraph</option>
             <option
               v-for="(paragraphTypesList, index) in paragraphTypes"
               :key="index"
@@ -39,81 +33,73 @@
             >
           </select>
         </div>
-        <br />
 
         <div class="label2">
           <label for=""><strong>Topik</strong></label>
         </div>
-         <br> 
-        <div class="tengah">
-          <div class="pilih2">
-            <select
-              v-model="topicsSelect"
-              v-bind:disabled="paragraphSelect.length === 0 ? true : false"
+        <div class="pilih2">
+          <select
+            v-model="topicsSelect"
+            v-bind:disabled="paragraphSelect.length === 0 ? true : false"
+          >
+            <option value="" disabled hidden>Pilih Jenis Topik</option>
+            <option
+              v-for="(topics, index) in topicsTypes"
+              :key="index"
+              :value="topics.id"
+              >{{ topics.name }}</option
             >
-              <option value="" disabled hidden>Pilih Jenis Topik</option>
-              <option
-                v-for="(topics, index) in topicsTypes"
-                :key="index"
-                :value="topics.id"
-                >{{ topics.name }}</option
-              >
-            </select>
+          </select>
 
-            <!-- Button Tips -->
-            <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">Tips</b-button>
+          <!-- Button Tips -->
+          <div class="button_tombol">
+            <b-button class="button" @click="showModal = true">Tips</b-button>
 
-              <!-- popup -->
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+            <!-- popup -->
+            <div v-if="showModal === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <!-- <div class="modal-body"> -->
+                        <div class="image-container">
+                          <img
+                            style="width: 40px;height:38.49px;"
+                            src="@/assets/checklist.png"
+                          />
+                        </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Topik ini akan memberimu kesempatan menulis
-                                  cara melakukan sesuatu yang kamu kuasai.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
+                        <div class="kalimat">
+                          <div style="padding: 10px 0px 0px 0px; width: 100%;">
+                            <p>
+                              Topik ini akan memberimu kesempatan menulis cara
+                              melakukan sesuatu yang kamu kuasai.
+                            </p>
                           </div>
                         </div>
+
+                        <div class="tombol">
+                          <button class="ok" block @click="showModal = false">
+                            OK
+                          </button>
+                        </div>
+                        <!-- </div> -->
                       </div>
                     </div>
                   </div>
-                </transition>
-              </div>
+                </div>
+              </transition>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="mulai">
-          <b-button class="button-mulai" href="/topik2" @click="handlesubmit">Mulai</b-button>
-        </div>
+      <div class="mulai">
+        <b-button class="button-mulai" href="/topik2" @click="handlesubmit"
+          >Mulai</b-button
+        >
       </div>
     </div>
   </div>
@@ -122,23 +108,37 @@
 <script src="./js/topik.js"></script>
 
 <style lang="scss" scoped>
-h1 {
-  text-align: center;
-  font-family: Poppins;
-  font-weight: 700;
-  // background: red;
+.all {
+  padding-top: 120px;
 }
-.p {
-  margin-top: 1px;
+
+.head {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 128%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
 }
 
 // Stepper
 .steper {
   text-align: center;
-  padding: 10px;
+  padding: 10px 200px 0px 200px;
   &_image {
-    width: 1000px;
+    width: 100%;
     height: auto;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
@@ -149,96 +149,111 @@ h1 {
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  text-align: center;
-  // margin-top: -150px;
-  // background: red;
+  @media (max-width: 768px) {
+    font-size: 17px;
+    width: 100%;
+  }
+}
+
+.tengah {
+  padding: 70px 200px 30px 250px;
+  @media (max-width: 768px) {
+    padding: 10px 30px 30px 30px;
+    width: 100%;
+  }
 }
 
 // Jenis Paragraf
 .label1 {
-  // background: red;
   label {
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    margin-left: 185px;
+  }
+  @media screen and (max-width: 768px) {
+    label {
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+    }
   }
 }
 
 // Ekposisi
 .pilih {
-  // background: red;
   margin-top: 1px;
-}
-select {
-  width: 300px;
-  border: 1 px;
-  background: #f4f4f4;
-  font-size: 18px;
-  font-family: Poppins;
-  padding: 5px;
-  // margin-right: 300px;
-  margin-left: 185px;
-  // margin-right: 1%;
-  border-radius: 4px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  select {
+    width: 40%;
+    background: #f4f4f4;
+    font-size: 18px;
+    font-family: Poppins;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  @media screen and (max-width: 768px) {
+    select {
+      font-size: 15px;
+      width: auto;
+    }
+  }
 }
 
 // Topik
 .label2 {
-  // background: red;
+  margin-top: 50px;
   label {
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-    margin-left: 185px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-top: 30px;
+    label {
+      font-size: 15px;
+    }
   }
 }
 
+// form ke 2
 .pilih2 {
-  // background: red;
+  display: flex;
   margin-top: 1px;
-
   select {
-    width: 800px;
-    border: 1 px;
+    width: 100%;
     background: #f4f4f4;
     font-size: 18px;
     font-family: Poppins;
-    padding: 5px;
-    margin-left: 185px;
+    padding: 10px;
     border-radius: 4px;
+  }
+  @media screen and (max-width: 768px) {
+    select {
+      font-size: 15px;
+      width: 70% auto;
+    }
   }
 }
 
+// button tips
 .button_tombol {
-  // background: red;
-  position: absolute;
-  height: 50px;
-  width: 140px;
-  left: 1075px;
-  top: 553px;
+  padding-left: 20px;
+  .button {
+    background-color: #00a279;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100px;
+  }
 }
 
-.button {
-  background-color: #00a279;
-  height: 40px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 18px;
-  margin-top: 5px;
-  width: 115px;
-  margin-left: 10px;
-  margin-bottom: 5px;
-}
+// button mulai
 .mulai {
-  // background: red;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 40px;
   .button-mulai {
     background-color: #0a4da3;
     border: none;
@@ -257,23 +272,16 @@ select {
 }
 
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
 
 .modal-content {
   background: #e8f1fd;
-  width: 500px;
+  width: 100%;
   border-radius: 34px;
+  padding: 10px 0px 10px 0px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
 /* end style Modal */
 
 /* Style Isi Modal */
@@ -323,7 +331,10 @@ select {
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 
 /* End Background Belakang Modal */

@@ -1,53 +1,40 @@
 <template>
-  <div class="content">
+  <div class="all">
+    <!-- Judul -->
+    <div class="content-satu">
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
+      </div>
+    </div>
     <br />
-    <div class="content_padding">
-      <div class="content_padding_header">
-        <h1><b>Latihan Menulis</b></h1>
-      </div>
-
-      <!-- Stepper -->
+    <!-- Stepper -->
+    <div class="content-dua">
       <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-      </div>
-      <!-- End Stepper  -->
-    </div>
-    <div
-      style="
-        background-color: rgba(139, 181, 236, 0.1);
-        height: 60px;
-        width: 100%px;
-      "
-    >
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="content_padding_paragraf">
-            <p><b>Jenis Paragraf: </b>Deskripsi</p>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="content_padding_paragraf_right">
-            <p>
-              <b>Topik: </b>Apakah kamu punya kemahiran dalam membuat sesuatu?
-              Coba sebutkan satu.
-            </p>
-          </div>
-        </div>
+        <img class="steper_image" src="@/assets/icon_stepper/5.png" alt="" />
       </div>
     </div>
-
-    <!-- Screen1  -->
-    <div class="container_bawah">
-      <div class="content_padding_tulis" v-if="menulisIsi === true">
+    <br />
+    <!-- Jenis Paragraf -->
+    <div class="content-tiga">
+      <div class="jenis">
+        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+        <p class="jenis_topik">
+          <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
+          sesuatu? Coba sebutkan satu.
+        </p>
+      </div>
+    </div>
+    <br />
+    <!-- Tips dan Kalimat -->
+    <!-- Screen 1 -->
+    <div class="content-empat" v-if="menulisIsi === true">
+      <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-2">
-            <div class="button_tombol">
-              <button class="button" @click="showModal = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </button>
-              <!-- popup -->
+            <div class="tips">
+              <b-button class="tips_judul" @click="showModal = true">
+                Tips
+              </b-button>
               <div v-if="showModal === true">
                 <transition name="model">
                   <div class="modal-mask">
@@ -63,7 +50,7 @@
                               />
                             </div>
 
-                            <div class="kalimat">
+                            <div class="kalimat2">
                               <div style="padding: 0% 0% 0% 12%; width: 85%">
                                 <p>
                                   Sekarang Anda akan mengubah kata dan frasa
@@ -81,7 +68,6 @@
                                 OK
                               </button>
                             </div>
-
                             <br />
                           </div>
                         </div>
@@ -92,122 +78,85 @@
               </div>
             </div>
           </div>
-          <!-- Kalimat Samping Button Tips -->
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Anda sekarang siap untuk menggunakan ide-ide dari daftar
-                    pre-writing Anda untuk membantu Anda menulis isi paragraf
-                    Anda.
-                  </p>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Pada layar berikutnya Anda akan memilih ide satu persatu
-                    untuk ditulis dalam sebuah kalimat. Anda akan mencentang
-                    kotak untuk memilih ide.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Button OK -->
-              <div class="col-sm-12">
-                <div class="button2_tombol2" @click="menulisIsiNext">
-                  <button class="button2" type="submit">
-                    <b>OK</b>
-                  </button>
-                </div>
-              </div>
+          <div class="col-sm-8">
+            <div class="kalimat">
+              <p class="kalimat_p">
+                Anda sekarang siap untuk menggunakan ide-ide dari daftar
+                pre-writing Anda untuk membantu Anda menulis isi paragraf Anda.
+              </p>
+              <p class="kalimat_p">
+                Pada layar berikutnya Anda akan memilih ide satu persatu untuk
+                ditulis dalam sebuah kalimat. Anda akan mencentang kotak untuk
+                memilih ide.
+              </p>
             </div>
-            <br />
+          </div>
 
-            <!-- Catatan  -->
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 120px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div
-                      style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Pra Menulis</b></h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    background-color: #c1c8d3;
-                    width: 730px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-                >
-                  <div style="margin-left: 30px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div class="dua">
-                              <h5>
-                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>&nbsp; &nbsp;Cara membuat Kopi</li>
-                              </h5>
-                            </div>
-                          </ul>
-                        </div>
-                      </div>
-                    </b-form-group>
-                  </div>
-                </div>
-              </div>
+          <!-- Button OK -->
+          <div class="content-lima" @click="menulisIsiNext">
+            <div class="tombol">
+              <button class="ok" type="submit">OK</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <br />
+    <!-- Catatan Pra Menulis -->
+    <div class="content-enam" v-if="menulisIsi === true">
+      <div class="border">
+        <div class="border_catatan">
+          <h4><b>Catatan Pra Menulis</b></h4>
+        </div>
+      </div>
+      <div class="border_list">
+        <div style="margin-left: 30px">
+          <b-form-group>
+            <div>
+              <div class="col-sm-12">
+                <ul>
+                  <div class="dua">
+                    <h5>
+                      <li>&nbsp; &nbsp;Cara membuat Kopi</li>
+                    </h5>
+                  </div>
+                  <div class="dua">
+                    <h5>
+                      <li>&nbsp; &nbsp;Cara membuat Kopi</li>
+                    </h5>
+                  </div>
+                  <div class="dua">
+                    <h5>
+                      <li>&nbsp; &nbsp;Cara membuat Kopi</li>
+                    </h5>
+                  </div>
+                  <div class="dua">
+                    <h5>
+                      <li>&nbsp; &nbsp;Cara membuat Kopi</li>
+                    </h5>
+                  </div>
+                  <div class="dua">
+                    <h5>
+                      <li>&nbsp; &nbsp;Cara membuat Kopi</li>
+                    </h5>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </b-form-group>
+        </div>
+      </div>
+    </div>
 
-      <!-- Screen 2 -->
-      <div class="content_padding_tulis" v-if="menulisIsiPage2 === true">
+    <!-- Screen 2 -->
+    <div class="content-empat" v-if="menulisIsiPage2 === true">
+      <div class="col-sm-12">
         <div class="row">
           <div class="col-sm-2">
-            <div class="button_tombol">
-              <button class="button" @click="showModal2 = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </button>
-              <!-- popup -->
+            <div class="tips">
+              <b-button class="tips_judul" @click="showModal2 = true">
+                Tips
+              </b-button>
               <div v-if="showModal2 === true">
                 <transition name="model">
                   <div class="modal-mask">
@@ -223,7 +172,7 @@
                               />
                             </div>
 
-                            <div class="kalimat">
+                            <div class="kalimat2">
                               <div style="padding: 0% 0% 0% 12%; width: 85%">
                                 <p>
                                   Tinjau daftar pramenulis Anda dan pilih ide
@@ -247,7 +196,6 @@
                                 OK
                               </button>
                             </div>
-
                             <br />
                           </div>
                         </div>
@@ -258,33 +206,26 @@
               </div>
             </div>
           </div>
-
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Centang kotak untuk memilih ide untuk ditulis dalam sebuah
-                    kalimat.
-                  </p>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Untuk isi paragraf, pilih dan tulis setidaknya empat ide.
-                  </p>
-                </div>
-              </div>
-              <div class="content_padding_tulis_right_paragraf">
-                <p>
-                  Catatan: Kalimat topik Anda telah ditempatkan di
-                  <b>Catatan PraMenulis-Menulis</b>
-                </p>
-              </div>
+          <div class="col-sm-8">
+            <div class="kalimat">
+              <p class="kalimat_p">
+                Centang kotak untuk memilih ide untuk ditulis dalam sebuah
+                kalimat.
+              </p>
+              <br />
+              <p class="kalimat_p">
+                Untuk isi paragraf, pilih dan tulis setidaknya empat ide.
+              </p>
+              <br />
+              <p class="kalimat_p">
+                Catatan: Kalimat topik Anda telah ditempatkan di
+                <b>Catatan PraMenulis-Menulis</b>
+              </p>
             </div>
-            <br />
+          </div>
 
+          <!-- Catatan -->
+          <div class="content-tujuh" v-if="menulisIsiPage2 === true">
             <!-- Form Centang -->
             <ValidationObserver ref="observer">
               <b-form @submit.stop.prevent>
@@ -293,20 +234,9 @@
                     class="content_padding_tulis_right_paragraf_bawah2"
                     style="padding: 0px 0px 20px 0px"
                   >
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div
-                          style="
-                            background-color: #484c52;
-                            height: 48px;
-                            width: 350px;
-                            border-radius: 20px 20px 0px 0px;
-                          "
-                        >
-                          <div class="content_padding_tulis_catatan">
-                            <h4><b>Catatan Pra Menulis - menulis</b></h4>
-                          </div>
-                        </div>
+                    <div class="border">
+                      <div class="border_catatan">
+                        <h4><b>Catatan Pra Menulis</b></h4>
                       </div>
                     </div>
 
@@ -363,7 +293,7 @@
                                                       />
                                                     </div>
 
-                                                    <div class="kalimat">
+                                                    <div class="kalimat3">
                                                       <div
                                                         style="
                                                           padding: 0% 0% 0% 12%;
@@ -375,8 +305,8 @@
                                                             font-size: 16px;
                                                           "
                                                         >
-                                                          Uraikan dalam sebuah
-                                                          kalimat : <br />
+                                                          Uraikan dalam sebuah 3
+                                                          : <br />
                                                           <strong
                                                             >Mengapa kamu dapat
                                                             mahir melakukan hal
@@ -478,7 +408,7 @@
                                                       />
                                                     </div>
 
-                                                    <div class="kalimat">
+                                                    <div class="kalimat3">
                                                       <div
                                                         style="
                                                           padding: 0% 0% 0% 12%;
@@ -596,7 +526,7 @@
                                                       />
                                                     </div>
 
-                                                    <div class="kalimat">
+                                                    <div class="kalimat3">
                                                       <div
                                                         style="
                                                           padding: 0% 0% 0% 12%;
@@ -712,7 +642,7 @@
                                                       />
                                                     </div>
 
-                                                    <div class="kalimat">
+                                                    <div class="kalimat3">
                                                       <div
                                                         style="
                                                           padding: 0% 0% 0% 12%;
@@ -824,7 +754,7 @@
                                                       />
                                                     </div>
 
-                                                    <div class="kalimat">
+                                                    <div class="kalimat3">
                                                       <div
                                                         style="
                                                           padding: 0% 0% 0% 12%;
@@ -905,283 +835,153 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Button OK -->
-                <div class="col-sm-12">
-                  <div class="button3_tombol3" @click="isPage">
-                    <button class="button3" type="submit">
-                      <b>OK</b>
-                    </button>
-                  </div>
-                </div>
               </b-form>
             </ValidationObserver>
+          </div>
+          <!-- Button OK -->
+          <div class="content-lima" @click="isPage">
+            <div class="tombol">
+              <button class="ok" type="submit">OK</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <br />
   </div>
 </template>
 
 <script src="./js/menulisIsi.js" />
 
 <style lang="scss" scoped>
-//popup
-.modal-override {
-  background: #0008 !important;
-  border-radius: 50px 50px 50px 50px !important;
-  padding: 10px;
-}
-.ok {
-  // background: red;
-
-  .mt-3 {
-    // margin-bottom: 10px;
-    background: #0a4da3;
-    margin: 0px 0px 5px 180px;
-    border-radius: 39px;
-    width: 108px;
-  }
-}
-// icon checklist
-.image-container {
-  width: 470px;
-  text-align: center;
-  // background: red;
-}
-
-.button2 {
-  background-color: #0a4da3;
-  border: none;
-  color: rgb(243, 237, 237);
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: flex-start;
-  padding: 17px 10px;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  max-width: 990px;
-  width: 130px;
-  height: 55px;
-  left: calc(50% - 190px / 2 + 87px);
-  top: -10px;
-  margin-left: 200px;
-  b {
-    padding: 0% 3% 0% 3%;
-    color: #f1f1f1;
-    margin-top: -6px;
-    margin-left: 25%;
-    font-size: 28px;
-    font-family: Poppins;
-  }
-  &_tombol2 {
-    padding: 40px 0px 0px 0px;
-    left: 300px;
-    width: 190px;
-    height: 200px;
-    margin-left: 0px;
-  }
-}
-.button2:hover {
-  background-color: #4e65e7;
-}
-.button3 {
-  background-color: #0a4da3;
-  border: none;
-  color: rgb(243, 237, 237);
-  text-decoration: none;
-  align-items: center;
-  border-radius: 30px;
-  max-width: 990px;
-  width: 130px;
-  height: 55px;
-  left: calc(50% - 190px / 2 + 87px);
-  margin-left: 200px;
-  b {
-    align-items: center;
-    color: #f1f1f1;
-    font-size: 28px;
-    font-family: Poppins;
-  }
-  &_tombol3 {
-    padding: 60px 0px 0px 0px;
-    margin-left: 13%;
-    margin-bottom: -70px;
-  }
-}
-.button3:hover {
-  background-color: #4e65e7;
-}
-.dua {
-  padding: 10px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-.button {
-  background-color: #228f28;
-  border: none;
-  color: black;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: center;
-  padding: 17px 0px;
-  border-radius: 19px;
-  display: flex;
-  max-width: 990px;
-  width: 150px;
-  height: 50px;
-  margin-left: 45px;
-  &_catatan {
-    height: 45px;
-    max-width: 300px;
-    color: rgb(5, 4, 4);
-  }
-  &_tombol {
-    padding: 25px 0px 0px 0px;
-    position: absolute;
-    width: 190px;
-    height: 100px;
-    margin-left: -80px;
-    b {
-      color: #f1f1f1;
-      margin-left: 100%;
-    }
-    &_margin {
-      b {
-        text-align: center;
-        align-items: center;
-      }
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      align-items: center;
-      margin-left: 13%;
-    }
-  }
-}
-.button:hover {
-  background-color: #43d643;
-}
-// Stepper 1 -7
-.container {
-  width: 100%;
-  &_bawah {
-    padding: 20px 0px 180px 0px;
-    margin-left: 17%;
-  }
-}
-
-// Stepper 8-14
-.container2 {
-  width: 100%;
-}
-
-.content {
-  width: 100%;
-  height: 100%;
+// all
+.all {
   overflow-x: hidden;
-  @media screen and (max-width: 990) {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
-  &_padding {
-    padding: 5px 0px;
-    &_tulis {
-      padding: 15px 0px 10px 0px;
-      &_catatan {
-        color: #f1f1f1;
-        h4 {
-          font-family: Poppins;
-          font-size: 20px;
-          line-height: 24px;
-          text-align: center;
-          padding: 12px 0px 8px 0px;
-        }
-      }
-      &_right {
-        max-width: 750px;
-        width: 750px;
-        height: 240px;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 23px;
-        line-height: 30px;
-        margin-left: -30px;
-        &_paragraf {
-          padding: 20px 0px 0px 0px;
-          label {
-            font: 1rem "Fira Sans", sans-serif;
-          }
-          input {
-            margin: 0.4rem;
-          }
-          &_bawah {
-            margin-bottom: -90px;
-          }
-        }
-      }
-    }
-    &_paragraf {
-      padding: 15px 0px 10px 0px;
-      margin-left: 40%;
-      p {
-        font-size: 17px;
-      }
-      &_right {
-        padding: 15px 0px 10px 0px;
-        margin-left: 10%;
-        p {
-          font-size: 17px;
-        }
-      }
-    }
-    &_header {
-      margin-top: 70px;
-      font-family: Poppins;
-      font-style: normal;
-      font-weight: bold;
-      margin-left: 30%;
-      h1 {
-        font-weight: bolder;
-        font-size: 47px;
-        margin-left: 10%;
-      }
-    }
-    &_stemper {
-      padding: 20px;
-      align-items: center;
-      margin-left: 20px;
-    }
-  }
 }
-// Stepper 1 -7
 
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
+// Judul
+.content-satu {
+  //   background: red;
+  margin-top: 120px;
 }
+
+.judul {
+  font-family: Poppins;
+  font-size: 50px;
+  line-height: 65px;
+  font-weight: 700;
+  text-align: center;
+}
+// End Judul
 
 // Stepper
+// .content-dua {
+//   //   background: red;
+// }
+
 .steper {
   text-align: center;
-  padding: 10px;
   &_image {
     width: 1000px;
-    height: auto;
+    text-align: center;
   }
 }
+// End Stepper
+
+// Jenis Paragraf
+.jenis {
+  display: flex;
+  max-width: 1440px;
+  height: 49px;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  &_paragraf {
+    padding: 11px 0px 0px 110px;
+  }
+  &_topik {
+    padding: 11px 0px 0px 70px;
+  }
+}
+// End Jenis Paragraf
+
+// Tips dan Kalimat
+// .content-empat {
+//   //   background: red;
+//   // margin-left: -100px;
+// }
+
+.tips {
+  //   background: skyblue;
+  text-align: right;
+  margin: 5px;
+  &_judul {
+    background-color: #00a279;
+    border: none;
+    width: 98px;
+    height: 32px;
+    border-radius: 10px;
+    margin: 5px;
+  }
+}
+
+.kalimat {
+  //   background: greenyellow;
+  &_p {
+    font-size: 20px;
+    margin: 5px;
+  }
+}
+// end Tips dan Kalimat
+
+// Tombol OK
+// .content-lima {
+//   //   background: red;
+// }
+
+.tombol {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+// End Tombol OK
+
+// Catatan Pra Menulis
+.content-enam {
+  //   background: red;
+  margin-left: 230px;
+}
+
+.border {
+  background-color: #484c52;
+  height: 42px;
+  width: 238px;
+  border-radius: 20px 20px 0px 0px;
+  border: none;
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  &_list {
+    background-color: #c1c8d3;
+    width: 730px;
+    padding: 13px;
+    border-radius: 0px 0 30px 30px;
+  }
+}
+// End Catatan Pramenulis
 
 /* Style Modal */
 .modal-dialog {
@@ -1209,7 +1009,7 @@
   /* background: red; */
 }
 
-.kalimat {
+.kalimat2 {
   font-family: Poppins;
   font-size: 16px;
   text-align: center;
@@ -1217,20 +1017,12 @@
   /* background: red; */
 }
 
-.tombol {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
-.ok {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
+.kalimat3 {
   font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
 }
 
 /* end style isi modal */
@@ -1255,6 +1047,7 @@
 
 /* End Background Belakang Modal */
 
+//
 // Tips Form
 .tips-form {
   color: blue;
@@ -1264,4 +1057,11 @@
   font-family: Poppins;
   margin-top: 5px;
 }
+
+// content tujuh
+.content-tujuh {
+  margin-left: 230px;
+  margin-top: 20px;
+}
+// end content tujuh
 </style>

@@ -1,36 +1,39 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "Menulis Kesimpulan",
+  name: "MenulisIsi",
   data() {
     return {
       showModal: false,
+      showModal2: false,
+      showModal3: false,
       dataForm: {
         menulis: null,
       },
-      menulisKesimpulan1: true,
-      menulisKesimpulan2: false,
-      menulisKesimpulan3: false,
+      menuliskesimpulanPage1: true,
+      menuliskesimpulanPage2: false,
+      menuliskesimpulanPage3: false,
     };
   },
+
   methods: {
-    menulisKesimpulan1Next() {
-      this.menulisKesimpulan2 = true;
-      if (this.menulisKesimpulan2 === true) {
-        this.menulisKesimpulan1 = false;
+    menuliskesimpulan1Next() {
+      this.menuliskesimpulanPage2 = true;
+      if (this.menuliskesimpulanPage2 === true) {
+        this.menuliskesimpulanPage1 = false;
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
     },
-    menulisKesimpulan2Next() {
-      this.menulisKesimpulan3 = true;
-      if (this.menulisKesimpulan3 === true) {
-        this.menulisKesimpulan2 = false;
+    menuliskesimpulan2Next() {
+      this.menuliskesimpulanPage3 = true;
+      if (this.menuliskesimpulanPage3 === true) {
+        this.menuliskesimpulanPage2 = false;
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
     },
-    menulisKesimpulan3Next() {
+    menuliskesimpulan3Next() {
       alert("end");
     },
     validation() {

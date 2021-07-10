@@ -1175,7 +1175,7 @@
         &_catatan2 {
           color: #454b56;
           h4 {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Poppins;
             font-size: 20px;
             line-height: 24px;
             text-align: center;

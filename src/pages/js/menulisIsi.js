@@ -5,6 +5,12 @@ export default {
   data() {
     return {
       showModal: false,
+      showModal2: false,
+      showModal3: false,
+      showModal4: false,
+      showModal5: false,
+      showModal6: false,
+      showModal7: false,
       dataForm: {
         menulis: null,
       },
@@ -29,7 +35,7 @@ export default {
       }
     },
     validateDot(menulis) {
-      const checking = `${menulis}.`;
+      const checking = `${menulis}`;
       if (checking === menulis) {
         return true;
       } else {
