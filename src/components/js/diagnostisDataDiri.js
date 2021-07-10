@@ -6,12 +6,12 @@ export default {
   data() {
     return {
       user: {
-        namaLengkap: "",
-        email: "",
-        prodi: "",
-        nim: "",
-        clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
-        clientSecret: "27e78980e2419b308c86559ef0fb0105",
+        namaLengkap: null,
+        email: null,
+        prodi: null,
+        nim: null,
+        clientId: null,
+        clientSecret: null,
       },
     };
   },
@@ -29,10 +29,14 @@ export default {
             email: this.user.email,
             prodi: this.user.prodi,
             nim: this.user.nim,
-            clientId: this.user.clientId,
-            clientSecret: this.user.clientSecret,
+            clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+            clientSecret: "27e78980e2419b308c86559ef0fb0105",
           },
-          success: () => {
+          success: (res) => {
+            sessionStorage.setItem(
+              "student_diagnostis-data-diri",
+              JSON.stringify(res.data.student)
+            );
             this.$router.push("/diagnostik-question");
             window.location.reload();
           },
@@ -40,18 +44,19 @@ export default {
             console.log(res);
           },
         });
-      }
-    },
-    validateForm() {
-      if (
-        this.user.namaLengkap === "" ||
-        this.user.email === "" ||
-        this.user.prodi === "" ||
-        this.user.nim === ""
-      ) {
+      } else {
         return false;
       }
-      return true;
+    },
+    validEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    validateForm() {
+      if (this.user) {
+        return true;
+      }
+      return false;
     },
   },
   computed: {
