@@ -8,5 +8,6 @@ const config = {
         question: `${BASE_PATH}questions`,
         paragraphtypes: `${BASE_PATH}paragraphtypes`,
         scores: `${BASE_PATH}scores`,
+        studentactions: `${BASE_PATH}studentactions`
     }}
 export default config

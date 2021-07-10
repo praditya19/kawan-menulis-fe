@@ -15,6 +15,8 @@ import MenulisIsi from "@/pages/MenulisIsi";
 import PramenulisLanjutan from "@/pages/PramenulisLanjutan";
 import KalimatUtama from "@/pages/KalimatUtama";
 import PraMenulis from "@/pages/PraMenulis";
+import MenulisKesimpulan from "@/pages/MenulisKesimpulan";
+import Pengorganisasian from "@/pages/Pengorganisasian";
 
 Vue.use(Router);
 
@@ -123,6 +125,20 @@ let router = new Router({
       name: "PraMenulis",
       components: {
         default: PraMenulis,
+      },
+    },
+    {
+      path: "/menulis-kesimpulan",
+      name: "MenulisKesimpulan",
+      components: {
+        default: MenulisKesimpulan,
+      },
+    },
+    {
+      path: "/pengorganisasian",
+      name: "Pengorganisasian",
+      components: {
+        default: Pengorganisasian,
       },
     },
   ],

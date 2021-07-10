@@ -44,7 +44,8 @@
         <div class="label2">
           <label for=""><strong>Topik</strong></label>
         </div>
-        <!-- <br> -->
+       <div @click="coba">test</div>
+         <br> 
         <div class="tengah">
           <div class="pilih2">
             <select
@@ -55,7 +56,7 @@
               <option
                 v-for="(topics, index) in topicsTypes"
                 :key="index"
-                :value="topicsTypes.id"
+                :value="topics.id"
                 >{{ topics.name }}</option
               >
             </select>
@@ -112,9 +113,7 @@
         </div>
 
         <div class="mulai">
-          <router-link to="topik2" type="button" class="button-mulai"
-            >Mulai</router-link
-          >
+          <b-button class="button-mulai" href="/topik2">Mulai</b-button>
         </div>
       </div>
     </div>

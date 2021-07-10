@@ -1,14 +1,13 @@
 <template>
-  <div class="content">
-    <br />
-    <div class="content_padding">
-      <div class="content_padding_header">
-        <h1><b>Latihan Menulis</b></h1>
-      </div>
-      <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/2.png" />
-      </div>
+  <div class="content_padding">
+    <br /><br />
+    <div class="content_padding_header">
+      <h1><b>Latihan Menulis</b></h1>
     </div>
+    <div class="steper">
+      <img class="steper_image" src="@/assets/icon_stepper/7.png" />
+    </div>
+
     <div
       style="background-color:rgba(139, 181, 236, 0.1); height: 60px; width: 100%px;"
     >
@@ -21,15 +20,14 @@
         <div class="col-sm-8">
           <div class="content_padding_paragraf_right">
             <p>
-              <b>Topik: </b>Topik: Apakah kamu punya kemahiran dalam membuat
-              sesuatu? Coba sebutkan satu.
+              <b>Topik: </b>Apakah kamu punya kemahiran dalam membuat sesuatu?
+              Coba sebutkan satu.
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Screen1 -->
     <div class="container_bawah">
       <div class="content_padding_tulis" v-if="pramenulisPage1 === true">
         <div class="row">
@@ -59,11 +57,10 @@
                             <div class="kalimat">
                               <div style="padding: 0% 0% 0% 12%; width: 85%;">
                                 <p>
-                                  Contoh:<br />
-                                  Minuman/makanan kesukaan<br />
-                                  Aktifasi sehari-hari<br />
-                                  Bagian dari pekerjaan<br />
-                                  Hobi
+                                  Kalimat utama memperkenalkan topik.<br />
+                                  Kalimat utama memperkenalkan topik. Kalimat
+                                  penutup menyatakan kembali dengan<br />
+                                  kata-kata yang berbeda.<br />
                                 </p>
                               </div>
                             </div>
@@ -94,25 +91,10 @@
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
                   <p>
-                    Mengapa kamu dapat mahir melakukan hal tersebut?
-                  </p>
-                  <p>
-                    Gunakan kata atau klausa sederhana
+                    Sekarang Anda siap untuk menyimpulkan paragraf Anda. Kalimat
+                    penutup merangkum apa yang telah Anda tulis.
                   </p>
                 </div>
-              </div>
-              <div style="padding: 10px 0px 10px 0px">
-                <b-form-input
-                  v-model="dataForm.menulis"
-                  :state="validation"
-                  id="feedback-user"
-                ></b-form-input>
-                <b-form-invalid-feedback :state="validation">
-                  Your user ID must be 5-12 characters long.
-                </b-form-invalid-feedback>
-                <b-form-valid-feedback :state="validation">
-                  Looks Good.
-                </b-form-valid-feedback>
               </div>
 
               <div class="col-sm-12">
@@ -135,23 +117,50 @@
                       style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Pra Menulis</b></h4>
+                        <h4><b>Catatan Paragraf</b></h4>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
+                  style="
+                    background-color: #c1c8d3;
+                    width: 730px;
+                    padding: 13px;
+                    border-radius: 0px 0 30px 30px;
+                    margin-left: -20px;
+                  "
                 >
-                  <div style="margin-left:30px; ">
+                  <div style="margin-left: 30px">
                     <b-form-group>
                       <div>
                         <div class="col-sm-12">
                           <ul>
                             <div class="dua">
                               <h5>
+                                <li>&nbsp;Saya senang membuat kopi.</li>
+                              </h5>
+                            </div>
+                            <div class="dua">
+                              <h5>
                                 <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
+                                  &nbsp;Kopi membuat saya lebih bersemangat
+                                  dalam bekerja.
+                                </li>
+                              </h5>
+                            </div>
+                            <div class="dua">
+                              <h5>
+                                <li>
+                                  &nbsp;Saya menyukai kopi pahit namun tidak
+                                  terlalu kental.
+                                </li>
+                              </h5>
+                            </div>
+                            <div class="dua">
+                              <h5>
+                                <li>
+                                  &nbsp;Itulah sebabnya saya menyukai kopi.
                                 </li>
                               </h5>
                             </div>
@@ -977,11 +986,6 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-
-.button_tombol {
-  // background: red;
-}
-
 .button {
   background-color: #00a279;
   border: none;
@@ -991,13 +995,13 @@
   cursor: pointer;
   align-items: center;
   padding: 10px 0px;
-  border-radius: 10px;
+  border-radius: 19px;
   display: flex;
   max-width: 990px;
   width: 150px;
   height: 40px;
-  // margin-left: 45px;
-  margin-top: -25px;
+  margin-left: 45px;
+  margin-top: -10px;
   &_catatan {
     height: 45px;
     max-width: 300px;
@@ -1030,13 +1034,6 @@
 .button:hover {
   background-color: #00a279;
 }
-
-.content_padding_tulis_right_paragraf p {
-  font-size: 20px;
-  // background: red;
-  margin-top: -10px;
-}
-
 // Stepper 1 -7
 .container {
   width: 100%;
@@ -1046,7 +1043,6 @@
   }
 }
 
-// Stepper
 .steper {
   text-align: center;
   // background:red;
@@ -1057,84 +1053,43 @@
   }
 }
 
-// Jenis Paragraf .....
 .jenis {
   background-color: #c5dcff;
   height: 50px;
   width: 100%px;
 }
 
-/* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
-
 .modal-content {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  position: relative;
+  top: -350px;
+  left: 275px;
 }
 
 .modal-body {
-  background: #e8f1fd;
   width: 500px;
-  border-radius: 34px;
 }
 
-/* end style Modal */
-
-/* Style Isi Modal */
 .image-container {
+  // background: red;
   text-align: center;
-  /* background: red; */
+  padding: 0px;
 }
 
-.kalimat {
-  font-family: Poppins;
-  font-size: 16px;
+.ok2 {
+  // background: red;
   text-align: center;
-  margin-top: 5px;
-  /* background: red; */
+  margin-top: -20px;
 }
 
-.tombol {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
-.ok {
+.mt-3 {
   background: #0a4da3;
   border-radius: 39px;
-  border: none;
   width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
+  padding-top: 5px;
 }
-
-/* end style isi modal */
-
-/* Background belakang modal */
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* End Background Belakang Modal */
 
 .content {
   width: 100%;
@@ -1226,5 +1181,17 @@
   color: white;
   margin-top: 50px;
   padding: 0;
+}
+
+// popup tips
+.ok {
+  // background: red;
+  .mt-3 {
+    // margin-bottom: 10px;
+    background: #0a4da3;
+    margin: 0px 0px 5px 180px;
+    border-radius: 39px;
+    width: 108px;
+  }
 }
 </style>

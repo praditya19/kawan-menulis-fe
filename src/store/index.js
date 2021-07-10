@@ -6,6 +6,7 @@ import students from "./modules/students";
 import diagnostik from "./modules/diagnostik";
 import topics from "./modules/topics";
 import scores from "./modules/scores";
+import studentActions from "./modules/studentActions";
 
 Vue.use(Vuex);
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     students,
     diagnostik,
     topics,
-    scores
+    scores,
+    studentActions
   },
 });

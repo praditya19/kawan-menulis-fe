@@ -1,85 +1,86 @@
 <template>
   <div>
-    <br /><br />
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
-    <div class="lebar">
-      <!--Slide-->
+    <!--Slide-->
 
-      <!--artikel -->
-      <b-container fluid="sm">
-        <div class="conten_home">
-          <div class="conten_home_top">
-            <div class="col-md-8">
-              <ValidationObserver ref="observer">
-                <b-form
-                  slot-scope="{ validate }"
-                  @submit.prevent="validate().then(handleSubmit)"
-                >
-                  <span class="col-xs-12 col-md-8 offset-md-2"
-                    >Pertanyaan {{ show.position.order }} dari
-                    {{ show.steps.length }}
-                  </span>
-                  <b-progress
-                    :value="show.position.order"
-                    :max="show.steps.length"
-                    class="mb-3 col-xs-12 col-md-8 offset-md-2 "
-                  ></b-progress>
-                  <div
-                    v-for="(answerData, indexStepper) in answer"
-                    :key="indexStepper"
+    <!--artikel -->
+    <div class="conten_home">
+      <div class="conten_home_top">
+        <div class="col-md-12">
+          <ValidationObserver ref="observer">
+            <b-form
+              slot-scope="{ validate }"
+              @submit.prevent="validate().then(handleSubmit)"
+            >
+              <div class="soal">
+                <span class="col-xs-12 col-md-8 offset-md-2 "
+                  >Pertanyaan {{ show.position.order }} dari
+                  {{ show.steps.length }}
+                </span>
+                <b-progress
+                  :value="show.position.order"
+                  :max="show.steps.length"
+                  class="mb-3 col-xs-12 col-md-8 offset-md-2 "
+                ></b-progress>
+              </div>
+              <div
+                v-for="(answerData, indexStepper) in answer"
+                :key="indexStepper"
+                class="body"
+              >
+                <div v-if="show.form[indexStepper].active">
+                  <p>{{ show.position.order }}. {{ answerData.question }}</p>
+
+                  <b-button
+                    variant="outline-primary"
+                    v-for="answerList in answerData.answers"
+                    :key="answerList.id"
+                    @click="calc(answerList.id, answerData.id)"
+                    >{{
+                      huruf[answerList.position - 1] + ". " + answerList.answer
+                    }}</b-button
                   >
-                    <div v-if="show.form[indexStepper].active">
-                      <p>
-                        {{ show.position.order }}. {{ answerData.question }}
-                      </p>
-
-                      <b-button
-                        variant="outline-primary"
-                        v-for="answerList in answerData.answers"
-                        :key="answerList.id"
-                        @click="calc(answerList.id, answerData.id)"
-                        >{{
-                          huruf[answerList.position - 1] +
-                            ". " +
-                            answerList.answer
-                        }}</b-button
-                      >
-                    </div>
-                  </div>
-                  <br />
-                  <center>
-                    <div v-if="show.position.order !== show.steps.length" class="action">
-                      <b-button @click="back()" variant="outline-secondary">
-                        <b-icon icon="chevron-left" aria-hidden="true"></b-icon>
-                      </b-button>
-                      <b-button @click="next()" variant="outline-secondary">
-                        <b-icon
-                          icon="chevron-right"
-                          aria-hidden="true"
-                        ></b-icon>
-                      </b-button>
-                    </div>
-                    <div v-if="show.position.order === show.steps.length" class="action_submit">
-                      <b-button
-                        v-on:click="handleSubmit"
-                        class="submit"
-                        >Submit</b-button
-                      >
-                    </div>
-                  </center>
-                </b-form>
-              </ValidationObserver>
-            </div>
-          </div>
+                </div>
+              </div>
+              <br />
+              <center>
+                <div
+                  v-if="show.position.order !== show.steps.length"
+                  class="action"
+                >
+                  <b-button @click="back()" variant="outline-secondary">
+                    <b-icon icon="chevron-left" aria-hidden="true"></b-icon>
+                  </b-button>
+                  <b-button @click="next()" variant="outline-secondary">
+                    <b-icon icon="chevron-right" aria-hidden="true"></b-icon>
+                  </b-button>
+                </div>
+                <div
+                  v-if="show.position.order === show.steps.length"
+                  class="action_submit"
+                >
+                  <b-button v-on:click="handleSubmit" class="submit"
+                    >Submit</b-button
+                  >
+                </div>
+              </center>
+            </b-form>
+          </ValidationObserver>
         </div>
-      </b-container>
+      </div>
     </div>
   </div>
 </template>
 <script src="./js/diagnostisQuestion.js" />
 <style lang="scss" scoped="scoped">
 .image {
-  width: 1263px;
+  max-width: 100%;
+  width: 100%;
+  height: 296px;
+  margin-top: 100px;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 }
 .tombol {
   margin: 150px 0px 0px 0px;
@@ -87,22 +88,27 @@
   top: 200px;
   left: 200px;
 }
-.lebar {
-  width: 1263px;
-  overflow-x: hidden;
-}
+
 .conten_home {
   width: 100%;
   &_top {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 40px;
+    padding: 0px 250px 0px 250px;
+    width: 100%;
     @media screen and (max-width: 768px) {
       display: inline-block;
-      padding: 2%;
-      margin-left: 2px;
+      padding: 0px 50px 0px 50px;
       text-align: justify;
+      .soal {
+        padding: 0px 60px 0px 60px;
+      }
+    }
+
+    .soal {
+      padding-bottom: 40px;
     }
 
     .wrapper-progressBar {
@@ -161,46 +167,28 @@
       background-color: dodgerblue;
     }
 
-    h4 {
-      font-family:  Poppins;
-      font-size: 30px;
-      width: 900px;
-      font-weight: 700;
-      text-align: center;
-      font-weight: bold;
-    }
-
     .btn-outline-primary {
       color: black;
       width: 100%;
-      margin: 4px 20px;
+      margin: 5px 0px 5px 0px;
       text-align: left;
       border-radius: 10px;
     }
 
-     .btn-outline-secondary {
+    .btn-outline-secondary {
       color: black;
       border-radius: 60%;
       margin: 4px 20px;
       text-align: left;
     }
 
-    h1 {
-      font-family:  Poppins;
-      font-style: normal;
-      font-size: 70px;
-      text-align: center;
-      width: 900px;
-      font-weight: bold;
-    }
-
     p {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
       line-height: 30px;
-      width: 900px;
+      width: 100%;
       font-weight: 500;
     }
   }
@@ -210,10 +198,10 @@
   }
 
   .action_submit {
-     margin-bottom: 40px;
+    margin-bottom: 40px;
   }
 
-  .submit { 
+  .submit {
     background-color: blue;
   }
 }

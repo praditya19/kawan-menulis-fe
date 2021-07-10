@@ -31,7 +31,7 @@
                       </div>
 
                       <div class="tombol">
-                        <button class="ok" block @click="showModal = false">
+                        <button class="ok" @click="showModal = false">
                           OK
                         </button>
                       </div>
@@ -128,7 +128,6 @@
     <br /><br />
 
     <!-- Gunakan kalimat klausa -->
-    <!-- Gunakan kalimat klausa -->
     <form>
       <div class="content-form">
         <table>
@@ -154,7 +153,7 @@
         <a href="/topik">
           <img src="@/assets/back.png" alt="logo" class="img" />
         </a>
-        <b-button @click="onSubmit" class="ok" href="/pra-menulis">OK</b-button>
+        <b-button @click="onSubmit" class="submit_ok" href="/pra-menulis">OK</b-button>
       </div>
     </form>
   </div>
@@ -304,7 +303,7 @@
 }
 
 .kalimat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 16px;
   text-align: center;
   margin-top: 5px;
@@ -312,7 +311,7 @@
 }
 
 .tombol {
-  /* background: red; */
+  // background: red;
   text-align: center;
   padding: 5px;
 }
@@ -324,7 +323,7 @@
   width: 108px;
   height: 32.71px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 /* end style isi modal */
@@ -351,7 +350,7 @@
 
 // Kalimat bawah tombol Tips kedua
 .content-cara {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   font-size: 20px;
   // background: red;
   margin-left: 235px;
@@ -359,7 +358,7 @@
 
 // Gunakan klausa .......
 .content-form {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
   // background: red;
   margin-left: 235px;
   font-size: 20px;
@@ -372,7 +371,18 @@
   margin-bottom: 20px;
 }
 
-.ok {
+.submit_ok {
+  background-color: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
   margin-left: 80px;
+}
+
+.submit_ok:hover {
+  background-color: #0a4da3;
 }
 </style>

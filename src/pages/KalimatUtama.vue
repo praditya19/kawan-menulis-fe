@@ -5,10 +5,10 @@
     </div>
 
     <!-- Stepper -->
-        <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/3.png">
-        </div>
-        <!-- End Stepper  -->
+    <div class="steper">
+      <img class="steper_image" src="@/assets/icon_stepper/3.png" />
+    </div>
+    <!-- End Stepper  -->
 
     <div class="center">
       <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
@@ -21,271 +21,253 @@
     <!-- modal -->
     <!-- page1 -->
     <!-- popup -->
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p class="mb-4">
-                                  Kalimat utama mengandung topik yang hendak kamu tulis.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p class="mb-4">
+                        Kalimat utama mengandung topik yang hendak kamu tulis.
+                      </p>
                     </div>
                   </div>
-                </transition>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- page2 -->
     <!-- popup -->
-              <div v-if="showModal2 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal2 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p class="mb-4">
-                                  Kalimat utama yang kamu tulis harus menggambarkan ide utama paragrafmu:
-                                  <br><strong>Cara membuat kopi</strong><br><code style="color:red;font-size:16px;"><strong>(Ambil dari Topik Input 1)</strong></code>
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal2 = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p class="mb-4">
+                        Kalimat utama yang kamu tulis harus menggambarkan ide
+                        utama paragrafmu:
+                        <br /><strong>Cara membuat kopi</strong><br /><code
+                          style="color:red;font-size:16px;"
+                          ><strong>(Ambil dari Topik Input 1)</strong></code
+                        >
+                      </p>
                     </div>
                   </div>
-                </transition>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal2 = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- page3 -->
     <!-- popup -->
-              <div v-if="showModal3 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal3 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p class="mb-4">
-                                  Lengkapi kalimat di dalam kotak masukan menjadi kalimat utama yang baik.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal3 = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p class="mb-4">
+                        Lengkapi kalimat di dalam kotak masukan menjadi kalimat
+                        utama yang baik.
+                      </p>
                     </div>
                   </div>
-                </transition>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal3 = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- page4 -->
     <!-- popup -->
-              <div v-if="showModal4 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal4 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p class="mb-4">
-                                  Contoh kalimat utama :
-                                  Saya sangat mahir dalam membuat salindia yang menarik.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal4 = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p class="mb-4">
+                        Contoh kalimat utama : Saya sangat mahir dalam membuat
+                        salindia yang menarik.
+                      </p>
                     </div>
                   </div>
-                </transition>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal4 = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- Modal Ok Screen 4 dan 5-->
     <!-- screen 4 -->
     <!-- popup -->
-              <div v-if="showModal5 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal5 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Harap gunakan tanda baca penutup kalimat dengan benar, dan pastikan kalimat dimulai dengan huruf kapital.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="page3Next" 
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p>
+                        Harap gunakan tanda baca penutup kalimat dengan benar,
+                        dan pastikan kalimat dimulai dengan huruf kapital.
+                      </p>
                     </div>
                   </div>
-                </transition>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="page3Next">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- Screen 5 -->
     <!-- popup -->
-              <div v-if="showModal6 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
+    <div v-if="showModal6 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Harap gunakan tanda baca penutup kalimat dengan benar, dan pastikan kalimat dimulai dengan huruf kapital.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="page4Next"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p>
+                        Harap gunakan tanda baca penutup kalimat dengan benar,
+                        dan pastikan kalimat dimulai dengan huruf kapital.
+                      </p>
                     </div>
                   </div>
-                </transition>
-              </div>
 
+                  <div class="tombol">
+                    <button class="ok" block @click="page4Next">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
 
     <!-- kalimatutama page 1 -->
     <div class="page1" v-if="kalimatUtamaPage1 === true">
@@ -334,7 +316,7 @@
     <div class="page3" v-if="kalimatUtamaPage3 === true">
       <div class="tengah">
         <p class="tengah_tips3" @click="showModal3 = true">TIPS</p>
-        <p class="tengah_text">
+        <p class="tengah_text3">
           Kamu juga dapat memulai paragrafmu dengan melihat kata-kata yang kamu
           miliki di kotak masukan. Silakan latihan dengan mengubah kata atau
           klausa itu menjadi kalimat awal yang baik. Pada halaman selanjutnya,
@@ -349,7 +331,10 @@
       </div>
       <!-- button -->
       <div class="Button">
-        <b-btn class="button  justify-content-center" @click="showModal5 = false">
+        <b-btn
+          class="button  justify-content-center"
+          @click="showModal5 = true"
+        >
           OK
         </b-btn>
       </div>
@@ -360,8 +345,8 @@
     <!-- kalimat utama page 4 -->
     <div class="page4" v-if="kalimatUtamaPage4 === true">
       <div class="tengah">
-        <p class="tengah_tips" @click="showModal4 = true">TIPS</p>
-        <p class="tengah_text">
+        <p class="tengah_tips4" @click="showModal4 = true">TIPS</p>
+        <p class="tengah_text4">
           Sekarang tulislah kalimat utama untuk memulai paragrafmu. Kalimat itu
           harus berisi topik yang ingin kamu jelaskan dalam paragraf ya....
           <br />
@@ -374,7 +359,7 @@
 
       <!-- button -->
       <div class="Button">
-        <b-btn class="button  justify-content-center" @click="showModal6 = false">
+        <b-btn class="button justify-content-center" @click="showModal6 = true">
           OK
         </b-btn>
       </div>
@@ -435,7 +420,7 @@
     width: 1000px;
     height: auto;
   }
-} 
+}
 
 .center {
   display: flex;
@@ -446,7 +431,7 @@
   padding-top: 12px;
   background-color: rgba(139, 181, 236, 0.1);
   &_paragraf {
-    margin-left: 200px;
+    margin-left: 100px;
   }
   &_topik {
     margin-left: 70px;
@@ -477,6 +462,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 13px;
+  // background: red;
   // button tips
   &_tips {
     width: 98px;
@@ -486,8 +472,9 @@
     background-color: #00a279;
     color: #fff;
     font-size: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     cursor: pointer;
+    margin-left: -150px;
   }
 
   &_tips3 {
@@ -500,12 +487,28 @@
     font-size: 20px;
     margin-bottom: 90px;
     cursor: pointer;
+    margin-left: -100px;
+    margin-top: 10px;
+  }
+
+  &_tips4 {
+    width: 98px;
+    height: 32px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #00a279;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 90px;
+    cursor: pointer;
+    margin-left: -100px;
+    margin-top: 10px;
   }
 
   // text page 1
   &_text {
     margin-left: 30px;
-    width: 48%;
+    width: 65%;
     font-family: Poppins;
     font-size: 20px;
   }
@@ -513,7 +516,31 @@
   // text page 2
   &_text2 {
     margin-left: 30px;
-    width: 48%;
+    width: 65%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+
+  // text page 3
+  &_text3 {
+    margin-left: 30px;
+    width: 68%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+
+  // text page 3
+  &_text4 {
+    margin-left: 30px;
+    width: 68%;
     font-family: Poppins;
     font-size: 20px;
     strong {
@@ -530,6 +557,7 @@
 .tengah_bawah {
   padding: 0px 0px 25px 415px;
   font-weight: 400;
+  // background: red;
   &_text-bawah {
     width: 69.3%;
     height: 90px;
@@ -538,26 +566,29 @@
     letter-spacing: 0em;
     text-align: left;
     font-weight: 400;
+    margin-left: -185px;
   }
 
   &_form {
     margin-top: -70px;
     height: 59px;
-    width: 69.3%;
+    width: 100%;
     background: #fafafa;
     border: 2px solid #0a4da3;
     box-sizing: border-box;
     border-radius: 4px;
+    margin-left: -185px;
   }
 
   &_form4 {
     margin-top: 0px;
     height: 59px;
-    width: 69.3%;
+    width: 100%;
     background: #fafafa;
     border: 2px solid #0a4da3;
     box-sizing: border-box;
     border-radius: 4px;
+    margin-left: -185px;
   }
 }
 
@@ -596,6 +627,8 @@
 }
 .gabungan {
   padding: 69px 0px 80px 259px;
+  // background: red;
+  margin-left: -30px;
   .catatan {
     width: 238px;
     height: 42px;
@@ -722,5 +755,4 @@
   margin-top: 50px;
   padding: 0;
 }
-
 </style>
