@@ -327,7 +327,10 @@
         <p class="tengah_bawah_text-bawah">
           Lengkapi kalimat di bawah ini menjadi kalimat utama yang baik.
         </p>
-        <b-form-input class="tengah_bawah_form"></b-form-input>
+        <b-form-input
+          class="tengah_bawah_form"
+          v-model="form.kalimatUtama1"
+        ></b-form-input>
       </div>
       <!-- button -->
       <div class="Button">
@@ -354,7 +357,10 @@
         </p>
       </div>
       <div class="tengah_bawah">
-        <b-form-input class="tengah_bawah_form4"></b-form-input>
+        <b-form-input
+          class="tengah_bawah_form4"
+          v-model="form.kalimatUtama2"
+        ></b-form-input>
       </div>
 
       <!-- button -->
@@ -372,20 +378,11 @@
         <p>Catatan Pra Menulis</p>
       </div>
       <div class="daftar">
-        <ul>
-          <li>Cara membuat kopi</li>
-        </ul>
-        <ul>
-          <li>Cara membuat kopi</li>
-        </ul>
-        <ul>
-          <li>Cara membuat kopi</li>
-        </ul>
-        <ul>
-          <li>Cara membuat kopi</li>
-        </ul>
-        <ul>
-          <li>Cara membuat kopi</li>
+        <ul
+          v-for="(dataSesion, index) in pramenulisDataSesion.resultMenulis"
+          :key="index"
+        >
+          <li>&nbsp; &nbsp; {{ dataSesion }}</li>
         </ul>
       </div>
     </div>
@@ -646,7 +643,6 @@
     align-items: flex-start;
     padding: 13px 25px;
     width: 800px;
-    height: 191px;
     left: 0px;
     top: 230px;
     font-size: 20px;

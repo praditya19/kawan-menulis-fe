@@ -102,17 +102,7 @@
                 </div>
               </div>
               <div style="padding: 10px 0px 10px 0px">
-                <b-form-input
-                  v-model="dataForm.menulisPage1"
-                  :state="validation"
-                  id="feedback-user"
-                ></b-form-input>
-                <b-form-invalid-feedback :state="validation">
-                  Your user ID must be 5-12 characters long.
-                </b-form-invalid-feedback>
-                <b-form-valid-feedback :state="validation">
-                  Looks Good.
-                </b-form-valid-feedback>
+                <b-form-input v-model="dataForm.menulisPage1"></b-form-input>
               </div>
 
               <div class="col-sm-12">
@@ -150,15 +140,12 @@
                           <ul>
                             <div
                               class="dua"
-                              v-for="index in topicDataSesion"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
                               :key="index"
                             >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;{{
-                                    indexOf(index.resultMenulis)
-                                  }}
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>
@@ -246,7 +233,7 @@
               </div>
               <div style="padding: 10px 0px 10px 0px">
                 <b-form-input
-                  v-model="dataForm.menulis"
+                  v-model="dataForm.menulisPage2"
                   id="feedback-user"
                 ></b-form-input>
               </div>
@@ -283,18 +270,14 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
+                              :key="index"
+                            >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>
@@ -381,7 +364,7 @@
               </div>
               <div style="padding: 10px 0px 10px 0px">
                 <b-form-input
-                  v-model="dataForm.menulis"
+                  v-model="dataForm.menulisPage3"
                   id="feedback-user"
                 ></b-form-input>
               </div>
@@ -418,25 +401,14 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
+                              :key="index"
+                            >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>
@@ -522,7 +494,7 @@
               </div>
               <div style="padding: 10px 0px 10px 0px">
                 <b-form-input
-                  v-model="dataForm.menulis"
+                  v-model="dataForm.menulisPage4"
                   id="feedback-user"
                 ></b-form-input>
               </div>
@@ -559,32 +531,14 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
+                              :key="index"
+                            >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>
@@ -671,7 +625,7 @@
               </div>
               <div style="padding: 10px 0px 10px 0px">
                 <b-form-input
-                  v-model="dataForm.menulis"
+                  v-model="dataForm.menulisPage5"
                   id="feedback-user"
                 ></b-form-input>
               </div>
@@ -708,39 +662,14 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
+                              :key="index"
+                            >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>
@@ -861,39 +790,14 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in topicDataSesion.resultMenulis"
+                              :key="index"
+                            >
                               <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp;Cara membuat Kopi
-                                </li>
+                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
                               </h5>
                             </div>
                           </ul>

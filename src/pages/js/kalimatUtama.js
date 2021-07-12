@@ -4,6 +4,11 @@ export default {
   name: "kalimatUtama",
   data() {
     return {
+      pramenulisDataSesion: {},
+      form: {
+        kalimatUtama1: "",
+        kalimatUtama2: "",
+      },
       showModal: false,
       showModal2: false,
       showModal3: false,
@@ -16,7 +21,16 @@ export default {
       kalimatUtamaPage4: false,
     };
   },
+  mounted() {
+    this.getDataSesion();
+  },
   methods: {
+    getDataSesion() {
+      var pramenulisData = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
+      this.pramenulisDataSesion = JSON.parse(pramenulisData);
+    },
     page1Next() {
       this.kalimatUtamaPage2 = true;
       if (this.kalimatUtamaPage2 === true) {
@@ -34,6 +48,9 @@ export default {
       }
     },
     page3Next() {
+      this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
+      var savePage3 = JSON.stringify(this.pramenulisDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
       this.kalimatUtamaPage4 = true;
       if (this.kalimatUtamaPage4 === true) {
         this.kalimatUtamaPage3 = false;
@@ -43,6 +60,10 @@ export default {
       }
     },
     page4Next() {
+      this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama2);
+      var savePage4 = JSON.stringify(this.pramenulisDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
+      this.showModal6 = false;
       alert("END");
     },
   },

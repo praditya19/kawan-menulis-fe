@@ -8,6 +8,7 @@ export default {
       studentDataSession: {},
       // student_topik_menulis_paragraph: [],
       result_menulis: [],
+      result_paragraph: [],
       form: {
         kalimatSederhana: "",
       },
@@ -35,6 +36,7 @@ export default {
         topicId: this.studentDataSession.topicId,
         studentActionsId: this.studentDataSession.id,
         resultMenulis: this.result_menulis,
+        resultParagraph: this.result_paragraph,
       };
       console.log(this.student_topik_menulis_paragrap);
       var convertToString = JSON.stringify(topik);

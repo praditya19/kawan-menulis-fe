@@ -108,12 +108,7 @@ export default {
       }
     },
     pramenulis6Next() {
-      alert("end");
-    },
-    validation() {
-      return (
-        this.dataForm.menulis.length > 4 && this.dataForm.menulis.length < 13
-      );
+      this.$router.push("/kalimat-utama");
     },
   },
   computed: {
