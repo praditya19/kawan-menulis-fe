@@ -37,7 +37,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      this.topicDataSesion.resultMenulis.push(this.dataForm.menulisPage1);
+      this.topicDataSesion.resultMenulis.push({
+        pramenulis: this.dataForm.menulisPage1,
+        menulis: "",
+      });
       var savePage1 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
       this.pramenulisPage2 = true;
@@ -52,7 +55,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      this.topicDataSesion.resultMenulis.push(this.dataForm.menulisPage2);
+      this.topicDataSesion.resultMenulis.push({
+        pramenulis: this.dataForm.menulisPage2,
+        menulis: "",
+      });
       var savePage2 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage2);
       this.pramenulisPage3 = true;
@@ -67,7 +73,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      this.topicDataSesion.resultMenulis.push(this.dataForm.menulisPage3);
+      this.topicDataSesion.resultMenulis.push({
+        pramenulis: this.dataForm.menulisPage3,
+        menulis: "",
+      });
       var savePage3 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
       this.pramenulisPage4 = true;
@@ -82,7 +91,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      this.topicDataSesion.resultMenulis.push(this.dataForm.menulisPage4);
+      this.topicDataSesion.resultMenulis.push({
+        pramenulis: this.dataForm.menulisPage4,
+        menulis: "",
+      });
       var savePage4 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
       this.pramenulisPage5 = true;
@@ -97,7 +109,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      this.topicDataSesion.resultMenulis.push(this.dataForm.menulisPage5);
+      this.topicDataSesion.resultMenulis.push({
+        pramenulis: this.dataForm.menulisPage5,
+        menulis: "",
+      });
       var savePage5 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage5);
       this.pramenulisPage6 = true;

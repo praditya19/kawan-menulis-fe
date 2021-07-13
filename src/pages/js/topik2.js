@@ -9,6 +9,7 @@ export default {
       // student_topik_menulis_paragraph: [],
       result_menulis: [],
       result_paragraph: [],
+      konsep_parahraf: [],
       form: {
         kalimatSederhana: "",
       },
@@ -24,7 +25,10 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
-      var arr = this.result_menulis.push(this.form.kalimatSederhana);
+      var arr = this.result_menulis.push({
+        pramenulis: this.form.kalimatSederhana,
+        menulis: "",
+      });
       if (arr === []) {
         alert("can't save in array");
         return;
@@ -37,6 +41,7 @@ export default {
         studentActionsId: this.studentDataSession.id,
         resultMenulis: this.result_menulis,
         resultParagraph: this.result_paragraph,
+        konsepParahraf: this.konsep_parahraf,
       };
       console.log(this.student_topik_menulis_paragrap);
       var convertToString = JSON.stringify(topik);

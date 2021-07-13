@@ -21,8 +21,8 @@
         <div class="col-sm-8">
           <div class="content_padding_paragraf_right">
             <p>
-              <b>Topik: </b>Topik: Apakah kamu punya kemahiran dalam membuat
-              sesuatu? Coba sebutkan satu.
+              <b>Topik: </b>Apakah kamu punya kemahiran dalam membuat sesuatu?
+              Coba sebutkan satu.
             </p>
           </div>
         </div>
@@ -145,7 +145,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>
@@ -277,7 +279,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>
@@ -408,7 +412,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>
@@ -538,7 +544,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>
@@ -669,7 +677,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>
@@ -797,7 +807,9 @@
                               :key="index"
                             >
                               <h5>
-                                <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+                                <li>
+                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                </li>
                               </h5>
                             </div>
                           </ul>

@@ -17,44 +17,17 @@ import KalimatUtama from "@/pages/KalimatUtama";
 import PraMenulis from "@/pages/PraMenulis";
 import MenulisKesimpulan from "@/pages/MenulisKesimpulan";
 import Pengorganisasian from "@/pages/Pengorganisasian";
+import Revisi from "@/pages/Revisi";
 
 Vue.use(Router);
 
 let router = new Router({
   routes: [
     {
-      path: "/tutor",
-      name: "Tutor",
-      components: {
-        default: Tutor,
-      },
-    },
-    {
-      path: "/sumber-belajar",
-      name: "Belajar",
-      components: {
-        default: SumberBelajar,
-      },
-    },
-    {
       path: "/",
       name: "Home",
       components: {
         default: Home,
-      },
-    },
-    {
-      path: "/mulai-menulis",
-      name: "Menulis",
-      components: {
-        default: MulaiMenulis,
-      },
-    },
-    {
-      path: "/mulai-menulis-page-2",
-      name: "Menulis",
-      components: {
-        default: MulaiMenulisPage2,
       },
     },
     {
@@ -86,6 +59,48 @@ let router = new Router({
       },
     },
     {
+      path: "/sumber-belajar",
+      name: "Belajar",
+      components: {
+        default: SumberBelajar,
+      },
+    },
+    {
+      path: "/tutor",
+      name: "Tutor",
+      components: {
+        default: Tutor,
+      },
+    },
+    {
+      path: "/mulai-menulis",
+      name: "Menulis",
+      components: {
+        default: MulaiMenulis,
+      },
+    },
+    {
+      path: "/mulai-menulis-page-2",
+      name: "Menulis",
+      components: {
+        default: MulaiMenulisPage2,
+      },
+    },
+    {
+      path: "/menulis-isi",
+      name: "MenulisIsi",
+      components: {
+        default: MenulisIsi,
+      },
+    },
+    {
+      path: "/menulis-kesimpulan",
+      name: "MenulisKesimpulan",
+      components: {
+        default: MenulisKesimpulan,
+      },
+    },
+    {
       path: "/topik",
       name: "Topik",
       components: {
@@ -100,17 +115,17 @@ let router = new Router({
       },
     },
     {
+      path: "/pra-menulis",
+      name: "PraMenulis",
+      components: {
+        default: PraMenulis,
+      },
+    },
+    {
       path: "/pramenulis-lanjutan",
       name: "PramenulisLanjutan",
       components: {
         default: PramenulisLanjutan,
-      },
-    },
-    {
-      path: "/menulis-isi",
-      name: "MenulisIsi",
-      components: {
-        default: MenulisIsi,
       },
     },
     {
@@ -121,24 +136,17 @@ let router = new Router({
       },
     },
     {
-      path: "/pra-menulis",
-      name: "PraMenulis",
-      components: {
-        default: PraMenulis,
-      },
-    },
-    {
-      path: "/menulis-kesimpulan",
-      name: "MenulisKesimpulan",
-      components: {
-        default: MenulisKesimpulan,
-      },
-    },
-    {
       path: "/pengorganisasian",
       name: "Pengorganisasian",
       components: {
         default: Pengorganisasian,
+      },
+    },
+    {
+      path: "/revisi",
+      name: "Revisi",
+      components: {
+        default: Revisi,
       },
     },
   ],

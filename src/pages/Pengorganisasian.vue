@@ -141,7 +141,9 @@
                       "
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Menulis</b></h4>
+                        <h4 style="padding: 11px 0px 0px 0px;">
+                          <b>Catatan Menulis</b>
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -152,78 +154,42 @@
                         height: 48px;
                         width: 37px;
                         border-radius: 20px 20px 20px 20px;
-                        margin-left: -125px;
                       "
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h5><b>&or;</b></h5>
+                        &and;
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
                   style="
-                    background-color: #e0e0e0;
+                    background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
                   "
                 >
-                  <div style="margin-left: 30px">
+                  <div style="margin-left: 10px">
                     <b-form-group>
                       <div>
                         <div class="col-sm-12">
                           <ul>
                             <div class="dua">
-                              <div class="dua">
-                                <h5>
-                                  <b-form-radio name="radios-stacked" stacked
-                                    ><b
-                                      >&nbsp; &nbsp;Saya senang membuat kopi.</b
-                                    ></b-form-radio
+                              <h5>
+                                <b-form-checkbox-group>
+                                  <b-form-checkbox
+                                    v-bind:value="'\t' + dataSesion.pramenulis"
+                                    v-for="(dataSesion,
+                                    index) in pramenulisLanjutanDataSesion.resultMenulis"
+                                    :key="index"
+                                    v-model="dataForm.resultMenulis"
+                                    >&nbsp;&nbsp;{{
+                                      dataSesion.pramenulis
+                                    }}</b-form-checkbox
                                   >
-                                </h5>
-                              </div>
-                              <div class="dua">
-                                <h5>
-                                  <b-form-radio name="radios-stacked" stacked
-                                    ><b
-                                      >&nbsp; &nbsp;Kopi adalah kesukaan
-                                      saya.</b
-                                    ></b-form-radio
-                                  >
-                                </h5>
-                              </div>
-                              <div class="dua">
-                                <h5>
-                                  <b-form-radio name="radios-stacked" stacked
-                                    ><b
-                                      >&nbsp; &nbsp;Kopi membuat saya lebih
-                                      bersemangat dalam bekerja.</b
-                                    ></b-form-radio
-                                  >
-                                </h5>
-                              </div>
-                              <div class="dua">
-                                <h5>
-                                  <b-form-radio name="radios-stacked" stacked
-                                    ><b
-                                      >&nbsp; &nbsp;Saya menyukai kopi pahit
-                                      namun tidak terlalu kental.</b
-                                    ></b-form-radio
-                                  >
-                                </h5>
-                              </div>
-                              <div class="dua">
-                                <h5>
-                                  <b-form-radio name="radios-stacked" stacked
-                                    ><b
-                                      >&nbsp; &nbsp;Itulah sebabnya saya
-                                      menyukai kopi</b
-                                    ></b-form-radio
-                                  >
-                                </h5>
-                              </div>
+                                </b-form-checkbox-group>
+                              </h5>
                             </div>
                           </ul>
                         </div>
@@ -249,7 +215,9 @@
                       "
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Paragraf</b></h4>
+                        <h4 style="padding: 11px 0px 0px 0px;">
+                          <b>Catatan Paragraf</b>
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -260,24 +228,22 @@
                         height: 48px;
                         width: 37px;
                         border-radius: 20px 20px 20px 20px;
-                      margin-left: -125px;
                       "
                     >
-                      <div class="content_padding_tulis_catatan">
-                        <h5><b>&and;</b></h5>
-                      </div>
+                      <div class="content_padding_tulis_catatan"></div>
+                      <i class="fa fa-angle-up"></i>
                     </div>
                   </div>
                 </div>
                 <div
                   style="
-                    background-color: #e0e0e0;
+                    background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
                   "
                 >
-                  <div style="margin-left: 30px">
+                  <div style="margin-left: 10px">
                     <b-form-group>
                       <div>
                         <div class="col-sm-12">
@@ -285,61 +251,31 @@
                             <div class="dua">
                               <h5>
                                 <b
-                                  >&nbsp; &nbsp;Saya adalah pecandu Kopi
-                                  <span style="color: red"
-                                    >(diambil dari Kalimat Utama).</span
+                                  >Saya adalah pecandu Kopi
+                                  <font color="red"
+                                    >(diambil dari Kalimat Utama).</font
                                   ></b
                                 >
                               </h5>
                             </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya senang membuat kopi.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Kopi membuat saya lebih
-                                    bersemangat dalam bekerja.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                    tidak terlalu kental.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                    kopi</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
+                            <b-form-group>
+                              <div class="dua">
+                                <h5>
+                                  <b-form-checkbox-group>
+                                    <b-form-checkbox
+                                      v-bind:value="'\t' + dataSesionNext2"
+                                      v-for="(dataSesionNext2,
+                                      index) in pramenulisLanjutanDataSesion.resultParagraph"
+                                      :key="index"
+                                      v-model="dataForm.resultParagraph"
+                                      >&nbsp;&nbsp;{{
+                                        dataSesionNext2
+                                      }}</b-form-checkbox
+                                    >
+                                  </b-form-checkbox-group>
+                                </h5>
+                              </div>
+                            </b-form-group>
                           </ul>
                         </div>
                       </div>
@@ -457,31 +393,34 @@
                       "
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h4><b>Konsep Paragraf</b></h4>
+                        <h4 style="padding: 14px 0px 0px 0px;">
+                          <b>Konsep Paragraf</b>
+                        </h4>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
                   style="
-                    background-color: #e0e0e0;
+                    background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
                   "
                 >
-                  <div style="margin-left: 30px">
+                  <div style="margin-left: 5px">
                     <b-form-group>
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in pramenulisLanjutanDataSesion.konsepParahraf"
+                              :key="index"
+                            >
                               <p>
-                                Saya adalah pecandu Kopi. Saya senang membuat
-                                kopi. Kopi membuat saya lebih bersemangat dalam
-                                bekerja. Saya menyukai kopi pahit namun tidak
-                                terlalu kental. Itulah sebabnya saya menyukai
-                                kopi.
+                                {{ dataSesion }}
                               </p>
                             </div>
                           </ul>
@@ -492,7 +431,7 @@
                 </div>
               </div>
             </div>
-            <br />
+            <br /><br /><br />
             <div class="col-sm-12">
               <div class="button2_tombol2" @click="pengorganisasian2Next">
                 <button class="button2" type="submit">
@@ -643,7 +582,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol4">
+                      <div class="button3_tombol3">
                         <button
                           class="button3_button4"
                           @click="$bvModal.show('bv-modal-example')"
@@ -656,7 +595,7 @@
                 </div>
                 <div
                   style="
-                    background-color: #e0e0e0;
+                    background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
@@ -870,7 +809,7 @@
                   </div>
                   <div class="col-sm-3">
                     <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol4">
+                      <div class="button3_tombol3">
                         <button
                           class="button3_button4"
                           @click="$bvModal.show('bv-modal-example')"
@@ -883,7 +822,7 @@
                 </div>
                 <div
                   style="
-                    background-color: #e0e0e0;
+                    background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
@@ -965,53 +904,43 @@
 </template>
 
 <script src="./js/pengorganisasian.js" />
-<style lang="scss" scoped>
-// popup
-// .modal-content {
-//   -webkit-border-radius: 100px !important;
-//   -moz-border-radius: 100px !important;
-//   border-radius: 100px !important;
-//   -webkit-border: 100px !important;
-//   -moz-border: 100px !important;
-//   border: 100px !important;
-// }
-.ok {
-  .mt-3 {
-    // margin-bottom: 10px;
-    background: #0a4da3;
-    border-radius: 39px;
-    width: 108px;
-  }
-}
-.ok2 {
-  margin-left: 40%;
-  .mt-3 {
-    // margin-bottom: 10px;
-    background: #0a4da3;
-    border-radius: 39px;
-    width: 108px;
-  }
-}
 
-// icon checklist
-.image-container {
-  width: 470px;
-  text-align: center;
-  // background: red;
-}
-.container {
-  &_bawah {
-    padding: 70px 0px 60px 220px;
+<style lang="scss" scoped>
+.button2 {
+  background-color: #0a4da3;
+  border: none;
+  color: rgb(243, 237, 237);
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  align-items: flex-start;
+  // padding: 17px 10px;
+  border-radius: 30px;
+  display: flex;
+  position: relative;
+  max-width: 990px;
+  width: 130px;
+  height: 44px;
+  // left: calc(50% - 190px / 2 + 87px);
+  top: -10px;
+  align-items: center;
+  margin-left: 200px;
+  b {
+    // padding: 0% 3% 0% 3%;
+    color: #f1f1f1;
+    margin: auto;
+    font-size: 20px;
+  }
+  &_tombol2 {
+    padding: 40px 0px 0px 0px;
+    left: 300px;
+    width: 190px;
+    height: 200px;
+    margin-left: 0px;
   }
 }
-.dua {
-  padding: 8px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  h5 {
-    font-family: Poppins;
-  }
+.button2:hover {
+  background-color: #0a4da3;
 }
 .button3 {
   background-color: #e0e0e0;
@@ -1053,82 +982,126 @@
   }
   &_tombol3 {
     padding: 0px 0px 0px 0px;
-    margin-left: -125px;
-  }
-  &_tombol4 {
-    padding: 0px 0px 0px 0px;
-    margin-left: -170px;
   }
 }
 .button3:hover {
   background-color: #f3e8e8;
 }
-.button2 {
-  background-color: #0a4da3;
-  border: none;
-  color: rgb(243, 237, 237);
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: flex-start;
-  padding: 17px 10px;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  max-width: 990px;
-  width: 130px;
-  height: 55px;
-  left: calc(50% - 190px / 2 + 87px);
-  top: -10px;
-  margin-left: 200px;
-  b {
-    padding: 0% 3% 0% 3%;
-    color: #f1f1f1;
-    margin-left: 30px;
-    margin-top: -5px;
-    font-size: 28px;
-  }
-  &_tombol2 {
-    padding: 30px 0px 20px 0px;
-    top: 300px;
-    left: 300px;
-    width: 190px;
-    height: 200px;
-    margin-left: -50px;
-  }
-}
-.button2:hover {
-  background-color: #0a4da3;
+.dua {
+  padding: 10px 0px 0px 0px;
+  text-align: justify;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 .button {
   background-color: #00a279;
   border: none;
-  color: #fff;
+  color: black;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
   align-items: center;
-  // padding: 17px 0px;
+  padding: 10px 0px;
   border-radius: 19px;
-  // display: flex;
+  display: flex;
   max-width: 990px;
   width: 150px;
-  height: 50px;
+  height: 40px;
   margin-left: 45px;
+  margin-top: -10px;
+  &_catatan {
+    height: 45px;
+    max-width: 300px;
+    color: rgb(5, 4, 4);
+  }
   &_tombol {
+    padding: 25px 0px 0px 0px;
     position: absolute;
     width: 190px;
     height: 100px;
     margin-left: -80px;
+    b {
+      color: #f1f1f1;
+      margin-left: 100%;
+    }
+    &_margin {
+      b {
+        text-align: center;
+        align-items: center;
+      }
+      color: black;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 13%;
+    }
   }
 }
 .button:hover {
   background-color: #00a279;
 }
+// Stepper 1 -7
+.container {
+  width: 100%;
+  &_bawah {
+    padding: 20px 0px 180px 0px;
+    margin-left: 17%;
+  }
+}
+
+.steper {
+  text-align: center;
+  // background:red;
+  padding: 10px;
+  &_image {
+    width: 1000px;
+    height: auto;
+  }
+}
+
+.jenis {
+  background-color: #c5dcff;
+  height: 50px;
+  width: 100%px;
+}
+
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  position: relative;
+  top: -350px;
+  left: 275px;
+}
+
+.modal-body {
+  width: 500px;
+}
+
+.image-container {
+  // background: red;
+  text-align: center;
+  padding: 0px;
+}
+
+.ok2 {
+  // background: red;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.mt-3 {
+  background: #0a4da3;
+  border-radius: 39px;
+  width: 108px;
+  padding-top: 5px;
+}
+
 .content {
-  overflow-x: hidden;
-  max-width: 100%;
+  width: 100%;
   height: 100%;
+  overflow-x: hidden;
   @media screen and (max-width: 990) {
     display: inline-block;
     width: 100%;
@@ -1140,180 +1113,87 @@
       padding: 15px 0px 10px 0px;
       &_catatan {
         color: #f1f1f1;
-        h4 {
+        text-align: center;
+        &_catatan2 {
+          color: #454b56;
+          h4 {
+            font-family: Poppins;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            padding: 12px 0px 8px 0px;
+          }
+        }
+        &_right {
+          max-width: 750px;
+          width: 750px;
+          height: 240px;
           font-family: Poppins;
-          font-size: 20px;
-          line-height: 24px;
-          text-align: center;
-          padding: 12px 0px 8px 0px;
-        }
-        h5 {
-          font-family: Poppins;
-          font-size: 20px;
-          line-height: 24px;
-          text-align: center;
-          padding: 12px 0px 8px 0px;
-          color: #1a1a1a;
-        }
-      }
-      &_right {
-        max-width: 750px;
-        width: 750px;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 23px;
-        line-height: 30px;
-        margin-left: -30px;
-        &_paragraf {
-          padding: 20px 0px 0px 0px;
-          label {
-            font: 1rem "Fira Sans", sans-serif;
-          }
-          input {
-            margin: 0.4rem;
-          }
-          &_bawah {
-            margin-bottom: 100px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 23px;
+          line-height: 30px;
+          margin-left: -30px;
+          &_paragraf {
+            padding: 20px 0px 0px 0px;
+            label {
+              font: 1rem "Fira Sans", sans-serif;
+            }
+            input {
+              margin: 0.4rem;
+            }
+            &_bawah {
+              margin-bottom: -90px;
+            }
           }
         }
       }
-    }
-    &_paragraf {
-      padding: 15px 0px 10px 0px;
-      margin-left: 40%;
-      p {
-        font-size: 17px;
-      }
-      &_right {
+      &_paragraf {
         padding: 15px 0px 10px 0px;
-        margin-left: 10%;
+        margin-left: 40%;
         p {
           font-size: 17px;
         }
+        &_right {
+          padding: 15px 0px 10px 0px;
+          margin-left: 10%;
+          p {
+            font-size: 17px;
+          }
+        }
+      }
+      &_header {
+        margin-top: 70px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        margin-left: 30%;
+        h1 {
+          font-weight: bolder;
+          font-size: 47px;
+          margin-left: 10%;
+        }
+      }
+      &_stemper {
+        padding: 20px;
+        align-items: center;
+        margin-left: 20px;
       }
     }
-    &_header {
-      margin-top: 70px;
-      font-family: Poppins;
-      font-style: normal;
-      font-weight: bold;
-      margin-left: 30%;
-      h1 {
-        font-weight: bolder;
-        font-size: 47px;
-        margin-left: 10%;
-      }
-    }
-    &_stemper {
-      padding: 20px;
-      align-items: center;
-      margin-left: 20px;
+  }
+
+  // popup tips
+  .ok {
+    // background: red;
+
+    .mt-3 {
+      // margin-bottom: 10px;
+      background: #0a4da3;
+      margin: 0px 0px 5px 180px;
+      border-radius: 39px;
+      width: 108px;
     }
   }
 }
-
-// Stepper 1 -7
-
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
-}
-
-// Stepper
-.steper {
-  text-align: center;
-  padding: 10px;
-  &_image {
-    width: 1000px;
-    height: auto;
-  }
-}
-
-/* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
-
-.modal-content {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-/* end style Modal */
-
-/* Style Isi Modal */
-.image-container {
-  text-align: center;
-  /* background: red; */
-}
-
-.kalimat {
-  font-family: Poppins;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 5px;
-  /* background: red; */
-}
-
-.tombol {
-  // background: red;
-  text-align: center;
-  padding: 5px;
-}
-
-.ok {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
-.ok2 {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
-/* end style isi modal */
-
-/* Background belakang modal */
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* End Background Belakang Modal */
 </style>
+

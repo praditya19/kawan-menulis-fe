@@ -1,4 +1,3 @@
-
 <template>
   <div class="content">
     <br />
@@ -121,58 +120,65 @@
                                     <div class="modal-content">
                                       <!-- Modal Body -->
                                       <div class="modal-body">
-                                        <div class="kalimat">
-                                          <div
-                                            style="
+                                        <form action="">
+                                          <div class="kalimat">
+                                            <div
+                                              style="
                                               padding: 0% 0% 0% 12%;
                                             "
-                                          >
-                                            <p
-                                              style="color:black; margin-left: 6%; font-size: 20px;"
                                             >
-                                              <b>
-                                                Tambahan Catatan Pra Menulis
-                                              </b>
-                                            </p>
-                                            <table>
-                                              <tr>
-                                                <td>
-                                                  <b-form-input
-                                                    style="
-                                                        width: 350px;
-                                                        height: 130px;
+                                              <p
+                                                style="color:black; margin-left: 6%; font-size: 20px;"
+                                              >
+                                                <b>
+                                                  Tambahan Catatan Pra Menulis
+                                                </b>
+                                              </p>
+                                              <table>
+                                                <tr>
+                                                  <td>
+                                                    <b-form-textarea
+                                                      v-model="
+                                                        dataForm.tambahPramenulis
                                                       "
-                                                    type="text"
-                                                  ></b-form-input>
-                                                </td>
-                                              </tr>
-                                            </table>
-                                          </div>
-                                        </div>
-                                        <div class="tombol">
-                                          <div class="row">
-                                            <div class="col-sm-6">
-                                              <button
-                                                class="ok"
-                                                block
-                                                @click="showModal = false"
-                                              >
-                                                Batal
-                                              </button>
-                                            </div>
-                                            <div class="col-sm-6">
-                                              <button
-                                                class="ok2"
-                                                block
-                                                @click="showModal = false"
-                                              >
-                                                OK
-                                              </button>
+                                                      style="width: 109%"
+                                                      rows="4"
+                                                      no-resize
+                                                      type="text"
+                                                    ></b-form-textarea>
+                                                  </td>
+                                                </tr>
+                                              </table>
                                             </div>
                                           </div>
-                                        </div>
+                                          <div class="tombol">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <button
+                                                  class="ok"
+                                                  block
+                                                  @click="
+                                                    (showModal = false),
+                                                      (dataForm.tambahPramenulis =
+                                                        '')
+                                                  "
+                                                >
+                                                  Batal
+                                                </button>
+                                              </div>
+                                              <div class="col-sm-6">
+                                                <button
+                                                  class="ok2"
+                                                  block
+                                                  @click="handleOk()"
+                                                >
+                                                  OK
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
                                       </div>
-
                                       <br />
                                     </div>
                                   </div>
@@ -195,7 +201,7 @@
                             "
                             class="button3"
                             id="show-btn"
-                            @click="showModal2 = true"
+                            @click="modal2()"
                           >
                             <b>Ubah</b>
                           </button>
@@ -226,17 +232,15 @@
                                               <table>
                                                 <tr>
                                                   <td>
-                                                    <b-form-input
+                                                    <b-form-textarea
                                                       v-model="
                                                         dataForm.pramenulisLanjutanPembaruan
                                                       "
-                                                      placeholder="Kamu akan merubah Isi"
-                                                      style="
-                                                        width: 350px;
-                                                        height: 130px;
-                                                      "
+                                                      style="width: 109%"
+                                                      rows="4"
+                                                      no-resize
                                                       type="text"
-                                                    ></b-form-input>
+                                                    ></b-form-textarea>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -302,7 +306,8 @@
                                 :aria-describedby="ariaDescribedby"
                                 name="some-radios"
                                 v-bind:value="index"
-                                >&nbsp;&nbsp; {{ dataSesion }}</b-form-radio
+                                >&nbsp;&nbsp;
+                                {{ dataSesion.pramenulis }}</b-form-radio
                               >
                             </h5>
                           </div>
@@ -324,15 +329,6 @@
 <script src="./js/pramenulisLanjutan.js" />
 
 <style lang="scss" scoped>
-// popup
-// .modal-content {
-//   -webkit-border-radius: 100px !important;
-//   -moz-border-radius: 100px !important;
-//   border-radius: 100px !important;
-//   -webkit-border: 100px !important;
-//   -moz-border: 100px !important;
-//   border: 100px !important;
-// }
 .ok {
   .mt-3 {
     // margin-bottom: 10px;
@@ -658,5 +654,3 @@
 
 /* End Background Belakang Modal */
 </style>
-
-

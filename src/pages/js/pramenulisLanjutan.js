@@ -7,6 +7,7 @@ export default {
       showModal: false,
       showModal2: false,
       dataForm: {
+        tambahPramenulis: "",
         pramenulisLanjutan: "",
         pramenulisLanjutanPembaruan: "",
       },
@@ -28,10 +29,12 @@ export default {
         alert("error input");
         return (this.showModal2 = false);
       }
-      console.log(this.dataForm.pramenulisLanjutanPembaruan);
       this.kalimatUtamaDataSesion.resultMenulis[
         this.dataForm.pramenulisLanjutan
-      ] = this.dataForm.pramenulisLanjutanPembaruan;
+      ] = {
+        pramenulis: this.dataForm.pramenulisLanjutanPembaruan,
+        menulis: "",
+      };
       var saveDate = JSON.stringify(this.kalimatUtamaDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate);
       this.showModal2 = false;
@@ -40,43 +43,38 @@ export default {
     toMenulisIsi() {
       this.$router.replace("/menulis-isi");
     },
-    checkFormValidity() {
-      const valid = this.$refs.form.checkValidity();
-      this.nameState = valid;
-      return valid;
-    },
-    resetModal() {
-      this.name = "";
-      this.nameState = null;
-    },
-    handleOk(bvModalEvt) {
-      // Prevent modal from closing
-      bvModalEvt.preventDefault();
-      // Trigger submit handler
-      if (this.name === "") {
+    handleOk() {
+      if (this.dataForm.tambahPramenulis === "") {
         alert("Form is not vailid");
-        return;
-      } else if (this.name.length > 65) {
-        alert("Maximal 50 Characters");
-        return;
+      } else if (this.dataForm.tambahPramenulis.length >= 60) {
+        alert("Maximal 60 Characters");
       } else {
-        this.handleSubmit();
-        this.name = "";
-        this.nameState = null;
-        this.$bvModal.hide("bv-modal-example");
+        if (this.kalimatUtamaDataSesion.resultMenulis.length <= 5) {
+          this.handleSubmit(this.dataForm.tambahPramenulis);
+          this.dataForm.tambahPramenulis = "";
+        } else {
+          alert("Cannot add more than six lines");
+          return;
+        }
       }
     },
-    handleSubmit() {
-      // Exit when the form isn't valid
-      if (!this.checkFormValidity()) {
-        return;
-      }
+    handleSubmit(tambah) {
       // Push the name to submitted names
-      this.submittedNames.push(this.name);
-      // Hide the modal manually
-      this.$nextTick(() => {
-        this.$bvModal.hide("modal-prevent-closing");
+      this.kalimatUtamaDataSesion.resultMenulis.push({
+        pramenulis: tambah,
+        menulis: "",
       });
+      var saveDate2 = JSON.stringify(this.kalimatUtamaDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
+      this.howModal = false;
+      window.location.reload();
+    },
+    modal2() {
+      var bbb = this.kalimatUtamaDataSesion.resultMenulis[
+        this.dataForm.pramenulisLanjutan
+      ];
+      this.dataForm.pramenulisLanjutanPembaruan = bbb.pramenulis;
+      this.showModal2 = true;
     },
   },
   computed: {

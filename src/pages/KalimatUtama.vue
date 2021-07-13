@@ -382,7 +382,7 @@
           v-for="(dataSesion, index) in pramenulisDataSesion.resultMenulis"
           :key="index"
         >
-          <li>&nbsp; &nbsp; {{ dataSesion }}</li>
+          <li>&nbsp; &nbsp; {{ dataSesion.pramenulis }}</li>
         </ul>
       </div>
     </div>
