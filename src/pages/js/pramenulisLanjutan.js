@@ -5,15 +5,38 @@ export default {
   data() {
     return {
       showModal: false,
-      name: "",
-      nameState: null,
-      submittedNames: [],
-      selected: "1",
-      options: [{ text: this.name, value: "1" }],
+      showModal2: false,
+      dataForm: {
+        pramenulisLanjutan: "",
+        pramenulisLanjutanPembaruan: "",
+      },
+      kalimatUtamaDataSesion: {},
     };
   },
-
+  mounted() {
+    this.getDataSesion();
+  },
   methods: {
+    getDataSesion() {
+      var kalimatUtamaData = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
+      this.kalimatUtamaDataSesion = JSON.parse(kalimatUtamaData);
+    },
+    upCatatanMenulis() {
+      if (this.dataForm.pramenulisLanjutanPembaruan === "") {
+        alert("error input");
+        return (this.showModal2 = false);
+      }
+      console.log(this.dataForm.pramenulisLanjutanPembaruan);
+      this.kalimatUtamaDataSesion.resultMenulis[
+        this.dataForm.pramenulisLanjutan
+      ] = this.dataForm.pramenulisLanjutanPembaruan;
+      var saveDate = JSON.stringify(this.kalimatUtamaDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate);
+      this.showModal2 = false;
+      window.location.reload();
+    },
     toMenulisIsi() {
       this.$router.replace("/menulis-isi");
     },

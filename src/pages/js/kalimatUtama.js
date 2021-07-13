@@ -64,7 +64,7 @@ export default {
       var savePage4 = JSON.stringify(this.pramenulisDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
       this.showModal6 = false;
-      alert("END");
+      this.$router.push("/pramenulis-lanjutan");
     },
   },
   computed: {

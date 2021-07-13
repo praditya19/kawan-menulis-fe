@@ -1,3 +1,4 @@
+
 <template>
   <div class="content">
     <br />
@@ -120,60 +121,59 @@
                                     <div class="modal-content">
                                       <!-- Modal Body -->
                                       <div class="modal-body">
-                                        <div class="image-container">
-                                          <img
-                                            style="width: 40px; height: 38.49px"
-                                            src="@/assets/checklist.png"
-                                          />
-                                        </div>
-
                                         <div class="kalimat">
                                           <div
                                             style="
                                               padding: 0% 0% 0% 12%;
-                                              width: 85%;
                                             "
                                           >
-                                            <p style="color:black;">
-                                              Tambahan Catatan Pra Menulis
+                                            <p
+                                              style="color:black; margin-left: 6%; font-size: 20px;"
+                                            >
+                                              <b>
+                                                Tambahan Catatan Pra Menulis
+                                              </b>
                                             </p>
-                                            <form>
-                                              <table>
-                                                <tr>
-                                                  <td>
-                                                    <input
-                                                      style="
+                                            <table>
+                                              <tr>
+                                                <td>
+                                                  <b-form-input
+                                                    style="
                                                         width: 350px;
                                                         height: 130px;
                                                       "
-                                                      type="text"
-                                                    />
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </form>
+                                                    type="text"
+                                                  ></b-form-input>
+                                                </td>
+                                              </tr>
+                                            </table>
                                           </div>
                                         </div>
-
                                         <div class="tombol">
-                                          <button
-                                            class="ok"
-                                            block
-                                            @click="showModal = false"
-                                          >
-                                            Batal
-                                          </button>
-                                          <button
-                                            class="ok2"
-                                            block
-                                            @click="showModal = false"
-                                          >
-                                            OK
-                                          </button>
+                                          <div class="row">
+                                            <div class="col-sm-6">
+                                              <button
+                                                class="ok"
+                                                block
+                                                @click="showModal = false"
+                                              >
+                                                Batal
+                                              </button>
+                                            </div>
+                                            <div class="col-sm-6">
+                                              <button
+                                                class="ok2"
+                                                block
+                                                @click="showModal = false"
+                                              >
+                                                OK
+                                              </button>
+                                            </div>
+                                          </div>
                                         </div>
-
-                                        <br />
                                       </div>
+
+                                      <br />
                                     </div>
                                   </div>
                                 </div>
@@ -188,6 +188,11 @@
                       <div class="content_padding_tulis_catatan">
                         <div class="button3_tombol3">
                           <button
+                            v-bind:disabled="
+                              dataForm.pramenulisLanjutan.length === 0
+                                ? true
+                                : false
+                            "
                             class="button3"
                             id="show-btn"
                             @click="showModal2 = true"
@@ -203,59 +208,64 @@
                                     <div class="modal-content">
                                       <!-- Modal Body -->
                                       <div class="modal-body">
-                                        <div class="image-container">
-                                          <img
-                                            style="width: 40px; height: 38.49px"
-                                            src="@/assets/checklist.png"
-                                          />
-                                        </div>
-
-                                        <div class="kalimat">
-                                          <div
-                                            style="
+                                        <b-form @submit="upCatatanMenulis">
+                                          <div class="kalimat">
+                                            <div
+                                              style="
                                               padding: 0% 0% 0% 12%;
                                               width: 85%;
                                             "
-                                          >
-                                            <p style="color:black;">
-                                              Ubah Catatan Pra Menulis
-                                            </p>
-                                            <form>
+                                            >
+                                              <p
+                                                style="color:black; margin-left: 15%; font-size: 20px;"
+                                              >
+                                                <b>
+                                                  Ubah Catatan Pra Menulis
+                                                </b>
+                                              </p>
                                               <table>
                                                 <tr>
                                                   <td>
-                                                    <input
+                                                    <b-form-input
+                                                      v-model="
+                                                        dataForm.pramenulisLanjutanPembaruan
+                                                      "
+                                                      placeholder="Kamu akan merubah Isi"
                                                       style="
                                                         width: 350px;
                                                         height: 130px;
                                                       "
                                                       type="text"
-                                                    />
+                                                    ></b-form-input>
                                                   </td>
                                                 </tr>
                                               </table>
-                                            </form>
+                                            </div>
                                           </div>
-                                        </div>
-
-                                        <div class="tombol">
-                                          <button
-                                            class="ok"
-                                            block
-                                            @click="showModal2 = false"
-                                          >
-                                            Batal
-                                          </button>
-                                          <button
-                                            class="ok2"
-                                            block
-                                            @click="showModal2 = false"
-                                          >
-                                            OK
-                                          </button>
-                                        </div>
-
-                                        <br />
+                                          <div class="tombol">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <button
+                                                  class="ok"
+                                                  block
+                                                  @click="showModal2 = false"
+                                                >
+                                                  Batal
+                                                </button>
+                                              </div>
+                                              <div class="col-sm-6">
+                                                <button
+                                                  class="ok2"
+                                                  block
+                                                  type="submit"
+                                                >
+                                                  OK
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <br />
+                                        </b-form>
                                       </div>
                                     </div>
                                   </div>
@@ -278,68 +288,22 @@
                     "
                   >
                     <div style="margin-left: 30px">
-                      <b-form-group>
+                      <b-form-group v-slot="{ ariaDescribedby }">
                         <div class="col-sm-12">
-                          <div class="dua">
+                          <div
+                            class="dua"
+                            v-for="(dataSesion,
+                            index) in kalimatUtamaDataSesion.resultMenulis"
+                            :key="index"
+                          >
                             <h5>
-                              <b-form-radio name="radios-stacked" stacked
-                                ><b
-                                  >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                ></b-form-radio
+                              <b-form-radio
+                                v-model="dataForm.pramenulisLanjutan"
+                                :aria-describedby="ariaDescribedby"
+                                name="some-radios"
+                                v-bind:value="index"
+                                >&nbsp;&nbsp; {{ dataSesion }}</b-form-radio
                               >
-                            </h5>
-                          </div>
-                          <div class="dua">
-                            <h5>
-                              <b-form-radio name="radios-stacked" stacked
-                                ><b
-                                  >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                ></b-form-radio
-                              >
-                            </h5>
-                          </div>
-                          <div class="dua">
-                            <h5>
-                              <b-form-radio name="radios-stacked" stacked
-                                ><b
-                                  >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                ></b-form-radio
-                              >
-                            </h5>
-                          </div>
-                          <div class="dua">
-                            <h5>
-                              <b-form-radio name="radios-stacked" stacked
-                                ><b
-                                  >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                ></b-form-radio
-                              >
-                            </h5>
-                          </div>
-                          <div class="dua">
-                            <h5>
-                              <b-form-radio name="radios-stacked" stacked
-                                ><b
-                                  >&nbsp; &nbsp;Cara Membuat Kopi.</b
-                                ></b-form-radio
-                              >
-                            </h5>
-                          </div>
-                          <div v-if="submittedNames.length === 0">
-                            <div style=""></div>
-                          </div>
-                          <div v-else class="dua">
-                            <h5 v-for="name in submittedNames" :key="name">
-                              <b-form-group v-slot="{ ariaDescribedby }">
-                                <b-form-radio
-                                  v-model="selected"
-                                  :options="options"
-                                  :aria-describedby="ariaDescribedby"
-                                  name="radios-stacked"
-                                  stacked
-                                  ><b>&nbsp; &nbsp;{{ name }}</b></b-form-radio
-                                >
-                              </b-form-group>
                             </h5>
                           </div>
                         </div>
@@ -378,9 +342,7 @@
   }
 }
 .ok2 {
-  margin-left: 40%;
   .mt-3 {
-    // margin-bottom: 10px;
     background: #0a4da3;
     border-radius: 39px;
     width: 108px;
@@ -645,15 +607,13 @@
 .kalimat {
   font-family: Poppins;
   font-size: 16px;
-  text-align: center;
   margin-top: 5px;
   /* background: red; */
 }
 
 .tombol {
   // background: red;
-  text-align: center;
-  padding: 5px;
+  padding: 20px 0px 0px 70px;
 }
 
 .ok {
@@ -698,3 +658,5 @@
 
 /* End Background Belakang Modal */
 </style>
+
+
