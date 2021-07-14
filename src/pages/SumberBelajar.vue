@@ -107,7 +107,6 @@
       align-items: center;
       padding: 0px 40px 0px 40px;
       img {
-        width: 150px;
         height: 130px;
       }
       h6 {

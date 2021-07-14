@@ -18,6 +18,7 @@ import PraMenulis from "@/pages/PraMenulis";
 import MenulisKesimpulan from "@/pages/MenulisKesimpulan";
 import Pengorganisasian from "@/pages/Pengorganisasian";
 import Revisi from "@/pages/Revisi";
+import StrukturKalimat from "@/pages/StrukturKalimat";
 
 Vue.use(Router);
 
@@ -147,6 +148,13 @@ let router = new Router({
       name: "Revisi",
       components: {
         default: Revisi,
+      },
+    },
+    {
+      path: "/struktur-kalimat",
+      name: "StrukturKalimat",
+      components: {
+        default: StrukturKalimat,
       },
     },
   ],

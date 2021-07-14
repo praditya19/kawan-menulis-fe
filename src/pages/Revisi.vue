@@ -35,6 +35,7 @@
 
       <!-- Screen 1 -->
       <div class="content-empat" v-if="revisiPage1 === true">
+      <div style="margin-left: 3%;">
         <div class="col-sm-12">
           <div class="row">
             <!-- Button Tips -->
@@ -124,6 +125,7 @@
             </div>
           </div>
         </div>
+        </div>
         <br>
         <!-- Button OK -->
         <div class="content-lima" @click="revisi1Next">
@@ -138,6 +140,7 @@
 
       <!-- Screen 2 -->
       <div class="content-empat" v-if="revisiPage2 === true">
+       <div style="margin-left: 3%;">
         <div class="col-sm-12">
           <div class="row">
             <!-- Button Tips -->
@@ -299,6 +302,7 @@
             </div>
           </div>
         </div>
+        </div>
         <br>
         <!-- Button OK -->
         <div class="content-lima" @click="revisi2Next">
@@ -312,6 +316,7 @@
 
       <!-- Screen 3 -->
       <div class="content-empat" v-if="revisiPage3 === true">
+       <div style="margin-left: 3%;">
         <div class="col-sm-12">
           <div class="row">
             <!-- Button Tips -->
@@ -417,6 +422,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
         <br>
         <!-- Button OK -->
@@ -549,7 +555,7 @@
 
 // Tombol OK
 .tombol {
-  text-align: center;
+  margin-left: 45%;
   padding: 5px;
 }
 
@@ -566,7 +572,7 @@
 
 // Konsep Menulis
 .content-konsep {
-  margin-left: 230px;
+  margin-left: 17%;
   margin-top: 30px;
   // background: red;
 }
@@ -590,7 +596,7 @@
   &_list {
     font-family: Poppins;
     background-color: #e0e0e0;
-    width: 730px;
+    width: 65%;
     padding: 13px;
     border-radius: 0px 0px 14px 14px;
   }
