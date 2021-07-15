@@ -428,7 +428,7 @@
         <!-- Button OK -->
         <div class="content-lima" @click="revisi3Next">
           <div class="tombol">
-            <button class="ok" type="submit">OK</button>
+            <b-button class="ok" type="submit">OK</b-button>
           </div>
         </div>
         <!-- End Button OK -->

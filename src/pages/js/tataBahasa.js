@@ -1,17 +1,9 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "StrukturKalimat",
+  name: "tataBahasa",
   data() {
     return {
-      showModal: false,
-      showModal2: false,
-      showModal3: false,
-      showModal4: false,
-      showModal5: false,
-      dataForm: {
-        menulis: null,
-      },
       strukturkalimatPage1: true,
       strukturkalimatPage2: false,
       strukturkalimatPage3: false,
@@ -19,7 +11,6 @@ export default {
       strukturkalimatPage5: false,
     };
   },
-
   methods: {
     strukturkalimat1Next() {
       this.strukturkalimatPage2 = true;
@@ -54,12 +45,7 @@ export default {
       }
     },
     strukturkalimat5Next() {
-      this.$router.push("/tata-bahasa");
-    },
-    validation() {
-      return (
-        this.dataForm.menulis.length > 4 && this.dataForm.menulis.length < 13
-      );
+      this.$router.push("/proofreading");
     },
   },
   computed: {

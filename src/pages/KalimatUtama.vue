@@ -214,7 +214,7 @@
                   </div>
 
                   <div class="tombol">
-                    <button class="ok" block @click="page3Next">
+                    <button class="ok" block @click="showModal5 = false">
                       OK
                     </button>
                   </div>
@@ -270,9 +270,10 @@
     </div>
 
     <!-- kalimatutama page 1 -->
-    <div class="page1" v-if="kalimatUtamaPage1 === true">
+    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage1 === true">
       <div class="tengah">
         <p class="tengah_tips" @click="showModal = true">TIPS</p>
+
         <p class="tengah_text">
           Mari mulai paragrafmu dengan sebuah kalimat utama.<br />
           Kalimat utama adalah kalimat yang mengandung topik/ide tulisanmu.
@@ -282,7 +283,7 @@
       <!-- button -->
       <div class="Button">
         <b-btn class="button  justify-content-center" @click="page1Next">
-          OK
+          <b>OK</b>
         </b-btn>
       </div>
       <!-- end button -->
@@ -290,7 +291,7 @@
     <!-- penutup page 1 -->
 
     <!-- kalimat utama page 2 -->
-    <div class="page2" v-if="kalimatUtamaPage2 === true">
+    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage2 === true">
       <div class="tengah">
         <p class="tengah_tips" @click="showModal2 = true">TIPS</p>
         <p class="tengah_text2">
@@ -305,7 +306,7 @@
       <!-- button -->
       <div class="Button">
         <b-btn class="button  justify-content-center" @click="page2Next">
-          OK
+          <b>OK</b>
         </b-btn>
       </div>
       <!-- end button -->
@@ -313,9 +314,9 @@
     <!-- penutup page 2 -->
 
     <!-- kalimat utama page 3 -->
-    <div class="page3" v-if="kalimatUtamaPage3 === true">
+    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage3 === true">
       <div class="tengah">
-        <p class="tengah_tips3" @click="showModal3 = true">TIPS</p>
+        <p class="tengah_tips" @click="showModal3 = true">TIPS</p>
         <p class="tengah_text3">
           Kamu juga dapat memulai paragrafmu dengan melihat kata-kata yang kamu
           miliki di kotak masukan. Silakan latihan dengan mengubah kata atau
@@ -334,11 +335,8 @@
       </div>
       <!-- button -->
       <div class="Button">
-        <b-btn
-          class="button  justify-content-center"
-          @click="showModal5 = true"
-        >
-          OK
+        <b-btn class="button  justify-content-center" @click="page3Next()">
+          <b>OK</b>
         </b-btn>
       </div>
       <!-- end button -->
@@ -346,9 +344,9 @@
     <!-- penutup page 3 -->
 
     <!-- kalimat utama page 4 -->
-    <div class="page4" v-if="kalimatUtamaPage4 === true">
-      <div class="tengah">
-        <p class="tengah_tips4" @click="showModal4 = true">TIPS</p>
+    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage4 === true">
+      <div class="tengah" style="padding: 20px 0px 0px 23px">
+        <p class="tengah_tips" @click="showModal4 = true">TIPS</p>
         <p class="tengah_text4">
           Sekarang tulislah kalimat utama untuk memulai paragrafmu. Kalimat itu
           harus berisi topik yang ingin kamu jelaskan dalam paragraf ya....
@@ -365,8 +363,8 @@
 
       <!-- button -->
       <div class="Button">
-        <b-btn class="button justify-content-center" @click="showModal6 = true">
-          OK
+        <b-btn class="button justify-content-center" @click="page4Next()">
+          <b> OK</b>
         </b-btn>
       </div>
       <!-- end button -->
@@ -462,16 +460,17 @@
   // background: red;
   // button tips
   &_tips {
-    width: 98px;
-    height: 32px;
+    padding: 4px 0px 0px 0px;
+    width: 100px;
+    height: 30px;
     border-radius: 10px;
     text-align: center;
     background-color: #00a279;
     color: #fff;
-    font-size: 20px;
+    font-size: normal;
     margin-bottom: 70px;
     cursor: pointer;
-    margin-left: -150px;
+    margin-left: -120px;
   }
 
   &_tips3 {
@@ -524,7 +523,8 @@
 
   // text page 3
   &_text3 {
-    margin-left: 30px;
+    margin-top: 20px;
+    padding: 0px 0px 0px 35px;
     width: 68%;
     font-family: Poppins;
     font-size: 20px;
@@ -556,7 +556,7 @@
   font-weight: 400;
   // background: red;
   &_text-bawah {
-    width: 69.3%;
+    width: 100%;
     height: 90px;
     font-family: Poppins;
     font-size: 20px;
@@ -623,7 +623,7 @@
   }
 }
 .gabungan {
-  padding: 69px 0px 80px 259px;
+  padding: 65px 0px 80px 259px;
   // background: red;
   margin-left: -30px;
   .catatan {

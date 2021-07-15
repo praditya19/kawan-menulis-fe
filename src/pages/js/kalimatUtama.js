@@ -48,23 +48,62 @@ export default {
       }
     },
     page3Next() {
-      this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
-      var savePage3 = JSON.stringify(this.pramenulisDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
-      this.kalimatUtamaPage4 = true;
-      if (this.kalimatUtamaPage4 === true) {
-        this.kalimatUtamaPage3 = false;
-        this.showModal5 = false;
+      if (this.form.kalimatUtama1 === "") {
+        this.showModal5 = true;
+        return false;
+      }
+      var done = this.isValidHurufBesar(this.form.kalimatUtama1);
+      if (done === true) {
+        this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
+        var savePage3 = JSON.stringify(this.pramenulisDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+        this.kalimatUtamaPage4 = true;
+        if (this.kalimatUtamaPage4 === true) {
+          this.kalimatUtamaPage3 = false;
+          this.showModal5 = false;
+        } else {
+          alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
+        }
+      }
+      return false;
+    },
+    isValidHurufBesar(msg) {
+      var checking = msg.substring(0, 1);
+      var lastChar = msg.substr(msg.length - 1);
+      if (checking == checking.toUpperCase()) {
+        if (lastChar === ".") {
+          return true;
+        } else {
+          this.showModal5 = true;
+        }
+        if (lastChar === "?") {
+          return true;
+        } else {
+          this.showModal5 = true;
+        }
+        if (lastChar === "!") {
+          return true;
+        } else {
+          this.showModal5 = true;
+        }
       } else {
-        alert("error");
+        this.showModal5 = true;
       }
     },
     page4Next() {
-      this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama2);
-      var savePage4 = JSON.stringify(this.pramenulisDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
-      this.showModal6 = false;
-      this.$router.push("/pramenulis-lanjutan");
+      if (this.form.kalimatUtama2 === "") {
+        this.showModal5 = true;
+        return false;
+      }
+      var done2 = this.isValidHurufBesar(this.form.kalimatUtama2);
+      if (done2 === true) {
+        this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama2);
+        var savePage4 = JSON.stringify(this.pramenulisDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
+        this.showModal6 = false;
+        this.$router.push("/pramenulis-lanjutan");
+      }
+      return false;
     },
   },
   computed: {

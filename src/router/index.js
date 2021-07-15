@@ -18,7 +18,12 @@ import PraMenulis from "@/pages/PraMenulis";
 import MenulisKesimpulan from "@/pages/MenulisKesimpulan";
 import Pengorganisasian from "@/pages/Pengorganisasian";
 import Revisi from "@/pages/Revisi";
+import Style from "@/pages/Style";
 import StrukturKalimat from "@/pages/StrukturKalimat";
+import TataBahasa from "@/pages/TataBahasa";
+import Proofreading from "@/pages/Proofreading";
+import Final from "@/pages/Final";
+import Cetak from "@/pages/Cetak";
 
 Vue.use(Router);
 
@@ -151,10 +156,45 @@ let router = new Router({
       },
     },
     {
+      path: "/gaya-menulis",
+      name: "Style",
+      components: {
+        default: Style,
+      },
+    },
+    {
       path: "/struktur-kalimat",
       name: "StrukturKalimat",
       components: {
         default: StrukturKalimat,
+      },
+    },
+    {
+      path: "/tata-bahasa",
+      name: "TataBahasa",
+      components: {
+        default: TataBahasa,
+      },
+    },
+    {
+      path: "/proofreading",
+      name: "Proofreading",
+      components: {
+        default: Proofreading,
+      },
+    },
+    {
+      path: "/final",
+      name: "Final",
+      components: {
+        default: Final,
+      },
+    },
+    {
+      path: "/cetak",
+      name: "Cetak",
+      components: {
+        default: Cetak,
       },
     },
   ],

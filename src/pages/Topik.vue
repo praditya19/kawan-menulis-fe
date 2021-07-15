@@ -9,93 +9,96 @@
       </div>
       <!-- End Stepper  -->
 
-      <div class="tengah">
-        <div class="paragraf">
-          <p>
-            Sebelum menentukan topik harap memilih
-            <strong>jenis paragraf</strong> dan <strong>topik</strong> terlebih
-            dahulu.
-          </p>
-        </div>
+      <div class="container">
+        <div class="tengah">
+          <div class="paragraf">
+            <p>
+              Sebelum menentukan topik harap memilih
+              <strong>jenis paragraf</strong> dan
+              <strong>topik</strong> terlebih dahulu.
+            </p>
+          </div>
 
-        <div class="label1">
-          <label><strong>Jenis Paragraf</strong></label>
-        </div>
+          <div class="label1">
+            <label><strong>Jenis Paragraf</strong></label>
+          </div>
 
-        <div class="pilih">
-          <select v-model="paragraphSelect">
-            <option value="" disabled hidden> Pilih Jenis Paragraph</option>
-            <option
-              v-for="(paragraphTypesList, index) in paragraphTypes"
-              :key="index"
-              v-bind:value="paragraphTypesList.id"
-              >{{ paragraphTypesList.name }}</option
+          <div class="pilih">
+            <select v-model="paragraphSelect">
+              <option value="" disabled hidden> Pilih Jenis Paragraph</option>
+              <option
+                v-for="(paragraphTypesList, index) in paragraphTypes"
+                :key="index"
+                v-bind:value="paragraphTypesList.id"
+                >{{ paragraphTypesList.name }}</option
+              >
+            </select>
+          </div>
+
+          <div class="label2">
+            <label for=""><strong>Topik</strong></label>
+          </div>
+          <div class="pilih2">
+            <select
+              v-model="topicsSelect"
+              v-bind:disabled="paragraphSelect.length === 0 ? true : false"
             >
-          </select>
-        </div>
+              <option value="" disabled hidden>Pilih Jenis Topik</option>
+              <option
+                v-for="(topics, index) in topicsTypes"
+                :key="index"
+                :value="topics.id"
+                >{{ topics.name }}</option
+              >
+            </select>
 
-        <div class="label2">
-          <label for=""><strong>Topik</strong></label>
-        </div>
-        <div class="pilih2">
-          <select
-            v-model="topicsSelect"
-            v-bind:disabled="paragraphSelect.length === 0 ? true : false"
-          >
-            <option value="" disabled hidden>Pilih Jenis Topik</option>
-            <option
-              v-for="(topics, index) in topicsTypes"
-              :key="index"
-              :value="topics.id"
-              >{{ topics.name }}</option
-            >
-          </select>
+            <!-- Button Tips -->
+            <div class="button_tombol">
+              <b-button class="button" @click="showModal = true">Tips</b-button>
 
-          <!-- Button Tips -->
-          <div class="button_tombol">
-            <b-button class="button" @click="showModal = true">Tips</b-button>
-
-            <!-- popup -->
-            <div v-if="showModal === true">
-              <transition name="model">
-                <div class="modal-mask">
-                  <div class="modal-wrapper">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <!-- Modal Body -->
-                        <!-- <div class="modal-body"> -->
-                        <div class="image-container">
-                          <img
-                            style="width: 40px;height:38.49px;"
-                            src="@/assets/checklist.png"
-                          />
-                        </div>
-
-                        <div class="kalimat">
-                          <div style="padding: 10px 0px 0px 0px; width: 100%;">
-                            <p>
-                              Topik ini akan memberimu kesempatan menulis cara
-                              melakukan sesuatu yang kamu kuasai.
-                            </p>
+              <!-- popup -->
+              <div v-if="showModal === true">
+                <transition name="model">
+                  <div class="modal-mask">
+                    <div class="modal-wrapper">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- Modal Body -->
+                          <!-- <div class="modal-body"> -->
+                          <div class="image-container">
+                            <img
+                              style="width: 40px;height:38.49px;"
+                              src="@/assets/checklist.png"
+                            />
                           </div>
-                        </div>
 
-                        <div class="tombol">
-                          <button class="ok" block @click="showModal = false">
-                            OK
-                          </button>
+                          <div class="kalimat">
+                            <div
+                              style="padding: 10px 0px 0px 0px; width: 100%;"
+                            >
+                              <p>
+                                Topik ini akan memberimu kesempatan menulis cara
+                                melakukan sesuatu yang kamu kuasai.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="tombol">
+                            <button class="ok" block @click="showModal = false">
+                              OK
+                            </button>
+                          </div>
+                          <!-- </div> -->
                         </div>
-                        <!-- </div> -->
                       </div>
                     </div>
                   </div>
-                </div>
-              </transition>
+                </transition>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="mulai">
         <b-button class="button-mulai" href="/topik2" @click="handlesubmit"
           >Mulai</b-button
@@ -144,9 +147,11 @@
 
 // Sebelum Menentukan Topik.....
 .paragraf {
+  padding: 0px 0px 20px 0px;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
+  width: 950px;
   font-size: 20px;
   line-height: 30px;
   @media (max-width: 768px) {
@@ -156,7 +161,7 @@
 }
 
 .tengah {
-  padding: 70px 200px 30px 250px;
+  padding: 70px 30px 30px 100px;
   @media (max-width: 768px) {
     padding: 10px 30px 30px 30px;
     width: 100%;
@@ -194,7 +199,7 @@
   @media screen and (max-width: 768px) {
     select {
       font-size: 15px;
-      width: auto;
+      width: 60%;
     }
   }
 }

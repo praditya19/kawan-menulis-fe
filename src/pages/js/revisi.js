@@ -34,7 +34,7 @@ export default {
       }
     },
     revisi3Next() {
-      alert("end");
+      this.$router.push("/gaya-menulis");
     },
     validation() {
       return (

@@ -28,7 +28,48 @@
         </div>
       </div>
     </div>
+    <!-- popup -->
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
 
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p>
+                        Contoh:<br />
+                        Minuman/makanan kesukaan<br />
+                        Aktifasi sehari-hari<br />
+                        Bagian dari pekerjaan<br />
+                        Hobi
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <!-- Screen1 -->
     <div class="container_bawah">
       <div class="content_padding_tulis" v-if="pramenulisPage1 === true">
@@ -40,52 +81,6 @@
                   <b>TIPS</b>
                 </div>
               </b-button>
-              <!-- popup -->
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
-
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Contoh:<br />
-                                  Minuman/makanan kesukaan<br />
-                                  Aktifasi sehari-hari<br />
-                                  Bagian dari pekerjaan<br />
-                                  Hobi
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </transition>
-              </div>
             </div>
           </div>
           <!-- Kalimat Samping Button Tips -->
@@ -96,12 +91,14 @@
                   <p>
                     Mengapa kamu dapat mahir melakukan hal tersebut?
                   </p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Gunakan kata atau klausa sederhana
                   </p>
                 </div>
               </div>
-              <div style="padding: 10px 0px 10px 0px">
+              <div style="padding: 5px 0px 10px 0px">
                 <b-form-input v-model="dataForm.menulisPage1"></b-form-input>
               </div>
 
@@ -117,7 +114,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -161,7 +158,48 @@
           </div>
         </div>
       </div>
+      <!-- popup -->
+      <div v-if="showModal2 === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/checklist.png"
+                      />
+                    </div>
 
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p>
+                          Contoh: <br />
+                          Air dengan suhu 80 derajat <br />
+                          Tanah dan sisa makanan <br />
+                          Wajan <br />
+                          Sekop
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="tombol">
+                      <button class="ok" block @click="showModal2 = false">
+                        OK
+                      </button>
+                    </div>
+
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
       <!-- Screen2 -->
       <div class="content_padding_tulis" v-if="pramenulisPage2 === true">
         <div class="row">
@@ -172,52 +210,6 @@
                   <b>TIPS</b>
                 </div>
               </b-button>
-              <!-- popup -->
-              <div v-if="showModal2 === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
-
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Contoh: <br />
-                                  Air dengan suhu 80 derajat <br />
-                                  Tanah dan sisa makanan <br />
-                                  Wajan <br />
-                                  Sekop
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal2 = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </transition>
-              </div>
             </div>
           </div>
           <!-- Kalimat Samping Button Tips -->
@@ -228,12 +220,14 @@
                   <p>
                     Apa saja alat/bahan yang dibutuhkan untuk melakukannya?
                   </p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Tuliskan dengan beberapa kata
                   </p>
                 </div>
               </div>
-              <div style="padding: 10px 0px 10px 0px">
+              <div style="padding: 5px 0px 10px 0px">
                 <b-form-input
                   v-model="dataForm.menulisPage2"
                   id="feedback-user"
@@ -251,7 +245,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -361,12 +355,14 @@
                   <p>
                     Kata kerja apa saja yang akan dilakukan dalam proses itu?
                   </p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Sebutkan beberapa kata kerja sesuai tahapan
                   </p>
                 </div>
               </div>
-              <div style="padding: 10px 0px 10px 0px">
+              <div style="padding: 5px 0px 10px 0px">
                 <b-form-input
                   v-model="dataForm.menulisPage3"
                   id="feedback-user"
@@ -384,7 +380,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -493,12 +489,14 @@
                   <p>
                     Hal apa saja yang perlu dihindari agar tidak gagal?
                   </p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Gunakan kata atau klausa sederhana
                   </p>
                 </div>
               </div>
-              <div style="padding: 10px 0px 10px 0px">
+              <div style="padding: 5px 0px 10px 0px">
                 <b-form-input
                   v-model="dataForm.menulisPage4"
                   id="feedback-user"
@@ -516,7 +514,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -626,12 +624,14 @@
                   <p>
                     Hal apa saja yang perlu diperhatikan agar hasilnya maksimal?
                   </p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Gunakan kata atau klausa sederhana
                   </p>
                 </div>
               </div>
-              <div style="padding: 10px 0px 10px 0px">
+              <div style="padding: 5px 0px 10px 0px">
                 <b-form-input
                   v-model="dataForm.menulisPage5"
                   id="feedback-user"
@@ -649,7 +649,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px;"
+                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -693,75 +693,71 @@
           </div>
         </div>
       </div>
-
+      <!-- popup -->
+      <div v-if="showModal === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/checklist.png"
+                      />
+                    </div>
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p>
+                          Catatan yang telah kamu buat dapat membantu kamu
+                          berpikir tentang topikmu. Jika kamu memiliki lebih
+                          banyak ide, kamu dapat menambahkannya ke daftar
+                          catatan setelah Anda menulis kalimat utama pada tahap
+                          selanjutnya.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="tombol">
+                      <button class="ok" block @click="showModal = false">
+                        OK
+                      </button>
+                    </div>
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
       <!-- screen6 -->
       <div class="content_padding_tulis" v-if="pramenulisPage6 === true">
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-1">
             <div class="button_tombol">
               <b-button class="button" @click="showModal = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
-              <!-- popup -->
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px;height:38.49px;"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
-
-                            <div class="kalimat">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Catatan yang telah kamu buat dapat membantu
-                                  kamu berpikir tentang topikmu. Jika kamu
-                                  memiliki lebih banyak ide, kamu dapat
-                                  menambahkannya ke daftar catatan setelah Anda
-                                  menulis kalimat utama pada tahap selanjutnya.
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </transition>
-              </div>
             </div>
           </div>
-          <div class="col-sm-10">
+          <div class="col-sm-11" style="padding: 0px 0px 0px 50px">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
                   <p>
                     Saat ini kamu memiliki 5 Ide dalam Catatan Pra Menulis.
                   </p>
-                  <p>
+                </div>
+                <div class="content_padding_tulis_right_paragraf">
+                  <p style="width: 900px">
                     Jika kamu ingin menambahkan ide yang lain, kamu dapat
-                    menambahkannya kemudian <br />
+                    menambahkannya kemudian
+                  </p>
+                  <p>
                     pada tahapan selanjutnya.
                   </p>
                 </div>
@@ -779,7 +775,7 @@
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 150px 0px 0px 0px;"
+                style="padding: 90px 0px 0px 0px; margin-left: -23px;"
               >
                 <div class="row">
                   <div class="col-sm-4">
@@ -900,10 +896,6 @@
   border-bottom-right-radius: 30px;
 }
 
-.button_tombol {
-  // background: red;
-}
-
 .button {
   background-color: #00a279;
   border: none;
@@ -912,11 +904,11 @@
   display: inline-block;
   cursor: pointer;
   align-items: center;
-  padding: 10px 0px;
+  padding: 0px 27px 0px 0px;
   border-radius: 10px;
   display: flex;
   max-width: 990px;
-  width: 150px;
+  width: 120px;
   height: 40px;
   // margin-left: 45px;
   margin-top: -25px;
@@ -926,11 +918,11 @@
     color: rgb(5, 4, 4);
   }
   &_tombol {
-    padding: 25px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
     position: absolute;
     width: 190px;
     height: 100px;
-    margin-left: -80px;
+    margin-left: -50px;
     b {
       color: #f1f1f1;
       margin-left: 100%;

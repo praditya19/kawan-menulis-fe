@@ -5,6 +5,7 @@ export default {
   data() {
     return {
       showModal: false,
+      showModal2: false,
       pramenulisLanjutanDataSesion: {},
       dataForm: {
         resultMenulis: [],
@@ -25,18 +26,33 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
+      if (this.pramenulisLanjutanDataSesion.konsepParahraf.length !== 0) {
+        this.pramenulisLanjutanDataSesion.konsepParahraf = [];
+        var toEmpetyArray = JSON.stringify(this.pramenulisLanjutanDataSesion);
+        sessionStorage.setItem(
+          "student_topik_menulis_paragraph",
+          toEmpetyArray
+        );
+      }
     },
     formatToDot(value) {
       return value.toString().replace(/,/g, ".");
     },
+    formatToNull(value) {
+      return value.toString().replace(/,/g, "");
+    },
     pengorganisasian1Next() {
-      const validate = this.dataForm.resultParagraph.length;
-      const titikAkhir = validate === 0 ? "" : ".";
+      if (
+        this.dataForm.resultMenulis.length === 0 &&
+        this.dataForm.resultParagraph.length === 0
+      ) {
+        alert("The data cannot be empty. Please choose first");
+        return;
+      }
       this.pramenulisLanjutanDataSesion.konsepParahraf.push(
         this.formatToDot(this.dataForm.resultMenulis) +
           "." +
-          this.formatToDot(this.dataForm.resultParagraph) +
-          titikAkhir
+          this.formatToNull(this.dataForm.resultParagraph)
       );
       var savePage1 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);

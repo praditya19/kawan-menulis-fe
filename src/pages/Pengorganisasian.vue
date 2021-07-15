@@ -1,130 +1,365 @@
 <template>
   <div class="content">
-    <br /><br /><br /><br />
-    <div class="content_padding">
-      <div class="content_padding_header">
-        <h1><b>Latihan Menulis</b></h1>
+    <!-- Judul -->
+    <div style="margin-top: 120px;">
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
       </div>
+    </div>
+    <br />
+    <!-- Stepper -->
+    <div class="content-dua">
       <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/6.png" />
+        <img class="steper_image" src="@/assets/icon_stepper/5.png" alt="" />
       </div>
     </div>
-    <div
-      style="
-        background-color: rgba(139, 181, 236, 0.1);
-        height: 60px;
-        width: 100%px;
-      "
-    >
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="content_padding_paragraf">
-            <p><b>Jenis Paragraf: </b>Deskripsi</p>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="content_padding_paragraf_right">
-            <p>
-              <b>Topik: </b>Topik: Apakah kamu punya kemahiran dalam membuat
-              sesuatu? Coba sebutkan satu.
-            </p>
-          </div>
-        </div>
+    <br />
+    <!-- Jenis Paragraf -->
+    <div class="content-tiga">
+      <div class="jenis">
+        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+        <p class="jenis_topik">
+          <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
+          sesuatu? Coba sebutkan satu.
+        </p>
       </div>
     </div>
-
-    <!-- Screen1 -->
-    <div class="container_bawah">
-      <div class="content_padding_tulis" v-if="pengorganisasianPage1 === true">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </b-button>
-              <!-- popup -->
-              <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
+    <!-- modal area -->
+    <div v-if="showModal === true">
+      <transition name="modal">
+        <div class="modal1">
+          <div class="modal2">
+            <div class="modal3">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div>
+                          <div class="image-container">
+                            <img src="@/assets/checklist.png" />
+                          </div>
+                          <div class="d-block text-center">
                             <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img src="@/assets/checklist.png" />
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="
+                              style="
                                           padding: 0% 0% 0% 12%;
                                           width: 85%;
                                         "
-                                      >
-                                        <p>
-                                          Anda perlu memindahkan setidaknya
-                                          empat kalimat ke dalam Notepad
-                                          Paragraf.
-                                        </p>
-                                        <p>
-                                          Nanti Anda akan dapat mengubah urutan
-                                          kalimat Anda.
-                                        </p>
-                                      </div>
-                                    </div>
-
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                            >
+                              <p>
+                                Anda perlu memindahkan setidaknya empat kalimat
+                                ke dalam Notepad Paragraf.
+                              </p>
+                              <p>
+                                Nanti Anda akan dapat mengubah urutan kalimat
+                                Anda.
+                              </p>
                             </div>
+                          </div>
+
+                          <div class="ok2">
+                            <b-button
+                              class="mt-3"
+                              block
+                              @click="showModal = falses"
+                              >OK</b-button
+                            >
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </transition>
+              </div>
             </div>
           </div>
-          <!-- Kalimat Samping Button Tips -->
-
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Anda sekarang siap untuk mengatur kalimat Anda. <br /><br />
-                    Kalimat utama Anda telah ditempatkan di
-                    <strong>Catatan Paragraf</strong> . Kalimat mana yang secara
-                    logis akan muncul setelahnya?<br /><br />
-                    Pindahkan setidaknya <strong>empat kalimat</strong>, satu
-                    persatu secara berurutan, dari
-                    <strong>Catatan Menulis</strong> ke dalam Catatan Paragraf.
-                    Nanti Anda akan memiliki kesempatan untuk meninjau kembali
-                    urutan kalimat Anda.<br /><br />
-                    Centang kalimat yang Anda ingin pilih Klik
-                    <strong>v</strong> untuk memindahkan setiap kalimat ke dalam
-                    <strong>Catatan Paragraf atau sebaliknya</strong>
-                  </p>
+        </div>
+      </transition>
+    </div>
+    <div v-if="showModalTambahPage3 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <form action="">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%;">
+                        <p
+                          style="color:black; margin-left: 6%; font-size: 20px;"
+                        >
+                          <b>
+                            Tambahan Catatan Pra Menulis
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.tambahParagrafPage3"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button
+                            class="ok"
+                            block
+                            @click="
+                              (showModalTambahPage3 = false),
+                                (dataForm.tambahPramenulis = '')
+                            "
+                          >
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button
+                            class="ok2"
+                            block
+                            @click="showModalTambahPage3 = false"
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- popup ubah -->
+    <div v-if="showModalUbahPage3 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <b-form @submit="showModalUbahPage3 = false">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p
+                          style="color:black; margin-left: 15%; font-size: 20px;"
+                        >
+                          <b>
+                            Ubah Catatan Pra Menulis
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.ubahParagrafPage3"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button
+                            class="ok"
+                            block
+                            @click="showModalUbahPage3 = false"
+                          >
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button
+                            class="ok2"
+                            block
+                            @click="showModalUbahPage3 = false"
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </b-form>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- popup -->
+    <div v-if="showModal2 === true">
+      <transition name="modal" appear>
+        <div class="modal1">
+          <div class="modal2">
+            <div class="modal3">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div>
+                          <div class="image-container">
+                            <img src="@/assets/checklist.png" />
+                          </div>
+                          <div class="d-block text-center">
+                            <div
+                              style="
+                                          padding: 0% 0% 0% 12%;
+                                          width: 85%;
+                                        "
+                            >
+                              <p>
+                                Tanyakan pada diri sendiri apakah semua kalimat
+                                Anda berhubungan dengan topik anda?
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="ok2">
+                            <b-button
+                              class="mt-3"
+                              block
+                              @click="showModal2 = falses"
+                              >OK</b-button
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- popup -->
+
+    <div v-if="showModal3 === true">
+      <transition name="modal" appear>
+        <div class="modal1">
+          <div class="modal2">
+            <div class="modal3">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div>
+                          <div class="image-container">
+                            <img src="@/assets/checklist.png" />
+                          </div>
+                          <div class="d-block text-center">
+                            <div
+                              style="
+                                          padding: 0% 0% 0% 12%;
+                                          width: 85%;
+                                        "
+                            >
+                              <p>
+                                Perhatikan bagaimana kata-kata transisi
+                                bertindak sebagai jembatan antara kalimat dalam
+                                sebuah paragraf.
+                                <br /><br />
+                                <strong>Saya SELALU</strong> suka makan pizza.
+                                Jenis pizza favorit saya memiliki sayuran di
+                                atasnya. Saya suka banyak saus.
+                                <strong> Saya JUGA</strong> menikmati banyak
+                                keju.<strong> SEBAGAI TAMBAHAN</strong>
+                                , kerak harus renyah.
+                                <strong> AKHIRNYA</strong> , saya suka kombinasi
+                                kerak, keju, sayuran, dan saus di mulut saya.
+                                Pizza adalah makanan yang sempurna bagi saya.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="ok2">
+                            <b-button
+                              class="mt-3"
+                              block
+                              @click="showModal3 = false"
+                              >OK</b-button
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- end modal area -->
+    <!-- Screen1 -->
+    <div style="padding: 20px 0px 20px 110px;">
+      <div class="content_padding_tulis" v-if="pengorganisasianPage1 === true">
+        <div class="tengah">
+          <div class="row">
+            <div class="col-sm-1">
+              <b-btn class="tengah_tips" @click="showModal = true">TIPS</b-btn>
+            </div>
+            <div class="col-sm-11">
+              <p class="tengah_text2">
+                Anda sekarang siap untuk mengatur kalimat Anda.
+              </p>
+              <p class="tengah_text2">
+                Kalimat utama Anda telah ditempatkan di
+                <b>Catatan Paragraf</b> . Kalimat mana yang secara logis akan
+                muncul setelahnya?
+              </p>
+              <p class="tengah_text2">
+                Pindahkan setidaknya <b>empat kalimat</b>, satu persatu secara
+                berurutan, dari <b>Catatan Menulis</b> ke dalam Catatan
+                Paragraf. Nanti Anda akan memiliki kesempatan untuk meninjau
+                kembali urutan kalimat Anda.
+              </p>
+              <p class="tengah_text2">
+                Centang kalimat yang Anda ingin pilih Klik
+                <b>v</b> untuk memindahkan setiap kalimat ke dalam
+                <b>Catatan Paragraf atau sebaliknya</b>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-11" style="padding: 0px 0px 0px 40px;">
             <div class="col-sm-12">
               <div
                 class="content_padding_tulis_right_paragraf_bawah"
@@ -144,20 +379,6 @@
                         <h4 style="padding: 11px 0px 0px 0px;">
                           <b>Catatan Menulis</b>
                         </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div
-                      style="
-                        background-color: #e0e0e0;
-                        height: 48px;
-                        width: 37px;
-                        border-radius: 20px 20px 20px 20px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        &and;
                       </div>
                     </div>
                   </div>
@@ -221,19 +442,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-2">
-                    <div
-                      style="
-                        background-color: #e0e0e0;
-                        height: 48px;
-                        width: 37px;
-                        border-radius: 20px 20px 20px 20px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan"></div>
-                      <i class="fa fa-angle-up"></i>
-                    </div>
-                  </div>
                 </div>
                 <div
                   style="
@@ -267,7 +475,7 @@
                                       v-for="(dataSesionNext2,
                                       index) in pramenulisLanjutanDataSesion.resultParagraph"
                                       :key="index"
-                                      v-model="dataForm.resultParagraph"
+                                      v-model="dataForm.resultMenulis"
                                       >&nbsp;&nbsp;{{
                                         dataSesionNext2
                                       }}</b-form-checkbox
@@ -294,386 +502,216 @@
           </div>
         </div>
       </div>
-
       <!-- Screen2 -->
       <div class="content_padding_tulis" v-if="pengorganisasianPage2 === true">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </b-button>
-              <!-- popup -->
-              <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img src="@/assets/checklist.png" />
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="
-                                          padding: 0% 0% 0% 12%;
-                                          width: 85%;
-                                        "
-                                      >
-                                        <p>
-                                          Tanyakan pada diri sendiri apakah
-                                          semua kalimat Anda berhubungan dengan
-                                          topik anda?
-                                        </p>
-                                      </div>
-                                    </div>
-
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </transition>
+        <div class="tengah">
+          <div class="row">
+            <div class="col-sm-1">
+              <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+            </div>
+            <div class="col-sm-11">
+              <p class="tengah_text2">
+                Bagus! Anda telah memperkenalkan ide utama Anda dalam kalimat
+                topik. Anda memberikan beberapa detail dalam kalimat-kalimat
+                berikutnya.
+              </p>
+              <p class="tengah_text2">
+                Ini adalah saat yang tepat untuk membaca apa yang telah Anda
+                tulis sejauh ini.
+              </p>
             </div>
           </div>
-          <!-- Kalimat Samping Button Tips -->
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Bagus! Anda telah memperkenalkan ide utama Anda dalam
-                    kalimat topik. Anda memberikan beberapa detail dalam
-                    kalimat-kalimat berikutnya.
-                  </p>
-                  <p>
-                    Ini adalah saat yang tepat untuk membaca apa yang telah Anda
-                    tulis sejauh ini.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div
-                      style="
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-11" style="padding: 0px 0px 0px 40px;">
+            <div
+              class="content_padding_tulis_right_paragraf_bawah"
+              style="padding: 80px 0px 0px 0px"
+            >
+              <div class="row">
+                <div class="col-sm-4">
+                  <div
+                    style="
                         background-color: #484c52;
                         height: 48px;
                         width: 240px;
                         border-radius: 20px 20px 0px 0px;
                       "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4 style="padding: 14px 0px 0px 0px;">
-                          <b>Konsep Paragraf</b>
-                        </h4>
-                      </div>
+                  >
+                    <div class="content_padding_tulis_catatan">
+                      <h4 style="padding: 14px 0px 0px 0px;">
+                        <b>Konsep Paragraf</b>
+                      </h4>
                     </div>
                   </div>
                 </div>
-                <div
-                  style="
+              </div>
+              <div
+                style="
                     background-color: #c1c8d3;
-                    width: 730px;
+                    width: 820px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
                   "
-                >
-                  <div style="margin-left: 5px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div
-                              class="dua"
-                              v-for="(dataSesion,
-                              index) in pramenulisLanjutanDataSesion.konsepParahraf"
-                              :key="index"
-                            >
-                              <p>
-                                {{ dataSesion }}
-                              </p>
-                            </div>
-                          </ul>
-                        </div>
+              >
+                <div style="padding: 0px 15px 0px 5px">
+                  <b-form-group>
+                    <div>
+                      <div class="col-sm-12">
+                        <ul>
+                          <div
+                            class="dua"
+                            v-for="(dataSesion,
+                            index) in pramenulisLanjutanDataSesion.konsepParahraf"
+                            :key="index"
+                          >
+                            <p>
+                              {{ dataSesion }}
+                            </p>
+                          </div>
+                        </ul>
                       </div>
-                    </b-form-group>
-                  </div>
+                    </div>
+                  </b-form-group>
                 </div>
               </div>
             </div>
-            <br /><br /><br />
-            <div class="col-sm-12">
-              <div class="button2_tombol2" @click="pengorganisasian2Next">
-                <button class="button2" type="submit">
-                  <b>OK</b>
-                </button>
-              </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="button4_tombol4" @click="pengorganisasian2Next">
+              <button class="button4" type="submit">
+                <b>OK</b>
+              </button>
             </div>
           </div>
         </div>
       </div>
-
       <!-- screen 3 -->
       <div class="content_padding_tulis" v-if="pengorganisasianPage3 === true">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </b-button>
-              <!-- popup -->
-              <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img src="@/assets/checklist.png" />
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="
-                                          padding: 0% 0% 0% 12%;
-                                          width: 85%;
-                                        "
-                                      >
-                                        <p>
-                                          Perhatikan bagaimana kata-kata
-                                          transisi bertindak sebagai jembatan
-                                          antara kalimat dalam sebuah paragraf.
-                                          <br /><br />
-                                          <strong>Saya SELALU</strong> suka
-                                          makan pizza. Jenis pizza favorit saya
-                                          memiliki sayuran di atasnya. Saya suka
-                                          banyak saus.
-                                          <strong> Saya JUGA</strong> menikmati
-                                          banyak keju.<strong>
-                                            SEBAGAI TAMBAHAN</strong
-                                          >
-                                          , kerak harus renyah.
-                                          <strong> AKHIRNYA</strong> , saya suka
-                                          kombinasi kerak, keju, sayuran, dan
-                                          saus di mulut saya. Pizza adalah
-                                          makanan yang sempurna bagi saya.
-                                        </p>
-                                      </div>
-                                    </div>
-
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </transition>
+        <div class="tengah">
+          <div class="row">
+            <div class="col-sm-1">
+              <b-btn class="tengah_tips" @click="showModal3 = true">TIPS</b-btn>
+            </div>
+            <div class="col-sm-11">
+              <p class="tengah_text2">
+                Bisakah Anda menghubungkan satu kalimat ke kalimat lain dengan
+                lebih lancar? Kata-kata transisi dapat membantu menghubungkan
+                ide-ide dalam sebuah paragraf.
+              </p>
+              <p class="tengah_text2">
+                Untuk melihat bagaimana kata transisi dapat digunakan dalam
+                sebuah paragraf, klik Tips.
+              </p>
+              <p class="tengah_text2">
+                Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Change
+                Text.
+              </p>
+              <p class="tengah_text2">
+                Pada layar berikutnya Anda akan melihat lebih banyak contoh kata
+                transisi
+              </p>
             </div>
           </div>
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Bisakah Anda menghubungkan satu kalimat ke kalimat lain
-                    dengan lebih lancar? Kata-kata transisi dapat membantu
-                    menghubungkan ide-ide dalam sebuah paragraf.
-                  </p>
-                  <p>
-                    Untuk melihat bagaimana kata transisi dapat digunakan dalam
-                    sebuah paragraf, klik Tips.
-                  </p>
-                  <p>
-                    Untuk menyisipkan kata transisi, pilih kalimat, lalu klik
-                    Change Text.
-                  </p>
-                  <p>
-                    Pada layar berikutnya Anda akan melihat lebih banyak contoh
-                    kata transisi
-                  </p>
-                </div>
-              </div>
-            </div>
-            <br />
-
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div
-                      style="
+        </div>
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-11">
+            <div
+              class="content_padding_tulis_right_paragraf_bawah"
+              style="padding: 80px 0px 0px 30px"
+            >
+              <div class="row">
+                <div class="col-sm-3">
+                  <div
+                    style="
                         background-color: #484c52;
                         height: 48px;
                         width: 240px;
                         border-radius: 20px 20px 0px 0px;
                       "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Paragraf</b></h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
+                  >
                     <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol3">
-                        <button
-                          class="button3"
-                          id="show-btn"
-                          @click="$bvModal.show('bv-modal-example')"
-                        >
-                          <b>Tambah</b>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol3">
-                        <button
-                          class="button3_button4"
-                          @click="$bvModal.show('bv-modal-example')"
-                        >
-                          <b>Ubah</b>
-                        </button>
-                      </div>
+                      <h4 style="padding: 10px 0px 0px 0px;">
+                        <b>Catatan Paragraf</b>
+                      </h4>
                     </div>
                   </div>
                 </div>
-                <div
-                  style="
+                <div class="col-sm-2">
+                  <div class="content_padding_tulis_catatan">
+                    <div class="button3_tombol3">
+                      <button
+                        class="button3"
+                        id="show-btn"
+                        @click="modalUbahPaage3 = true"
+                      >
+                        <b>Tambah</b>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-1" style="margin-left: -35px">
+                  <div class="content_padding_tulis_catatan">
+                    <div class="button3_tombol3">
+                      <button
+                        class="button3_button4"
+                        @click="moodalTambahPage3 = true"
+                      >
+                        <b>Ubah</b>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
                     background-color: #c1c8d3;
                     width: 730px;
                     padding: 13px;
                     border-radius: 0px 0 30px 30px;
                   "
-                >
-                  <div style="margin-left: 30px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya adalah pecandu Kopi</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya senang membuat kopi.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Kopi membuat saya lebih
-                                    bersemangat dalam bekerja.
-                                  </b></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                    tidak terlalu kental.
-                                  </b></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                    kopi.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                          </ul>
-                        </div>
+              >
+                <div style="margin-left: 30px">
+                  <b-form-group>
+                    <div>
+                      <div class="col-sm-12">
+                        <ul>
+                          <div
+                            class="dua"
+                            v-for="(dataSesion,
+                            index) in pramenulisLanjutanDataSesion.resultParagraph"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio name="radios-stacked" stacked
+                                ><b
+                                  >&nbsp; &nbsp;{{ dataSesion }}</b
+                                ></b-form-radio
+                              >
+                            </h5>
+                          </div>
+                        </ul>
                       </div>
-                    </b-form-group>
-                  </div>
+                    </div>
+                  </b-form-group>
                 </div>
-              </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div class="button2_tombol2" @click="pengorganisasian3Next">
-                <button class="button2" type="submit">
-                  <b>OK</b>
-                </button>
               </div>
             </div>
           </div>
         </div>
+        <!-- batas -->
+        <div class="col-sm-12"></div>
+        <br />
+        <div class="col-sm-12">
+          <div class="button4_tombol4" @click="pengorganisasian3Next">
+            <button class="button4" type="submit">
+              <b>OK</b>
+            </button>
+          </div>
+        </div>
       </div>
-
       <!-- screen4 -->
       <div class="content_padding_tulis" v-if="pengorganisasianPage4 === true">
         <div class="row">
@@ -780,7 +818,7 @@
                 style="padding: 80px 0px 0px 0px"
               >
                 <div class="row">
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <div
                       style="
                         background-color: #484c52;
@@ -790,7 +828,9 @@
                       "
                     >
                       <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Paragraf</b></h4>
+                        <h4 style="padding: 10px 0px 0px 0px;">
+                          <b>Catatan Paragraf</b>
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -800,19 +840,19 @@
                         <button
                           class="button3"
                           id="show-btn"
-                          @click="$bvModal.show('bv-modal-example')"
+                          @click="modalUbahPaage3 = true"
                         >
                           <b>Tambah</b>
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-3">
+                  <div class="col-sm-1" style="margin-left: -35px">
                     <div class="content_padding_tulis_catatan">
                       <div class="button3_tombol3">
                         <button
                           class="button3_button4"
-                          @click="$bvModal.show('bv-modal-example')"
+                          @click="moodalTambahPage3 = true"
                         >
                           <b>Ubah</b>
                         </button>
@@ -833,50 +873,16 @@
                       <div>
                         <div class="col-sm-12">
                           <ul>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesion,
+                              index) in pramenulisLanjutanDataSesion.resultParagraph"
+                              :key="index"
+                            >
                               <h5>
                                 <b-form-radio name="radios-stacked" stacked
                                   ><b
-                                    >&nbsp; &nbsp;Saya adalah pecandu Kopi</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya senang membuat kopi.</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Kopi membuat saya lebih
-                                    bersemangat dalam bekerja.
-                                  </b></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                    tidak terlalu kental.
-                                  </b></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked
-                                  ><b
-                                    >&nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                    kopi.</b
+                                    >&nbsp; &nbsp;{{ dataSesion }}</b
                                   ></b-form-radio
                                 >
                               </h5>
@@ -906,6 +912,21 @@
 <script src="./js/pengorganisasian.js" />
 
 <style lang="scss" scoped>
+// Jenis Paragraf
+.jenis {
+  display: flex;
+  max-width: 1440px;
+  height: 49px;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  &_paragraf {
+    padding: 11px 0px 0px 110px;
+  }
+  &_topik {
+    padding: 11px 0px 0px 70px;
+  }
+}
+// End Jenis Paragraf
 .button2 {
   background-color: #0a4da3;
   border: none;
@@ -1041,15 +1062,91 @@
 .button:hover {
   background-color: #00a279;
 }
+.button4 {
+  background-color: #0a4da3;
+  color: rgb(243, 237, 237);
+  cursor: pointer;
+  border-radius: 30px;
+  display: flex;
+  position: relative;
+  max-width: 990px;
+  width: 130px;
+  height: 44px;
+  b {
+    // padding: 0% 3% 0% 3%;
+    color: #f1f1f1;
+    margin: auto;
+    font-size: 20px;
+  }
+  &_tombol4 {
+    padding: 60px 0px 0px 400px;
+    width: 190px;
+    height: 200px;
+    margin-bottom: -30px;
+  }
+}
+.button4:hover {
+  background-color: #0a4da3;
+}
 // Stepper 1 -7
 .container {
   width: 100%;
   &_bawah {
     padding: 20px 0px 180px 0px;
-    margin-left: 17%;
+    margin-left: 15%;
   }
 }
+.tengah2 {
+  padding: 0px 0px 0px 100px;
+  display: flex;
+  width: 100%;
+  display: flex;
+  padding-top: 13px;
+}
+.tengah {
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13px;
+  // background: red;
+  // button tips
+  &_tips {
+    padding: 4px 0px 0px 0px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #00a279;
+    color: #fff;
+    font-size: normal;
+    margin-bottom: 70px;
+    cursor: pointer;
+  }
 
+  // text page 2
+  &_text2 {
+    margin-left: 30px;
+    width: 80%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+  &_text3 {
+    margin-left: 30px;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+}
 .steper {
   text-align: center;
   // background:red;
@@ -1064,25 +1161,6 @@
   background-color: #c5dcff;
   height: 50px;
   width: 100%px;
-}
-
-.modal-content {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-  position: relative;
-  top: -350px;
-  left: 275px;
-}
-
-.modal-body {
-  width: 500px;
-}
-
-.image-container {
-  // background: red;
-  text-align: center;
-  padding: 0px;
 }
 
 .ok2 {
@@ -1114,6 +1192,7 @@
       &_catatan {
         color: #f1f1f1;
         text-align: center;
+        padding: 0px 0px 0px 0px;
         &_catatan2 {
           color: #454b56;
           h4 {
@@ -1195,5 +1274,74 @@
     }
   }
 }
-</style>
+.judul {
+  font-family: Poppins;
+  font-size: 50px;
+  line-height: 65px;
+  font-weight: 700;
+  text-align: center;
+}
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
+}
 
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+.kalimat2 {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+.kalimat3 {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
+</style>

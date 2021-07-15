@@ -285,30 +285,13 @@
             <div>
               <div class="col-sm-12">
                 <ul>
-                  <div class="dua">
+                  <div
+                    class="dua"
+                    v-for="(dataSesion, index) in dataSesion.resultParagraph"
+                    :key="index"
+                  >
                     <h5>
-                      <li>&nbsp; &nbsp;Saya senang mebuat kopi.</li>
-                    </h5>
-                  </div>
-                  <div class="dua">
-                    <h5>
-                      <li>
-                        &nbsp; &nbsp;Kopi membuat saya lebih bersemangat dalam
-                        bekerja.
-                      </li>
-                    </h5>
-                  </div>
-                  <div class="dua">
-                    <h5>
-                      <li>
-                        &nbsp; &nbsp;Saya menyukai kopi pahit tapi tidak terlalu
-                        kental.
-                      </li>
-                    </h5>
-                  </div>
-                  <div class="dua">
-                    <h5>
-                      <li>&nbsp; &nbsp;Itulah sebabnya saya menyukai kopi.</li>
+                      <li>&nbsp; &nbsp;{{ dataSesion }}</li>
                     </h5>
                   </div>
                 </ul>

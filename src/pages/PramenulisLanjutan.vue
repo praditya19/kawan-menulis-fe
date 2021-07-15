@@ -12,316 +12,234 @@
       </div>
       <!-- End Stepper  -->
     </div>
-
-    <!-- Jenis Paragraf -->
-    <div
-      style="
-        background-color: rgba(139, 181, 236, 0.1);
-        height: 60px;
-        width: 100%px;
-      "
-    >
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="content_padding_paragraf">
-            <p><b>Jenis Paragraf: </b>Deskripsi</p>
+    <!-- popup tambah -->
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <form action="">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%;">
+                        <p
+                          style="color:black; margin-left: 6%; font-size: 20px;"
+                        >
+                          <b>
+                            Tambahan Catatan Pra Menulis
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.tambahPramenulis"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button
+                            class="ok"
+                            block
+                            @click="
+                              (showModal = false),
+                                (dataForm.tambahPramenulis = '')
+                            "
+                          >
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button class="ok2" block @click="handleOk()">
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <br />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-sm-8">
-          <div class="content_padding_paragraf_right">
-            <p>
-              <b>Topik: </b>Apakah kamu punya kemahiran dalam membuat sesuatu?
-              Coba sebutkan satu.
+      </transition>
+    </div>
+    <!-- popup ubah -->
+    <div v-if="showModal2 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <b-form @submit="upCatatanMenulis">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p
+                          style="color:black; margin-left: 15%; font-size: 20px;"
+                        >
+                          <b>
+                            Ubah Catatan Pra Menulis
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.pramenulisLanjutanPembaruan"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button class="ok" block @click="showModal2 = false">
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button class="ok2" block type="submit">
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </b-form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- Jenis Paragraf -->
+    <div class="center">
+      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+      <p class="center_topik">
+        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
+        sesuatu? Coba sebutkan satu.
+      </p>
+    </div>
+    <!-- Button Tips dan Kalimat -->
+    <div style="padding: 20px 0px 0px 0px">
+      <div class="tengah">
+        <div class="row">
+          <div class="col-sm-1">
+            <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+          </div>
+          <div class="col-sm-11">
+            <p class="tengah_text2">
+              Sekarang setelah Anda menulis kalimat pembuka, atau kalimat topik,
+              lihat daftar kata Anda di Catatan Pramenulis. Bisakah Anda membuat
+              kata atau frasa tambahan yang berhubungan dengan topik Anda?
+            </p>
+            <p class="tengah_text2">
+              Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata atau
+              frasa. Jangan menulis kalimat sekarang.
+            </p>
+            <p class="tengah_text2">
+              ketik OK ketika anda siap untuk melanjutkan
             </p>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Button Tips dan Kalimat -->
-    <div class="container_bawah">
-      <div class="content_padding_tulis">
+      <!-- button -->
+      <div class="Button">
+        <b-btn class="button  justify-content-center" @click="toMenulisIsi()">
+          <b>OK</b>
+        </b-btn>
+      </div>
+      <!-- Catatan PRa Menulis -->
+      <div class="content_padding_tulis_right_paragraf_bawah">
         <div class="row">
-          <div class="col-sm-2">
-            <div class="button_tombol">
-              <b-button class="button">Tips</b-button>
+          <div class="col-sm-3">
+            <div
+              style="background-color: #484c52;height: 48px;width: 240px;border-radius: 20px 20px 0px 0px;"
+            >
+              <div class="content_padding_tulis_catatan">
+                <h4><b>Catatan Pra Menulis</b></h4>
+              </div>
             </div>
           </div>
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <p>
-                  Sekarang setelah Anda menulis kalimat pembuka, atau kalimat
-                  topik, lihat daftar kata Anda di Catatan Pramenulis. Bisakah
-                  Anda membuat kata atau frasa tambahan yang berhubungan dengan
-                  topik Anda?
-                </p>
-              </div>
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata
-                    atau frasa. Jangan menulis kalimat sekarang.
-                  </p>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>ketik OK ketika anda siap untuk melanjutkan</p>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <div class="button2_tombol2" @click="toMenulisIsi">
-                    <button class="button2" type="submit">
-                      <b>OK</b>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-12">
-                <!-- Catatan PRa Menulis -->
-                <div
-                  class="content_padding_tulis_right_paragraf_bawah"
-                  style="margin-top: -50px; margin-bottom: -40px"
-                >
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div
-                        style="
-                          background-color: #484c52;
-                          height: 48px;
-                          width: 240px;
-                          border-radius: 20px 20px 0px 0px;
-                        "
-                      >
-                        <div class="content_padding_tulis_catatan">
-                          <h4><b>Catatan Pra Menulis</b></h4>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Tambah -->
-                    <div class="col-sm-2">
-                      <div class="content_padding_tulis_catatan">
-                        <div class="button3_tombol3">
-                          <button
-                            class="button3"
-                            id="show-btn"
-                            @click="showModal = true"
-                          >
-                            <b>Tambah</b>
-                          </button>
-                          <!-- popup -->
-                          <div v-if="showModal === true">
-                            <transition name="model">
-                              <div class="modal-mask">
-                                <div class="modal-wrapper">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-                                      <!-- Modal Body -->
-                                      <div class="modal-body">
-                                        <form action="">
-                                          <div class="kalimat">
-                                            <div
-                                              style="
-                                              padding: 0% 0% 0% 12%;
-                                            "
-                                            >
-                                              <p
-                                                style="color:black; margin-left: 6%; font-size: 20px;"
-                                              >
-                                                <b>
-                                                  Tambahan Catatan Pra Menulis
-                                                </b>
-                                              </p>
-                                              <table>
-                                                <tr>
-                                                  <td>
-                                                    <b-form-textarea
-                                                      v-model="
-                                                        dataForm.tambahPramenulis
-                                                      "
-                                                      style="width: 109%"
-                                                      rows="4"
-                                                      no-resize
-                                                      type="text"
-                                                    ></b-form-textarea>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </div>
-                                          </div>
-                                          <div class="tombol">
-                                            <div class="row">
-                                              <div class="col-sm-6">
-                                                <button
-                                                  class="ok"
-                                                  block
-                                                  @click="
-                                                    (showModal = false),
-                                                      (dataForm.tambahPramenulis =
-                                                        '')
-                                                  "
-                                                >
-                                                  Batal
-                                                </button>
-                                              </div>
-                                              <div class="col-sm-6">
-                                                <button
-                                                  class="ok2"
-                                                  block
-                                                  @click="handleOk()"
-                                                >
-                                                  OK
-                                                </button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </div>
-                                      <br />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </transition>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Ubah -->
-                    <div class="col-sm-2">
-                      <div class="content_padding_tulis_catatan">
-                        <div class="button3_tombol3">
-                          <button
-                            v-bind:disabled="
-                              dataForm.pramenulisLanjutan.length === 0
-                                ? true
-                                : false
-                            "
-                            class="button3"
-                            id="show-btn"
-                            @click="modal2()"
-                          >
-                            <b>Ubah</b>
-                          </button>
-                          <!-- popup -->
-                          <div v-if="showModal2 === true">
-                            <transition name="model">
-                              <div class="modal-mask">
-                                <div class="modal-wrapper">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content">
-                                      <!-- Modal Body -->
-                                      <div class="modal-body">
-                                        <b-form @submit="upCatatanMenulis">
-                                          <div class="kalimat">
-                                            <div
-                                              style="
-                                              padding: 0% 0% 0% 12%;
-                                              width: 85%;
-                                            "
-                                            >
-                                              <p
-                                                style="color:black; margin-left: 15%; font-size: 20px;"
-                                              >
-                                                <b>
-                                                  Ubah Catatan Pra Menulis
-                                                </b>
-                                              </p>
-                                              <table>
-                                                <tr>
-                                                  <td>
-                                                    <b-form-textarea
-                                                      v-model="
-                                                        dataForm.pramenulisLanjutanPembaruan
-                                                      "
-                                                      style="width: 109%"
-                                                      rows="4"
-                                                      no-resize
-                                                      type="text"
-                                                    ></b-form-textarea>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </div>
-                                          </div>
-                                          <div class="tombol">
-                                            <div class="row">
-                                              <div class="col-sm-6">
-                                                <button
-                                                  class="ok"
-                                                  block
-                                                  @click="showModal2 = false"
-                                                >
-                                                  Batal
-                                                </button>
-                                              </div>
-                                              <div class="col-sm-6">
-                                                <button
-                                                  class="ok2"
-                                                  block
-                                                  type="submit"
-                                                >
-                                                  OK
-                                                </button>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <br />
-                                        </b-form>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </transition>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Cara membuat Kopi -->
-                  <div
-                    style="
-                      background-color: #c1c8d3;
-                      width: 730px;
-                      padding: 13px;
-                      border-radius: 0px 0 30px 30px;
-                    "
-                  >
-                    <div style="margin-left: 30px">
-                      <b-form-group v-slot="{ ariaDescribedby }">
-                        <div class="col-sm-12">
-                          <div
-                            class="dua"
-                            v-for="(dataSesion,
-                            index) in kalimatUtamaDataSesion.resultMenulis"
-                            :key="index"
-                          >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.pramenulisLanjutan"
-                                :aria-describedby="ariaDescribedby"
-                                name="some-radios"
-                                v-bind:value="index"
-                                >&nbsp;&nbsp;
-                                {{ dataSesion.pramenulis }}</b-form-radio
-                              >
-                            </h5>
-                          </div>
-                        </div>
-                      </b-form-group>
-                    </div>
-                  </div>
-                </div>
+          <!-- Tambah -->
+          <div class="col-sm-2">
+            <div class="content_padding_tulis_catatan">
+              <div class="button3_tombol3">
+                <button class="button3" id="show-btn" @click="showModal = true">
+                  <b>Tambah</b>
+                </button>
               </div>
             </div>
-            <br />
+          </div>
+          <!-- Ubah -->
+          <div class="col-sm-6" style="margin-left: -50px;">
+            <div class="content_padding_tulis_catatan">
+              <div class="button3_tombol3">
+                <button
+                  v-bind:disabled="
+                    dataForm.pramenulisLanjutan.length === 0 ? true : false
+                  "
+                  class="button3"
+                  id="show-btn"
+                  @click="modal2()"
+                >
+                  <b>Ubah</b>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cara membuat Kopi -->
+        <div
+          style="background-color: #c1c8d3;width: 730px;padding: 13px;border-radius: 0px 0 30px 30px;"
+        >
+          <div style="margin-left: 30px">
+            <b-form-group v-slot="{ ariaDescribedby }">
+              <div class="col-sm-12">
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in kalimatUtamaDataSesion.resultMenulis"
+                  :key="index"
+                >
+                  <h5>
+                    <b-form-radio
+                      v-model="dataForm.pramenulisLanjutan"
+                      :aria-describedby="ariaDescribedby"
+                      name="some-radios"
+                      v-bind:value="index"
+                      >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
+                    >
+                  </h5>
+                </div>
+              </div>
+            </b-form-group>
           </div>
         </div>
       </div>
+      <!-- end button -->
     </div>
   </div>
 </template>
@@ -329,6 +247,71 @@
 <script src="./js/pramenulisLanjutan.js" />
 
 <style lang="scss" scoped>
+.tengah {
+  margin-left: 100px;
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13px;
+  // background: red;
+  // button tips
+  &_tips {
+    padding: 4px 0px 0px 0px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #00a279;
+    color: #fff;
+    font-size: normal;
+    margin-bottom: 70px;
+    cursor: pointer;
+  }
+
+  // text page 2
+  &_text2 {
+    margin-left: 30px;
+    width: 65%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+  }
+}
+.center {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  // position: absolute;
+  font-size: 16px;
+  padding-top: 12px;
+  background-color: rgba(139, 181, 236, 0.1);
+  &_paragraf {
+    margin-left: 100px;
+  }
+  &_topik {
+    margin-left: 70px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    &_paragraf {
+      width: 50%;
+    }
+
+    &_topik {
+      width: 50%;
+    }
+  }
+}
 .ok {
   .mt-3 {
     // margin-bottom: 10px;
@@ -363,6 +346,39 @@
   border-bottom-right-radius: 30px;
   h5 {
     font-family: Poppins;
+  }
+}
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  .button {
+    background-color: #0a4da3;
+    border: none;
+    color: white;
+    text-decoration: none;
+    width: 110px;
+    height: 44px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 44px;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+  }
+
+  .button:hover {
+    background-color: #0a4da3;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .button3 {
@@ -410,68 +426,7 @@
 .button3:hover {
   background-color: #f3e8e8;
 }
-.button2 {
-  background-color: #0a4da3;
-  border: none;
-  color: rgb(243, 237, 237);
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: flex-start;
-  padding: 17px 10px;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  max-width: 990px;
-  width: 130px;
-  height: 55px;
-  left: calc(50% - 190px / 2 + 87px);
-  top: -10px;
-  margin-left: 200px;
-  b {
-    padding: 0% 3% 0% 3%;
-    color: #f1f1f1;
-    margin-left: 30px;
-    margin-top: -5px;
-    font-size: 28px;
-  }
-  &_tombol2 {
-    padding: 30px 0px 20px 0px;
-    top: 300px;
-    left: 300px;
-    width: 190px;
-    height: 200px;
-    margin-left: -50px;
-  }
-}
-.button2:hover {
-  background-color: #0a4da3;
-}
-.button {
-  background-color: #00a279;
-  border: none;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: center;
-  // padding: 17px 0px;
-  border-radius: 19px;
-  // display: flex;
-  max-width: 990px;
-  width: 150px;
-  height: 50px;
-  margin-left: 45px;
-  &_tombol {
-    position: absolute;
-    width: 190px;
-    height: 100px;
-    margin-left: -80px;
-  }
-}
-.button:hover {
-  background-color: #00a279;
-}
+
 .content {
   overflow-x: hidden;
   max-width: 100%;
@@ -513,7 +468,7 @@
             margin: 0.4rem;
           }
           &_bawah {
-            margin-bottom: 100px;
+            padding: 50px 0px 100px 235px;
           }
         }
       }
@@ -574,26 +529,6 @@
   }
 }
 
-/* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
-
-.modal-content {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-/* end style Modal */
-
 /* Style Isi Modal */
 .image-container {
   text-align: center;
@@ -634,6 +569,25 @@
 
 /* end style isi modal */
 
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
+}
+
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+/* end style Modal */
 /* Background belakang modal */
 .modal-mask {
   position: fixed;

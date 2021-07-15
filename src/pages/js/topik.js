@@ -29,7 +29,6 @@ export default {
       return idTopic;
     },
   },
-
   methods: {
     ...mapActions(["getParagraphTypesList"]),
     getStudentDataSession() {
@@ -55,12 +54,12 @@ export default {
         },
       });
     },
-    getAllParagraphTypes() {
+    async getAllParagraphTypes() {
       const requestBody = {
         clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
         clientSecret: "27e78980e2419b308c86559ef0fb0105",
       };
-      this.getParagraphTypesList({
+      await this.getParagraphTypesList({
         requestBody,
         success: (res) => {
           res.map((paragraphTypes) => {
@@ -76,8 +75,8 @@ export default {
     },
 
     ...mapActions(["createStudentsActions"]),
-    handlesubmit() {
-      this.createStudentsActions({
+    async handlesubmit() {
+      await this.createStudentsActions({
         requestBody: {
           clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
           clientSecret: "27e78980e2419b308c86559ef0fb0105",

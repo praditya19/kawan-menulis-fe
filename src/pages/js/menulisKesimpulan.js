@@ -1,7 +1,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "MenulisIsi",
+  name: "MenulisKesimpulan",
   data() {
     return {
       showModal: false,
@@ -13,10 +13,21 @@ export default {
       menuliskesimpulanPage1: true,
       menuliskesimpulanPage2: false,
       menuliskesimpulanPage3: false,
+
+      // Data Sesion
+      dataSesion: {},
     };
   },
-
+  mounted() {
+    this.getDataSesion();
+  },
   methods: {
+    getDataSesion() {
+      var pramenulisLanjutanData = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
+      this.dataSesion = JSON.parse(pramenulisLanjutanData);
+    },
     menuliskesimpulan1Next() {
       this.menuliskesimpulanPage2 = true;
       if (this.menuliskesimpulanPage2 === true) {
