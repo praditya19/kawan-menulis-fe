@@ -861,12 +861,22 @@
               </div>
             </div>
 
-            <!-- Button Gaya menulis dll -->
+             <!-- Button Gaya menulis dll -->
             <div class="all-button">
-                <button class="all-button_satu">Gaya Menulis</button>
-                <button class="all-button_satu">Struktur Kalimat</button>
-                <button class="all-button_satu">Tata Bahasa</button>
-                <button class="all-button_satu">Pemeriksaan Akhir</button>
+                <button class="all-button_satu">
+                <img style="margin-right:3%;" src="@/assets/check.png">
+                Gaya Menulis
+                </button>
+                <button class="all-button_satu">
+                    <img style="margin-right:3%;" src="@/assets/check.png">
+                    Struktur Kalimat
+                    </button>
+                <button class="all-button_exp">
+                    Tata Bahasa
+                    </button>
+                <button class="all-button_exp" style="width: 16%;">
+                    Pemeriksaan Akhir
+                    </button>
             </div>
 
             <!-- Konsep Paragraf -->
@@ -934,15 +944,22 @@
 
 // Judul
 .content-satu {
+  //   background: red;
   margin-top: 120px;
 }
 
 .judul {
-  font-family: Poppins;
   font-size: 50px;
-  line-height: 65px;
-  font-weight: 700;
-  text-align: center;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
 }
 // End Judul
 
@@ -1005,16 +1022,32 @@
 // end Tips dan Kalimat
 
 // Button Gaya Menulis dll
+// Button Gaya Menulis dll
 .all-button {
   margin-left: 17%;
-  line-height: 30px;
+  line-height: 40px;
 
   &_satu {
+    background-color: #00a279;
+    border: none;
+    border-radius: 20px;
+    width: 14%;
+    margin: 0.3%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Poppins;
+  }
+  &_exp {
     background-color: #e0e0e0;
     border: none;
     border-radius: 20px;
-    width: 12%;
+    width: 14%;
     margin: 0.3%;
+    color: #454B56;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Poppins;
   }
 }
 

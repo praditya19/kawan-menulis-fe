@@ -138,7 +138,7 @@
 }
 
 .isi {
-  padding: 10px 210px 69px 32px;
+  padding: 10px 210px 69px 40px;
   text-align: center;
   @media (max-width: 768px) {
     padding: 10px 10px 69px 10px;
@@ -163,6 +163,7 @@
   line-height: 30px;
   color: #000000;
   padding-top: 20px;
+  margin-left: 10px;
 }
 // Button Gaya Menulis dll
 .all-button {

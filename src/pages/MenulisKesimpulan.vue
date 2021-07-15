@@ -287,7 +287,8 @@
                 <ul>
                   <div
                     class="dua"
-                    v-for="(dataSesion, index) in dataSesion.resultParagraph"
+                    v-for="(dataSesion,
+                    index) in dataSesion.konsepParagrafArray"
                     :key="index"
                   >
                     <h5>
@@ -320,11 +321,17 @@
 }
 
 .judul {
-  font-family: Poppins;
   font-size: 50px;
-  line-height: 65px;
-  font-weight: 700;
-  text-align: center;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
 }
 // End Judul
 
@@ -358,13 +365,12 @@
 // Tips dan Kalimat
 .tips {
   //   background: skyblue;
-  text-align: right;
-  margin: 5px;
+  margin-left: 105px;
   &_judul {
     background-color: #00a279;
     border: none;
     width: 98px;
-    height: 32px;
+    line-height: 32px;
     border-radius: 10px;
     margin: 5px;
   }

@@ -7,7 +7,7 @@
         <b-button class="tips1_judul" @click="showModal = true"
           ><b>Tips</b></b-button
         >
-        <h1 class="tips1_kata1">Latihan Menulis</h1>
+        <h1 class="tips1_kata1"><b>Latihan Menulis</b></h1>
       </div>
     </div>
     <br />

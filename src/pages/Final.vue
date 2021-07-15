@@ -22,7 +22,7 @@
     <!-- body -->
     <div class="body">
       <!-- Button Tips -->
-      <div class="col-md-2">
+      <div class="col-md-2.5">
         <div class="tips">
           <b-button class="tips_judul" @click="showModal = true">
             Tips
@@ -65,7 +65,7 @@
         </transition>
       </div>
 
-      <div class="col-md-10">
+      <div class="col-md-9.5">
         <div class="isi">
           <div class="kalimat">
             <p class="kalimat_p">
@@ -205,7 +205,7 @@
 }
 
 .isi {
-  padding: 30px 200px 10px 40px;
+  padding: 30px 200px 10px 20px;
   width: 100%;
   @media (max-width: 768px) {
     margin-left: 0px;

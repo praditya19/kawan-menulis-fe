@@ -1,6 +1,7 @@
 <template>
   <div class="all">
     <!-- header -->
+    <br/><br/>
     <div class="head">
       <p>Latihan Menulis</p>
     </div>
@@ -586,12 +587,23 @@
               </div>
             </div>
 
-            <!-- Button Gaya menulis dll -->
+           <!-- Button Gaya menulis dll -->
             <div class="all-button">
-                <button class="all-button_satu">Gaya Menulis</button>
-                <button class="all-button_satu">Struktur Kalimat</button>
-                <button class="all-button_satu">Tata Bahasa</button>
-                <button class="all-button_satu">Pemeriksaan Akhir</button>
+                <button class="all-button_satu">
+                <img style="margin-right:3%;" src="@/assets/check.png">
+                Gaya Menulis
+                </button>
+                <button class="all-button_satu">
+                    <img style="margin-right:3%;" src="@/assets/check.png">
+                    Struktur Kalimat
+                    </button>
+                <button class="all-button_satu">
+                    <img style="margin-right:3%;" src="@/assets/check.png">
+                    Tata Bahasa
+                    </button>
+                <button class="all-button_exp" style="width: 16%;">
+                    Pemeriksaan Akhir
+                    </button>
             </div>
 
             <!-- Konsep Paragraf -->
@@ -656,19 +668,19 @@
   }
 
   // head
-  .head {
-    padding: 110px 0px 0px 0px;
-    font-family: Poppins;
-    font-weight: 700;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-    @media (max-width: 768px) {
-      padding: 110px 5px 0px 5px;
-      font-size: 40px;
-    }
+.head {
+  font-size: 50px;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 35%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
   }
+}
 
   // Stepper
   .steper {
@@ -729,23 +741,34 @@
   }
   // end Tips dan Kalimat
 
-  // Button Gaya Menulis dll
-  .all-button {
-    margin-left: 17%;
-    line-height: 30px;
+// Button Gaya Menulis dll
+.all-button {
+  margin-left: 17%;
+  line-height: 40px;
 
-    &_satu {
-      background-color: #e0e0e0;
-      border: none;
-      border-radius: 20px;
-      width: 12%;
-      margin: 0.3%;
-    }
+  &_satu {
+    background-color: #00a279;
+    border: none;
+    border-radius: 20px;
+    width: 14%;
+    margin: 0.3%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Poppins;
   }
-
-  .all-button_satu:hover {
-    background-color: #f1f6cc;
+  &_exp {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    width: 14%;
+    margin: 0.3%;
+    color: #454B56;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Poppins;
   }
+}
 
   // Button Konsep Menulis
   .all-button_dua {

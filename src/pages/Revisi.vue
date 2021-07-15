@@ -449,15 +449,22 @@
 
 // Judul
 .content-satu {
+  //   background: red;
   margin-top: 120px;
 }
 
 .judul {
-  font-family: Poppins;
   font-size: 50px;
-  line-height: 65px;
-  font-weight: 700;
-  text-align: center;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
 }
 // End Judul
 

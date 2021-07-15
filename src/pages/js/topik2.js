@@ -9,7 +9,9 @@ export default {
       // student_topik_menulis_paragraph: [],
       result_menulis: [],
       result_paragraph: [],
-      konsep_parahraf: [],
+      konsep_paragrafToString: [],
+      konsep_paragraf_array: [],
+      menulis_kesimpulan: [],
       form: {
         kalimatSederhana: "",
       },
@@ -41,7 +43,9 @@ export default {
         studentActionsId: this.studentDataSession.id,
         resultMenulis: this.result_menulis,
         resultParagraph: this.result_paragraph,
-        konsepParahraf: this.konsep_parahraf,
+        konsepParahraf: this.konsep_paragrafToString,
+        konsepParagrafArray: this.konsep_paragraf_array,
+        menulisKesimpulan: this.menulis_kesimpulan,
       };
       console.log(this.student_topik_menulis_paragrap);
       var convertToString = JSON.stringify(topik);

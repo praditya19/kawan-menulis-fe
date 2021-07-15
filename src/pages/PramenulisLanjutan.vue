@@ -2,6 +2,7 @@
   <div class="content">
     <br />
     <div class="content_padding">
+    <br/>
       <div class="content_padding_header">
         <h1><b>Latihan Menulis</b></h1>
       </div>

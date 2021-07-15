@@ -36,6 +36,7 @@ export default {
             success: (res) => {
               sessionStorage.setItem("student_id_mulai-menulis", JSON.stringify(res.data.student))
               this.$router.push("/topik");
+              window.location.reload();
             },
             fail: (res) => {
               console.log(res);

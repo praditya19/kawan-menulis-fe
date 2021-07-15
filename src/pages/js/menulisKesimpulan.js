@@ -45,7 +45,14 @@ export default {
       }
     },
     menuliskesimpulan3Next() {
-      alert("end");
+      if (this.dataForm.menulis === "") {
+        alert("The data cannot be empty");
+        return;
+      }
+      this.dataSesion.menulisKesimpulan.push(this.dataForm.menulis);
+      var end = JSON.stringify(this.dataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", end);
+      this.$router.push("/revisi");
     },
     validation() {
       return (

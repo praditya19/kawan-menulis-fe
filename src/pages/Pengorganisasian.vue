@@ -64,7 +64,7 @@
                             <b-button
                               class="mt-3"
                               block
-                              @click="showModal = falses"
+                              @click="showModal = false"
                               >OK</b-button
                             >
                           </div>
@@ -94,7 +94,7 @@
                           style="color:black; margin-left: 6%; font-size: 20px;"
                         >
                           <b>
-                            Tambahan Catatan Pra Menulis
+                            Tambahan Catatan Paragraf
                           </b>
                         </p>
                         <table>
@@ -120,7 +120,7 @@
                             block
                             @click="
                               (showModalTambahPage3 = false),
-                                (dataForm.tambahPramenulis = '')
+                                (dataForm.tambahParagrafPage3 = '')
                             "
                           >
                             Batal
@@ -130,7 +130,8 @@
                           <button
                             class="ok2"
                             block
-                            @click="showModalTambahPage3 = false"
+                            type="button"
+                            @click="tambahPramenulis()"
                           >
                             OK
                           </button>
@@ -162,7 +163,7 @@
                           style="color:black; margin-left: 15%; font-size: 20px;"
                         >
                           <b>
-                            Ubah Catatan Pra Menulis
+                            Ubah Catatan Paragraf
                           </b>
                         </p>
                         <table>
@@ -186,17 +187,16 @@
                           <button
                             class="ok"
                             block
-                            @click="showModalUbahPage3 = false"
+                            @click="
+                              (showModalUbahPage3 = false),
+                                (dataForm.ubahParagrafPage3 = '')
+                            "
                           >
                             Batal
                           </button>
                         </div>
                         <div class="col-sm-6">
-                          <button
-                            class="ok2"
-                            block
-                            @click="showModalUbahPage3 = false"
-                          >
+                          <button class="ok2" block @click="ubahPramenulis()">
                             OK
                           </button>
                         </div>
@@ -400,7 +400,7 @@
                               <h5>
                                 <b-form-checkbox-group>
                                   <b-form-checkbox
-                                    v-bind:value="'\t' + dataSesion.pramenulis"
+                                    v-bind:value="dataSesion.pramenulis"
                                     v-for="(dataSesion,
                                     index) in pramenulisLanjutanDataSesion.resultMenulis"
                                     :key="index"
@@ -471,7 +471,7 @@
                                 <h5>
                                   <b-form-checkbox-group>
                                     <b-form-checkbox
-                                      v-bind:value="'\t' + dataSesionNext2"
+                                      v-bind:value="dataSesionNext2"
                                       v-for="(dataSesionNext2,
                                       index) in pramenulisLanjutanDataSesion.resultParagraph"
                                       :key="index"
@@ -493,8 +493,12 @@
               </div>
             </div>
             <div class="col-sm-12">
-              <div class="button2_tombol2" @click="pengorganisasian1Next">
-                <button class="button2" type="submit">
+              <div class="button2_tombol2">
+                <button
+                  class="button2"
+                  type="button"
+                  @click="pengorganisasian1Next()"
+                >
                   <b>OK</b>
                 </button>
               </div>
@@ -579,8 +583,8 @@
             </div>
           </div>
           <div class="col-sm-12">
-            <div class="button4_tombol4" @click="pengorganisasian2Next">
-              <button class="button4" type="submit">
+            <div class="button4_tombol4" @click="pengorganisasian2Next()">
+              <button class="button4" type="button">
                 <b>OK</b>
               </button>
             </div>
@@ -645,7 +649,7 @@
                       <button
                         class="button3"
                         id="show-btn"
-                        @click="modalUbahPaage3 = true"
+                        @click="showModalTambahPage3 = true"
                       >
                         <b>Tambah</b>
                       </button>
@@ -656,8 +660,11 @@
                   <div class="content_padding_tulis_catatan">
                     <div class="button3_tombol3">
                       <button
+                        v-bind:disabled="
+                          dataForm.pilih.length === 0 ? true : false
+                        "
                         class="button3_button4"
-                        @click="moodalTambahPage3 = true"
+                        @click="tombolUbah()"
                       >
                         <b>Ubah</b>
                       </button>
@@ -681,11 +688,14 @@
                           <div
                             class="dua"
                             v-for="(dataSesion,
-                            index) in pramenulisLanjutanDataSesion.resultParagraph"
+                            index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
                             :key="index"
                           >
                             <h5>
-                              <b-form-radio name="radios-stacked" stacked
+                              <b-form-radio
+                                name="radios-stacked"
+                                v-model="dataForm.pilih"
+                                v-bind:value="index"
                                 ><b
                                   >&nbsp; &nbsp;{{ dataSesion }}</b
                                 ></b-form-radio
@@ -840,7 +850,7 @@
                         <button
                           class="button3"
                           id="show-btn"
-                          @click="modalUbahPaage3 = true"
+                          @click="showModalTambahPage3 = true"
                         >
                           <b>Tambah</b>
                         </button>
@@ -850,10 +860,7 @@
                   <div class="col-sm-1" style="margin-left: -35px">
                     <div class="content_padding_tulis_catatan">
                       <div class="button3_tombol3">
-                        <button
-                          class="button3_button4"
-                          @click="moodalTambahPage3 = true"
-                        >
+                        <button class="button3_button4" @click="tombolUbah()">
                           <b>Ubah</b>
                         </button>
                       </div>
@@ -876,11 +883,15 @@
                             <div
                               class="dua"
                               v-for="(dataSesion,
-                              index) in pramenulisLanjutanDataSesion.resultParagraph"
+                              index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
                               :key="index"
                             >
                               <h5>
-                                <b-form-radio name="radios-stacked" stacked
+                                <b-form-radio
+                                  name="radios-stacked"
+                                  v-model="dataForm.pilih"
+                                  v-bind:value="index"
+                                  stacked
                                   ><b
                                     >&nbsp; &nbsp;{{ dataSesion }}</b
                                   ></b-form-radio
@@ -1275,11 +1286,17 @@
   }
 }
 .judul {
-  font-family: Poppins;
   font-size: 50px;
-  line-height: 65px;
-  font-weight: 700;
-  text-align: center;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
 }
 /* Style Modal */
 .modal-dialog {
@@ -1344,4 +1361,28 @@
 }
 
 /* End Background Belakang Modal */
+.tombol {
+  // background: red;
+  padding: 20px 0px 0px 70px;
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+
+.ok2 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 </style>
