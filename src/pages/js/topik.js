@@ -75,8 +75,8 @@ export default {
     },
 
     ...mapActions(["createStudentsActions"]),
-    async handlesubmit() {
-      await this.createStudentsActions({
+    handlesubmit() {
+      this.createStudentsActions({
         requestBody: {
           clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
           clientSecret: "27e78980e2419b308c86559ef0fb0105",
@@ -84,12 +84,14 @@ export default {
           topicId: this.topicsSelect,
         },
         success: (res) => {
-          console.log(res);
-          sessionStorage.setItem(
+           sessionStorage.setItem(
             "student_actions",
             JSON.stringify(res.body.studentAction)
           );
+          console.log(res);
+          this.$router.push("/topik2");
         },
+
         fail: (res) => {
           console.log(res);
         },
