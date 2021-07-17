@@ -35,7 +35,17 @@ export default {
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
     },
+    validasiTitik(valid) {
+      for (var i = 0; i < valid.length; i++) {
+        if (valid[i].substr(valid[i].length - 1) === ".") {
+          valid[i] = valid[i].replace(".", "");
+        }
+      }
+      var benar = JSON.stringify(this.pramenulisLanjutanDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", benar);
+    },
     menulisIsiNext() {
+      this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
       this.menulisIsiPage2 = true;
       if (this.menulisIsiPage2 === true) {
         this.menulisIsi = false;

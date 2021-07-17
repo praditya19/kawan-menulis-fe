@@ -1,142 +1,182 @@
 <template>
-  <div class="header__nav" ref="nav">
-    <!-- <div class="container"> -->
-    <div class="header__nav-block">
+  <div class="body">
+    <div class="header">
+      <!-- Logo -->
       <div class="logo">
         <router-link to="/">
           <img src="@/assets/logo.png" alt="logo" width="147px" height="85px" />
         </router-link>
       </div>
-      <div class="header__nav-wrapper">
-        <div class="header__nav-wrapper--desktop">
-          <template>
-            <ul>
-              <li>
-                <router-link to="/">Beranda</router-link>
-              </li>
-              <li>
-                <router-link to="diagnostik">Tes Diagnostik</router-link>
-              </li>
-              <li>
-                <router-link to="sumber-belajar">Sumber Belajar</router-link>
-              </li>
-              <li>
-                <router-link to="tutor">Tutor</router-link>
-              </li>
-              <li>
-                <router-link to="mulai-menulis" type="button" class="button"
-                  >Mulai Menulis</router-link
-                >
-              </li>
-            </ul>
-          </template>
-        </div>
-      </div>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="nav-icon"></span
+      ></label>
+
+      <!-- Menu -->
+      <ul class="menu">
+        <li>
+          <router-link to="/">Beranda</router-link>
+        </li>
+        <li>
+          <router-link to="diagnostik">Tes Diagnostik</router-link>
+        </li>
+        <li>
+          <router-link to="sumber-belajar">Sumber Belajar</router-link>
+        </li>
+        <li>
+          <router-link to="tutor">Tutor</router-link>
+        </li>
+        <li>
+          <router-link to="mulai-menulis" type="button" class="button"
+            >Mulai Menulis</router-link
+          >
+        </li>
+      </ul>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
-.header__nav {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  transition: all 0.5s;
-  width: 100%;
-  height: 100px;
-  left: 0;
-  background-color: #0a4da3;
-  &-block {
-    padding: 0% 5% 0% 5%;
-    display: flex;
-    flex-direction: row;
-  }
-  .logo {
-    padding: 6px 10px 8px 10px;
-  }
-  &-wrapper {
-    text-align: right;
-    color: #fff;
-    width: 100%;
-    padding-left: 20px;
-    padding-top: 15px;
-    @media screen and (max-width: 768px) {
-      order: 1;
-      text-align: right;
-      padding-left: 400px;
-    }
-    &--desktop {
-      & > ul {
-        list-style: none;
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-
-        & > li {
-          display: inline-block;
-          color: #ffffff;
-          padding-left: 10px;
-          padding-right: 10px;
-          transition: all 0.5s;
-          padding-top: 23px;
-          vertical-align: top;
-          position: relative;
-          color: #ffffff;
-          .--button {
-            padding-top: 50px;
-          }
-          .checkout-menu {
-            font-size: 15px;
-            display: block;
-          }
-          &:last-child {
-            padding-right: 0;
-          }
-          @media screen and (min-width: 768px) {
-            & > a,
-            .has-submenu {
-              color: #ffffff;
-              transition: color 0.2s ease;
-              position: relative;
-              cursor: pointer;
-              font-size: 16px;
-              padding: 0px 12px;
-              text-decoration: none;
-              &:hover {
-                color: #ffffff;
-              }
-            }
-            &.router-link-exact-active::after {
-              position: absolute;
-              bottom: -15px;
-              left: 0;
-              width: 100%;
-              height: 5px;
-              background: #ffff;
-              content: "";
-            }
-          }
-          .button {
-            background-color: #00a279;
-            border: none;
-            color: white;
-            padding: 7px 23px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 18px;
-            margin-top: -5px;
-          }
-        }
-      }
-    }
-  }
+.body {
+  margin: 0;
+  font-family: Poppins;
+  // background-color: #0a4da3;
 }
-@media (max-width: 1200px) {
-  .thisDesktop {
+
+a {
+  color: #fff;
+}
+
+.header {
+  background-color: #0a4da3;
+  // box-shadow: 1px 1px 4px rgba();
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 2%;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #0a4da3;
+  // font-size: 20px;
+}
+
+.header ul a {
+  display: block;
+  // outline: 1px solid red;
+  padding: 20px;
+  // border-right: 1px solid #aaa;
+  text-decoration: none;
+  height: 20px;
+}
+
+.header ul a:hover {
+  color: #fff;
+}
+
+.header ul li {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header .logo {
+  float: left;
+  display: block;
+  padding: 10px 20px;
+}
+
+.header .menu {
+  clear: both;
+  text-align: right;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  // border: 1px solid red;
+  padding: 50px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+  margin: 5px 30px;
+}
+
+.header .menu-icon .nav-icon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  width: 30px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 10px;
+}
+
+.header .menu-icon .nav-icon:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -10px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.button {
+  background: #00a279;
+  border-radius: 42px;
+  line-height: 4px;
+  margin-top: 10px;
+}
+
+@media (min-width: 70em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
     display: none;
   }
 }

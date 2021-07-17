@@ -25,7 +25,186 @@
       </div>
     </div>
     <br />
+    <!-- modal area -->
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px; height: 38.49px"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Alih-alih KATAKAN:<br />
+                        Pak Tua Hayes MENUNJUKAN bahwa dia mungkin akan menikah
+                        lagi
+                      </p>
+                      <p>
+                        Alih-alih LIHAT:<br />
+                        Tom MENGINTIP di kaca spion dan tahu dia sedang diikuti
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombhol">
+                    <button class="ok" block @click="showModal = false">
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <div v-if="modalTambah === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <form action="">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%;">
+                        <p
+                          style="color:black; margin-left: 6%; font-size: 20px;"
+                        >
+                          <b>
+                            Tambahan Catatan Paragraf
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.tambahData"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol2">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button
+                            class="ok2"
+                            block
+                            @click="
+                              (modalTambah = false), (dataForm.tambahData = '')
+                            "
+                          >
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button
+                            class="ok3"
+                            block
+                            type="button"
+                            @click="handelTambah()"
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- popup ubah -->
+    <div v-if="modalUbah === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <b-form @submit="showModalUbahPage3 = false">
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p
+                          style="color:black; margin-left: 15%; font-size: 20px;"
+                        >
+                          <b>
+                            Ubah Catatan Paragraf
+                          </b>
+                        </p>
+                        <table>
+                          <tr>
+                            <td>
+                              <b-form-textarea
+                                v-model="dataForm.ubahData"
+                                style="width: 350px;"
+                                rows="4"
+                                no-resize
+                                type="text"
+                              ></b-form-textarea>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tombol2">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <button
+                            class="ok2"
+                            block
+                            @click="
+                              (modalUbah = false), (dataForm.ubahData = '')
+                            "
+                          >
+                            Batal
+                          </button>
+                        </div>
+                        <div class="col-sm-6">
+                          <button
+                            class="ok3"
+                            block
+                            @click="setKonsepParagraf()"
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                  </b-form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- end modal area -->
     <!-- Style -->
+
     <!-- Screen 1 -->
     <div class="content-empat" v-if="stylePage1 === true">
       <div class="col-sm-12">
@@ -35,53 +214,6 @@
               <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <div class="modal-body">
-                            <div class="image-container">
-                              <img
-                                style="width: 40px; height: 38.49px"
-                                src="@/assets/checklist.png"
-                              />
-                            </div>
-
-                            <div class="kalimat2">
-                              <div style="padding: 0% 0% 0% 12%; width: 85%">
-                                <p>
-                                  Alih-alih KATAKAN:<br />
-                                  Pak Tua Hayes MENUNJUKAN bahwa dia mungkin
-                                  akan menikah lagi
-                                </p>
-                                <p>
-                                  Alih-alih LIHAT:<br />
-                                  Tom MENGINTIP di kaca spion dan tahu dia
-                                  sedang diikuti
-                                </p>
-                              </div>
-                            </div>
-
-                            <div class="tombhol">
-                              <button
-                                class="ok"
-                                block
-                                @click="showModal = false"
-                              >
-                                OK
-                              </button>
-                            </div>
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </transition>
-              </div>
             </div>
           </div>
           <div class="col-sm-8">
@@ -113,9 +245,23 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua">Tambah</button>
-                <button class="all-button_dua">Ubah</button>
-                <button class="all-button_dua">Hapus</button>
+                <button class="all-button_dua" @click="modalTambah = true">
+                  Tambah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toSetKonsepParagraf()"
+                >
+                  Ubah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toDropKonsepParagraf()"
+                >
+                  Hapus
+                </button>
                 <button class="all-button_dua_icon">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
@@ -129,45 +275,21 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya adalah pecandu Kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya senang membuat kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Kopi membuat saya lebih
-                                  bersemangat dalam bekerja.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                  tidak terlalu kental.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                  kopi
-                                </b-form-radio>
-                              </h5>
-                            </div>
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParagrafArray"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio
+                                v-model="dataForm.menulis"
+                                name="some-radios"
+                                v-bind:value="index"
+                              >
+                                &nbsp; &nbsp; {{ data }}
+                              </b-form-radio>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -275,9 +397,23 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua">Tambah</button>
-                <button class="all-button_dua">Ubah</button>
-                <button class="all-button_dua">Hapus</button>
+                <button class="all-button_dua" @click="modalTambah = true">
+                  Tambah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toSetKonsepParagraf()"
+                >
+                  Ubah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toDropKonsepParagraf()"
+                >
+                  Hapus
+                </button>
                 <button class="all-button_dua_icon">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
@@ -291,45 +427,21 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya adalah pecandu Kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya senang membuat kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Kopi membuat saya lebih
-                                  bersemangat dalam bekerja.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                  tidak terlalu kental.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                  kopi
-                                </b-form-radio>
-                              </h5>
-                            </div>
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParagrafArray"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio
+                                v-model="dataForm.menulis"
+                                name="some-radios"
+                                v-bind:value="index"
+                              >
+                                &nbsp; &nbsp; {{ data }}
+                              </b-form-radio>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -434,9 +546,23 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua">Tambah</button>
-                <button class="all-button_dua">Ubah</button>
-                <button class="all-button_dua">Hapus</button>
+                <button class="all-button_dua" @click="modalTambah = true">
+                  Tambah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toSetKonsepParagraf()"
+                >
+                  Ubah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toDropKonsepParagraf()"
+                >
+                  Hapus
+                </button>
                 <button class="all-button_dua_icon">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
@@ -450,45 +576,21 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya adalah pecandu Kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya senang membuat kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Kopi membuat saya lebih
-                                  bersemangat dalam bekerja.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                  tidak terlalu kental.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                  kopi
-                                </b-form-radio>
-                              </h5>
-                            </div>
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParagrafArray"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio
+                                v-model="dataForm.menulis"
+                                name="some-radios"
+                                v-bind:value="index"
+                              >
+                                &nbsp; &nbsp; {{ data }}
+                              </b-form-radio>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -602,9 +704,23 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua">Tambah</button>
-                <button class="all-button_dua">Ubah</button>
-                <button class="all-button_dua">Hapus</button>
+                <button class="all-button_dua" @click="modalTambah = true">
+                  Tambah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toSetKonsepParagraf()"
+                >
+                  Ubah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toDropKonsepParagraf()"
+                >
+                  Hapus
+                </button>
                 <button class="all-button_dua_icon">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
@@ -618,45 +734,21 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya adalah pecandu Kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya senang membuat kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Kopi membuat saya lebih
-                                  bersemangat dalam bekerja.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                  tidak terlalu kental.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                  kopi
-                                </b-form-radio>
-                              </h5>
-                            </div>
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParagrafArray"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio
+                                v-model="dataForm.menulis"
+                                name="some-radios"
+                                v-bind:value="index"
+                              >
+                                &nbsp; &nbsp; {{ data }}
+                              </b-form-radio>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -762,9 +854,23 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua">Tambah</button>
-                <button class="all-button_dua">Ubah</button>
-                <button class="all-button_dua">Hapus</button>
+                <button class="all-button_dua" @click="modalTambah = true">
+                  Tambah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toSetKonsepParagraf()"
+                >
+                  Ubah
+                </button>
+                <button
+                  class="all-button_dua"
+                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
+                  @click="toDropKonsepParagraf()"
+                >
+                  Hapus
+                </button>
                 <button class="all-button_dua_icon">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
@@ -778,45 +884,21 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya adalah pecandu Kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya senang membuat kopi.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Kopi membuat saya lebih
-                                  bersemangat dalam bekerja.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Saya menyukai kopi pahit namun
-                                  tidak terlalu kental.
-                                </b-form-radio>
-                              </h5>
-                            </div>
-                            <div class="dua">
-                              <h5>
-                                <b-form-radio name="radios-stacked" stacked>
-                                  &nbsp; &nbsp;Itulah sebabnya saya menyukai
-                                  kopi
-                                </b-form-radio>
-                              </h5>
-                            </div>
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParagrafArray"
+                            :key="index"
+                          >
+                            <h5>
+                              <b-form-radio
+                                v-model="dataForm.menulis"
+                                name="some-radios"
+                                v-bind:value="index"
+                              >
+                                &nbsp; &nbsp; {{ data }}
+                              </b-form-radio>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -947,14 +1029,14 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
+                          <div
+                            class="dua"
+                            v-for="(data,
+                            index) in revisiDataSesion.konsepParahraf"
+                            :key="index"
+                          >
                             <h5>
-                              Saya adalah pecandu Kopi. Saya senang membuat
-                              kopi. Kopi membuat saya lebih bersemangat dalam
-                              bekerja. Saya menyukai kopi pahit namun tidak
-                              terlalu kental. Itulah sebabnya saya menyukai
-                              kopi. Saya tidak akan pernah mampu bekerja tanpa
-                              kopi.
+                              {{ data }}
                             </h5>
                           </div>
                         </ul>
@@ -1260,4 +1342,28 @@
 }
 
 /* End Background Belakang Modal */
+.tombol2 {
+  // background: red;
+  padding: 20px 0px 0px 70px;
+}
+
+.ok2 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+
+.ok3 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 </style>

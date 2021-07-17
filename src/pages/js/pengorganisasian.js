@@ -52,8 +52,8 @@ export default {
       ] = this.dataForm.ubahParagrafPage3;
       var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
+      this.dataForm.ubahParagrafPage3 = "";
       this.showModalUbahPage3 = false;
-      // batas
     },
     tombolUbah() {
       var hasil = this.pramenulisLanjutanDataSesion.konsepParagrafArray[
@@ -85,7 +85,6 @@ export default {
         alert("The data cannot be empty. Please choose first");
         return;
       }
-      this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
       for (var j = 0; j < this.dataForm.resultMenulis.length; j++) {
         this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
           this.dataForm.resultMenulis[j] // <-------- loop valid 1.1
@@ -105,15 +104,6 @@ export default {
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
-    },
-    validasiTitik(valid) {
-      for (var i = 0; i < valid.length; i++) {
-        if (valid[i].substr(valid[i].length - 1) === ".") {
-          valid[i] = valid[i].replace(".", "");
-        }
-      }
-      var benar = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", benar);
     },
     pengorganisasian2Next() {
       this.pengorganisasianPage3 = true;
