@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="mulai">
-        <b-button class="button-mulai" @click="handlesubmit"
+        <b-button class="button-mulai" @click="handlesubmit()"
           >Mulai</b-button
         >
       </div>

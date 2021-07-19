@@ -38,7 +38,9 @@
           <div class="all-button">
             <button class="all-button_satu">Salin</button>
             <button class="all-button_satu">kirim Email</button>
-            <button class="all-button_satu">Mulai topik lain</button>
+            <button class="all-button_satu" @click="toTopik()">
+              Mulai topik lain
+            </button>
           </div>
 
           <!-- Konsep Paragraf -->
@@ -50,13 +52,12 @@
             </div>
 
             <div class="border_list">
-              <div>
+              <div
+                v-for="(data, index) in proFeridingDataSesion.konsepParagraf"
+                :key="index"
+              >
                 <p>
-                  Saya adalah pecandu Kopi. Saya senang membuat kopi. Kopi
-                  membuat saya lebih bersemangat dalam bekerja. Saya menyukai
-                  kopi pahit namun tidak terlalu kental. Itulah sebabnya saya
-                  menyukai kopi. Saya tidak akan pernah mampu bekerja tanpa
-                  kopi.
+                  {{ data }}
                 </p>
               </div>
             </div>

@@ -18,6 +18,9 @@ export default {
     this.getDataSesion();
   },
   methods: {
+    // coba button
+    buttonActiveSalin1() {},
+    // end
     getDataSesion() {
       var kalimatUtamaData = sessionStorage.getItem(
         "student_topik_menulis_paragraph"
@@ -74,10 +77,6 @@ export default {
           valid[i].pramenulis.substr(valid[i].pramenulis.length - 1) === "!"
         ) {
           valid[i].pramenulis = valid[i].pramenulis.replace("!", "");
-        } else if (
-          valid[i].pramenulis.substr(valid[i].pramenulis.length - 1) === ","
-        ) {
-          valid[i].pramenulis = valid[i].pramenulis.replace(",", "");
         }
       }
       var benar = JSON.stringify(this.kalimatUtamaDataSesion);

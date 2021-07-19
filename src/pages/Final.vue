@@ -84,9 +84,13 @@
             </p>
           </div>
           <div class="all-button">
-            <button class="all-button_satu">Revisi</button>
-            <button class="all-button_satu">Pemeriksaan Ejaan</button>
-            <button class="all-button_satu">Terbitkan/terbitkan</button>
+            <button class="all-button_satu" @click="toRevisi()">Revisi</button>
+            <button class="all-button_satu" @click="toStyle()">
+              Pemeriksaan Ejaan
+            </button>
+            <button class="all-button_satu" @click="sumbit()">
+              Terbitkan/terbitkan
+            </button>
           </div>
 
           <!-- Konsep Paragraf -->
@@ -98,13 +102,12 @@
             </div>
 
             <div class="border_list">
-              <div>
+              <div
+                v-for="(data, index) in proFeridingDataSesion.konsepParagraf"
+                :key="index"
+              >
                 <p>
-                  Saya adalah pecandu Kopi. Saya senang membuat kopi. Kopi
-                  membuat saya lebih bersemangat dalam bekerja. Saya menyukai
-                  kopi pahit namun tidak terlalu kental. Itulah sebabnya saya
-                  menyukai kopi. Saya tidak akan pernah mampu bekerja tanpa
-                  kopi.
+                  {{ data }}
                 </p>
               </div>
             </div>
@@ -114,9 +117,9 @@
     </div>
     <!-- Button OK -->
     <div class="button">
-      <router-link class="button1 justify-content-center" to="/cetak">
+      <button class="button1 justify-content-center" @click="sumbit()">
         <b>OK</b>
-      </router-link>
+      </button>
     </div>
   </div>
 </template>

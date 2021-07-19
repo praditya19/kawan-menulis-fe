@@ -40,6 +40,49 @@ export default {
       );
       this.revisiDataSesion = JSON.parse(revisiData);
     },
+    ascending() {
+      // <-- ATAS(up) -->
+      var now = this.dataForm.menulis;
+      if (now === "") {
+        alert("Choose first to raise");
+        return;
+      }
+      var index = now - 1;
+      if (index >= 0) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.revisiDataSesion.konsepParagrafArray.move(now, index);
+        var ascending = JSON.stringify(this.revisiDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+        this.dataForm.menulis = index;
+      } else {
+        alert("Has reached the maximum limit");
+      }
+    },
+    descending() {
+      // <---- BAWAH(down) ------>
+      var now = this.dataForm.menulis;
+      if (now === "") {
+        alert("Choose the first one to drop");
+        return;
+      }
+      var index = now + 1;
+      var arr = this.revisiDataSesion.konsepParagrafArray.length - 1;
+      if (arr >= index) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.revisiDataSesion.konsepParagrafArray.move(now, index);
+        var descending = JSON.stringify(this.revisiDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
+        this.dataForm.menulis = index;
+      } else {
+        alert("Has reached the maximum limit");
+      }
+    },
     toDropKonsepParagraf() {
       this.revisiDataSesion.konsepParagrafArray.splice(
         this.dataForm.menulis,
@@ -62,7 +105,7 @@ export default {
       }
       this.revisiDataSesion.konsepParagrafArray[
         this.dataForm.menulis
-      ] = this.dataForm.ubahData;
+      ] = this.dataForm.ubahData.replace(".", "");
       var update = JSON.stringify(this.revisiDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", update);
       this.dataForm.ubahData = "";
@@ -79,22 +122,24 @@ export default {
           this.dataForm.tambahData = "";
         } else {
           alert("Cannot add more than six lines");
+          this.modalTambah = false;
           return;
         }
       }
     },
     handleSubmit(value) {
-      this.revisiDataSesion.konsepParagrafArray.push(value);
+      this.revisiDataSesion.konsepParagrafArray.push(value.replace(".", ""));
       var tambah = JSON.stringify(this.revisiDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", tambah);
       this.modalTambah = false;
     },
     style1Next() {
-      this.revisiDataSesion.konsepParahraf = [];
+      this.revisiDataSesion.konsepParagraf = [];
       var empetyArray = JSON.stringify(this.revisiDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", empetyArray);
       this.dataForm.menulis = "";
       this.stylePage2 = true;
+
       if (this.stylePage2 === true) {
         this.stylePage1 = false;
       } else {
@@ -104,6 +149,7 @@ export default {
     style2Next() {
       this.dataForm.menulis = "";
       this.stylePage3 = true;
+
       if (this.stylePage3 === true) {
         this.stylePage2 = false;
       } else {
@@ -113,6 +159,7 @@ export default {
     style3Next() {
       this.dataForm.menulis = "";
       this.stylePage4 = true;
+
       if (this.stylePage4 === true) {
         this.stylePage3 = false;
       } else {
@@ -122,6 +169,7 @@ export default {
     style4Next() {
       this.dataForm.menulis = "";
       this.stylePage5 = true;
+
       if (this.stylePage5 === true) {
         this.stylePage4 = false;
       } else {
@@ -139,7 +187,7 @@ export default {
           "\t" + this.revisiDataSesion.konsepParagrafArray[i]
         );
       }
-      this.revisiDataSesion.konsepParahraf.push(
+      this.revisiDataSesion.konsepParagraf.push(
         this.formatToDot(this.intermediary) + "."
       );
       var newKonsepParagraf = JSON.stringify(this.revisiDataSesion);
@@ -148,6 +196,7 @@ export default {
         newKonsepParagraf
       );
       this.stylePageFinish = true;
+
       if (this.stylePageFinish === true) {
         this.stylePage5 = false;
       } else {

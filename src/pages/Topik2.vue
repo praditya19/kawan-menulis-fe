@@ -151,7 +151,7 @@
         <a href="/topik">
           <img src="@/assets/back.png" alt="logo" class="img" />
         </a>
-        <b-button @click="onSubmit" class="submit_ok">OK</b-button>
+        <b-button @click="onSubmit()" class="submit_ok">OK</b-button>
       </div>
     </form>
   </div>

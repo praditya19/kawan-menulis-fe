@@ -245,7 +245,7 @@
               </div>
               <div class="border_list">
                 <div style="margin-left: 10px; padding: 10px 30px 0px 0px">
-                  <p v-for="(data, index) in menulisKesimpulanDataSesion.konsepParahraf" :key="index">
+                  <p v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagraf" :key="index">
                     {{data}}
                   </p>
                 </div>
@@ -350,14 +350,14 @@
                 <button class="all-button_dua" type="botton" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toSetKonsepParagraf()">Ubah</button>
                 <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toDropKonsepParagraf()">Hapus</button>
-                <a href="">
+                <a @click="ascending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/up.png"
                   style="margin-bottom: 5px; margin-left: 20px"
                 />
                 </a>
-                <a href="">
+                <a @click="descending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/down.png"
@@ -499,7 +499,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 10px; padding: 10px 30px 0px 0px" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParahraf" :key="index">
+                <div style="margin-left: 10px; padding: 10px 30px 0px 0px" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagraf" :key="index">
                   <p>
                     {{data}}
                   </p>

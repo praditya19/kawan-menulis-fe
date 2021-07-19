@@ -43,7 +43,7 @@ export default {
         studentActionsId: this.studentDataSession.id,
         resultMenulis: this.result_menulis,
         resultParagraph: this.result_paragraph,
-        konsepParahraf: this.konsep_paragrafToString,
+        konsepParagraf: this.konsep_paragrafToString,
         konsepParagrafArray: this.konsep_paragraf_array,
         menulisKesimpulan: this.menulis_kesimpulan,
       };

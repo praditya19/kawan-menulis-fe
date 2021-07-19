@@ -32,8 +32,8 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
-      if (this.pramenulisLanjutanDataSesion.konsepParahraf.length !== 0) {
-        this.pramenulisLanjutanDataSesion.konsepParahraf = [];
+      if (this.pramenulisLanjutanDataSesion.konsepParagraf.length !== 0) {
+        this.pramenulisLanjutanDataSesion.konsepParagraf = [];
         this.pramenulisLanjutanDataSesion.konsepParagrafArray = [];
         var toEmpetyArray = JSON.stringify(this.pramenulisLanjutanDataSesion);
         sessionStorage.setItem(
@@ -49,7 +49,7 @@ export default {
       }
       this.pramenulisLanjutanDataSesion.konsepParagrafArray[
         this.dataForm.pilih
-      ] = this.dataForm.ubahParagrafPage3;
+      ] = this.dataForm.ubahParagrafPage3.replace(".", "");
       var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.dataForm.ubahParagrafPage3 = "";
@@ -67,13 +67,16 @@ export default {
         this.handleSubmit(this.dataForm.tambahParagrafPage3);
         this.showModalTambahPage3 = false;
         this.dataForm.tambahParagrafPage3 = "";
+        return;
       } else {
         alert("Cannot add more than six lines");
         this.showModalTambahPage3 = false;
       }
     },
     handleSubmit(tambah) {
-      this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(tambah);
+      this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
+        tambah.replace(".", "")
+      );
       var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
     },
@@ -93,12 +96,13 @@ export default {
       for (var k = 0; k < this.dataForm.resultMenulis.length; k++) {
         this.memberiJarak.push("\t" + this.dataForm.resultMenulis[k]);
       }
-      this.pramenulisLanjutanDataSesion.konsepParahraf.push(
+      this.pramenulisLanjutanDataSesion.konsepParagraf.push(
         this.formatToDot(this.memberiJarak) + "."
       );
       var savePage1 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
       this.pengorganisasianPage2 = true;
+
       if (this.pengorganisasianPage2 === true) {
         this.pengorganisasianPage1 = false;
       } else {
@@ -107,6 +111,7 @@ export default {
     },
     pengorganisasian2Next() {
       this.pengorganisasianPage3 = true;
+
       if (this.pengorganisasianPage3 === true) {
         this.pengorganisasianPage2 = false;
       } else {
@@ -116,6 +121,7 @@ export default {
     pengorganisasian3Next() {
       this.dataForm.pilih = "";
       this.pengorganisasianPage4 = true;
+
       if (this.pengorganisasianPage4 === true) {
         this.pengorganisasianPage3 = false;
       } else {

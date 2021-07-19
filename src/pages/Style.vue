@@ -262,10 +262,10 @@
                 >
                   Hapus
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="ascending()">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="descending()">
                   <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
                 </button>
               </div>
@@ -414,10 +414,10 @@
                 >
                   Hapus
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="ascending()">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="descending()">
                   <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
                 </button>
               </div>
@@ -563,10 +563,10 @@
                 >
                   Hapus
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="ascending()">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="descending()">
                   <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
                 </button>
               </div>
@@ -721,10 +721,10 @@
                 >
                   Hapus
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="ascending()">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="descending()">
                   <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
                 </button>
               </div>
@@ -871,10 +871,10 @@
                 >
                   Hapus
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="ascending()">
                   <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
                 </button>
-                <button class="all-button_dua_icon">
+                <button class="all-button_dua_icon" @click="descending()">
                   <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
                 </button>
               </div>
@@ -1032,7 +1032,7 @@
                           <div
                             class="dua"
                             v-for="(data,
-                            index) in revisiDataSesion.konsepParahraf"
+                            index) in revisiDataSesion.konsepParagraf"
                             :key="index"
                           >
                             <h5>
@@ -1367,3 +1367,4 @@
   font-family: Poppins;
 }
 </style>
+

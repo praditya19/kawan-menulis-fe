@@ -47,6 +47,7 @@ export default {
     menulisIsiNext() {
       this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
       this.menulisIsiPage2 = true;
+
       if (this.menulisIsiPage2 === true) {
         this.menulisIsi = false;
       } else {
@@ -71,12 +72,12 @@ export default {
     },
     kirim() {
       this.cekValidate = [];
-      var trueOrFalse = this.checkingValidasi(this.dataForm.menulis);
-      console.log(trueOrFalse);
       if (this.dataForm.menulis.length <= 5) {
         alert("Harus di isi semua");
         return;
       }
+      var trueOrFalse = this.checkingValidasi(this.dataForm.menulis);
+      console.log(trueOrFalse);
       if (trueOrFalse === true) {
         for (
           var i = 0;

@@ -10,7 +10,7 @@
     <!-- Stepper -->
     <div class="content-dua">
       <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/5.png" alt="" />
+        <img class="steper_image" src="@/assets/icon_stepper/6.png" alt="" />
       </div>
     </div>
     <br />
@@ -128,7 +128,7 @@
                         </div>
                         <div class="col-sm-6">
                           <button
-                            class="ok2"
+                            class="ok3"
                             block
                             type="button"
                             @click="tambahPramenulis()"
@@ -196,7 +196,7 @@
                           </button>
                         </div>
                         <div class="col-sm-6">
-                          <button class="ok2" block @click="ubahPramenulis()">
+                          <button class="ok3" block @click="ubahPramenulis()">
                             OK
                           </button>
                         </div>
@@ -311,6 +311,66 @@
                               class="mt-3"
                               block
                               @click="showModal3 = false"
+                              >OK</b-button
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- popup -->
+    <div v-if="showModal === true">
+      <transition name="modal" appear>
+        <div class="modal1">
+          <div class="modal2">
+            <div class="modal3">
+              <div class="modal-mask">
+                <div class="modal-wrapper">
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div>
+                          <div class="image-container">
+                            <img src="@/assets/checklist.png" />
+                          </div>
+                          <div class="d-block text-center">
+                            <div
+                              style="
+                                          padding: 0% 0% 0% 12%;
+                                          width: 85%;
+                                        "
+                            >
+                              <p>
+                                Melanjutkan sebuah ide:<br />
+                                <strong> SEBAGAI TAMBAHANNYA</strong>, kami
+                                membeli makanan ringan. <br /><br />
+                                Menunjukkan waktu:
+                                <strong>SESUDAHNYA</strong>, kami mempersiapkan
+                                jagung bakar.<br /><br />
+                                Menunjukkan sebab atau akibat:<br />
+                                Kami tidak pergi menonton film
+                                <strong>KARENA</strong> hujan badai.
+                                <br /><br />Menunjukkan perbedaan: Kami pergi,
+                                <strong>NAMUN</strong> kami akan kembali.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="ok2">
+                            <b-button
+                              class="mt-3"
+                              block
+                              @click="showModal = falses"
                               >OK</b-button
                             >
                           </div>
@@ -567,7 +627,7 @@
                           <div
                             class="dua"
                             v-for="(dataSesion,
-                            index) in pramenulisLanjutanDataSesion.konsepParahraf"
+                            index) in pramenulisLanjutanDataSesion.konsepParagraf"
                             :key="index"
                           >
                             <p>
@@ -732,69 +792,6 @@
                   <b>TIPS</b>
                 </div>
               </b-button>
-              <!-- popup -->
-              <transition name="modal" appear>
-                <div v-if="showModal === true">
-                  <div class="modal1">
-                    <div class="modal2">
-                      <div class="modal3">
-                        <div class="modal-mask">
-                          <div class="modal-wrapper">
-                            <div
-                              class="modal-dialog modal-dialog-centered"
-                              role="document"
-                            >
-                              <div class="modal-content">
-                                <div class="modal-body">
-                                  <div>
-                                    <div class="image-container">
-                                      <img src="@/assets/checklist.png" />
-                                    </div>
-                                    <div class="d-block text-center">
-                                      <div
-                                        style="
-                                          padding: 0% 0% 0% 12%;
-                                          width: 85%;
-                                        "
-                                      >
-                                        <p>
-                                          Melanjutkan sebuah ide:<br />
-                                          <strong> SEBAGAI TAMBAHANNYA</strong>,
-                                          kami membeli makanan ringan.
-                                          <br /><br />
-                                          Menunjukkan waktu:
-                                          <strong>SESUDAHNYA</strong>, kami
-                                          mempersiapkan jagung bakar.<br /><br />
-                                          Menunjukkan sebab atau akibat:<br />
-                                          Kami tidak pergi menonton film
-                                          <strong>KARENA</strong> hujan badai.
-                                          <br /><br />Menunjukkan perbedaan:
-                                          Kami pergi,
-                                          <strong>NAMUN</strong> kami akan
-                                          kembali.
-                                        </p>
-                                      </div>
-                                    </div>
-
-                                    <div class="ok2">
-                                      <b-button
-                                        class="mt-3"
-                                        block
-                                        @click="showModal = falses"
-                                        >OK</b-button
-                                      >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </transition>
             </div>
           </div>
           <div class="col-sm-10">
@@ -860,7 +857,13 @@
                   <div class="col-sm-1" style="margin-left: -35px">
                     <div class="content_padding_tulis_catatan">
                       <div class="button3_tombol3">
-                        <button class="button3_button4" @click="tombolUbah()">
+                        <button
+                          class="button3_button4"
+                          v-bind:disabled="
+                            dataForm.pilih.length === 0 ? true : false
+                          "
+                          @click="tombolUbah()"
+                        >
                           <b>Ubah</b>
                         </button>
                       </div>
@@ -1376,7 +1379,7 @@
   font-family: Poppins;
 }
 
-.ok2 {
+.ok3 {
   background: #0a4da3;
   border-radius: 39px;
   border: none;

@@ -12,6 +12,9 @@ const mutations = {
   setStudentsActions(state, value) {
     state.studentsActions = value;
   },
+  studentsActionsFinish(state, value) {
+    state.studentsActions = value;
+  },
 };
 
 const actions = {
@@ -19,6 +22,17 @@ const actions = {
     Vue.http.post(config.api.studentactions + "/add", requestBody).then(
       (response) => {
         commit("setStudentsActions", response);
+        success && success(response);
+      },
+      (response) => {
+        fail && fail(response);
+      }
+    );
+  },
+  finishStudentsActions: ({ commit }, { requestBody, success, fail }) => {
+    Vue.http.post(config.api.studentactions + "/finish", requestBody).then(
+      (response) => {
+        commit("studentsActionsFinish", response);
         success && success(response);
       },
       (response) => {

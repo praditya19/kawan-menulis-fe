@@ -33,6 +33,49 @@ export default {
       );
       this.menulisKesimpulanDataSesion = JSON.parse(menulisKesimpulanData);
     },
+    ascending() {
+      // <-- ATAS(up) -->
+      var now = this.dataForm.menulis;
+      if (now === "") {
+        alert("Choose first to raise");
+        return;
+      }
+      var index = now - 1;
+      if (index >= 0) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.menulisKesimpulanDataSesion.konsepParagrafArray.move(now, index);
+        var ascending = JSON.stringify(this.menulisKesimpulanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+        this.dataForm.menulis = index;
+      } else {
+        alert("Has reached the maximum limit");
+      }
+    },
+    descending() {
+      // <---- BAWAH(down) ------>
+      var now = this.dataForm.menulis;
+      if (now === "") {
+        alert("Choose the first one to drop");
+        return;
+      }
+      var index = now + 1;
+      var arr = this.menulisKesimpulanDataSesion.konsepParagrafArray.length - 1;
+      if (arr >= index) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.menulisKesimpulanDataSesion.konsepParagrafArray.move(now, index);
+        var descending = JSON.stringify(this.menulisKesimpulanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
+        this.dataForm.menulis = index;
+      } else {
+        alert("Has reached the maximum limit");
+      }
+    },
     toDropKonsepParagraf() {
       this.menulisKesimpulanDataSesion.konsepParagrafArray.splice(
         this.dataForm.menulis,
@@ -55,7 +98,7 @@ export default {
       }
       this.menulisKesimpulanDataSesion.konsepParagrafArray[
         this.dataForm.menulis
-      ] = this.dataForm.ubahData;
+      ] = this.dataForm.ubahData.replace(".", "");
       var update = JSON.stringify(this.menulisKesimpulanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", update);
       this.dataForm.ubahData = "";
@@ -72,19 +115,21 @@ export default {
           this.dataForm.tambahData = "";
         } else {
           alert("Cannot add more than six lines");
-          return;
+          this.modalTambah = false;
         }
       }
     },
     handleSubmit(value) {
-      this.menulisKesimpulanDataSesion.konsepParagrafArray.push(value);
+      this.menulisKesimpulanDataSesion.konsepParagrafArray.push(
+        value.replace(".", "")
+      );
       var tambah = JSON.stringify(this.menulisKesimpulanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", tambah);
       this.modalTambah = false;
     },
     revisi1Next() {
       this.revisiPage2 = true;
-      this.menulisKesimpulanDataSesion.konsepParahraf = [];
+      this.menulisKesimpulanDataSesion.konsepParagraf = [];
       var empetyArray = JSON.stringify(this.menulisKesimpulanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", empetyArray);
       if (this.revisiPage2 === true) {
@@ -103,7 +148,7 @@ export default {
           "\t" + this.menulisKesimpulanDataSesion.konsepParagrafArray[i]
         );
       }
-      this.menulisKesimpulanDataSesion.konsepParahraf.push(
+      this.menulisKesimpulanDataSesion.konsepParagraf.push(
         this.formatToDot(this.intermediary) + "."
       );
       var newKonsepParagraf = JSON.stringify(this.menulisKesimpulanDataSesion);
@@ -112,6 +157,7 @@ export default {
         newKonsepParagraf
       );
       this.revisiPage3 = true;
+
       if (this.revisiPage3 === true) {
         this.revisiPage2 = false;
       } else {

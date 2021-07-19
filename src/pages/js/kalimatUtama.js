@@ -57,6 +57,7 @@ export default {
         this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
         var savePage3 = JSON.stringify(this.pramenulisDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+
         this.kalimatUtamaPage4 = true;
         if (this.kalimatUtamaPage4 === true) {
           this.kalimatUtamaPage3 = false;

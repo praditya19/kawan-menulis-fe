@@ -8,7 +8,7 @@ export default {
       showModal2: false,
       showModal3: false,
       dataForm: {
-        menulis: null,
+        menulis: "",
       },
       menuliskesimpulanPage1: true,
       menuliskesimpulanPage2: false,
@@ -36,18 +36,19 @@ export default {
       return value.toString().replace(/,/g, ".");
     },
     menuliskesimpulan1Next() {
-      this.dataSesion.konsepParahraf = [];
+      this.dataSesion.konsepParagraf = [];
       this.conferSesion = this.dataSesion.konsepParagrafArray;
       for (var i = 0; i < this.conferSesion.length; i++) {
         this.padding.push("\t" + this.conferSesion[i]);
       }
-      this.dataSesion.konsepParahraf.push(this.formatToDot(this.padding) + ".");
+      this.dataSesion.konsepParagraf.push(this.formatToDot(this.padding) + ".");
       var validationParagraf = JSON.stringify(this.dataSesion);
       sessionStorage.setItem(
         "student_topik_menulis_paragraph",
         validationParagraf
       );
       this.menuliskesimpulanPage2 = true;
+
       if (this.menuliskesimpulanPage2 === true) {
         this.menuliskesimpulanPage1 = false;
       } else {
@@ -56,6 +57,7 @@ export default {
     },
     menuliskesimpulan2Next() {
       this.menuliskesimpulanPage3 = true;
+
       if (this.menuliskesimpulanPage3 === true) {
         this.menuliskesimpulanPage2 = false;
       } else {
