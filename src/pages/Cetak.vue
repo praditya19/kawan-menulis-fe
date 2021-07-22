@@ -8,7 +8,39 @@
     <div class="steper">
       <img class="steper_image" src="@/assets/icon_stepper/14.png" />
     </div>
+    <!-- Popup Modal -->
+    <div v-if="showModalCopy === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container"></div>
 
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Paragraf telah disalin ke dalam clipboard. Silahkan
+                        "Paste" atau Ctrl+V di aplikasi pengolahan kata Anda
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol">
+                    <button class="ok" block @click="showModalCopy = false">
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <!-- tengah -->
     <div class="center">
       <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
@@ -22,11 +54,13 @@
       <div class="col-md-2">
         <img src="@/assets/cetak2.png" alt="logo" class="image2" />
       </div>
-
       <div class="col-md-10">
         <div class="isi">
           <div>
             <img src="@/assets/cetak.png" alt="logo" class="image" />
+            <div class="kiri">
+              <img src="@/assets/cetak2.png" alt="logo" class="image3" />
+            </div>
           </div>
           <div class="text">
             <p>
@@ -36,13 +70,14 @@
             </p>
           </div>
           <div class="all-button">
-            <button class="all-button_satu">Salin</button>
+            <button class="all-button_satu" @click="copyToClipBoard()">
+              Salin
+            </button>
             <button class="all-button_satu">kirim Email</button>
             <button class="all-button_satu" @click="toTopik()">
               Mulai topik lain
             </button>
           </div>
-
           <!-- Konsep Paragraf -->
           <div class="content-konsep">
             <div class="border">
@@ -127,14 +162,26 @@
 .body {
   display: flex;
 }
+.kiri {
+  margin-left: 80px;
+}
+.image3 {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    height: 380px;
+    width: 100%;
+  }
+}
 
 .image2 {
   margin-top: 220px;
   width: 400px;
   height: 410px;
   @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
     display: none;
-    overflow: hidden;
   }
 }
 
@@ -268,4 +315,82 @@
   }
 }
 // End Konsep Menulis
+/* Background belakang modal */
+/* Style Modal */
+.modal-dialog {
+  top: -100px;
+  left: auto;
+}
+
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* End Background Belakang Modal */
+
+/* End Background Belakang Modal */
+.tombol {
+  margin-left: 45%;
+  padding: 5px;
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  margin-left: -40px;
+  color: #fff;
+  font-family: Poppins;
+}
+
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+.kalimat2 {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
 </style>

@@ -3,31 +3,21 @@
     <div class="lebar1">
       <!--Slide-->
       <div class="atas">
-        <div fluid="xl  ">
-          <b-row>
-            <b-col cols="6">
-              <img src="../assets/book.png" class="image1" />
-            </b-col>
-            <b-col cols="6">
-              <div class="d-flex h-10">
-                <div class="justify-content-center align-self-center atas">
-                  <h1>
-                    <strong>Mari Mahir Menulis</strong>
-                    <br />
-                  </h1>
-                  <p>Karena menulis itu menyenangkan ...</p>
-                  <router-link class="button" to="mulai-menulis">
-                    &nbsp;&nbsp;&nbsp;&nbsp;Mulai Menulis
-                  </router-link>
-                </div>
-                <b-col>
-                  <img src="../assets/vector.png" class="image2" />
-                </b-col>
-              </div>
-            </b-col>
-          </b-row>
+        <div class="col-md-6 atas_left">
+          <img src="../assets/book.png" class="image1" />
+        </div>
+        <div class="col-md-6 atas_right">
+          <p class="judul">Mari mahir menulis</p>
+          <div class="image2-right">
+            <img src="../assets/vector.png" class="image2" />
+          </div>
+          <p class="isi">Karena menulis itu menyenangkan ...</p>
+          <b-button class="button" to="mulai-menulis">
+            Mulai Menulis
+          </b-button>
         </div>
       </div>
+
       <!--artikel -->
       <div fluid>
         <div class="conten_home">
@@ -108,135 +98,127 @@
           <div style="background-color: #f5f4fd;">
             <div class="conten_home_timeline">
               <div class="row">
-                <div class="d-none d-md-block">
-                  <strong class="d-flex justify-content-center ">
-                    <h4 style="margin-left: 0px; margin-top:29px;">
-                      Bagaimana tahapan menulis Paragraf?
-                    </h4>
-                  </strong>
-                  <div class="container">
-                    <ul class="timeline">
-                      <li>
-                        <strong>Topik</strong>
-                        <p>
-                          Tiga topik muncul dan peserta didik diminta untuk
-                          memilih salah satu sebagai topik paragraf mereka.
-                          Program kemudian meminta peserta didik untuk
-                          memasukkan nama mata pelajaran tertentu yang terkait
-                          dengan topik yang telah mereka pilih. Subjek khusus
-                          ini menjadi topik paragraf mereka.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Pramenulis</strong>
-                        <p>
-                          Sebuah notepad muncul dan pelajar diminta untuk
-                          memasukkan kata atau frase, bukan kalimat lengkap.
-                          Berdasarkan pada topiknya, program ini menawarkan tiga
-                          hingga enam pertanyaan untuk merangsang pemikiran
-                          mengenai topik tersebut. Peserta didik menanggapi
-                          pertanyaan dengan mengetikkan kata atau frasa ke dalam
-                          window input.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Pramenulis Lanjutan</strong>
-                        <p>
-                          Program ini menunjukkan contoh kalimat topik dan
-                          kalimat topik tidak lengkap yang diharapkan dapat
-                          diselesaikan oleh peserta didik. Peserta didik
-                          kemudian diminta untuk menulis kalimat topik asli
-                          untuk memperkenalkan paragraf mereka.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Menulis Isi</strong>
-                        <p>
-                          Notepad dari urutan pra-menulis muncul kembali dan
-                          peserta didik diminta untuk memilih kata atau frase
-                          dari notepad dan menggunakannya dalam sebuah kalimat.
-                          Mereka harus terus memilih kata atau frase untuk
-                          menulis kalimat untuk setiap frase yang mereka tulis
-                          dalam urutan pra-menulis. Ruang untuk menulis kalimat
-                          tambahan diberikan agar peserta didik dapat memperluas
-                          paragraf. Notepad dari urutan pramenulis hadir di
-                          seluruh urutan ini dan pelajar dapat merujuknya sesuai
-                          keinginan.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Pengorganisasian</strong>
-                        <p>
-                          Pada langkah pertama dalam urutan ini, notepad yang
-                          berisi kalimat lengkap dari urutan sebelumnya muncul
-                          di bagian kiri layar dan notepad yang berisi kalimat
-                          topik dari urutan "kalimat topik" muncul di bagian
-                          kanan layar. Peserta didik diminta untuk memindahkan
-                          kalimat dari bagian kiri layar dan menyusunnya menjadi
-                          sebuah paragraf yang utuh. Setidaknya tiga kalimat
-                          dari bagian kiri layar harus digunakan, memberikan
-                          pelajar pilihan untuk menolak kalimat jika mereka
-                          telah menulis lebih dari tiga. Pada langkah kedua
-                          dalam urutan ini, sebuah kotak yang berisi konsep
-                          paragraf lengkap muncul. Peserta didik memiliki
-                          pilihan untuk mencetak karyanya sebelum melanjutkan ke
-                          urutan berikutnya. Program ini menyajikan ide untuk
-                          kata transisi yang dapat dimasukkan pelajar di antara
-                          kalimat.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Kesimpulan</strong>
-                        <p>
-                          Program ini memberikan contoh kalimat penutup dan
-                          kalimat penutup tidak lengkap yang diharapkan dapat
-                          diselesaikan oleh peserta didik. Peserta didik
-                          kemudian menulis kalimat penutup asli untuk paragraf.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Revisi</strong>
-                        <p>
-                          Program ini memberikan contoh kalimat penutup dan
-                          kalimat penutup tidak lengkap yang diharapkan dapat
-                          diselesaikan oleh peserta didik. Peserta didik
-                          kemudian menulis kalimat penutup asli untuk paragraf.
-                        </p>
-                      </li>
-                      <li>
-                        <strong>Publikasi</strong>
-                        <p>
-                          Urutan terakhir memberi pelajar kesempatan untuk
-                          "mempublikasikan" paragraf dengan menyimpannya,
-                          mencetaknya, atau memindahkannya ke pengolahan kata
-                          (word processor). Mereka juga dapat meninjau paragraf
-                          untuk pengeditan lebih lanjut atau menggunakan
-                          pemeriksa ejaan kembali.
-                          <br />
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
+                <strong class="d-flex justify-content-center ">
+                  <h4
+                    style="margin-left: 0px; margin-top:29px; text-align:center;"
+                  >
+                    Bagaimana tahapan menulis Paragraf?
+                  </h4>
+                </strong>
+                <div class="container">
+                  <ul class="timeline">
+                    <li>
+                      <strong>Topik</strong>
+                      <p>
+                        Tiga topik muncul dan peserta didik diminta untuk
+                        memilih salah satu sebagai topik paragraf mereka.
+                        Program kemudian meminta peserta didik untuk memasukkan
+                        nama mata pelajaran tertentu yang terkait dengan topik
+                        yang telah mereka pilih. Subjek khusus ini menjadi topik
+                        paragraf mereka.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Pramenulis</strong>
+                      <p>
+                        Sebuah notepad muncul dan pelajar diminta untuk
+                        memasukkan kata atau frase, bukan kalimat lengkap.
+                        Berdasarkan pada topiknya, program ini menawarkan tiga
+                        hingga enam pertanyaan untuk merangsang pemikiran
+                        mengenai topik tersebut. Peserta didik menanggapi
+                        pertanyaan dengan mengetikkan kata atau frasa ke dalam
+                        window input.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Pramenulis Lanjutan</strong>
+                      <p>
+                        Program ini menunjukkan contoh kalimat topik dan kalimat
+                        topik tidak lengkap yang diharapkan dapat diselesaikan
+                        oleh peserta didik. Peserta didik kemudian diminta untuk
+                        menulis kalimat topik asli untuk memperkenalkan paragraf
+                        mereka.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Menulis Isi</strong>
+                      <p>
+                        Notepad dari urutan pra-menulis muncul kembali dan
+                        peserta didik diminta untuk memilih kata atau frase dari
+                        notepad dan menggunakannya dalam sebuah kalimat. Mereka
+                        harus terus memilih kata atau frase untuk menulis
+                        kalimat untuk setiap frase yang mereka tulis dalam
+                        urutan pra-menulis. Ruang untuk menulis kalimat tambahan
+                        diberikan agar peserta didik dapat memperluas paragraf.
+                        Notepad dari urutan pramenulis hadir di seluruh urutan
+                        ini dan pelajar dapat merujuknya sesuai keinginan.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Pengorganisasian</strong>
+                      <p>
+                        Pada langkah pertama dalam urutan ini, notepad yang
+                        berisi kalimat lengkap dari urutan sebelumnya muncul di
+                        bagian kiri layar dan notepad yang berisi kalimat topik
+                        dari urutan "kalimat topik" muncul di bagian kanan
+                        layar. Peserta didik diminta untuk memindahkan kalimat
+                        dari bagian kiri layar dan menyusunnya menjadi sebuah
+                        paragraf yang utuh. Setidaknya tiga kalimat dari bagian
+                        kiri layar harus digunakan, memberikan pelajar pilihan
+                        untuk menolak kalimat jika mereka telah menulis lebih
+                        dari tiga. Pada langkah kedua dalam urutan ini, sebuah
+                        kotak yang berisi konsep paragraf lengkap muncul.
+                        Peserta didik memiliki pilihan untuk mencetak karyanya
+                        sebelum melanjutkan ke urutan berikutnya. Program ini
+                        menyajikan ide untuk kata transisi yang dapat dimasukkan
+                        pelajar di antara kalimat.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Kesimpulan</strong>
+                      <p>
+                        Program ini memberikan contoh kalimat penutup dan
+                        kalimat penutup tidak lengkap yang diharapkan dapat
+                        diselesaikan oleh peserta didik. Peserta didik kemudian
+                        menulis kalimat penutup asli untuk paragraf.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Revisi</strong>
+                      <p>
+                        Program ini memberikan contoh kalimat penutup dan
+                        kalimat penutup tidak lengkap yang diharapkan dapat
+                        diselesaikan oleh peserta didik. Peserta didik kemudian
+                        menulis kalimat penutup asli untuk paragraf.
+                      </p>
+                    </li>
+                    <li>
+                      <strong>Publikasi</strong>
+                      <p>
+                        Urutan terakhir memberi pelajar kesempatan untuk
+                        "mempublikasikan" paragraf dengan menyimpannya,
+                        mencetaknya, atau memindahkannya ke pengolahan kata
+                        (word processor). Mereka juga dapat meninjau paragraf
+                        untuk pengeditan lebih lanjut atau menggunakan pemeriksa
+                        ejaan kembali.
+                        <br />
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="conten_home_foot justify-content-center d-flex p-2 bd-highlight"
-            style="background-color:#C5DCFF;"
-          >
-            <div class="conten_home_foot_how" style="padding: 20px 0px">
-              <h4 class="justify-content-center conten_home_foot_atas">
+          <div class="conten_home_foot ">
+            <div class="conten_home_foot_how ">
+              <h4 class="conten_home_foot_atas">
                 KETAHUI KEMAMPUAN MENULISMU
               </h4>
-              <br />
-              <router-link
-                class="button1 justify-content-center"
-                to="diagnostik"
-              >
-                <b>TES DIAGNOSTIK</b>
-              </router-link>
-              <br />
+              <div class="button-bawah ">
+                <b-button class="button1 " to="diagnostik">
+                  <b>TES DIAGNOSTIK</b>
+                </b-button>
+              </div>
             </div>
           </div>
         </div>
@@ -248,9 +230,97 @@
 export default { name: "Home" };
 </script>
 <style lang="scss" scoped="scoped">
+.lebar1 {
+  overflow-x: hidden;
+  padding-top: 105px;
+  width: 100%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.atas {
+  padding: 50px 0px 0px 0px;
+  display: flex;
+  // background: red;
+  &_left {
+    // background: red;
+    @media screen and (max-width: 768px) {
+    }
+  }
+
+  &_right {
+    padding: 20px 0px 0px 0px;
+    max-width: 100%;
+    height: auto;
+    @media screen and (max-width: 768px) {
+      padding: 20px 10px 0px 10px;
+    }
+    .judul {
+      width: 80%;
+      position: relative;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 70px;
+      line-height: 128%;
+      // background: rosybrown;
+      color: rgba(0, 0, 0, 0.9);
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        font-size: 50px;
+      }
+    }
+
+    .isi {
+      // background: rosybrown;
+      position: relative;
+      width: 80%;
+      font-family: Poppins;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 27px;
+      line-height: 40px;
+      color: rgba(0, 0, 0, 0.9);
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.image1 {
+  max-width: 100%;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.image2-right {
+  position: absolute;
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    display: none;
+    overflow: hidden;
+  }
+  .image2 {
+    float: right;
+    @media screen and (max-width: 768px) {
+      width: 100px;
+      // display: none;
+      // overflow: hidden;
+    }
+  }
+}
+
 .container {
   margin-left: 220px;
   width: 874px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+    padding: 0px 20px 0px 10px;
+  }
 }
 .margin {
   img {
@@ -284,27 +354,6 @@ export default { name: "Home" };
     }
   }
 }
-.image1 {
-  display: flex;
-  width: 650px;
-  height: 405px;
-  margin-top: 130px;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-    margin-top: 120px;
-    margin-left: -12px;
-  }
-}
-.image2 {
-  height: 219px;
-  width: 289px;
-  margin-left: -17em;
-  margin-top: 317px;
-  @media screen and (max-width: 768px) {
-    display: inline-block;
-    margin-top: 307px;
-  }
-}
 .tombol {
   margin: 150px 0px 0px 0px;
   position: absolute;
@@ -313,13 +362,6 @@ export default { name: "Home" };
 }
 .lebar {
   width: 1180px;
-}
-.lebar1 {
-  overflow-x: hidden;
-  width: 100%;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 }
 .padding {
   padding: 30px 0px;
@@ -349,7 +391,6 @@ export default { name: "Home" };
   border: none;
   color: white;
   padding: 10px 10px;
-  text-align: center;
   text-decoration: none;
   width: 150px;
   display: inline-block;
@@ -358,61 +399,20 @@ export default { name: "Home" };
   border-radius: 30px;
   display: flex;
   position: relative;
-  margin-left: 10px;
-}
-.button:hover {
-  background-color: #00a279;
-}
-.button:hover {
-  background-color: #00a279;
-}
-.button1 {
-  background-color: #00a279;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-decoration: none;
-  width: 300px;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  margin-left: 200px;
-}
-.button1:hover {
-  background-color: #00a279;
-}
-.atas {
-  h1 {
-    padding: 100px 0px 0px 0px;
-    width: 655px;
-    height: 340px;
-    font-family:  Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 75px;
-    margin-left: 10px;
-    margin-top: -10px;
-  }
-  p {
-    width: 579px;
-    left: 731px;
-    top: 423px;
-    font-family:  Poppins;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 27px;
-    line-height: 40px;
-    margin-top: -80px;
-    margin-left: 10px;
-  }
-  @media (max-width: 768px) {
+  justify-content: center;
+  @media (max-width: 320px) {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     width: 100%;
-    .image1 {
-      width: 100%;
-    }
+    padding-left: 0px;
   }
+}
+.button:hover {
+  background-color: #00a279;
+}
+.button:hover {
+  background-color: #00a279;
 }
 .conten_home {
   width: 100%;
@@ -426,7 +426,7 @@ export default { name: "Home" };
     margin-top: 30px;
     @media screen and (max-width: 768px) {
       display: inline-block;
-      padding: 0px 30px 0px 30px;
+      padding: 0px 20px 0px 20px;
       margin-left: 2px;
       text-align: justify;
       width: 100%;
@@ -439,7 +439,7 @@ export default { name: "Home" };
       }
     }
     h4 {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-size: 25px;
       font-weight: 700;
       margin-top: 15px;
@@ -447,7 +447,7 @@ export default { name: "Home" };
       font-weight: bold;
     }
     p {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -461,27 +461,57 @@ export default { name: "Home" };
     width: 100%;
     justify-content: center;
     align-items: center;
+    background-color: #c5dcff;
+    padding: 40px 0px 40px 0px;
     @media screen and (max-width: 768px) {
       display: inline-block;
-      padding: 2%;
-      // margin-left: 2px;
       text-align: justify;
-      .button1 {
-        margin-right: 200px;
-      }
-    }
-    &_atas {
-      // width: 100%;
+      padding: 40px 0px 40px 0px;
     }
     h4 {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-size: 40px;
       font-weight: 700;
-      margin-top: 15px;
       text-align: center;
       width: 100%;
+      padding-bottom: 20px;
+    }
+    &_how {
+      @media screen and(max-width:768px) {
+        width: 100%;
+      }
     }
   }
+
+  .button-bawah {
+    padding-left: 200px;
+    .button1 {
+      background-color: #00a279;
+      border: none;
+      color: white;
+      padding: 10px 10px;
+      text-decoration: none;
+      width: 300px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 30px;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+    }
+    .button1:hover {
+      background-color: #00a279;
+    }
+    @media screen and(max-width:768px) {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      padding-left: 0px;
+    }
+  }
+
   &_how {
     display: flex;
     width: 100%;
@@ -489,10 +519,8 @@ export default { name: "Home" };
     align-items: center;
     @media screen and (max-width: 768px) {
       display: inline-block;
-      padding: 2%;
-      margin-left: 2px;
-      text-align: justify;
       width: 100%;
+      text-align: justify;
     }
     img {
       width: 304px;
@@ -502,7 +530,7 @@ export default { name: "Home" };
       }
     }
     h1 {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: bold;
       font-size: 25px;
@@ -513,7 +541,7 @@ export default { name: "Home" };
       height: auto;
     }
     p {
-      font-family:  Poppins;
+      font-family: Poppins;
       font-style: normal;
       font-weight: normal;
       font-size: 20px;
@@ -547,7 +575,7 @@ export default { name: "Home" };
     &_quotes {
       h1 {
         background-color: #c5dcff;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -559,7 +587,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 990px;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -578,7 +606,7 @@ export default { name: "Home" };
     }
     &_apaitu {
       h1 {
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: bold;
         font-size: 25px;
@@ -590,7 +618,7 @@ export default { name: "Home" };
         height: 144px;
         left: 749px;
         top: 900;
-        font-family:  Poppins;
+        font-family: Poppins;
         font-style: normal;
         font-weight: normal;
         font-size: 20px;
@@ -610,6 +638,13 @@ export default { name: "Home" };
       }
     }
   }
+
+  &_timeline {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
   ul.timeline {
     counter-reset: my-sec-counter;
     list-style-type: none;
@@ -623,16 +658,22 @@ export default { name: "Home" };
     left: 35px;
     width: 2px;
     height: 960px;
+    @media screen and (max-width: 768px) {
+      height: 90%;
+    }
   }
   ul.timeline > li {
     margin: 20px 0;
     padding-left: 40px;
+    @media screen and (max-width: 768px) {
+      padding-left: 30px;
+    }
   }
   ul.timeline > li:before {
     counter-increment: my-sec-counter;
     content: counter(my-sec-counter);
     color: white;
-    padding-left: 7px;
+    padding-left: 8px;
     background: #738ded;
     display: inline-block;
     position: absolute;

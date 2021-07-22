@@ -4,6 +4,7 @@ export default {
   name: "tataBahasa",
   data() {
     return {
+      showModal: false,
       strukturkalimatPage1: true,
       strukturkalimatPage2: false,
       strukturkalimatPage3: false,

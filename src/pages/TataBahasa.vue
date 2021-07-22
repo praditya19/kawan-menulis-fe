@@ -2,9 +2,11 @@
   <div class="all">
     <!-- header -->
     <br/><br/>
-    <div class="head">
-      <p>Latihan Menulis</p>
-    </div>
+    <!-- Judul -->
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
+      </div>
+      <!-- End Judul -->
 
     <!-- stepper -->
     <div class="steper">
@@ -154,6 +156,49 @@
         </div>
       </transition>
     </div>
+    <!-- Popup Modal -->
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px; height: 38.49px"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Lihatlah Konsep Paragraf Anda sekarang sebagai satu
+                        kesatuan
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol_oke">
+                    <button
+                      class="ok_oke"
+                      block
+                      @click="showModal = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- Popup Modal -->
     <!-- end modal area -->
     <!-- body -->
     <!-- Screen 1 -->
@@ -167,7 +212,7 @@
           <!-- Button Tips -->
           <div class="col-sm-2">
             <div class="tips">
-              <b-button class="tips_judul">
+              <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
@@ -201,6 +246,7 @@
                   <h4><b>Konsep Paragraf</b></h4>
                 </div>
               </div>
+              <div class="response">
               <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
               <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -220,6 +266,7 @@
                   style="margin-bottom: 5px; margin-left: 20px;"
                 />
               </a>
+              </div>
             </div>
             <div class="border_list">
               <div style="margin-left: 30px;">
@@ -230,13 +277,13 @@
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
-                            <h5>
-                              <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <b>&nbsp; &nbsp;{{data}}</b>
-                              </b-form-radio>
-                            </h5>
+                                <h5>
+                                  <b>{{data}}</b>
+                                </h5>
+                            </b-form-radio>
                         </div>
                       </ul>
                     </div>
@@ -269,7 +316,7 @@
           <!-- Button Tips -->
           <div class="col-sm-2">
             <div class="tips">
-              <b-button class="tips_judul">
+              <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
@@ -301,6 +348,7 @@
                   <h4><b>Konsep Paragraf</b></h4>
                 </div>
               </div>
+              <div class="response">
               <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
               <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -320,6 +368,7 @@
                   style="margin-bottom: 5px; margin-left: 20px;"
                 />
               </a>
+              </div>
             </div>
             <div class="border_list">
               <div style="margin-left: 30px;">
@@ -330,13 +379,13 @@
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
-                            <h5>
-                              <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <b>&nbsp; &nbsp;{{data}}</b>
-                              </b-form-radio>
-                            </h5>
+                                <h5>
+                                  <b>{{data}}</b>
+                                </h5>
+                            </b-form-radio>
                         </div>
                       </ul>
                     </div>
@@ -369,7 +418,7 @@
           <!-- Button Tips -->
           <div class="col-sm-2">
             <div class="tips">
-              <b-button class="tips_judul">
+              <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
@@ -398,6 +447,7 @@
                   <h4><b>Konsep Paragraf</b></h4>
                 </div>
               </div>
+              <div class="response">
               <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
               <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -417,6 +467,7 @@
                   style="margin-bottom: 5px; margin-left: 20px;"
                 />
               </a>
+              </div>
             </div>
             <div class="border_list">
               <div style="margin-left: 30px;">
@@ -427,13 +478,13 @@
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
-                            <h5>
-                              <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <b>&nbsp; &nbsp;{{data}}</b>
-                              </b-form-radio>
-                            </h5>
+                                <h5>
+                                  <b>{{data}}</b>
+                                </h5>
+                            </b-form-radio>
                         </div>
                       </ul>
                     </div>
@@ -466,7 +517,7 @@
           <!-- Button Tips -->
           <div class="col-sm-2">
             <div class="tips">
-              <b-button class="tips_judul">
+              <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
@@ -499,6 +550,7 @@
                   <h4><b>Konsep Paragraf</b></h4>
                 </div>
               </div>
+              <div class="response">
               <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
               <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -518,6 +570,7 @@
                   style="margin-bottom: 5px; margin-left: 20px;"
                 />
               </a>
+              </div>
             </div>
             <div class="border_list">
               <div style="margin-left: 30px;">
@@ -528,13 +581,13 @@
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
-                            <h5>
-                              <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <b>&nbsp; &nbsp;{{data}}</b>
-                              </b-form-radio>
-                            </h5>
+                                <h5>
+                                  <b>{{data}}</b>
+                                </h5>
+                            </b-form-radio>
                         </div>
                       </ul>
                     </div>
@@ -555,15 +608,14 @@
       <!-- End Button OK -->
     </div>
     <!-- End Screen 4 -->
-
-          <!-- Screen 5 -->
+    <!-- Screen 5 -->
       <div class="content-empat" v-if="strukturkalimatPage5 === true" style="margin-left:5%;">
         <div class="col-sm-12">
           <div class="row">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
-                <b-button class="tips_judul" >
+                <b-button class="tips_judul" @click="showModal = true">
                   Tips
                 </b-button>
               </div>
@@ -592,11 +644,13 @@
 
            <!-- Button Gaya menulis dll -->
             <div class="all-button">
-                <button class="all-button_satu">
+                <button class="all-button_satu"
+                @click="$router.push('/gaya-menulis')">
                 <img style="margin-right:3%;" src="@/assets/check.png">
                 Gaya Menulis
                 </button>
-                <button class="all-button_satu">
+                <button class="all-button_satu"
+                @click="$router.push('/struktur-kalimat')">
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Struktur Kalimat
                     </button>
@@ -604,7 +658,8 @@
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Tata Bahasa
                     </button>
-                <button class="all-button_exp" style="width: 16%;">
+                <button class="all-button_exp"
+                @click="$router.push('/proofreading')">
                     Pemeriksaan Akhir
                     </button>
             </div>
@@ -729,7 +784,9 @@
 .all-button {
   margin-left: 17%;
   line-height: 40px;
-
+  @media screen and (max-width: 500px) {
+    margin-left: 0px;
+  }
   &_satu {
     background-color: #00a279;
     border: none;
@@ -740,6 +797,9 @@
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
+    @media screen and (max-width: 500px) {
+      width: 97%;
+    }
   }
   &_exp {
     background-color: #e0e0e0;
@@ -751,18 +811,32 @@
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
+    @media screen and (max-width: 500px) {
+      width: 97%;
+    }
   }
 }
 
   // Button Konsep Menulis
-  .all-button_dua {
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 20px;
-    margin: 0.3%;
-    line-height: 30px;
-    width: 7%;
+  // Button Konsep Menulis
+.all-button_dua {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  margin: 0.3%;
+  line-height: 30px;
+  width: 7%;
+  @media screen and (max-width: 780px) {
+    width: 70px;
   }
+  @media screen and (max-width: 600px) {
+    border: 0;
+    border-radius: 20px;
+    margin: 0%;
+    line-height: 20px;
+    width: 90%;
+  }
+}
 
   .all-button_dua:hover {
     background-color: #f1f6cc;
@@ -771,9 +845,24 @@
   // End Button Gaya Menulis dll
 
   // Tombol OK
+  .tombol_oke {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+.ok_oke {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
   .tombol {
-    margin-left: 45%;
-    padding: 5px;
+    text-align: center;
+    align-items: center;
+    padding: 5px 0px 30px 0px;
   }
 
   .ok {
@@ -788,39 +877,52 @@
   // End Tombol OK
 
   // Konsep Menulis
-  .content-konsep {
-    margin-left: 17%;
-    margin-top: 30px;
-    // background: red;
+.content-konsep {
+  margin-left: 17%;
+  margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0%;
   }
+  @media screen and (max-width: 600px) {
+    padding: 0px 20px;
+    margin-left: 0%;
+  }
+}
 
-  .up-down {
-    display: flex;
-  }
+.up-down {
+  display: flex;
+}
 
-  .border {
-    background-color: #455a64;
-    height: 42px;
-    width: 238px;
-    border-radius: 7px 7px 0px 0px;
-    border: none;
-    h4 {
-      color: #fff;
-      font-size: 16px;
-      text-align: center;
-      margin-top: 10px;
-    }
-    &_list {
-      font-family: Poppins;
-      background-color: #e0e0e0;
-      width: 65%;
-      padding: 13px;
-      border-radius: 0px 0px 14px 14px;
-    }
-    &konsep {
+.border {
+  background-color: #455a64;
+  height: 42px;
+  width: 238px;
+  border-radius: 7px 7px 0px 0px;
+  border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 590px) {
+    height: auto;
+  }
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  &_list {
+    font-family: Poppins;
+    background-color: #e0e0e0;
+    width: 65%;
+    padding: 13px;
+    border-radius: 0px 0px 14px 14px;
+    @media Screen and (max-width: 780px) {
+      width: 95%;
     }
   }
-  // End Konsep Menulis
+}
+// End Konsep Menulis
   /* Style Modal */
 .modal-dialog {
   top: 0px;
@@ -831,12 +933,18 @@
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -900,5 +1008,94 @@
   color: #fff;
   font-family: Poppins;
 }
+
+.response {
+  width: 100%;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 5px 0px 0px 10px;
+    width: 100%;
+    a {
+      padding: 0px 5px 0px 5px;
+    }
+  }
+}
+
+// End Stepper
+.dua {
+  padding: 8px 0px 0px 0px;
+  text-align: justify;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  h5 {
+    font-family: Poppins;
+    padding: 0px 0px 0px 20px;
+  }
+  @media screen and (max-width: 760px) {
+    margin-left: -40px;
+    padding: 0px;
+    h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0px 0px 0px 0px;
+      text-align: left;
+    }
+  }
+}
+
+// Tips dan Kalimat
+.tips {
+  //   background: skyblue;
+  text-align: right;
+  margin: 5px;
+  @media Screen and (max-width: 660px) {
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+  }
+  &_judul {
+    background-color: #00a279;
+    border: none;
+    line-height: 32px;
+    width: 98px;
+    border-radius: 10px;
+    margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
+  }
+}
+
+.judul {
+  font-size: 50px;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
+  }
+}
+// End Judul
 </style>
 

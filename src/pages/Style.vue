@@ -245,32 +245,38 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" @click="modalTambah = true">
-                  Tambah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toSetKonsepParagraf()"
-                >
-                  Ubah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toDropKonsepParagraf()"
-                >
-                  Hapus
-                </button>
-                <button class="all-button_dua_icon" @click="ascending()">
-                  <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
-                </button>
-                <button class="all-button_dua_icon" @click="descending()">
-                  <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
-                </button>
+                <div class="response">
+                  <button class="all-button_dua" @click="modalTambah = true">
+                    Tambah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toSetKonsepParagraf()"
+                  >
+                    Ubah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toDropKonsepParagraf()"
+                  >
+                    Hapus
+                  </button>
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -281,15 +287,15 @@
                             index) in revisiDataSesion.konsepParagrafArray"
                             :key="index"
                           >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.menulis"
-                                name="some-radios"
-                                v-bind:value="index"
-                              >
-                                &nbsp; &nbsp; {{ data }}
-                              </b-form-radio>
-                            </h5>
+                            <b-form-radio
+                              v-model="dataForm.menulis"
+                              name="some-radios"
+                              v-bind:value="index"
+                            >
+                              <h5>
+                                {{ data }}
+                              </h5>
+                            </b-form-radio>
                           </div>
                         </ul>
                       </div>
@@ -397,32 +403,38 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" @click="modalTambah = true">
-                  Tambah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toSetKonsepParagraf()"
-                >
-                  Ubah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toDropKonsepParagraf()"
-                >
-                  Hapus
-                </button>
-                <button class="all-button_dua_icon" @click="ascending()">
-                  <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
-                </button>
-                <button class="all-button_dua_icon" @click="descending()">
-                  <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
-                </button>
+                <div class="response">
+                  <button class="all-button_dua" @click="modalTambah = true">
+                    Tambah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toSetKonsepParagraf()"
+                  >
+                    Ubah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toDropKonsepParagraf()"
+                  >
+                    Hapus
+                  </button>
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -433,15 +445,15 @@
                             index) in revisiDataSesion.konsepParagrafArray"
                             :key="index"
                           >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.menulis"
-                                name="some-radios"
-                                v-bind:value="index"
-                              >
-                                &nbsp; &nbsp; {{ data }}
-                              </b-form-radio>
-                            </h5>
+                            <b-form-radio
+                              v-model="dataForm.menulis"
+                              name="some-radios"
+                              v-bind:value="index"
+                            >
+                              <h5>
+                                {{ data }}
+                              </h5>
+                            </b-form-radio>
                           </div>
                         </ul>
                       </div>
@@ -546,32 +558,38 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" @click="modalTambah = true">
-                  Tambah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toSetKonsepParagraf()"
-                >
-                  Ubah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toDropKonsepParagraf()"
-                >
-                  Hapus
-                </button>
-                <button class="all-button_dua_icon" @click="ascending()">
-                  <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
-                </button>
-                <button class="all-button_dua_icon" @click="descending()">
-                  <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
-                </button>
+                <div class="response">
+                  <button class="all-button_dua" @click="modalTambah = true">
+                    Tambah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toSetKonsepParagraf()"
+                  >
+                    Ubah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toDropKonsepParagraf()"
+                  >
+                    Hapus
+                  </button>
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -582,15 +600,15 @@
                             index) in revisiDataSesion.konsepParagrafArray"
                             :key="index"
                           >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.menulis"
-                                name="some-radios"
-                                v-bind:value="index"
-                              >
-                                &nbsp; &nbsp; {{ data }}
-                              </b-form-radio>
-                            </h5>
+                            <b-form-radio
+                              v-model="dataForm.menulis"
+                              name="some-radios"
+                              v-bind:value="index"
+                            >
+                              <h5>
+                                {{ data }}
+                              </h5>
+                            </b-form-radio>
                           </div>
                         </ul>
                       </div>
@@ -704,32 +722,38 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" @click="modalTambah = true">
-                  Tambah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toSetKonsepParagraf()"
-                >
-                  Ubah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toDropKonsepParagraf()"
-                >
-                  Hapus
-                </button>
-                <button class="all-button_dua_icon" @click="ascending()">
-                  <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
-                </button>
-                <button class="all-button_dua_icon" @click="descending()">
-                  <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
-                </button>
+                <div class="response">
+                  <button class="all-button_dua" @click="modalTambah = true">
+                    Tambah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toSetKonsepParagraf()"
+                  >
+                    Ubah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toDropKonsepParagraf()"
+                  >
+                    Hapus
+                  </button>
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -740,15 +764,15 @@
                             index) in revisiDataSesion.konsepParagrafArray"
                             :key="index"
                           >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.menulis"
-                                name="some-radios"
-                                v-bind:value="index"
-                              >
-                                &nbsp; &nbsp; {{ data }}
-                              </b-form-radio>
-                            </h5>
+                            <b-form-radio
+                              v-model="dataForm.menulis"
+                              name="some-radios"
+                              v-bind:value="index"
+                            >
+                              <h5>
+                                {{ data }}
+                              </h5>
+                            </b-form-radio>
                           </div>
                         </ul>
                       </div>
@@ -854,32 +878,38 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" @click="modalTambah = true">
-                  Tambah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toSetKonsepParagraf()"
-                >
-                  Ubah
-                </button>
-                <button
-                  class="all-button_dua"
-                  v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
-                  @click="toDropKonsepParagraf()"
-                >
-                  Hapus
-                </button>
-                <button class="all-button_dua_icon" @click="ascending()">
-                  <b-icon icon="chevron-up" aria-hidden="true"></b-icon>
-                </button>
-                <button class="all-button_dua_icon" @click="descending()">
-                  <b-icon icon="chevron-down" aria-hidden="true"></b-icon>
-                </button>
+                <div class="response">
+                  <button class="all-button_dua" @click="modalTambah = true">
+                    Tambah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toSetKonsepParagraf()"
+                  >
+                    Ubah
+                  </button>
+                  <button
+                    class="all-button_dua"
+                    v-bind:disabled="
+                      dataForm.menulis.length === 0 ? true : false
+                    "
+                    @click="toDropKonsepParagraf()"
+                  >
+                    Hapus
+                  </button>
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -890,15 +920,15 @@
                             index) in revisiDataSesion.konsepParagrafArray"
                             :key="index"
                           >
-                            <h5>
-                              <b-form-radio
-                                v-model="dataForm.menulis"
-                                name="some-radios"
-                                v-bind:value="index"
-                              >
-                                &nbsp; &nbsp; {{ data }}
-                              </b-form-radio>
-                            </h5>
+                            <b-form-radio
+                              v-model="dataForm.menulis"
+                              name="some-radios"
+                              v-bind:value="index"
+                            >
+                              <h5>
+                                {{ data }}
+                              </h5>
+                            </b-form-radio>
                           </div>
                         </ul>
                       </div>
@@ -1004,13 +1034,22 @@
                 <img style="margin-right:3%;" src="@/assets/check.png" />
                 Gaya Menulis
               </button>
-              <b-button class="all-button_finish">
+              <b-button
+                class="all-button_finish"
+                @click="$router.push('/struktur-kalimat')"
+              >
                 Struktur Kalimat
               </b-button>
-              <b-button class="all-button_finish">
+              <b-button
+                class="all-button_finish"
+                @click="$router.push('/tata-bahasa')"
+              >
                 Tata Bahasa
               </b-button>
-              <b-button class="all-button_finish">
+              <b-button
+                class="all-button_finish"
+                @click="$router.push('/proofreading')"
+              >
                 Pemeriksaan Akhir
               </b-button>
             </div>
@@ -1024,13 +1063,13 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
                         <ul>
                           <div
-                            class="dua"
+                            class="dua2"
                             v-for="(data,
                             index) in revisiDataSesion.konsepParagraf"
                             :key="index"
@@ -1070,8 +1109,19 @@
 .all {
   overflow-x: hidden;
 }
-
-// Judul
+.response {
+  width: 100%;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 5px 0px 0px 20px;
+    width: 100%;
+    a {
+      padding: 0px 15px 0px 15px;
+    }
+  }
+}
 .content-satu {
   //   background: red;
   margin-top: 120px;
@@ -1089,16 +1139,40 @@
     font-size: 47px;
     margin-left: 10%;
   }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
+  }
 }
 // End Judul
 
 // Stepper
-
 .steper {
   text-align: center;
+  padding: 10px 200px 10px 200px;
   &_image {
-    width: 1000px;
-    text-align: center;
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 // End Stepper
@@ -1106,12 +1180,18 @@
 // Jenis Paragraf
 .jenis {
   display: flex;
-  max-width: 1440px;
+  width: 100%;
   height: 49px;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
   &_paragraf {
     padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
   }
   &_topik {
     padding: 11px 0px 0px 70px;
@@ -1122,16 +1202,22 @@
 // Tips Style
 .tips {
   //   background: skyblue;
+  text-align: right;
   margin: 5px;
-  margin-left: 105px;
+  @media Screen and (max-width: 660px) {
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+  }
   &_judul {
-    position: absolute;
     background-color: #00a279;
     border: none;
+    line-height: 32px;
     width: 98px;
-    height: 40px;
     border-radius: 10px;
     margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
   }
 }
 
@@ -1161,6 +1247,9 @@
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
   &_finish {
     background-color: #c1c8d3;
@@ -1173,6 +1262,9 @@
     font-size: 14px;
     font-family: Poppins;
     color: #212529;
+    @media screen and (max-width: 600px) {
+      width: 32%;
+    }
   }
 }
 
@@ -1195,21 +1287,42 @@
 
 // Konsep Menulis
 .content-konsep {
-  margin-left: 0%;
   margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0%;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 0px 0px;
+    margin-left: 0%;
+  }
   // background: red;
 }
 
+.jarak {
+  margin-left: 10px;
+  padding: 10px 30px 0px 0px;
+  @media screen and (max-width: 780px) {
+    margin-left: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+}
 .up-down {
   display: flex;
 }
 
 .border {
-  background-color: #484c52;
+  background-color: #455a64;
   height: 42px;
   width: 238px;
   border-radius: 7px 7px 0px 0px;
   border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 780px) {
+    height: auto;
+  }
   h4 {
     color: #fff;
     font-size: 16px;
@@ -1222,12 +1335,14 @@
     font-family: Poppins;
     font-size: 20px;
     background-color: #c1c8d3;
-    width: 800px;
-    padding: 13px;
+    width: 100%;
     border-radius: 0px 0 30px 30px;
+    @media Screen and (max-width: 780px) {
+      padding: 0px 2px 0px 2px;
+      width: 100%;
+    }
   }
 }
-
 .dua {
   padding: 8px 0px 0px 0px;
   text-align: justify;
@@ -1235,9 +1350,39 @@
   border-bottom-right-radius: 30px;
   h5 {
     font-family: Poppins;
+    padding: 0px 0px 0px 20px;
+    text-align: inline;
+  }
+  @media screen and (max-width: 760px) {
+    padding: 0px;
+    h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0px 30px 0px 0px;
+      text-align: left;
+    }
   }
 }
 
+.dua2 {
+  padding: 8px 0px 0px 0px;
+  text-align: justify;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  h5 {
+    font-family: Poppins;
+    padding: 0px 0px 0px 20px;
+  }
+  @media screen and (max-width: 760px) {
+    padding: 0px;
+    margin-left: -30px;
+    width: 100%;
+    h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 10px 0px 0px 20px;
+      text-align: left;
+    }
+  }
+}
 // End Konsep Menulis
 
 // Tombol catatan
@@ -1266,6 +1411,16 @@
   line-height: 30px;
   width: 10%;
   font-weight: bold;
+  @media screen and (max-width: 780px) {
+    width: 70px;
+  }
+  @media screen and (max-width: 600px) {
+    border: 0;
+    border-radius: 20px;
+    margin: 0%;
+    line-height: 20px;
+    width: 90%;
+  }
   &_icon {
     background-color: #e0e0e0;
     border: none;
@@ -1291,18 +1446,27 @@
 .modal-dialog {
   top: -100px;
   left: auto;
+  @media (max-width: 768px) {
+    top: 0px;
+  }
 }
 
 .modal-content {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -1367,4 +1531,3 @@
   font-family: Poppins;
 }
 </style>
-

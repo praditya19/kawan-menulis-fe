@@ -1,9 +1,12 @@
 <template>
   <div class="all">
-    <!-- header -->
-    <div class="head">
-      <p>Latihan Menulis</p>
+    <!-- Judul -->
+    <div class="content-satu">
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
+      </div>
     </div>
+    <!-- End Judul -->
 
     <!-- stepper -->
     <div class="steper">
@@ -18,18 +21,19 @@
         sesuatu? Coba sebutkan satu.
       </p>
     </div>
-
     <!-- body -->
+    <div class="tips2">
+      <b-button class="tips2_judul2" @click="showModal = true">
+        Tips
+      </b-button>
+    </div>
     <div class="body">
       <!-- Button Tips -->
-      <div class="col-md-2.5">
-        <div class="tips">
-          <b-button class="tips_judul" @click="showModal = true">
-            Tips
-          </b-button>
-        </div>
+      <div class="tips">
+        <b-button class="tips_judul" @click="showModal = true">
+          Tips
+        </b-button>
       </div>
-
       <!-- popup -->
       <div v-if="showModal === true">
         <transition name="model">
@@ -64,7 +68,6 @@
           </div>
         </transition>
       </div>
-
       <div class="col-md-9.5">
         <div class="isi">
           <div class="kalimat">
@@ -132,20 +135,42 @@
   overflow: hidden;
 }
 
-// head
-.head {
-  padding: 110px 0px 0px 0px;
+// Judul
+.content-satu {
+  margin-top: 120px;
+}
+
+.judul {
+  font-size: 50px;
+  margin-top: 70px;
   font-family: Poppins;
-  font-weight: 700;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
-  text-align: center;
-  @media (max-width: 768px) {
-    padding: 110px 5px 0px 5px;
-    font-size: 40px;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
   }
 }
+// End Judul
 
 // Stepper
 .steper {
@@ -183,26 +208,53 @@
 // body
 .body {
   display: flex;
-  @media (max-width: 768px) {
-    display: flex;
+  padding: 0px 0px 0px 130px;
+  @media screen and(max-width: 768px) {
+    padding: 0px;
   }
 }
 // Tips dan Kalimat
 .tips {
-  padding: 25px 0px 0px 135px;
-  font-size: 16px;
-  @media (max-width: 768px) {
-    padding: 20px 10px 0px 20px;
+  text-align: right;
+  margin: 5px;
+  @media Screen and (max-width: 768px) {
+    display: none;
   }
   &_judul {
     background-color: #00a279;
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
+    border: none;
+    line-height: 32px;
+    width: 98px;
     border-radius: 10px;
-    width: 115px;
-    @media (max-width: 768px) {
-      width: 70px;
+    margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
+  }
+}
+
+.tips2 {
+  display: none;
+  @media Screen and (max-width: 768px) {
+    padding: 20px 0px 0px 0px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  &_judul2 {
+    display: none;
+    @media Screen and (max-width: 768px) {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      background-color: #00a279;
+      border: none;
+      line-height: 32px;
+      width: 98px;
+      border-radius: 10px;
+      margin: 5px;
     }
   }
 }
@@ -230,8 +282,9 @@
 // Button Gaya Menulis dll
 .all-button {
   padding: 32px 0px 0px 0px;
-  @media (max-width: 768px) {
-    padding-top: 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0px;
   }
   &_satu {
     border: none;
@@ -246,7 +299,8 @@
     font-size: 16px;
     line-height: 24px;
     color: #000000;
-    @media (max-width: 768px) {
+    @media (max-width: 570px) {
+      width: 100%;
       margin-top: 10px;
     }
   }
@@ -298,6 +352,9 @@
 // Konsep Menulis
 .content-konsep {
   margin-top: 42px;
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
 }
 
 .border {
@@ -306,6 +363,9 @@
   width: 101px;
   border-radius: 7px 7px 0px 0px;
   border: none;
+  @media screen and (max-width: 750px) {
+    width: 101px;
+  }
   h4 {
     color: #fff;
     font-size: 16px;
@@ -324,10 +384,7 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
-
     color: #030303;
-  }
-  &konsep {
   }
 }
 // End Konsep Menulis

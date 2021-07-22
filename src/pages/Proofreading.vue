@@ -250,6 +250,7 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
+                <div class="response">
                 <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -269,9 +270,10 @@
                     style="margin-bottom: 5px; margin-left: 20px;"
                   />
                 </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -279,13 +281,13 @@
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                  &nbsp; &nbsp;{{data}}
-                                </b-form-radio>
+                              <h5>
+                                  {{data}}
                               </h5>
+                                </b-form-radio>
                             </div>
                         </ul>
                       </div>
@@ -298,10 +300,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading1Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading1Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -384,6 +386,7 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
+                <div class="response">
                 <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -403,9 +406,10 @@
                     style="margin-bottom: 5px; margin-left: 20px;"
                   />
                 </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -413,13 +417,13 @@
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                  &nbsp; &nbsp;{{data}}
-                                </b-form-radio>
+                              <h5>
+                                  {{data}}
                               </h5>
+                                </b-form-radio>
                             </div>
                         </ul>
                       </div>
@@ -432,10 +436,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading2Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading2Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -518,6 +522,7 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
+                <div class="response">
                 <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -537,9 +542,10 @@
                     style="margin-bottom: 5px; margin-left: 20px;"
                   />
                 </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -547,13 +553,13 @@
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                  &nbsp; &nbsp;{{data}}
-                                </b-form-radio>
+                              <h5>
+                                  {{data}}
                               </h5>
+                                </b-form-radio>
                             </div>
                         </ul>
                       </div>
@@ -566,10 +572,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading3Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading3Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -653,6 +659,7 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
+                <div class="response">
                 <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -672,9 +679,10 @@
                     style="margin-bottom: 5px; margin-left: 20px;"
                   />
                 </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -682,13 +690,13 @@
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                  &nbsp; &nbsp;{{data}}
-                                </b-form-radio>
+                              <h5>
+                                  {{data}}
                               </h5>
+                                </b-form-radio>
                             </div>
                         </ul>
                       </div>
@@ -701,10 +709,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading4Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading4Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -792,6 +800,7 @@
                     <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
+                <div class="response">
                 <button class="all-button_dua" @click="modalTambah = true">Tambah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toSetKonsepParagraf()">Ubah</button>
@@ -811,9 +820,10 @@
                     style="margin-bottom: 5px; margin-left: 20px;"
                   />
                 </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;">
+                <div style="jarak">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
@@ -821,13 +831,13 @@
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
+                            <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                  &nbsp; &nbsp;{{data}}
-                                </b-form-radio>
+                              <h5>
+                                  {{data}}
                               </h5>
+                                </b-form-radio>
                             </div>
                         </ul>
                       </div>
@@ -840,10 +850,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading5Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading5Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -930,18 +940,21 @@
             <!-- Button Gaya menulis dll -->
             <div class="all-button">
                 <button class="all-button_satu">
-                <img style="margin-right:3%;" src="@/assets/check.png">
+                <img style="margin-right:3%;" src="@/assets/check.png"
+                @click="$router.push('/gaya-menulis')">
                 Gaya Menulis
                 </button>
-                <button class="all-button_satu">
+                <button class="all-button_satu"
+                @click="$router.push('/struktur-kalimat')">
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Struktur Kalimat
                     </button>
-                <button class="all-button_satu">
+                <button class="all-button_satu" 
+                @click="$router.push('/tata-bahasa')">
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Tata Bahasa
                     </button>
-                <button class="all-button_satu" style="width: 16%;">
+                <button class="all-button_satu">
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Pemeriksaan Akhir
                     </button>
@@ -957,7 +970,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;" v-for="(data,
+                <div style="margin-left: 10px;" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagraf"
                             :key="index">
                   <p>
@@ -970,10 +983,10 @@
         </div>
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="proofreading6Next">
-          <div class="tombol_ok">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button">
+          <button class="button1 justify-content-center" @click="proofreading6Next">
+            <b>OK</b>
+          </button>
         </div>
         <!-- End Button OK -->
       </div>
@@ -985,11 +998,58 @@
 <script src="./js/proofreading.js" />
 
 <style lang="scss" scoped>
+// Tombol OK
+.button {
+  padding: 30px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    .button1 {
+      margin-left: 0px;
+      position: center;
+    }
+  }
+  .button1 {
+    background-color: #0a4da3;
+    height: 44px;
+    width: 110px;
+    border-radius: 42px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    padding-top: 8px;
+    b {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  .button1:hover {
+    background-color: #0a4da3;
+  }
+}
+// End Tombol OK
 // all
 .all {
   overflow-x: hidden;
 }
-
+.dua {
+  b {
+    padding: 10px 0px 0px 20px;
+  }
+  @media screen and (max-width: 760px) {
+    b {
+      padding: 0px;
+    }
+  }
+}
 // Judul
 .content-satu {
   margin-top: 120px;
@@ -1006,6 +1066,23 @@
     font-weight: bolder;
     font-size: 47px;
     margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
   }
 }
 // End Judul
@@ -1031,12 +1108,18 @@
 // Jenis Paragraf
 .jenis {
   display: flex;
-  // max-width: 1440px;
+  width: 100%;
   height: 49px;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
   &_paragraf {
     padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
   }
   &_topik {
     padding: 11px 0px 0px 70px;
@@ -1049,6 +1132,10 @@
   //   background: skyblue;
   text-align: right;
   margin: 5px;
+  @media Screen and (max-width: 660px) {
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+  }
   &_judul {
     background-color: #00a279;
     border: none;
@@ -1056,6 +1143,9 @@
     width: 98px;
     border-radius: 10px;
     margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
   }
 }
 
@@ -1072,7 +1162,6 @@
 .all-button {
   margin-left: 17%;
   line-height: 40px;
-
   &_satu {
     background-color: #00a279;
     border: none;
@@ -1083,6 +1172,10 @@
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
+    @media screen and (max-width: 600px) {
+      margin-left: -55px;
+      width: 97%;
+    }
   }
 }
 
@@ -1094,7 +1187,16 @@
   margin: 0.3%;
   line-height: 30px;
   width: 7%;
-  font-weight: bold;
+  @media screen and (max-width: 780px) {
+    width: 70px;
+  }
+  @media screen and (max-width: 600px) {
+    border: 0;
+    border-radius: 20px;
+    margin: 0%;
+    line-height: 20px;
+    width: 90%;
+  }
 }
 
 .all-button_dua:hover {
@@ -1110,9 +1212,10 @@
 }
 
 .tombol_ok {
-  margin-left: 44%;
-  padding: 5px;
+  align-items: center;  
+  text-align: center;
 }
+
 
 .ok {
   background: #0a4da3;
@@ -1125,23 +1228,18 @@
 }
 // End Tombol OK
 
-// Konsep Menulis
-.content-konsep {
-  margin-left: 17%;
-  margin-top: 30px;
-  // background: red;
-}
-
-.up-down {
-  display: flex;
-}
-
 .border {
   background-color: #455a64;
   height: 42px;
   width: 238px;
   border-radius: 7px 7px 0px 0px;
   border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 500px) {
+    height: auto;
+  }
   h4 {
     color: #fff;
     font-size: 16px;
@@ -1154,10 +1252,9 @@
     width: 65%;
     padding: 13px;
     border-radius: 0px 0px 14px 14px;
-    font-family: Poppins;
-    font-size: 20px;
-  }
-  &konsep {
+    @media Screen and (max-width: 780px) {
+      width: 95%;
+    }
   }
 }
 // End Konsep Menulis
@@ -1172,12 +1269,18 @@
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -1240,6 +1343,78 @@
   height: 32.71px;
   color: #fff;
   font-family: Poppins;
+}
+
+// Konsep Menulis
+.content-konsep {
+  margin-left: 17%;
+  margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0%;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 0px 20px;
+    margin-left: 0%;
+  }
+  // background: red;
+}
+
+.up-down {
+  display: flex;
+}
+
+.border {
+  background-color: #455a64;
+  height: 42px;
+  width: 238px;
+  border-radius: 7px 7px 0px 0px;
+  border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    height: auto;
+  }
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  &_list {
+    font-family: Poppins;
+    background-color: #e0e0e0;
+    width: 65%;
+    padding: 13px;
+    border-radius: 0px 0px 14px 14px;
+    @media Screen and (max-width: 780px) {
+      width: 95%;
+    }
+  }
+}
+// End Konsep Menulis
+.response {
+  width: 100%;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 5px 0px 0px 10px;
+    width: 100%;
+    a {
+      margin-left: -7px;
+      padding: 0px 6px 0px 6px;
+    }
+  }
+}
+.jarak {
+  margin-left: 10px;
+  padding: 10px 30px 0px 0px;
+  @media screen and (max-width: 780px) {
+    margin-left: 0px;
+    padding: 0px;
+    width: 100%;
+  }
 }
 </style>
 

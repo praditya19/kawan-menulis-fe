@@ -20,7 +20,7 @@ export default {
       this.proFeridingDataSesion = JSON.parse(proFreadingData);
     },
     ...mapActions(["finishStudentsActions"]),
-    sumbit() {
+    submit() {
       this.finishStudentsActions({
         requestBody: {
           clientId: "8bb0dc63d320bba9723f66dd10c1adaf",

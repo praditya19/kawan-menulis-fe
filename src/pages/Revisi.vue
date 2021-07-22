@@ -164,6 +164,135 @@
         </div>
       </transition>
     </div>
+    <!-- Popup Modal -->
+    <div v-if="showModal === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px; height: 38.49px"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Lihatlah paragraf Anda sekarang sebagai satu
+                        kesatuan
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol_oke">
+                    <button
+                      class="ok_oke"
+                      block
+                      @click="showModal = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- Popup Modal -->
+    <div v-if="showModal3 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px; height: 38.49px"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Lebih baik untuk memilih
+                        <strong>Pemeriksaan Akhir</strong> dibagian
+                        terakhir.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol_oke">
+                    <button
+                      class="ok_oke"
+                      block
+                      @click="showModal3 = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- Popup Modal -->
+    <div v-if="showModal2 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px; height: 38.49px"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat2">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%">
+                      <p>
+                        Mulai dari bagian ini, sistem akan
+                        menyarankan tempat yang tepat untuk
+                        menggunakan Tambah, Ubah, Hapus, dan Pindah
+                        Atas/Pindah Bawah.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol_oke">
+                    <button
+                      class="ok_oke"
+                      block
+                      @click="showModal2 = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
       <!-- end modal area -->
       <!-- Screen 1 -->
       <div class="content-empat" v-if="revisiPage1 === true">
@@ -176,48 +305,6 @@
                 <b-button class="tips_judul" @click="showModal = true">
                   Tips
                 </b-button>
-                <!-- Popup Modal -->
-                <div v-if="showModal === true">
-                  <transition name="model">
-                    <div class="modal-mask">
-                      <div class="modal-wrapper">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <!-- Modal Body -->
-                            <div class="modal-body">
-                              <div class="image-container">
-                                <img
-                                  style="width: 40px; height: 38.49px"
-                                  src="@/assets/checklist.png"
-                                />
-                              </div>
-
-                              <div class="kalimat2">
-                                <div style="padding: 0% 0% 0% 12%; width: 85%">
-                                  <p>
-                                    Lihatlah paragraf Anda sekarang sebagai satu
-                                    kesatuan
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="tombol">
-                                <button
-                                  class="ok"
-                                  block
-                                  @click="showModal = false"
-                                >
-                                  OK
-                                </button>
-                              </div>
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </transition>
-                </div>
               </div>
             </div>
             <div class="col-sm-8">
@@ -244,7 +331,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 10px; padding: 10px 30px 0px 0px">
+                <div class="border_data">
                   <p v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagraf" :key="index">
                     {{data}}
                   </p>
@@ -277,50 +364,6 @@
                 <b-button class="tips_judul" @click="showModal2 = true">
                   Tips
                 </b-button>
-                <!-- Popup Modal -->
-                <div v-if="showModal2 === true">
-                  <transition name="model">
-                    <div class="modal-mask">
-                      <div class="modal-wrapper">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <!-- Modal Body -->
-                            <div class="modal-body">
-                              <div class="image-container">
-                                <img
-                                  style="width: 40px; height: 38.49px"
-                                  src="@/assets/checklist.png"
-                                />
-                              </div>
-
-                              <div class="kalimat2">
-                                <div style="padding: 0% 0% 0% 12%; width: 85%">
-                                  <p>
-                                    Mulai dari bagian ini, sistem akan
-                                    menyarankan tempat yang tepat untuk
-                                    menggunakan Tambah, Ubah, Hapus, dan Pindah
-                                    Atas/Pindah Bawah.
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="tombol">
-                                <button
-                                  class="ok"
-                                  block
-                                  @click="showModal2 = false"
-                                >
-                                  OK
-                                </button>
-                              </div>
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </transition>
-                </div>
               </div>
             </div>
             <div class="col-sm-8">
@@ -338,7 +381,6 @@
                 </p>
               </div>
             </div>
-
             <!-- Konsep Paragraf -->
             <div class="content-konsep">
               <div class="up-down">
@@ -347,44 +389,41 @@
                     <h4><b>Konsep Paragraf</b></h4>
                   </div>
                 </div>
-                <button class="all-button_dua" type="botton" @click="modalTambah = true">Tambah</button>
-                <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toSetKonsepParagraf()">Ubah</button>
-                <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toDropKonsepParagraf()">Hapus</button>
-                <a @click="ascending()">
-                <img
-                  class="icon-up-down"
-                  src="@/assets/up.png"
-                  style="margin-bottom: 5px; margin-left: 20px"
-                />
-                </a>
-                <a @click="descending()">
-                <img
-                  class="icon-up-down"
-                  src="@/assets/down.png"
-                  style="margin-bottom: 5px; margin-left: 20px"
-                />
-                </a>
+                <div class="response">
+                  <button class="all-button_dua" type="botton" @click="modalTambah = true">Tambah</button>
+                  <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toSetKonsepParagraf()">Ubah</button>
+                  <button class="all-button_dua" type="botton" v-bind:disabled="dataForm.menulis.length === 0 ? true : false" @click="toDropKonsepParagraf()">Hapus</button>
+                  <a @click="ascending()">
+                  <img
+                    class="icon-up-down"
+                    src="@/assets/up.png"
+                  />
+                  </a>
+                  <a @click="descending()">
+                  <img
+                    class="icon-up-down"
+                    src="@/assets/down.png"
+                  
+                  />
+                  </a>
+                </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 10px padding: 10px 30px 0px 0px">
+                <div class="jarak">
                   <b-form-group>
-                    <div>
-                      <div class="col-sm-12">
-                        <ul>
-                          <div class="dua" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagrafArray" :key="index">
-                              <h5>
-                                <b-form-radio v-model="dataForm.menulis"
-                                      name="some-radios"
-                                      v-bind:value="index"
-                                  ><b
-                                    >&nbsp; &nbsp;{{data}}</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                        </ul>
-                      </div>
-                    </div>
+                    <ul>
+                      <div class="dua" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagrafArray" :key="index">
+                          <h5>
+                            <b-form-radio v-model="dataForm.menulis"
+                                  name="some-radios"
+                                  v-bind:value="index"
+                              ><b
+                                > {{data}}</b
+                              ></b-form-radio
+                            >
+                          </h5>
+                        </div>
+                    </ul>
                   </b-form-group>
                 </div>
               </div>
@@ -414,49 +453,6 @@
                 <b-button class="tips_judul" @click="showModal3 = true">
                   Tips
                 </b-button>
-                <!-- Popup Modal -->
-                <div v-if="showModal3 === true">
-                  <transition name="model">
-                    <div class="modal-mask">
-                      <div class="modal-wrapper">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <!-- Modal Body -->
-                            <div class="modal-body">
-                              <div class="image-container">
-                                <img
-                                  style="width: 40px; height: 38.49px"
-                                  src="@/assets/checklist.png"
-                                />
-                              </div>
-
-                              <div class="kalimat2">
-                                <div style="padding: 0% 0% 0% 12%; width: 85%">
-                                  <p>
-                                    Lebih baik untuk memilih
-                                    <strong>Pemeriksaan Akhir</strong> dibagian
-                                    terakhir.
-                                  </p>
-                                </div>
-                              </div>
-
-                              <div class="tombol">
-                                <button
-                                  class="ok"
-                                  block
-                                  @click="showModal3 = false"
-                                >
-                                  OK
-                                </button>
-                              </div>
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </transition>
-                </div>
               </div>
             </div>
             <div class="col-sm-8">
@@ -483,10 +479,10 @@
 
             <!-- Button Gaya menulis dll -->
             <div class="all-button">
-                <button class="all-button_satu2">Gaya Menulis</button>
-                <button class="all-button_satu">Struktur Kalimat</button>
-                <button class="all-button_satu">Tata Bahasa</button>
-                <button class="all-button_satu">Pemeriksaan Akhir</button>
+                <button class="all-button_satu2" @click="$router.push('/gaya-menulis')">Gaya Menulis</button>
+                <button class="all-button_satu" @click="$router.push('/struktur-kalimat')">Struktur Kalimat</button>
+                <button class="all-button_satu" @click="$router.push('/tata-bahasa')">Tata Bahasa</button>
+                <button class="all-button_satu" @click="$router.push('/proofreading')">Pemeriksaan Akhir</button>
             </div>
 
             <!-- Konsep Paragraf -->
@@ -531,6 +527,48 @@
 .all {
   overflow-x: hidden;
 }
+.dua {
+  b {
+    padding: 10px 0px 0px 20px;
+  }
+  @media screen and (max-width: 760px) {
+    b {
+      padding: 0px;
+    }
+  }
+}
+.jarak {
+  margin-left: 10px;
+  padding: 10px 30px 0px 0px;
+  @media screen and (max-width: 780px) {
+    margin-left: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+}
+.response {
+  width: 100%;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 425px) {
+    padding: 5px 0px 0px 20px;
+    width: 100%;
+    a {
+      padding: 0px 15px 0px 15px;
+    }
+  }
+}
+.icon-up-down {
+  margin-bottom: 5px; 
+  margin-left: 20px;
+  @media screen and (max-width: 600px) {
+    margin-left: 0px;
+  }
+  @media screen and (max-width: 760px) {
+    font-weight: 30px;
+  }
+}
 
 // Judul
 .content-satu {
@@ -549,6 +587,23 @@
     font-weight: bolder;
     font-size: 47px;
     margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
   }
 }
 // End Judul
@@ -574,12 +629,18 @@
 // Jenis Paragraf
 .jenis {
   display: flex;
-  // max-width: 1440px;
+  width: 100%;
   height: 49px;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
   &_paragraf {
     padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
   }
   &_topik {
     padding: 11px 0px 0px 70px;
@@ -592,6 +653,10 @@
   //   background: skyblue;
   text-align: right;
   margin: 5px;
+  @media Screen and (max-width: 660px) {
+    padding: 5px 0px 0px 0px;
+    text-align: center;
+  }
   &_judul {
     background-color: #00a279;
     border: none;
@@ -599,6 +664,9 @@
     width: 98px;
     border-radius: 10px;
     margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
   }
 }
 
@@ -622,6 +690,14 @@
     border-radius: 20px;
     width: 12%;
     margin: 0.3%;
+    @media screen and (max-width: 768px) {
+      padding: 10px 0px;
+      width: 15%;
+    }
+    @media screen and (max-width: 600px) {
+      padding: 10px 0px;
+      width: 90%;
+    }
   }
 }
 
@@ -632,13 +708,20 @@
 .all-button {
   margin-left: 17%;
   line-height: 30px;
-
   &_satu2 {
     background-color: #f1f6cc;
     border: none;
     border-radius: 20px;
     width: 12%;
     margin: 0.3%;
+    @media screen and (max-width: 600px) {
+      padding: 10px 0px;
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    margin-left: 0%;
+    line-height: 10px;
   }
 }
 
@@ -650,6 +733,16 @@
   margin: 0.3%;
   line-height: 30px;
   width: 7%;
+  @media screen and (max-width: 780px) {
+    width: 70px;
+  }
+  @media screen and (max-width: 600px) {
+    border: 0;
+    border-radius: 20px;
+    margin: 0%;
+    line-height: 20px;
+    width: 90%;
+  }
 }
 
 .all-button_dua:hover {
@@ -662,6 +755,12 @@
 .tombol {
   margin-left: 45%;
   padding: 5px;
+  @media Screen and (max-width: 768px) {
+  margin-left: 0px;
+
+    align-items: center;  
+    text-align: center;
+  }
 }
 
 .ok {
@@ -675,10 +774,33 @@
 }
 // End Tombol OK
 
+.tombol_oke {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok_oke {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+
 // Konsep Menulis
 .content-konsep {
   margin-left: 17%;
   margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0%;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 0px 20px;
+    margin-left: 0%;
+  }
   // background: red;
 }
 
@@ -692,6 +814,12 @@
   width: 238px;
   border-radius: 7px 7px 0px 0px;
   border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    height: auto;
+  }
   h4 {
     color: #fff;
     font-size: 16px;
@@ -704,6 +832,16 @@
     width: 65%;
     padding: 13px;
     border-radius: 0px 0px 14px 14px;
+    @media Screen and (max-width: 780px) {
+      width: 95%;
+    }
+  }
+  &_data {
+    margin-left: 10px; 
+    padding: 10px 30px 0px 0px;
+    @media screen and (max-width: 600px) {
+      padding: 10px 30px 0px 0px;
+    }
   }
 }
 // End Konsep Menulis
@@ -712,18 +850,27 @@
 .modal-dialog {
   top: -100px;
   left: auto;
+  @media (max-width: 768px) {
+    top: 0px;
+  }
 }
 
 .modal-content {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -760,6 +907,10 @@
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+  @media screen and (max-width: 780px) {
+    vertical-align: 0;
+    padding: 300px 0px 0px 0px;
+  }
 }
 
 /* End Background Belakang Modal */

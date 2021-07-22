@@ -1,22 +1,30 @@
 <template>
   <div class="all">
-    <div class="judul">
-      <p>Latihan Menulis</p>
+    <!-- Judul -->
+    <div class="content-satu">
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
+      </div>
     </div>
-
+    <br />
     <!-- Stepper -->
     <div class="steper">
       <img class="steper_image" src="@/assets/icon_stepper/3.png" />
     </div>
     <!-- End Stepper  -->
 
-    <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
-      <p class="center_topik">
-        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-        sesuatu? Coba sebutkan satu.
-      </p>
+    <br />
+    <!-- Jenis Paragraf -->
+    <div class="content-tiga">
+      <div class="jenis">
+        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+        <p class="jenis_topik">
+          <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
+          sesuatu? Coba sebutkan satu.
+        </p>
+      </div>
     </div>
+    <br />
 
     <!-- modal -->
     <!-- page1 -->
@@ -271,9 +279,11 @@
 
     <!-- kalimatutama page 1 -->
     <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage1 === true">
+      <div class="center">
+        <p class="tengah2_tips2" @click="showModal = true">TIPS</p>
+      </div>
       <div class="tengah">
         <p class="tengah_tips" @click="showModal = true">TIPS</p>
-
         <p class="tengah_text">
           Mari mulai paragrafmu dengan sebuah kalimat utama.<br />
           Kalimat utama adalah kalimat yang mengandung topik/ide tulisanmu.
@@ -292,6 +302,9 @@
 
     <!-- kalimat utama page 2 -->
     <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage2 === true">
+      <div class="center">
+        <p class="tengah2_tips2" @click="showModal2 = true">TIPS</p>
+      </div>
       <div class="tengah">
         <p class="tengah_tips" @click="showModal2 = true">TIPS</p>
         <p class="tengah_text2">
@@ -315,6 +328,9 @@
 
     <!-- kalimat utama page 3 -->
     <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage3 === true">
+      <div class="center">
+        <p class="tengah2_tips2" @click="showModal3 = true">TIPS</p>
+      </div>
       <div class="tengah">
         <p class="tengah_tips" @click="showModal3 = true">TIPS</p>
         <p class="tengah_text3">
@@ -328,10 +344,12 @@
         <p class="tengah_bawah_text-bawah">
           Lengkapi kalimat di bawah ini menjadi kalimat utama yang baik.
         </p>
-        <b-form-input
-          class="tengah_bawah_form"
-          v-model="form.kalimatUtama1"
-        ></b-form-input>
+        <div class="tengah_bawah_form">
+          <b-form-input
+            class="tinggi"
+            v-model="form.kalimatUtama1"
+          ></b-form-input>
+        </div>
       </div>
       <!-- button -->
       <div class="Button">
@@ -345,6 +363,9 @@
 
     <!-- kalimat utama page 4 -->
     <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage4 === true">
+      <div class="center">
+        <p class="tengah2_tips2" @click="showModal4 = true">TIPS</p>
+      </div>
       <div class="tengah" style="padding: 20px 0px 0px 23px">
         <p class="tengah_tips" @click="showModal4 = true">TIPS</p>
         <p class="tengah_text4">
@@ -355,10 +376,12 @@
         </p>
       </div>
       <div class="tengah_bawah">
-        <b-form-input
-          class="tengah_bawah_form4"
-          v-model="form.kalimatUtama2"
-        ></b-form-input>
+        <div class="tengah_bawah_form">
+          <b-form-input
+            class="tinggi"
+            v-model="form.kalimatUtama2"
+          ></b-form-input>
+        </div>
       </div>
 
       <!-- button -->
@@ -390,32 +413,91 @@
 <script src="@/pages/js/kalimatUtama.js" />
 
 <style lang="scss" scoped>
-// .all {
-// }
+.all {
+  overflow-x: hidden;
+}
+
+.content-satu {
+  //   background: red;
+
+  margin-top: 120px;
+}
+
+.tinggi {
+  height: 50px;
+}
 
 .judul {
-  padding: 100px 0px 20px 0px;
-  p {
-    width: 100%;
-    font-size: 50px;
-    font-weight: 700;
-    font-family: Poppins;
-    text-align: center;
+  font-size: 50px;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
   }
-  @media (max-width: 768px) {
-    width: 100%;
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
   }
 }
+// End Judul
 
 // Stepper
 .steper {
   text-align: center;
-  padding: 10px;
+  padding: 10px 200px 10px 200px;
   &_image {
-    width: 1000px;
+    width: 100%;
     height: auto;
   }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
+// End Stepper
+
+// Jenis Paragraf
+.jenis {
+  display: flex;
+  width: 100%;
+  height: 49px;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
+  &_paragraf {
+    padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
+  }
+  &_topik {
+    padding: 11px 0px 0px 70px;
+  }
+}
+// End Jenis Paragraf
 
 .center {
   display: flex;
@@ -448,6 +530,36 @@
   }
 }
 
+.center {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+}
+
+.tengah2_tips2 {
+  // padding: 70px 0px 0px 210px;
+  display: none;
+  @media screen and (max-width: 768px) {
+    padding: 4px 0px 8px 0px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #00a279;
+    color: #fff;
+    font-size: normal;
+    margin-bottom: 70px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 // page 1 & 3
 .tengah {
   // padding: 70px 0px 0px 210px;
@@ -471,6 +583,9 @@
     margin-bottom: 70px;
     cursor: pointer;
     margin-left: -120px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &_tips3 {
@@ -545,16 +660,17 @@
       font-size: 20px;
     }
   }
-
-  @media (max-width: 768px) {
-  }
 }
 
 // page 3 & 4
 .tengah_bawah {
-  padding: 0px 0px 25px 415px;
+  padding: 50px 0px 25px 420px;
   font-weight: 400;
-  // background: red;
+  @media screen and (max-width: 768px) {
+    padding: 50px 0px 25px 240px;
+    width: 120%;
+    font-weight: 0;
+  }
   &_text-bawah {
     width: 100%;
     height: 90px;
@@ -564,28 +680,38 @@
     text-align: left;
     font-weight: 400;
     margin-left: -185px;
+    margin-bottom: 2%;
+    padding: 0px 0px 40px 0px;
+    @media screen and (max-width: 768px) {
+      padding: 0px 0px 40px 0px;
+      margin-bottom: 50px;
+    }
+    @media screen and (max-width: 500px) {
+      padding: 0px 0px 40px 0px;
+      margin-bottom: 25%;
+    }
+    @media screen and (max-width: 375px) {
+      padding: 0px 0px 40px 0px;
+      margin-bottom: 55%;
+    }
   }
-
   &_form {
-    margin-top: -70px;
-    height: 59px;
+    margin-top: -100px;
+    padding: 40px 0px 0px 0px;
     width: 100%;
     background: #fafafa;
-    border: 2px solid #0a4da3;
-    box-sizing: border-box;
-    border-radius: 4px;
     margin-left: -185px;
-  }
-
-  &_form4 {
-    margin-top: 0px;
-    height: 59px;
-    width: 100%;
-    background: #fafafa;
-    border: 2px solid #0a4da3;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-left: -185px;
+    @media screen and (max-width: 1100px) {
+      margin-top: -70px;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 40px 0px 0px 0px;
+      width: 100%;
+    }
+    @media screen and (max-width: 400px) {
+      padding: 170px 0px 0px 0px;
+      width: 100%;
+    }
   }
 }
 
@@ -638,6 +764,7 @@
   }
 
   .daftar {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -676,12 +803,18 @@
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
