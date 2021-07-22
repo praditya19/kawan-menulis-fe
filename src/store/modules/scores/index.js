@@ -12,7 +12,17 @@ const actions = {
   createScores: ({ commit }, { requestBody, success, fail }) => {
     Vue.http.post(config.api.scores + "/calculate", requestBody).then(
       (response) => {
-        console.log(response);
+        success && success(response);
+        console.log(commit);
+      },
+      (response) => {
+        fail && fail(response);
+      }
+    );
+  },
+  sendEmail: ({ commit }, { requestBody, success, fail }) => {
+    Vue.http.post(config.api.scores + "/sendEmail", requestBody).then(
+      (response) => {
         success && success(response);
         console.log(commit);
       },

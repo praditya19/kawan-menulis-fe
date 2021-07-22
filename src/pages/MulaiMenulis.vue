@@ -66,9 +66,12 @@
   width: 350px;
   height: 600px;
   @media screen and (max-width: 768px) {
-    display: none;
-    visibility: hidden;
+    width: 100%;
+    height: auto;
   }
+}
+
+.col-md-3 {
 }
 
 .button {
@@ -94,13 +97,6 @@
   background-color: #4fa6ee;
 }
 
-.col-sm-3 {
-  @media screen and (max-width: 768px) {
-    display: none;
-    visibility: hidden;
-  }
-}
-
 .content_mulai_menulis {
   &_size {
     overflow-x: hidden;
@@ -122,7 +118,7 @@
   }
 
   &_padding {
-    padding: 30px 20px 68px 20px;
+    padding: 30px 20px 68px 30px;
     width: 100%;
     @media screen and (max-width: 768px) {
       padding: 0px 10px 68px 10px;
@@ -183,7 +179,7 @@
         font-size: 33px;
       }
       @media (max-width: 768px) {
-        // display: inline-block;
+        display: inline-block;
       }
     }
   }

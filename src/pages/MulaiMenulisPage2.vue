@@ -106,8 +106,6 @@
 <style lang="scss" scoped>
 .body {
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   padding-bottom: 50px;
   @media (max-width: 768px) {
     display: inline-block;
@@ -178,8 +176,6 @@
   }
 
   &_form {
-    @media (max-width: 768px) {
-    }
     .image_slide_2 {
       padding-top: 30px;
       margin-left: 150px;
@@ -191,6 +187,11 @@
         width: 100%;
         height: auto;
       }
+      @media (max-width: 1024px) {
+        margin-left: 0px;
+        padding: 30px 50px 30px 50px;
+        width: 100%;
+      }
     }
     &_data-diri {
       font-family: Poppins;
@@ -199,6 +200,13 @@
       // padding-top: 30px;
       padding: 30px 200px 0px 50px;
       @media (max-width: 768px) {
+        width: 100%;
+        padding: 20px 50px 0px 50px;
+        &_column {
+          width: 100%;
+        }
+      }
+      @media (max-width: 1024px) {
         width: 100%;
         padding: 20px 50px 0px 50px;
         &_column {

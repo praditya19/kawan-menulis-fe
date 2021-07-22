@@ -12,6 +12,7 @@ export default {
       revisiPage3: false,
       modalTambah: false,
       modalUbah: false,
+      showModalError: false,
       dataForm: {
         menulis: "",
         ubahData: "",
@@ -37,7 +38,7 @@ export default {
       // <-- ATAS(up) -->
       var now = this.dataForm.menulis;
       if (now === "") {
-        alert("Choose first to raise");
+        alert("Silahkan memilih untuk menaikan");
         return;
       }
       var index = now - 1;
@@ -51,14 +52,14 @@ export default {
         sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.menulis = index;
       } else {
-        alert("Has reached the maximum limit");
+        alert("Kalimat tidak bisa di naikan lagi");
       }
     },
     descending() {
       // <---- BAWAH(down) ------>
       var now = this.dataForm.menulis;
       if (now === "") {
-        alert("Choose the first one to drop");
+        alert("Silahkan memilih untuk menurunkan");
         return;
       }
       var index = now + 1;
@@ -73,7 +74,7 @@ export default {
         sessionStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.menulis = index;
       } else {
-        alert("Has reached the maximum limit");
+        alert("Kalimat tidak bisa di turunkan lagi");
       }
     },
     toDropKonsepParagraf() {
@@ -93,7 +94,7 @@ export default {
     },
     setKonsepParagraf() {
       if (this.dataForm.ubahData === "") {
-        alert("The data cannot be empty");
+        alert("Form tidak boleh kosong");
         return;
       }
       this.menulisKesimpulanDataSesion.konsepParagrafArray[
@@ -106,16 +107,17 @@ export default {
     },
     handelTambah() {
       if (this.dataForm.tambahData === "") {
-        alert("Form is not vailid");
+        alert("Form tidak boleh kosong");
       } else if (this.dataForm.tambahData.length >= 60) {
-        alert("Maximal 60 Characters");
+        alert("Maksimal 60 Kosa Kata");
       } else {
-        if (this.menulisKesimpulanDataSesion.konsepParagrafArray.length <= 5) {
+        if (this.menulisKesimpulanDataSesion.konsepParagrafArray.length < 10) {
           this.handleSubmit(this.dataForm.tambahData);
           this.dataForm.tambahData = "";
         } else {
-          alert("Cannot add more than six lines");
           this.modalTambah = false;
+          this.showModalError = true;
+          this.dataForm.tambahData = "";
         }
       }
     },

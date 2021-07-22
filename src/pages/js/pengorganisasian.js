@@ -7,8 +7,10 @@ export default {
       showModal: false,
       showModal2: false,
       showModal3: false,
+      showModalError: false,
       showModalUbahPage3: false,
       showModalTambahPage3: false,
+      showModalErrorEmpety: false,
       pramenulisLanjutanDataSesion: {},
       dataForm: {
         tambahParagrafPage3: "",
@@ -17,6 +19,9 @@ export default {
         pilih: "",
       },
       memberiJarak: [],
+      valid: [], // descending components
+      imitation: [], // descending components
+      dearLove: [],
       pengorganisasianPage1: true,
       pengorganisasianPage2: false,
       pengorganisasianPage3: false,
@@ -41,10 +46,88 @@ export default {
           toEmpetyArray
         );
       }
+      this.imitation = this.pramenulisLanjutanDataSesion.resultMenulis;
+    },
+    intersect(a, b) {
+      // descending  & ascending
+      if (b.length <= a.length) {
+        var t;
+        (t = b), (b = a), (a = t); // indexOf to loop over shorter
+        return a.filter(function(e) {
+          return b.indexOf(e) > -1;
+        });
+      }
+    },
+    descending() {
+      // <----- To Down
+      if (this.dataForm.resultMenulis.length !== 0) {
+        this.pramenulisLanjutanDataSesion.resultMenulis.forEach((element) => {
+          this.valid.push(element.pramenulis);
+        });
+        var instance = this.intersect(this.valid, this.dataForm.resultMenulis);
+        if (instance.length !== this.dataForm.resultMenulis.length) {
+          alert("Kalimat di Catatan paragraf sudah berada di bawah");
+          return false; // <------ fail
+        }
+        if (this.dataForm.resultMenulis.length >= 2) {
+          alert("Hanya bisa memindahkan kalimat satu per satu");
+          return false; //  <----- fail
+        }
+        this.dataForm.resultMenulis.forEach((element) => {
+          this.pramenulisLanjutanDataSesion.resultParagraph.push(element);
+        });
+        var filteredPeople = this.imitation.filter(
+          (item) => item.pramenulis !== this.dataForm.resultMenulis[0]
+        );
+        (this.pramenulisLanjutanDataSesion.resultMenulis = []),
+          filteredPeople.forEach((element) => {
+            this.pramenulisLanjutanDataSesion.resultMenulis.push(element);
+          });
+        this.dataForm.resultMenulis = [];
+        var descendingSv = JSON.stringify(this.pramenulisLanjutanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", descendingSv); // <-----  everything will be fine
+        location.reload();
+      } else {
+        alert("Silahkan memilih terlebih dahulu");
+      }
+    },
+    ascending() {
+      // <------ To Up
+      if (this.dataForm.resultMenulis.length !== 0) {
+        var instance = this.intersect(
+          this.pramenulisLanjutanDataSesion.resultParagraph,
+          this.dataForm.resultMenulis
+        );
+        if (instance.length !== this.dataForm.resultMenulis.length) {
+          alert("Kalimat di Catatan menulis sudah berada di atas");
+          return false; // <------ fail
+        }
+        if (this.dataForm.resultMenulis.length >= 2) {
+          alert("Hanya bisa memindahkan kalimat satu per satu");
+          return false; //  <----- fail
+        }
+        this.pramenulisLanjutanDataSesion.resultMenulis.push({
+          pramenulis: this.dataForm.resultMenulis[0],
+          menulis: "",
+        });
+        var filteredPeople = this.pramenulisLanjutanDataSesion.resultParagraph.filter(
+          (item) => item !== this.dataForm.resultMenulis[0]
+        );
+        this.pramenulisLanjutanDataSesion.resultParagraph = [];
+        filteredPeople.forEach((element) => {
+          this.pramenulisLanjutanDataSesion.resultParagraph.push(element);
+        });
+        this.dataForm.resultMenulis = [];
+        var ascendingSv = JSON.stringify(this.pramenulisLanjutanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", ascendingSv); // <-----  everything will be fine
+        location.reload();
+      } else {
+        alert("Harus memilih terlebih dahulu");
+      }
     },
     ubahPramenulis() {
       if (this.dataForm.ubahParagrafPage3 === "") {
-        alert("The data cannot be empty");
+        alert("Form tidak boleh kosong");
         return;
       }
       this.pramenulisLanjutanDataSesion.konsepParagrafArray[
@@ -63,13 +146,17 @@ export default {
       this.showModalUbahPage3 = true;
     },
     tambahPramenulis() {
-      if (this.pramenulisLanjutanDataSesion.konsepParagrafArray.length <= 5) {
+      if (this.dataForm.tambahParagrafPage3 === "") {
+        alert("Form tidak boleh kosong");
+        return;
+      }
+      if (this.pramenulisLanjutanDataSesion.konsepParagrafArray.length < 10) {
         this.handleSubmit(this.dataForm.tambahParagrafPage3);
         this.showModalTambahPage3 = false;
         this.dataForm.tambahParagrafPage3 = "";
         return;
       } else {
-        alert("Cannot add more than six lines");
+        alert("Maksimal menambahkan 10 item");
         this.showModalTambahPage3 = false;
       }
     },
@@ -85,7 +172,7 @@ export default {
     },
     pengorganisasian1Next() {
       if (this.dataForm.resultMenulis.length === 0) {
-        alert("The data cannot be empty. Please choose first");
+        this.showModalErrorEmpety = true;
         return;
       }
       for (var j = 0; j < this.dataForm.resultMenulis.length; j++) {
@@ -102,7 +189,6 @@ export default {
       var savePage1 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
       this.pengorganisasianPage2 = true;
-
       if (this.pengorganisasianPage2 === true) {
         this.pengorganisasianPage1 = false;
       } else {

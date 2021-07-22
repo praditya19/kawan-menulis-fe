@@ -7,6 +7,7 @@ export default {
       showModal: false,
       showModal2: false,
       showModal3: false,
+      showModalErrorEmpety: false,
       dataForm: {
         menulis: "",
       },
@@ -16,10 +17,6 @@ export default {
 
       // Data Sesion
       dataSesion: {},
-
-      // menampung
-      conferSesion: [],
-      padding: [],
     };
   },
   mounted() {
@@ -33,22 +30,10 @@ export default {
       this.dataSesion = JSON.parse(pramenulisLanjutanData);
     },
     formatToDot(value) {
-      return value.toString().replace(/,/g, ".");
+      return value.replace(".", "");
     },
     menuliskesimpulan1Next() {
-      this.dataSesion.konsepParagraf = [];
-      this.conferSesion = this.dataSesion.konsepParagrafArray;
-      for (var i = 0; i < this.conferSesion.length; i++) {
-        this.padding.push("\t" + this.conferSesion[i]);
-      }
-      this.dataSesion.konsepParagraf.push(this.formatToDot(this.padding) + ".");
-      var validationParagraf = JSON.stringify(this.dataSesion);
-      sessionStorage.setItem(
-        "student_topik_menulis_paragraph",
-        validationParagraf
-      );
       this.menuliskesimpulanPage2 = true;
-
       if (this.menuliskesimpulanPage2 === true) {
         this.menuliskesimpulanPage1 = false;
       } else {
@@ -57,7 +42,9 @@ export default {
     },
     menuliskesimpulan2Next() {
       this.menuliskesimpulanPage3 = true;
-
+      this.dataSesion.konsepParagraf = [];
+      var empety = JSON.stringify(this.dataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", empety);
       if (this.menuliskesimpulanPage3 === true) {
         this.menuliskesimpulanPage2 = false;
       } else {
@@ -66,18 +53,19 @@ export default {
     },
     menuliskesimpulan3Next() {
       if (this.dataForm.menulis === "") {
-        alert("The data cannot be empty");
+        this.showModalErrorEmpety = true;
         return;
       }
+      this.dataSesion.konsepParagrafArray.push(
+        this.formatToDot(this.dataForm.menulis)
+      );
+      this.dataSesion.konsepParagraf.push(
+        this.dataSesion.konsepParagrafArray.join(". ") + "."
+      );
       this.dataSesion.menulisKesimpulan.push(this.dataForm.menulis);
       var end = JSON.stringify(this.dataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", end);
       this.$router.push("/revisi");
-    },
-    validation() {
-      return (
-        this.dataForm.menulis.length > 4 && this.dataForm.menulis.length < 13
-      );
     },
   },
   computed: {

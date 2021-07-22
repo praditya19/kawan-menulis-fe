@@ -40,6 +40,17 @@ const actions = {
       }
     );
   },
+  sendEmailCetak: ({ commit }, { requestBody, success, fail }) => {
+    Vue.http.post(config.api.studentactions + "/sendEmail", requestBody).then(
+      (response) => {
+        success && success(response);
+        console.log(commit);
+      },
+      (response) => {
+        fail && fail(response);
+      }
+    );
+  },
 };
 const getters = {};
 

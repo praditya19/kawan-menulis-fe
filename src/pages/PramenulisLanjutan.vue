@@ -1,24 +1,57 @@
 <template>
   <div class="content">
-    <div class="head">
-      <p>Latihan Menulis</p>
-    </div>
+    <br />
+    <div class="content_padding">
+      <br />
+      <div class="content_padding_header">
+        <h1><b>Latihan Menulis</b></h1>
+      </div>
 
-    <!-- stepper -->
-    <div class="steper">
-      <img class="steper_image" src="@/assets/icon_stepper/4.png" />
+      <!-- Stepper -->
+      <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/4.png" />
+      </div>
+      <!-- End Stepper  -->
     </div>
-
-    <!-- tengah -->
-    <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
-      <p class="center_topik">
-        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-        sesuatu? Coba sebutkan satu.
-      </p>
-    </div>
-
     <!-- popup tambah -->
+    <div v-if="showModalError === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <br />
+                  <div class="kalimat">
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p
+                        class="mb-4"
+                        style="text-align:center; font-size: 20px;"
+                      >
+                        Maksimal menambahkan 10 item.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol1">
+                    <button
+                      class="ok1"
+                      type="button"
+                      @click="showModalError = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <div v-if="showModal === true">
       <transition name="model">
         <div class="modal-mask">
@@ -67,7 +100,12 @@
                           </button>
                         </div>
                         <div class="col-sm-6">
-                          <button class="ok2" block @click="handleOk()">
+                          <button
+                            class="ok2"
+                            type="button"
+                            block
+                            @click="handleOk()"
+                          >
                             OK
                           </button>
                         </div>
@@ -139,49 +177,69 @@
         </div>
       </transition>
     </div>
-
+    <!-- Jenis Paragraf -->
+    <div class="center">
+      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+      <p class="center_topik">
+        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
+        sesuatu? Coba sebutkan satu.
+      </p>
+    </div>
     <!-- Button Tips dan Kalimat -->
-    <div>
+    <div style="padding: 20px 0px 0px 0px">
       <div class="tengah">
-        <div class="col-md-2.5">
-          <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
-        </div>
-        <div class="col-md-9.5">
-          <p class="tengah_text2">
-            Sekarang setelah Anda menulis kalimat pembuka, atau kalimat topik,
-            lihat daftar kata Anda di Catatan Pramenulis. Bisakah Anda membuat
-            kata atau frasa tambahan yang berhubungan dengan topik Anda?
-          </p>
-          <p class="tengah_text2">
-            Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata atau
-            frasa. Jangan menulis kalimat sekarang.
-          </p>
-          <p class="tengah_text2">
-            ketik OK ketika anda siap untuk melanjutkan
-          </p>
-
-          <!-- button -->
-          <div class="Button">
-            <b-btn
-              class="button  justify-content-center"
-              @click="toMenulisIsi()"
-            >
-              <b>OK</b>
-            </b-btn>
+        <div class="row">
+          <div class="col-sm-1">
+            <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
           </div>
-
-          <!-- Konsep Paragraf -->
-          <div class="content-konsep">
-            <div class="foot">
-              <div class="border">
-                <p>Catatan Pra Menulis</p>
+          <div class="col-sm-11">
+            <p class="tengah_text2">
+              Sekarang setelah Anda menulis kalimat pembuka, atau kalimat topik,
+              lihat daftar kata Anda di Catatan Pramenulis. Bisakah Anda membuat
+              kata atau frasa tambahan yang berhubungan dengan topik Anda?
+            </p>
+            <p class="tengah_text2">
+              Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata atau
+              frasa. Jangan menulis kalimat sekarang.
+            </p>
+            <p class="tengah_text2">
+              ketik OK ketika anda siap untuk melanjutkan
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- button -->
+      <div class="Button">
+        <b-btn class="button  justify-content-center" @click="toMenulisIsi()">
+          <b>OK</b>
+        </b-btn>
+      </div>
+      <!-- Catatan PRa Menulis -->
+      <div class="content_padding_tulis_right_paragraf_bawah">
+        <div class="row">
+          <div class="col-sm-3">
+            <div
+              style="background-color: #484c52;height: 48px;width: 240px;border-radius: 20px 20px 0px 0px;"
+            >
+              <div class="content_padding_tulis_catatan">
+                <h4><b>Catatan Pra Menulis</b></h4>
               </div>
-              <div class="tambah">
+            </div>
+          </div>
+          <!-- Tambah -->
+          <div class="col-sm-2">
+            <div class="content_padding_tulis_catatan">
+              <div class="button3_tombol3">
                 <button class="button3" id="show-btn" @click="showModal = true">
                   <b>Tambah</b>
                 </button>
               </div>
-              <div class="ubah">
+            </div>
+          </div>
+          <!-- Ubah -->
+          <div class="col-sm-6" style="margin-left: -50px;">
+            <div class="content_padding_tulis_catatan">
+              <div class="button3_tombol3">
                 <button
                   v-bind:disabled="
                     dataForm.pramenulisLanjutan.length === 0 ? true : false
@@ -194,33 +252,38 @@
                 </button>
               </div>
             </div>
-
-            <div class="border_list">
-              <div>
-                <b-form-group v-slot="{ ariaDescribedby }">
-                  <div
-                    class="dua"
-                    v-for="(dataSesion,
-                    index) in kalimatUtamaDataSesion.resultMenulis"
-                    :key="index"
-                  >
-                    <h5>
-                      <b-form-radio
-                        v-model="dataForm.pramenulisLanjutan"
-                        :aria-describedby="ariaDescribedby"
-                        name="some-radios"
-                        v-bind:value="index"
-                        >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
-                      >
-                    </h5>
-                  </div>
-                </b-form-group>
-              </div>
-            </div>
           </div>
-          <!-- end konsep paragraf -->
+        </div>
+
+        <!-- Cara membuat Kopi -->
+        <div
+          style="background-color: #c1c8d3;width: 730px;padding: 13px;border-radius: 0px 0 30px 30px;"
+        >
+          <div style="margin-left: 30px">
+            <b-form-group v-slot="{ ariaDescribedby }">
+              <div class="col-sm-12">
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in kalimatUtamaDataSesion.resultMenulis"
+                  :key="index"
+                >
+                  <h5>
+                    <b-form-radio
+                      v-model="dataForm.pramenulisLanjutan"
+                      :aria-describedby="ariaDescribedby"
+                      name="some-radios"
+                      v-bind:value="index"
+                      >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
+                    >
+                  </h5>
+                </div>
+              </div>
+            </b-form-group>
+          </div>
         </div>
       </div>
+      <!-- end button -->
     </div>
   </div>
 </template>
@@ -228,128 +291,18 @@
 <script src="./js/pramenulisLanjutan.js" />
 
 <style lang="scss" scoped>
-// Konsep Menulis
-.content-konsep {
-  margin-top: 42px;
-  padding-left: 20px;
-  @media screen and (max-width: 768px) {
-    padding-left: 10px;
-  }
-}
-
-.foot {
-  display: flex;
-  // @media screen and (max-width: 768px) {
-  //   display: inline;
-  // }
-}
-
-.tambah {
-  margin: 0px 10px 0px 10px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.ubah {
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.border {
-  background-color: #455a64;
-  height: 42px;
-  width: 170px;
-  border-radius: 7px 7px 0px 0px;
-  border: none;
-  display: flex;
-
-  p {
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    padding: 9px 0px 0px 10px;
-  }
-  &_list {
-    display: flex;
-    font-family: Poppins;
-    background-color: #e0e0e0;
-    width: 100%;
-    padding: 13px;
-    border-radius: 0px 0px 14px 14px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    color: #030303;
-    text-align: left;
-  }
-}
-// End Konsep Menulis
-
-// head
-.head {
-  padding: 110px 0px 0px 0px;
-  font-family: Poppins;
-  font-weight: 700;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center;
-  @media (max-width: 768px) {
-    padding: 120px 5px 0px 5px;
-    font-size: 40px;
-  }
-}
-
-// Stepper
-.steper {
-  padding: 10px 200px 10px 200px;
-  &_image {
-    width: 100%;
-    height: auto;
-  }
-  @media (max-width: 768px) {
-    padding: 10px 20px 10px 20px;
-    &_image {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-// tengah
-.center {
-  display: flex;
-  width: 100%;
-  height: auto;
-  font-size: 16px;
-  background-color: rgba(139, 181, 236, 0.1);
-  padding: 11px 0px 0px 100px;
-  &_paragraf {
-    padding-right: 90px;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 11px 20px 0px 20px;
-  }
-}
-
 .tengah {
+  margin-left: 100px;
   display: flex;
   width: 100%;
   display: flex;
-  padding: 13px 210px 48px 100px;
-  @media screen and (max-width: 768px) {
-    padding: 13px 10px 48px 5px;
-  }
-
+  justify-content: center;
+  align-items: center;
+  padding-top: 13px;
+  // background: red;
   // button tips
   &_tips {
-    padding: 0px 0px 0px 0px;
+    padding: 4px 0px 0px 0px;
     width: 100px;
     height: 30px;
     border-radius: 10px;
@@ -357,31 +310,52 @@
     background-color: #00a279;
     color: #fff;
     font-size: normal;
-    margin-bottom: 200px;
+    margin-bottom: 70px;
     cursor: pointer;
-    @media screen and (max-width: 768px) {
-      width: 80px;
-    }
   }
 
   // text page 2
   &_text2 {
-    margin-left: 20px;
-    width: 100%;
+    margin-left: 30px;
+    width: 65%;
     font-family: Poppins;
     font-size: 20px;
     strong {
       font-style: italic;
       font-size: 20px;
     }
-    @media screen and (max-width: 768px) {
-      margin-left: 10px;
-      width: 100%;
-      padding-right: 10px;
+  }
+}
+.center {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  // position: absolute;
+  font-size: 16px;
+  padding-top: 12px;
+  background-color: rgba(139, 181, 236, 0.1);
+  &_paragraf {
+    margin-left: 100px;
+  }
+  &_topik {
+    margin-left: 70px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+    &_paragraf {
+      width: 50%;
+    }
+
+    &_topik {
+      width: 50%;
     }
   }
 }
-
 .ok {
   .mt-3 {
     // margin-bottom: 10px;
@@ -418,7 +392,6 @@
     font-family: Poppins;
   }
 }
-
 .Button {
   display: flex;
   justify-content: center;
@@ -445,14 +418,13 @@
   }
 
   @media (max-width: 768px) {
-    margin-top: 20px;
+    margin-top: 10%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
-
 .button3 {
   background-color: #e0e0e0;
   border: none;
@@ -462,19 +434,58 @@
   width: 100px;
   height: 40px;
   align-items: center;
-  text-align: center;
-  justify-content: center;
   b {
+    padding: 0% 0% 0% 17%;
     color: #0a0808;
     font-size: 28px;
+    align-items: center;
     font-size: 16px;
     font-family: Poppins;
   }
+  &_button4 {
+    background-color: #f1f7cc;
+    border: none;
+    color: rgb(243, 237, 237);
+    border-radius: 30px;
+    display: flex;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    margin-left: -5%;
+    b {
+      padding: 0% 0% 0% 27%;
+      color: #0a0808;
+      align-items: center;
+      font-family: Poppins;
+      font-size: 16px;
+    }
+  }
+  &_button4:hover {
+    background-color: #f3e8e8;
+  }
+  &_tombol3 {
+    padding: 0px 0px 0px 0px;
+  }
 }
 .button3:hover {
-  background: #f1f6cc;
+  background-color: #f3e8e8;
 }
 
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 .content {
   overflow-x: hidden;
   max-width: 100%;
@@ -483,6 +494,97 @@
     display: inline-block;
     width: 100%;
     height: 100%;
+  }
+  &_padding {
+    padding: 5px 0px;
+    &_tulis {
+      padding: 15px 0px 10px 0px;
+      &_catatan {
+        color: #f1f1f1;
+        h4 {
+          font-family: Poppins;
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+          padding: 12px 0px 8px 0px;
+        }
+      }
+      &_right {
+        max-width: 750px;
+        width: 750px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 23px;
+        line-height: 30px;
+        margin-left: -30px;
+        &_paragraf {
+          padding: 20px 0px 0px 0px;
+          label {
+            font: 1rem "Fira Sans", sans-serif;
+          }
+          input {
+            margin: 0.4rem;
+          }
+          &_bawah {
+            padding: 50px 0px 100px 235px;
+          }
+        }
+      }
+    }
+    &_paragraf {
+      padding: 15px 0px 10px 0px;
+      margin-left: 40%;
+      p {
+        font-size: 17px;
+      }
+      &_right {
+        padding: 15px 0px 10px 0px;
+        margin-left: 10%;
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+    &_header {
+      margin-top: 70px;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      margin-left: 30%;
+      h1 {
+        font-weight: bolder;
+        font-size: 47px;
+        margin-left: 10%;
+      }
+    }
+    &_stemper {
+      padding: 20px;
+      align-items: center;
+      margin-left: 20px;
+    }
+  }
+}
+
+// Stepper 1 -7
+
+.container-progress {
+  margin: 100px auto;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Poppins;
+  color: white;
+  margin-top: 50px;
+  padding: 0;
+}
+
+// Stepper
+.steper {
+  text-align: center;
+  padding: 10px;
+  &_image {
+    width: 1000px;
+    height: auto;
   }
 }
 
@@ -534,19 +636,15 @@
 
 .modal-content {
   background: #e8f1fd;
-  width: 100%;
+  width: 500px;
   border-radius: 34px;
-  padding: 0px 0px 0px 0px;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
 }
 
-// .modal-body {
-//   background: #e8f1fd;
-//   width: 500px;
-//   border-radius: 34px;
-// }
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+}
 
 /* end style Modal */
 /* Background belakang modal */

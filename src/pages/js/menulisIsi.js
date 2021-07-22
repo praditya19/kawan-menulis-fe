@@ -72,7 +72,10 @@ export default {
     },
     kirim() {
       this.cekValidate = [];
-      if (this.dataForm.menulis.length <= 5) {
+      if (
+        this.dataForm.menulis.length <=
+        this.pramenulisLanjutanDataSesion.resultMenulis.length - 1
+      ) {
         alert("Harus di isi semua");
         return;
       }
@@ -114,10 +117,15 @@ export default {
           console.log(z);
         }
       }
-      if (this.cekValidate.length >= 6) {
+      if (
+        this.cekValidate.length ===
+        this.pramenulisLanjutanDataSesion.resultMenulis.length
+      ) {
         return true;
       } else {
-        alert("Must start with a capital letter and end with a period");
+        alert(
+          "Harus di awali dengan huruf kapital dan di akhiri dengan tanda baca titik"
+        );
         return false;
       }
     },

@@ -73,7 +73,7 @@
             <button class="all-button_satu" @click="copyToClipBoard()">
               Salin
             </button>
-            <button class="all-button_satu">kirim Email</button>
+            <button class="all-button_satu" @click="handleSubmitCetak()">kirim Email</button>
             <button class="all-button_satu" @click="toTopik()">
               Mulai topik lain
             </button>

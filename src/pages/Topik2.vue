@@ -1,103 +1,97 @@
 <template>
   <div>
-    <br /><br /><br /><br /><br />
-    <div>
+    <div class="all">
+      <!-- popup2 -->
+      <div v-if="showModal2 === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/checklist.png"
+                      />
+                    </div>
+
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        Ide lainnya: <br />
+                        Cara membuat layang-layang <br />
+                        Cara membuat kompos <br />
+                        Cara memasak telur dadar <br />
+                        Cara membersihkan noda dari pakaian
+                      </div>
+                    </div>
+
+                    <div class="tombol">
+                      <button class="ok" block @click="showModal2 = false">
+                        OK
+                      </button>
+                    </div>
+
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+      <!-- popup2 -->
+      <div v-if="showModal === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/checklist.png"
+                      />
+                    </div>
+
+                    <div class="kalimat">
+                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                        <p>
+                          Jika ingin mengganti jenis dan topik paragraf,
+                          silahkan klik tombol panah kiri.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="tombol">
+                      <button class="ok" @click="showModal = false">
+                        OK
+                      </button>
+                    </div>
+
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
       <!-- Button Tips -->
       <div class="tips1">
         <b-button class="tips1_judul" @click="showModal = true"
           ><b>Tips</b></b-button
         >
-        <h1 class="tips1_kata1"><b>Latihan Menulis</b></h1>
+        <p class="tips1_kata1"><b>Latihan Menulis</b></p>
       </div>
     </div>
-    <br />
-    <!-- popup -->
-    <div v-if="showModal2 === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      Ide lainnya: <br />
-                      Cara membuat layang-layang <br />
-                      Cara membuat kompos <br />
-                      Cara memasak telur dadar <br />
-                      Cara membersihkan noda dari pakaian
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal2 = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
+    <div class="steper">
+      <img class="steper_image" src="@/assets/icon_stepper/1.png" />
     </div>
-    <!-- popup -->
-    <div v-if="showModal === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p>
-                        Jika ingin mengganti jenis dan topik paragraf, silahkan
-                        klik tombol panah kiri.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" @click="showModal = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-    <div class="container">
-      <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-      </div>
-    </div>
-
     <!-- Jenis Paragraf -->
-
     <div class="center">
       <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
       <p class="center_topik">
@@ -106,116 +100,131 @@
       </p>
     </div>
 
-    <br />
     <!-- Button Tips -->
-    <div class="tips2">
-      <b-button class="tips2_judul" @click="showModal2 = true">Tips</b-button>
-      <h6 class="tips2_kata">
-        Kamu hendak menjelaskan cara melakukan sesuatu yang sangat kamu kuasai.
-      </h6>
+    <div class="body">
+      <div class="col-md-2.5">
+        <div class="tips2">
+          <b-button class="tips2_judul" @click="showModal2 = true"
+            >Tips</b-button
+          >
+        </div>
+      </div>
+      <div class="col-md-9.5 tips2_kata">
+        <p>
+          Kamu hendak menjelaskan cara melakukan sesuatu yang sangat kamu
+          kuasai.
+        </p>
+        <p>Cara apa yang ingin kamu uraikan itu?</p>
+        <p>Contoh:</p>
+        <ul>
+          <li><p>Cara membuat kopi hitam yang nikmat</p></li>
+          <li><p>Cara menanam sayur sawi</p></li>
+          <li><p>Cara membuat media salindia yang menarik</p></li>
+        </ul>
+      </div>
     </div>
-    <div class="content-cara">
-      <h5>Cara apa yang ingin kamu uraikan itu?</h5>
-      <h5>Contoh:</h5>
-      <ul>
-        <li><h5>Cara membuat kopi hitam yang nikmat</h5></li>
-        <li><h5>Cara menanam sayur sawi</h5></li>
-        <li><h5>Cara membuat media salindia yang menarik</h5></li>
-      </ul>
-    </div>
-    <!-- Cara apa yang ...... -->
 
-    <br /><br />
-
-    <!-- Gunakan kalimat klausa -->
-    <form>
+    <div class="bawah">
       <div class="content-form">
         <table>
           <tr>
-            <label><h6>Gunakan kalimat atau klausa sederhana</h6></label
+            <label><p>Gunakan kalimat atau klausa sederhana</p></label
             ><br />
           </tr>
         </table>
       </div>
-      <div class="container" style="padding: 0px 0px 0px 165px">
+      <div class="form">
         <b-form-input
           v-model="form.kalimatSederhana"
           type="text"
           style="width:100%; "
         ></b-form-input>
       </div>
-
-      <br />
-      <!-- Button Back OK -->
-      <div class="btn-back-ok">
-        <a href="/topik">
-          <img src="@/assets/back.png" alt="logo" class="img" />
-        </a>
-        <b-button @click="onSubmit()" class="submit_ok">OK</b-button>
-      </div>
-    </form>
+    </div>
+    <!-- Button Back OK -->
+    <div class="btn-back-ok">
+      <a href="/topik">
+        <img src="@/assets/back.png" alt="logo" class="img" />
+      </a>
+      <b-button @click="onSubmit()" class="submit_ok">OK</b-button>
+    </div>
   </div>
 </template>
 
 <script src="./js/topik2.js"></script>
 
 <style lang="scss" scoped>
+// .all {
+//   padding: 110px 0px 0px 0px;
+// }
+
+.body {
+  display: flex;
+  padding: 10px 0px 0px 130px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 10px;
+  }
+}
 // Tombol judul
 .tips1 {
-  // background: red;
   font-size: 16px;
   display: flex;
   align-items: center;
-  margin-left: 29%;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 0px 0px 0px;
+  @media screen and (max-width: 768px) {
+    padding: 110px 0px 0px 20px;
+  }
   &_judul {
-    padding: 0px 0px 2px 0px;
+    padding: 0px 0px 0px 0px;
     background-color: #00a279;
     height: 30px;
     border-radius: 10px;
-    margin-top: 8px;
     width: 100px;
-    margin-left: 10px;
     margin-bottom: 5px;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+    }
   }
   &_kata1 {
     padding: 11px 0px 0px 20px;
-    // text-align: center;
     font-family: Poppins;
     font-weight: 700;
-  }
-  @media screen and (max-width: 768px) {
-    align-items: center;
-    justify-content: center;
-    font-size: normal;
-    font-style: normal;
+    font-size: 50px;
   }
 }
 
 // Kalimat samping tips center
 .tips2 {
   // background: red;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  padding: 0px 0px 0px 10px;
+  text-align: right;
+  margin: 5px;
+  @media Screen and (max-width: 768px) {
+  }
   &_judul {
     background-color: #00a279;
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
+    border: none;
+    line-height: 32px;
+    width: 98px;
     border-radius: 10px;
-    margin-top: 5px;
-    width: 115px;
-    margin-left: 100px;
-    margin-bottom: 5px;
+    margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
   }
   &_kata {
-    padding: 11px 0px 0px 20px;
+    padding: 20px 0px 0px 10px;
     font-family: Poppins;
     font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
-    // margin-left: 30px;
+    line-height: 20px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 20px 0px 0px 0px;
+    }
   }
 }
 
@@ -240,39 +249,42 @@
 
 // Stepper
 .steper {
-  text-align: center;
-  padding: 10px;
+  padding: 10px 200px 10px 200px;
   &_image {
-    width: 1000px;
+    width: 100%;
     height: auto;
   }
-}
-
-// Stepper 1 -7
-
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 // Jenis Paragaf.....
-
+// tengah
 .center {
   display: flex;
-  max-width: 100%;
-  height: 49px;
+  width: 100%;
+  height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  padding: 11px 0px 0px 200px;
   &_paragraf {
-    padding: 11px 0px 0px 110px;
+    padding-right: 90px;
   }
-  &_topik {
-    padding: 11px 0px 0px 70px;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 11px 20px 0px 20px;
+  }
+}
+
+.bawah {
+  padding: 0px 230px 30px 248px;
+  @media screen and (max-width: 768px) {
+    padding: 0px 20px 30px 20px;
   }
 }
 
@@ -351,22 +363,31 @@
 /* End Background Belakang Modal */
 
 // Kalimat bawah tombol Tips kedua
-.content-cara {
-  font-family: Poppins;
-  font-size: 20px;
-  // background: red;
-  margin-left: 243px;
-  @media (max-width: 768px) {
-    margin-left: 10%;
-  }
-}
+// .content-cara {
+//   font-family: Poppins;
+//   font-size: 20px;
+//   // background: red;
+//   margin-left: 243px;
+//   @media (max-width: 768px) {
+//     margin-left: 10%;
+//   }
+// }
 
 // Gunakan klausa .......
 .content-form {
+  padding: 20px 0px 0px 10px;
   font-family: Poppins;
-  // background: red;
-  margin-left: 235px;
   font-size: 20px;
+  @media (max-width: 768px) {
+    padding: 20px 0px 0px 0px;
+  }
+}
+
+.form {
+  padding: 0px 0px 0px 10px;
+  @media (max-width: 768px) {
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 // Button OK dan previus

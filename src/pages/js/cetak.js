@@ -1,9 +1,12 @@
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Cetak",
   data() {
     return {
+      clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+      clientSecret: "27e78980e2419b308c86559ef0fb0105",
+      studentActionsSession: {},
       proFeridingDataSesion: {},
       dataForm: {
         menulis: "",
@@ -14,6 +17,7 @@ export default {
   },
   mounted() {
     this.getDataSesion();
+    this.getStudentAction();
     window.scrollTo(0, 0);
   },
   methods: {
@@ -48,6 +52,27 @@ export default {
         document.getSelection().removeAllRanges();
         document.getSelection().addRange(selected);
       }
+    },
+    getStudentAction() {
+      var studentActions = sessionStorage.getItem("student_topik_menulis_paragraph");
+      this.studentActionsSession = JSON.parse(studentActions);
+    },
+    ...mapActions(["sendEmailCetak"]),
+    handleSubmitCetak() {
+      this.sendEmailCetak({
+        requestBody: {
+          clientId: this.clientId,
+          clientSecret: this.clientSecret,
+          studentId: this.studentActionsSession.studentId,
+          topicId: this.studentActionsSession.topicId,
+        },
+        success: (res) => {
+          console.log(res);
+        },
+        fail: (res) => {
+          console.log(res);
+        },
+      });
     },
   },
   computed: {

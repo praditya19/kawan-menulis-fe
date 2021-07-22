@@ -29,7 +29,7 @@ export default {
     },
     upCatatanMenulis() {
       if (this.dataForm.pramenulisLanjutanPembaruan === "") {
-        alert("error input");
+        alert("Form tidak boleh kosong");
         return (this.showModal2 = false);
       }
       this.kalimatUtamaDataSesion.resultMenulis[
@@ -50,15 +50,17 @@ export default {
 
     handleOk() {
       if (this.dataForm.tambahPramenulis === "") {
-        alert("Form is not vailid");
+        alert("Form harus di isi");
       } else if (this.dataForm.tambahPramenulis.length >= 60) {
-        alert("Maximal 60 Characters");
+        alert("Maksimal 60 Kosa kata");
       } else {
-        if (this.kalimatUtamaDataSesion.resultMenulis.length <= 5) {
+        if (this.kalimatUtamaDataSesion.resultMenulis.length < 10) {
           this.handleSubmit(this.dataForm.tambahPramenulis);
           this.dataForm.tambahPramenulis = "";
         } else {
-          alert("Cannot add more than six lines");
+          alert("Maksimal menambahkan 10 item");
+          this.showModal = false;
+          this.dataForm.tambahPramenulis = "";
           return;
         }
       }
@@ -89,8 +91,8 @@ export default {
       });
       var saveDate2 = JSON.stringify(this.kalimatUtamaDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
-      this.howModal = false;
-      window.location.reload();
+      this.showModal = false;
+      // window.location.reload();
     },
     modal2() {
       var bbb = this.kalimatUtamaDataSesion.resultMenulis[

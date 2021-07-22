@@ -17,14 +17,17 @@
             </div>
             <div class="text">
               <p>
-                Hasil Test Kemampuan : {{ studentResultSession.level }} ({{
-                  studentResultSession.endScore
-                }})
+                Hasil Test Kemampuan :
+                <b
+                  >{{ studentResultSession.level }} ({{
+                    studentResultSession.endScore
+                  }})
+                </b>
               </p>
               <p>{{ studentResultSession.congratsText }}</p>
             </div>
             <div v-if="studentResultSession.endScore !== 59" class="result ">
-              <b-button variant="success"
+              <b-button variant="success" v-on:click="handleSubmit"
                 >Download dan Kirim Via Email</b-button
               >
               <b-button variant="primary" href="/mulai-menulis"
@@ -32,7 +35,7 @@
               >
             </div>
             <div v-if="studentResultSession.endScore === 59" class="result2">
-              <b-button variant="success"
+              <b-button variant="success" v-on:click="handleSubmit"
                 >Download dan Kirim Via Email</b-button
               >
               <b-button variant="primary" href="/mulai-menulis"
@@ -105,9 +108,9 @@
         font-family: Poppins;
         font-style: normal;
         font-size: 20px;
+        font-weight: 400;
         line-height: 30px;
         width: 100%;
-        font-weight: 700;
       }
     }
 

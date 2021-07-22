@@ -12,9 +12,11 @@
             <img src="../assets/vector.png" class="image2" />
           </div>
           <p class="isi">Karena menulis itu menyenangkan ...</p>
-          <b-button class="button" to="mulai-menulis">
-            Mulai Menulis
-          </b-button>
+          <div class="button-top">
+            <b-button class="button" to="mulai-menulis">
+              Mulai Menulis
+            </b-button>
+          </div>
         </div>
       </div>
 
@@ -242,7 +244,10 @@ export default { name: "Home" };
 .atas {
   padding: 50px 0px 0px 0px;
   display: flex;
-  // background: red;
+  @media screen and (max-width: 768px) {
+    display: inline-block;
+    width: 100%;
+  }
   &_left {
     // background: red;
     @media screen and (max-width: 768px) {
@@ -255,6 +260,7 @@ export default { name: "Home" };
     height: auto;
     @media screen and (max-width: 768px) {
       padding: 20px 10px 0px 10px;
+      text-align: center;
     }
     .judul {
       width: 80%;
@@ -311,6 +317,35 @@ export default { name: "Home" };
       // display: none;
       // overflow: hidden;
     }
+  }
+}
+.button-top {
+  @media screen and (max-width: 768px) {
+  }
+  .button {
+    background-color: #00a279;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 768px) {
+      display: flex;
+      text-align: center;
+      margin: auto;
+      // width: 100%;
+      // padding-left: 0px;
+    }
+  }
+  .button:hover {
+    background-color: #00a279;
   }
 }
 
@@ -385,34 +420,6 @@ export default { name: "Home" };
   p {
     width: 874px;
   }
-}
-.button {
-  background-color: #00a279;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-decoration: none;
-  width: 150px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  @media (max-width: 320px) {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    padding-left: 0px;
-  }
-}
-.button:hover {
-  background-color: #00a279;
-}
-.button:hover {
-  background-color: #00a279;
 }
 .conten_home {
   width: 100%;

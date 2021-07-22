@@ -10,6 +10,7 @@ export default {
       strukturkalimatPage3: false,
       strukturkalimatPage4: false,
       strukturkalimatPage5: false,
+      showModalError: false,
       dataForm: {
         menulis: "",
         tambahData: "",
@@ -36,7 +37,7 @@ export default {
       // <-- ATAS(up) -->
       var now = this.dataForm.menulis;
       if (now === "") {
-        alert("Choose first to raise");
+        alert("Silahkan memilih untuk menaikan");
         return;
       }
       var index = now - 1;
@@ -50,14 +51,14 @@ export default {
         sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.menulis = index;
       } else {
-        alert("Has reached the maximum limit");
+        alert("Kalimat tidak bisa di naikkan lagi");
       }
     },
     descending() {
       // <---- BAWAH(down) ------>
       var now = this.dataForm.menulis;
       if (now === "") {
-        alert("Choose the first one to drop");
+        alert("Silahkan memilih untuk menurunkan");
         return;
       }
       var index = now + 1;
@@ -72,7 +73,7 @@ export default {
         sessionStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.menulis = index;
       } else {
-        alert("Has reached the maximum limit");
+        alert("Kalimat tidak bisa di turunkan lagi");
       }
     },
     toDropKonsepParagraf() {
@@ -92,7 +93,7 @@ export default {
     },
     setKonsepParagraf() {
       if (this.dataForm.ubahData === "") {
-        alert("The data cannot be empty");
+        alert("Form tidak boleh kosong");
         return;
       }
       this.strukturKalimatDataSesion.konsepParagrafArray[
@@ -106,16 +107,17 @@ export default {
     },
     handelTambah() {
       if (this.dataForm.tambahData === "") {
-        alert("Form is not vailid");
+        alert("Form tidak boleh kosong");
       } else if (this.dataForm.tambahData.length >= 60) {
-        alert("Maximal 60 Characters");
+        alert("Maksimal 60 Kosa kata");
       } else {
-        if (this.strukturKalimatDataSesion.konsepParagrafArray.length <= 5) {
+        if (this.strukturKalimatDataSesion.konsepParagrafArray.length < 10) {
           this.handleSubmit(this.dataForm.tambahData);
           this.dataForm.tambahData = "";
         } else {
-          alert("Cannot add more than six lines");
           this.modalTambah = false;
+          this.showModalError = true;
+          this.dataForm.tambahData = "";
         }
       }
     },
