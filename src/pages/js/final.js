@@ -18,6 +18,7 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.proFeridingDataSesion = JSON.parse(proFreadingData);
+      console.log(this.proFeridingDataSesion);
     },
     ...mapActions(["finishStudentsActions"]),
     sumbit() {

@@ -43,12 +43,10 @@
                         class="mb-4"
                         style="text-align:center; font-size: 20px;"
                       >
-                        Form tidak boleh kosong. Silahkan memilih terlebih
-                        dahulu
+                        Catatan paragraf tidak boleh kosong
                       </p>
                     </div>
                   </div>
-
                   <div class="tombol1">
                     <button
                       class="ok1"
@@ -470,224 +468,41 @@
     </div>
     <!-- end modal area -->
     <!-- Screen1 -->
-    <div style="padding: 20px 0px 20px 110px;">
-      <div class="content_padding_tulis" v-if="pengorganisasianPage1 === true">
-        <div class="tengah">
-          <div class="row">
-            <div class="col-sm-1">
-              <b-btn class="tengah_tips" @click="showModal = true">TIPS</b-btn>
-            </div>
-            <div class="col-sm-11">
-              <p class="tengah_text2">
-                Anda sekarang siap untuk mengatur kalimat Anda.
-              </p>
-              <p class="tengah_text2">
-                Kalimat utama Anda telah ditempatkan di
-                <b>Catatan Paragraf</b> . Kalimat mana yang secara logis akan
-                muncul setelahnya?
-              </p>
-              <p class="tengah_text2">
-                Pindahkan setidaknya <b>empat kalimat</b>, satu persatu secara
-                berurutan, dari <b>Catatan Menulis</b> ke dalam Catatan
-                Paragraf. Nanti Anda akan memiliki kesempatan untuk meninjau
-                kembali urutan kalimat Anda.
-              </p>
-              <p class="tengah_text2">
-                Centang kalimat yang Anda ingin pilih Klik
-                <b>v</b> untuk memindahkan setiap kalimat ke dalam
-                <b>Catatan Paragraf atau sebaliknya</b>
-              </p>
-            </div>
-          </div>
+
+    <div class="content_padding_tulis" v-if="pengorganisasianPage1 === true">
+      <div class="tengah">
+        <div class="col-md-2.5">
+          <b-btn class="tengah_tips" @click="showModal = true">TIPS</b-btn>
         </div>
-        <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-11" style="padding: 0px 0px 0px 40px;">
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div
-                      style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4 style="padding: 11px 0px 0px 0px;">
-                          <b>Catatan Menulis</b>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <a @click="descending()">
-                      <img class="icon-up-down" src="@/assets/down.png" />
-                    </a>
-                  </div>
-                </div>
-                <div
-                  style="
-                    background-color: #c1c8d3;
-                    width: 730px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-                >
-                  <div style="margin-left: 10px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div class="dua">
-                              <h5>
-                                <b-form-checkbox-group>
-                                  <b-form-checkbox
-                                    v-bind:value="dataSesion.pramenulis"
-                                    v-for="(dataSesion,
-                                    index) in pramenulisLanjutanDataSesion.resultMenulis"
-                                    :key="index"
-                                    v-model="dataForm.resultMenulis"
-                                    >&nbsp;&nbsp;{{
-                                      dataSesion.pramenulis
-                                    }}</b-form-checkbox
-                                  >
-                                </b-form-checkbox-group>
-                              </h5>
-                            </div>
-                          </ul>
-                        </div>
-                      </div>
-                    </b-form-group>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div
-                      style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4 style="padding: 11px 0px 0px 0px;">
-                          <b>Catatan Paragraf</b>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <a @click="ascending()">
-                      <img class="icon-up-down" src="@/assets/up.png" />
-                    </a>
-                  </div>
-                </div>
-                <div
-                  style="
-                    background-color: #c1c8d3;
-                    width: 730px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-                >
-                  <div style="margin-left: 10px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div class="dua">
-                              <h5>
-                                <b
-                                  >Saya adalah pecandu Kopi
-                                  <font color="red"
-                                    >(diambil dari Kalimat Utama).</font
-                                  ></b
-                                >
-                              </h5>
-                            </div>
-                            <b-form-group>
-                              <div class="dua">
-                                <h5>
-                                  <b-form-checkbox-group>
-                                    <b-form-checkbox
-                                      v-bind:value="dataSesionNext2"
-                                      v-for="(dataSesionNext2,
-                                      index) in pramenulisLanjutanDataSesion.resultParagraph"
-                                      :key="index"
-                                      v-model="dataForm.resultMenulis"
-                                      >&nbsp;&nbsp;{{
-                                        dataSesionNext2
-                                      }}</b-form-checkbox
-                                    >
-                                  </b-form-checkbox-group>
-                                </h5>
-                              </div>
-                            </b-form-group>
-                          </ul>
-                        </div>
-                      </div>
-                    </b-form-group>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="button2_tombol2">
-                <button
-                  class="button2"
-                  type="button"
-                  @click="pengorganisasian1Next()"
-                >
-                  <b>OK</b>
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-9.5">
+          <p class="tengah_text2">
+            Anda sekarang siap untuk mengatur kalimat Anda.
+          </p>
+          <p class="tengah_text2">
+            Kalimat utama Anda telah ditempatkan di
+            <b>Catatan Paragraf</b> . Kalimat mana yang secara logis akan muncul
+            setelahnya?
+          </p>
+          <p class="tengah_text2">
+            Pindahkan setidaknya <b>empat kalimat</b>, satu persatu secara
+            berurutan, dari <b>Catatan Menulis</b> ke dalam Catatan Paragraf.
+            Nanti Anda akan memiliki kesempatan untuk meninjau kembali urutan
+            kalimat Anda.
+          </p>
+          <p class="tengah_text2">
+            Centang kalimat yang Anda ingin pilih Klik
+            <b>v</b> untuk memindahkan setiap kalimat ke dalam
+            <b>Catatan Paragraf atau sebaliknya</b>
+          </p>
         </div>
       </div>
-      <!-- Screen2 -->
-      <div class="content_padding_tulis" v-if="pengorganisasianPage2 === true">
-        <div class="tengah">
-          <div class="row">
-            <div class="col-sm-1">
-              <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
-            </div>
-            <div class="col-sm-11">
-              <p class="tengah_text2">
-                Bagus! Anda telah memperkenalkan ide utama Anda dalam kalimat
-                topik. Anda memberikan beberapa detail dalam kalimat-kalimat
-                berikutnya.
-              </p>
-              <p class="tengah_text2">
-                Ini adalah saat yang tepat untuk membaca apa yang telah Anda
-                tulis sejauh ini.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-11" style="padding: 0px 0px 0px 40px;">
-            <div
-              class="content_padding_tulis_right_paragraf_bawah"
-              style="padding: 80px 0px 0px 0px"
-            >
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11 jarak1">
+          <div class="col-sm-12">
+            <div class="content_padding_tulis_right_paragraf_bawah">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                   <div
                     style="
                         background-color: #484c52;
@@ -697,35 +512,39 @@
                       "
                   >
                     <div class="content_padding_tulis_catatan">
-                      <h4 style="padding: 14px 0px 0px 0px;">
-                        <b>Konsep Paragraf</b>
+                      <h4 style="padding: 11px 0px 0px 0px;">
+                        <b>Catatan Menulis</b>
                       </h4>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-4">
+                  <a @click="descending()">
+                    <img class="icon-up-down" src="@/assets/down.png" />
+                  </a>
+                </div>
               </div>
-              <div
-                style="
-                    background-color: #c1c8d3;
-                    width: 820px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-              >
-                <div style="padding: 0px 15px 0px 5px">
+              <div class="bereb">
+                <div style="margin-left: 10px">
                   <b-form-group>
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div
-                            class="dua"
-                            v-for="(dataSesion,
-                            index) in pramenulisLanjutanDataSesion.konsepParagraf"
-                            :key="index"
-                          >
-                            <p>
-                              {{ dataSesion }}
-                            </p>
+                          <div class="dua">
+                            <h5>
+                              <b-form-checkbox-group>
+                                <b-form-checkbox
+                                  v-bind:value="dataSesion.pramenulis"
+                                  v-for="(dataSesion,
+                                  index) in pramenulisLanjutanDataSesion.resultMenulis"
+                                  :key="index"
+                                  v-model="dataForm.resultMenulis"
+                                  >&nbsp;&nbsp;{{
+                                    dataSesion.pramenulis
+                                  }}</b-form-checkbox
+                                >
+                              </b-form-checkbox-group>
+                            </h5>
                           </div>
                         </ul>
                       </div>
@@ -735,49 +554,320 @@
               </div>
             </div>
           </div>
+          <br /><br />
           <div class="col-sm-12">
-            <div class="button4_tombol4" @click="pengorganisasian2Next()">
-              <button class="button4" type="button">
+            <div class="content_padding_tulis_right_paragraf_bawah">
+              <div class="row">
+                <div class="col-sm-3">
+                  <div
+                    style="
+                        background-color: #484c52;
+                        height: 48px;
+                        width: 240px;
+                        border-radius: 20px 20px 0px 0px;
+                      "
+                  >
+                    <div class="content_padding_tulis_catatan">
+                      <h4 style="padding: 11px 0px 0px 0px;">
+                        <b>Catatan Paragraf</b>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <a @click="ascending()">
+                    <img class="icon-up-down" src="@/assets/up.png" />
+                  </a>
+                </div>
+              </div>
+              <div class="bereb">
+                <div style="margin-left: 10px">
+                  <b-form-group>
+                    <div>
+                      <div class="col-sm-12">
+                        <ul>
+                          <div class="dua">
+                            <h5>
+                              <b
+                                >Saya adalah pecandu Kopi
+                                <font color="red"
+                                  >(diambil dari Kalimat Utama).</font
+                                ></b
+                              >
+                            </h5>
+                          </div>
+                          <b-form-group>
+                            <div class="dua">
+                              <h5>
+                                <b-form-checkbox-group>
+                                  <b-form-checkbox
+                                    v-bind:value="dataSesionNext2"
+                                    v-for="(dataSesionNext2,
+                                    index) in pramenulisLanjutanDataSesion.resultParagraph"
+                                    :key="index"
+                                    v-model="dataForm.resultMenulis"
+                                    >&nbsp;&nbsp;{{
+                                      dataSesionNext2
+                                    }}</b-form-checkbox
+                                  >
+                                </b-form-checkbox-group>
+                              </h5>
+                            </div>
+                          </b-form-group>
+                        </ul>
+                      </div>
+                    </div>
+                  </b-form-group>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="button2_tombol2">
+              <button
+                class="button2"
+                type="button"
+                @click="pengorganisasian1Next()"
+              >
                 <b>OK</b>
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- screen 3 -->
-      <div class="content_padding_tulis" v-if="pengorganisasianPage3 === true">
-        <div class="tengah">
-          <div class="row">
-            <div class="col-sm-1">
-              <b-btn class="tengah_tips" @click="showModal3 = true">TIPS</b-btn>
+    </div>
+    <!-- Screen2 -->
+    <div class="content_padding_tulis" v-if="pengorganisasianPage2 === true">
+      <div class="tengah">
+        <div class="col-md-2.5">
+          <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+        </div>
+        <div class="col-md-9.5">
+          <p class="tengah_text2">
+            Bagus! Anda telah memperkenalkan ide utama Anda dalam kalimat topik.
+            Anda memberikan beberapa detail dalam kalimat-kalimat berikutnya.
+          </p>
+          <p class="tengah_text2">
+            Ini adalah saat yang tepat untuk membaca apa yang telah Anda tulis
+            sejauh ini.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11 jarak1">
+          <div class="content_padding_tulis_right_paragraf_bawah">
+            <div class="row">
+              <div class="col-sm-4">
+                <div
+                  style="
+                        background-color: #484c52;
+                        height: 48px;
+                        width: 90%;
+                        border-radius: 20px 20px 0px 0px;
+                      "
+                >
+                  <div class="content_padding_tulis_catatan">
+                    <h4 style="padding: 12px 0px 0px 0px;">
+                      <b>Konsep Paragraf</b>
+                    </h4>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-11">
-              <p class="tengah_text2">
-                Bisakah Anda menghubungkan satu kalimat ke kalimat lain dengan
-                lebih lancar? Kata-kata transisi dapat membantu menghubungkan
-                ide-ide dalam sebuah paragraf.
-              </p>
-              <p class="tengah_text2">
-                Untuk melihat bagaimana kata transisi dapat digunakan dalam
-                sebuah paragraf, klik Tips.
-              </p>
-              <p class="tengah_text2">
-                Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Change
-                Text.
-              </p>
-              <p class="tengah_text2">
-                Pada layar berikutnya Anda akan melihat lebih banyak contoh kata
-                transisi
-              </p>
+            <div class="bereb">
+              <div style="padding: 0px 15px 0px 5px">
+                <b-form-group>
+                  <div>
+                    <div class="col-sm-12">
+                      <ul>
+                        <div
+                          class="dua"
+                          v-for="(dataSesion,
+                          index) in pramenulisLanjutanDataSesion.konsepParagraf"
+                          :key="index"
+                        >
+                          <p>
+                            {{ dataSesion }}
+                          </p>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </b-form-group>
+              </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-11">
+        <div class="col-sm-12">
+          <div class="button4_tombol4" @click="pengorganisasian2Next()">
+            <button class="button4" type="button">
+              <b>OK</b>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- screen 3 -->
+    <div class="content_padding_tulis" v-if="pengorganisasianPage3 === true">
+      <div class="tengah">
+        <div class="col-md-2.5">
+          <b-btn class="tengah_tips" @click="showModal3 = true">TIPS</b-btn>
+        </div>
+        <div class="col-md-9.5">
+          <p class="tengah_text2">
+            Bisakah Anda menghubungkan satu kalimat ke kalimat lain dengan lebih
+            lancar? Kata-kata transisi dapat membantu menghubungkan ide-ide
+            dalam sebuah paragraf.
+          </p>
+          <p class="tengah_text2">
+            Untuk melihat bagaimana kata transisi dapat digunakan dalam sebuah
+            paragraf, klik Tips.
+          </p>
+          <p class="tengah_text2">
+            Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Change
+            Text.
+          </p>
+          <p class="tengah_text2">
+            Pada layar berikutnya Anda akan melihat lebih banyak contoh kata
+            transisi
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11 jarak1">
+          <div class="content_padding_tulis_right_paragraf_bawah">
+            <div class="row">
+              <div class="col-sm-3">
+                <div
+                  style="
+                        background-color: #484c52;
+                        height: 48px;
+                        width: 90%;
+                        border-radius: 20px 20px 0px 0px;
+                      "
+                >
+                  <div class="content_padding_tulis_catatan">
+                    <h4 style="padding: 10px 0px 0px 0px;">
+                      <b>Catatan Paragraf</b>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-2">
+                <div class="content_padding_tulis_catatan">
+                  <div class="button3_tombol3">
+                    <button
+                      class="button3"
+                      id="show-btn"
+                      @click="showModalTambahPage3 = true"
+                    >
+                      <b>Tambah</b>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-1" style="margin-left: -35px">
+                <div class="content_padding_tulis_catatan">
+                  <div class="button3_tombol3">
+                    <button
+                      v-bind:disabled="
+                        dataForm.pilih.length === 0 ? true : false
+                      "
+                      class="button3_button4"
+                      @click="tombolUbah()"
+                    >
+                      <b>Ubah</b>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bereb">
+              <div style="margin-left: 30px">
+                <b-form-group>
+                  <div>
+                    <div class="col-sm-12">
+                      <ul>
+                        <div
+                          class="dua"
+                          v-for="(dataSesion,
+                          index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
+                          :key="index"
+                        >
+                          <h5>
+                            <b-form-radio
+                              name="radios-stacked"
+                              v-model="dataForm.pilih"
+                              v-bind:value="index"
+                              ><b
+                                >&nbsp; &nbsp;{{ dataSesion }}</b
+                              ></b-form-radio
+                            >
+                          </h5>
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </b-form-group>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- batas -->
+      <div class="col-sm-12"></div>
+      <br />
+      <div class="col-sm-12">
+        <div class="button4_tombol4" @click="pengorganisasian3Next">
+          <button class="button4" type="submit">
+            <b>OK</b>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- screen4 -->
+    <div class="content_padding_tulis" v-if="pengorganisasianPage4 === true">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="button_tombol">
+            <b-button class="button" @click="showModal = true">
+              <div class="button_tombol_margin">
+                <b>TIPS</b>
+              </div>
+            </b-button>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="content_padding_tulis_right">
+            <div class="col-sm-12">
+              <div class="content_padding_tulis_right_paragraf">
+                <p>
+                  Kata transisi dapat membantu menghubungkan ide dengan cara
+                  yang berbeda. Berikut beberapa contohnya: <br /><br />
+                  LANJUTKAN IDE:<br />
+                  lagi, sepanjang, juga, lain, serta, di samping.<br /><br />
+                  WAKTU PERTUNJUKAN:<br />
+                  tentang, sebelum, nanti, selanjutnya, segera, sampai,
+                  kapan.<br /><br />
+                  TUNJUKKAN PENYEBAB ATAU EFEK:<br />
+                  akibatnya, karena, karena, oleh karena itu.<br /><br />
+                  TAMPILKAN KONTRAS:<br />
+                  meskipun, tetapi, meskipun, namun, masih, namun.<br /><br />
+                  Untuk melihat kata transisi dalam kalimat, klik Tip.<br />
+                  Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Ubah
+                  teks.<br /><br />
+                  Layar berikutnya akan membantu Anda menulis kesimpulan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
             <div
               class="content_padding_tulis_right_paragraf_bawah"
-              style="padding: 80px 0px 0px 30px"
+              style="padding: 80px 0px 0px 0px"
             >
               <div class="row">
                 <div class="col-sm-3">
@@ -813,10 +903,10 @@
                   <div class="content_padding_tulis_catatan">
                     <div class="button3_tombol3">
                       <button
+                        class="button3_button4"
                         v-bind:disabled="
                           dataForm.pilih.length === 0 ? true : false
                         "
-                        class="button3_button4"
                         @click="tombolUbah()"
                       >
                         <b>Ubah</b>
@@ -849,6 +939,7 @@
                                 name="radios-stacked"
                                 v-model="dataForm.pilih"
                                 v-bind:value="index"
+                                stacked
                                 ><b
                                   >&nbsp; &nbsp;{{ dataSesion }}</b
                                 ></b-form-radio
@@ -863,151 +954,11 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- batas -->
-        <div class="col-sm-12"></div>
-        <br />
-        <div class="col-sm-12">
-          <div class="button4_tombol4" @click="pengorganisasian3Next">
-            <button class="button4" type="submit">
-              <b>OK</b>
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- screen4 -->
-      <div class="content_padding_tulis" v-if="pengorganisasianPage4 === true">
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
-                <div class="button_tombol_margin">
-                  <b>TIPS</b>
-                </div>
-              </b-button>
-            </div>
-          </div>
-          <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
-              <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Kata transisi dapat membantu menghubungkan ide dengan cara
-                    yang berbeda. Berikut beberapa contohnya: <br /><br />
-                    LANJUTKAN IDE:<br />
-                    lagi, sepanjang, juga, lain, serta, di samping.<br /><br />
-                    WAKTU PERTUNJUKAN:<br />
-                    tentang, sebelum, nanti, selanjutnya, segera, sampai,
-                    kapan.<br /><br />
-                    TUNJUKKAN PENYEBAB ATAU EFEK:<br />
-                    akibatnya, karena, karena, oleh karena itu.<br /><br />
-                    TAMPILKAN KONTRAS:<br />
-                    meskipun, tetapi, meskipun, namun, masih, namun.<br /><br />
-                    Untuk melihat kata transisi dalam kalimat, klik Tip.<br />
-                    Untuk menyisipkan kata transisi, pilih kalimat, lalu klik
-                    Ubah teks.<br /><br />
-                    Layar berikutnya akan membantu Anda menulis kesimpulan.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 80px 0px 0px 0px"
-              >
-                <div class="row">
-                  <div class="col-sm-3">
-                    <div
-                      style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4 style="padding: 10px 0px 0px 0px;">
-                          <b>Catatan Paragraf</b>
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-2">
-                    <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol3">
-                        <button
-                          class="button3"
-                          id="show-btn"
-                          @click="showModalTambahPage3 = true"
-                        >
-                          <b>Tambah</b>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-1" style="margin-left: -35px">
-                    <div class="content_padding_tulis_catatan">
-                      <div class="button3_tombol3">
-                        <button
-                          class="button3_button4"
-                          v-bind:disabled="
-                            dataForm.pilih.length === 0 ? true : false
-                          "
-                          @click="tombolUbah()"
-                        >
-                          <b>Ubah</b>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style="
-                    background-color: #c1c8d3;
-                    width: 730px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-                >
-                  <div style="margin-left: 30px">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div
-                              class="dua"
-                              v-for="(dataSesion,
-                              index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
-                              :key="index"
-                            >
-                              <h5>
-                                <b-form-radio
-                                  name="radios-stacked"
-                                  v-model="dataForm.pilih"
-                                  v-bind:value="index"
-                                  stacked
-                                  ><b
-                                    >&nbsp; &nbsp;{{ dataSesion }}</b
-                                  ></b-form-radio
-                                >
-                              </h5>
-                            </div>
-                          </ul>
-                        </div>
-                      </div>
-                    </b-form-group>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="button2_tombol2" @click="pengorganisasian4Next">
-                <button class="button2" type="submit">
-                  <b>OK</b>
-                </button>
-              </div>
+          <div class="col-sm-12">
+            <div class="button2_tombol2" @click="pengorganisasian4Next">
+              <button class="button2" type="submit">
+                <b>OK</b>
+              </button>
             </div>
           </div>
         </div>
@@ -1019,15 +970,32 @@
 <script src="./js/pengorganisasian.js" />
 
 <style lang="scss" scoped>
+.jarak1 {
+  padding: 0px 0px 0px 120px;
+  @media screen and (max-width: 700px) {
+    padding: 0px 0px 0px 30px;
+  }
+}
+.bereb {
+  background-color: #c1c8d3;
+  width: 80%;
+  padding: 13px;
+  border-radius: 0px 0 30px 30px;
+}
 // Jenis Paragraf
 .jenis {
   display: flex;
-  max-width: 1440px;
   height: 49px;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
   &_paragraf {
     padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
   }
   &_topik {
     padding: 11px 0px 0px 70px;
@@ -1036,12 +1004,8 @@
 // End Jenis Paragraf
 .button2 {
   background-color: #0a4da3;
-  border: none;
   color: rgb(243, 237, 237);
-  text-decoration: none;
-  display: inline-block;
   cursor: pointer;
-  align-items: flex-start;
   // padding: 17px 10px;
   border-radius: 30px;
   display: flex;
@@ -1049,12 +1013,11 @@
   max-width: 990px;
   width: 130px;
   height: 44px;
-  // left: calc(50% - 190px / 2 + 87px);
   top: -10px;
+  justify-content: center;
   align-items: center;
   margin-left: 200px;
   b {
-    // padding: 0% 3% 0% 3%;
     color: #f1f1f1;
     margin: auto;
     font-size: 20px;
@@ -1064,7 +1027,6 @@
     left: 300px;
     width: 190px;
     height: 200px;
-    margin-left: 0px;
   }
 }
 .button2:hover {
@@ -1172,13 +1134,12 @@
 .button4 {
   background-color: #0a4da3;
   color: rgb(243, 237, 237);
-  cursor: pointer;
   border-radius: 30px;
-  display: flex;
   position: relative;
-  max-width: 990px;
   width: 130px;
   height: 44px;
+  align-items: center;
+  justify-content: center;
   b {
     // padding: 0% 3% 0% 3%;
     color: #f1f1f1;
@@ -1186,10 +1147,26 @@
     font-size: 20px;
   }
   &_tombol4 {
-    padding: 60px 0px 0px 400px;
+    padding: 30px 0px;
+    margin-left: 500px;
     width: 190px;
     height: 200px;
     margin-bottom: -30px;
+    @media screen and (max-width: 1024px) {
+      margin-left: 400px;
+    }
+    @media screen and (max-width: 800px) {
+      margin-left: 300px;
+    }
+    @media screen and (max-width: 600px) {
+      margin-left: 200px;
+    }
+    @media screen and (max-width: 400px) {
+      margin-left: 100px;
+    }
+    @media screen and (max-width: 300px) {
+      margin-left: 50px;
+    }
   }
 }
 .button4:hover {
@@ -1214,13 +1191,14 @@
   display: flex;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 13px;
-  // background: red;
+  padding: 20px 210px 20px 100px;
+  @media screen and (max-width: 768px) {
+    padding: 13px 10px 48px 5px;
+  }
+
   // button tips
   &_tips {
-    padding: 4px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     width: 100px;
     height: 30px;
     border-radius: 10px;
@@ -1228,23 +1206,16 @@
     background-color: #00a279;
     color: #fff;
     font-size: normal;
-    margin-bottom: 70px;
+    margin-bottom: 200px;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+      width: 80px;
+    }
   }
 
   // text page 2
   &_text2 {
-    margin-left: 30px;
-    width: 80%;
-    font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
-    }
-  }
-  &_text3 {
-    margin-left: 30px;
+    margin-left: 20px;
     width: 100%;
     font-family: Poppins;
     font-size: 20px;
@@ -1252,23 +1223,45 @@
       font-style: italic;
       font-size: 20px;
     }
+    @media screen and (max-width: 768px) {
+      margin-left: 10px;
+      width: 100%;
+      padding-right: 10px;
+    }
+  }
+  &_text3 {
+    margin-left: 20px;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 10px;
+      width: 100%;
+      padding-right: 10px;
+    }
   }
 }
+// Stepper
 .steper {
   text-align: center;
-  // background:red;
-  padding: 10px;
+  padding: 10px 200px 10px 200px;
   &_image {
-    width: 1000px;
+    width: 100%;
     height: auto;
   }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
-
-.jenis {
-  background-color: #c5dcff;
-  height: 50px;
-  width: 100%px;
-}
+// End Stepper
 
 .ok2 {
   // background: red;
@@ -1393,6 +1386,23 @@
     font-size: 47px;
     margin-left: 10%;
   }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
+  }
 }
 /* Style Modal */
 .modal-dialog {
@@ -1404,12 +1414,18 @@
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -1496,5 +1512,11 @@
   height: 32.71px;
   color: #fff;
   font-family: Poppins;
+}
+.icon-up-down {
+  padding: 0px 0px 0px 20px;
+  @media screen and (max-width: 1000px) {
+    padding: 0px 0px 0px 100px;
+  }
 }
 </style>

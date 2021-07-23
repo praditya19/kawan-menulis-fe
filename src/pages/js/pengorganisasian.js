@@ -18,10 +18,8 @@ export default {
         resultMenulis: [],
         pilih: "",
       },
-      memberiJarak: [],
       valid: [], // descending components
       imitation: [], // descending components
-      dearLove: [],
       pengorganisasianPage1: true,
       pengorganisasianPage2: false,
       pengorganisasianPage3: false,
@@ -83,7 +81,6 @@ export default {
           filteredPeople.forEach((element) => {
             this.pramenulisLanjutanDataSesion.resultMenulis.push(element);
           });
-        this.dataForm.resultMenulis = [];
         var descendingSv = JSON.stringify(this.pramenulisLanjutanDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", descendingSv); // <-----  everything will be fine
         location.reload();
@@ -167,24 +164,22 @@ export default {
       var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
     },
-    formatToDot(value) {
-      return value.toString().replace(/,/g, ".");
-    },
     pengorganisasian1Next() {
-      if (this.dataForm.resultMenulis.length === 0) {
+      if (this.pramenulisLanjutanDataSesion.resultParagraph.length === 0) {
         this.showModalErrorEmpety = true;
         return;
       }
-      for (var j = 0; j < this.dataForm.resultMenulis.length; j++) {
+      for (
+        var j = 0;
+        j < this.pramenulisLanjutanDataSesion.resultParagraph.length;
+        j++
+      ) {
         this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
-          this.dataForm.resultMenulis[j] // <-------- loop valid 1.1
+          this.pramenulisLanjutanDataSesion.resultParagraph[j] // <-------- loop valid 1.1
         );
       }
-      for (var k = 0; k < this.dataForm.resultMenulis.length; k++) {
-        this.memberiJarak.push("\t" + this.dataForm.resultMenulis[k]);
-      }
       this.pramenulisLanjutanDataSesion.konsepParagraf.push(
-        this.formatToDot(this.memberiJarak) + "."
+        this.pramenulisLanjutanDataSesion.resultParagraph.join(". ") + "."
       );
       var savePage1 = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);

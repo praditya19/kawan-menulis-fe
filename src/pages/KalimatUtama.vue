@@ -6,14 +6,12 @@
         <h1>Latihan Menulis</h1>
       </div>
     </div>
-    <br />
     <!-- Stepper -->
     <div class="steper">
       <img class="steper_image" src="@/assets/icon_stepper/3.png" />
     </div>
     <!-- End Stepper  -->
 
-    <br />
     <!-- Jenis Paragraf -->
     <div class="content-tiga">
       <div class="jenis">
@@ -24,7 +22,6 @@
         </p>
       </div>
     </div>
-    <br />
 
     <!-- modal -->
     <!-- page1 -->
@@ -278,43 +275,52 @@
     </div>
 
     <!-- kalimatutama page 1 -->
-    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage1 === true">
-      <div class="center">
-        <p class="tengah2_tips2" @click="showModal = true">TIPS</p>
+    <div v-if="kalimatUtamaPage1 === true">
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tips">
+            <button class="tips_judul" @click="showModal = true">TIPS</button>
+          </div>
+        </div>
+        <div class="col-md-9.5 tips_kata">
+          <p>
+            Mari mulai paragrafmu dengan sebuah kalimat utama.
+          </p>
+          <p>
+            Kalimat utama adalah kalimat yang mengandung topik/ide tulisanmu.
+            Kalimat utama pada umumnya berada di awal paragraf.
+          </p>
+        </div>
       </div>
-      <div class="tengah">
-        <p class="tengah_tips" @click="showModal = true">TIPS</p>
-        <p class="tengah_text">
-          Mari mulai paragrafmu dengan sebuah kalimat utama.<br />
-          Kalimat utama adalah kalimat yang mengandung topik/ide tulisanmu.
-          Kalimat utama pada umumnya berada di awal paragraf.
-        </p>
-      </div>
-      <!-- button -->
       <div class="Button">
         <b-btn class="button  justify-content-center" @click="page1Next">
           <b>OK</b>
         </b-btn>
       </div>
-      <!-- end button -->
     </div>
+    <!-- end button -->
     <!-- penutup page 1 -->
 
     <!-- kalimat utama page 2 -->
-    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage2 === true">
-      <div class="center">
-        <p class="tengah2_tips2" @click="showModal2 = true">TIPS</p>
-      </div>
-      <div class="tengah">
-        <p class="tengah_tips" @click="showModal2 = true">TIPS</p>
-        <p class="tengah_text2">
-          Berikut ini sebuah contoh kalimat utama tentang cara melakukan sesuatu
-          yang sangat kamu kuasai. <br />
-          <strong
-            >Saya sangat mahir dalam membuat media salindia yang
-            menarik.</strong
-          >
-        </p>
+    <div v-if="kalimatUtamaPage2 === true">
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tips">
+            <button class="tips_judul" @click="showModal2 = true">TIPS</button>
+          </div>
+        </div>
+        <div class="col-md-9.5 tips_kata">
+          <p>
+            Berikut ini sebuah contoh kalimat utama tentang cara melakukan
+            sesuatu yang sangat kamu kuasai.
+          </p>
+          <p>
+            <strong
+              >Saya sangat mahir dalam membuat media salindia yang
+              menarik.</strong
+            >
+          </p>
+        </div>
       </div>
       <!-- button -->
       <div class="Button">
@@ -327,30 +333,34 @@
     <!-- penutup page 2 -->
 
     <!-- kalimat utama page 3 -->
-    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage3 === true">
-      <div class="center">
-        <p class="tengah2_tips2" @click="showModal3 = true">TIPS</p>
-      </div>
-      <div class="tengah">
-        <p class="tengah_tips" @click="showModal3 = true">TIPS</p>
-        <p class="tengah_text3">
-          Kamu juga dapat memulai paragrafmu dengan melihat kata-kata yang kamu
-          miliki di kotak masukan. Silakan latihan dengan mengubah kata atau
-          klausa itu menjadi kalimat awal yang baik. Pada halaman selanjutnya,
-          kamu akan menulis kalimat utamamu sendiri.
-        </p>
-      </div>
-      <div class="tengah_bawah">
-        <p class="tengah_bawah_text-bawah">
-          Lengkapi kalimat di bawah ini menjadi kalimat utama yang baik.
-        </p>
-        <div class="tengah_bawah_form">
-          <b-form-input
-            class="tinggi"
-            v-model="form.kalimatUtama1"
-          ></b-form-input>
+    <div v-if="kalimatUtamaPage3 === true">
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tips">
+            <button class="tips_judul" @click="showModal3 = true">TIPS</button>
+          </div>
+        </div>
+        <div class="col-md-9.5 tips_kata">
+          <p>
+            Kamu juga dapat memulai paragrafmu dengan melihat kata-kata yang
+            kamu miliki di kotak masukan. Silakan latihan dengan mengubah kata
+            atau klausa itu menjadi kalimat awal yang baik. Pada halaman
+            selanjutnya, kamu akan menulis kalimat utamamu sendiri.
+          </p>
+          <div class="tengah_bawah">
+            <p>
+              Lengkapi kalimat di bawah ini menjadi kalimat utama yang baik.
+            </p>
+            <div>
+              <b-form-input
+                class="tinggi"
+                v-model="form.kalimatUtama1"
+              ></b-form-input>
+            </div>
+          </div>
         </div>
       </div>
+
       <!-- button -->
       <div class="Button">
         <b-btn class="button  justify-content-center" @click="page3Next()">
@@ -362,25 +372,26 @@
     <!-- penutup page 3 -->
 
     <!-- kalimat utama page 4 -->
-    <div style="padding: 20px 0px 0px 0px" v-if="kalimatUtamaPage4 === true">
-      <div class="center">
-        <p class="tengah2_tips2" @click="showModal4 = true">TIPS</p>
-      </div>
-      <div class="tengah" style="padding: 20px 0px 0px 23px">
-        <p class="tengah_tips" @click="showModal4 = true">TIPS</p>
-        <p class="tengah_text4">
-          Sekarang tulislah kalimat utama untuk memulai paragrafmu. Kalimat itu
-          harus berisi topik yang ingin kamu jelaskan dalam paragraf ya....
-          <br />
-          Klik Tips untuk melihat contoh kalimat utama.
-        </p>
-      </div>
-      <div class="tengah_bawah">
-        <div class="tengah_bawah_form">
-          <b-form-input
-            class="tinggi"
-            v-model="form.kalimatUtama2"
-          ></b-form-input>
+    <div v-if="kalimatUtamaPage4 === true">
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tips">
+            <button class="tips_judul" @click="showModal4 = true">TIPS</button>
+          </div>
+        </div>
+        <div class="col-md-9.5 tips_kata">
+          <p>
+            Sekarang tulislah kalimat utama untuk memulai paragrafmu. Kalimat
+            itu harus berisi topik yang ingin kamu jelaskan dalam paragraf
+            ya....
+          </p>
+          <p>Klik Tips untuk melihat contoh kalimat utama.</p>
+          <div>
+            <b-form-input
+              class="tinggi"
+              v-model="form.kalimatUtama2"
+            ></b-form-input>
+          </div>
         </div>
       </div>
 
@@ -396,14 +407,14 @@
 
     <div class="gabungan">
       <div class="catatan">
-        <p>Catatan Pra Menulis</p>
+        <p class="kata-bawah">Catatan Pra Menulis</p>
       </div>
       <div class="daftar">
         <ul
           v-for="(dataSesion, index) in pramenulisDataSesion.resultMenulis"
           :key="index"
         >
-          <li>&nbsp; &nbsp; {{ dataSesion.pramenulis }}</li>
+          <li>{{ dataSesion.pramenulis }}</li>
         </ul>
       </div>
     </div>
@@ -418,18 +429,18 @@
 }
 
 .content-satu {
-  //   background: red;
-
-  margin-top: 120px;
+  margin-top: 130px;
 }
 
 .tinggi {
   height: 50px;
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
 }
 
 .judul {
   font-size: 50px;
-  margin-top: 70px;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
@@ -499,218 +510,44 @@
 }
 // End Jenis Paragraf
 
-.center {
+// body
+.body {
   display: flex;
+  padding: 10px 0px 0px 90px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 10px;
+  }
+}
+
+// button tips
+.tips {
+  text-align: right;
+  margin: 5px;
   width: 100%;
-  height: 50px;
-  // position: absolute;
-  font-size: 16px;
-  padding-top: 12px;
-  background-color: rgba(139, 181, 236, 0.1);
-  &_paragraf {
-    margin-left: 100px;
+  @media Screen and (max-width: 768px) {
   }
-  &_topik {
-    margin-left: 70px;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: cornflowerblue;
-    &_paragraf {
-      width: 50%;
-    }
-
-    &_topik {
-      width: 50%;
-    }
-  }
-}
-
-.center {
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-  }
-}
-
-.tengah2_tips2 {
-  // padding: 70px 0px 0px 210px;
-  display: none;
-  @media screen and (max-width: 768px) {
-    padding: 4px 0px 8px 0px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    text-align: center;
+  &_judul {
     background-color: #00a279;
-    color: #fff;
-    font-size: normal;
-    margin-bottom: 70px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-// page 1 & 3
-.tengah {
-  // padding: 70px 0px 0px 210px;
-  display: flex;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 13px;
-  // background: red;
-  // button tips
-  &_tips {
-    padding: 4px 0px 0px 0px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #00a279;
-    color: #fff;
-    font-size: normal;
-    margin-bottom: 70px;
-    cursor: pointer;
-    margin-left: -120px;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
-
-  &_tips3 {
+    border: none;
+    line-height: 32px;
     width: 98px;
-    height: 32px;
     border-radius: 10px;
-    text-align: center;
-    background-color: #00a279;
+    margin: 5px;
     color: #fff;
-    font-size: 20px;
-    margin-bottom: 90px;
-    cursor: pointer;
-    margin-left: -100px;
-    margin-top: 10px;
-  }
-
-  &_tips4 {
-    width: 98px;
-    height: 32px;
-    border-radius: 10px;
-    text-align: center;
-    background-color: #00a279;
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 90px;
-    cursor: pointer;
-    margin-left: -100px;
-    margin-top: 10px;
-  }
-
-  // text page 1
-  &_text {
-    margin-left: 30px;
-    width: 65%;
-    font-family: Poppins;
-    font-size: 20px;
-  }
-
-  // text page 2
-  &_text2 {
-    margin-left: 30px;
-    width: 65%;
-    font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
+    @media Screen and (max-width: 780px) {
     }
   }
-
-  // text page 3
-  &_text3 {
-    margin-top: 20px;
-    padding: 0px 0px 0px 35px;
-    width: 68%;
+  &_kata {
+    padding: 10px 220px 0px 15px;
     font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
-    }
-  }
-
-  // text page 3
-  &_text4 {
-    margin-left: 30px;
-    width: 68%;
-    font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
-    }
-  }
-}
-
-// page 3 & 4
-.tengah_bawah {
-  padding: 50px 0px 25px 420px;
-  font-weight: 400;
-  @media screen and (max-width: 768px) {
-    padding: 50px 0px 25px 240px;
-    width: 120%;
-    font-weight: 0;
-  }
-  &_text-bawah {
-    width: 100%;
-    height: 90px;
-    font-family: Poppins;
-    font-size: 20px;
-    letter-spacing: 0em;
-    text-align: left;
     font-weight: 400;
-    margin-left: -185px;
-    margin-bottom: 2%;
-    padding: 0px 0px 40px 0px;
-    @media screen and (max-width: 768px) {
-      padding: 0px 0px 40px 0px;
-      margin-bottom: 50px;
-    }
-    @media screen and (max-width: 500px) {
-      padding: 0px 0px 40px 0px;
-      margin-bottom: 25%;
-    }
-    @media screen and (max-width: 375px) {
-      padding: 0px 0px 40px 0px;
-      margin-bottom: 55%;
-    }
-  }
-  &_form {
-    margin-top: -100px;
-    padding: 40px 0px 0px 0px;
-    width: 100%;
-    background: #fafafa;
-    margin-left: -185px;
-    @media screen and (max-width: 1100px) {
-      margin-top: -70px;
-    }
-    @media screen and (max-width: 768px) {
-      padding: 40px 0px 0px 0px;
-      width: 100%;
-    }
-    @media screen and (max-width: 400px) {
-      padding: 170px 0px 0px 0px;
-      width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
     }
   }
 }
@@ -749,9 +586,7 @@
   }
 }
 .gabungan {
-  padding: 65px 0px 80px 259px;
-  // background: red;
-  margin-left: -30px;
+  padding: 30px 0px 80px 220px;
   .catatan {
     width: 238px;
     height: 42px;
@@ -759,8 +594,16 @@
     color: #fff;
     background: #455a64;
     border-radius: 7px 7px 0px 0px;
-    padding: 8px 0px 0px 10px;
-    font-weight: 700;
+    padding: 10px 0px 0px 10px;
+  }
+
+  .kata-bawah {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
   }
 
   .daftar {
@@ -769,9 +612,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 13px 25px;
-    width: 800px;
-    left: 0px;
-    top: 230px;
+    width: 912px;
     font-size: 20px;
     font-weight: 400;
     background: #e0e0e0;
@@ -781,14 +622,16 @@
     }
   }
   @media (max-width: 768px) {
-    padding: 50px 35px 80px 35px;
+    padding: 50px 20px 80px 20px;
     .daftar {
       width: 100%;
       height: auto;
     }
 
+    .kata-bawah {
+    }
+
     .catatan {
-      width: 60%;
     }
   }
 }
@@ -875,13 +718,13 @@
 
 // Stepper 1 -7
 
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
-}
+// .container-progress {
+//   margin: 100px auto;
+//   font-size: 16px;
+//   font-weight: bold;
+//   font-family: Poppins;
+//   color: white;
+//   margin-top: 50px;
+//   padding: 0;
+// }
 </style>

@@ -1,4 +1,4 @@
-// import { mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -15,10 +15,12 @@ export default {
       form: {
         kalimatSederhana: "",
       },
+      topicGuides: {},
     };
   },
   mounted() {
     this.getStudentDataSesion();
+    this.getDataTopicGuidesList();
   },
   computed: {},
   methods: {
@@ -59,6 +61,25 @@ export default {
     getStudentDataSesion() {
       var studentData = sessionStorage.getItem("student_actions");
       this.studentDataSession = JSON.parse(studentData);
+    },
+    ...mapActions(["getTopicGuidesList"]),
+    getDataTopicGuidesList() {
+      this.getTopicGuidesList({
+        requestBody: {
+          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+          clientSecret: "27e78980e2419b308c86559ef0fb0105",
+          topicId: this.studentDataSession.topicId,
+          writingStepId: 35,
+        },
+        success: (res) => {
+         this.topicGuides = res
+         console.log("dfghhj", this.topicGuides);
+        },
+
+        fail: (res) => {
+          console.log(res);
+        },
+      });
     },
   },
 };

@@ -18,12 +18,12 @@
                     </div>
 
                     <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        Ide lainnya: <br />
-                        Cara membuat layang-layang <br />
-                        Cara membuat kompos <br />
-                        Cara memasak telur dadar <br />
-                        Cara membersihkan noda dari pakaian
+                      <div
+                        style="padding: 0% 0% 0% 12%; width: 85%;"
+                        v-for="(topicGuidesList, index) in topicGuides"
+                        :key="index"
+                      >
+                        <span v-html="topicGuidesList.tips"></span>
                       </div>
                     </div>
 
@@ -59,9 +59,13 @@
 
                     <div class="kalimat">
                       <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        <p>
-                          Jika ingin mengganti jenis dan topik paragraf,
-                          silahkan klik tombol panah kiri.
+                        <p
+                          v-for="(topicGuidesList, index) in topicGuides"
+                          :key="index"
+                        >
+                          <span
+                            v-html="topicGuidesList.writingStep.tips"
+                          ></span>
                         </p>
                       </div>
                     </div>
@@ -110,17 +114,9 @@
         </div>
       </div>
       <div class="col-md-9.5 tips2_kata">
-        <p>
-          Kamu hendak menjelaskan cara melakukan sesuatu yang sangat kamu
-          kuasai.
+        <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+          <span v-html="topicGuidesList.guide"></span>
         </p>
-        <p>Cara apa yang ingin kamu uraikan itu?</p>
-        <p>Contoh:</p>
-        <ul>
-          <li><p>Cara membuat kopi hitam yang nikmat</p></li>
-          <li><p>Cara menanam sayur sawi</p></li>
-          <li><p>Cara membuat media salindia yang menarik</p></li>
-        </ul>
       </div>
     </div>
 
@@ -128,7 +124,10 @@
       <div class="content-form">
         <table>
           <tr>
-            <label><p>Gunakan kalimat atau klausa sederhana</p></label
+            <label
+              ><p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+                {{ topicGuidesList.input }}
+              </p></label
             ><br />
           </tr>
         </table>

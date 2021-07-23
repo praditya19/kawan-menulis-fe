@@ -47,7 +47,7 @@
               <option
                 v-for="(topics, index) in topicsTypes"
                 :key="index"
-                :value="topics.id"
+                :value="index"
                 >{{ topics.name }}</option
               >
             </select>
@@ -76,9 +76,9 @@
                             <div
                               style="padding: 10px 0px 0px 0px; width: 100%;"
                             >
-                              <p>
-                                Topik ini akan memberimu kesempatan menulis cara
-                                melakukan sesuatu yang kamu kuasai.
+                              <p
+                              >
+                                {{ topicsTips }}
                               </p>
                             </div>
                           </div>
@@ -100,9 +100,7 @@
         </div>
       </div>
       <div class="mulai">
-        <b-button class="button-mulai" @click="handlesubmit()"
-          >Mulai</b-button
-        >
+        <b-button class="button-mulai" @click="handlesubmit()">Mulai</b-button>
       </div>
     </div>
   </div>
