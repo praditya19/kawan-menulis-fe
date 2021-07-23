@@ -28,10 +28,12 @@ export default {
       modalUbah: false,
 
       intermediary: [],
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -199,6 +201,10 @@ export default {
       return (
         this.dataForm.menulis.length > 4 && this.dataForm.menulis.length < 13
       );
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

@@ -23,10 +23,12 @@ export default {
       modalUbah: false,
 
       intermediary: [],
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -189,6 +191,10 @@ export default {
     },
     strukturkalimat5Next() {
       this.$router.push("/proofreading");
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

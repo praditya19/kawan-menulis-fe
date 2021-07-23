@@ -21,11 +21,10 @@
       <div class="content-tiga">
         <div class="jenis">
           <p class="jenis_paragraf">
-            <strong>Jenis Paragraf:</strong> Deskripsi
+            <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
           </p>
           <p class="jenis_topik">
-            <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-            sesuatu? Coba sebutkan satu.
+            <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
           </p>
         </div>
       </div>

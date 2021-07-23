@@ -1,4 +1,4 @@
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Revisi",
@@ -22,13 +22,12 @@ export default {
       menulisKesimpulanDataSesion: {},
       // Sementara
       intermediary: [],
-      topicGuides: {}
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
-    this.getStudentDataSesion();
-    this.getDataRevisiGuidesList();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -180,28 +179,9 @@ export default {
         this.dataForm.menulis.length > 4 && this.dataForm.menulis.length < 13
       );
     },
-    getStudentDataSesion() {
-      var studentData = sessionStorage.getItem("student_topik_menulis_paragraph");
-      this.studentDataSession = JSON.parse(studentData);
-    },
-    ...mapActions(["getTopicGuidesList"]),
-    getDataRevisiGuidesList() {
-      this.getTopicGuidesList({
-        requestBody: {
-          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
-          clientSecret: "27e78980e2419b308c86559ef0fb0105",
-          topicId: this.studentDataSession.topicId,
-          writingStepId: 42,
-        },
-        success: (res) => {
-         this.topicGuides = res
-         console.log("dfghhj", this.topicGuides);
-        },
-
-        fail: (res) => {
-          console.log(res);
-        },
-      });
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

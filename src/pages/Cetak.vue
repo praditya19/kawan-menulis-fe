@@ -43,10 +43,9 @@
     </div>
     <!-- tengah -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}</p>
       <p class="center_topik">
-        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-        sesuatu? Coba sebutkan satu.
+        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
       </p>
     </div>
 
@@ -64,7 +63,7 @@
           </div>
           <div class="text">
             <p>
-              Selamat <strong>Anton</strong>! <br />
+              Selamat <strong>{{dataStudent.name}}</strong>! <br />
               Anda telah menyelesaikan paragraf Anda dan sekarang Anda dapat
               memilih dari opsi ini.
             </p>

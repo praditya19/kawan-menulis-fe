@@ -13,12 +13,16 @@ export default {
       },
       showModalCopy: false,
       copy: "",
+      jenisTopics: {},
+      dataStudent: {}
     };
   },
   mounted() {
     this.getDataSesion();
     this.getStudentAction();
     window.scrollTo(0, 0);
+    this.getDataJenisTopics();
+    this. getStudent();
   },
   methods: {
     getDataSesion() {
@@ -73,6 +77,14 @@ export default {
           console.log(res);
         },
       });
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
+    },
+    getStudent() {
+      var student = sessionStorage.getItem("student_id_mulai-menulis");
+      this.dataStudent = JSON.parse(student);
     },
   },
   computed: {

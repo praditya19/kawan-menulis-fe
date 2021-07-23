@@ -7,10 +7,12 @@ export default {
     return {
       showModal: false,
       proFeridingDataSesion: {},
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -47,6 +49,10 @@ export default {
     },
     toRevisi() {
       this.$router.push("/revisi");
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {
