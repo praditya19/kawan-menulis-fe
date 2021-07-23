@@ -11,10 +11,11 @@
 
     <!-- tengah -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+      <p class="center_paragraf">
+        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+      </p>
       <p class="center_topik">
-        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-        sesuatu? Coba sebutkan satu.
+        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
       </p>
     </div>
 
@@ -77,10 +78,11 @@
 
                   <div class="kalimat2">
                     <div style="padding: 0% 0% 0% 9%; width: 90%;">
-                      <p>Kalimat utama memperkenalkan topik.</p>
-                      <p>
-                        Kalimat penutup menyatakan kembali dengan kata kata yang
-                        berbeda.
+                      <p
+                        v-for="(topicGuidesList, index) in topicGuides"
+                        :key="index"
+                      >
+                        <span v-html="topicGuidesList.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -118,14 +120,11 @@
 
                   <div class="kalimat2">
                     <div style="padding: 0% 0% 0% 9%; width: 93%;">
-                      <p>
-                        Kalimat penutup Anda harus meringkas topik paragraf
-                        Anda.
-                        <code style="color: red"
-                          ><strong
-                            >Dufan.(Diambil dari Topik Tahap 2)</strong
-                          ></code
-                        >
+                      <p
+                        v-for="(topicGuidesList, index) in topicGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 1" v-html="topicGuidesList.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -200,9 +199,12 @@
         </div>
         <div class="col-md-9.5">
           <div class="kalimat">
-            <p class="kalimat_p">
-              Sekarang Anda siap untuk menyimpulkan paragraf Anda. Kalimat
-              penutup merangkum apa yang telah Anda tulis.
+            <p
+              class="kalimat_p"
+              v-for="(topicGuidesList, index) in topicGuides"
+              :key="index"
+            >
+              <span v-html="topicGuidesList.guide"></span>
             </p>
           </div>
         </div>
@@ -226,16 +228,12 @@
         </div>
         <div class="col-md-9.5">
           <div class="kalimat">
-            <p class="kalimat_p">
-              Berikut adalah contoh kalimat yang dapat menyimpulkan paragraf
-              tentang tempat tertentu di dekat rumah Anda.
-            </p>
-            <p class="kalimat_p">
-              <strong>
-                Kamu kini dapat mengetahui, mengapa Dufan menjadi tempat pertama
-                yang akan saya tuju bersama teman yang datang pertama kali
-                mengunjungi saya.
-              </strong>
+            <p
+              class="kalimat_p"
+              v-for="(topicGuidesList, index) in topicGuides"
+              :key="index"
+            >
+              <span v-if="index === 1" v-html="topicGuidesList.guide"></span>
             </p>
           </div>
         </div>

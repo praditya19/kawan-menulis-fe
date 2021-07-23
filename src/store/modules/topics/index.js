@@ -8,6 +8,7 @@ const state = {
   paragraphtypesList: [],
   topicGuidesList: [],
   paragraphTypes: [],
+  topics: [],
 };
 
 const mutations = {
@@ -17,8 +18,11 @@ const mutations = {
   settopicguidesList(state, value) {
     state.getTopicGuidesList = value;
   },
-  getParagraphTypes(state, value) {
+  setParagraphTypes(state, value) {
     state.paragraphTypes = value;
+  },
+  setTopicDetails(state, value) {
+    state.topics = value;
   },
 };
 
@@ -48,7 +52,18 @@ const actions = {
   getParagraphTypesById: ({ commit }, { requestBody, success, fail }) => {
     Vue.http.post(config.api.paragraphtypes + "/detail", requestBody).then(
       (response) => {
-        commit("getParagraphTypes", response);
+        commit("setParagraphTypes", response);
+        success && success(response);
+      },
+      (response) => {
+        fail && fail(response);
+      }
+    );
+  },
+  getTopicById: ({ commit }, { requestBody, success, fail }) => {
+    Vue.http.post(config.api.topics + "/detail", requestBody).then(
+      (response) => {
+        commit("setTopicDetails", response);
         success && success(response);
       },
       (response) => {

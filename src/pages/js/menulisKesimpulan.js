@@ -1,4 +1,4 @@
-import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "MenulisKesimpulan",
@@ -17,10 +17,16 @@ export default {
 
       // Data Sesion
       dataSesion: {},
+      jenisTopics: {},
+      studentDataSession: {},
+      topicGuides: {}
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
+    this.getStudentDataSesion();
+    this.getDataMenulisKesimpulancGuidesList();
   },
   methods: {
     getDataSesion() {
@@ -67,8 +73,33 @@ export default {
       sessionStorage.setItem("student_topik_menulis_paragraph", end);
       this.$router.push("/revisi");
     },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
+    },
+    getStudentDataSesion() {
+      var studentData = sessionStorage.getItem("student_topik_menulis_paragraph");
+      this.studentDataSession = JSON.parse(studentData);
+    },
+    ...mapActions(["getTopicGuidesList"]),
+    getDataMenulisKesimpulancGuidesList() {
+      this.getTopicGuidesList({
+        requestBody: {
+          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+          clientSecret: "27e78980e2419b308c86559ef0fb0105",
+          topicId: this.studentDataSession.topicId,
+          writingStepId: 41,
+        },
+        success: (res) => {
+         this.topicGuides = res
+        },
+
+        fail: (res) => {
+          console.log(res);
+        },
+      });
+    },
   },
   computed: {
-    ...mapGetters(["isMobile"]),
   },
 };

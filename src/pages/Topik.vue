@@ -47,7 +47,7 @@
               <option
                 v-for="(topics, index) in topicsTypes"
                 :key="index"
-                :value="index"
+                :value="topics.id"
                 >{{ topics.name }}</option
               >
             </select>

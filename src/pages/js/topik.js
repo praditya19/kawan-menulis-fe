@@ -10,6 +10,8 @@ export default {
       topicsSelect: "",
       topicsTips: "",
       paragraphSelect: "",
+
+      jenisParagraf: "", //  use Jenis Paragraf after getById
     };
   },
 
@@ -83,6 +85,7 @@ export default {
 
     ...mapActions(["createStudentsActions"]),
     ...mapActions(["getParagraphTypesById"]),
+    ...mapActions(["getTopicById"]),
     async handlesubmit() {
       await this.getParagraphTypesById({
         requestBody: {
@@ -91,27 +94,40 @@ export default {
           paragraphTypeId: this.paragraphSelect,
         },
         success: (res) => {
-          var seison = {
-            jenisParagraf: res.data.paragraphType.name,
-            topik: res.data.paragraphType.topics[this.topicsSelect].name,
-          };
-          var dataOFsesion = JSON.stringify(seison);
-          sessionStorage.setItem("jenis_paragraph", dataOFsesion); //  <--------- Fine sesion
-          this.createStudentsActions({
+          this.jenisParagraf = res.data.paragraphType.name; // <---- Jenis Paragraf is fine
+          this.getTopicById({
             requestBody: {
               clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
               clientSecret: "27e78980e2419b308c86559ef0fb0105",
-              studentId: this.studentDataSession.id,
-              topicId: res.data.paragraphType.topics[this.topicsSelect].id,
+              topicId: this.topicsSelect,
             },
             success: (res) => {
-              sessionStorage.setItem(
-                "student_actions",
-                JSON.stringify(res.body.studentAction)
-              );
-              this.$router.push("/topik2");
-            },
+              var seison = {
+                jenisParagraf: this.jenisParagraf,
+                topik: res.data.topic.name,
+              };
+              var dataOFsesion = JSON.stringify(seison);
+              sessionStorage.setItem("jenis_paragraph", dataOFsesion); // <--------- Finish of sesion storage
+              this.createStudentsActions({
+                requestBody: {
+                  clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+                  clientSecret: "27e78980e2419b308c86559ef0fb0105",
+                  studentId: this.studentDataSession.id,
+                  topicId: this.topicsSelect,
+                },
+                success: (res) => {
+                  sessionStorage.setItem(
+                    "student_actions",
+                    JSON.stringify(res.data.studentAction)
+                  );
+                  this.$router.push("/topik2");
+                },
 
+                fail: (res) => {
+                  console.log(res);
+                },
+              });
+            },
             fail: (res) => {
               console.log(res);
             },

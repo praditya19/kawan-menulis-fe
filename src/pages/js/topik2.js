@@ -76,7 +76,6 @@ export default {
         },
         success: (res) => {
          this.topicGuides = res
-         console.log("dfghhj", this.topicGuides);
         },
 
         fail: (res) => {
