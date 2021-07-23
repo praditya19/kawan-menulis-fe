@@ -16,11 +16,14 @@ export default {
         kalimatSederhana: "",
       },
       topicGuides: {},
+      jenisTopics: {}
     };
   },
   mounted() {
     this.getStudentDataSesion();
     this.getDataTopicGuidesList();
+    this.getDataJenisTopics();
+    console.log(this.jenisTopics);
   },
   computed: {},
   methods: {
@@ -80,6 +83,10 @@ export default {
           console.log(res);
         },
       });
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
 };

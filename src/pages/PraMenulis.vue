@@ -16,14 +16,13 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="content_padding_paragraf">
-            <p><b>Jenis Paragraf: </b>Deskripsi</p>
+            <p><b>Jenis Paragraf: </b>&nbsp;{{jenisTopics.jenisParagraf}}</p>
           </div>
         </div>
         <div class="col-sm-8">
           <div class="content_padding_paragraf_right">
             <p>
-              <b>Topik: </b>Apakah kamu punya kemahiran dalam membuat sesuatu?
-              Coba sebutkan satu.
+              <b>Topik: </b>&nbsp;{{jenisTopics.topik}}
             </p>
           </div>
         </div>

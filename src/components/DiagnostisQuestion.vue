@@ -29,7 +29,7 @@
                 class="body"
               >
                 <div v-if="show.form[indexStepper].active">
-                  <p>{{ show.position.order }}. {{ answerData.question }}</p>
+                  <p>{{ show.position.order }}. <span v-html="answerData.question"></span></p>
 
                   <b-button
                     variant="outline-primary"

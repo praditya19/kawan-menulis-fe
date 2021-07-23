@@ -24,6 +24,7 @@ export default {
       pramenulisPage4: false,
       pramenulisPage5: false,
       pramenulisPage6: false,
+      jenisTopics: {},
     };
   },
 
@@ -130,11 +131,16 @@ export default {
     pramenulis6Next() {
       this.$router.push("/kalimat-utama");
     },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
+    },
   },
   computed: {
     ...mapGetters(["isMobile"]),
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
 };

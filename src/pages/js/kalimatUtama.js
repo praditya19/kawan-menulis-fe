@@ -19,10 +19,12 @@ export default {
       kalimatUtamaPage2: false,
       kalimatUtamaPage3: false,
       kalimatUtamaPage4: false,
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -105,6 +107,10 @@ export default {
         this.$router.push("/pramenulis-lanjutan");
       }
       return false;
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

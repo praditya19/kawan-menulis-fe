@@ -24,10 +24,12 @@ export default {
       pengorganisasianPage2: false,
       pengorganisasianPage3: false,
       pengorganisasianPage4: false,
+      jenisTopics: {}
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -211,6 +213,10 @@ export default {
     },
     pengorganisasian4Next() {
       this.$router.push("/menulis-kesimpulan");
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

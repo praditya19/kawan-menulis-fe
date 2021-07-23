@@ -179,10 +179,9 @@
     </div>
     <!-- Jenis Paragraf -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong> Deskripsi</p>
+      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
       <p class="center_topik">
-        <strong>Topik:</strong> Apakah kamu punya kemahiran dalam membuat
-        sesuatu? Coba sebutkan satu.
+        <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
       </p>
     </div>
     <!-- Button Tips dan Kalimat -->

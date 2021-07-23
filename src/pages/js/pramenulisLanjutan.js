@@ -12,10 +12,12 @@ export default {
         pramenulisLanjutanPembaruan: "",
       },
       kalimatUtamaDataSesion: {},
+      jenisTopics: {},
     };
   },
   mounted() {
     this.getDataSesion();
+    this. getDataJenisTopics();
   },
   methods: {
     // coba button
@@ -100,6 +102,10 @@ export default {
       ];
       this.dataForm.pramenulisLanjutanPembaruan = bbb.pramenulis;
       this.showModal2 = true;
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {

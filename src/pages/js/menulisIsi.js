@@ -23,10 +23,12 @@ export default {
       implementArrayPramenulis: [],
       // sesion
       pramenulisLanjutanDataSesion: {},
+      jenisTopics: {}
     };
   },
   mounted() {
     this.getDataSesion();
+    this.getDataJenisTopics();
   },
   methods: {
     getDataSesion() {
@@ -128,6 +130,10 @@ export default {
         );
         return false;
       }
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
   computed: {
