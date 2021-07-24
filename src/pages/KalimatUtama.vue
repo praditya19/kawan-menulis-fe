@@ -23,186 +23,6 @@
         </p>
       </div>
     </div>
-
-    <!-- modal -->
-    <!-- page1 -->
-    <!-- popup -->
-    <div v-if="showModal === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p
-                        class="mb-4"
-                        v-for="(details, index) in kalimatUtamaGuides"
-                        :key="index"
-                      >
-                        <span v-if="index === 0" v-html="details.tips"></span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-
-    <!-- page2 -->
-    <!-- popup -->
-    <div v-if="showModal2 === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p
-                        class="mb-4"
-                        v-for="(details, index) in kalimatUtamaGuides"
-                        :key="index"
-                      >
-                        <span v-if="index === 1" v-html="details.tips"></span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal2 = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-
-    <!-- page3 -->
-    <!-- popup -->
-    <div v-if="showModal3 === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p
-                        class="mb-4"
-                        v-for="(details, index) in kalimatUtamaGuides"
-                        :key="index"
-                      >
-                        <span v-if="index === 2" v-html="details.tips"></span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal3 = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-
-    <!-- page4 -->
-    <!-- popup -->
-    <div v-if="showModal4 === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height:38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p
-                        class="mb-4"
-                        v-for="(details, index) in kalimatUtamaGuides"
-                        :key="index"
-                      >
-                        <span v-if="index === 3" v-html="details.tips"></span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal4 = false">
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-
-    <!-- Modal Ok Screen 4 dan 5-->
-    <!-- screen 4 -->
     <!-- popup -->
     <div v-if="showModal5 === true">
       <transition name="model">
@@ -284,18 +104,69 @@
       </transition>
     </div>
 
-    <!-- kalimatutama page 1 -->
+    <!-- kalimat utama page 1 -->
     <div v-if="kalimatUtamaPage1 === true">
       <div class="body">
         <div class="col-md-2.5">
           <div class="tips">
             <button class="tips_judul" @click="showModal = true">TIPS</button>
+            <div v-if="showModal === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                          <div class="image-container">
+                            <img
+                              style="width: 40px;height:38.49px;"
+                              src="@/assets/checklist.png"
+                            />
+                          </div>
+
+                          <div class="kalimat">
+                            <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                              <p
+                                class="mb-4"
+                                v-for="(details, index) in kalimatUtamaGuides"
+                                :key="index"
+                              >
+                                <span
+                                  v-if="index === 0"
+                                  v-html="details.tips"
+                                ></span>
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="tombol">
+                            <button class="ok" block @click="showModal = false">
+                              OK
+                            </button>
+                          </div>
+
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
-            <span v-if="index === 0" v-html="details.guide"></span>
-          </p>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 0" v-html="details.guide"></span>
+            </p>
+          </div>
+          <div v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <p>
+              <span v-if="index === 0" v-html="details.input"></span>
+            </p>
+          </div>
         </div>
       </div>
       <div class="Button">
@@ -313,12 +184,67 @@
         <div class="col-md-2.5">
           <div class="tips">
             <button class="tips_judul" @click="showModal2 = true">TIPS</button>
+            <div v-if="showModal2 === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                          <div class="image-container">
+                            <img
+                              style="width: 40px;height:38.49px;"
+                              src="@/assets/checklist.png"
+                            />
+                          </div>
+
+                          <div class="kalimat">
+                            <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                              <p
+                                class="mb-4"
+                                v-for="(details, index) in kalimatUtamaGuides"
+                                :key="index"
+                              >
+                                <span
+                                  v-if="index === 1"
+                                  v-html="details.tips"
+                                ></span>
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="tombol">
+                            <button
+                              class="ok"
+                              block
+                              @click="showModal2 = false"
+                            >
+                              OK
+                            </button>
+                          </div>
+
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
-            <span v-if="index === 1" v-html="details.guide"></span>
-          </p>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 1" v-html="details.guide"></span>
+            </p>
+          </div>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 1" v-html="details.input"></span>
+            </p>
+          </div>
         </div>
       </div>
       <!-- button -->
@@ -337,12 +263,62 @@
         <div class="col-md-2.5">
           <div class="tips">
             <button class="tips_judul" @click="showModal3 = true">TIPS</button>
+            <div v-if="showModal3 === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                          <div class="image-container">
+                            <img
+                              style="width: 40px;height:38.49px;"
+                              src="@/assets/checklist.png"
+                            />
+                          </div>
+
+                          <div class="kalimat">
+                            <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                              <p
+                                class="mb-4"
+                                v-for="(details, index) in kalimatUtamaGuides"
+                                :key="index"
+                              >
+                                <span
+                                  v-if="index === 2"
+                                  v-html="details.tips"
+                                ></span>
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="tombol">
+                            <button
+                              class="ok"
+                              block
+                              @click="showModal3 = false"
+                            >
+                              OK
+                            </button>
+                          </div>
+
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
-            <span v-if="index === 2" v-html="details.guide"></span>
-          </p>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 2" v-html="details.guide"></span>
+            </p>
+          </div>
           <div class="tengah_bawah">
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 2" v-html="details.input"></span>
@@ -373,15 +349,67 @@
         <div class="col-md-2.5">
           <div class="tips">
             <button class="tips_judul" @click="showModal4 = true">TIPS</button>
+            <div v-if="showModal4 === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                          <div class="image-container">
+                            <img
+                              style="width: 40px;height:38.49px;"
+                              src="@/assets/checklist.png"
+                            />
+                          </div>
+
+                          <div class="kalimat">
+                            <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                              <p
+                                class="mb-4"
+                                v-for="(details, index) in kalimatUtamaGuides"
+                                :key="index"
+                              >
+                                <span
+                                  v-if="index === 3"
+                                  v-html="details.tips"
+                                ></span>
+                              </p>
+                            </div>
+                          </div>
+
+                          <div class="tombol">
+                            <button
+                              class="ok"
+                              block
+                              @click="showModal4 = false"
+                            >
+                              OK
+                            </button>
+                          </div>
+
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
-            <span v-if="index === 3" v-html="details.guide"></span>
-          </p>
-          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
-            <span v-if="index === 3" v-html="details.input"></span>
-          </p>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 3" v-html="details.guide"></span>
+            </p>
+          </div>
+          <div>
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 3" v-html="details.input"></span>
+            </p>
+          </div>
           <div>
             <b-form-input
               class="tinggi"
@@ -724,4 +752,3 @@
 //   padding: 0;
 // }
 </style>
-

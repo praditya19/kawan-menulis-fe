@@ -37,6 +37,10 @@ export default {
       );
       this.pramenulisDataSesion = JSON.parse(pramenulisData);
     },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
+    },
     ...mapActions(["getTopicGuidesList"]),
     getDataKalimatUtamaGuidesList() {
       this.getTopicGuidesList({
@@ -49,7 +53,6 @@ export default {
         success: (res) => {
           this.kalimatUtamaGuides = res;
         },
-
         fail: (res) => {
           console.log(res);
         },
@@ -81,11 +84,9 @@ export default {
         this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
         var savePage3 = JSON.stringify(this.pramenulisDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
-
         this.kalimatUtamaPage4 = true;
         if (this.kalimatUtamaPage4 === true) {
           this.kalimatUtamaPage3 = false;
-          this.showModal5 = false;
         } else {
           alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
         }
@@ -130,13 +131,8 @@ export default {
       }
       return false;
     },
-    getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
-      this.jenisTopics = JSON.parse(jenisTopic);
-    },
   },
   computed: {
     ...mapGetters(["isMobile"]),
   },
 };
-
