@@ -82,7 +82,6 @@ export default {
         return;
       }
       var trueOrFalse = this.checkingValidasi(this.dataForm.menulis);
-      console.log(trueOrFalse);
       if (trueOrFalse === true) {
         for (
           var i = 0;

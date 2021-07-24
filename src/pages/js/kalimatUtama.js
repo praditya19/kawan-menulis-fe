@@ -48,7 +48,6 @@ export default {
         },
         success: (res) => {
           this.kalimatUtamaGuides = res;
-          console.log(this.kalimatUtamaGuides);
         },
 
         fail: (res) => {

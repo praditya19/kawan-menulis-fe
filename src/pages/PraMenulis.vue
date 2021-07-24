@@ -413,13 +413,13 @@
         <div class="row">
           <div class="col-sm-2">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal3 = true">
+              <b-button class="button" @click="showModal4 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
               </b-button>
               <!-- popup -->
-              <div v-if="showModal3 === true">
+              <div v-if="showModal4 === true">
                 <transition name="model">
                   <div class="modal-mask">
                     <div class="modal-wrapper">
@@ -452,7 +452,7 @@
                               <button
                                 class="ok"
                                 block
-                                @click="showModal3 = false"
+                                @click="showModal4 = false"
                               >
                                 OK
                               </button>
@@ -672,7 +672,7 @@
         </div>
       </div>
       <!-- popup -->
-      <div v-if="showModal === true">
+      <div v-if="showModal6 === true">
         <transition name="model">
           <div class="modal-mask">
             <div class="modal-wrapper">
@@ -698,7 +698,7 @@
                       </div>
                     </div>
                     <div class="tombol">
-                      <button class="ok" block @click="showModal = false">
+                      <button class="ok" block @click="showModal6 = false">
                         OK
                       </button>
                     </div>
@@ -715,7 +715,7 @@
         <div class="row">
           <div class="col-sm-1">
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">
+              <b-button class="button" @click="showModal6 = true">
                 <div class="button_tombol_margin">
                   <b>TIPS</b>
                 </div>
@@ -1115,4 +1115,3 @@
   padding: 0;
 }
 </style>
-

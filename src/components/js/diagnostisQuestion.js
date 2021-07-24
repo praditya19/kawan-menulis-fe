@@ -8,7 +8,34 @@ export default {
       clientSecret: "27e78980e2419b308c86559ef0fb0105",
       scores: [],
       answer: [],
-      huruf: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+      huruf: [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ],
       answerId: "",
       questionId: "",
       show: {
@@ -27,12 +54,21 @@ export default {
   },
   mounted() {
     this.getAllAnswer();
+    this.disablod();
   },
   computed: {
     ...mapGetters(["isMobile", "kmClientId", "kmClientSecret"]),
   },
+  created() {
+    this.answer.map((e) => {
+      return { ...e, isDisabled: true };
+    });
+  },
   methods: {
     ...mapActions(["createScores"]),
+    disablod() {
+      return false;
+    },
     handleSubmit() {
       this.createScores({
         requestBody: {
@@ -41,7 +77,10 @@ export default {
           clientSecret: this.clientSecret,
         },
         success: (res) => {
-          sessionStorage.setItem("result_student", JSON.stringify(res.body.score))
+          sessionStorage.setItem(
+            "result_student",
+            JSON.stringify(res.body.score)
+          );
           this.$router.push("/diagnostik-hasil-tes");
           window.location.reload();
         },
@@ -71,8 +110,9 @@ export default {
       this.show.history.push({ name: findPositions.name });
       this.scores.push({
         questionId: this.questionId,
-        answerId: this.answerId
-      })
+        answerId: this.answerId,
+      });
+      this.answerId = "";
     },
 
     back() {
@@ -140,9 +180,8 @@ export default {
     },
 
     calc(id, questionId) {
-        this.answerId = id;
-        this.questionId = questionId;
-        console.log(id, questionId);
-    }
+      this.answerId = id;
+      this.questionId = questionId;
+    },
   },
 };

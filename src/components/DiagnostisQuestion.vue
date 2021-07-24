@@ -29,7 +29,10 @@
                 class="body"
               >
                 <div v-if="show.form[indexStepper].active">
-                  <p>{{ show.position.order }}. <span v-html="answerData.question"></span></p>
+                  <p>
+                    {{ show.position.order }}.
+                    <span v-html="answerData.question"></span>
+                  </p>
 
                   <b-button
                     variant="outline-primary"
@@ -51,7 +54,11 @@
                   <b-button @click="back()" variant="outline-secondary">
                     <b-icon icon="chevron-left" aria-hidden="true"></b-icon>
                   </b-button>
-                  <b-button @click="next()" variant="outline-secondary">
+                  <b-button
+                    :disabled="answerId.length === 0"
+                    @click="next()"
+                    variant="outline-secondary"
+                  >
                     <b-icon icon="chevron-right" aria-hidden="true"></b-icon>
                   </b-button>
                 </div>
