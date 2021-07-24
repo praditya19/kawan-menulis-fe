@@ -129,373 +129,380 @@
 <script src="./js/final.js" />
 
 <style lang="scss" scoped>
-// all
-.all {
-  overflow: hidden;
-}
-
-// Judul
-.content-satu {
-  margin-top: 120px;
-}
-
-.judul {
-  font-size: 50px;
-  margin-top: 70px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  margin-left: 30%;
-  h1 {
-    font-weight: bolder;
-    font-size: 47px;
-    margin-left: 10%;
+  // all
+  .all {
+    overflow: hidden;
   }
-  @media Screen and (max-width: 780px) {
-    margin-left: 0%;
-    align-items: center;
-    text-align: center;
+
+  // Judul
+  .content-satu {
+    margin-top: 120px;
+  }
+
+  .judul {
+    font-size: 50px;
+    margin-top: 70px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 30%;
     h1 {
+      font-weight: bolder;
+      font-size: 47px;
+      margin-left: 10%;
+    }
+    @media Screen and (max-width: 780px) {
       margin-left: 0%;
+      align-items: center;
+      text-align: center;
+      h1 {
+        margin-left: 0%;
+      }
+    }
+    @media Screen and (max-width: 400px) {
+      margin-left: 0%;
+      align-items: center;
+      text-align: center;
+      h1 {
+        font-size: 30px;
+        margin-left: 0%;
+      }
     }
   }
-  @media Screen and (max-width: 400px) {
-    margin-left: 0%;
-    align-items: center;
-    text-align: center;
-    h1 {
-      font-size: 30px;
-      margin-left: 0%;
-    }
-  }
-}
-// End Judul
+  // End Judul
 
-// Stepper
-.steper {
-  padding: 10px 200px 10px 200px;
-  &_image {
-    width: 100%;
-    height: auto;
-  }
-  @media (max-width: 768px) {
-    padding: 10px 20px 10px 20px;
+  // Stepper
+  .steper {
+    padding: 10px 200px 10px 200px;
     &_image {
       width: 100%;
       height: auto;
     }
-  }
-}
-
-// tengah
-.center {
-  display: flex;
-  width: 100%;
-  height: auto;
-  font-size: 16px;
-  background-color: rgba(139, 181, 236, 0.1);
-  padding: 11px 0px 0px 140px;
-  &_topik {
-    padding-left: 80px;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 11px 20px 0px 20px;
-  }
-}
-
-// body
-.body {
-  display: flex;
-  padding: 0px 0px 0px 130px;
-  @media screen and(max-width: 768px) {
-    padding: 0px;
-  }
-}
-// Tips dan Kalimat
-.tips {
-  text-align: right;
-  margin: 5px;
-  @media Screen and (max-width: 768px) {
-    display: none;
-  }
-  &_judul {
-    background-color: #00a279;
-    border: none;
-    line-height: 32px;
-    width: 98px;
-    border-radius: 10px;
-    margin: 5px;
-    @media Screen and (max-width: 780px) {
-      line-height: 22px;
+    @media (max-width: 768px) {
+      padding: 10px 20px 10px 20px;
+      &_image {
+        width: 100%;
+        height: auto;
+      }
     }
   }
-}
 
-.tips2 {
-  display: none;
-  @media Screen and (max-width: 768px) {
-    padding: 20px 0px 0px 0px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  // tengah
+  .center {
     display: flex;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    background-color: rgba(139, 181, 236, 0.1);
+    padding: 11px 10px 0px 130px;
+    &_paragraf {
+      padding-right: 90px;
+      // background: #00a279;
+      @media (max-width: 768px) {
+        padding-right: 20px;
+      }
+    }
+    &_topik {
+      // background: #0a4da3;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 11px 10px 0px 10px;
+    }
   }
-  &_judul2 {
-    display: none;
+
+  // body
+  .body {
+    display: flex;
+    padding: 0px 0px 0px 130px;
+    @media screen and(max-width: 768px) {
+      padding: 0px;
+    }
+  }
+  // Tips dan Kalimat
+  .tips {
+    text-align: right;
+    margin: 5px;
     @media Screen and (max-width: 768px) {
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      display: flex;
+      display: none;
+    }
+    &_judul {
       background-color: #00a279;
       border: none;
       line-height: 32px;
       width: 98px;
       border-radius: 10px;
       margin: 5px;
+      @media Screen and (max-width: 780px) {
+        line-height: 22px;
+      }
     }
   }
-}
 
-.isi {
-  padding: 30px 200px 10px 20px;
-  width: 100%;
-  @media (max-width: 768px) {
-    margin-left: 0px;
-    padding: 25px 10px 10px 0px;
-  }
-}
-
-.kalimat {
-  &_p {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: #000000;
-  }
-}
-// end Tips dan Kalimat
-
-// Button Gaya Menulis dll
-.all-button {
-  padding: 32px 0px 0px 0px;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    padding: 0px;
-  }
-  &_satu {
-    border: none;
-    background: #e0e0e0;
-    border-radius: 20px;
-    width: 181px;
-    height: 37px;
-    margin: 0.3%;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    @media (max-width: 570px) {
-      width: 100%;
-      margin-top: 10px;
+  .tips2 {
+    display: none;
+    @media Screen and (max-width: 768px) {
+      padding: 20px 0px 0px 0px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    &_judul2 {
+      display: none;
+      @media Screen and (max-width: 768px) {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: #00a279;
+        border: none;
+        line-height: 32px;
+        width: 98px;
+        border-radius: 10px;
+        margin: 5px;
+      }
     }
   }
-}
 
-.all-button_satu:hover {
-  background-color: #f1f6cc;
-}
-// End Button Gaya Menulis dll
-
-// Tombol OK
-.button {
-  padding: 30px 0px 30px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 768px) {
+  .isi {
+    padding: 30px 200px 10px 20px;
     width: 100%;
-    .button1 {
+    @media (max-width: 768px) {
       margin-left: 0px;
-      position: center;
+      padding: 25px 10px 10px 0px;
     }
   }
-  .button1 {
-    background-color: #0a4da3;
-    height: 44px;
-    width: 110px;
-    border-radius: 42px;
-    border: none;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 30px;
-    display: flex;
-    padding-top: 8px;
-    b {
+
+  .kalimat {
+    &_p {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      color: #000000;
+    }
+  }
+  // end Tips dan Kalimat
+
+  // Button Gaya Menulis dll
+  .all-button {
+    padding: 32px 0px 0px 0px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      padding: 0px;
+    }
+    &_satu {
+      border: none;
+      background: #e0e0e0;
+      border-radius: 20px;
+      width: 181px;
+      height: 37px;
+      margin: 0.3%;
       font-family: Poppins;
       font-style: normal;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      @media (max-width: 570px) {
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   }
-  .button1:hover {
-    background-color: #0a4da3;
-  }
-}
-// End Tombol OK
 
-// Konsep Menulis
-.content-konsep {
-  margin-top: 42px;
-  @media screen and (max-width: 750px) {
-    width: 100%;
+  .all-button_satu:hover {
+    background-color: #f1f6cc;
   }
-}
+  // End Button Gaya Menulis dll
 
-.border {
-  background-color: #455a64;
-  height: 42px;
-  width: 101px;
-  border-radius: 7px 7px 0px 0px;
-  border: none;
-  @media screen and (max-width: 750px) {
-    width: 101px;
-  }
-  h4 {
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    padding-top: 10px;
-  }
-  &_list {
+  // Tombol OK
+  .button {
+    padding: 30px 0px 30px 0px;
     display: flex;
-    font-family: Poppins;
-    background-color: #e0e0e0;
-    width: 100%;
-    padding: 13px;
-    border-radius: 0px 0px 14px 14px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    color: #030303;
-  }
-}
-// End Konsep Menulis
-.modal-content {
-  background: #e8f1fd;
-  width: 100%;
-  border-radius: 34px;
-  padding: 20px 0px 20px 0px;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-}
-/* end style Modal */
-
-/* Style Isi Modal */
-.image-container {
-  text-align: center;
-  /* background: red; */
-}
-
-.kalimat1 {
-  font-family: Poppins;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 5px;
-  /* background: red; */
-}
-
-.tombol {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
-.ok {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
-/* end style isi modal */
-
-/* Background belakang modal */
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  padding-top: 150px;
-  @media (max-width: 768px) {
-    padding-top: 95px;
-  }
-}
-
-/* End Background Belakang Modal */
-
-// Kalimat bawah tombol Tips kedua
-.content-cara {
-  font-family: Poppins;
-  width: 100%;
-  font-size: 20px;
-  @media (max-width: 768px) {
-    padding: 0px 10px 0px 0px;
-  }
-  .kata {
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-  .form {
-    width: 800px;
-    height: 50px;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 768px) {
       width: 100%;
-      height: auto;
+      .button1 {
+        margin-left: 0px;
+        position: center;
+      }
+    }
+    .button1 {
+      background-color: #0a4da3;
+      height: 44px;
+      width: 110px;
+      border-radius: 42px;
+      border: none;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 30px;
+      display: flex;
+      padding-top: 8px;
+      b {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+    .button1:hover {
+      background-color: #0a4da3;
     }
   }
-}
+  // End Tombol OK
 
-// Button OK dan previus
-.btn-back-ok {
-  // background: red;
-  text-align: center;
-  margin-bottom: 20px;
-}
+  // Konsep Menulis
+  .content-konsep {
+    margin-top: 42px;
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+  }
 
-.submit_ok {
-  background-color: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-  margin-left: 80px;
-}
+  .border {
+    background-color: #455a64;
+    height: 42px;
+    width: 101px;
+    border-radius: 7px 7px 0px 0px;
+    border: none;
+    @media screen and (max-width: 750px) {
+      width: 101px;
+    }
+    h4 {
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      padding-top: 10px;
+    }
+    &_list {
+      display: flex;
+      font-family: Poppins;
+      background-color: #e0e0e0;
+      width: 100%;
+      padding: 13px;
+      border-radius: 0px 0px 14px 14px;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 30px;
+      color: #030303;
+    }
+  }
+  // End Konsep Menulis
+  .modal-content {
+    background: #e8f1fd;
+    width: 100%;
+    border-radius: 34px;
+    padding: 20px 0px 20px 0px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  /* end style Modal */
 
-.submit_ok:hover {
-  background-color: #0a4da3;
-}
+  /* Style Isi Modal */
+  .image-container {
+    text-align: center;
+    /* background: red; */
+  }
+
+  .kalimat1 {
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    /* background: red; */
+  }
+
+  .tombol {
+    /* background: red; */
+    text-align: center;
+    padding: 5px;
+  }
+
+  .ok {
+    background: #0a4da3;
+    border-radius: 39px;
+    border: none;
+    width: 108px;
+    height: 32.71px;
+    color: #fff;
+    font-family: Poppins;
+  }
+
+  /* end style isi modal */
+
+  /* Background belakang modal */
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-wrapper {
+    display: table-cell;
+    padding-top: 150px;
+    @media (max-width: 768px) {
+      padding-top: 95px;
+    }
+  }
+
+  /* End Background Belakang Modal */
+
+  // Kalimat bawah tombol Tips kedua
+  .content-cara {
+    font-family: Poppins;
+    width: 100%;
+    font-size: 20px;
+    @media (max-width: 768px) {
+      padding: 0px 10px 0px 0px;
+    }
+    .kata {
+      font-family: Poppins;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    .form {
+      width: 800px;
+      height: 50px;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // Button OK dan previus
+  .btn-back-ok {
+    // background: red;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .submit_ok {
+    background-color: #0a4da3;
+    border-radius: 39px;
+    border: none;
+    width: 108px;
+    height: 32.71px;
+    color: #fff;
+    font-family: Poppins;
+    margin-left: 80px;
+  }
+
+  .submit_ok:hover {
+    background-color: #0a4da3;
+  }
 </style>

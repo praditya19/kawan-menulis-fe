@@ -15,9 +15,11 @@
     <!-- Jenis Paragraf -->
     <div class="content-tiga">
       <div class="jenis">
-        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+        <p class="jenis_paragraf">
+          <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+        </p>
         <p class="jenis_topik">
-          <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
+          <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
         </p>
       </div>
     </div>
@@ -42,8 +44,12 @@
 
                   <div class="kalimat">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p class="mb-4">
-                        Kalimat utama mengandung topik yang hendak kamu tulis.
+                      <p
+                        class="mb-4"
+                        v-for="(details, index) in kalimatUtamaGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 0" v-html="details.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -82,13 +88,12 @@
 
                   <div class="kalimat">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p class="mb-4">
-                        Kalimat utama yang kamu tulis harus menggambarkan ide
-                        utama paragrafmu:
-                        <br /><strong>Cara membuat kopi</strong><br /><code
-                          style="color:red;font-size:16px;"
-                          ><strong>(Ambil dari Topik Input 1)</strong></code
-                        >
+                      <p
+                        class="mb-4"
+                        v-for="(details, index) in kalimatUtamaGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 1" v-html="details.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -127,9 +132,12 @@
 
                   <div class="kalimat">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p class="mb-4">
-                        Lengkapi kalimat di dalam kotak masukan menjadi kalimat
-                        utama yang baik.
+                      <p
+                        class="mb-4"
+                        v-for="(details, index) in kalimatUtamaGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 2" v-html="details.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -168,9 +176,12 @@
 
                   <div class="kalimat">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p class="mb-4">
-                        Contoh kalimat utama : Saya sangat mahir dalam membuat
-                        salindia yang menarik.
+                      <p
+                        class="mb-4"
+                        v-for="(details, index) in kalimatUtamaGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 3" v-html="details.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -282,12 +293,8 @@
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p>
-            Mari mulai paragrafmu dengan sebuah kalimat utama.
-          </p>
-          <p>
-            Kalimat utama adalah kalimat yang mengandung topik/ide tulisanmu.
-            Kalimat utama pada umumnya berada di awal paragraf.
+          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <span v-if="index === 0" v-html="details.guide"></span>
           </p>
         </div>
       </div>
@@ -309,15 +316,8 @@
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p>
-            Berikut ini sebuah contoh kalimat utama tentang cara melakukan
-            sesuatu yang sangat kamu kuasai.
-          </p>
-          <p>
-            <strong
-              >Saya sangat mahir dalam membuat media salindia yang
-              menarik.</strong
-            >
+          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <span v-if="index === 1" v-html="details.guide"></span>
           </p>
         </div>
       </div>
@@ -340,15 +340,12 @@
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p>
-            Kamu juga dapat memulai paragrafmu dengan melihat kata-kata yang
-            kamu miliki di kotak masukan. Silakan latihan dengan mengubah kata
-            atau klausa itu menjadi kalimat awal yang baik. Pada halaman
-            selanjutnya, kamu akan menulis kalimat utamamu sendiri.
+          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <span v-if="index === 2" v-html="details.guide"></span>
           </p>
           <div class="tengah_bawah">
-            <p>
-              Lengkapi kalimat di bawah ini menjadi kalimat utama yang baik.
+            <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+              <span v-if="index === 2" v-html="details.input"></span>
             </p>
             <div>
               <b-form-input
@@ -379,12 +376,12 @@
           </div>
         </div>
         <div class="col-md-9.5 tips_kata">
-          <p>
-            Sekarang tulislah kalimat utama untuk memulai paragrafmu. Kalimat
-            itu harus berisi topik yang ingin kamu jelaskan dalam paragraf
-            ya....
+          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <span v-if="index === 3" v-html="details.guide"></span>
           </p>
-          <p>Klik Tips untuk melihat contoh kalimat utama.</p>
+          <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
+            <span v-if="index === 3" v-html="details.input"></span>
+          </p>
           <div>
             <b-form-input
               class="tinggi"
@@ -727,3 +724,4 @@
 //   padding: 0;
 // }
 </style>
+

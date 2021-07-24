@@ -72,7 +72,9 @@
             <button class="all-button_satu" @click="copyToClipBoard()">
               Salin
             </button>
-            <button class="all-button_satu" @click="handleSubmitCetak()">kirim Email</button>
+            <button class="all-button_satu" @click="handleSubmitCetak()">
+              kirim Email
+            </button>
             <button class="all-button_satu" @click="toTopik()">
               Mulai topik lain
             </button>
@@ -148,13 +150,20 @@
   height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
-  padding: 11px 0px 0px 200px;
+  padding: 11px 10px 0px 130px;
   &_paragraf {
     padding-right: 90px;
+    // background: #00a279;
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
+  }
+  &_topik {
+    // background: #0a4da3;
   }
   @media (max-width: 768px) {
     width: 100%;
-    padding: 11px 20px 0px 20px;
+    padding: 11px 10px 0px 10px;
   }
 }
 

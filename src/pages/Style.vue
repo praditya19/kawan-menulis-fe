@@ -1221,20 +1221,23 @@
 .jenis {
   display: flex;
   width: 100%;
-  height: 49px;
+  height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
-  @media Screen and (max-width: 768px) {
-    height: auto;
-  }
+  padding: 11px 10px 0px 130px;
   &_paragraf {
-    padding: 11px 0px 0px 110px;
+    padding-right: 90px;
+    // background: #00a279;
     @media (max-width: 768px) {
-      padding: 11px 0px 0px 10px;
+      padding-right: 20px;
     }
   }
   &_topik {
-    padding: 11px 0px 0px 70px;
+    // background: #0a4da3;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 11px 10px 0px 10px;
   }
 }
 // End Jenis Paragraf
@@ -1449,10 +1452,11 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 10%;
+  width: 100px;
   font-weight: bold;
   @media screen and (max-width: 780px) {
     width: 70px;
+    height: auto;
   }
   @media screen and (max-width: 600px) {
     border: 0;

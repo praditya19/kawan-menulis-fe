@@ -124,7 +124,10 @@
                         v-for="(topicGuidesList, index) in topicGuides"
                         :key="index"
                       >
-                        <span v-if="index === 1" v-html="topicGuidesList.tips"></span>
+                        <span
+                          v-if="index === 1"
+                          v-html="topicGuidesList.tips"
+                        ></span>
                       </p>
                     </div>
                   </div>
@@ -361,13 +364,20 @@
   height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
-  padding: 11px 0px 0px 100px;
+  padding: 11px 10px 0px 130px;
   &_paragraf {
     padding-right: 90px;
+    // background: #00a279;
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
+  }
+  &_topik {
+    // background: #0a4da3;
   }
   @media (max-width: 768px) {
     width: 100%;
-    padding: 11px 20px 0px 20px;
+    padding: 11px 10px 0px 10px;
   }
 }
 
@@ -398,7 +408,7 @@
 }
 
 .kalimat {
-  margin-left: 20px;
+  margin-left: 15px;
   width: 100%;
   font-family: Poppins;
   font-size: 20px;

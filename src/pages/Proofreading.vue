@@ -203,7 +203,8 @@
             &nbsp;{{ jenisTopics.jenisParagraf }}
           </p>
           <p class="jenis_topik">
-            <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+            <strong>Topik:</strong>
+            &nbsp;{{ jenisTopics.topik }}
           </p>
         </div>
       </div>
@@ -1146,23 +1147,26 @@
 
 // Jenis Paragraf
 .jenis {
-  display: flex;
-  width: 100%;
-  height: 49px;
-  font-size: 16px;
-  background-color: rgba(139, 181, 236, 0.1);
-  @media Screen and (max-width: 768px) {
+    display: flex;
+    width: 100%;
     height: auto;
-  }
-  &_paragraf {
-    padding: 11px 0px 0px 110px;
-    @media (max-width: 768px) {
-      padding: 11px 0px 0px 10px;
+    font-size: 16px;
+    background-color: rgba(139, 181, 236, 0.1);
+    padding: 11px 10px 0px 130px;
+    &_paragraf {
+      padding-right: 90px;
+      // background: #00a279;
+      @media (max-width: 768px) {
+        padding-right: 20px;
+      }
     }
-  }
-  &_topik {
-    padding: 11px 0px 0px 70px;
-  }
+    &_topik {
+      // background: #0a4da3;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 11px 10px 0px 10px;
+    }
 }
 // End Jenis Paragraf
 

@@ -1,4 +1,4 @@
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "kalimatUtama",
@@ -20,11 +20,15 @@ export default {
       kalimatUtamaPage3: false,
       kalimatUtamaPage4: false,
       jenisTopics: {},
+
+      // db
+      kalimatUtamaGuides: [],
     };
   },
   mounted() {
     this.getDataSesion();
     this.getDataJenisTopics();
+    this.getDataKalimatUtamaGuidesList();
   },
   methods: {
     getDataSesion() {
@@ -32,6 +36,25 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.pramenulisDataSesion = JSON.parse(pramenulisData);
+    },
+    ...mapActions(["getTopicGuidesList"]),
+    getDataKalimatUtamaGuidesList() {
+      this.getTopicGuidesList({
+        requestBody: {
+          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+          clientSecret: "27e78980e2419b308c86559ef0fb0105",
+          topicId: this.pramenulisDataSesion.topicId,
+          writingStepId: 37,
+        },
+        success: (res) => {
+          this.kalimatUtamaGuides = res;
+          console.log(this.kalimatUtamaGuides);
+        },
+
+        fail: (res) => {
+          console.log(res);
+        },
+      });
     },
     page1Next() {
       this.kalimatUtamaPage2 = true;
@@ -117,3 +140,4 @@ export default {
     ...mapGetters(["isMobile"]),
   },
 };
+

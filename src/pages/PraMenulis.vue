@@ -2,7 +2,7 @@
   <div class="content">
     <br />
     <div class="content_padding">
-    <br/>
+      <br />
       <div class="content_padding_header">
         <h1><b>Latihan Menulis</b></h1>
       </div>
@@ -16,14 +16,12 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="content_padding_paragraf">
-            <p><b>Jenis Paragraf: </b>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+            <p><b>Jenis Paragraf: </b>&nbsp;{{ jenisTopics.jenisParagraf }}</p>
           </div>
         </div>
         <div class="col-sm-8">
           <div class="content_padding_paragraf_right">
-            <p>
-              <b>Topik: </b>&nbsp;{{jenisTopics.topik}}
-            </p>
+            <p><b>Topik: </b>&nbsp;{{ jenisTopics.topik }}</p>
           </div>
         </div>
       </div>
@@ -46,12 +44,11 @@
 
                   <div class="kalimat">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p>
-                        Contoh:<br />
-                        Minuman/makanan kesukaan<br />
-                        Aktifasi sehari-hari<br />
-                        Bagian dari pekerjaan<br />
-                        Hobi
+                      <p
+                        v-for="(details, index) in pramenulisGuides"
+                        :key="index"
+                      >
+                        <span v-if="index === 0" v-html="details.tips"></span>
                       </p>
                     </div>
                   </div>
@@ -88,13 +85,13 @@
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Mengapa kamu dapat mahir melakukan hal tersebut?
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 0" v-html="details.guide"></span>
                   </p>
                 </div>
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Gunakan kata atau klausa sederhana
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 0" v-html="details.input"></span>
                   </p>
                 </div>
               </div>
@@ -109,13 +106,7 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
-              >
+              <div style="margin-left: -23px; margin-top: -40px;">
                 <div class="row">
                   <div class="col-sm-4">
                     <div
@@ -155,6 +146,7 @@
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -176,12 +168,11 @@
 
                     <div class="kalimat">
                       <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        <p>
-                          Contoh: <br />
-                          Air dengan suhu 80 derajat <br />
-                          Tanah dan sisa makanan <br />
-                          Wajan <br />
-                          Sekop
+                        <p
+                          v-for="(details, index) in pramenulisGuides"
+                          :key="index"
+                        >
+                          <span v-if="index === 1" v-html="details.tips"></span>
                         </p>
                       </div>
                     </div>
@@ -217,13 +208,13 @@
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Apa saja alat/bahan yang dibutuhkan untuk melakukannya?
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 1" v-html="details.guide"></span>
                   </p>
                 </div>
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Tuliskan dengan beberapa kata
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 1" v-html="details.input"></span>
                   </p>
                 </div>
               </div>
@@ -240,13 +231,7 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
-              >
+              <div style="margin-left: -23px; margin-top: -40px;">
                 <div class="row">
                   <div class="col-sm-4">
                     <div
@@ -286,6 +271,7 @@
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -318,12 +304,14 @@
 
                             <div class="kalimat">
                               <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Contoh: <br />
-                                  Menuangkan <br />
-                                  Mengaduk <br />
-                                  Mengucek <br />
-                                  Menggali
+                                <p
+                                  v-for="(details, index) in pramenulisGuides"
+                                  :key="index"
+                                >
+                                  <span
+                                    v-if="index === 2"
+                                    v-html="details.tips"
+                                  ></span>
                                 </p>
                               </div>
                             </div>
@@ -352,13 +340,13 @@
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Kata kerja apa saja yang akan dilakukan dalam proses itu?
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 2" v-html="details.guide"></span>
                   </p>
                 </div>
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Sebutkan beberapa kata kerja sesuai tahapan
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 2" v-html="details.input"></span>
                   </p>
                 </div>
               </div>
@@ -374,53 +362,48 @@
                     <b>OK</b>
                   </button>
                 </div>
-              </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
-              >
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div
-                      style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
-                    >
-                      <div class="content_padding_tulis_catatan">
-                        <h4><b>Catatan Pra Menulis</b></h4>
+                <div style="margin-left: -23px; margin-top: -40px;">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div
+                        style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
+                      >
+                        <div class="content_padding_tulis_catatan">
+                          <h4><b>Catatan Pra Menulis</b></h4>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
-                >
-                  <div style="margin-left:30px; ">
-                    <b-form-group>
-                      <div>
-                        <div class="col-sm-12">
-                          <ul>
-                            <div
-                              class="dua"
-                              v-for="(dataSesion,
-                              index) in topicDataSesion.resultMenulis"
-                              :key="index"
-                            >
-                              <h5>
-                                <li>
-                                  &nbsp; &nbsp; {{ dataSesion.pramenulis }}
-                                </li>
-                              </h5>
-                            </div>
-                          </ul>
+                  <div
+                    style="background-color:#c1c8d3;  width: 730px; padding:13px; border-radius: 0px 0 30px 30px;"
+                  >
+                    <div style="margin-left:30px; ">
+                      <b-form-group>
+                        <div>
+                          <div class="col-sm-12">
+                            <ul>
+                              <div
+                                class="dua"
+                                v-for="(dataSesion,
+                                index) in topicDataSesion.resultMenulis"
+                                :key="index"
+                              >
+                                <h5>
+                                  <li>
+                                    &nbsp; &nbsp; {{ dataSesion.pramenulis }}
+                                  </li>
+                                </h5>
+                              </div>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    </b-form-group>
+                      </b-form-group>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -453,11 +436,14 @@
 
                             <div class="kalimat">
                               <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Contoh: <br />
-                                  Suhu air yang terlalu panas <br />
-                                  Takaran bahan yang tidak seimbang <br />
-                                  Pilih warna yang terlalu mencolok
+                                <p
+                                  v-for="(details, index) in pramenulisGuides"
+                                  :key="index"
+                                >
+                                  <span
+                                    v-if="index === 3"
+                                    v-html="details.tips"
+                                  ></span>
                                 </p>
                               </div>
                             </div>
@@ -486,13 +472,13 @@
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Hal apa saja yang perlu dihindari agar tidak gagal?
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 3" v-html="details.guide"></span>
                   </p>
                 </div>
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Gunakan kata atau klausa sederhana
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 3" v-html="details.input"></span>
                   </p>
                 </div>
               </div>
@@ -509,13 +495,7 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
-              >
+              <div style="margin-left: -23px; margin-top: -40px;">
                 <div class="row">
                   <div class="col-sm-4">
                     <div
@@ -555,6 +535,7 @@
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -587,12 +568,14 @@
 
                             <div class="kalimat">
                               <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                                <p>
-                                  Contoh: <br />
-                                  Kualitas benih sayur <br />
-                                  Keadaan tanah <br />
-                                  Cara mengaduk <br />
-                                  Tingkat kematangan
+                                <p
+                                  v-for="(details, index) in pramenulisGuides"
+                                  :key="index"
+                                >
+                                  <span
+                                    v-if="index === 4"
+                                    v-html="details.tips"
+                                  ></span>
                                 </p>
                               </div>
                             </div>
@@ -621,13 +604,13 @@
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Hal apa saja yang perlu diperhatikan agar hasilnya maksimal?
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 4" v-html="details.guide"></span>
                   </p>
                 </div>
                 <div class="content_padding_tulis_right_paragraf">
-                  <p>
-                    Gunakan kata atau klausa sederhana
+                  <p v-for="(details, index) in pramenulisGuides" :key="index">
+                    <span v-if="index === 4" v-html="details.input"></span>
                   </p>
                 </div>
               </div>
@@ -644,13 +627,7 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 40px 0px 0px 0px; margin-left: -23px;"
-              >
+              <div style="margin-left: -23px; margin-top: -40px;">
                 <div class="row">
                   <div class="col-sm-4">
                     <div
@@ -690,6 +667,7 @@
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -770,17 +748,11 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <br />
-            <div class="col-sm-12">
-              <div
-                class="content_padding_tulis_right_paragraf_bawah"
-                style="padding: 90px 0px 0px 0px; margin-left: -23px;"
-              >
+              <div style="margin-left: -23px; margin-top: -40px;">
                 <div class="row">
                   <div class="col-sm-4">
                     <div
-                      style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;margin-top:-40px;"
+                      style="background-color:#484c52; height: 48px; width: 240px; border-radius: 20px 20px 0px 0px;"
                     >
                       <div class="content_padding_tulis_catatan">
                         <h4><b>Catatan Pra Menulis</b></h4>
@@ -816,6 +788,7 @@
                 </div>
               </div>
             </div>
+            <br />
           </div>
         </div>
       </div>
@@ -1075,8 +1048,8 @@
       }
       &_right {
         max-width: 750px;
-        width: 750px;
-        height: 240px;
+        width: auto;
+        height: auto;
         font-family: Poppins;
         font-style: normal;
         font-weight: normal;
@@ -1142,3 +1115,4 @@
   padding: 0;
 }
 </style>
+

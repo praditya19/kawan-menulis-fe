@@ -97,9 +97,11 @@
     </div>
     <!-- Jenis Paragraf -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+      <p class="center_paragraf">
+        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+      </p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
+        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
       </p>
     </div>
 
@@ -158,7 +160,8 @@
 
 .body {
   display: flex;
-  padding: 10px 0px 0px 130px;
+  padding: 10px 270px 0px 130px;
+  // background: red;
   @media screen and(max-width: 768px) {
     padding: 10px 10px 0px 10px;
   }
@@ -218,7 +221,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 30px;
     color: #000000;
     @media Screen and (max-width: 780px) {
       padding: 20px 0px 0px 0px;
@@ -269,13 +272,20 @@
   height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
-  padding: 11px 0px 0px 200px;
+  padding: 11px 10px 0px 130px;
   &_paragraf {
     padding-right: 90px;
+    // background: #00a279;
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
+  }
+  &_topik {
+    // background: #0a4da3;
   }
   @media (max-width: 768px) {
     width: 100%;
-    padding: 11px 20px 0px 20px;
+    padding: 11px 10px 0px 10px;
   }
 }
 
@@ -287,25 +297,17 @@
 }
 
 // Tombol Tips Content Center
-
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
 
 .modal-content {
   background: #e8f1fd;
-  width: 500px;
+  width: 100%;
   border-radius: 34px;
+  padding: 10px 0px 0px 0px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
 /* end style Modal */
 
 /* Style Isi Modal */
@@ -323,7 +325,7 @@
 }
 
 .tombol {
-  // background: red;
+  /* background: red; */
   text-align: center;
   padding: 5px;
 }
@@ -355,7 +357,10 @@
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 
 /* End Background Belakang Modal */

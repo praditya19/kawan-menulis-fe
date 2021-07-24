@@ -1,4 +1,4 @@
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "PraMenulis",
@@ -25,13 +25,42 @@ export default {
       pramenulisPage5: false,
       pramenulisPage6: false,
       jenisTopics: {},
+
+      //db
+      pramenulisGuides: {},
     };
   },
-
+  mounted() {
+    this.getDataSesion();
+    this.getDataJenisTopics();
+    this.getDataPramenulisGuidesList();
+  },
   methods: {
     getDataSesion() {
       var topicData = sessionStorage.getItem("student_topik_menulis_paragraph");
       this.topicDataSesion = JSON.parse(topicData);
+    },
+    ...mapActions(["getTopicGuidesList"]),
+    getDataPramenulisGuidesList() {
+      this.getTopicGuidesList({
+        requestBody: {
+          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+          clientSecret: "27e78980e2419b308c86559ef0fb0105",
+          topicId: this.topicDataSesion.topicId,
+          writingStepId: 36,
+        },
+        success: (res) => {
+          this.pramenulisGuides = res;
+        },
+
+        fail: (res) => {
+          console.log(res);
+        },
+      });
+    },
+    getDataJenisTopics() {
+      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      this.jenisTopics = JSON.parse(jenisTopic);
     },
     pramenulis1Next() {
       if (this.dataForm.menulisPage1 === "") {
@@ -131,16 +160,9 @@ export default {
     pramenulis6Next() {
       this.$router.push("/kalimat-utama");
     },
-    getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
-      this.jenisTopics = JSON.parse(jenisTopic);
-    },
   },
   computed: {
     ...mapGetters(["isMobile"]),
   },
-  mounted() {
-    this.getDataSesion();
-    this.getDataJenisTopics();
-  },
 };
+
