@@ -25,7 +25,7 @@
                 mengatur, mengedit, menulis ulang, dan menerbitkan.
               </li>
               <li>
-                Latiha ini tidak memiliki batas waktu, silahkan mengerjakan
+                Latihan ini tidak memiliki batas waktu, silahkan mengerjakan
                 sesuai ketersediaan waktumu.
               </li>
               <li>
