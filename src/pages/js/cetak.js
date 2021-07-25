@@ -20,9 +20,9 @@ export default {
   mounted() {
     this.getDataSesion();
     this.getStudentAction();
-    window.scrollTo(0, 0);
     this.getDataJenisTopics();
     this. getStudent();
+    window.scrollTo(0, 0);
   },
   methods: {
     getDataSesion() {

@@ -36,7 +36,7 @@
             </div>
             <div v-if="studentResultSession.endScore === 59" class="result2">
               <b-button variant="success" v-on:click="handleSubmit"
-                >Download dan Kirim Via Email</b-button
+                >Kirim Via Email</b-button
               >
               <b-button variant="primary" href="/mulai-menulis"
                 >Mulai Latihan Menulis</b-button

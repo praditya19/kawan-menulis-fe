@@ -55,6 +55,7 @@ export default {
   mounted() {
     this.getAllAnswer();
     this.disablod();
+    window.scrollTo(0, 0);
   },
   computed: {
     ...mapGetters(["isMobile", "kmClientId", "kmClientSecret"]),

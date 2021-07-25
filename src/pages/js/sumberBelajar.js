@@ -9,6 +9,7 @@ export default {
   },
   mounted() {
     this.getAllLearning();
+    window.scrollTo(0, 0);
   },
   computed: {
     ...mapGetters(["isMobile"]),

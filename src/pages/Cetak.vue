@@ -73,7 +73,7 @@
               Salin
             </button>
             <button class="all-button_satu" @click="handleSubmitCetak()">
-              kirim Email
+             Kirim Email
             </button>
             <button class="all-button_satu" @click="toTopik()">
               Mulai topik lain

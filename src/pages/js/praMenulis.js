@@ -34,6 +34,7 @@ export default {
     this.getDataSesion();
     this.getDataJenisTopics();
     this.getDataPramenulisGuidesList();
+    window.scrollTo(0, 0);
   },
   methods: {
     getDataSesion() {

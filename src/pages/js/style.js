@@ -35,6 +35,7 @@ export default {
   mounted() {
     this.getDataSesion();
     this.getDataJenisTopics();
+    window.scrollTo(0, 0);
   },
   methods: {
     getDataSesion() {

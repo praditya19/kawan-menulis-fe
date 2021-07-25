@@ -23,7 +23,7 @@ export default {
     this.getStudentDataSesion();
     this.getDataTopicGuidesList();
     this.getDataJenisTopics();
-    console.log(this.jenisTopics);
+    window.scrollTo(0, 0);
   },
   computed: {},
   methods: {

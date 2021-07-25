@@ -87,9 +87,6 @@
           </div>
           <div class="all-button">
             <button class="all-button_satu" @click="toRevisi()">Revisi</button>
-            <button class="all-button_satu" @click="toStyle()">
-              Pemeriksaan Ejaan
-            </button>
             <button class="all-button_satu" @click="sumbit()">
               Terbitkan/terbitkan
             </button>

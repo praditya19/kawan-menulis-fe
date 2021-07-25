@@ -27,6 +27,7 @@ export default {
     this.getDataJenisTopics();
     this.getStudentDataSesion();
     this.getDataMenulisKesimpulancGuidesList();
+    window.scrollTo(0, 0);
   },
   methods: {
     getDataSesion() {

@@ -18,6 +18,7 @@ export default {
   mounted() {
     this.getAllParagraphTypes();
     this.getStudentDataSession();
+    window.scrollTo(0, 0);
   },
 
   computed: {},

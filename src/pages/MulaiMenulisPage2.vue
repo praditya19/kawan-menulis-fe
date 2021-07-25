@@ -22,14 +22,14 @@
                 <div class="padding">
                   <ValidationProvider rules="required" name="Nama-Lengkap">
                     <b-form-group
-                      slot-scope="{ valid, errors }"
+                      slot-scope="{ errors }"
                       label="Nama Lengkap"
                       style="padding: 30px, 0px, 30px, 0px"
                     >
                       <b-form-input
                         type="text"
                         v-model="user.namaLengkap"
-                        :state="errors[0] ? false : valid ? null : null"
+                        :state="isSalah1 === true ? false : null"
                       >
                       </b-form-input>
                       <b-form-invalid-feedback>
@@ -41,14 +41,14 @@
                 <div class="padding">
                   <ValidationProvider rules="required" name="Email">
                     <b-form-group
-                      slot-scope="{ valid, errors }"
+                      slot-scope="{ errors }"
                       label="Email"
                       style="padding: 30px, 0px, 30px, 0px"
                     >
                       <b-form-input
                         type="email"
                         v-model="user.email"
-                        :state="errors[0] ? false : valid ? null : null"
+                        :state="isSalah2 === true ? false : null"
                       >
                       </b-form-input>
                       <b-form-invalid-feedback>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="padding">
                   <ValidationProvider rules="required" name="Prodi">
-                    <b-form-group slot-scope="{ valid, errors }" label="Prodi">
+                    <b-form-group slot-scope="{ errors }" label="Prodi">
                       <b-form-input
                         type="text"
                         v-model="user.prodi"
-                        :state="errors[0] ? false : valid ? null : null"
+                        :state="isSalah3 === true ? false : null"
                       >
                       </b-form-input>
                       <b-form-invalid-feedback>
@@ -74,11 +74,11 @@
                 </div>
                 <div class="padding">
                   <ValidationProvider rules="required" name="NIM">
-                    <b-form-group slot-scope="{ valid, errors }" label="NIM">
+                    <b-form-group slot-scope="{ errors }" label="NIM">
                       <b-form-input
                         type="text"
                         v-model="user.nim"
-                        :state="errors[0] ? false : valid ? null : null"
+                        :state="isSalah4 === true ? false : null"
                       >
                       </b-form-input>
                       <b-form-invalid-feedback>

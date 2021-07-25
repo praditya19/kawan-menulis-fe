@@ -12,6 +12,7 @@ export default {
   mounted() {
     this.getStudentResultSession();
     this.getStudentDiagnostikSession();
+    window.scrollTo(0, 0);
   },
   computed: {
   },
