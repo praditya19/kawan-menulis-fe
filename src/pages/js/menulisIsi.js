@@ -11,7 +11,7 @@ export default {
       showModal4: false,
       showModal5: false,
       showModal6: false,
-
+      showModal7: false,
       // page
       menulisIsi: true,
       menulisIsiPage2: false,
@@ -24,6 +24,7 @@ export default {
       // sesion
       pramenulisLanjutanDataSesion: {},
       jenisTopics: {},
+      forEch: [], //get data page 2
     };
   },
   mounted() {
@@ -49,6 +50,8 @@ export default {
     },
     menulisIsiNext() {
       this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
+      this.forEch.push(this.pramenulisLanjutanDataSesion.resultMenulis[0]);
+      this.pramenulisLanjutanDataSesion.resultMenulis.splice(0, 1);
       this.menulisIsiPage2 = true;
       if (this.menulisIsiPage2 === true) {
         this.menulisIsi = false;
@@ -58,18 +61,18 @@ export default {
     },
     takeModal(index) {
       var bbb = "showModal" + index;
-      if ("showModal1" === bbb) {
+      if ("showModal0" === bbb) {
         this.showModal1 = true;
-      } else if ("showModal2" === bbb) {
+      } else if ("showModal1" === bbb) {
         this.showModal2 = true;
-      } else if ("showModal3" === bbb) {
+      } else if ("showModal2" === bbb) {
         this.showModal3 = true;
-      } else if ("showModal4" === bbb) {
+      } else if ("showModal3" === bbb) {
         this.showModal4 = true;
-      } else if ("showModal5" === bbb) {
+      } else if ("showModal4" === bbb) {
         this.showModal5 = true;
       } else {
-        this.showModal1 = true;
+        this.showModal7 = true;
       }
     },
     kirim() {
@@ -96,17 +99,13 @@ export default {
           this.implementArrayPramenulis.push(obj);
         }
         this.pramenulisLanjutanDataSesion.resultMenulis = [];
+        this.pramenulisLanjutanDataSesion.resultMenulis.push(this.forEch[0]);
         for (var j = 0; j < this.implementArrayPramenulis.length; j++) {
           this.pramenulisLanjutanDataSesion.resultMenulis.push(
             this.implementArrayPramenulis[j]
           );
         }
-        this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
-          this.pramenulisLanjutanDataSesion.resultParagraphKalimatUtama[1].replace(
-            ".",
-            ""
-          )
-        );
+
         var final = JSON.stringify(this.pramenulisLanjutanDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", final);
         this.$router.replace("/pengorganisasian");

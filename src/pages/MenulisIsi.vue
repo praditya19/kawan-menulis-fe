@@ -9,7 +9,6 @@
     <br />
     <!-- Modal area -->
     <div v-if="showModal1 === true">
-      <!--showModal3-->
       <transition name="model">
         <div class="modal-mask">
           <div class="modal-wrapper">
@@ -24,19 +23,22 @@
                     />
                   </div>
                   <div class="kalimat3">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p style="font-size: 16px;">
-                        Uraikan dalam sebuah kalimat : <br />
+                    <div style="padding: 0% 0% 0% 12%;width: 85%;">
+                      <p>Uraikan dalam sebuah kalimat :</p>
+                      <p
+                        v-for="(details,
+                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        :key="index"
+                        style="margin-top: -10px;"
+                      >
                         <strong
-                          >Mengapa kamu dapat mahir melakukan hal
-                          tersebut?</strong
-                        >
-                        <code style="color: red"
-                          ><strong
-                            >(Ambil dari Panduan Pramenulis 1)</strong
-                          ></code
-                        >
+                          ><span
+                            v-if="index === 0"
+                            v-html="details.pramenulis"
+                          ></span
+                        ></strong>
                       </p>
+                      <br />
                       <p>
                         Ingat, sebuah kalimat harus memiliki subjek dan kata
                         kerja dan harus mengekpresikan pemikiran yang lengkap.
@@ -57,7 +59,6 @@
       </transition>
     </div>
     <div v-if="showModal2 === true">
-      <!--showModal4-->
       <transition name="model">
         <div class="modal-mask">
           <div class="modal-wrapper">
@@ -75,17 +76,22 @@
                   <div class="kalimat3">
                     <div style="padding: 0% 0% 0% 12%;width: 85%;">
                       <p style="font-size: 16px;">
-                        Uraikan dalam sebuah kalimat : <br />
-                        <strong
-                          >Apa saja alat/bahan yang dibutuhkan untuk
-                          melakukannya?</strong
-                        >
-                        <code style="color: red"
-                          ><strong
-                            >(Ambil dari Panduan Pramenulis 2)</strong
-                          ></code
-                        >
+                        Uraikan dalam sebuah kalimat :
                       </p>
+                      <p
+                        v-for="(details,
+                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        :key="index"
+                        style="margin-top: -10px;"
+                      >
+                        <strong
+                          ><span
+                            v-if="index === 1"
+                            v-html="details.pramenulis"
+                          ></span
+                        ></strong>
+                      </p>
+                      <br />
                       <p>
                         Ingat, sebuah kalimat harus memiliki subjek dan kata
                         kerja dan harus mengekpresikan pemikiran yang lengkap.
@@ -124,17 +130,22 @@
                   <div class="kalimat3">
                     <div style="padding: 0% 0% 0% 12%;width: 85%;">
                       <p style="font-size: 16px;">
-                        Uraikan dalam sebuah kalimat : <br />
-                        <strong
-                          >Kata kerja apa saja yang akan dilakukan dalam proses
-                          itu?</strong
-                        >
-                        <code style="color: red"
-                          ><strong
-                            >(Ambil dari Panduan Pramenulis 3)</strong
-                          ></code
-                        >
+                        Uraikan dalam sebuah kalimat :
                       </p>
+                      <p
+                        v-for="(details,
+                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        :key="index"
+                        style="margin-top: -10px;"
+                      >
+                        <strong
+                          ><span
+                            v-if="index === 2"
+                            v-html="details.pramenulis"
+                          ></span
+                        ></strong>
+                      </p>
+                      <br />
                       <p>
                         Ingat, sebuah kalimat harus memiliki subjek dan kata
                         kerja dan harus mengekpresikan pemikiran yang lengkap.
@@ -173,17 +184,22 @@
                   <div class="kalimat3">
                     <div style="padding: 0% 0% 0% 12%;width: 85%;">
                       <p>
-                        Uraikan dalam sebuah kalimat : <br />
-                        <strong
-                          >Hal apa saja yang perlu dihindari agar tidak
-                          gagal?</strong
-                        >
-                        <code style="color: red"
-                          ><strong
-                            >(Ambil dari Panduan Pramenulis 4)</strong
-                          ></code
-                        >
+                        Uraikan dalam sebuah kalimat :
                       </p>
+                      <p
+                        v-for="(details,
+                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        :key="index"
+                        style="margin-top: -10px;"
+                      >
+                        <strong
+                          ><span
+                            v-if="index === 3"
+                            v-html="details.pramenulis"
+                          ></span
+                        ></strong>
+                      </p>
+                      <br />
                       <p>
                         Ingat, sebuah kalimat harus memiliki subjek dan kata
                         kerja dan harus mengekpresikan pemikiran yang lengkap.
@@ -203,9 +219,8 @@
         </div>
       </transition>
     </div>
-    <!-- modal 4 -->
-    <div v-if="showModal5 === true">
-      <!--showModal4-->
+    <div v-if="showModal7 === true">
+      <!--showModal3-->
       <transition name="model">
         <div class="modal-mask">
           <div class="modal-wrapper">
@@ -223,16 +238,64 @@
                     <div style="padding: 0% 0% 0% 12%;width: 85%;">
                       <p>
                         Uraikan dalam sebuah kalimat : <br />
-                        <strong
-                          >Hal apa saja yang perlu diperhatikan agar hasilnya
-                          maksimal?</strong
-                        >
-                        <code style="color: red"
-                          ><strong
-                            >(Ambil dari Panduan Pramenulis 5)</strong
-                          ></code
-                        >
+                        Contoh :
                       </p>
+                      <p>
+                        Saya suka minum kopi.
+                      </p>
+                      <p>
+                        Ingat, sebuah kalimat harus memiliki subjek dan kata
+                        kerja dan harus mengekpresikan pemikiran yang lengkap.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal7 = false">
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <!-- modal 4 -->
+    <div v-if="showModal5 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height: 38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+                  <div class="kalimat3">
+                    <div style="padding: 0% 0% 0% 12%;width: 85%;">
+                      <p>
+                        Uraikan dalam sebuah kalimat :
+                      </p>
+                      <p
+                        v-for="(details,
+                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        :key="index"
+                        style="margin-top: -10px;"
+                      >
+                        <strong
+                          ><span
+                            v-if="index === 5"
+                            v-html="details.pramenulis"
+                          ></span
+                        ></strong>
+                      </p>
+                      <br />
                       <p>
                         Ingat, sebuah kalimat harus memiliki subjek dan kata
                         kerja dan harus mengekpresikan pemikiran yang lengkap.
@@ -342,9 +405,11 @@
     <!-- Jenis Paragraf -->
     <div class="content-tiga">
       <div class="jenis">
-        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+        <p class="jenis_paragraf">
+          <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+        </p>
         <p class="jenis_topik">
-          <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
+          <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
         </p>
       </div>
     </div>
@@ -470,7 +535,7 @@
                                   type="button"
                                   v-on:click="takeModal(index)"
                                 >
-                                  Tips
+                                  <b>Tips</b>
                                 </button>
                               </div>
                               <b-form-input

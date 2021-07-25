@@ -205,7 +205,7 @@
           </div>
           <!-- Kalimat Samping Button Tips -->
           <div class="col-sm-10">
-            <div class="content_padding_tulis_right">
+            <div class="content_padding_tulis_right" style="margin-top:0px">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
                   <p v-for="(details, index) in pramenulisGuides" :key="index">
@@ -1055,7 +1055,11 @@
         font-weight: normal;
         font-size: 23px;
         line-height: 30px;
-        margin-left: -30px;
+        margin-left: -90px;
+        margin-top: 10px;
+        @media screen and (max-width: 768px) {
+          margin-left: -30px;
+        }
         &_paragraf {
           padding: 20px 0px 0px 0px;
           label {
