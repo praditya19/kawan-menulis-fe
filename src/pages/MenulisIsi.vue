@@ -26,7 +26,7 @@
                   <div class="kalimat3">
                     <div style="padding: 0% 0% 0% 12%; width: 85%;">
                       <p style="font-size: 16px;">
-                        Uraikan dalam sebuah 3 : <br />
+                        Uraikan dalam sebuah kalimat : <br />
                         <strong
                           >Mengapa kamu dapat mahir melakukan hal
                           tersebut?</strong

@@ -12,10 +12,10 @@
     <!-- tengah -->
     <div class="center">
       <p class="center_paragraf">
-        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+        <strong>Jenis Paragraf :&nbsp;</strong>{{ jenisTopics.jenisParagraf }}
       </p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+        <strong>Topik :&nbsp;</strong>{{ jenisTopics.topik }}
       </p>
     </div>
 
@@ -200,16 +200,10 @@
         <div class="col-md-2.5">
           <b-btn class="tips" @click="showModal = true">TIPS</b-btn>
         </div>
-        <div class="col-md-9.5">
-          <div class="kalimat">
-            <p
-              class="kalimat_p"
-              v-for="(topicGuidesList, index) in topicGuides"
-              :key="index"
-            >
-              <span v-html="topicGuidesList.guide"></span>
-            </p>
-          </div>
+        <div class="col-md-9.5 kalimat">
+          <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+            <span v-html="topicGuidesList.guide"></span>
+          </p>
         </div>
       </div>
 
@@ -229,16 +223,10 @@
             Tips
           </b-button>
         </div>
-        <div class="col-md-9.5">
-          <div class="kalimat">
-            <p
-              class="kalimat_p"
-              v-for="(topicGuidesList, index) in topicGuides"
-              :key="index"
-            >
-              <span v-if="index === 1" v-html="topicGuidesList.guide"></span>
-            </p>
-          </div>
+        <div class="col-md-9.5 kalimat " style="margin-top:-15px">
+          <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+            <span v-if="index === 1" v-html="topicGuidesList.guide"></span>
+          </p>
         </div>
       </div>
 
@@ -258,22 +246,20 @@
             Tips
           </b-button>
         </div>
-        <div class="col-md-9.5">
-          <div class="kalimat">
-            <p class="kalimat_p">
-              Sekarang tulis kalimat penutup Anda sendiri. Kalimat penutup harus
-              mengingatkan pembaca akan kalimat pembuka Anda.
-            </p>
-            <p class="kalimat_p">
-              Klik Tip untuk melihat contoh kalimat yang dapat menyimpulkan
-              paragraf Anda.
-            </p>
-            <div style="padding: 10px 0px 10px 0px">
-              <b-form-input
-                v-model="dataForm.menulis"
-                id="feedback-user"
-              ></b-form-input>
-            </div>
+        <div class="col-md-9.5 kalimat">
+          <p>
+            Sekarang tulis kalimat penutup Anda sendiri. Kalimat penutup harus
+            mengingatkan pembaca akan kalimat pembuka Anda.
+          </p>
+          <p>
+            Klik Tip untuk melihat contoh kalimat yang dapat menyimpulkan
+            paragraf Anda.
+          </p>
+          <div style="padding: 10px 0px 10px 0px">
+            <b-form-input
+              v-model="dataForm.menulis"
+              id="feedback-user"
+            ></b-form-input>
           </div>
         </div>
       </div>
@@ -285,8 +271,6 @@
         </div>
       </div>
     </div>
-
-    <br />
 
     <!-- Catatan Pra Menulis -->
     <div class="content-enam">
@@ -385,9 +369,9 @@
 .header {
   width: 100%;
   display: flex;
-  padding: 13px 210px 48px 100px;
+  padding: 13px 210px 48px 130px;
   @media screen and (max-width: 768px) {
-    padding: 13px 10px 48px 5px;
+    padding: 13px 10px 48px 10px;
   }
 }
 
@@ -408,7 +392,7 @@
 }
 
 .kalimat {
-  margin-left: 15px;
+  padding: 0px 0px 0px 15px;
   width: 100%;
   font-family: Poppins;
   font-size: 20px;
@@ -417,11 +401,10 @@
     font-size: 20px;
   }
   @media screen and (max-width: 768px) {
-    margin-left: 10px;
     width: 100%;
-    padding-right: 10px;
   }
 }
+
 // end Tips dan Kalimat
 
 // Tombol OK
@@ -443,9 +426,9 @@
 
 // foot menulis kesimpulan
 .content-enam {
-  padding: 0px 200px 48px 215px;
+  padding: 30px 200px 48px 240px;
   @media screen and (max-width: 768px) {
-    padding: 10px 10px 30px 10px;
+    padding: 30px 10px 30px 10px;
   }
 }
 

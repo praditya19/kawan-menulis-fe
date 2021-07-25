@@ -82,7 +82,9 @@ export default {
       }
       var done = this.isValidHurufBesar(this.form.kalimatUtama1);
       if (done === true) {
-        this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama1);
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+          this.form.kalimatUtama1
+        );
         var savePage3 = JSON.stringify(this.pramenulisDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
         this.kalimatUtamaPage4 = true;
@@ -124,7 +126,9 @@ export default {
       }
       var done2 = this.isValidHurufBesar(this.form.kalimatUtama2);
       if (done2 === true) {
-        this.pramenulisDataSesion.resultParagraph.push(this.form.kalimatUtama2);
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+          this.form.kalimatUtama2
+        );
         var savePage4 = JSON.stringify(this.pramenulisDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
         this.showModal6 = false;

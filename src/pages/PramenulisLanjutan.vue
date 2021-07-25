@@ -14,44 +14,6 @@
       <!-- End Stepper  -->
     </div>
     <!-- popup tambah -->
-    <div v-if="showModalError === true">
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <br />
-                  <div class="kalimat">
-                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                      <p
-                        class="mb-4"
-                        style="text-align:center; font-size: 20px;"
-                      >
-                        Maksimal menambahkan 10 item.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="tombol1">
-                    <button
-                      class="ok1"
-                      type="button"
-                      @click="showModalError = false"
-                    >
-                      OK
-                    </button>
-                  </div>
-
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
     <div v-if="showModal === true">
       <transition name="model">
         <div class="modal-mask">
@@ -179,9 +141,11 @@
     </div>
     <!-- Jenis Paragraf -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+      <p class="center_paragraf">
+        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+      </p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
+        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
       </p>
     </div>
     <!-- Button Tips dan Kalimat -->
@@ -189,7 +153,7 @@
       <div class="tengah">
         <div class="row">
           <div class="col-sm-1">
-            <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+            <b-btn class="tengah_tips">TIPS</b-btn>
           </div>
           <div class="col-sm-11">
             <p class="tengah_text2">

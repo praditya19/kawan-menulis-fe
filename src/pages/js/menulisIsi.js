@@ -23,7 +23,7 @@ export default {
       implementArrayPramenulis: [],
       // sesion
       pramenulisLanjutanDataSesion: {},
-      jenisTopics: {}
+      jenisTopics: {},
     };
   },
   mounted() {
@@ -50,7 +50,6 @@ export default {
     menulisIsiNext() {
       this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
       this.menulisIsiPage2 = true;
-
       if (this.menulisIsiPage2 === true) {
         this.menulisIsi = false;
       } else {
@@ -102,6 +101,12 @@ export default {
             this.implementArrayPramenulis[j]
           );
         }
+        this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
+          this.pramenulisLanjutanDataSesion.resultParagraphKalimatUtama[1].replace(
+            ".",
+            ""
+          )
+        );
         var final = JSON.stringify(this.pramenulisLanjutanDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", final);
         this.$router.replace("/pengorganisasian");

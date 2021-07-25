@@ -211,6 +211,14 @@
                                   v-html="details.tips"
                                 ></span>
                               </p>
+                              <p style="text-align: auto; margin-top: -15px;">
+                                <b>
+                                  {{
+                                    pramenulisDataSesion.resultMenulis[0]
+                                      .pramenulis
+                                  }}
+                                </b>
+                              </p>
                             </div>
                           </div>
 
@@ -234,7 +242,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9.5 tips_kata">
+        <div class="col-md-9.5 tips_kata_2">
           <div>
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 1" v-html="details.guide"></span>
@@ -313,7 +321,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9.5 tips_kata">
+        <div class="col-md-9.5 tips_kata_2">
           <div>
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 2" v-html="details.guide"></span>
@@ -569,6 +577,19 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
+    }
+  }
+  &_kata_2 {
+    padding: 0px 220px 0px 15px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
     color: #000000;
     @media Screen and (max-width: 780px) {
       padding: 10px 0px 0px 10px;

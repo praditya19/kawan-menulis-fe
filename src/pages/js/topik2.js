@@ -6,8 +6,8 @@ export default {
       showModal: false,
       showModal2: false,
       studentDataSession: {},
-      // student_topik_menulis_paragraph: [],
       result_menulis: [],
+      result_paragraph_kalimat_utama: [],
       result_paragraph: [],
       konsep_paragrafToString: [],
       konsep_paragraf_array: [],
@@ -16,7 +16,7 @@ export default {
         kalimatSederhana: "",
       },
       topicGuides: {},
-      jenisTopics: {}
+      jenisTopics: {},
     };
   },
   mounted() {
@@ -48,6 +48,7 @@ export default {
         studentActionsId: this.studentDataSession.id,
         resultMenulis: this.result_menulis,
         resultParagraph: this.result_paragraph,
+        resultParagraphKalimatUtama: this.result_paragraph_kalimat_utama,
         konsepParagraf: this.konsep_paragrafToString,
         konsepParagrafArray: this.konsep_paragraf_array,
         menulisKesimpulan: this.menulis_kesimpulan,
@@ -75,7 +76,7 @@ export default {
           writingStepId: 35,
         },
         success: (res) => {
-         this.topicGuides = res
+          this.topicGuides = res;
         },
 
         fail: (res) => {

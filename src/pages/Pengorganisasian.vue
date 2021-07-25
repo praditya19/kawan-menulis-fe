@@ -17,9 +17,11 @@
     <!-- Jenis Paragraf -->
     <div class="content-tiga">
       <div class="jenis">
-        <p class="jenis_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{jenisTopics.jenisParagraf}}</p>
+        <p class="jenis_paragraf">
+          <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+        </p>
         <p class="jenis_topik">
-          <strong>Topik:</strong>&nbsp;{{jenisTopics.topik}}
+          <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
         </p>
       </div>
     </div>
@@ -529,20 +531,20 @@
                     <div>
                       <div class="col-sm-12">
                         <ul>
-                          <div class="dua">
+                          <div
+                            class="dua"
+                            v-for="(dataSesion,
+                            index) in pramenulisLanjutanDataSesion.resultMenulis"
+                            :key="index"
+                          >
                             <h5>
-                              <b-form-checkbox-group>
-                                <b-form-checkbox
-                                  v-bind:value="dataSesion.pramenulis"
-                                  v-for="(dataSesion,
-                                  index) in pramenulisLanjutanDataSesion.resultMenulis"
-                                  :key="index"
-                                  v-model="dataForm.resultMenulis"
-                                  >&nbsp;&nbsp;{{
-                                    dataSesion.pramenulis
-                                  }}</b-form-checkbox
-                                >
-                              </b-form-checkbox-group>
+                              <b-form-radio
+                                v-bind:value="index"
+                                v-model="dataForm.resultMenulis"
+                                >&nbsp;&nbsp;{{
+                                  dataSesion.pramenulis
+                                }}</b-form-radio
+                              >
                             </h5>
                           </div>
                         </ul>
@@ -587,29 +589,31 @@
                         <ul>
                           <div class="dua">
                             <h5>
-                              <b
-                                >Saya adalah pecandu Kopi
-                                <font color="red"
-                                  >(diambil dari Kalimat Utama).</font
-                                ></b
-                              >
+                              <b>
+                                {{
+                                  pramenulisLanjutanDataSesion.resultParagraphKalimatUtama[1].replace(
+                                    ".",
+                                    ""
+                                  )
+                                }}
+                              </b>
                             </h5>
                           </div>
                           <b-form-group>
-                            <div class="dua">
+                            <div
+                              class="dua"
+                              v-for="(dataSesionNext2,
+                              index) in pramenulisLanjutanDataSesion.resultParagraph"
+                              :key="index"
+                            >
                               <h5>
-                                <b-form-checkbox-group>
-                                  <b-form-checkbox
-                                    v-bind:value="dataSesionNext2"
-                                    v-for="(dataSesionNext2,
-                                    index) in pramenulisLanjutanDataSesion.resultParagraph"
-                                    :key="index"
-                                    v-model="dataForm.resultMenulis"
-                                    >&nbsp;&nbsp;{{
-                                      dataSesionNext2
-                                    }}</b-form-checkbox
-                                  >
-                                </b-form-checkbox-group>
+                                <b-form-radio
+                                  v-bind:value="index"
+                                  v-model="dataForm.resultMenulis1"
+                                  >&nbsp;&nbsp;{{
+                                    dataSesionNext2
+                                  }}</b-form-radio
+                                >
                               </h5>
                             </div>
                           </b-form-group>
