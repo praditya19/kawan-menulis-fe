@@ -38,7 +38,6 @@ export default {
               JSON.stringify(res.data.student)
             );
             this.$router.push("/diagnostik-question");
-            window.location.reload();
           },
           fail: (res) => {
             console.log(res);

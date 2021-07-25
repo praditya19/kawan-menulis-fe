@@ -82,7 +82,6 @@ export default {
             JSON.stringify(res.body.score)
           );
           this.$router.push("/diagnostik-hasil-tes");
-          window.location.reload();
         },
         fail: (res) => {
           console.log(res);

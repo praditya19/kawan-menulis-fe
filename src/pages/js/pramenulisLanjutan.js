@@ -43,7 +43,6 @@ export default {
       var saveDate = JSON.stringify(this.kalimatUtamaDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate);
       this.showModal2 = false;
-      window.location.reload();
     },
     toMenulisIsi() {
       this.validasiTitik(this.kalimatUtamaDataSesion.resultMenulis);
@@ -94,7 +93,6 @@ export default {
       var saveDate2 = JSON.stringify(this.kalimatUtamaDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.showModal = false;
-      // window.location.reload();
     },
     modal2() {
       var bbb = this.kalimatUtamaDataSesion.resultMenulis[
