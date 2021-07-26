@@ -28,8 +28,12 @@
           >
             <img :src="user.avatar" alt="logo" />
             <h6>{{ user.name }}</h6>
-            <p>{{ user.email1 }}</p>
-            <p>{{ user.phone }}</p>
+            <p @click="toEmail(user.email1)">
+              {{ user.email1 }}
+            </p>
+            <p @click="toWa(user.phone)">
+              {{ user.phone }}
+            </p>
           </div>
         </div>
       </div>

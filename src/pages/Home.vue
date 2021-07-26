@@ -1,243 +1,256 @@
 <template>
-  <div>
-    <div class="lebar1">
-      <!--Slide-->
-      <div class="atas">
-        <div class="col-md-6 atas_left">
-          <img src="../assets/book.png" class="image1" />
-        </div>
-        <div class="col-md-6 atas_right">
-          <p class="judul">Mari mahir menulis</p>
-          <div class="image2-right">
+  <body>
+    <nav>
+      <div class="lebar1">
+        <!--Slide-->
+        <div class="atas">
+          <div class="col-md-6 atas_left">
+            <img src="../assets/book.png" class="image1" />
+          </div>
+          <div class="col-md-6 atas_right">
+            <p class="judul">Mari mahir menulis</p>
+            <p class="isi">Karena menulis itu menyenangkan ...</p>
             <img src="../assets/vector.png" class="image2" />
-          </div>
-          <p class="isi">Karena menulis itu menyenangkan ...</p>
-          <div class="button-top">
-            <b-button class="button" to="mulai-menulis">
-              Mulai Menulis
-            </b-button>
-          </div>
-        </div>
-      </div>
-
-      <!--artikel -->
-      <div fluid>
-        <div class="conten_home">
-          <div class="conten_home_top">
-            <div class="col-md-8">
-              <h4 class="justify-content-center">
-                Mengapa KAWAN MENULIS bermanfaat?
-              </h4>
-              <br />
-              <p>
-                Seiring kemajuan mahasiswa, untuk meningkatkan keterampilan
-                menulis mereka membutuhkan dukungan mendalam. Mereka perlu
-                mengatur pemikiran mereka dan belajar untuk mengkomunikasikan
-                ide-ide mereka secara tertulis dengan jelas. Keberagaman konteks
-                penggunaan Bahasa Indonesia di dalam keterampilan menulis
-                menjadi tantangan tersendiri bagi mahasiswa di dalam menulis
-                paragraf. Hal ini sejalan dengan tugas sumatif di perguruan
-                tinggi dalam membuat tulisan ilmiah.
-              </p>
+            <div class="button-top">
+              <b-button class="button" to="mulai-menulis">
+                Mulai Menulis
+              </b-button>
             </div>
           </div>
-          <div style="background-color:#f5f4fd; width: 100%;">
-            <div class="padding">
-              <div class="conten_home_quotes">
-                <div class=" col-md-10">
+        </div>
+
+        <!--artikel -->
+        <div fluid>
+          <div class="conten_home">
+            <div class="conten_home_top">
+              <div class="col-md-8">
+                <h4 class="justify-content-center">
+                  Mengapa KAWAN MENULIS bermanfaat?
+                </h4>
+                <br />
+                <p>
+                  Seiring kemajuan mahasiswa, untuk meningkatkan keterampilan
+                  menulis mereka membutuhkan dukungan mendalam. Mereka perlu
+                  mengatur pemikiran mereka dan belajar untuk mengkomunikasikan
+                  ide-ide mereka secara tertulis dengan jelas. Keberagaman
+                  konteks penggunaan Bahasa Indonesia di dalam keterampilan
+                  menulis menjadi tantangan tersendiri bagi mahasiswa di dalam
+                  menulis paragraf. Hal ini sejalan dengan tugas sumatif di
+                  perguruan tinggi dalam membuat tulisan ilmiah.
+                </p>
+              </div>
+            </div>
+            <div style="background-color:#f5f4fd; width: 100%;">
+              <div class="padding">
+                <div class="conten_home_quotes">
+                  <div class=" col-md-10">
+                    <h1>
+                      "If there's a book that you want to read, but it hasn't
+                      been written yet, then you must write it."
+                    </h1>
+                    <br />
+                    <p>
+                      Toni Morrison
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <div class="margin">
+              <div class="conten_home_apaitu row mt-1">
+                <div class="col-md-6">
+                  <img src="../assets/frame.png" />
+                </div>
+                <div class="col-md-6">
+                  <br />
                   <h1>
-                    "If there's a book that you want to read, but it hasn't been
-                    written yet, then you must write it."
+                    <b>Apa itu KAWAN MENULIS?</b>
                   </h1>
                   <br />
                   <p>
-                    Toni Morrison
+                    Merupakan website yang didesain untuk membantu mahasiswa
+                    tingkat perguruan tinggi dalam mendukung keterampilan
+                    menulis paragraf yang baik dan benar.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-
-          <br />
-          <div class="margin">
-            <div class="conten_home_apaitu row mt-1">
-              <div class="col-md-6">
-                <img src="../assets/frame.png" />
-              </div>
-              <div class="col-md-6">
+            <div class="conten_home_how">
+              <div class="col-md-8">
+                <br />
                 <br />
                 <h1>
-                  <b>Apa itu KAWAN MENULIS?</b>
+                  Bagaimana KAWAN MENULIS dapat membantu saya menulis?
                 </h1>
-                <br />
                 <p>
-                  Merupakan website yang didesain untuk membantu mahasiswa
-                  tingkat perguruan tinggi dalam mendukung keterampilan menulis
+                  Website ini didesain dengan melihat kebutuhan generasi muda
+                  yang penuh dengan daya kreasi dan inovasi. Kesempatan untuk
+                  melakukan tes diagnostik mandiri, mulai menulis, dan fitur
+                  bertemu tutor akan semakin memperlengkapi cara penulisan
                   paragraf yang baik dan benar.
                 </p>
               </div>
             </div>
-          </div>
-          <div class="conten_home_how">
-            <div class="col-md-8">
-              <br />
-              <br />
-              <h1>
-                Bagaimana KAWAN MENULIS dapat membantu saya menulis?
-              </h1>
-              <p>
-                Website ini didesain dengan melihat kebutuhan generasi muda yang
-                penuh dengan daya kreasi dan inovasi. Kesempatan untuk melakukan
-                tes diagnostik mandiri, mulai menulis, dan fitur bertemu tutor
-                akan semakin memperlengkapi cara penulisan paragraf yang baik
-                dan benar.
-              </p>
-            </div>
-          </div>
-          <br />
-          <br />
-          <br />
-          <div style="background-color: #f5f4fd;">
-            <div class="conten_home_timeline">
-              <div class="row">
-                <strong class="d-flex justify-content-center ">
-                  <h4
-                    style="margin-left: 0px; margin-top:29px; text-align:center;"
-                  >
-                    Bagaimana tahapan menulis Paragraf?
-                  </h4>
-                </strong>
-                <div class="container">
-                  <ul class="timeline">
-                    <li>
-                      <strong>Topik</strong>
-                      <p>
-                        Tiga topik muncul dan peserta didik diminta untuk
-                        memilih salah satu sebagai topik paragraf mereka.
-                        Program kemudian meminta peserta didik untuk memasukkan
-                        nama mata pelajaran tertentu yang terkait dengan topik
-                        yang telah mereka pilih. Subjek khusus ini menjadi topik
-                        paragraf mereka.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Pramenulis</strong>
-                      <p>
-                        Sebuah notepad muncul dan pelajar diminta untuk
-                        memasukkan kata atau frase, bukan kalimat lengkap.
-                        Berdasarkan pada topiknya, program ini menawarkan tiga
-                        hingga enam pertanyaan untuk merangsang pemikiran
-                        mengenai topik tersebut. Peserta didik menanggapi
-                        pertanyaan dengan mengetikkan kata atau frasa ke dalam
-                        window input.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Pramenulis Lanjutan</strong>
-                      <p>
-                        Program ini menunjukkan contoh kalimat topik dan kalimat
-                        topik tidak lengkap yang diharapkan dapat diselesaikan
-                        oleh peserta didik. Peserta didik kemudian diminta untuk
-                        menulis kalimat topik asli untuk memperkenalkan paragraf
-                        mereka.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Menulis Isi</strong>
-                      <p>
-                        Notepad dari urutan pra-menulis muncul kembali dan
-                        peserta didik diminta untuk memilih kata atau frase dari
-                        notepad dan menggunakannya dalam sebuah kalimat. Mereka
-                        harus terus memilih kata atau frase untuk menulis
-                        kalimat untuk setiap frase yang mereka tulis dalam
-                        urutan pra-menulis. Ruang untuk menulis kalimat tambahan
-                        diberikan agar peserta didik dapat memperluas paragraf.
-                        Notepad dari urutan pramenulis hadir di seluruh urutan
-                        ini dan pelajar dapat merujuknya sesuai keinginan.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Pengorganisasian</strong>
-                      <p>
-                        Pada langkah pertama dalam urutan ini, notepad yang
-                        berisi kalimat lengkap dari urutan sebelumnya muncul di
-                        bagian kiri layar dan notepad yang berisi kalimat topik
-                        dari urutan "kalimat topik" muncul di bagian kanan
-                        layar. Peserta didik diminta untuk memindahkan kalimat
-                        dari bagian kiri layar dan menyusunnya menjadi sebuah
-                        paragraf yang utuh. Setidaknya tiga kalimat dari bagian
-                        kiri layar harus digunakan, memberikan pelajar pilihan
-                        untuk menolak kalimat jika mereka telah menulis lebih
-                        dari tiga. Pada langkah kedua dalam urutan ini, sebuah
-                        kotak yang berisi konsep paragraf lengkap muncul.
-                        Peserta didik memiliki pilihan untuk mencetak karyanya
-                        sebelum melanjutkan ke urutan berikutnya. Program ini
-                        menyajikan ide untuk kata transisi yang dapat dimasukkan
-                        pelajar di antara kalimat.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Kesimpulan</strong>
-                      <p>
-                        Program ini memberikan contoh kalimat penutup dan
-                        kalimat penutup tidak lengkap yang diharapkan dapat
-                        diselesaikan oleh peserta didik. Peserta didik kemudian
-                        menulis kalimat penutup asli untuk paragraf.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Revisi</strong>
-                      <p>
-                        Program ini memberikan contoh kalimat penutup dan
-                        kalimat penutup tidak lengkap yang diharapkan dapat
-                        diselesaikan oleh peserta didik. Peserta didik kemudian
-                        menulis kalimat penutup asli untuk paragraf.
-                      </p>
-                    </li>
-                    <li>
-                      <strong>Publikasi</strong>
-                      <p>
-                        Urutan terakhir memberi pelajar kesempatan untuk
-                        "mempublikasikan" paragraf dengan menyimpannya,
-                        mencetaknya, atau memindahkannya ke pengolahan kata
-                        (word processor). Mereka juga dapat meninjau paragraf
-                        untuk pengeditan lebih lanjut atau menggunakan pemeriksa
-                        ejaan kembali.
-                        <br />
-                      </p>
-                    </li>
-                  </ul>
+            <br />
+            <br />
+            <br />
+            <div style="background-color: #f5f4fd;">
+              <div class="conten_home_timeline">
+                <div class="row">
+                  <strong class="d-flex justify-content-center ">
+                    <h4
+                      style="margin-left: 0px; margin-top:29px; text-align:center;"
+                    >
+                      Bagaimana tahapan menulis Paragraf?
+                    </h4>
+                  </strong>
+                  <div class="list">
+                    <ul class="timeline">
+                      <li>
+                        <strong>Topik</strong>
+                        <p>
+                          Tiga topik muncul dan peserta didik diminta untuk
+                          memilih salah satu sebagai topik paragraf mereka.
+                          Program kemudian meminta peserta didik untuk
+                          memasukkan nama mata pelajaran tertentu yang terkait
+                          dengan topik yang telah mereka pilih. Subjek khusus
+                          ini menjadi topik paragraf mereka.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Pramenulis</strong>
+                        <p>
+                          Sebuah notepad muncul dan pelajar diminta untuk
+                          memasukkan kata atau frase, bukan kalimat lengkap.
+                          Berdasarkan pada topiknya, program ini menawarkan tiga
+                          hingga enam pertanyaan untuk merangsang pemikiran
+                          mengenai topik tersebut. Peserta didik menanggapi
+                          pertanyaan dengan mengetikkan kata atau frasa ke dalam
+                          window input.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Pramenulis Lanjutan</strong>
+                        <p>
+                          Program ini menunjukkan contoh kalimat topik dan
+                          kalimat topik tidak lengkap yang diharapkan dapat
+                          diselesaikan oleh peserta didik. Peserta didik
+                          kemudian diminta untuk menulis kalimat topik asli
+                          untuk memperkenalkan paragraf mereka.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Menulis Isi</strong>
+                        <p>
+                          Notepad dari urutan pra-menulis muncul kembali dan
+                          peserta didik diminta untuk memilih kata atau frase
+                          dari notepad dan menggunakannya dalam sebuah kalimat.
+                          Mereka harus terus memilih kata atau frase untuk
+                          menulis kalimat untuk setiap frase yang mereka tulis
+                          dalam urutan pra-menulis. Ruang untuk menulis kalimat
+                          tambahan diberikan agar peserta didik dapat memperluas
+                          paragraf. Notepad dari urutan pramenulis hadir di
+                          seluruh urutan ini dan pelajar dapat merujuknya sesuai
+                          keinginan.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Pengorganisasian</strong>
+                        <p>
+                          Pada langkah pertama dalam urutan ini, notepad yang
+                          berisi kalimat lengkap dari urutan sebelumnya muncul
+                          di bagian kiri layar dan notepad yang berisi kalimat
+                          topik dari urutan "kalimat topik" muncul di bagian
+                          kanan layar. Peserta didik diminta untuk memindahkan
+                          kalimat dari bagian kiri layar dan menyusunnya menjadi
+                          sebuah paragraf yang utuh. Setidaknya tiga kalimat
+                          dari bagian kiri layar harus digunakan, memberikan
+                          pelajar pilihan untuk menolak kalimat jika mereka
+                          telah menulis lebih dari tiga. Pada langkah kedua
+                          dalam urutan ini, sebuah kotak yang berisi konsep
+                          paragraf lengkap muncul. Peserta didik memiliki
+                          pilihan untuk mencetak karyanya sebelum melanjutkan ke
+                          urutan berikutnya. Program ini menyajikan ide untuk
+                          kata transisi yang dapat dimasukkan pelajar di antara
+                          kalimat.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Kesimpulan</strong>
+                        <p>
+                          Program ini memberikan contoh kalimat penutup dan
+                          kalimat penutup tidak lengkap yang diharapkan dapat
+                          diselesaikan oleh peserta didik. Peserta didik
+                          kemudian menulis kalimat penutup asli untuk paragraf.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Revisi</strong>
+                        <p>
+                          Program ini memberikan contoh kalimat penutup dan
+                          kalimat penutup tidak lengkap yang diharapkan dapat
+                          diselesaikan oleh peserta didik. Peserta didik
+                          kemudian menulis kalimat penutup asli untuk paragraf.
+                        </p>
+                      </li>
+                      <li>
+                        <strong>Publikasi</strong>
+                        <p>
+                          Urutan terakhir memberi pelajar kesempatan untuk
+                          "mempublikasikan" paragraf dengan menyimpannya,
+                          mencetaknya, atau memindahkannya ke pengolahan kata
+                          (word processor). Mereka juga dapat meninjau paragraf
+                          untuk pengeditan lebih lanjut atau menggunakan
+                          pemeriksa ejaan kembali.
+                          <br />
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="conten_home_foot ">
-            <div class="conten_home_foot_how ">
-              <h4 class="conten_home_foot_atas">
-                KETAHUI KEMAMPUAN MENULISMU
-              </h4>
-              <div class="button-bawah ">
-                <b-button class="button1 " to="diagnostik">
-                  <b>TES DIAGNOSTIK</b>
-                </b-button>
+            <div class="conten_home_foot ">
+              <div class="conten_home_foot_how ">
+                <h4 class="conten_home_foot_atas">
+                  KETAHUI KEMAMPUAN MENULISMU
+                </h4>
+                <div class="button-bawah ">
+                  <b-button class="button1 " to="diagnostik">
+                    <b>TES DIAGNOSTIK</b>
+                  </b-button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </nav>
+  </body>
 </template>
 <script>
 export default { name: "Home" };
 </script>
 <style lang="scss" scoped="scoped">
+body {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  width: 100%;
+}
 .lebar1 {
   overflow-x: hidden;
   padding-top: 105px;
+  max-width: 1440px;
+  margin: auto;
   width: 100%;
   @media (max-width: 768px) {
     width: 100%;
+  }
+  @media (min-width: 1440px) {
   }
 }
 
@@ -249,13 +262,12 @@ export default { name: "Home" };
     width: 100%;
   }
   &_left {
-    // background: red;
     @media screen and (max-width: 768px) {
     }
   }
 
   &_right {
-    padding: 20px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
     max-width: 100%;
     height: auto;
     @media screen and (max-width: 768px) {
@@ -303,20 +315,17 @@ export default { name: "Home" };
     width: 100%;
   }
 }
-.image2-right {
-  position: absolute;
-  width: 50%;
+
+.image2 {
+  float: right;
+  // background: red;
+  height: 219px;
+  width: 285px;
+  // position: absolute;
   @media screen and (max-width: 768px) {
+    width: 100px;
     display: none;
     overflow: hidden;
-  }
-  .image2 {
-    float: right;
-    @media screen and (max-width: 768px) {
-      width: 100px;
-      // display: none;
-      // overflow: hidden;
-    }
   }
 }
 .button-top {
@@ -349,7 +358,7 @@ export default { name: "Home" };
   }
 }
 
-.container {
+.list {
   margin-left: 220px;
   width: 874px;
   @media screen and (max-width: 768px) {
