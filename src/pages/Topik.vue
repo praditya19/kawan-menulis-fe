@@ -343,6 +343,5 @@
     padding-top: 95px;
   }
 }
-
 /* End Background Belakang Modal */
 </style>
