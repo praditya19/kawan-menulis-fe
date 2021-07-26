@@ -31,7 +31,7 @@ export default {
     topicsSelect: function(idTopic) {
       for (var topics = 0; topics < this.topicsTypes.length; topics++) {
         this.topicsSelect === this.topicsTypes[topics].id
-          ? (this.topicsTips = this.topicsTypes[topics].name)
+          ? (this.topicsTips = this.topicsTypes[topics].tips)
           : "";
       }
       // console.log("topics id", idTopic);

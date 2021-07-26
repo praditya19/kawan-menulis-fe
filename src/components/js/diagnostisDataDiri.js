@@ -23,6 +23,10 @@ export default {
     ValidationObserver,
     ValidationProvider,
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
+
   methods: {
     ...mapActions(["createStudents"]),
     handleSubmit() {

@@ -57,9 +57,7 @@
     </div>
   </div>
 </template>
-<script>
-export default { name: "Home" };
-</script>
+<script src="./js/diagnostis.js" />
 <style lang="scss" scoped="scoped">
 .image {
   max-width: 100%;

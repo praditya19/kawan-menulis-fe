@@ -33,5 +33,9 @@ export default {
         },
       });
     },
+    toLink(i) {
+      var HyperLink = this.learning[i];
+      window.open(HyperLink.link);
+    },
   },
 };

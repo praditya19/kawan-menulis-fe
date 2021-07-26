@@ -230,9 +230,7 @@
     </nav>
   </body>
 </template>
-<script>
-export default { name: "Home" };
-</script>
+<script src="./js/home.js" />
 <style lang="scss" scoped="scoped">
 body {
   margin: 0;
