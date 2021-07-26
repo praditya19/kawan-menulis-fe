@@ -29,10 +29,10 @@
             <img :src="user.avatar" alt="logo" />
             <h6>{{ user.name }}</h6>
             <p @click="toEmail(user.email1)">
-              {{ user.email1 }}
+              <b-link class="kaka">{{ user.email1 }}</b-link>
             </p>
             <p @click="toWa(user.phone)">
-              {{ user.phone }}
+              <b-link class="kaka">{{ user.phone }}</b-link>
             </p>
           </div>
         </div>
@@ -55,7 +55,10 @@
     height: 200px auto;
   }
 }
-
+.kaka {
+  text-decoration: none;
+  color: black;
+}
 .header {
   img {
     margin-left: 230px;
