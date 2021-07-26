@@ -92,6 +92,10 @@ export default {
 
     ...mapActions(["getAnswerList"]),
     next() {
+      if (this.answerId.length === 0) {
+        alert("Harus Memilih terlrbih dahulu");
+        return;
+      }
       const findPositions = this.show.steps.find(
         (i) => i.position === this.show.position.order + 1
       );

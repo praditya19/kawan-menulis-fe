@@ -1,43 +1,51 @@
 <template>
-  <div class="body">
-    <div class="header">
-      <!-- Logo -->
-      <div class="logo">
-        <router-link to="/">
-          <img src="@/assets/logo.png" alt="logo" width="147px" height="85px" />
-        </router-link>
-      </div>
-      <input class="menu-btn" type="checkbox" id="menu-btn" />
-      <label class="menu-icon" for="menu-btn"
-        ><span class="nav-icon"></span
-      ></label>
+  <!-- Terbaru -->
+  <body>
+    <nav>
+      <div class="header">
+        <!-- Logo -->
+        <div class="logo">
+          <router-link to="/">
+            <img
+              src="@/assets/logo.png"
+              alt="logo"
+              width="147px"
+              height="85px"
+            />
+          </router-link>
+        </div>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"
+          ><span class="nav-icon"></span
+        ></label>
 
-      <!-- Menu -->
-      <ul class="menu">
-        <li>
-          <router-link to="/">Beranda</router-link>
-        </li>
-        <li>
-          <router-link to="diagnostik">Tes Diagnostik</router-link>
-        </li>
-        <li>
-          <router-link to="sumber-belajar">Sumber Belajar</router-link>
-        </li>
-        <li>
-          <router-link to="tutor">Tutor</router-link>
-        </li>
-        <li>
-          <router-link to="mulai-menulis" type="button" class="button"
-            >Mulai Menulis</router-link
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
+        <!-- Menu -->
+        <ul class="menu">
+          <li>
+            <router-link to="/">Beranda</router-link>
+          </li>
+          <li>
+            <router-link to="diagnostik">Tes Diagnostik</router-link>
+          </li>
+          <li>
+            <router-link to="sumber-belajar">Sumber Belajar</router-link>
+          </li>
+          <li>
+            <router-link to="tutor">Tutor</router-link>
+          </li>
+          <li>
+            <router-link to="mulai-menulis" type="button" class="button"
+              >Mulai Menulis</router-link
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </body>
 </template>
 
 <style lang="scss" scoped>
-.body {
+body {
   margin: 0;
   font-family: Poppins;
   // background-color: #0a4da3;
@@ -47,12 +55,30 @@ a {
   color: #fff;
 }
 
-.header {
+nav {
   background-color: #0a4da3;
-  // box-shadow: 1px 1px 4px rgba();
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 99;
+}
+nav .header {
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: auto;
+  // line-height: 70px;
+  margin: auto;
+  // display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  // background-color: #0a4da3;
+  // box-shadow: 1px 1px 4px rgba();
+  // position: fixed;
+  // width: 100%;
+  // z-index: 3;
 }
 
 .header ul {
@@ -60,7 +86,7 @@ a {
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #0a4da3;
+  // background-color: #0a4da3;
   // font-size: 20px;
 }
 
@@ -162,9 +188,11 @@ a {
   border-radius: 42px;
   line-height: 4px;
   margin-top: 10px;
+  float: right;
+  width: 19%;
 }
 
-@media (min-width: 70em) {
+@media (min-width: 68em) {
   .header li {
     float: left;
   }
@@ -178,6 +206,13 @@ a {
   }
   .header .menu-icon {
     display: none;
+  }
+  .button {
+    background: #00a279;
+    border-radius: 42px;
+    line-height: 4px;
+    margin-top: 10px;
+    width: 100%;
   }
 }
 </style>

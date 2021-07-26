@@ -1,94 +1,108 @@
 <template>
-  <div class="footer">
-    <!--    <div class="container" v-if="isMobile">-->
-    <div class="container thisMobile">
-      <div class="row mobile">
-        <div class="mobile__footer__menu">
-          <a href="/">Beranda</a>
+  <!-- Terbaru -->
+  <nav>
+    <div class="footer">
+      <!--    <div class="container" v-if="isMobile">-->
+      <div class="container thisMobile">
+        <div class="row mobile">
+          <div class="mobile__footer__menu">
+            <a href="/">Beranda</a>
+          </div>
+          <div class="mobile__footer__menu">
+            <a href="/diagnostik">Tes Diagnostik</a>
+          </div>
+          <div class="mobile__footer__menu">
+            <a href="/mulai-menulis">Belajar Menulis</a>
+          </div>
+          <div class="mobile__footer__menu">
+            <a href="/sumber-belajar">Sumber Belajar</a>
+          </div>
+          <div class="mobile__footer__menu">
+            <a href="/tutor">Tutor</a>
+          </div>
+          <div class="mobile__footer__menu">
+            <a href="#">Tentang Kami</a>
+          </div>
+          <div class="mobile__footer__address">
+            <div class="mobile__footer__address--text">
+              <div class="mobile__footer__address--address">
+                Merupakan website yang didesain untuk membantu mahasiswa tingkat
+                perguruan tinggi dalam mendukung keterampilan menulis paragraf
+                yang baik dan benar.
+              </div>
+            </div>
+          </div>
+          <div class="mobile__footer__icon">
+            <i class="icon-message"></i>
+            <a href="#" target="_top">
+              Copyright © 2021. Tim Pengembang Proyek Menulis UPH Teachers
+              College. All rights reserved.</a
+            >
+          </div>
+          <div class="mobile__footer__logo">
+            <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
+          </div>
         </div>
-        <div class="mobile__footer__menu">
-          <a href="/diagnostik">Tes Diagnostik</a>
-        </div>
-        <div class="mobile__footer__menu">
-          <a href="/mulai-menulis">Belajar Menulis</a>
-        </div>
-        <div class="mobile__footer__menu">
-          <a href="/sumber-belajar">Sumber Belajar</a>
-        </div>
-        <div class="mobile__footer__menu">
-          <a href="/tutor">Tutor</a>
-        </div>
-        <div class="mobile__footer__menu">
-          <a href="#">Tentang Kami</a>
-        </div>
-        <div class="mobile__footer__address">
-          <div class="mobile__footer__address--text">
-            <div class="mobile__footer__address--address">
-              Merupakan website yang didesain untuk membantu mahasiswa tingkat
-              perguruan tinggi dalam mendukung keterampilan menulis paragraf
-              yang baik dan benar.
+      </div>
+
+      <!-- Destop -->
+      <!--    <div class="container" v-else>-->
+      <div class="container thisDesktop">
+        <div
+          class="row"
+          style="padding= 50px;"
+        >
+          <div class="footer__logo">
+            <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
+          </div>
+          <div class="footer__menu">
+            <div class="footer__menu--menu">
+              <p>
+                Merupakan website yang didesain untuk membantu mahasiswa tingkat
+                perguruan tinggi dalam mendukung keterampilan menulis paragraf
+                yang baik dan benar.
+              </p>
+            </div>
+          </div>
+          <div class="footer__beranda">
+            <div class="footer__beranda--beranda">
+              <router-link to="/"><strong>Beranda</strong></router-link>
+            </div>
+            <div class="footer__beranda--tesDiagnostik">
+              <router-link to="/diagnostik"> Tes Diagnostik</router-link>
+            </div>
+            <div class="footer__beranda--belajarMenulis">
+              <router-link to="/mulai-menulis"> Belajar Menulis</router-link>
+            </div>
+          </div>
+          <div class="footer__belajar">
+            <div class="footer__belajar--sumberBelajar">
+              <router-link to="/sumber-belajar">Sumber Belajar</router-link>
+            </div>
+            <div class="footer__belajar--tutor">
+              <router-link to="/tutor"> Tutor</router-link>
+            </div>
+            <div class="footer__belajar--tentangKami">
+              <router-link to="#"> Tentang Kami</router-link>
             </div>
           </div>
         </div>
-        <div class="mobile__footer__icon">
-          <i class="icon-message"></i>
-          <a href="#" target="_top">
-            Copyright © 2021. Tim Pengembang Proyek Menulis UPH Teachers
-            College. All rights reserved.</a
-          >
-        </div>
-        <div class="mobile__footer__logo">
-          <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
+        <div class="footer__end">
+          Copyright © 2021. Tim Pengembang Proyek Menulis UPH Teachers College.
+          All rights reserved.
         </div>
       </div>
     </div>
-    <!--    <div class="container" v-else>-->
-    <div class="container thisDesktop">
-      <div class="row">
-        <div class="footer__logo">
-          <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
-        </div>
-        <div class="footer__menu">
-          <div class="footer__menu--menu">
-            <p>
-              Merupakan website yang didesain untuk membantu mahasiswa tingkat
-              perguruan tinggi dalam mendukung keterampilan menulis paragraf
-              yang baik dan benar.
-            </p>
-          </div>
-        </div>
-        <div class="footer__beranda">
-          <div class="footer__beranda--beranda">
-            <router-link to="/"><strong>Beranda</strong></router-link>
-          </div>
-          <div class="footer__beranda--tesDiagnostik">
-            <router-link to="/diagnostik"> Tes Diagnostik</router-link>
-          </div>
-          <div class="footer__beranda--belajarMenulis">
-            <router-link to="/mulai-menulis"> Belajar Menulis</router-link>
-          </div>
-        </div>
-        <div class="footer__belajar">
-          <div class="footer__belajar--sumberBelajar">
-            <router-link to="/sumber-belajar">Sumber Belajar</router-link>
-          </div>
-          <div class="footer__belajar--tutor">
-            <router-link to="/tutor"> Tutor</router-link>
-          </div>
-          <div class="footer__belajar--tentangKami">
-            <router-link to="#"> Tentang Kami</router-link>
-          </div>
-        </div>
-      </div>
-      <div class="footer__end">
-        Copyright © 2021. Tim Pengembang Proyek Menulis UPH Teachers College.
-        All rights reserved.
-      </div>
-    </div>
-  </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
+// .footer {
+//   border: 2px solid red;
+//   height: 200px;
+//   // padding: 100px;
+//   margin: 10px;
+// }
 .mobile {
   font-family: Poppins;
   font-style: normal;
@@ -102,6 +116,7 @@
       margin-top: 30px;
       font-size: 14px;
       line-height: 19px;
+
       a {
         color: #ffffff;
       }
@@ -162,14 +177,38 @@
     }
   }
 }
-.footer {
+
+nav {
   background-color: #333333;
+  // position: fixed;
+  // width: 100%;
+  // z-index: 99;
+  padding: 40px;
+}
+nav .footer {
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: auto;
+  // line-height: 70px;
+  margin: auto;
+  // display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  // height: 50%;
   color: #ece7ff;
-  padding-top: 35px;
-  padding-bottom: 35px;
+  // padding-top: 35px;
+  // padding-bottom: 35px;
   font-size: 12px;
   font-family: Poppins;
   line-height: 150%;
+  // position: fixed;
+  // width: 100%;
+  // z-index: 99;
+
   @media screen and (max-width: 768px) {
     padding: 30px 0px 30px;
   }

@@ -51,16 +51,12 @@
                   v-if="show.position.order !== show.steps.length"
                   class="action"
                 >
-                  <b-button @click="back()" variant="outline-secondary">
-                    <b-icon icon="chevron-left" aria-hidden="true"></b-icon>
-                  </b-button>
-                  <b-button
-                    :disabled="answerId.length === 0"
-                    @click="next()"
-                    variant="outline-secondary"
-                  >
-                    <b-icon icon="chevron-right" aria-hidden="true"></b-icon>
-                  </b-button>
+                  <a @click="back()" class="kakak">
+                    <img src="@/assets/back.png" alt="logo" class="img" />
+                  </a>
+                  <a @click="next()" class="btn">
+                    <img src="@/assets/Group1.png" alt="logo" class="img" />
+                  </a>
                 </div>
                 <div
                   v-if="show.position.order === show.steps.length"
@@ -80,6 +76,9 @@
 </template>
 <script src="./js/diagnostisQuestion.js" />
 <style lang="scss" scoped="scoped">
+.kakak {
+  padding: 0px 50px 0px 0px;
+}
 .image {
   max-width: 100%;
   width: 100%;
