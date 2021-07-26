@@ -63,7 +63,7 @@ nav {
 }
 nav .header {
   position: relative;
-  max-width: 1300px;
+  max-width: 1440px;
   padding: 0px 30px;
   height: auto;
   // line-height: 70px;

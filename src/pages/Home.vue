@@ -9,8 +9,8 @@
           </div>
           <div class="col-md-6 atas_right">
             <p class="judul">Mari mahir menulis</p>
-            <p class="isi">Karena menulis itu menyenangkan ...</p>
             <img src="../assets/vector.png" class="image2" />
+            <p class="isi">Karena menulis itu menyenangkan ...</p>
             <div class="button-top">
               <b-button class="button" to="mulai-menulis">
                 Mulai Menulis
@@ -106,7 +106,7 @@
                       Bagaimana tahapan menulis Paragraf?
                     </h4>
                   </strong>
-                  <div class="list">
+                  <div class="container">
                     <ul class="timeline">
                       <li>
                         <strong>Topik</strong>
@@ -244,32 +244,33 @@ nav {
 .lebar1 {
   overflow-x: hidden;
   padding-top: 105px;
-  max-width: 1440px;
+  max-width: 1350px;
   margin: auto;
   width: 100%;
   @media (max-width: 768px) {
     width: 100%;
-  }
-  @media (min-width: 1440px) {
   }
 }
 
 .atas {
   padding: 50px 0px 0px 0px;
   display: flex;
+  // background: aqua;
   @media screen and (max-width: 768px) {
     display: inline-block;
     width: 100%;
   }
   &_left {
+    // background: red;
     @media screen and (max-width: 768px) {
     }
   }
 
   &_right {
-    padding: 40px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     max-width: 100%;
     height: auto;
+    // background: blue;
     @media screen and (max-width: 768px) {
       padding: 20px 10px 0px 10px;
       text-align: center;
@@ -292,8 +293,8 @@ nav {
 
     .isi {
       // background: rosybrown;
-      position: relative;
-      width: 80%;
+      position: absolute;
+      // width: 80%;
       font-family: Poppins;
       font-style: italic;
       font-weight: normal;
@@ -303,6 +304,7 @@ nav {
       @media screen and (max-width: 768px) {
         width: 100%;
         font-size: 20px;
+        position: relative;
       }
     }
   }
@@ -318,18 +320,15 @@ nav {
 
 .image2 {
   float: right;
-  // background: red;
-  height: 219px;
-  width: 285px;
-  // position: absolute;
   @media screen and (max-width: 768px) {
-    width: 100px;
     display: none;
     overflow: hidden;
   }
 }
 .button-top {
+  margin-top: 90px;
   @media screen and (max-width: 768px) {
+    margin-top: 0px;
   }
   .button {
     background-color: #00a279;
@@ -358,7 +357,7 @@ nav {
   }
 }
 
-.list {
+.container {
   margin-left: 220px;
   width: 874px;
   @media screen and (max-width: 768px) {

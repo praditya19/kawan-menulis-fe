@@ -48,10 +48,7 @@
       <!-- Destop -->
       <!--    <div class="container" v-else>-->
       <div class="container thisDesktop">
-        <div
-          class="row"
-          style="padding= 50px;"
-        >
+        <div class="row" style="padding= 50px;">
           <div class="footer__logo">
             <img src="@/assets/logo.png" alt="logo" width="80%" height="80%" />
           </div>
@@ -187,7 +184,7 @@ nav {
 }
 nav .footer {
   position: relative;
-  max-width: 1300px;
+  max-width: 1440px;
   padding: 0px 30px;
   height: auto;
   // line-height: 70px;

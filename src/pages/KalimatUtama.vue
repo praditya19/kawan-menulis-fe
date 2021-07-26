@@ -242,7 +242,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9.5 tips_kata_2">
+        <div class="col-md-9.5 tips_kata_2" style="margin-top: -10px">
           <div>
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 1" v-html="details.guide"></span>
@@ -321,7 +321,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9.5 tips_kata_2">
+        <div class="col-md-9.5 tips_kata_2" style="margin-top: -10px">
           <div>
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 2" v-html="details.guide"></span>
@@ -407,7 +407,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9.5 tips_kata">
+        <div class="col-md-9.5 tips_kata" style="margin-top: -15px">
           <div>
             <p v-for="(details, index) in kalimatUtamaGuides" :key="index">
               <span v-if="index === 3" v-html="details.guide"></span>
@@ -570,7 +570,7 @@
     }
   }
   &_kata {
-    padding: 10px 220px 0px 15px;
+    padding: 4px 220px 0px 15px;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;
