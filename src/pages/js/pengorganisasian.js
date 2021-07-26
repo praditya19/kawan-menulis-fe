@@ -112,8 +112,9 @@ export default {
         this.dataForm.tambahParagrafPage3 = "";
         return;
       } else {
-        alert("Maksimal menambahkan 10 item");
         this.showModalTambahPage3 = false;
+        this.showModalError = true;
+        this.dataForm.tambahParagrafPage3 = "";
       }
     },
     handleSubmit(tambah) {

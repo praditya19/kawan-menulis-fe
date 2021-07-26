@@ -64,7 +64,10 @@
                   v-if="show.position.order === show.steps.length"
                   class="action_submit"
                 >
-                  <b-button v-on:click="handleSubmit" class="submit"
+                  <b-button
+                    v-on:click="handleSubmit"
+                    class="submit"
+                    v-bind:disabled="answerId.length === 0 ? true : false"
                     >Submit</b-button
                   >
                 </div>

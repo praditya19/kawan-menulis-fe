@@ -168,7 +168,6 @@ export default {
       this.show.position.order = findingPostionByName.position;
       this.show.history.push({ name: findingPostionByName.name });
     },
-
     getAllAnswer() {
       const requestBody = {
         clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
@@ -179,7 +178,6 @@ export default {
         success: (res) => {
           Promise.all(
             res.map((answer, index) => {
-              console.log(answer);
               this.answer.push(answer);
               const name = answer.question;
               const position = index + 1;

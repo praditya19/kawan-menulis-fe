@@ -54,7 +54,12 @@
 
             <!-- Button Tips -->
             <div class="button_tombol">
-              <b-button class="button" @click="showModal = true">Tips</b-button>
+              <b-button
+                class="button"
+                @click="showModal = true"
+                v-bind:disabled="topicsSelect.length === 0 ? true : false"
+                >Tips</b-button
+              >
 
               <!-- popup -->
               <div v-if="showModal === true">
@@ -76,8 +81,7 @@
                             <div
                               style="padding: 10px 0px 0px 0px; width: 100%;"
                             >
-                              <p
-                              >
+                              <p>
                                 {{ topicsTips }}
                               </p>
                             </div>

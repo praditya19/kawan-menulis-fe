@@ -329,7 +329,7 @@
                             <b-button
                               class="mt-3"
                               block
-                              @click="showModal2 = falses"
+                              @click="showModal2 = false"
                               >OK</b-button
                             >
                           </div>
@@ -588,14 +588,16 @@
                       <div class="col-sm-12">
                         <ul>
                           <div class="dua">
-                            <h5>
+                            <h5
+                              v-for="(details,
+                              index) in pramenulisLanjutanDataSesion.resultParagraphKalimatUtama"
+                              :key="index"
+                            >
                               <b>
-                                {{
-                                  pramenulisLanjutanDataSesion.resultParagraphKalimatUtama[1].replace(
-                                    ".",
-                                    ""
-                                  )
-                                }}
+                                <span
+                                  v-if="index === 1"
+                                  v-html="details.replace('.', '')"
+                                ></span>
                               </b>
                             </h5>
                           </div>
