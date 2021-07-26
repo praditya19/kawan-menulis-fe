@@ -12,6 +12,8 @@ export default {
       showModal5: false,
       showModal6: false,
       showModal7: false,
+      showModalErrorEmpety: false, // modal empety
+      showModalValidation: false, // modal valid
       // page
       menulisIsi: true,
       menulisIsiPage2: false,
@@ -81,7 +83,7 @@ export default {
         this.dataForm.menulis.length <=
         this.pramenulisLanjutanDataSesion.resultMenulis.length - 1
       ) {
-        alert("Harus di isi semua");
+        this.showModalErrorEmpety = true;
         return;
       }
       var trueOrFalse = this.checkingValidasi(this.dataForm.menulis);
@@ -129,9 +131,7 @@ export default {
       ) {
         return true;
       } else {
-        alert(
-          "Harus di awali dengan huruf kapital dan di akhiri dengan tanda baca titik"
-        );
+        this.showModalValidation = true;
         return false;
       }
     },

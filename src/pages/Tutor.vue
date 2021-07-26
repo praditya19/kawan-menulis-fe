@@ -29,7 +29,7 @@
             <img :src="user.avatar" alt="logo" />
             <h6>{{ user.name }}</h6>
             <p>{{ user.email1 }}</p>
-            <p>{{ user.email2 }}</p>
+            <p>{{ user.phone }}</p>
           </div>
         </div>
       </div>

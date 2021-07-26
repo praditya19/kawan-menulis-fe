@@ -33,12 +33,11 @@
                     {{ show.position.order }}.
                     <span v-html="answerData.question"></span>
                   </p>
-
                   <b-button
                     variant="outline-primary"
                     v-for="answerList in answerData.answers"
                     :key="answerList.id"
-                    @click="calc(answerList.id, answerData.id)"
+                    @click="calc(answerList.id, answerData.id), checkingPilih()"
                     >{{
                       huruf[answerList.position - 1] + ". " + answerList.answer
                     }}</b-button
@@ -54,8 +53,11 @@
                   <a @click="back()" class="kakak">
                     <img src="@/assets/back.png" alt="logo" class="img" />
                   </a>
-                  <a @click="next()" class="btn">
+                  <a @click="next()" class="btn" v-if="isHaven === true">
                     <img src="@/assets/Group1.png" alt="logo" class="img" />
+                  </a>
+                  <a @click="next()" class="btn" v-if="isActive === true">
+                    <img src="@/assets/next.png" alt="logo" class="img" />
                   </a>
                 </div>
                 <div

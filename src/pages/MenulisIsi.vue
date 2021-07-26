@@ -219,6 +219,87 @@
         </div>
       </transition>
     </div>
+    <div v-if="showModalErrorEmpety === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <br />
+                  <div class="kalimat">
+                    <div style="font">
+                      <h2></h2>
+                    </div>
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p
+                        class="mb-4"
+                        style="text-align:center; font-size: 20px;"
+                      >
+                        Form haru di isi semua
+                      </p>
+                    </div>
+                  </div>
+                  <div class="tombol1">
+                    <button
+                      class="ok1"
+                      type="button"
+                      @click="showModalErrorEmpety = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <div v-if="showModalValidation === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <br />
+                  <div class="kalimat">
+                    <div style="font">
+                      <h2></h2>
+                    </div>
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                      <p
+                        class="mb-4"
+                        style="text-align:center; font-size: 20px;"
+                      >
+                        Harus di awali dengan huruf kapital dan di akhiri dengan
+                        tanda baca titik
+                      </p>
+                    </div>
+                  </div>
+                  <div class="tombol1">
+                    <button
+                      class="ok1"
+                      type="button"
+                      @click="showModalValidation = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <div v-if="showModal7 === true">
       <!--showModal3-->
       <transition name="model">
@@ -893,4 +974,19 @@
   margin-top: 20px;
 }
 // end content tujuh
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 </style>

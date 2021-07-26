@@ -50,6 +50,10 @@ export default {
       kalimatUtamaPage1: true,
       kalimatUtamaPage2: false,
       kalimatUtamaPage3: false,
+
+      // Button
+      isHaven: true,
+      isActive: false,
     };
   },
   mounted() {
@@ -66,6 +70,12 @@ export default {
     });
   },
   methods: {
+    checkingPilih() {
+      if (this.answerId !== "") {
+        this.isHaven = false;
+        this.isActive = true;
+      }
+    },
     ...mapActions(["createScores"]),
     disablod() {
       return false;
@@ -116,6 +126,8 @@ export default {
         questionId: this.questionId,
         answerId: this.answerId,
       });
+      this.isActive = false;
+      this.isHaven = true;
       this.answerId = "";
     },
 
@@ -142,6 +154,8 @@ export default {
         this.show.position.name = findingFromStep.name;
         this.show.position.order = findingFromStep.position;
       }
+      this.isHaven = true;
+      this.isActive = false;
     },
 
     defaultSetupStepper() {
