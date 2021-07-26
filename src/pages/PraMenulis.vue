@@ -205,9 +205,12 @@
           </div>
           <!-- Kalimat Samping Button Tips -->
           <div class="col-sm-10">
-            <div class="content_padding_tulis_right" style="margin-top:0px">
+            <div class="content_padding_tulis_right">
               <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
+                <div
+                  class="content_padding_tulis_right_paragraf"
+                  style="margin-top: -25px"
+                >
                   <p v-for="(details, index) in pramenulisGuides" :key="index">
                     <span v-if="index === 1" v-html="details.guide"></span>
                   </p>
@@ -219,11 +222,9 @@
                 </div>
               </div>
               <div style="padding: 5px 0px 10px 0px">
-                <b-form-input
-                  v-model="dataForm.menulisPage2"
-                  id="feedback-user"
-                ></b-form-input>
+                <b-form-input v-model="dataForm.menulisPage2"></b-form-input>
               </div>
+
               <div class="col-sm-12">
                 <div class="button2_tombol2" @click="pramenulis2Next">
                   <button class="button2" type="submit">
@@ -275,7 +276,6 @@
           </div>
         </div>
       </div>
-
       <!-- screen 3 -->
       <div class="content_padding_tulis" v-if="pramenulisPage3 === true">
         <div class="row">
@@ -339,7 +339,10 @@
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
+                <div
+                  class="content_padding_tulis_right_paragraf"
+                  style="margin-top: -25px"
+                >
                   <p v-for="(details, index) in pramenulisGuides" :key="index">
                     <span v-if="index === 2" v-html="details.guide"></span>
                   </p>
@@ -471,7 +474,10 @@
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
+                <div
+                  class="content_padding_tulis_right_paragraf"
+                  style="margin-top: -25px"
+                >
                   <p v-for="(details, index) in pramenulisGuides" :key="index">
                     <span v-if="index === 3" v-html="details.guide"></span>
                   </p>
@@ -603,7 +609,10 @@
           <div class="col-sm-10">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
-                <div class="content_padding_tulis_right_paragraf">
+                <div
+                  class="content_padding_tulis_right_paragraf"
+                  style="margin-top: -25px"
+                >
                   <p v-for="(details, index) in pramenulisGuides" :key="index">
                     <span v-if="index === 4" v-html="details.guide"></span>
                   </p>
@@ -722,7 +731,7 @@
               </b-button>
             </div>
           </div>
-          <div class="col-sm-11" style="padding: 0px 0px 0px 50px">
+          <div class="col-sm-11" style="padding: 0px 0px 0px 100px">
             <div class="content_padding_tulis_right">
               <div class="col-sm-12">
                 <div class="content_padding_tulis_right_paragraf">
@@ -1061,6 +1070,7 @@
           margin-left: -30px;
         }
         &_paragraf {
+          margin-top: -10px;
           padding: 20px 0px 0px 0px;
           label {
             font: 1rem "Fira Sans", sans-serif;
