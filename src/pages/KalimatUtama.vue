@@ -16,10 +16,10 @@
     <div class="content-tiga">
       <div class="jenis">
         <p class="jenis_paragraf">
-          <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+          <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
         </p>
         <p class="jenis_topik">
-          <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+          <strong>Topik: </strong>{{ jenisTopics.topik }}
         </p>
       </div>
     </div>
@@ -458,6 +458,8 @@
 <style lang="scss" scoped>
 .all {
   overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 
 .content-satu {
@@ -505,7 +507,7 @@
 // Stepper
 .steper {
   text-align: center;
-  padding: 10px 200px 10px 200px;
+  padding: 10px 150px 10px 150px;
   &_image {
     width: 100%;
     height: auto;
@@ -570,7 +572,7 @@
     }
   }
   &_kata {
-    padding: 4px 220px 0px 15px;
+    padding: 10px 220px 0px 15px;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;
@@ -583,13 +585,13 @@
     }
   }
   &_kata_2 {
-    padding: 0px 220px 0px 15px;
+    padding: 6px 220px 0px 15px;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 30px;
     color: #000000;
     @media Screen and (max-width: 780px) {
       padding: 10px 0px 0px 10px;
@@ -760,16 +762,4 @@
 /* End Background Belakang Modal */
 
 // penutup style css modal
-
-// Stepper 1 -7
-
-// .container-progress {
-//   margin: 100px auto;
-//   font-size: 16px;
-//   font-weight: bold;
-//   font-family: Poppins;
-//   color: white;
-//   margin-top: 50px;
-//   padding: 0;
-// }
 </style>
