@@ -1,40 +1,37 @@
 <template>
-  <div>
-    <div class="slide">
-      <img src="@/assets/Image.png" alt="logo" class="image" />
-      <div class="content_tutor">
-        <div class="header">
-          <div class="content_tutor_header row mt-3">
-            <div class="col-md-4">
-              <img src="@/assets/Ilustration.png" />
-            </div>
-            <div class="col-md-8">
-              <br />
-              <h1>
-                <b>Temukan Tutor</b>
-              </h1>
-              <p>
-                Jika kamu ingin berdiskusi dan membutuhkan bantuan, para tutor
-                siap membantumu dan belajar bersama.
-              </p>
-            </div>
+  <div class="slide">
+    <img src="@/assets/Image.png" alt="logo" class="image" />
+    <div class="content_tutor">
+      <div class="header">
+        <div class="content_tutor_header row mt-3">
+          <div class="col-md-4 left">
+            <img src="@/assets/Ilustration.png" />
+          </div>
+          <div class="col-md-8 right">
+            <h1>
+              <b>Temukan Tutor</b>
+            </h1>
+            <p>
+              Jika kamu ingin berdiskusi dan membutuhkan bantuan, para tutor
+              siap membantumu dan belajar bersama.
+            </p>
           </div>
         </div>
-        <div class="content_tutor_bottom">
-          <div
-            class="content_tutor_bottom_profile"
-            v-for="(user, index) in peoples"
-            :key="index"
-          >
-            <img :src="user.avatar" alt="logo" />
-            <h6>{{ user.name }}</h6>
-            <p @click="toEmail(user.email1)">
-              <b-link class="kaka">{{ user.email1 }}</b-link>
-            </p>
-            <p @click="toWa(user.phone)">
-              <b-link class="kaka">{{ user.phone }}</b-link>
-            </p>
-          </div>
+      </div>
+      <div class="content_tutor_bottom">
+        <div
+          class="content_tutor_bottom_profile"
+          v-for="(user, index) in peoples"
+          :key="index"
+        >
+          <img :src="user.avatar" alt="logo" />
+          <h6>{{ user.name }}</h6>
+          <p @click="toEmail(user.email1)">
+            <b-link class="kaka">{{ user.email1 }}</b-link>
+          </p>
+          <p @click="toWa(user.phone)">
+            <b-link class="kaka">{{ user.phone }}</b-link>
+          </p>
         </div>
       </div>
     </div>
@@ -45,6 +42,8 @@
 <style lang="scss" scoped>
 .slide {
   overflow: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 .image {
   max-width: 100%;
@@ -76,7 +75,7 @@
     font-family: Poppins;
     font-size: 20px;
     font-weight: 400;
-    width: 632px;
+    width: 700px;
     padding-left: 80px;
   }
   @media (max-width: 768px) {
@@ -97,6 +96,13 @@
       width: 100%;
       padding-left: 0px;
     }
+  }
+}
+
+.right {
+  padding: 60px 0px 0px 0px;
+  @media screen and (max-width: 768px) {
+    padding: 0px 20px 10px 20px;
   }
 }
 

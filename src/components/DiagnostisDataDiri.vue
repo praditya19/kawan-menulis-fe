@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="body">
       <div class="col-md-6">
@@ -104,6 +104,10 @@
 <script src="./js/diagnostisDataDiri.js" />
 
 <style lang="scss" scoped>
+.all {
+  max-width: 1350px;
+  margin: auto;
+}
 .body {
   display: flex;
   // justify-content: center;

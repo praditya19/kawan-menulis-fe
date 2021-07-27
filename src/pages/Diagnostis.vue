@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar1">
       <!--Slide-->
@@ -59,6 +59,10 @@
 </template>
 <script src="./js/diagnostis.js" />
 <style lang="scss" scoped="scoped">
+.body {
+  max-width: 1350px;
+  margin: auto;
+}
 .image {
   max-width: 100%;
   width: 100%;

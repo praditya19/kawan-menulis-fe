@@ -1,47 +1,49 @@
 <template>
-  <div class="content_mulai_menulis_size">
-    <img src="@/assets/mulaimenulis.png" alt="logo" class="image" />
-    <div class="content_mulai_menulis">
-      <div class="content_mulai_menulis_top">
-        <h3>Selamat Datang dalam</h3>
-        <h1>Latihan Menulis</h1>
-      </div>
-    </div>
-    <div>
-      <div
-        class="content_mulai_menulis_top_container"
-        style="background: rgba(139, 181, 236, 0.1)"
-      >
-        <div class="col-md-3">
-          <img src="@/assets/mulai_menulis.png" alt="logo" class="image1" />
+  <div class="all">
+    <div class="content_mulai_menulis_size">
+      <img src="@/assets/mulaimenulis.png" alt="logo" class="image" />
+      <div class="content_mulai_menulis">
+        <div class="content_mulai_menulis_top">
+          <h3>Selamat Datang dalam</h3>
+          <h1>Latihan Menulis</h1>
         </div>
-        <div class="col-md-9">
-          <div class="content_mulai_menulis_padding">
-            <p><b>Bacalah petunjuk di bawah terlebih dahulu:</b></p>
-            <ol>
-              <li>
-                Situs ini menyediakan latihan interaktif online yang memandu
-                kamu langkah demi langkah melalui pra-menulis, menulis,
-                mengatur, mengedit, menulis ulang, dan menerbitkan.
-              </li>
-              <li>
-                Latihan ini tidak memiliki batas waktu, silahkan mengerjakan
-                sesuai ketersediaan waktumu.
-              </li>
-              <li>
-                Jika kamu keluar di tengah tes, maka seluruh proses latihan dan
-                jawaban akan hilang.
-              </li>
-              <li>
-                Hasil latihan ini dapat kamu peroleh setelah mengisi semua
-                pertanyaan dengan lengkap dan system akan mengirimkannya via
-                email.
-              </li>
-            </ol>
-            <div class="content_mulai_menulis_tombol">
-              <button class="button" @click="mulaiMenulisPage2">
-                Mulai Menulis
-              </button>
+      </div>
+      <div>
+        <div
+          class="content_mulai_menulis_top_container"
+          style="background: rgba(139, 181, 236, 0.1)"
+        >
+          <div class="col-md-3">
+            <img src="@/assets/mulai_menulis.png" alt="logo" class="image1" />
+          </div>
+          <div class="col-md-9">
+            <div class="content_mulai_menulis_padding">
+              <p><b>Bacalah petunjuk di bawah terlebih dahulu:</b></p>
+              <ol>
+                <li>
+                  Situs ini menyediakan latihan interaktif online yang memandu
+                  kamu langkah demi langkah melalui pra-menulis, menulis,
+                  mengatur, mengedit, menulis ulang, dan menerbitkan.
+                </li>
+                <li>
+                  Latihan ini tidak memiliki batas waktu, silahkan mengerjakan
+                  sesuai ketersediaan waktumu.
+                </li>
+                <li>
+                  Jika kamu keluar di tengah tes, maka seluruh proses latihan
+                  dan jawaban akan hilang.
+                </li>
+                <li>
+                  Hasil latihan ini dapat kamu peroleh setelah mengisi semua
+                  pertanyaan dengan lengkap dan system akan mengirimkannya via
+                  email.
+                </li>
+              </ol>
+              <div class="content_mulai_menulis_tombol">
+                <button class="button" @click="mulaiMenulisPage2">
+                  Mulai Menulis
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -52,6 +54,10 @@
 
 <script src="./js/mulaiMenulis" />
 <style lang="scss" scoped>
+.all {
+  max-width: 1350px;
+  margin: auto;
+}
 .image {
   max-width: 100%;
   width: 100%;
@@ -69,9 +75,10 @@
     width: 100%;
     height: auto;
   }
-}
-
-.col-md-3 {
+  // @media screen and (max-width: 768px) {
+  //   width: 250px;
+  //   height: 660px;
+  // }
 }
 
 .button {
@@ -181,6 +188,9 @@
       @media (max-width: 768px) {
         display: inline-block;
       }
+      // @media (min-width: 768px) {
+      //   display: flex;
+      // }
     }
   }
 }

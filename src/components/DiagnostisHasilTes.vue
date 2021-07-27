@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar">
       <!--Slide-->
@@ -53,6 +53,10 @@
 </template>
 <script src="./js/diagnostisHasilTest.js" />
 <style lang="scss" scoped="scoped">
+.all {
+  max-width: 1350px;
+  margin: auto;
+}
 .image {
   max-width: 100%;
   width: 100%;
@@ -125,6 +129,9 @@
       cursor: pointer;
       border-radius: 30px;
       position: relative;
+      @media (max-width: 768px) {
+        width: 200px;
+      }
     }
 
     .btn-primary {
@@ -139,7 +146,8 @@
       position: relative;
       margin: 0px 50px 0px 50px;
       @media (max-width: 768px) {
-        margin: 20px 0px 20px 0px;
+        margin: 20px 10px 20px 10px;
+        width: 200px;
       }
     }
 
@@ -154,6 +162,9 @@
       cursor: pointer;
       border-radius: 30px;
       position: relative;
+      @media screen and(max-width:768px) {
+        width: 200px;
+      }
     }
   }
 
@@ -163,6 +174,7 @@
     text-align: center;
     @media (max-width: 768px) {
       width: 100%;
+      padding: 30px 10px 0px 10px;
     }
   }
 
@@ -172,6 +184,7 @@
     padding-top: 30px;
     @media (max-width: 768px) {
       width: 100%;
+      padding: 30px 10px 0px 10px;
     }
   }
 }

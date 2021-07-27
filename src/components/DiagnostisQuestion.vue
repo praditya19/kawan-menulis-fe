@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all">
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <!--Slide-->
 
@@ -81,6 +81,10 @@
 </template>
 <script src="./js/diagnostisQuestion.js" />
 <style lang="scss" scoped="scoped">
+.all {
+  max-width: 1350px;
+  margin: auto;
+}
 .kakak {
   padding: 0px 50px 0px 0px;
 }

@@ -1,35 +1,33 @@
 <template>
-  <div>
-    <div class="slide">
-      <img src="@/assets/simon-berger.png" alt="logo" class="image" />
-      <div class="content_sumber-belajar">
-        <div class="header">
-          <div class="conten_sumber-belajar_header row mt-3">
-            <div class="col-md-4">
-              <img src="@/assets/Learning-amico 1.png" />
-            </div>
-            <div class="col-md-8">
-              <br />
-              <h1>
-                <b>Sumber Belajar</b>
-              </h1>
-              <p>
-                Temukan beragam berbagai panduan menulis dan beragam konten,
-                informasi, dan ide untuk menghasilkan karya tulis.
-              </p>
-            </div>
+  <div class="slide">
+    <img src="@/assets/simon-berger.png" alt="logo" class="image" />
+    <div class="content_sumber-belajar">
+      <div class="header">
+        <div class="conten_sumber-belajar_header row mt-3">
+          <div class="col-md-4">
+            <img src="@/assets/Learning-amico 1.png" />
+          </div>
+          <div class="col-md-8">
+            <br />
+            <h1>
+              <b>Sumber Belajar</b>
+            </h1>
+            <p>
+              Temukan beragam berbagai panduan menulis dan beragam konten,
+              informasi, dan ide untuk menghasilkan karya tulis.
+            </p>
           </div>
         </div>
-        <br /><br />
-        <div class="content_sumber-belajar_bottom">
-          <div
-            v-for="(user, index) in learning"
-            :key="index"
-            class="content_sumber-belajar_bottom_learning"
-          >
-            <img :src="user.logo" alt="logo" @click="toLink(index)" />
-            <h6>{{ user.title }}</h6>
-          </div>
+      </div>
+      <br /><br />
+      <div class="content_sumber-belajar_bottom">
+        <div
+          v-for="(user, index) in learning"
+          :key="index"
+          class="content_sumber-belajar_bottom_learning"
+        >
+          <img :src="user.logo" alt="logo" @click="toLink(index)" />
+          <h6>{{ user.title }}</h6>
         </div>
       </div>
     </div>
@@ -40,7 +38,9 @@
 
 <style lang="scss" scoped>
 .slide {
-  overflow-x: hidden;
+  overflow: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 .image {
   max-width: 100%;
@@ -78,7 +78,7 @@
     img {
       width: 243px;
       height: 243px;
-      margin-left: -0px;
+      margin-left: 0px;
     }
     h1 {
       width: 100%;
@@ -102,10 +102,11 @@
     padding: 0px 200px 88px 200px;
     @media screen and (max-width: 768px) {
       width: 100%;
+      padding: 0px 0px 0px 0px;
     }
     &_learning {
       align-items: center;
-      padding: 0px 40px 0px 40px;
+      padding: 0px 20px 0px 20px;
       img {
         height: 130px;
       }

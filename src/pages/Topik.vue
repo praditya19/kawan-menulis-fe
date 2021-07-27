@@ -1,111 +1,107 @@
 <template>
-  <div class="col-md-12">
-    <div class="all">
-      <p class="head">Latihan Menulis</p>
+  <div class="all">
+    <p class="head">Latihan Menulis</p>
 
-      <!-- Stepper -->
-      <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-      </div>
-      <!-- End Stepper  -->
+    <!-- Stepper -->
+    <div class="steper">
+      <img class="steper_image" src="@/assets/icon_stepper/1.png" />
+    </div>
+    <!-- End Stepper  -->
 
-      <div class="container">
-        <div class="tengah">
-          <div class="paragraf">
-            <p>
-              Sebelum menentukan topik harap memilih
-              <strong>jenis paragraf</strong> dan
-              <strong>topik</strong> terlebih dahulu.
-            </p>
-          </div>
+    <div class="container">
+      <div class="tengah">
+        <div class="paragraf">
+          <p>
+            Sebelum menentukan topik harap memilih
+            <strong>jenis paragraf</strong> dan <strong>topik</strong> terlebih
+            dahulu.
+          </p>
+        </div>
 
-          <div class="label1">
-            <label><strong>Jenis Paragraf</strong></label>
-          </div>
+        <div class="label1">
+          <label><strong>Jenis Paragraf</strong></label>
+        </div>
 
-          <div class="pilih">
-            <select v-model="paragraphSelect">
-              <option value="" disabled hidden> Pilih Jenis Paragraph</option>
-              <option
-                v-for="(paragraphTypesList, index) in paragraphTypes"
-                :key="index"
-                v-bind:value="paragraphTypesList.id"
-                >{{ paragraphTypesList.name }}</option
-              >
-            </select>
-          </div>
-
-          <div class="label2">
-            <label for=""><strong>Topik</strong></label>
-          </div>
-          <div class="pilih2">
-            <select
-              v-model="topicsSelect"
-              v-bind:disabled="paragraphSelect.length === 0 ? true : false"
+        <div class="pilih">
+          <select v-model="paragraphSelect">
+            <option value="" disabled hidden> Pilih Jenis Paragraph</option>
+            <option
+              v-for="(paragraphTypesList, index) in paragraphTypes"
+              :key="index"
+              v-bind:value="paragraphTypesList.id"
+              >{{ paragraphTypesList.name }}</option
             >
-              <option value="" disabled hidden>Pilih Jenis Topik</option>
-              <option
-                v-for="(topics, index) in topicsTypes"
-                :key="index"
-                :value="topics.id"
-                >{{ topics.name }}</option
-              >
-            </select>
+          </select>
+        </div>
 
-            <!-- Button Tips -->
-            <div class="button_tombol">
-              <b-button
-                class="button"
-                @click="showModal = true"
-                v-bind:disabled="topicsSelect.length === 0 ? true : false"
-                >Tips</b-button
-              >
+        <div class="label2">
+          <label for=""><strong>Topik</strong></label>
+        </div>
+        <div class="pilih2">
+          <select
+            v-model="topicsSelect"
+            v-bind:disabled="paragraphSelect.length === 0 ? true : false"
+          >
+            <option value="" disabled hidden>Pilih Jenis Topik</option>
+            <option
+              v-for="(topics, index) in topicsTypes"
+              :key="index"
+              :value="topics.id"
+              >{{ topics.name }}</option
+            >
+          </select>
 
-              <!-- popup -->
-              <div v-if="showModal === true">
-                <transition name="model">
-                  <div class="modal-mask">
-                    <div class="modal-wrapper">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!-- Modal Body -->
-                          <!-- <div class="modal-body"> -->
-                          <div class="image-container">
-                            <img
-                              style="width: 40px;height:38.49px;"
-                              src="@/assets/checklist.png"
-                            />
-                          </div>
+          <!-- Button Tips -->
+          <div class="button_tombol">
+            <b-button
+              class="button"
+              @click="showModal = true"
+              v-bind:disabled="topicsSelect.length === 0 ? true : false"
+              >Tips</b-button
+            >
 
-                          <div class="kalimat">
-                            <div
-                              style="padding: 10px 0px 0px 0px; width: 100%;"
-                            >
-                              <p>
-                                {{ topicsTips }}
-                              </p>
-                            </div>
-                          </div>
-
-                          <div class="tombol">
-                            <button class="ok" block @click="showModal = false">
-                              OK
-                            </button>
-                          </div>
-                          <!-- </div> -->
+            <!-- popup -->
+            <div v-if="showModal === true">
+              <transition name="model">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Body -->
+                        <!-- <div class="modal-body"> -->
+                        <div class="image-container">
+                          <img
+                            style="width: 40px;height:38.49px;"
+                            src="@/assets/checklist.png"
+                          />
                         </div>
+
+                        <div class="kalimat">
+                          <div style="padding: 10px 0px 0px 0px; width: 100%;">
+                            <p>
+                              {{ topicsTips }}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="tombol">
+                          <button class="ok" block @click="showModal = false">
+                            OK
+                          </button>
+                        </div>
+                        <!-- </div> -->
                       </div>
                     </div>
                   </div>
-                </transition>
-              </div>
+                </div>
+              </transition>
             </div>
           </div>
         </div>
       </div>
-      <div class="mulai">
-        <b-button class="button-mulai" @click="handlesubmit()">Mulai</b-button>
-      </div>
+    </div>
+    <div class="mulai">
+      <b-button class="button-mulai" @click="handlesubmit()">Mulai</b-button>
     </div>
   </div>
 </template>
@@ -115,8 +111,9 @@
 <style lang="scss" scoped>
 .all {
   padding-top: 120px;
+  max-width: 1350px;
+  margin: auto;
 }
-
 .head {
   font-family: Poppins;
   font-style: normal;
@@ -133,7 +130,7 @@
 // Stepper
 .steper {
   text-align: center;
-  padding: 10px 200px 0px 200px;
+  padding: 10px 150px 0px 150px;
   &_image {
     width: 100%;
     height: auto;

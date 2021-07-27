@@ -91,62 +91,65 @@
         >
         <p class="tips1_kata1"><b>Latihan Menulis</b></p>
       </div>
-    </div>
-    <div class="steper">
-      <img class="steper_image" src="@/assets/icon_stepper/1.png" />
-    </div>
-    <!-- Jenis Paragraf -->
-    <div class="center">
-      <p class="center_paragraf">
-        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
-      </p>
-      <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
-      </p>
-    </div>
-
-    <!-- Button Tips -->
-    <div class="body">
-      <div class="col-md-2.5">
-        <div class="tips2">
-          <b-button class="tips2_judul" @click="showModal2 = true"
-            >Tips</b-button
-          >
-        </div>
+      <div class="steper">
+        <img class="steper_image" src="@/assets/icon_stepper/1.png" />
       </div>
-      <div class="col-md-9.5 tips2_kata">
-        <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
-          <span v-html="topicGuidesList.guide"></span>
+      <!-- Jenis Paragraf -->
+      <div class="center">
+        <p class="center_paragraf">
+          <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
+        </p>
+        <p class="center_topik">
+          <strong>Topik: </strong>{{ jenisTopics.topik }}
         </p>
       </div>
-    </div>
 
-    <div class="bawah">
-      <div class="content-form">
-        <table>
-          <tr>
-            <label
-              ><p v-for="(topicGuidesList, index) in topicGuides" :key="index">
-                {{ topicGuidesList.input }}
-              </p></label
-            ><br />
-          </tr>
-        </table>
+      <!-- Button Tips -->
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tips2">
+            <b-button class="tips2_judul" @click="showModal2 = true"
+              >Tips</b-button
+            >
+          </div>
+        </div>
+        <div class="col-md-9.5 tips2_kata">
+          <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+            <span v-html="topicGuidesList.guide"></span>
+          </p>
+        </div>
       </div>
-      <div class="form">
-        <b-form-input
-          v-model="form.kalimatSederhana"
-          type="text"
-          style="width:100%; "
-        ></b-form-input>
+
+      <div class="bawah">
+        <div class="content-form">
+          <table>
+            <tr>
+              <label
+                ><p
+                  v-for="(topicGuidesList, index) in topicGuides"
+                  :key="index"
+                >
+                  {{ topicGuidesList.input }}
+                </p></label
+              ><br />
+            </tr>
+          </table>
+        </div>
+        <div class="form">
+          <b-form-input
+            v-model="form.kalimatSederhana"
+            type="text"
+            style="width:100%; "
+          ></b-form-input>
+        </div>
       </div>
-    </div>
-    <!-- Button Back OK -->
-    <div class="btn-back-ok">
-      <a href="/topik">
-        <img src="@/assets/back.png" alt="logo" class="img" />
-      </a>
-      <b-button @click="onSubmit()" class="submit_ok">OK</b-button>
+      <!-- Button Back OK -->
+      <div class="btn-back-ok">
+        <a href="/topik">
+          <img src="@/assets/back.png" alt="logo" class="img" />
+        </a>
+        <b-button @click="onSubmit()" class="submit_ok">OK</b-button>
+      </div>
     </div>
   </div>
 </template>
@@ -154,9 +157,10 @@
 <script src="./js/topik2.js"></script>
 
 <style lang="scss" scoped>
-// .all {
-//   padding: 110px 0px 0px 0px;
-// }
+.all {
+  max-width: 1350px;
+  margin: auto;
+}
 
 .body {
   display: flex;
@@ -250,7 +254,7 @@
 
 // Stepper
 .steper {
-  padding: 10px 200px 10px 200px;
+  padding: 10px 150px 10px 150px;
   &_image {
     width: 100%;
     height: auto;
@@ -277,7 +281,7 @@
     padding-right: 90px;
     // background: #00a279;
     @media (max-width: 768px) {
-      padding-right: 20px;
+      padding-right: 30px;
     }
   }
   &_topik {
