@@ -26,15 +26,14 @@
                     <div style="padding: 0% 0% 0% 12%;width: 85%;">
                       <p>Uraikan dalam sebuah kalimat :</p>
                       <p
-                        v-for="(details,
-                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        v-for="(details, index) in pramenulisGuides"
                         :key="index"
                         style="margin-top: -10px;"
                       >
                         <strong
                           ><span
                             v-if="index === 0"
-                            v-html="details.pramenulis"
+                            v-html="details.guide"
                           ></span
                         ></strong>
                       </p>
@@ -79,15 +78,14 @@
                         Uraikan dalam sebuah kalimat :
                       </p>
                       <p
-                        v-for="(details,
-                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        v-for="(details, index) in pramenulisGuides"
                         :key="index"
                         style="margin-top: -10px;"
                       >
                         <strong
                           ><span
                             v-if="index === 1"
-                            v-html="details.pramenulis"
+                            v-html="details.guide"
                           ></span
                         ></strong>
                       </p>
@@ -133,15 +131,14 @@
                         Uraikan dalam sebuah kalimat :
                       </p>
                       <p
-                        v-for="(details,
-                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        v-for="(details, index) in pramenulisGuides"
                         :key="index"
                         style="margin-top: -10px;"
                       >
                         <strong
                           ><span
                             v-if="index === 2"
-                            v-html="details.pramenulis"
+                            v-html="details.guide"
                           ></span
                         ></strong>
                       </p>
@@ -187,15 +184,14 @@
                         Uraikan dalam sebuah kalimat :
                       </p>
                       <p
-                        v-for="(details,
-                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        v-for="(details, index) in pramenulisGuides"
                         :key="index"
                         style="margin-top: -10px;"
                       >
                         <strong
                           ><span
                             v-if="index === 3"
-                            v-html="details.pramenulis"
+                            v-html="details.guide"
                           ></span
                         ></strong>
                       </p>
@@ -300,50 +296,6 @@
         </div>
       </transition>
     </div>
-    <div v-if="showModal7 === true">
-      <!--showModal3-->
-      <transition name="model">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <!-- Modal Body -->
-                <div class="modal-body">
-                  <div class="image-container">
-                    <img
-                      style="width: 40px;height: 38.49px;"
-                      src="@/assets/checklist.png"
-                    />
-                  </div>
-                  <div class="kalimat3">
-                    <div style="padding: 0% 0% 0% 12%;width: 85%;">
-                      <p>
-                        Uraikan dalam sebuah kalimat : <br />
-                        Contoh :
-                      </p>
-                      <p>
-                        Saya suka minum kopi.
-                      </p>
-                      <p>
-                        Ingat, sebuah kalimat harus memiliki subjek dan kata
-                        kerja dan harus mengekpresikan pemikiran yang lengkap.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="tombol">
-                    <button class="ok" block @click="showModal7 = false">
-                      OK
-                    </button>
-                  </div>
-                  <br />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-    <!-- modal 4 -->
     <div v-if="showModal5 === true">
       <transition name="model">
         <div class="modal-mask">
@@ -364,15 +316,14 @@
                         Uraikan dalam sebuah kalimat :
                       </p>
                       <p
-                        v-for="(details,
-                        index) in pramenulisLanjutanDataSesion.resultMenulis"
+                        v-for="(details, index) in pramenulisGuides"
                         :key="index"
                         style="margin-top: -10px;"
                       >
                         <strong
                           ><span
-                            v-if="index === 5"
-                            v-html="details.pramenulis"
+                            v-if="index === 4"
+                            v-html="details.guide"
                           ></span
                         ></strong>
                       </p>
