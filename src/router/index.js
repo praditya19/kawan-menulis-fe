@@ -24,6 +24,7 @@ import TataBahasa from "@/pages/TataBahasa";
 import Proofreading from "@/pages/Proofreading";
 import Final from "@/pages/Final";
 import Cetak from "@/pages/Cetak";
+import StudentStatistik from "@/pages/StudentStatistik";
 
 Vue.use(Router);
 
@@ -195,6 +196,13 @@ let router = new Router({
       name: "Cetak",
       components: {
         default: Cetak,
+      },
+    },
+    {
+      path: "/:studentId?_:nim?",
+      name: "StudentStatistik",
+      components: {
+        default: StudentStatistik,
       },
     },
   ],
