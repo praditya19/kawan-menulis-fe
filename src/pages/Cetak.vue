@@ -43,27 +43,30 @@
     </div>
     <!-- tengah -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}</p>
+      <p class="center_paragraf">
+        <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
+      </p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+        <strong>Topik: </strong>{{ jenisTopics.topik }}
       </p>
     </div>
 
     <div class="body">
       <div class="col-md-2">
-        <img src="@/assets/cetak2.png" alt="logo" class="image2" />
+        <img src="@/assets/cetak3.png" alt="logo" class="image2" />
       </div>
       <div class="col-md-10">
         <div class="isi">
           <div>
             <img src="@/assets/cetak.png" alt="logo" class="image" />
             <div class="kiri">
-              <img src="@/assets/cetak2.png" alt="logo" class="image3" />
+              <img src="@/assets/cetak3.png" alt="logo" class="image3" />
             </div>
           </div>
           <div class="text">
             <p>
-              Selamat <strong>{{dataStudent.name}}</strong>! <br />
+              Selamat <strong>{{ dataStudent.name }}</strong
+              >! <br />
               Anda telah menyelesaikan paragraf Anda dan sekarang Anda dapat
               memilih dari opsi ini.
             </p>
@@ -73,7 +76,7 @@
               Salin
             </button>
             <button class="all-button_satu" @click="handleSubmitCetak()">
-             Kirim Email
+              Kirim Email
             </button>
             <button class="all-button_satu" @click="toTopik()">
               Mulai topik lain
@@ -110,6 +113,8 @@
 // all
 .all {
   overflow: hidden;
+  max-width: 1440px;
+  margin: auto;
 }
 
 // head
@@ -129,7 +134,7 @@
 
 // Stepper
 .steper {
-  padding: 10px 200px 10px 200px;
+  padding: 10px 150px 10px 150px;
   &_image {
     width: 100%;
     height: auto;
@@ -183,9 +188,7 @@
 }
 
 .image2 {
-  margin-top: 220px;
-  width: 400px;
-  height: 410px;
+  margin-top: 50px;
   @media (max-width: 768px) {
     width: 100%;
     height: auto;
