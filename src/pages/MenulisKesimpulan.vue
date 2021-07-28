@@ -308,6 +308,8 @@
 // all
 .all {
   overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 
 // head
