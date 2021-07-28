@@ -62,6 +62,10 @@ export default {
       };
       var saveDate = JSON.stringify(this.kalimatUtamaDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", saveDate);
+      var kalimatUtamaData = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
+      this.kalimatUtamaDataSesion = JSON.parse(kalimatUtamaData);
       this.showModal2 = false;
     },
     toMenulisIsi() {

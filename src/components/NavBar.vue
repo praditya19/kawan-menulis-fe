@@ -122,12 +122,10 @@ nav .header {
 }
 
 .header .menu-icon {
-  // border: 1px solid red;
   padding: 50px 20px;
   position: relative;
   float: right;
   cursor: pointer;
-  margin: 5px 30px;
 }
 
 .header .menu-icon .nav-icon {
@@ -189,7 +187,7 @@ nav .header {
   line-height: 4px;
   margin-top: 10px;
   float: right;
-  width: 19%;
+  width: auto;
 }
 
 @media (min-width: 68em) {
@@ -212,7 +210,6 @@ nav .header {
     border-radius: 42px;
     line-height: 4px;
     margin-top: 10px;
-    width: 100%;
   }
 }
 </style>
