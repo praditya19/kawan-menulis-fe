@@ -489,4 +489,20 @@
   margin-top: 5px;
   /* background: red; */
 }
+
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 </style>
