@@ -1,5 +1,4 @@
 <template>
-  <div class="col-md-12">
     <div class="all">
       <!-- Judul -->
       <div class="content-satu">
@@ -21,10 +20,10 @@
       <div class="content-tiga">
         <div class="jenis">
           <p class="jenis_paragraf">
-            <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+            <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
           </p>
           <p class="jenis_topik">
-            <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+            <strong>Topik: </strong>{{ jenisTopics.topik }}
           </p>
         </div>
       </div>
@@ -334,34 +333,37 @@
       </transition>
     </div>
       <!-- end modal area -->
+
       <!-- Screen 1 -->
       <div class="content-empat" v-if="revisiPage1 === true">
-      <div style="margin-left: 3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal = true">
                   Tips
                 </b-button>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Sempurna! Sekarang Anda dapat membaca draf konsep seluruh
-                  paragraf Anda. <br /><br />
+                  paragraf Anda.
+                </p>
+                <p class="kalimat_p">  
                   Untuk Mendapatkan umpan balik sebelum Anda merevisi pekerjaan
                   Anda, Anda dapat menyalin konsep paragraf Anda untuk dibagikan
                   dengan guru atau teman sekelas Anda.
-                  <br /><br />
+                </p>
+                <p class="kalimat_p">
                   Klik OK untuk melanjutkan ke bagian revisi.
                 </p>
               </div>
             </div>
+          </div>
 
-            <!-- Konsep Paragraf -->
+          <!-- Konsep Paragraf -->
             <div class="content-konsep">
               <div class="up-down">
                 <div class="border">
@@ -378,10 +380,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        </div>
-        <br>
+
         <!-- Button OK -->
         <div class="content-lima" @click="revisi1Next">
           <div class="tombol">
@@ -390,23 +389,20 @@
         </div>
         <!-- End Button OK -->
       </div>
-        <br>
       <!-- End Screen 1 -->
 
       <!-- Screen 2 -->
       <div class="content-empat" v-if="revisiPage2 === true">
-       <div style="margin-left: 3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal2 = true">
                   Tips
                 </b-button>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Sekarang saatnya untuk merevisi paragraf Anda. Anda dapat
@@ -421,12 +417,13 @@
                 </p>
               </div>
             </div>
-            <!-- Konsep Paragraf -->
-            <div class="content-konsep">
+          </div>
+          <!-- Konsep Paragraf -->
+          <div class="content-konsep">
               <div class="up-down">
                 <div class="border">
                   <div class="border_konsep">
-                    <h4><b>Konsep Paragraf</b></h4>
+                    <h4><b>Catatan Paragraf</b></h4>
                   </div>
                 </div>
                 <div class="response">
@@ -449,7 +446,6 @@
                 </div>
               </div>
               <div class="border_list">
-                <div class="jarak">
                   <b-form-group>
                     <ul>
                       <div class="dua" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagrafArray" :key="index">
@@ -465,37 +461,30 @@
                         </div>
                     </ul>
                   </b-form-group>
-                </div>
               </div>
+          </div>
+          <!-- Button OK -->
+          <div class="content-lima" @click="revisi2Next">
+            <div class="tombol">
+              <button class="ok" type="submit">OK</button>
             </div>
           </div>
-        </div>
-        </div>
-        <br>
-        <!-- Button OK -->
-        <div class="content-lima" @click="revisi2Next">
-          <div class="tombol">
-            <button class="ok" type="submit">OK</button>
-          </div>
-        </div>
-        <!-- End Button OK -->
+          <!-- End Button OK -->
       </div>
       <!-- End Screen 2 -->
 
       <!-- Screen 3 -->
       <div class="content-empat" v-if="revisiPage3 === true">
-       <div style="margin-left: 3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal3 = true">
                   Tips
                 </b-button>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Selamat! <br />
@@ -516,16 +505,17 @@
                 </p>
               </div>
             </div>
-
-            <!-- Button Gaya menulis dll -->
+          </div>
+          <!-- end body -->
+          <!-- Button Gaya menulis dll -->
             <div class="all-button">
-                <button class="all-button_satu2" @click="$router.push('/gaya-menulis')">Gaya Menulis</button>
+                <button class="all-button_satu" @click="$router.push('/gaya-menulis')">Gaya Menulis</button>
                 <button class="all-button_satu" @click="$router.push('/struktur-kalimat')">Struktur Kalimat</button>
                 <button class="all-button_satu" @click="$router.push('/tata-bahasa')">Tata Bahasa</button>
                 <button class="all-button_satu" @click="$router.push('/proofreading')">Pemeriksaan Akhir</button>
             </div>
 
-            <!-- Konsep Paragraf -->
+          <!-- Konsep Paragraf -->
             <div class="content-konsep">
               <div class="up-down">
                 <div class="border">
@@ -542,10 +532,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        </div>
-        <br>
         <!-- Button OK -->
         <div class="content-lima" @click="revisi3Next">
           <div class="tombol">
@@ -557,7 +543,6 @@
         <br>
       <!-- End Screen 3 -->
     </div>
-  </div>
 </template>
 
 <script src="./js/revisi.js" />
@@ -566,26 +551,23 @@
 // all
 .all {
   overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 .dua {
   b {
-    padding: 10px 0px 0px 20px;
+    padding: 10px 0px 0px 10px;
   }
   @media screen and (max-width: 760px) {
     b {
-      padding: 0px;
+      padding: 10px 0px 0px 10px;
     }
   }
 }
-.jarak {
-  margin-left: 10px;
-  padding: 10px 30px 0px 0px;
-  @media screen and (max-width: 780px) {
-    margin-left: 0px;
-    padding: 0px;
-    width: 100%;
-  }
-}
+// .jarak {
+//   @media screen and (max-width: 780px) {
+//   }
+// }
 .response {
   width: 100%;
   @media screen and (max-width: 780px) {
@@ -601,7 +583,7 @@
 }
 .icon-up-down {
   margin-bottom: 5px; 
-  margin-left: 20px;
+  margin-left: 10px;
   @media screen and (max-width: 600px) {
     margin-left: 0px;
   }
@@ -651,7 +633,7 @@
 // Stepper
 .steper {
   text-align: center;
-  padding: 10px 200px 10px 200px;
+  padding: 10px 150px 10px 150px;
   &_image {
     width: 100%;
     height: auto;
@@ -691,9 +673,17 @@
 }
 // End Jenis Paragraf
 
+// body 
+.body {
+  display: flex;
+  padding: 10px 300px 0px 130px;
+  @media screen and(max-width: 768px) {
+    padding: 5px 10px 0px 10px;
+  }
+}
+
 // Tips dan Kalimat
 .tips {
-  //   background: skyblue;
   text-align: right;
   margin: 5px;
   @media Screen and (max-width: 660px) {
@@ -703,7 +693,6 @@
   &_judul {
     background-color: #00a279;
     border: none;
-    line-height: 32px;
     width: 98px;
     border-radius: 10px;
     margin: 5px;
@@ -714,32 +703,35 @@
 }
 
 .kalimat {
+  padding: 8px 0px 0px 5px;
+  line-height: 40px;
+  @media screen and (max-width:768px) {
+    line-height: 30px;    
+    padding: 14px 0px 0px 5px;
+  }
   &_p {
     font-size: 20px;
-    margin: 5px;
-    padding-top: 13px;
   }
 }
 // end Tips dan Kalimat
 
 // Button Gaya Menulis dll
 .all-button {
-  margin-left: 17%;
   line-height: 30px;
-
+  padding: 20px 0px 20px 250px;
+  @media  (max-width:768px) {
+  padding: 20px 20px 20px 20px;        
+  }
   &_satu {
     background-color: #e0e0e0;
     border: none;
     border-radius: 20px;
-    width: 12%;
+    width: 15%;
     margin: 0.3%;
     @media screen and (max-width: 768px) {
-      padding: 10px 0px;
-      width: 15%;
-    }
-    @media screen and (max-width: 600px) {
-      padding: 10px 0px;
-      width: 90%;
+      padding: 10px 0px 10px 0px;
+      width: 100%;
+      margin: 0px 0px 10px 0px;
     }
   }
 }
@@ -748,25 +740,25 @@
   background-color: #f1f6cc;
 }
 
-.all-button {
-  margin-left: 17%;
-  line-height: 30px;
-  &_satu2 {
-    background-color: #f1f6cc;
-    border: none;
-    border-radius: 20px;
-    width: 12%;
-    margin: 0.3%;
-    @media screen and (max-width: 600px) {
-      padding: 10px 0px;
-      width: 90%;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    margin-left: 0%;
-    line-height: 10px;
-  }
-}
+// .all-button {
+//   margin-left: 17%;
+//   line-height: 30px;
+//   &_satu2 {
+//     background-color: #f1f6cc;
+//     border: none;
+//     border-radius: 20px;
+//     width: 12%;
+//     margin: 0.3%;
+//     @media screen and (max-width: 600px) {
+//       padding: 10px 0px;
+//       width: 90%;
+//     }
+//   }
+//   @media screen and (max-width: 600px) {
+//     margin-left: 0%;
+//     line-height: 10px;
+//   }
+// }
 
 // Button Konsep Menulis
 .all-button_dua {
@@ -775,8 +767,9 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 7%;
-  @media screen and (max-width: 780px) {
+  width: 100px;
+  margin-left: 10px;
+  @media screen and (max-width: 768px) {
     width: 70px;
   }
   @media screen and (max-width: 600px) {
@@ -835,16 +828,10 @@
 
 // Konsep Menulis
 .content-konsep {
-  margin-left: 17%;
-  margin-top: 30px;
+  padding: 30px 200px 30px 250px;
   @media screen and (max-width: 768px) {
-    margin-left: 0%;
+    padding: 30px 20px 30px 20px;
   }
-  @media screen and (max-width: 600px) {
-    padding: 0px 20px;
-    margin-left: 0%;
-  }
-  // background: red;
 }
 
 .up-down {
@@ -872,11 +859,12 @@
   &_list {
     font-family: Poppins;
     background-color: #e0e0e0;
-    width: 65%;
-    padding: 13px;
+    width: 100%;
+    height: auto;
+    padding: 10px 0px 10px 10px;
     border-radius: 0px 0px 14px 14px;
     @media Screen and (max-width: 780px) {
-      width: 95%;
+      width: 100%;
     }
   }
   &_data {
@@ -952,7 +940,7 @@
   vertical-align: middle;
   @media screen and (max-width: 780px) {
     vertical-align: 0;
-    padding: 300px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
   }
 }
 
