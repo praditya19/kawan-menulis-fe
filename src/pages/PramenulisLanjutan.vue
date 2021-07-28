@@ -1,18 +1,17 @@
 <template>
-  <div class="content">
-    <br />
-    <div class="content_padding">
-      <br />
-      <div class="content_padding_header">
-        <h1><b>Latihan Menulis</b></h1>
+  <div class="all">
+    <div class="content-satu">
+      <div class="judul">
+        <h1>Latihan Menulis</h1>
       </div>
-
-      <!-- Stepper -->
-      <div class="steper">
-        <img class="steper_image" src="@/assets/icon_stepper/4.png" />
-      </div>
-      <!-- End Stepper  -->
     </div>
+
+    <!-- Stepper -->
+    <div class="steper">
+      <img class="steper_image" src="@/assets/icon_stepper/4.png" />
+    </div>
+    <!-- End Stepper  -->
+
     <!-- popup tambah -->
     <div v-if="showModal1 === true">
       <transition name="model">
@@ -179,186 +178,286 @@
         </div>
       </transition>
     </div>
+
     <!-- Jenis Paragraf -->
     <div class="center">
       <p class="center_paragraf">
-        <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+        <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
       </p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+        <strong>Topik: </strong>{{ jenisTopics.topik }}
       </p>
     </div>
+
     <!-- Button Tips dan Kalimat -->
-    <div style="padding: 20px 0px 0px 0px">
-      <div class="tengah">
-        <div class="row">
-          <div class="col-sm-1">
-            <b-btn class="tengah_tips" @click="showModal1 = true">TIPS</b-btn>
-          </div>
-          <div class="col-sm-11">
-            <p class="tengah_text2">
-              Sekarang setelah Anda menulis kalimat pembuka, atau kalimat topik,
-              lihat daftar kata Anda di Catatan Pramenulis. Bisakah Anda membuat
-              kata atau frasa tambahan yang berhubungan dengan topik Anda?
-            </p>
-            <p class="tengah_text2">
-              Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata atau
-              frasa. Jangan menulis kalimat sekarang.
-            </p>
-            <p class="tengah_text2">
-              ketik OK ketika anda siap untuk melanjutkan
-            </p>
-          </div>
+    <div class="body">
+      <div class="col-md-2.5">
+        <b-btn class="tengah_tips" @click="showModal1 = true">TIPS</b-btn>
+      </div>
+      <div class="col-md-9.5">
+        <p class="tengah_text2">
+          Sekarang setelah Anda menulis kalimat pembuka, atau kalimat topik,
+          lihat daftar kata Anda di Catatan Pramenulis. Bisakah Anda membuat
+          kata atau frasa tambahan yang berhubungan dengan topik Anda?
+        </p>
+        <p class="tengah_text2">
+          Gunakan <b>Tambah</b> untuk mencantumkan lebih banyak kata atau frasa.
+          Jangan menulis kalimat sekarang.
+        </p>
+        <p class="tengah_text2">
+          ketik OK ketika anda siap untuk melanjutkan
+        </p>
+      </div>
+    </div>
+
+    <!-- button -->
+    <div class="Button">
+      <b-btn class="button  justify-content-center" @click="toMenulisIsi()">
+        <b>OK</b>
+      </b-btn>
+    </div>
+
+    <!-- Catatan PRa Menulis -->
+    <div class="gabungan">
+      <div class="foot-gabungan">
+        <div class="catatan">
+          <p class="kata-bawah">Catatan Pra Menulis</p>
         </div>
-      </div>
-      <!-- button -->
-      <div class="Button">
-        <b-btn class="button  justify-content-center" @click="toMenulisIsi()">
-          <b>OK</b>
-        </b-btn>
-      </div>
-      <!-- Catatan PRa Menulis -->
-      <div class="content_padding_tulis_right_paragraf_bawah">
-        <div class="row">
-          <div class="col-sm-3">
-            <div
-              style="background-color: #484c52;height: 48px;width: 240px;border-radius: 20px 20px 0px 0px;"
-            >
-              <div class="content_padding_tulis_catatan">
-                <h4><b>Catatan Pra Menulis</b></h4>
-              </div>
-            </div>
-          </div>
+        <div class="two-button">
           <!-- Tambah -->
-          <div class="col-sm-2">
-            <div class="content_padding_tulis_catatan">
-              <div class="button3_tombol3">
-                <button class="button3" id="show-btn" @click="showModal = true">
-                  <b>Tambah</b>
-                </button>
-              </div>
-            </div>
+          <div class="button3_tombol3">
+            <button class="button3" id="show-btn" @click="showModal = true">
+              <b>Tambah</b>
+            </button>
           </div>
           <!-- Ubah -->
-          <div class="col-sm-6" style="margin-left: -50px;">
-            <div class="content_padding_tulis_catatan">
-              <div class="button3_tombol3">
-                <button
-                  v-bind:disabled="
-                    dataForm.pramenulisLanjutan.length === 0 ? true : false
-                  "
-                  class="button3"
-                  id="show-btn"
-                  @click="modal2()"
-                >
-                  <b>Ubah</b>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cara membuat Kopi -->
-        <div
-          style="background-color: #c1c8d3;width: 730px;padding: 13px;border-radius: 0px 0 30px 30px;"
-        >
-          <div style="margin-left: 30px">
-            <b-form-group v-slot="{ ariaDescribedby }">
-              <div class="col-sm-12">
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in kalimatUtamaDataSesion.resultMenulis"
-                  :key="index"
-                >
-                  <h5>
-                    <b-form-radio
-                      v-model="dataForm.pramenulisLanjutan"
-                      :aria-describedby="ariaDescribedby"
-                      name="some-radios"
-                      v-bind:value="index"
-                      >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
-                    >
-                  </h5>
-                </div>
-              </div>
-            </b-form-group>
+          <div class="button3_tombol3">
+            <button
+              v-bind:disabled="
+                dataForm.pramenulisLanjutan.length === 0 ? true : false
+              "
+              class="button3"
+              id="show-btn"
+              @click="modal2()"
+            >
+              <b>Ubah</b>
+            </button>
           </div>
         </div>
       </div>
-      <!-- end button -->
+
+      <!-- Cara membuat Kopi -->
+      <div class="daftar">
+        <b-form-group v-slot="{ ariaDescribedby }">
+          <div
+            class="dua"
+            v-for="(dataSesion, index) in kalimatUtamaDataSesion.resultMenulis"
+            :key="index"
+          >
+            <h5>
+              <b-form-radio
+                v-model="dataForm.pramenulisLanjutan"
+                :aria-describedby="ariaDescribedby"
+                name="some-radios"
+                v-bind:value="index"
+                >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
+              >
+            </h5>
+          </div>
+        </b-form-group>
+      </div>
     </div>
+    <!-- end button -->
   </div>
 </template>
 
 <script src="./js/pramenulisLanjutan.js" />
 
 <style lang="scss" scoped>
-.tengah {
-  margin-left: 100px;
+// all
+.all {
+  overflow: hidden;
+  max-width: 1350px;
+  margin: auto;
+}
+.content-satu {
+  margin-top: 130px;
+}
+// judul
+.judul {
+  font-size: 50px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
+  }
+}
+// End Judul
+// Stepper
+.steper {
+  text-align: center;
+  padding: 10px 150px 10px 150px;
+  &_image {
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+// End Stepper
+
+// jenis paragrf
+.center {
   display: flex;
   width: 100%;
+  height: 49px;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
+  &_paragraf {
+    padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
+  }
+  &_topik {
+    padding: 11px 0px 0px 70px;
+  }
+}
+
+// body
+.body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 13px;
-  // background: red;
-  // button tips
+  padding: 10px 180px 0px 120px;
+  @media screen and(max-width: 768px) {
+    padding: 5px 10px 0px 10px;
+  }
+}
+
+// content tengah
+.tengah {
+  text-align: right;
+  margin: 5px;
+  width: 100%;
+  @media Screen and (max-width: 768px) {
+  }
   &_tips {
-    padding: 4px 0px 0px 0px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    text-align: center;
     background-color: #00a279;
+    border: none;
+    width: 98px;
+    border-radius: 10px;
+    margin: 5px;
     color: #fff;
-    font-size: normal;
-    margin-bottom: 70px;
-    cursor: pointer;
+    @media Screen and (max-width: 780px) {
+    }
   }
 
   // text page 2
   &_text2 {
-    margin-left: 30px;
-    width: 65%;
     font-family: Poppins;
     font-size: 20px;
+    padding: 10px 0px 0px 5px;
+    @media screen and (max-width: 768px) {
+    }
     strong {
       font-style: italic;
       font-size: 20px;
     }
   }
 }
-.center {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  // position: absolute;
-  font-size: 16px;
-  padding-top: 12px;
-  background-color: rgba(139, 181, 236, 0.1);
-  &_paragraf {
-    margin-left: 100px;
+
+// gabungan
+.gabungan {
+  padding: 30px 0px 80px 220px;
+  .foot-gabungan {
+    display: flex;
   }
-  &_topik {
-    margin-left: 70px;
+  .two-button {
+    display: flex;
+    @media (max-width: 425px) {
+      display: inline-block;
+    }
+  }
+  .catatan {
+    width: 238px;
+    height: 42px;
+    left: 0px;
+    color: #fff;
+    background: #455a64;
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px 0px 0px 10px;
+  }
+
+  .kata-bawah {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+
+  .daftar {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 13px 25px;
+    width: 912px;
+    font-size: 20px;
+    font-weight: 400;
+    background: #e0e0e0;
+    border-radius: 0px 0px 14px 14px;
+    li {
+      margin-bottom: -10px;
+    }
   }
   @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: cornflowerblue;
-    &_paragraf {
-      width: 50%;
+    padding: 50px 20px 80px 20px;
+    .daftar {
+      width: 100%;
+      height: auto;
     }
 
-    &_topik {
-      width: 50%;
+    .kata-bawah {
+    }
+
+    .catatan {
+      height: auto;
+      text-align: center;
+      padding: 10px 0px 0px 0px;
     }
   }
 }
+
 .ok {
   .mt-3 {
     // margin-bottom: 10px;
@@ -381,11 +480,7 @@
   text-align: center;
   // background: red;
 }
-.container {
-  &_bawah {
-    padding: 70px 0px 60px 220px;
-  }
-}
+
 .dua {
   padding: 8px 0px 0px 0px;
   text-align: justify;
@@ -428,6 +523,8 @@
     align-items: center;
   }
 }
+
+// button tambah dan ubah
 .button3 {
   background-color: #e0e0e0;
   border: none;
@@ -437,37 +534,19 @@
   width: 100px;
   height: 40px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   b {
-    padding: 0% 0% 0% 17%;
     color: #0a0808;
     font-size: 28px;
-    align-items: center;
     font-size: 16px;
     font-family: Poppins;
   }
-  &_button4 {
-    background-color: #f1f7cc;
-    border: none;
-    color: rgb(243, 237, 237);
-    border-radius: 30px;
-    display: flex;
-    width: 100px;
-    height: 40px;
-    align-items: center;
-    margin-left: -5%;
-    b {
-      padding: 0% 0% 0% 27%;
-      color: #0a0808;
-      align-items: center;
-      font-family: Poppins;
-      font-size: 16px;
-    }
-  }
-  &_button4:hover {
-    background-color: #f3e8e8;
-  }
   &_tombol3 {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 5px 0px 5px;
+    @media (max-width: 768px) {
+      padding: 0px 5px 10px 5px;
+    }
   }
 }
 .button3:hover {
@@ -488,107 +567,6 @@
   height: 32.71px;
   color: #fff;
   font-family: Poppins;
-}
-.content {
-  overflow-x: hidden;
-  max-width: 100%;
-  height: 100%;
-  @media screen and (max-width: 990) {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
-  &_padding {
-    padding: 5px 0px;
-    &_tulis {
-      padding: 15px 0px 10px 0px;
-      &_catatan {
-        color: #f1f1f1;
-        h4 {
-          font-family: Poppins;
-          font-size: 20px;
-          line-height: 24px;
-          text-align: center;
-          padding: 12px 0px 8px 0px;
-        }
-      }
-      &_right {
-        max-width: 750px;
-        width: 750px;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 23px;
-        line-height: 30px;
-        margin-left: -30px;
-        &_paragraf {
-          padding: 20px 0px 0px 0px;
-          label {
-            font: 1rem "Fira Sans", sans-serif;
-          }
-          input {
-            margin: 0.4rem;
-          }
-          &_bawah {
-            padding: 50px 0px 100px 235px;
-          }
-        }
-      }
-    }
-    &_paragraf {
-      padding: 15px 0px 10px 0px;
-      margin-left: 40%;
-      p {
-        font-size: 17px;
-      }
-      &_right {
-        padding: 15px 0px 10px 0px;
-        margin-left: 10%;
-        p {
-          font-size: 17px;
-        }
-      }
-    }
-    &_header {
-      margin-top: 70px;
-      font-family: Poppins;
-      font-style: normal;
-      font-weight: bold;
-      margin-left: 30%;
-      h1 {
-        font-weight: bolder;
-        font-size: 47px;
-        margin-left: 10%;
-      }
-    }
-    &_stemper {
-      padding: 20px;
-      align-items: center;
-      margin-left: 20px;
-    }
-  }
-}
-
-// Stepper 1 -7
-
-.container-progress {
-  margin: 100px auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: Poppins;
-  color: white;
-  margin-top: 50px;
-  padding: 0;
-}
-
-// Stepper
-.steper {
-  text-align: center;
-  padding: 10px;
-  &_image {
-    width: 1000px;
-    height: auto;
-  }
 }
 
 /* Style Isi Modal */
