@@ -1,4 +1,4 @@
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "PramenulisLanjutan",
@@ -6,6 +6,7 @@ export default {
     return {
       showModal: false,
       showModal2: false,
+      showModal1: false,
       dataForm: {
         tambahPramenulis: "",
         pramenulisLanjutan: "",
@@ -17,7 +18,8 @@ export default {
   },
   mounted() {
     this.getDataSesion();
-    this. getDataJenisTopics();
+    this.getDataJenisTopics();
+    this.getDataPramenulisLanjutanGuidesList();
     window.scrollTo(0, 0);
   },
   methods: {
@@ -29,6 +31,23 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.kalimatUtamaDataSesion = JSON.parse(kalimatUtamaData);
+    },
+    ...mapActions(["getTopicGuidesList"]),
+    getDataPramenulisLanjutanGuidesList() {
+      this.getTopicGuidesList({
+        requestBody: {
+          clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
+          clientSecret: "27e78980e2419b308c86559ef0fb0105",
+          // topicId: this.kalimatUtamaDataSesion.topicId,
+          writingStepId: 38,
+        },
+        success: (res) => {
+          console.log(res.data);
+        },
+        fail: (res) => {
+          console.log(res);
+        },
+      });
     },
     upCatatanMenulis() {
       if (this.dataForm.pramenulisLanjutanPembaruan === "") {

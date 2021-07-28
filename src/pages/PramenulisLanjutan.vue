@@ -14,6 +14,46 @@
       <!-- End Stepper  -->
     </div>
     <!-- popup tambah -->
+    <div v-if="showModal1 === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat">
+                    <div
+                      style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
+                    >
+                      <p>
+                        Setiap tambahan harus mendukung gagasan utama yang
+                        diperkenalkan dalam kalimat utama.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol1">
+                    <button class="ok1" block @click="showModal1 = false">
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
     <div v-if="showModal === true">
       <transition name="model">
         <div class="modal-mask">
@@ -153,7 +193,7 @@
       <div class="tengah">
         <div class="row">
           <div class="col-sm-1">
-            <b-btn class="tengah_tips">TIPS</b-btn>
+            <b-btn class="tengah_tips" @click="showModal1 = true">TIPS</b-btn>
           </div>
           <div class="col-sm-11">
             <p class="tengah_text2">
@@ -629,4 +669,19 @@
 }
 
 /* End Background Belakang Modal */
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 </style>

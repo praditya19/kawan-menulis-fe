@@ -6,7 +6,7 @@ export default {
       clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
       clientSecret: "27e78980e2419b308c86559ef0fb0105",
       studentResultSession: {},
-      studentDiagnostikSession: {}
+      studentDiagnostikSession: {},
     };
   },
   mounted() {
@@ -14,16 +14,17 @@ export default {
     this.getStudentDiagnostikSession();
     window.scrollTo(0, 0);
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     getStudentResultSession() {
-      var studentResult = sessionStorage.getItem("result_student")
-      this.studentResultSession = JSON.parse(studentResult)
+      var studentResult = sessionStorage.getItem("result_student");
+      this.studentResultSession = JSON.parse(studentResult);
     },
     getStudentDiagnostikSession() {
-      var studentDiagnostik = sessionStorage.getItem("student_diagnostis-data-diri")
-      this.studentDiagnostikSession = JSON.parse(studentDiagnostik)
+      var studentDiagnostik = sessionStorage.getItem(
+        "student_diagnostis-data-diri"
+      );
+      this.studentDiagnostikSession = JSON.parse(studentDiagnostik);
     },
     ...mapActions(["sendEmail"]),
     handleSubmit() {
@@ -31,9 +32,9 @@ export default {
         requestBody: {
           clientId: this.clientId,
           clientSecret: this.clientSecret,
-          studentId: this.studentDiagnostikSession.id,
+          studentId: this.studentDiagnostikSession[0].id,
           scoreId: this.studentResultSession.id,
-          actualScore: this.studentResultSession.endScore
+          actualScore: this.studentResultSession.endScore,
         },
         success: (res) => {
           console.log(res);

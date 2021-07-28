@@ -14,14 +14,20 @@ export default {
       showModalCopy: false,
       copy: "",
       jenisTopics: {},
-      dataStudent: {}
+      dataStudent: {},
+
+      // Send email is Succes
+      showModalSendEmailSucces: false,
+
+      // Send Email Error
+      erorSend: false,
     };
   },
   mounted() {
     this.getDataSesion();
     this.getStudentAction();
     this.getDataJenisTopics();
-    this. getStudent();
+    this.getStudent();
     window.scrollTo(0, 0);
   },
   methods: {
@@ -58,7 +64,9 @@ export default {
       }
     },
     getStudentAction() {
-      var studentActions = sessionStorage.getItem("student_topik_menulis_paragraph");
+      var studentActions = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
       this.studentActionsSession = JSON.parse(studentActions);
     },
     ...mapActions(["sendEmailCetak"]),
@@ -71,7 +79,11 @@ export default {
           topicId: this.studentActionsSession.topicId,
         },
         success: (res) => {
-          console.log(res);
+          if (res.body.sendEmai === "success") {
+            this.showModalSendEmailSucces = true;
+          } else {
+            this.erorSend = true;
+          }
         },
         fail: (res) => {
           console.log(res);
