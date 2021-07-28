@@ -134,9 +134,6 @@ export default {
     },
     revisi1Next() {
       this.revisiPage2 = true;
-      this.menulisKesimpulanDataSesion.konsepParagraf = [];
-      var empetyArray = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", empetyArray);
       if (this.revisiPage2 === true) {
         this.revisiPage1 = false;
       } else {
@@ -144,6 +141,7 @@ export default {
       }
     },
     revisi2Next() {
+      this.menulisKesimpulanDataSesion.konsepParagraf = [];
       for (
         var i = 0;
         i < this.menulisKesimpulanDataSesion.konsepParagrafArray.length;

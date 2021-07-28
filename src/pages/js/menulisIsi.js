@@ -33,6 +33,8 @@ export default {
       // Components Of Geting
       moustache: [], // For display
       remainder: [], // For exception
+
+      domo: [], // valid
     };
   },
   mounted() {
@@ -127,16 +129,48 @@ export default {
         return;
       }
     },
+    checkingValidasi(arr, anj) {
+      for (let i = 0; i < this.dataForm.menulis.length; i++) {
+        if (this.dataForm.menulis[i] === undefined) {
+          this.demo.push(this.dataForm.menulis[i]);
+        }
+        if (this.dataForm.menulis[i] === "") {
+          this.demo.push(this.dataForm.menulis[i]);
+        }
+      }
+      if (anj.length === 0) {
+        for (var z = 0; z < arr.length; z++) {
+          if (arr[z].substring(0, 1) == arr[z].substring(0, 1).toUpperCase()) {
+            if (arr[z].substr(arr[z].length - 1) === ".") {
+              this.cekValidate.push(arr[z]);
+            } else {
+              console.log(z);
+            }
+          } else {
+            console.log(z);
+          }
+        }
+        if (
+          this.cekValidate.length ===
+          this.pramenulisLanjutanDataSesion.resultMenulis.length
+        ) {
+          return true;
+        } else {
+          this.showModalValidation = true;
+          return false;
+        }
+      } else if (anj.length !== 0) {
+        this.showModalErrorEmpety = true;
+      }
+    },
     kirim() {
       this.cekValidate = [];
-      if (
-        this.dataForm.menulis.length <=
-        this.pramenulisLanjutanDataSesion.resultMenulis.length - 1
-      ) {
+      this.demo = [];
+      if (this.dataForm.menulis.length < 5) {
         this.showModalErrorEmpety = true;
         return;
       }
-      var trueOrFalse = this.checkingValidasi(this.dataForm.menulis);
+      var trueOrFalse = this.checkingValidasi(this.dataForm.menulis, this.demo);
       if (trueOrFalse === true) {
         for (
           var i = 0;
@@ -168,28 +202,6 @@ export default {
         var final = JSON.stringify(this.pramenulisLanjutanDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", final);
         this.$router.replace("/pengorganisasian");
-      }
-    },
-    checkingValidasi(arr) {
-      for (var z = 0; z < arr.length; z++) {
-        if (arr[z].substring(0, 1) == arr[z].substring(0, 1).toUpperCase()) {
-          if (arr[z].substr(arr[z].length - 1) === ".") {
-            this.cekValidate.push(arr[z]);
-          } else {
-            console.log(z);
-          }
-        } else {
-          console.log(z);
-        }
-      }
-      if (
-        this.cekValidate.length ===
-        this.pramenulisLanjutanDataSesion.resultMenulis.length
-      ) {
-        return true;
-      } else {
-        this.showModalValidation = true;
-        return false;
       }
     },
     getDataJenisTopics() {

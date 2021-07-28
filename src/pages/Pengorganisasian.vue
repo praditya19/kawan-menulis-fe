@@ -452,7 +452,7 @@
                             <b-button
                               class="mt-3"
                               block
-                              @click="showModal = falses"
+                              @click="showModal = false"
                               >OK</b-button
                             >
                           </div>

@@ -113,7 +113,7 @@ export default {
                 requestBody: {
                   clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
                   clientSecret: "27e78980e2419b308c86559ef0fb0105",
-                  studentId: this.studentDataSession.id,
+                  studentId: this.studentDataSession[0].id,
                   topicId: this.topicsSelect,
                 },
                 success: (res) => {
