@@ -9,6 +9,91 @@
       <img class="steper_image" src="@/assets/icon_stepper/14.png" />
     </div>
     <!-- Popup Modal -->
+    <div v-if="showModalSendEmailSucces === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/checklist.png"
+                    />
+                  </div>
+
+                  <div class="kalimat">
+                    <div
+                      style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
+                    >
+                      <p></p>
+                      <p>
+                        Email terkirim! <br />
+                        Silahkan periksa email atau folder spam Anda.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="tombol1">
+                    <button
+                      class="ok1"
+                      block
+                      @click="showModalSendEmailSucces = false"
+                    >
+                      OK
+                    </button>
+                  </div>
+
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <div v-if="erorSend === true">
+      <transition name="model">
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <div class="image-container">
+                    <img
+                      style="width: 40px;height:38.49px;"
+                      src="@/assets/Warning.png"
+                    />
+                  </div>
+
+                  <div class="kalimat">
+                    <div
+                      style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
+                    >
+                      <p></p>
+                      <p>
+                        Email belum terkirim! <br />
+                        Pastikan email yang anda masukkan benar.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="tombol1">
+                    <button class="ok1" block @click="erorSend = false">
+                      OK
+                    </button>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+
     <div v-if="showModalCopy === true">
       <transition name="model">
         <div class="modal-mask">
