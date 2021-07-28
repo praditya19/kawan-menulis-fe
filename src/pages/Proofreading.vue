@@ -1,4 +1,5 @@
 <template>
+<!-- terbaru -->
   <div class="col-md-12">
     <div class="all">
       <!-- Judul -->
@@ -212,9 +213,8 @@
 
       <!-- Screen 1 -->
       <div class="content-empat" v-if="proofreadingPage1 === true" 
-      style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+     >
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -281,6 +281,7 @@
                 </p>
               </div>
             </div>
+              </div>
 
             <!-- Catatan Paragraf -->
             <div class="content-konsep">
@@ -336,8 +337,8 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+        
+        
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -351,8 +352,7 @@
 
       <!-- Screen 2 -->
       <div class="content-empat" v-if="proofreadingPage2 === true" style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+        
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -472,8 +472,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -487,8 +486,7 @@
 
       <!-- Screen 3 -->
       <div class="content-empat" v-if="proofreadingPage3 === true" style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+        
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -608,8 +606,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -623,8 +620,7 @@
 
       <!-- Screen 4 -->
       <div class="content-empat" v-if="proofreadingPage4 === true" style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+        
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -745,8 +741,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -760,8 +755,7 @@
 
       <!-- Screen 5 -->
       <div class="content-empat" v-if="proofreadingPage5 === true" style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+        
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -886,8 +880,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -903,8 +896,7 @@
 
     <!-- Screen 6 -->
       <div class="content-empat" v-if="proofreadingPage6 === true" style="margin-left:2.5%;">
-        <div class="col-sm-12">
-          <div class="row">
+        
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -1019,8 +1011,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
         <div class="button">
@@ -1079,6 +1070,8 @@
 // all
 .all {
   overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 .dua {
   b {
@@ -1093,6 +1086,9 @@
 // Judul
 .content-satu {
   margin-top: 120px;
+  @media Screen and (max-width: 780px) {
+    margin-top: 250px;
+  }
 }
 
 .judul {
@@ -1147,45 +1143,55 @@
 
 // Jenis Paragraf
 .jenis {
-    display: flex;
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    background-color: rgba(139, 181, 236, 0.1);
-    padding: 11px 10px 0px 130px;
-    &_paragraf {
-      padding-right: 90px;
-      // background: #00a279;
-      @media (max-width: 768px) {
-        padding-right: 20px;
-      }
-    }
-    &_topik {
-      // background: #0a4da3;
-    }
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  padding: 11px 10px 0px 130px;
+  &_paragraf {
+    padding-right: 90px;
+    // background: #00a279;
     @media (max-width: 768px) {
-      width: 100%;
-      padding: 11px 10px 0px 10px;
+      padding-right: 20px;
     }
+  }
+  &_topik {
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 11px 10px 0px 10px;
+  }
 }
 // End Jenis Paragraf
 
 // Tips dan Kalimat
+.body {
+  // border: 1px solid red;
+  display: flex;
+  padding: 10px 0px 0px 30px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 0px;
+  }
+}
+
 .tips {
   //   background: skyblue;
   text-align: right;
   margin: 5px;
+  width: 100%;
   @media Screen and (max-width: 660px) {
-    padding: 5px 0px 0px 0px;
-    text-align: center;
+    // padding: 5px 0px 0px 0px;
+    // text-align: center;
   }
   &_judul {
     background-color: #00a279;
     border: none;
-    line-height: 32px;
+    // line-height: 32px;
     width: 98px;
     border-radius: 10px;
     margin: 5px;
+    color: #fff;
     @media Screen and (max-width: 780px) {
       line-height: 22px;
     }
@@ -1194,9 +1200,21 @@
 
 .kalimat {
   &_p {
+    // font-size: 20px;
+    // margin: 5px;
+    // padding-top: 13px;
+    // border: 1px solid red;
+    padding: 10px 0px 0px 15px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
-    margin: 5px;
-    padding-top: 13px;
+    line-height: 30px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
+    }
   }
 }
 // end Tips dan Kalimat
@@ -1229,7 +1247,7 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 7%;
+  width: 9%;
   @media screen and (max-width: 780px) {
     width: 70px;
   }
@@ -1255,10 +1273,9 @@
 }
 
 .tombol_ok {
-  align-items: center;  
+  align-items: center;
   text-align: center;
 }
-
 
 .ok {
   background: #0a4da3;
@@ -1390,7 +1407,9 @@
 
 // Konsep Menulis
 .content-konsep {
-  margin-left: 17%;
+  // border: 1px solid red;
+  // margin-left: 17%;
+  padding-left: 20%;
   margin-top: 30px;
   @media screen and (max-width: 768px) {
     margin-left: 0%;

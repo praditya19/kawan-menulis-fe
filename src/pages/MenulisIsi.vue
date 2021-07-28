@@ -533,8 +533,8 @@
               class="content_padding_tulis_right_paragraf_bawah2"
               style="padding: 0px 0px 20px 0px"
             >
-              <div class="border">
-                <div class="border_catatan">
+              <div class="gabungan">
+                <div class="catatan">
                   <h4><b>Catatan Pra Menulis</b></h4>
                 </div>
               </div>
@@ -604,6 +604,8 @@
 // all
 .all {
   overflow-x: hidden;
+  max-width: 1440px;
+  margin: auto;
 }
 .Button {
   display: flex;
@@ -715,16 +717,21 @@
 }
 
 .judul {
-  font-size: 50px;
-  margin-top: 70px;
+  padding: 10px 0px 0px 0px;
   font-family: Poppins;
+  font-weight: 70;
   font-style: normal;
   font-weight: bold;
-  margin-left: 30%;
+  font-size: 50px;
+  text-align: center;
   h1 {
     font-weight: bolder;
     font-size: 47px;
-    margin-left: 10%;
+    margin-left: 10px;
+    @media (max-width: 768px) {
+      padding: 100px 5px 0px 5px;
+      font-size: 40px;
+    }
   }
 }
 // End Judul
@@ -735,10 +742,17 @@
 // }
 
 .steper {
-  text-align: center;
+  padding: 10px 150px 10px 150px;
   &_image {
-    width: 1000px;
-    text-align: center;
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+    &_image {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 // End Stepper
@@ -746,15 +760,24 @@
 // Jenis Paragraf
 .jenis {
   display: flex;
-  max-width: 1440px;
-  height: 49px;
+  width: 100%;
+  height: auto;
   font-size: 16px;
   background-color: rgba(139, 181, 236, 0.1);
+  padding: 11px 10px 0px 130px;
   &_paragraf {
-    padding: 11px 0px 0px 110px;
+    padding-right: 90px;
+    // background: #00a279;
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
   }
   &_topik {
-    padding: 11px 0px 0px 70px;
+    // background: #0a4da3;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 11px 10px 0px 10px;
   }
 }
 // End Jenis Paragraf
@@ -769,14 +792,21 @@
   //   background: skyblue;
   text-align: right;
   margin: 5px;
+  width: 100%;
+  @media Screen and (max-width: 768px) {
+  }
   &_judul {
     background-color: #00a279;
     height: 40px;
+    line-height: 32px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
     margin-top: 5px;
     width: 115px;
+    color: #fff;
+    @media Screen and (max-width: 780px) {
+    }
   }
 }
 
@@ -823,6 +853,19 @@
 }
 // End Tombol OK
 
+.gabungan {
+  padding: 30px 0px 80px 220px;
+  .catatan {
+    width: 238px;
+    height: 42px;
+    left: 0px;
+    color: #fff;
+    background: #455a64;
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px 0px 0px 10px;
+  }
+}
+
 .border {
   background-color: #484c52;
   height: 42px;
@@ -832,14 +875,26 @@
   h4 {
     color: #fff;
     font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    line-height: 24px;
   }
   &_list {
-    background-color: #c1c8d3;
+    display: flex;
+    font-family: Poppins;
+    background-color: #e0e0e0;
     width: 730px;
     padding: 13px;
-    border-radius: 0px 0 30px 30px;
+    border-radius: 0px 0px 13px 13px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #030303;
+    text-align: left;
   }
 }
 // End Catatan Pramenulis

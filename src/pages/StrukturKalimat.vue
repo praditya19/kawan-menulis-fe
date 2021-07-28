@@ -267,8 +267,7 @@
 
       <!-- Screen 1 -->
       <div class="content-empat" v-if="strukturkalimatPage1 === true" style="margin-left:3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -296,6 +295,7 @@
                   untuk membuat perubahan gunakan Ubah.
                 </p>
               </div>
+            </div>
             </div>
 
             <!-- Konsep Paragraf -->
@@ -353,23 +353,26 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat1Next">
+        <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat1Next">
+            <b>OK</b>
+          </button>
+        </div>
+        <!-- <div class="content-lima" @click="strukturkalimat1Next">
           <div class="tombol">
             <button class="ok" type="submit">OK</button>
           </div>
-        </div>
+        </div> -->
         <!-- End Button OK -->
       </div>
       <!-- End Screen 1 -->
 
       <!-- Screen 2 -->
       <div class="content-empat" v-if="strukturkalimatPage2 === true" style="margin-left:3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -458,6 +461,7 @@
                 </p>
               </div>
             </div>
+            </div>
 
             <!-- Konsep Paragraf -->
             <div class="content-konsep">
@@ -514,23 +518,25 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat2Next">
+        <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat2Next">
+            <b>OK</b>
+          </button>
+        </div>
+        <!-- <div class="content-lima" @click="strukturkalimat2Next">
           <div class="tombol">
             <button class="ok" type="submit">OK</button>
-          </div>
-        </div>
+          </div> -->
         <!-- End Button OK -->
       </div>
       <!-- End Screen 2 -->
 
       <!-- Screen 3 -->
       <div class="content-empat" v-if="strukturkalimatPage3 === true" style="margin-left:3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -620,6 +626,7 @@
                 </p>
               </div>
             </div>
+            </div>
 
             <!-- Konsep Paragraf -->
             <div class="content-konsep">
@@ -676,23 +683,25 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat3Next">
+        <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat3Next">
+            <b>OK</b>
+          </button>
+        </div>
+        <!-- <div class="content-lima" @click="strukturkalimat3Next">
           <div class="tombol">
             <button class="ok" type="submit">OK</button>
-          </div>
-        </div>
+          </div> -->
         <!-- End Button OK -->
       </div>
       <!-- End Screen 3 -->
 
       <!-- Screen 4 -->
       <div class="content-empat" v-if="strukturkalimatPage4 === true" style="margin-left:3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -773,6 +782,7 @@
                 </p>
               </div>
             </div>
+            </div>
 
             <!-- Konsep Paragraf -->
             <div class="content-konsep">
@@ -829,23 +839,25 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat4Next">
+        <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat4Next">
+            <b>OK</b>
+          </button>
+        </div>
+        <!-- <div class="content-lima" @click="strukturkalimat4Next">
           <div class="tombol">
             <button class="ok" type="submit">OK</button>
-          </div>
-        </div>
+          </div> -->
         <!-- End Button OK -->
       </div>
       <!-- End Screen 4 -->
 
       <!-- Screen 5 -->
       <div class="content-empat" v-if="strukturkalimatPage5 === true" style="margin-left:3%;">
-        <div class="col-sm-12">
-          <div class="row">
+          <div class="body">
             <!-- Button Tips -->
             <div class="col-sm-2">
               <div class="tips">
@@ -936,6 +948,7 @@
                     Pemeriksaan Akhir
                     </button>
             </div>
+            </div>
 
             <!-- Konsep Paragraf -->
             <div class="content-konsep">
@@ -954,15 +967,18 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
         <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat5Next">
+        <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat5Next">
+            <b>OK</b>
+          </button>
+        </div>
+        <!-- <div class="content-lima" @click="strukturkalimat5Next">
           <div class="tombol">
             <button class="ok" type="submit">OK</button>
-          </div>
-        </div>
+          </div> -->
         <!-- End Button OK -->
       </div>
       <!-- End Screen 5 -->
@@ -974,15 +990,59 @@
 <script src="./js/strukturKalimat.js" />
 
 <style lang="scss" scoped>
+// Tombol OK
+.button {
+  padding: 30px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    .button1 {
+      margin-left: 0px;
+      position: center;
+    }
+  }
+  .button1 {
+    background-color: #0a4da3;
+    height: 44px;
+    width: 110px;
+    border-radius: 42px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    padding-top: 8px;
+    b {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  .button1:hover {
+    background-color: #0a4da3;
+  }
+}
+// End Tombol OK
+
 // all
 .all {
   overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
 }
 
 // Judul
 .content-satu {
   //   background: red;
   margin-top: 120px;
+  @media Screen and (max-width: 780px) {
+    margin-top: 250px;
+  }
 }
 .jarak {
   margin-left: 10px;
@@ -1063,45 +1123,54 @@
   }
 }
 
-
 // Jenis Paragraf
 .jenis {
   display: flex;
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    background-color: rgba(139, 181, 236, 0.1);
-    padding: 11px 10px 0px 130px;
-    &_paragraf {
-      padding-right: 90px;
-      // background: #00a279;
-      @media (max-width: 768px) {
-        padding-right: 20px;
-      }
-    }
-    &_topik {
-      // background: #0a4da3;
-    }
+  width: 100%;
+  height: auto;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  padding: 11px 10px 0px 130px;
+  &_paragraf {
+    padding-right: 90px;
+    // background: #00a279;
     @media (max-width: 768px) {
-      width: 100%;
-      padding: 11px 10px 0px 10px;
+      padding-right: 20px;
     }
+  }
+  &_topik {
+    // background: #0a4da3;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 11px 10px 0px 10px;
+  }
 }
 // End Jenis Paragraf
 
 // Tips dan Kalimat
+.body {
+  // border: 1px solid red;
+  display: flex;
+  padding: 10px 0px 0px 30px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 0px;
+  }
+}
+
 .tips {
   //   background: skyblue;
   text-align: right;
   margin: 5px;
+  width: 100%;
   @media Screen and (max-width: 660px) {
-    padding: 5px 0px 0px 0px;
-    text-align: center;
+    // padding: 5px 0px 0px 0px;
+    // text-align: center;
   }
   &_judul {
     background-color: #00a279;
     border: none;
-    line-height: 32px;
+    // line-height: 32px;
     width: 98px;
     border-radius: 10px;
     margin: 5px;
@@ -1113,21 +1182,32 @@
 
 .kalimat {
   &_p {
+    // font-size: 20px;
+    // margin: 5px;
+    // padding-top: 13px;
+    padding: 10px 0px 0px 15px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
     font-size: 20px;
-    margin: 5px;
-    padding-top: 13px;
+    line-height: 30px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
+      font-size: 16px;
+    }
   }
 }
 // end Tips dan Kalimat
 
 // Button Gaya Menulis dll
-// Button Gaya Menulis dll
 .all-button {
   margin-left: 17%;
   line-height: 40px;
-  @media screen and (max-width: 500px) {
-    margin-left: 0px;
-  }
+  // @media screen and (max-width: 500px) {
+  //   margin-left: 0px;
+  // }
   &_satu {
     background-color: #00a279;
     border: none;
@@ -1138,24 +1218,25 @@
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 600px) {
+      margin-left: -55px;
       width: 97%;
     }
   }
-  &_exp {
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 20px;
-    width: 14%;
-    margin: 0.3%;
-    color: #454B56;
-    font-weight: bold;
-    font-size: 14px;
-    font-family: Poppins;
-    @media screen and (max-width: 500px) {
-      width: 145px;
-    }
-  }
+  // &_exp {
+  //   background-color: #e0e0e0;
+  //   border: none;
+  //   border-radius: 20px;
+  //   width: 14%;
+  //   margin: 0.3%;
+  //   color: #454b56;
+  //   font-weight: bold;
+  //   font-size: 14px;
+  //   font-family: Poppins;
+  //   @media screen and (max-width: 500px) {
+  //     width: 145px;
+  //   }
+  // }
 }
 
 .all-button_satu:hover {
@@ -1169,7 +1250,7 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 7%;
+  width: 9%;
   @media screen and (max-width: 780px) {
     width: 70px;
   }
@@ -1201,6 +1282,15 @@
     }
   }
 }
+.jarak {
+  margin-left: 10px;
+  padding: 10px 30px 0px 0px;
+  @media screen and (max-width: 780px) {
+    margin-left: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+}
 // Tombol OK
 .tombol {
   align-items: center;
@@ -1226,7 +1316,8 @@
 
 // Konsep Menulis
 .content-konsep {
-  margin-left: 17%;
+  // margin-left: 17%;
+  padding-left: 20%;
   margin-top: 30px;
   @media screen and (max-width: 768px) {
     margin-left: 0%;
