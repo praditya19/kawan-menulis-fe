@@ -492,8 +492,8 @@
                   index) in pramenulisLanjutanDataSesion.resultMenulis"
                   :key="index"
                 >
-                  <h5>
-                    <li>&nbsp; &nbsp;{{ dataSesion.pramenulis }}</li>
+                  <h5 style="padding: 10px 0px 0px 10px">
+                    <li>{{ dataSesion.pramenulis }}</li>
                   </h5>
                 </div>
               </ul>
@@ -530,64 +530,47 @@
           </div>
         </div>
       </div>
-      <!-- Catatan Pra.... -->
-      <div class="catatan">
+      <div class="content-catatan">
+        <div class="border">
+          <div class="border_catatan">
+            <h4><b>Catatan Pra Menulis</b></h4>
+          </div>
+        </div>
         <!-- Form Centang -->
-        <b-form>
-          <div class="col-sm-12">
-            <div
-              class="content_padding_tulis_right_paragraf_bawah2"
-              style="padding: 0px 0px 20px 0px"
-            >
-              <div class="border">
-                <div class="border_catatan">
-                  <h4><b>Catatan Pra Menulis</b></h4>
-                </div>
-              </div>
-
-              <div class="catatan-form">
-                <div class="catatan-form_aa">
-                  <div>
-                    <div class="col-sm-12">
-                      <div class="catatan-form_aa_b">
-                        <ul>
-                          <div
-                            class="dua"
-                            v-for="(dataSesion1,
-                            index) in pramenulisLanjutanDataSesion.resultMenulis"
-                            :key="index"
-                          >
-                            <div class="row">
-                              <div class="col-sm-10">
-                                <h5 style="padding: 10px 0px 0px 0px">
-                                  <li>
-                                    &nbsp; &nbsp;{{ dataSesion1.pramenulis }}
-                                  </li>
-                                </h5>
-                              </div>
-                              <div class="col-sm-2" style="text-align: right">
-                                <button
-                                  class="tips-form"
-                                  type="button"
-                                  v-on:click="takeModal(index)"
-                                >
-                                  <b>Tips</b>
-                                </button>
-                              </div>
-                              <b-form-input
-                                v-model="dataForm.menulis[index]"
-                              ></b-form-input>
-                            </div>
-                          </div>
-                        </ul>
-                      </div>
+        <div class="border_list">
+          <b-form-group>
+            <div class="col-sm-12">
+              <ul>
+                <div style="padding: 0px 30px 0px 20px">
+                  <div
+                    class="dua"
+                    v-for="(dataSesion1,
+                    index) in pramenulisLanjutanDataSesion.resultMenulis"
+                    :key="index"
+                  >
+                    <div class="kiri">
+                      <h5 style="padding: 10px 0px 0px 10px">
+                        <li>{{ dataSesion1.pramenulis }}</li>
+                      </h5>
                     </div>
+                    <div class="kanan">
+                      <button
+                        class="tips-form"
+                        type="button"
+                        v-on:click="takeModal(index)"
+                      >
+                        <b>Tips</b>
+                      </button>
+                    </div>
+                    <b-form-input
+                      v-model="dataForm.menulis[index]"
+                    ></b-form-input>
                   </div>
                 </div>
-              </div>
+              </ul>
             </div>
-          </div>
-        </b-form>
+          </b-form-group>
+        </div>
       </div>
 
       <!-- button -->
@@ -617,6 +600,15 @@
   @media Screen and (max-width: 780px) {
     margin-top: 20px;
   }
+}
+.kiri {
+  width: 80%;
+  float: left;
+}
+.kanan {
+  width: 20%;
+  float: left;
+  text-align: right;
 }
 .judul {
   padding: 10px 0px 0px 0px;
@@ -772,8 +764,6 @@
 
 // Catatan Pra
 .content-catatan {
-  border: 1px solid red;
-
   padding: 30px 200px 10px 250px;
   @media screen and (max-width: 768px) {
     padding: 30px 20px 10px 20px;
@@ -787,28 +777,37 @@
 .catatan {
   padding: 30px 0px 0px 250px;
   @media screen and (max-width: 768px) {
-    padding: 30px 0px 0px0px;
-    width: 0%;
+    margin-left: -230px;
+    width: 120%;
   }
 }
 
 .catatan-form {
   background-color: #e0e0e0;
-  width: 75%;
+  width: 800px;
   padding: 13px;
   border-radius: 0px 0 30px 30px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
   }
+  @media screen and (max-width: 768px) {
+    width: 125%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 125%;
+  }
+  @media screen and (max-width: 600px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 546px) {
+    width: 470px;
+  }
   &_aa {
-    margin-left: 30px;
-    @media screen and (max-width: 768px) {
-      margin-left: 30px;
-    }
     &_b {
-      max-width: 90%;
+      padding: 10px 30px 20px 20px;
+      max-width: 100%;
       @media screen and (max-width: 768px) {
-        max-width: 10%;
+        max-width: 100%;
       }
     }
   }
@@ -816,7 +815,7 @@
 
 .border {
   background-color: #455a64;
-  height: 42px;
+  height: auto;
   width: 238px;
   border-radius: 7px 7px 0px 0px;
   border: none;

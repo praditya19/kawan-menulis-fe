@@ -12,7 +12,7 @@
             <a href="/diagnostik">Tes Diagnostik</a>
           </div>
           <div class="mobile__footer__menu">
-            <a href="/mulai-menulis">Belajar Menulis</a>
+            <a href="/mulaimenulis">Belajar Menulis</a>
           </div>
           <div class="mobile__footer__menu">
             <a href="/sumber-belajar">Sumber Belajar</a>
@@ -69,7 +69,7 @@
               <router-link to="/diagnostik"> Tes Diagnostik</router-link>
             </div>
             <div class="footer__beranda--belajarMenulis">
-              <router-link to="/mulai-menulis"> Belajar Menulis</router-link>
+              <router-link to="/mulaimenulis"> Belajar Menulis</router-link>
             </div>
           </div>
           <div class="footer__belajar">

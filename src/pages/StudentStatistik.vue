@@ -1,12 +1,15 @@
 <template>
   <div class="all">
-    <div class="center">
+    <div class="center" v-if="show === true">
       <img class="image_ukuran" src="@/assets/Statistics-amico.png" />
       <div class="tombol">
-        <button class="ok" block @click="statistik = true">
+        <button class="ok" block @click="goToModal()">
           <b>Lihat statistik Lengkap</b>
         </button>
       </div>
+    </div>
+    <div v-if="show === false">
+      <img class="image-empety" src="@/assets/empety.png" />
     </div>
     <!-- modal -->
     <div v-if="statistik === true">
@@ -23,23 +26,69 @@
                   <div style="padding: 20px 20px 20px 20px;">
                     <div class="jumbotron">
                       <div style="padding: 15px 0px 10px 20px">
-                        <div class="row">
+                        <div
+                          class="row"
+                          
+                        >
                           <div class="col-md-6">
                             <p>
-                              <b>Name&nbsp;&nbsp;:</b>Jack <br />
-                              <b>NIM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> 900920
+                              <b>Name&nbsp;&nbsp;:&nbsp;</b
+                              ><font v-for="(studentStatistik, index) in studentStatistik"
+                          :key="index"><span
+                                v-if="index === 0"
+                                v-html="studentStatistik.student.name"
+                              ></span
+                              ></font><br />
+                              <b>NIM&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</b
+                              ><font v-for="(studentStatistik, index) in studentStatistik"
+                          :key="index"><span
+                                v-if="index === 0"
+                                v-html="studentStatistik.student.nim"
+                              ></span
+                              ></font>
                             </p>
                           </div>
                           <div class="col-md-4">
                             <p>
-                              <b>Email&nbsp;&nbsp;&nbsp;:</b>
-                              j.jackbrown@gmail.com
+                              <b>Email&nbsp;&nbsp;: </b>
+                              <font v-for="(studentStatistik, index) in studentStatistik"
+                          :key="index"><span
+                                v-if="index === 0"
+                                v-html="studentStatistik.student.email"
+                              ></span
+                              ></font>
                               <br />
-                              <b>PRODI :</b> SAM
+                              <b>PRODI :&nbsp;</b
+                              ><font v-for="(studentStatistik, index) in studentStatistik"
+                          :key="index"><span
+                                v-if="index === 0"
+                                v-html="studentStatistik.student.prodi"
+                              ></span
+                              ></font>
                             </p>
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div
+                      style="text-align:right; aling-item:right; padding: 30px 20px 0px 20px"
+                    >
+                      <label for="paginations">items per page :&nbsp;</label>
+                      <b-form-select
+                        v-model="selected"
+                        class="mb-3"
+                        id="paginations"
+                        style="height: 32px; width: 50px;"
+                      >
+                        <!-- These options will appear after the ones from 'options' prop -->
+                        <b-form-select-option :value="null" disabled hidden
+                          >5</b-form-select-option
+                        >
+                        <b-form-select-option value="5">5</b-form-select-option>
+                        <b-form-select-option value="10"
+                          >10</b-form-select-option
+                        >
+                      </b-form-select>
                     </div>
                     <div class="table">
                       <hr />
@@ -59,7 +108,7 @@
                             <b-td>43</b-td>
                             <b-td>413</b-td>
                             <b-td
-                              class="text-align: right; align-item: right; justify-content: right;"
+                              style="text-align: right; align-item: right; justify-content: right;"
                             >
                               <b-button variant="outline-success"
                                 >Show</b-button
@@ -71,9 +120,17 @@
                     </div>
                     <br />
                     <div class="kanan">
-                      <b-button variant="secondary">Cancel</b-button>
+                      <b-button
+                        variant="secondary"
+                        @click="(statistik = false), (show = true)"
+                        >Cancel</b-button
+                      >
                       &nbsp;&nbsp;&nbsp;
-                      <b-button variant="success">OK</b-button>
+                      <b-button
+                        style="background-color: #47b139;"
+                        @click="(statistik = false), (show = true)"
+                        >OK</b-button
+                      >
                     </div>
                   </div>
                 </div>
@@ -103,6 +160,10 @@
     }
   }
 }
+.image-empety {
+  width: 200px;
+  height: 500px;
+}
 // all
 .all {
   overflow-x: hidden;
@@ -123,14 +184,20 @@
 
 // modal
 .modal-dialog {
-  top: 50px;
+  background-color: transparent;
+  top: 15px;
   left: auto;
-  @media (max-width: 768px) {
-    top: -80px;
+  @media (max-width: 770px) {
+    top: -160px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100%;
   }
 }
 .modal-content {
-  width: 100px;
+  @media screen and (max-width: 770px) {
+    width: 100%;
+  }
 }
 /* end style Modal */
 
@@ -179,7 +246,7 @@
   background-color: rgb(209, 204, 204);
 }
 .table {
-  padding: 20px 20px 10px 20px;
+  padding: 0px 20px 10px 20px;
 }
 
 /* end style isi modal */
@@ -200,6 +267,9 @@
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 /* End Background Belakang Modal */
 .tombol {

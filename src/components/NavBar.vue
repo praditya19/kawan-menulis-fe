@@ -34,7 +34,7 @@
             <router-link to="tutor">Tutor</router-link>
           </li>
           <li>
-            <router-link to="mulai-menulis" type="button" class="button"
+            <router-link to="mulaimenulis" type="button" class="button"
               >Mulai Menulis</router-link
             >
           </li>

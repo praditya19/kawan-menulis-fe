@@ -1,27 +1,25 @@
 <template>
-  <div class="content">
+  <div class="all">
     <!-- Judul -->
-    <div style="margin-top: 120px;">
+    <div class="content-satu">
       <div class="judul">
         <h1>Latihan Menulis</h1>
       </div>
     </div>
-    <br />
     <!-- Stepper -->
     <div class="content-dua">
       <div class="steper">
         <img class="steper_image" src="@/assets/icon_stepper/6.png" alt="" />
       </div>
     </div>
-    <br />
     <!-- Jenis Paragraf -->
     <div class="content-tiga">
       <div class="jenis">
         <p class="jenis_paragraf">
-          <strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}
+          <strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}
         </p>
         <p class="jenis_topik">
-          <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+          <strong>Topik: </strong>{{ jenisTopics.topik }}
         </p>
       </div>
     </div>
@@ -468,505 +466,372 @@
       </transition>
     </div>
     <!-- end modal area -->
-    <!-- Screen1 -->
 
+    <!-- Screen1 -->
     <div class="content_padding_tulis" v-if="pengorganisasianPage1 === true">
-      <div class="tengah">
+      <div class="body">
         <div class="col-md-2.5">
-          <b-btn class="tengah_tips" @click="showModal = true">TIPS</b-btn>
+          <div class="tengah">
+            <b-btn class="tengah_tips" @click="showModal = true">TIPS</b-btn>
+          </div>
         </div>
-        <div class="col-md-9.5">
-          <p class="tengah_text2">
+        <div class="col-md-9.5 tengah_text2">
+          <p>
             Anda sekarang siap untuk mengatur kalimat Anda.
           </p>
-          <p class="tengah_text2">
+          <p>
             Kalimat utama Anda telah ditempatkan di
             <b>Catatan Paragraf</b> . Kalimat mana yang secara logis akan muncul
             setelahnya?
           </p>
-          <p class="tengah_text2">
+          <p>
             Pindahkan setidaknya <b>empat kalimat</b>, satu persatu secara
             berurutan, dari <b>Catatan Menulis</b> ke dalam Catatan Paragraf.
             Nanti Anda akan memiliki kesempatan untuk meninjau kembali urutan
             kalimat Anda.
           </p>
-          <p class="tengah_text2">
-            Centang kalimat yang Anda ingin pilih Klik
-            <b>v</b> untuk memindahkan setiap kalimat ke dalam
+          <p>
+            Centang kalimat yang Anda ingin pilih <br />Klik <b>v</b> untuk
+            memindahkan setiap kalimat ke dalam
             <b>Catatan Paragraf atau sebaliknya</b>
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11 jarak1">
-          <div class="col-sm-12">
-            <div class="content_padding_tulis_right_paragraf_bawah">
-              <div class="row">
-                <div class="col-sm-3">
-                  <div
-                    style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                  >
-                    <div class="content_padding_tulis_catatan">
-                      <h4 style="padding: 11px 0px 0px 0px;">
-                        <b>Catatan Menulis</b>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <a @click="descending()">
-                    <img class="icon-up-down" src="@/assets/down.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="bereb">
-                <div style="margin-left: 10px">
-                  <b-form-group>
-                    <div>
-                      <div class="col-sm-12">
-                        <ul>
-                          <div
-                            class="dua"
-                            v-for="(dataSesion,
-                            index) in pramenulisLanjutanDataSesion.resultMenulis"
-                            :key="index"
-                          >
-                            <h5>
-                              <b-form-radio
-                                v-bind:value="index"
-                                v-model="dataForm.resultMenulis"
-                                >&nbsp;&nbsp;{{
-                                  dataSesion.pramenulis
-                                }}</b-form-radio
-                              >
-                            </h5>
-                          </div>
-                        </ul>
-                      </div>
-                    </div>
-                  </b-form-group>
-                </div>
-              </div>
+
+      <div class="content-konsep">
+        <div class="gabungan-icon">
+          <div class="border">
+            <div class="border_konsep">
+              <h4><b>Catatan Menulis</b></h4>
             </div>
           </div>
-          <br /><br />
-          <div class="col-sm-12">
-            <div class="content_padding_tulis_right_paragraf_bawah">
-              <div class="row">
-                <div class="col-sm-3">
-                  <div
-                    style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                  >
-                    <div class="content_padding_tulis_catatan">
-                      <h4 style="padding: 11px 0px 0px 0px;">
-                        <b>Catatan Paragraf</b>
-                      </h4>
-                    </div>
-                  </div>
+          <a @click="descending()">
+            <img class="icon-up-down" src="@/assets/down.png" />
+          </a>
+        </div>
+        <div class="border_list">
+          <b-form-group>
+            <div>
+              <ul>
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in pramenulisLanjutanDataSesion.resultMenulis"
+                  :key="index"
+                >
+                  <h5>
+                    <b-form-radio
+                      v-bind:value="index"
+                      v-model="dataForm.resultMenulis"
+                      >&nbsp;&nbsp;{{ dataSesion.pramenulis }}</b-form-radio
+                    >
+                  </h5>
                 </div>
-                <div class="col-sm-4">
-                  <a @click="ascending()">
-                    <img class="icon-up-down" src="@/assets/up.png" />
-                  </a>
-                </div>
-              </div>
-              <div class="bereb">
-                <div style="margin-left: 10px">
-                  <b-form-group>
-                    <div>
-                      <div class="col-sm-12">
-                        <ul>
-                          <div class="dua">
-                            <h5
-                              v-for="(details,
-                              index) in pramenulisLanjutanDataSesion.resultParagraphKalimatUtama"
-                              :key="index"
-                            >
-                              <b>
-                                <span
-                                  v-if="index === 1"
-                                  v-html="details.replace('.', '')"
-                                ></span>
-                              </b>
-                            </h5>
-                          </div>
-                          <b-form-group>
-                            <div
-                              class="dua"
-                              v-for="(dataSesionNext2,
-                              index) in pramenulisLanjutanDataSesion.resultParagraph"
-                              :key="index"
-                            >
-                              <h5>
-                                <b-form-radio
-                                  v-bind:value="index"
-                                  v-model="dataForm.resultMenulis1"
-                                  >&nbsp;&nbsp;{{
-                                    dataSesionNext2
-                                  }}</b-form-radio
-                                >
-                              </h5>
-                            </div>
-                          </b-form-group>
-                        </ul>
-                      </div>
-                    </div>
-                  </b-form-group>
-                </div>
-              </div>
+              </ul>
             </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="button2_tombol2">
-              <button
-                class="button2"
-                type="button"
-                @click="pengorganisasian1Next()"
-              >
-                <b>OK</b>
-              </button>
-            </div>
-          </div>
+          </b-form-group>
         </div>
       </div>
+
+      <div class="content-konsep">
+        <div class="gabungan-icon">
+          <div class="border">
+            <div class="border_konsep">
+              <h4>
+                <b>Catatan Paragraf</b>
+              </h4>
+            </div>
+          </div>
+          <a @click="ascending()">
+            <img class="icon-up-down" src="@/assets/up.png" />
+          </a>
+        </div>
+
+        <div class="border_list">
+          <b-form-group>
+            <div>
+              <ul>
+                <div class="dua">
+                  <h5
+                    v-for="(details,
+                    index) in pramenulisLanjutanDataSesion.resultParagraphKalimatUtama"
+                    :key="index"
+                  >
+                    <b>
+                      <span
+                        v-if="index === 1"
+                        v-html="details.replace('.', '')"
+                      ></span>
+                    </b>
+                  </h5>
+                </div>
+                <b-form-group>
+                  <div
+                    class="dua"
+                    v-for="(dataSesionNext2,
+                    index) in pramenulisLanjutanDataSesion.resultParagraph"
+                    :key="index"
+                  >
+                    <h5>
+                      <b-form-radio
+                        v-bind:value="index"
+                        v-model="dataForm.resultMenulis1"
+                        >&nbsp;&nbsp;{{ dataSesionNext2 }}</b-form-radio
+                      >
+                    </h5>
+                  </div>
+                </b-form-group>
+              </ul>
+            </div>
+          </b-form-group>
+        </div>
+      </div>
+
+      <div class="button_ok">
+        <button
+          class="button-ok justify-content-center"
+          type="button"
+          @click="pengorganisasian1Next()"
+        >
+          <b>OK</b>
+        </button>
+      </div>
     </div>
+
     <!-- Screen2 -->
     <div class="content_padding_tulis" v-if="pengorganisasianPage2 === true">
-      <div class="tengah">
+      <div class="body">
         <div class="col-md-2.5">
-          <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+          <div class="tengah">
+            <b-btn class="tengah_tips" @click="showModal2 = true">TIPS</b-btn>
+          </div>
         </div>
-        <div class="col-md-9.5">
-          <p class="tengah_text2">
+        <div class="col-md-9.5 tengah_text2">
+          <p>
             Bagus! Anda telah memperkenalkan ide utama Anda dalam kalimat topik.
             Anda memberikan beberapa detail dalam kalimat-kalimat berikutnya.
           </p>
-          <p class="tengah_text2">
+          <p>
             Ini adalah saat yang tepat untuk membaca apa yang telah Anda tulis
             sejauh ini.
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11 jarak1">
-          <div class="content_padding_tulis_right_paragraf_bawah">
-            <div class="row">
-              <div class="col-sm-4">
-                <div
-                  style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 90%;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                >
-                  <div class="content_padding_tulis_catatan">
-                    <h4 style="padding: 12px 0px 0px 0px;">
-                      <b>Konsep Paragraf</b>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bereb">
-              <div style="padding: 0px 15px 0px 5px">
-                <b-form-group>
-                  <div>
-                    <div class="col-sm-12">
-                      <ul>
-                        <div
-                          class="dua"
-                          v-for="(dataSesion,
-                          index) in pramenulisLanjutanDataSesion.konsepParagraf"
-                          :key="index"
-                        >
-                          <p>
-                            {{ dataSesion }}
-                          </p>
-                        </div>
-                      </ul>
-                    </div>
-                  </div>
-                </b-form-group>
-              </div>
+
+      <div class="content-konsep">
+        <div class="gabungan-icon">
+          <div class="border">
+            <div class="border_konsep">
+              <h4>
+                <b>Konsep Paragraf</b>
+              </h4>
             </div>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="button4_tombol4" @click="pengorganisasian2Next()">
-            <button class="button4" type="button">
-              <b>OK</b>
-            </button>
-          </div>
+        <div class="border_list">
+          <b-form-group>
+            <div>
+              <ul>
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in pramenulisLanjutanDataSesion.konsepParagraf"
+                  :key="index"
+                >
+                  <p>
+                    {{ dataSesion }}
+                  </p>
+                </div>
+              </ul>
+            </div>
+          </b-form-group>
         </div>
       </div>
+
+      <div class="button_ok" @click="pengorganisasian2Next()">
+        <button class="button-ok justify-content-center" type="button">
+          <b>OK</b>
+        </button>
+      </div>
     </div>
+
     <!-- screen 3 -->
     <div class="content_padding_tulis" v-if="pengorganisasianPage3 === true">
-      <div class="tengah">
+      <div class="body">
         <div class="col-md-2.5">
-          <b-btn class="tengah_tips" @click="showModal3 = true">TIPS</b-btn>
+          <div class="tengah">
+            <b-btn class="tengah_tips" @click="showModal3 = true">TIPS</b-btn>
+          </div>
         </div>
-        <div class="col-md-9.5">
-          <p class="tengah_text2">
+        <div class="col-md-9.5 tengah_text2">
+          <p>
             Bisakah Anda menghubungkan satu kalimat ke kalimat lain dengan lebih
             lancar? Kata-kata transisi dapat membantu menghubungkan ide-ide
             dalam sebuah paragraf.
           </p>
-          <p class="tengah_text2">
+          <p>
             Untuk melihat bagaimana kata transisi dapat digunakan dalam sebuah
             paragraf, klik Tips.
           </p>
-          <p class="tengah_text2">
+          <p>
             Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Change
             Text.
           </p>
-          <p class="tengah_text2">
+          <p>
             Pada layar berikutnya Anda akan melihat lebih banyak contoh kata
             transisi
           </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11 jarak1">
-          <div class="content_padding_tulis_right_paragraf_bawah">
-            <div class="row">
-              <div class="col-sm-3">
-                <div
-                  style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 90%;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                >
-                  <div class="content_padding_tulis_catatan">
-                    <h4 style="padding: 10px 0px 0px 0px;">
-                      <b>Catatan Paragraf</b>
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-2">
-                <div class="content_padding_tulis_catatan">
-                  <div class="button3_tombol3">
-                    <button
-                      class="button3"
-                      id="show-btn"
-                      @click="showModalTambahPage3 = true"
-                    >
-                      <b>Tambah</b>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-1" style="margin-left: -35px">
-                <div class="content_padding_tulis_catatan">
-                  <div class="button3_tombol3">
-                    <button
-                      v-bind:disabled="
-                        dataForm.pilih.length === 0 ? true : false
-                      "
-                      class="button3_button4"
-                      @click="tombolUbah()"
-                    >
-                      <b>Ubah</b>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bereb">
-              <div style="margin-left: 30px">
-                <b-form-group>
-                  <div>
-                    <div class="col-sm-12">
-                      <ul>
-                        <div
-                          class="dua"
-                          v-for="(dataSesion,
-                          index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
-                          :key="index"
-                        >
-                          <h5>
-                            <b-form-radio
-                              name="radios-stacked"
-                              v-model="dataForm.pilih"
-                              v-bind:value="index"
-                              ><b
-                                >&nbsp; &nbsp;{{ dataSesion }}</b
-                              ></b-form-radio
-                            >
-                          </h5>
-                        </div>
-                      </ul>
-                    </div>
-                  </div>
-                </b-form-group>
-              </div>
+
+      <div class="content-konsep">
+        <div class="gabungan-icon">
+          <div class="border">
+            <div class="border_konsep">
+              <h4>
+                <b>Catatan Paragraf</b>
+              </h4>
             </div>
           </div>
+          <div class="response">
+            <!-- button tambah -->
+            <button
+              class="all-button_dua"
+              id="show-btn"
+              @click="showModalTambahPage3 = true"
+            >
+              <b>Tambah</b>
+            </button>
+            <!-- button ubah -->
+            <button
+              v-bind:disabled="dataForm.pilih.length === 0 ? true : false"
+              class="all-button_dua"
+              @click="tombolUbah()"
+            >
+              <b>Ubah</b>
+            </button>
+          </div>
+        </div>
+
+        <div class="border_list">
+          <b-form-group>
+            <div>
+              <ul>
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
+                  :key="index"
+                >
+                  <h5>
+                    <b-form-radio
+                      name="radios-stacked"
+                      v-model="dataForm.pilih"
+                      v-bind:value="index"
+                      ><b>&nbsp; &nbsp;{{ dataSesion }}</b></b-form-radio
+                    >
+                  </h5>
+                </div>
+              </ul>
+            </div>
+          </b-form-group>
         </div>
       </div>
+
       <!-- batas -->
-      <div class="col-sm-12"></div>
-      <br />
-      <div class="col-sm-12">
-        <div class="button4_tombol4" @click="pengorganisasian3Next">
-          <button class="button4" type="submit">
-            <b>OK</b>
-          </button>
-        </div>
+      <div class="button_ok" @click="pengorganisasian3Next">
+        <button class="button-ok justify-content-center" type="submit">
+          <b>OK</b>
+        </button>
       </div>
     </div>
     <!-- screen4 -->
     <div class="content_padding_tulis" v-if="pengorganisasianPage4 === true">
-      <div class="row">
-        <div class="col-sm-2">
-          <div class="button_tombol">
-            <b-button class="button" @click="showModal = true">
-              <div class="button_tombol_margin">
-                <b>TIPS</b>
-              </div>
+      <div class="body">
+        <div class="col-md-2.5">
+          <div class="tengah">
+            <b-button class="tengah_tips" @click="showModal = true">
+              <b>TIPS</b>
             </b-button>
           </div>
         </div>
-        <div class="col-sm-10">
-          <div class="content_padding_tulis_right">
-            <div class="col-sm-12">
-              <div class="content_padding_tulis_right_paragraf">
-                <p>
-                  Kata transisi dapat membantu menghubungkan ide dengan cara
-                  yang berbeda. Berikut beberapa contohnya: <br /><br />
-                  LANJUTKAN IDE:<br />
-                  lagi, sepanjang, juga, lain, serta, di samping.<br /><br />
-                  WAKTU PERTUNJUKAN:<br />
-                  tentang, sebelum, nanti, selanjutnya, segera, sampai,
-                  kapan.<br /><br />
-                  TUNJUKKAN PENYEBAB ATAU EFEK:<br />
-                  akibatnya, karena, karena, oleh karena itu.<br /><br />
-                  TAMPILKAN KONTRAS:<br />
-                  meskipun, tetapi, meskipun, namun, masih, namun.<br /><br />
-                  Untuk melihat kata transisi dalam kalimat, klik Tip.<br />
-                  Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Ubah
-                  teks.<br /><br />
-                  Layar berikutnya akan membantu Anda menulis kesimpulan.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-9.5 tengah_text2">
+          <p>
+            Kata transisi dapat membantu menghubungkan ide dengan cara yang
+            berbeda.<br />
+            Berikut beberapa contohnya: <br /><br />
+            LANJUTKAN IDE:<br />
+            lagi, sepanjang, juga, lain, serta, di samping.<br /><br />
+            WAKTU PERTUNJUKAN:<br />
+            tentang, sebelum, nanti, selanjutnya, segera, sampai, kapan.<br /><br />
+            TUNJUKKAN PENYEBAB ATAU EFEK:<br />
+            akibatnya, karena, karena, oleh karena itu.<br /><br />
+            TAMPILKAN KONTRAS:<br />
+            meskipun, tetapi, meskipun, namun, masih, namun.<br /><br />
+            Untuk melihat kata transisi dalam kalimat, klik Tip.<br />
+            Untuk menyisipkan kata transisi, pilih kalimat, lalu klik Ubah
+            teks.<br /><br />
+            Layar berikutnya akan membantu Anda menulis kesimpulan.
+          </p>
+        </div>
+      </div>
 
-          <div class="col-sm-12">
-            <div
-              class="content_padding_tulis_right_paragraf_bawah"
-              style="padding: 80px 0px 0px 0px"
-            >
-              <div class="row">
-                <div class="col-sm-3">
-                  <div
-                    style="
-                        background-color: #484c52;
-                        height: 48px;
-                        width: 240px;
-                        border-radius: 20px 20px 0px 0px;
-                      "
-                  >
-                    <div class="content_padding_tulis_catatan">
-                      <h4 style="padding: 10px 0px 0px 0px;">
-                        <b>Catatan Paragraf</b>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-2">
-                  <div class="content_padding_tulis_catatan">
-                    <div class="button3_tombol3">
-                      <button
-                        class="button3"
-                        id="show-btn"
-                        @click="showModalTambahPage3 = true"
-                      >
-                        <b>Tambah</b>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-1" style="margin-left: -35px">
-                  <div class="content_padding_tulis_catatan">
-                    <div class="button3_tombol3">
-                      <button
-                        class="button3_button4"
-                        v-bind:disabled="
-                          dataForm.pilih.length === 0 ? true : false
-                        "
-                        @click="tombolUbah()"
-                      >
-                        <b>Ubah</b>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                style="
-                    background-color: #c1c8d3;
-                    width: 730px;
-                    padding: 13px;
-                    border-radius: 0px 0 30px 30px;
-                  "
-              >
-                <div style="margin-left: 30px">
-                  <b-form-group>
-                    <div>
-                      <div class="col-sm-12">
-                        <ul>
-                          <div
-                            class="dua"
-                            v-for="(dataSesion,
-                            index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
-                            :key="index"
-                          >
-                            <h5>
-                              <b-form-radio
-                                name="radios-stacked"
-                                v-model="dataForm.pilih"
-                                v-bind:value="index"
-                                stacked
-                                ><b
-                                  >&nbsp; &nbsp;{{ dataSesion }}</b
-                                ></b-form-radio
-                              >
-                            </h5>
-                          </div>
-                        </ul>
-                      </div>
-                    </div>
-                  </b-form-group>
-                </div>
-              </div>
+      <div class="content-konsep">
+        <div class="gabungan-icon">
+          <div class="border">
+            <div class="border_konsep">
+              <h4>
+                <b>Catatan Paragraf</b>
+              </h4>
             </div>
           </div>
-          <div class="col-sm-12">
-            <div class="button2_tombol2" @click="pengorganisasian4Next">
-              <button class="button2" type="submit">
-                <b>OK</b>
-              </button>
-            </div>
+          <div class="response">
+            <button
+              class="all-button_dua"
+              id="show-btn"
+              @click="showModalTambahPage3 = true"
+            >
+              <b>Tambah</b>
+            </button>
+            <button
+              class="all-button_dua"
+              v-bind:disabled="dataForm.pilih.length === 0 ? true : false"
+              @click="tombolUbah()"
+            >
+              <b>Ubah</b>
+            </button>
           </div>
         </div>
+        <div class="border_list">
+          <b-form-group>
+            <div>
+              <ul>
+                <div
+                  class="dua"
+                  v-for="(dataSesion,
+                  index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
+                  :key="index"
+                >
+                  <h5>
+                    <b-form-radio
+                      name="radios-stacked"
+                      v-model="dataForm.pilih"
+                      v-bind:value="index"
+                      stacked
+                      ><b>&nbsp; &nbsp;{{ dataSesion }}</b></b-form-radio
+                    >
+                  </h5>
+                </div>
+              </ul>
+            </div>
+          </b-form-group>
+        </div>
+      </div>
+
+      <div class="button_ok" @click="pengorganisasian4Next">
+        <button class="button-ok justify-content-center" type="submit">
+          <b>OK</b>
+        </button>
       </div>
     </div>
   </div>
@@ -975,553 +840,526 @@
 <script src="./js/pengorganisasian.js" />
 
 <style lang="scss" scoped>
-.jarak1 {
-  padding: 0px 0px 0px 120px;
-  @media screen and (max-width: 700px) {
-    padding: 0px 0px 0px 30px;
-  }
-}
-.bereb {
-  background-color: #c1c8d3;
-  width: 80%;
-  padding: 13px;
-  border-radius: 0px 0 30px 30px;
-}
-// Jenis Paragraf
-.jenis {
-  display: flex;
-  height: 49px;
-  font-size: 16px;
-  background-color: rgba(139, 181, 236, 0.1);
-  @media Screen and (max-width: 768px) {
-    height: auto;
-  }
-  &_paragraf {
-    padding: 11px 0px 0px 110px;
+  // Tombol OK
+  .button_ok {
+    padding: 30px 0px 30px 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     @media (max-width: 768px) {
-      padding: 11px 0px 0px 10px;
+      width: 100%;
+    }
+    .button-ok {
+      background-color: #0a4da3;
+      height: 44px;
+      width: 110px;
+      border-radius: 42px;
+      border: none;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 30px;
+      display: flex;
+      padding-top: 7px;
+      b {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+    .button-ok:hover {
+      background-color: #0a4da3;
     }
   }
-  &_topik {
-    padding: 11px 0px 0px 70px;
+  // End Tombol OK
+
+  .jarak1 {
+    padding: 0px 0px 0px 120px;
+    @media screen and (max-width: 700px) {
+      padding: 0px 0px 0px 30px;
+    }
   }
-}
-// End Jenis Paragraf
-.button2 {
-  background-color: #0a4da3;
-  color: rgb(243, 237, 237);
-  cursor: pointer;
-  // padding: 17px 10px;
-  border-radius: 30px;
-  display: flex;
-  position: relative;
-  max-width: 990px;
-  width: 130px;
-  height: 44px;
-  top: -10px;
-  justify-content: center;
-  align-items: center;
-  margin-left: 200px;
-  b {
-    color: #f1f1f1;
+  .bereb {
+    background-color: #c1c8d3;
+    width: 80%;
+    padding: 13px;
+    border-radius: 0px 0 30px 30px;
+  }
+  .all {
+    overflow-x: hidden;
+    max-width: 1350px;
     margin: auto;
-    font-size: 20px;
   }
-  &_tombol2 {
-    padding: 40px 0px 0px 0px;
-    left: 300px;
-    width: 190px;
-    height: 200px;
+  // Judul
+  .content-satu {
+    margin-top: 120px;
   }
-}
-.button2:hover {
-  background-color: #0a4da3;
-}
-.button3 {
-  background-color: #e0e0e0;
-  border: none;
-  color: rgb(243, 237, 237);
-  border-radius: 30px;
-  display: flex;
-  width: 100px;
-  height: 40px;
-  align-items: center;
-  b {
-    padding: 0% 0% 0% 17%;
-    color: #0a0808;
-    font-size: 28px;
-    align-items: center;
+  .body {
+    display: flex;
+    padding: 0px 210px 0px 100px;
+    @media screen and(max-width: 768px) {
+      padding: 10px 10px 0px 0px;
+    }
+  }
+
+  // Jenis Paragraf
+  .jenis {
+    display: flex;
+    height: 49px;
     font-size: 16px;
-    font-family: Poppins;
+    background-color: rgba(139, 181, 236, 0.1);
+    @media Screen and (max-width: 768px) {
+      height: auto;
+    }
+    &_paragraf {
+      padding: 11px 0px 0px 110px;
+      @media (max-width: 768px) {
+        padding: 11px 0px 0px 10px;
+      }
+    }
+    &_topik {
+      padding: 11px 0px 0px 70px;
+    }
   }
-  &_button4 {
-    background-color: #f1f7cc;
-    border: none;
+  // End Jenis Paragraf
+  .button2 {
+    background-color: #0a4da3;
     color: rgb(243, 237, 237);
+    cursor: pointer;
+    // padding: 17px 10px;
     border-radius: 30px;
     display: flex;
-    width: 100px;
-    height: 40px;
+    position: relative;
+    max-width: 990px;
+    width: 130px;
+    height: 44px;
+    top: -10px;
+    justify-content: center;
     align-items: center;
-    margin-left: -5%;
-    b {
-      padding: 0% 0% 0% 27%;
-      color: #0a0808;
-      align-items: center;
-      font-family: Poppins;
-      font-size: 16px;
-    }
-  }
-  &_button4:hover {
-    background-color: #f3e8e8;
-  }
-  &_tombol3 {
-    padding: 0px 0px 0px 0px;
-  }
-}
-.button3:hover {
-  background-color: #f3e8e8;
-}
-.dua {
-  padding: 10px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-.button {
-  background-color: #00a279;
-  border: none;
-  color: black;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
-  align-items: center;
-  padding: 10px 0px;
-  border-radius: 19px;
-  display: flex;
-  max-width: 990px;
-  width: 150px;
-  height: 40px;
-  margin-left: 45px;
-  margin-top: -10px;
-  &_catatan {
-    height: 45px;
-    max-width: 300px;
-    color: rgb(5, 4, 4);
-  }
-  &_tombol {
-    padding: 25px 0px 0px 0px;
-    position: absolute;
-    width: 190px;
-    height: 100px;
-    margin-left: -80px;
+    margin-left: 200px;
     b {
       color: #f1f1f1;
-      margin-left: 100%;
+      margin: auto;
+      font-size: 20px;
     }
-    &_margin {
+    &_tombol2 {
+      padding: 40px 0px 0px 0px;
+      left: 300px;
+      width: 190px;
+      height: 200px;
+    }
+  }
+  .button2:hover {
+    background-color: #0a4da3;
+  }
+  .response {
+    width: 100%;
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 425px) {
+      padding: 10px 0px 0px 10px;
+      width: 100%;
+    }
+  }
+  // Button Konsep Menulis
+  .all-button_dua {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    margin: 0.3%;
+    width: 100px;
+    height: 37px;
+    @media screen and (max-width: 768px) {
+      margin-left: 5px;
+    }
+  }
+  .dua {
+    padding: 10px 0px 0px 0px;
+    text-align: justify;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .button {
+    background-color: #00a279;
+    border: none;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    align-items: center;
+    padding: 10px 0px;
+    border-radius: 19px;
+    display: flex;
+    max-width: 990px;
+    width: 150px;
+    height: 40px;
+    margin-left: 45px;
+    margin-top: -10px;
+    &_catatan {
+      height: 45px;
+      max-width: 300px;
+      color: rgb(5, 4, 4);
+    }
+    &_tombol {
+      padding: 25px 0px 0px 0px;
+      position: absolute;
+      width: 190px;
+      height: 100px;
+      margin-left: -80px;
       b {
-        text-align: center;
-        align-items: center;
+        color: #f1f1f1;
+        margin-left: 100%;
       }
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      align-items: center;
-      margin-left: 13%;
+      &_margin {
+        b {
+          text-align: center;
+          align-items: center;
+        }
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        align-items: center;
+        margin-left: 13%;
+      }
     }
   }
-}
-.button:hover {
-  background-color: #00a279;
-}
-.button4 {
-  background-color: #0a4da3;
-  color: rgb(243, 237, 237);
-  border-radius: 30px;
-  position: relative;
-  width: 130px;
-  height: 44px;
-  align-items: center;
-  justify-content: center;
-  b {
-    // padding: 0% 3% 0% 3%;
-    color: #f1f1f1;
-    margin: auto;
-    font-size: 20px;
+  .button:hover {
+    background-color: #00a279;
   }
-  &_tombol4 {
-    padding: 30px 0px;
-    margin-left: 500px;
-    width: 190px;
-    height: 200px;
-    margin-bottom: -30px;
-    @media screen and (max-width: 1024px) {
-      margin-left: 400px;
+  .button4 {
+    background-color: #0a4da3;
+    color: rgb(243, 237, 237);
+    border-radius: 30px;
+    position: relative;
+    width: 130px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    b {
+      // padding: 0% 3% 0% 3%;
+      color: #f1f1f1;
+      margin: auto;
+      font-size: 20px;
     }
-    @media screen and (max-width: 800px) {
-      margin-left: 300px;
+    &_tombol4 {
+      padding: 30px 0px;
+      margin-left: 500px;
+      width: 190px;
+      height: 200px;
+      margin-bottom: -30px;
+      @media screen and (max-width: 1024px) {
+        margin-left: 400px;
+      }
+      @media screen and (max-width: 800px) {
+        margin-left: 300px;
+      }
+      @media screen and (max-width: 600px) {
+        margin-left: 200px;
+      }
+      @media screen and (max-width: 400px) {
+        margin-left: 100px;
+      }
+      @media screen and (max-width: 300px) {
+        margin-left: 50px;
+      }
+    }
+  }
+  .button4:hover {
+    background-color: #0a4da3;
+  }
+  // Stepper 1 -7
+  .container {
+    width: 100%;
+    &_bawah {
+      padding: 20px 0px 180px 0px;
+      margin-left: 15%;
+    }
+  }
+  .tengah2 {
+    padding: 0px 0px 0px 100px;
+    display: flex;
+    width: 100%;
+    display: flex;
+    padding-top: 13px;
+  }
+
+  .tengah {
+    text-align: right;
+    margin: 5px;
+    width: 100%;
+    @media Screen and (max-width: 660px) {
+    }
+    &_tips {
+      background-color: #00a279;
+      border: none;
+      width: 98px;
+      border-radius: 10px;
+      margin: 5px;
+      color: #fff;
+      @media Screen and (max-width: 768px) {
+        line-height: 22px;
+      }
+    }
+
+    // text page 2
+    &_text2 {
+      padding: 10px 0px 0px 15px;
+      font-family: Poppins;
+      font-weight: 400;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 30px;
+      color: #000000;
+      strong {
+        font-style: italic;
+        font-size: 20px;
+      }
+      @media Screen and (max-width: 780px) {
+        padding: 10px 0px 0px 10px;
+      }
+    }
+
+    &_text3 {
+      margin-left: 20px;
+      width: 100%;
+      font-family: Poppins;
+      font-size: 20px;
+      strong {
+        font-style: italic;
+        font-size: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        margin-left: 10px;
+        width: 100%;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .gabungan-icon {
+    display: flex;
+  }
+
+  .border {
+    background-color: #455a64;
+    height: 42px;
+    width: 238px;
+    border-radius: 7px 7px 0px 0px;
+    border: none;
+    @media Screen and (max-width: 780px) {
+      width: 50%;
     }
     @media screen and (max-width: 600px) {
-      margin-left: 200px;
+      height: auto;
     }
-    @media screen and (max-width: 400px) {
-      margin-left: 100px;
+    h4 {
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 0px 0px 10px;
     }
-    @media screen and (max-width: 300px) {
-      margin-left: 50px;
+    &_list {
+      font-family: Poppins;
+      background: #e0e0e0;
+      width: 100%;
+      padding: 13px;
+      border-radius: 0px 0px 14px 14px;
+      @media Screen and (max-width: 780px) {
+        width: 100%;
+      }
     }
-  }
-}
-.button4:hover {
-  background-color: #0a4da3;
-}
-// Stepper 1 -7
-.container {
-  width: 100%;
-  &_bawah {
-    padding: 20px 0px 180px 0px;
-    margin-left: 15%;
-  }
-}
-.tengah2 {
-  padding: 0px 0px 0px 100px;
-  display: flex;
-  width: 100%;
-  display: flex;
-  padding-top: 13px;
-}
-.tengah {
-  display: flex;
-  width: 100%;
-  display: flex;
-  padding: 20px 210px 20px 100px;
-  @media screen and (max-width: 768px) {
-    padding: 13px 10px 48px 5px;
   }
 
-  // button tips
-  &_tips {
-    padding: 0px 0px 0px 0px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
+  // Stepper
+  .steper {
     text-align: center;
-    background-color: #00a279;
-    color: #fff;
-    font-size: normal;
-    margin-bottom: 200px;
-    cursor: pointer;
-    @media screen and (max-width: 768px) {
-      width: 80px;
-    }
-  }
-
-  // text page 2
-  &_text2 {
-    margin-left: 20px;
-    width: 100%;
-    font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
-    }
-    @media screen and (max-width: 768px) {
-      margin-left: 10px;
-      width: 100%;
-      padding-right: 10px;
-    }
-  }
-  &_text3 {
-    margin-left: 20px;
-    width: 100%;
-    font-family: Poppins;
-    font-size: 20px;
-    strong {
-      font-style: italic;
-      font-size: 20px;
-    }
-    @media screen and (max-width: 768px) {
-      margin-left: 10px;
-      width: 100%;
-      padding-right: 10px;
-    }
-  }
-}
-// Stepper
-.steper {
-  text-align: center;
-  padding: 10px 200px 10px 200px;
-  &_image {
-    width: 100%;
-    height: auto;
-  }
-  @media (max-width: 768px) {
-    padding: 10px 20px 10px 20px;
+    padding: 10px 200px 10px 200px;
     &_image {
       width: 100%;
       height: auto;
     }
+    @media (max-width: 768px) {
+      padding: 10px 20px 10px 20px;
+      &_image {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
-}
-// End Stepper
+  // End Stepper
 
-.ok2 {
-  // background: red;
-  text-align: center;
-  margin-top: -20px;
-}
+  .ok2 {
+    // background: red;
+    text-align: center;
+    margin-top: -20px;
+  }
 
-.mt-3 {
-  background: #0a4da3;
-  border-radius: 39px;
-  width: 108px;
-  padding-top: 5px;
-}
+  .mt-3 {
+    background: #0a4da3;
+    border-radius: 39px;
+    width: 108px;
+    padding-top: 5px;
+  }
+  // content konsep
+  .content-konsep {
+    padding: 10px 230px 10px 230px;
+    @media screen and (max-width: 768px) {
+      padding: 10px 20px 10px 20px;
+    }
+  }
 
-.content {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  @media screen and (max-width: 990) {
-    display: inline-block;
+  .judul {
+    font-size: 50px;
+    margin-top: 70px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 30%;
+    h1 {
+      font-weight: bolder;
+      font-size: 47px;
+      margin-left: 10%;
+    }
+    @media Screen and (max-width: 780px) {
+      margin-left: 0%;
+      align-items: center;
+      text-align: center;
+      h1 {
+        margin-left: 0%;
+      }
+    }
+    @media Screen and (max-width: 400px) {
+      margin-left: 0%;
+      align-items: center;
+      text-align: center;
+      h1 {
+        font-size: 30px;
+        margin-left: 0%;
+      }
+    }
+  }
+  // End Judul
+
+  /* Style Modal */
+  .modal-dialog {
+    top: -100px;
+    left: auto;
+  }
+
+  .modal-content {
+    background: #e8f1fd;
+    width: 500px;
+    border-radius: 34px;
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+  }
+
+  .modal-body {
+    background: #e8f1fd;
+    width: 500px;
+    border-radius: 34px;
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+  }
+
+  /* end style Modal */
+
+  /* Style Isi Modal */
+  .image-container {
+    text-align: center;
+    /* background: red; */
+  }
+
+  .kalimat2 {
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    /* background: red; */
+  }
+
+  .kalimat3 {
+    font-family: Poppins;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    /* background: red; */
+  }
+
+  /* end style isi modal */
+
+  /* Background belakang modal */
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
   }
-  &_padding {
-    padding: 5px 0px;
-    &_tulis {
-      padding: 15px 0px 10px 0px;
-      &_catatan {
-        color: #f1f1f1;
-        text-align: center;
-        padding: 0px 0px 0px 0px;
-        &_catatan2 {
-          color: #454b56;
-          h4 {
-            font-family: Poppins;
-            font-size: 20px;
-            line-height: 24px;
-            text-align: center;
-            padding: 12px 0px 8px 0px;
-          }
-        }
-        &_right {
-          max-width: 750px;
-          width: 750px;
-          height: 240px;
-          font-family: Poppins;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 23px;
-          line-height: 30px;
-          margin-left: -30px;
-          &_paragraf {
-            padding: 20px 0px 0px 0px;
-            label {
-              font: 1rem "Fira Sans", sans-serif;
-            }
-            input {
-              margin: 0.4rem;
-            }
-            &_bawah {
-              margin-bottom: -90px;
-            }
-          }
-        }
-      }
-      &_paragraf {
-        padding: 15px 0px 10px 0px;
-        margin-left: 40%;
-        p {
-          font-size: 17px;
-        }
-        &_right {
-          padding: 15px 0px 10px 0px;
-          margin-left: 10%;
-          p {
-            font-size: 17px;
-          }
-        }
-      }
-      &_header {
-        margin-top: 70px;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: bold;
-        margin-left: 30%;
-        h1 {
-          font-weight: bolder;
-          font-size: 47px;
-          margin-left: 10%;
-        }
-      }
-      &_stemper {
-        padding: 20px;
-        align-items: center;
-        margin-left: 20px;
-      }
+
+  .modal-wrapper {
+    display: table-cell;
+    // vertical-align: middle;
+    padding-top: 75px;
+    @media (max-width: 768px) {
+      padding-top: 95px;
     }
   }
 
-  // popup tips
-  .ok {
+  /* End Background Belakang Modal */
+  .tombol {
     // background: red;
+    padding: 20px 0px 0px 70px;
+  }
 
-    .mt-3 {
-      // margin-bottom: 10px;
-      background: #0a4da3;
-      margin: 0px 0px 5px 180px;
-      border-radius: 39px;
-      width: 108px;
-    }
+  .ok {
+    background: #0a4da3;
+    border-radius: 39px;
+    border: none;
+    width: 108px;
+    height: 32.71px;
+    color: #fff;
+    font-family: Poppins;
   }
-}
-.judul {
-  font-size: 50px;
-  margin-top: 70px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  margin-left: 30%;
-  h1 {
-    font-weight: bolder;
-    font-size: 47px;
-    margin-left: 10%;
+
+  .ok3 {
+    background: #0a4da3;
+    border-radius: 39px;
+    border: none;
+    width: 108px;
+    height: 32.71px;
+    color: #fff;
+    font-family: Poppins;
   }
-  @media Screen and (max-width: 780px) {
-    margin-left: 0%;
-    align-items: center;
+
+  .tombol1 {
+    /* background: red; */
     text-align: center;
-    h1 {
-      margin-left: 0%;
+    padding: 5px;
+  }
+
+  .ok1 {
+    background: #0a4da3;
+    border-radius: 39px;
+    border: none;
+    width: 108px;
+    height: 32.71px;
+    color: #fff;
+    font-family: Poppins;
+  }
+  .icon-up-down {
+    padding: 0px 0px 0px 20px;
+    @media screen and (max-width: 1000px) {
     }
   }
-  @media Screen and (max-width: 400px) {
-    margin-left: 0%;
-    align-items: center;
-    text-align: center;
-    h1 {
-      font-size: 30px;
-      margin-left: 0%;
-    }
-  }
-}
-/* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
-
-.modal-content {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-  @media screen and (max-width: 780px) {
-    width: 100%;
-  }
-}
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-  @media screen and (max-width: 780px) {
-    width: 100%;
-  }
-}
-
-/* end style Modal */
-
-/* Style Isi Modal */
-.image-container {
-  text-align: center;
-  /* background: red; */
-}
-
-.kalimat2 {
-  font-family: Poppins;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 5px;
-  /* background: red; */
-}
-
-.kalimat3 {
-  font-family: Poppins;
-  font-size: 16px;
-  text-align: center;
-  margin-top: 5px;
-  /* background: red; */
-}
-
-/* end style isi modal */
-
-/* Background belakang modal */
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
-  transition: opacity 0.3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* End Background Belakang Modal */
-.tombol {
-  // background: red;
-  padding: 20px 0px 0px 70px;
-}
-
-.ok {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
-.ok3 {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
-.tombol1 {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
-.ok1 {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-.icon-up-down {
-  padding: 0px 0px 0px 20px;
-  @media screen and (max-width: 1000px) {
-    padding: 0px 0px 0px 100px;
-  }
-}
 </style>

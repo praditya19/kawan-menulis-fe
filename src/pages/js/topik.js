@@ -42,7 +42,7 @@ export default {
   methods: {
     ...mapActions(["getParagraphTypesList"]),
     getStudentDataSession() {
-      var studentData = sessionStorage.getItem("student_id_mulai-menulis");
+      var studentData = sessionStorage.getItem("student_id_mulaimenulis");
       this.studentDataSession = JSON.parse(studentData);
     },
     getTopics(topicId) {

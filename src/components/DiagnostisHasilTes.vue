@@ -30,7 +30,7 @@
               <b-button variant="success" v-on:click="handleSubmit"
                 >Kirim Via Email</b-button
               >
-              <b-button variant="primary" href="/mulai-menulis"
+              <b-button variant="primary" href="/mulaimenulis"
                 >Mulai Latihan Menulis</b-button
               >
             </div>
@@ -38,7 +38,7 @@
               <b-button variant="success" v-on:click="handleSubmit"
                 >Kirim Via Email</b-button
               >
-              <b-button variant="primary" href="/mulai-menulis"
+              <b-button variant="primary" href="/mulaimenulis"
                 >Mulai Latihan Menulis</b-button
               >
               <b-button variant="secondary" href="/tutor"

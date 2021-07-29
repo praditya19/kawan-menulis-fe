@@ -24,10 +24,11 @@ export default {
     };
   },
   mounted() {
+    this.getStudentCetak();
     this.getDataSesion();
     this.getStudentAction();
     this.getDataJenisTopics();
-    this.getStudent();
+    console.log(this.dataStudent);
     window.scrollTo(0, 0);
   },
   methods: {
@@ -94,8 +95,8 @@ export default {
       var jenisTopic = sessionStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
-    getStudent() {
-      var student = sessionStorage.getItem("student_id_mulai-menulis");
+    getStudentCetak() {
+      var student = sessionStorage.getItem("student_id_mulaimenulis");
       this.dataStudent = JSON.parse(student);
     },
   },

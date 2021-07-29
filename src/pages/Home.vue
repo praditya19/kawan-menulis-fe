@@ -46,12 +46,11 @@
         <div style="background-color:#f5f4fd; width: 100%;">
           <div class="padding">
             <div class="conten_home_quotes">
-              <div class=" col-md-10">
+              <div class=" col-md-12">
                 <h1>
                   "If there's a book that you want to read, but it hasn't been
                   written yet, then you must write it."
                 </h1>
-                <br />
                 <p>
                   Toni Morrison
                 </p>
@@ -391,6 +390,7 @@ nav {
   }
   p {
     width: 400px;
+    font-size: 20px;
   }
   @media (max-width: 768px) {
     display: initial;
@@ -420,15 +420,13 @@ nav {
   width: 1180px;
 }
 .padding {
-  padding: 30px 0px;
+  padding: 30px 0px 30px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  padding-left: 15%;
   width: 100%;
   @media (max-width: 768px) {
-    padding: 50px;
+    padding: 30px 20px 30px 20px;
   }
 }
 .padding1 {
@@ -446,6 +444,24 @@ nav {
   width: 100%;
   @media screen and (max-width: 768px) {
     width: auto;
+  }
+  &_quotes {
+    max-width: 1200px;
+    h1 {
+      width: 80%;
+      font-weight: 700;
+    }
+    p {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      h1 {
+        width: 100%;
+      }
+    }
   }
   &_top {
     display: flex;
@@ -571,38 +587,6 @@ nav {
       display: inline-block;
       padding: 10px;
       margin-left: 15px;
-    }
-    &_quotes {
-      h1 {
-        background-color: #c5dcff;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 25px;
-      }
-      p {
-        background-color: #c5dcff;
-        position: absolute;
-        width: 432px;
-        height: 144px;
-        left: 749px;
-        top: 990px;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 30px;
-      }
-      background-color: #c5dcff;
-      flex: 25%;
-      max-width: 20%;
-      margin-left: 500px;
-      padding: 2%;
-      @media screen and (max-width: 768px) {
-        display: inline-block;
-        padding: 2% 30%;
-        margin-left: 5px;
-      }
     }
     &_apaitu {
       h1 {

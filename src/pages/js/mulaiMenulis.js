@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     mulaiMenulisPage2() {
-      this.$router.replace("/mulai-menulis-page-2");
+      this.$router.replace("/mulaimenulis-page-2");
     },
   },
 };

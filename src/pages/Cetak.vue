@@ -150,7 +150,12 @@
           </div>
           <div class="text">
             <p>
-              Selamat <strong>{{ dataStudent.name }}</strong
+              Selamat
+              <strong v-for="(studentList, index) in dataStudent" :key="index"
+                ><span
+                  v-if="index === 0"
+                  v-html="studentList.name"
+                ></span></strong
               >! <br />
               Anda telah menyelesaikan paragraf Anda dan sekarang Anda dapat
               memilih dari opsi ini.

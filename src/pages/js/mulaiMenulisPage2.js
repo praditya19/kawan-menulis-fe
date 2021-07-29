@@ -55,7 +55,7 @@ export default {
               },
               success: (res) => {
                 sessionStorage.setItem(
-                  "student_id_mulai-menulis",
+                  "student_id_mulaimenulis",
                   JSON.stringify(res.data.student)
                 );
                 this.$router.push("/topik").catch(() => {});

@@ -80,14 +80,14 @@ let router = new Router({
       },
     },
     {
-      path: "/mulai-menulis",
+      path: "/mulaimenulis",
       name: "Menulis",
       components: {
         default: MulaiMenulis,
       },
     },
     {
-      path: "/mulai-menulis-page-2",
+      path: "/mulaimenulis-page-2",
       name: "Menulis",
       components: {
         default: MulaiMenulisPage2,
