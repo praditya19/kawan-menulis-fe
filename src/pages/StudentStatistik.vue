@@ -102,10 +102,11 @@
                         </b-tr>
 
                         <b-tbody>
-                          <b-tr>
-                            <b-td>56</b-td>
-                            <b-td>22</b-td>
-                            <b-td>43</b-td>
+                          <b-tr v-for="(studentStatistik, index) in studentStatistik"
+                          :key="index">
+                            <b-td>{{studentStatistik.topic.id}}</b-td>
+                            <b-td>{{studentStatistik.topic.paragraphType.name}}</b-td>
+                            <b-td>{{studentStatistik.startDate}}</b-td>
                             <b-td>413</b-td>
                             <b-td
                               style="text-align: right; align-item: right; justify-content: right;"
