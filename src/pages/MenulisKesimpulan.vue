@@ -165,15 +165,16 @@
 
                   <div class="kalimat2">
                     <div style="padding: 0% 0% 0% 9%; width: 90%;">
-                      <p>
-                        Contoh kalimat penutup: <br /><br />
+                      <p>Contoh kaimat penutup :</p>
+                      <p
+                        v-for="(topicGuidesList, index) in topicGuides"
+                        :key="index"
+                      >
                         <Strong
-                          >Kamu kini dapat mengetahui, mengapa Dufan menjadi
-                          tempat pertama yang akan kamu tuju bersama teman yang
-                          datang pertama kali mengunjungi saya.
-                          <code style="color: red"
-                            >(Ambil dari Menulis Kesimpulan Tahap 2)</code
-                          >
+                          ><span
+                            v-if="index === 1"
+                            v-html="topicGuidesList.input"
+                          ></span>
                         </Strong>
                       </p>
                     </div>
@@ -224,9 +225,18 @@
           </b-button>
         </div>
         <div class="col-md-9.5 kalimat " style="margin-top:-15px">
-          <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
-            <span v-if="index === 1" v-html="topicGuidesList.guide"></span>
-          </p>
+          <div>
+            <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+              <span v-if="index === 1" v-html="topicGuidesList.guide"></span>
+            </p>
+          </div>
+          <div>
+            <b>
+              <p v-for="(topicGuidesList, index) in topicGuides" :key="index">
+                <span v-if="index === 1" v-html="topicGuidesList.input"></span>
+              </p>
+            </b>
+          </div>
         </div>
       </div>
 

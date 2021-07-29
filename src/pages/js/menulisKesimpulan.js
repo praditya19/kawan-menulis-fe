@@ -19,7 +19,7 @@ export default {
       dataSesion: {},
       jenisTopics: {},
       studentDataSession: {},
-      topicGuides: {}
+      topicGuides: {},
     };
   },
   mounted() {
@@ -79,7 +79,9 @@ export default {
       this.jenisTopics = JSON.parse(jenisTopic);
     },
     getStudentDataSesion() {
-      var studentData = sessionStorage.getItem("student_topik_menulis_paragraph");
+      var studentData = sessionStorage.getItem(
+        "student_topik_menulis_paragraph"
+      );
       this.studentDataSession = JSON.parse(studentData);
     },
     ...mapActions(["getTopicGuidesList"]),
@@ -92,7 +94,7 @@ export default {
           writingStepId: 41,
         },
         success: (res) => {
-         this.topicGuides = res
+          this.topicGuides = res;
         },
 
         fail: (res) => {
@@ -101,6 +103,5 @@ export default {
       });
     },
   },
-  computed: {
-  },
+  computed: {},
 };
