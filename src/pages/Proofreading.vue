@@ -1,6 +1,5 @@
 <template>
 <!-- terbaru -->
-  <div class="col-md-12">
     <div class="all">
       <!-- Judul -->
       <div class="content-satu">
@@ -9,8 +8,9 @@
         </div>
       </div>
       <!-- End Judul -->
-<!-- modal area -->
-<div v-if="showModalError === true">
+    
+    <!-- modal area -->
+    <div v-if="showModalError === true">
       <transition name="model">
         <div class="modal-mask">
           <div class="modal-wrapper">
@@ -194,29 +194,26 @@
       </div>
       <!-- End Stepper -->
 
-      <br />
-
       <!-- Jenis Paragraf -->
       <div class="content-tiga">
         <div class="jenis">
           <p class="jenis_paragraf">
-            <strong>Jenis Paragraf:</strong>
-            &nbsp;{{ jenisTopics.jenisParagraf }}
+            <strong>Jenis Paragraf: </strong>
+            {{ jenisTopics.jenisParagraf }}
           </p>
           <p class="jenis_topik">
-            <strong>Topik:</strong>
-            &nbsp;{{ jenisTopics.topik }}
+            <strong>Topik: </strong>
+            {{ jenisTopics.topik }}
           </p>
         </div>
       </div>
       <!-- End Jenis Paragraf -->
 
       <!-- Screen 1 -->
-      <div class="content-empat" v-if="proofreadingPage1 === true" 
-     >
+      <div class="content-empat" v-if="proofreadingPage1 === true">
           <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal = true">
                   Tips
@@ -264,7 +261,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Proofreading (1 dari 5)
@@ -301,14 +298,14 @@
                   <img
                     class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
                     class="icon-up-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 </div>
@@ -317,7 +314,6 @@
                 <div style="jarak">
                   <b-form-group>
                     <div>
-                      <div class="col-sm-12">
                         <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
@@ -331,15 +327,12 @@
                                 </b-form-radio>
                             </div>
                         </ul>
-                      </div>
                     </div>
                   </b-form-group>
                 </div>
               </div>
             </div>
         
-        
-        <br />
         <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading1Next">
@@ -351,10 +344,10 @@
       <!-- End Screen 1 -->
 
       <!-- Screen 2 -->
-      <div class="content-empat" v-if="proofreadingPage2 === true" style="margin-left:2.5%;">
-        
+      <div class="content-empat" v-if="proofreadingPage2 === true">
+        <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal2 = true">
                   Tips
@@ -403,7 +396,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   (2 dari 5)
@@ -417,6 +410,7 @@
                 </p>
               </div>
             </div>
+          </div>
 
             <!-- Catatan Paragraf -->
             <div class="content-konsep">
@@ -436,14 +430,14 @@
                   <img
                     class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
                     class="icon-up-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 </div>
@@ -452,7 +446,6 @@
                 <div style="jarak">
                   <b-form-group>
                     <div>
-                      <div class="col-sm-12">
                         <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
@@ -466,15 +459,12 @@
                                 </b-form-radio>
                             </div>
                         </ul>
-                      </div>
                     </div>
                   </b-form-group>
                 </div>
               </div>
             </div>
           
-        <br />
-        <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading2Next">
             <b>OK</b>
@@ -485,10 +475,10 @@
       <!-- End Screen 2 -->
 
       <!-- Screen 3 -->
-      <div class="content-empat" v-if="proofreadingPage3 === true" style="margin-left:2.5%;">
-        
+      <div class="content-empat" v-if="proofreadingPage3 === true"> 
+        <div class="body"> 
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal3 = true">
                   Tips
@@ -537,7 +527,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   (3 dari 5)
@@ -551,6 +541,7 @@
                 </p>
               </div>
             </div>
+          </div>  
 
             <!-- Catatan Paragraf -->
             <div class="content-konsep">
@@ -570,14 +561,14 @@
                   <img
                     class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
                     class="icon-up-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 </div>
@@ -586,7 +577,6 @@
                 <div style="jarak">
                   <b-form-group>
                     <div>
-                      <div class="col-sm-12">
                         <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
@@ -600,14 +590,12 @@
                                 </b-form-radio>
                             </div>
                         </ul>
-                      </div>
                     </div>
                   </b-form-group>
                 </div>
               </div>
             </div>
           
-        <br />
         <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading3Next">
@@ -619,10 +607,10 @@
       <!-- End Screen 3 -->
 
       <!-- Screen 4 -->
-      <div class="content-empat" v-if="proofreadingPage4 === true" style="margin-left:2.5%;">
-        
+      <div class="content-empat" v-if="proofreadingPage4 === true">
+        <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5 ">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal4 = true">
                   Tips
@@ -671,7 +659,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   (4 dari 5)
@@ -686,6 +674,7 @@
                 </p>
               </div>
             </div>
+          </div>
 
             <!-- Catatan Paragraf -->
             <div class="content-konsep">
@@ -705,14 +694,14 @@
                   <img
                     class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
                     class="icon-up-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 </div>
@@ -721,7 +710,6 @@
                 <div style="jarak">
                   <b-form-group>
                     <div>
-                      <div class="col-sm-12">
                         <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
@@ -735,14 +723,12 @@
                                 </b-form-radio>
                             </div>
                         </ul>
-                      </div>
                     </div>
                   </b-form-group>
                 </div>
               </div>
             </div>
           
-        <br />
         <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading4Next">
@@ -754,10 +740,10 @@
       <!-- End Screen 4 -->
 
       <!-- Screen 5 -->
-      <div class="content-empat" v-if="proofreadingPage5 === true" style="margin-left:2.5%;">
-        
+      <div class="content-empat" v-if="proofreadingPage5 === true">
+        <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal5 = true">
                   Tips
@@ -805,7 +791,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   (5 dari 5)
@@ -825,7 +811,7 @@
                   <br />
               </div>
             </div>
-
+          </div>
             <!-- Catatan Paragraf -->
             <div class="content-konsep">
               <div class="up-down">
@@ -844,14 +830,14 @@
                   <img
                     class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
                     class="icon-up-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 20px;"
+                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 </div>
@@ -860,7 +846,6 @@
                 <div style="jarak">
                   <b-form-group>
                     <div>
-                      <div class="col-sm-12">
                         <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
@@ -875,13 +860,11 @@
                             </div>
                         </ul>
                       </div>
-                    </div>
                   </b-form-group>
                 </div>
               </div>
             </div>
           
-        <br />
         <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading5Next">
@@ -891,14 +874,12 @@
         <!-- End Button OK -->
       </div>
       <!-- End Screen 5 -->
-      <br>
-    </div>
 
     <!-- Screen 6 -->
-      <div class="content-empat" v-if="proofreadingPage6 === true" style="margin-left:2.5%;">
-        
+      <div class="content-empat" v-if="proofreadingPage6 === true">
+        <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal6 = true">
                   Tips
@@ -946,7 +927,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-md-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Selamat! <br />
@@ -967,6 +948,7 @@
                 </p>
                   <br />
               </div>
+            </div>
             </div>
 
             <!-- Button Gaya menulis dll -->
@@ -1012,7 +994,6 @@
               </div>
             </div>
           
-        <br />
         <!-- Button OK -->
         <div class="button">
           <button class="button1 justify-content-center" @click="proofreading6Next">
@@ -1022,8 +1003,8 @@
         <!-- End Button OK -->
       </div>
       <!-- End Screen 6 -->
-      <br>
     </div>
+
 </template>
 
 <script src="./js/proofreading.js" />
@@ -1074,21 +1055,23 @@
   margin: auto;
 }
 .dua {
-  b {
-    padding: 10px 0px 0px 20px;
+  padding: 8px 0px 0px 0px;
+  h5 {
+    font-family: Poppins;
+    padding: 0px 0px 0px 20px;
   }
   @media screen and (max-width: 760px) {
-    b {
-      padding: 0px;
+    padding: 0px;
+    h5 {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 10px 0px 0px 10px;
+      text-align: left;
     }
   }
 }
 // Judul
 .content-satu {
   margin-top: 120px;
-  @media Screen and (max-width: 780px) {
-    margin-top: 250px;
-  }
 }
 
 .judul {
@@ -1167,9 +1150,8 @@
 
 // Tips dan Kalimat
 .body {
-  // border: 1px solid red;
   display: flex;
-  padding: 10px 0px 0px 30px;
+  padding: 10px 200px 0px 120px;
   @media screen and(max-width: 768px) {
     padding: 10px 10px 0px 0px;
   }
@@ -1221,21 +1203,23 @@
 
 // Button Gaya Menulis dll
 .all-button {
-  margin-left: 17%;
-  line-height: 40px;
+  padding: 20px 200px 0px 250px;
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 0px 20px;
+  }
   &_satu {
     background-color: #00a279;
     border: none;
     border-radius: 20px;
-    width: 14%;
+    width: 200px;
+    height: 35px;
     margin: 0.3%;
     color: #ffffff;
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
-    @media screen and (max-width: 600px) {
-      margin-left: -55px;
-      width: 97%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
     }
   }
 }
@@ -1247,7 +1231,7 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 9%;
+  width: 98px;
   @media screen and (max-width: 780px) {
     width: 70px;
   }
@@ -1287,37 +1271,6 @@
   font-family: Poppins;
 }
 // End Tombol OK
-
-.border {
-  background-color: #455a64;
-  height: 42px;
-  width: 238px;
-  border-radius: 7px 7px 0px 0px;
-  border: none;
-  @media Screen and (max-width: 780px) {
-    width: 50%;
-  }
-  @media screen and (max-width: 500px) {
-    height: auto;
-  }
-  h4 {
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 10px;
-  }
-  &_list {
-    font-family: Poppins;
-    background-color: #e0e0e0;
-    width: 65%;
-    padding: 13px;
-    border-radius: 0px 0px 14px 14px;
-    @media Screen and (max-width: 780px) {
-      width: 95%;
-    }
-  }
-}
-// End Konsep Menulis
 
 /* Style Modal */
 .modal-dialog {
@@ -1405,20 +1358,12 @@
   font-family: Poppins;
 }
 
-// Konsep Menulis
+// content konsep
 .content-konsep {
-  // border: 1px solid red;
-  // margin-left: 17%;
-  padding-left: 20%;
-  margin-top: 30px;
+  padding: 30px 200px 10px 250px;
   @media screen and (max-width: 768px) {
-    margin-left: 0%;
+    padding: 30px 20px 10px 20px;
   }
-  @media screen and (max-width: 600px) {
-    padding: 0px 20px;
-    margin-left: 0%;
-  }
-  // background: red;
 }
 
 .up-down {
@@ -1446,11 +1391,11 @@
   &_list {
     font-family: Poppins;
     background-color: #e0e0e0;
-    width: 65%;
+    width: 100%;
     padding: 13px;
     border-radius: 0px 0px 14px 14px;
     @media Screen and (max-width: 780px) {
-      width: 95%;
+      width: 100%;
     }
   }
 }
