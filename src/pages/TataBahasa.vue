@@ -1,10 +1,11 @@
 <template>
   <div class="all">
     <!-- header -->
-    <br/><br/>
     <!-- Judul -->
+      <div class="content-satu">
       <div class="judul">
         <h1>Latihan Menulis</h1>
+      </div>
       </div>
       <!-- End Judul -->
 
@@ -15,9 +16,9 @@
 
     <!-- tengah -->
     <div class="center">
-      <p class="center_paragraf"><strong>Jenis Paragraf:</strong>&nbsp;{{ jenisTopics.jenisParagraf }}</p>
+      <p class="center_paragraf"><strong>Jenis Paragraf: </strong>{{ jenisTopics.jenisParagraf }}</p>
       <p class="center_topik">
-        <strong>Topik:</strong>&nbsp;{{ jenisTopics.topik }}
+        <strong>Topik: </strong>{{ jenisTopics.topik }}
       </p>
     </div>
     <!-- modal area -->
@@ -240,24 +241,20 @@
     </div>
     <!-- Popup Modal -->
     <!-- end modal area -->
+
     <!-- body -->
     <!-- Screen 1 -->
-    <div
-      class="content-empat"
-      v-if="strukturkalimatPage1 === true"
-      style="margin-left:5%;"
-    >
-      <div class="col-sm-12">
-        <div class="row">
+    <div class="content-empat" v-if="strukturkalimatPage1 === true">
+        <div class="body">
           <!-- Button Tips -->
-          <div class="col-sm-2">
+          <div class="col-md-2.5">
             <div class="tips">
               <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-md-9.5">
             <div class="kalimat">
               <p class="kalimat_p">
                 Tinjauan Struktur Kalimat (1 dari 4)
@@ -277,13 +274,14 @@
               </p>
             </div>
           </div>
-
-          <!-- Konsep Paragraf -->
+        </div>
+        
+        <!-- Konsep Paragraf -->
           <div class="content-konsep">
             <div class="up-down">
               <div class="border">
                 <div class="border_konsep">
-                  <h4><b>Konsep Paragraf</b></h4>
+                  <h4><b>Catatan Paragraf</b></h4>
                 </div>
               </div>
               <div class="response">
@@ -296,23 +294,21 @@
                 <img
                   class="icon-up-down"
                   src="@/assets/up.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               <a @click="descending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/down.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               </div>
             </div>
             <div class="border_list">
-              <div style="margin-left: 30px;">
                 <b-form-group>
                   <div>
-                    <div class="col-sm-12">
                       <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
@@ -326,42 +322,33 @@
                             </b-form-radio>
                         </div>
                       </ul>
-                    </div>
                   </div>
                 </b-form-group>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br />
+
       <!-- Button OK -->
-      <div class="content-lima" @click="strukturkalimat1Next">
-        <div class="tombol">
-          <button class="ok" type="submit">OK</button>
-        </div>
+            <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat1Next">
+            <b>OK</b>
+          </button>
       </div>
       <!-- End Button OK -->
     </div>
     <!-- End Screen 1 -->
 
     <!-- Screen 2 -->
-    <div
-      class="content-empat"
-      v-if="strukturkalimatPage2 === true"
-      style="margin-left:5%;"
-    >
-      <div class="col-sm-12">
-        <div class="row">
+    <div class="content-empat" v-if="strukturkalimatPage2 === true">
+        <div class="body">
           <!-- Button Tips -->
-          <div class="col-sm-2">
+          <div class="col-md-2.5">
             <div class="tips">
               <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-9.5">
             <div class="kalimat">
               <p class="kalimat_p">
                 (2 dari 4)
@@ -379,13 +366,14 @@
               </p>
             </div>
           </div>
-
-          <!-- Konsep Paragraf -->
+      </div>
+      
+        <!-- Konsep Paragraf -->
           <div class="content-konsep">
             <div class="up-down">
               <div class="border">
                 <div class="border_konsep">
-                  <h4><b>Konsep Paragraf</b></h4>
+                  <h4><b>Catatan Paragraf</b></h4>
                 </div>
               </div>
               <div class="response">
@@ -398,20 +386,19 @@
                 <img
                   class="icon-up-down"
                   src="@/assets/up.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               <a @click="descending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/down.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               </div>
             </div>
             <div class="border_list">
-              <div style="margin-left: 30px;">
                 <b-form-group>
                   <div>
                     <div class="col-sm-12">
@@ -431,39 +418,31 @@
                     </div>
                   </div>
                 </b-form-group>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <br />
+
       <!-- Button OK -->
-      <div class="content-lima" @click="strukturkalimat2Next">
-        <div class="tombol">
-          <button class="ok" type="submit">OK</button>
-        </div>
+      <div class="button">
+          <button class="button1 justify-content-center" @click="strukturkalimat2Next">
+            <b>OK</b>
+          </button>
       </div>
       <!-- End Button OK -->
     </div>
     <!-- End Screen 2 -->
 
     <!-- Screen 3 -->
-    <div
-      class="content-empat"
-      v-if="strukturkalimatPage3 === true"
-      style="margin-left:5%;"
-    >
-      <div class="col-sm-12">
-        <div class="row">
+    <div class="content-empat" v-if="strukturkalimatPage3 === true">
+        <div class="body">
           <!-- Button Tips -->
-          <div class="col-sm-2">
+          <div class="col-md-2.5">
             <div class="tips">
               <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-9.5">
             <div class="kalimat">
               <p class="kalimat_p">
                 (3 dari 4)
@@ -478,13 +457,14 @@
               </p>
             </div>
           </div>
-
-          <!-- Konsep Paragraf -->
+        </div>
+        
+         <!-- Konsep Paragraf -->
           <div class="content-konsep">
             <div class="up-down">
               <div class="border">
                 <div class="border_konsep">
-                  <h4><b>Konsep Paragraf</b></h4>
+                  <h4><b>Catatan Paragraf</b></h4>
                 </div>
               </div>
               <div class="response">
@@ -497,23 +477,21 @@
                 <img
                   class="icon-up-down"
                   src="@/assets/up.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               <a @click="descending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/down.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               </div>
             </div>
             <div class="border_list">
-              <div style="margin-left: 30px;">
                 <b-form-group>
                   <div>
-                    <div class="col-sm-12">
                       <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
@@ -527,42 +505,31 @@
                             </b-form-radio>
                         </div>
                       </ul>
-                    </div>
                   </div>
                 </b-form-group>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br />
+
       <!-- Button OK -->
-      <div class="content-lima" @click="strukturkalimat3Next">
-        <div class="tombol">
-          <button class="ok" type="submit">OK</button>
-        </div>
+      <div class="button" @click="strukturkalimat3Next">
+          <button class="button1 justify-content-center" type="submit"><b>OK</b></button>
       </div>
       <!-- End Button OK -->
     </div>
     <!-- End Screen 3 -->
 
     <!-- Screen 4 -->
-    <div
-      class="content-empat"
-      v-if="strukturkalimatPage4 === true"
-      style="margin-left:5%;"
-    >
-      <div class="col-sm-12">
-        <div class="row">
+    <div class="content-empat" v-if="strukturkalimatPage4 === true">
+        <div class="body">
           <!-- Button Tips -->
-          <div class="col-sm-2">
+          <div class="col-md-2.5">
             <div class="tips">
               <b-button class="tips_judul" @click="showModal = true">
                 Tips
               </b-button>
             </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-9.5">
             <div class="kalimat">
               <p class="kalimat_p">
                 (4 dari 4)
@@ -581,13 +548,14 @@
               </p>
             </div>
           </div>
-
+        </div>
+        
           <!-- Konsep Paragraf -->
           <div class="content-konsep">
             <div class="up-down">
               <div class="border">
                 <div class="border_konsep">
-                  <h4><b>Konsep Paragraf</b></h4>
+                  <h4><b>Catatan Paragraf</b></h4>
                 </div>
               </div>
               <div class="response">
@@ -600,23 +568,21 @@
                 <img
                   class="icon-up-down"
                   src="@/assets/up.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               <a @click="descending()">
                 <img
                   class="icon-up-down"
                   src="@/assets/down.png"
-                  style="margin-bottom: 5px; margin-left: 20px;"
+                  style="margin-bottom: 5px; margin-left: 5px;"
                 />
               </a>
               </div>
             </div>
             <div class="border_list">
-              <div style="margin-left: 30px;">
                 <b-form-group>
                   <div>
-                    <div class="col-sm-12">
                       <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
@@ -630,37 +596,31 @@
                             </b-form-radio>
                         </div>
                       </ul>
-                    </div>
                   </div>
                 </b-form-group>
-              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <br />
+
       <!-- Button OK -->
-      <div class="content-lima" @click="strukturkalimat4Next">
-        <div class="tombol">
-          <button class="ok" type="submit">OK</button>
-        </div>
+      <div class="button" @click="strukturkalimat4Next">
+          <button class="button1 justify-content-center" type="submit"><b>OK</b></button>
       </div>
       <!-- End Button OK -->
     </div>
     <!-- End Screen 4 -->
+
     <!-- Screen 5 -->
-      <div class="content-empat" v-if="strukturkalimatPage5 === true" style="margin-left:5%;">
-        <div class="col-sm-12">
-          <div class="row">
+      <div class="content-empat" v-if="strukturkalimatPage5 === true">
+          <div class="body">
             <!-- Button Tips -->
-            <div class="col-sm-2">
+            <div class="col-md-2.5">
               <div class="tips">
                 <b-button class="tips_judul" @click="showModal = true">
                   Tips
                 </b-button>
               </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9.5">
               <div class="kalimat">
                 <p class="kalimat_p">
                   Selamat! <br />
@@ -681,6 +641,7 @@
                 </p>
               </div>
             </div>
+          </div>
 
            <!-- Button Gaya menulis dll -->
             <div class="all-button">
@@ -698,7 +659,7 @@
                     <img style="margin-right:3%;" src="@/assets/check.png">
                     Tata Bahasa
                     </button>
-                <button class="all-button_exp"
+                <button class="all-button_finish"
                 @click="$router.push('/proofreading')">
                     Pemeriksaan Akhir
                     </button>
@@ -723,18 +684,13 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <br />
         <!-- Button OK -->
-        <div class="content-lima" @click="strukturkalimat5Next">
-          <div class="tombol">
-            <button class="ok" type="submit">OK</button>
-          </div>
+        <div class="button" @click="strukturkalimat5Next">
+            <button class="button1 justify-content-center" type="submit"><b>OK</b></button>
         </div>
         <!-- End Button OK -->
       </div>
-      <!-- End Screen 5 -->
+    <!-- End Screen 5 -->
   </div>
 </template>
 
@@ -744,22 +700,44 @@
   // all
   .all {
     overflow: hidden;
+    max-width: 1350px;
+    margin: auto;
   }
-
-  // head
-.head {
+// Judul
+.content-satu {
+  margin-top: 120px;
+.judul {
   font-size: 50px;
   margin-top: 70px;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  margin-left: 35%;
+  margin-left: 30%;
   h1 {
     font-weight: bolder;
     font-size: 47px;
     margin-left: 10%;
   }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      margin-left: 0%;
+    }
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
+      margin-left: 0%;
+    }
+  }
 }
+}
+// End Judul
 
   // Stepper
   .steper {
@@ -779,7 +757,7 @@
 
   // tengah
   .center {
-      display: flex;
+    display: flex;
     width: 100%;
     height: auto;
     font-size: 16px;
@@ -802,64 +780,130 @@
   }
 
   // body
+  .body {
+  display: flex;
+  padding: 10px 200px 0px 120px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 0px;
+  }
+}
 
-  // Tips dan Kalimat
-  .tips {
-    //   background: skyblue;
-    text-align: right;
-    margin: 5px;
-    &_judul {
-      background-color: #00a279;
-      border: none;
-      line-height: 32px;
-      width: 98px;
-      border-radius: 10px;
-      margin: 5px;
+// Tombol OK
+.button {
+  padding: 30px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    .button1 {
+      margin-left: 0px;
+      position: center;
     }
   }
-
-  .kalimat {
-    &_p {
+  .button1 {
+    background-color: #0a4da3;
+    height: 44px;
+    width: 110px;
+    border-radius: 42px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    padding-top: 7px;
+    b {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
       font-size: 20px;
-      margin: 5px;
-      padding-top: 13px;
     }
   }
-  // end Tips dan Kalimat
+  .button1:hover {
+    background-color: #0a4da3;
+  }
+}
+// End Tombol O
+
+ 
+.tips {
+  //   background: skyblue;
+  text-align: right;
+  margin: 5px;
+  width: 100%;
+  @media Screen and (max-width: 660px) {
+    // padding: 5px 0px 0px 0px;
+    // text-align: center;
+  }
+  &_judul {
+    background-color: #00a279;
+    border: none;
+    // line-height: 32px;
+    width: 98px;
+    border-radius: 10px;
+    margin: 5px;
+    @media Screen and (max-width: 780px) {
+      line-height: 22px;
+    }
+  }
+}
+
+.kalimat {
+  &_p {
+    padding: 15px 0px 0px 10px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
+      font-size: 16px;
+    }
+  }
+}
+// end Tips dan Kalimat
+
 
 // Button Gaya Menulis dll
 .all-button {
-  margin-left: 17%;
-  line-height: 40px;
-  @media screen and (max-width: 500px) {
-    margin-left: 0px;
+  padding: 20px 200px 0px 240px;
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 0px 20px;
   }
   &_satu {
     background-color: #00a279;
     border: none;
     border-radius: 20px;
-    width: 14%;
+    width: 20%;
+    height: 35px;
     margin: 0.3%;
     color: #ffffff;
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
-    @media screen and (max-width: 500px) {
-      width: 97%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
     }
   }
-  &_exp {
-    background-color: #e0e0e0;
+  &_finish {
+    background-color: #c1c8d3;
     border: none;
     border-radius: 20px;
-    width: 14%;
+    width: 20%;
+    height: 35px;
     margin: 0.3%;
-    color: #454B56;
+    color: #ffffff;
     font-weight: bold;
     font-size: 14px;
     font-family: Poppins;
-    @media screen and (max-width: 500px) {
-      width: 97%;
+    color: #212529;
+    @media screen and (max-width: 768px) {
+      width: 100%;
     }
   }
 }
@@ -872,7 +916,7 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 7%;
+  width: 98px;
   @media screen and (max-width: 780px) {
     width: 70px;
   }
@@ -917,22 +961,18 @@
     border-radius: 39px;
     border: none;
     width: 108px;
-    height: 32.71px;
+    height: 44px;
     color: #fff;
     font-family: Poppins;
+    font-weight:bold;
   }
   // End Tombol OK
 
-  // Konsep Menulis
+// Konsep Menulis
 .content-konsep {
-  margin-left: 17%;
-  margin-top: 30px;
+  padding: 30px 200px 10px 240px;
   @media screen and (max-width: 768px) {
-    margin-left: 0%;
-  }
-  @media screen and (max-width: 600px) {
-    padding: 0px 20px;
-    margin-left: 0%;
+    padding: 30px 20px 10px 20px;
   }
 }
 
@@ -961,11 +1001,11 @@
   &_list {
     font-family: Poppins;
     background-color: #e0e0e0;
-    width: 65%;
+    width: 100%;
     padding: 13px;
     border-radius: 0px 0px 14px 14px;
     @media Screen and (max-width: 780px) {
-      width: 95%;
+      width: 100%;
     }
   }
 }
@@ -1027,7 +1067,10 @@
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 
 /* End Background Belakang Modal */
@@ -1071,79 +1114,24 @@
 }
 
 // End Stepper
+
 .dua {
   padding: 8px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   h5 {
     font-family: Poppins;
     padding: 0px 0px 0px 20px;
   }
   @media screen and (max-width: 760px) {
-    margin-left: -40px;
     padding: 0px;
     h5 {
       font-family: Arial, Helvetica, sans-serif;
-      padding: 0px 0px 0px 0px;
+      padding: 10px 0px 0px 10px;
       text-align: left;
     }
   }
 }
 
-// Tips dan Kalimat
-.tips {
-  //   background: skyblue;
-  text-align: right;
-  margin: 5px;
-  @media Screen and (max-width: 660px) {
-    padding: 5px 0px 0px 0px;
-    text-align: center;
-  }
-  &_judul {
-    background-color: #00a279;
-    border: none;
-    line-height: 32px;
-    width: 98px;
-    border-radius: 10px;
-    margin: 5px;
-    @media Screen and (max-width: 780px) {
-      line-height: 22px;
-    }
-  }
-}
 
-.judul {
-  font-size: 50px;
-  margin-top: 70px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: bold;
-  margin-left: 30%;
-  h1 {
-    font-weight: bolder;
-    font-size: 47px;
-    margin-left: 10%;
-  }
-  @media Screen and (max-width: 780px) {
-    margin-left: 0%;
-    align-items: center;
-    text-align: center;
-    h1 {
-      margin-left: 0%;
-    }
-  }
-  @media Screen and (max-width: 400px) {
-    margin-left: 0%;
-    align-items: center;
-    text-align: center;
-    h1 {
-      font-size: 30px;
-      margin-left: 0%;
-    }
-  }
-}
-// End Judul
 .tombol1 {
   /* background: red; */
   text-align: center;

@@ -937,10 +937,9 @@
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
-  @media screen and (max-width: 780px) {
-    vertical-align: 0;
-    padding: 100px 0px 0px 0px;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
   }
 }
 

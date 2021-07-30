@@ -756,7 +756,10 @@
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 
 /* End Background Belakang Modal */
