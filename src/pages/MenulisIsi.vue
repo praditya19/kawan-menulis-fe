@@ -538,21 +538,20 @@
         </div>
         <!-- Form Centang -->
         <div class="border_list">
-          <b-form-group>
-            <div class="col-sm-12">
+          <div class="isi">
+            <b-form-group>
               <ul>
-                <div style="padding: 0px 30px 0px 20px">
-                  <div
-                    class="dua"
-                    v-for="(dataSesion1,
-                    index) in pramenulisLanjutanDataSesion.resultMenulis"
-                    :key="index"
-                  >
-                    <div class="kiri">
-                      <h5 style="padding: 10px 0px 0px 10px">
-                        <li>{{ dataSesion1.pramenulis }}</li>
-                      </h5>
-                    </div>
+                <!-- <div style="padding: 0px 30px 0px 20px"> -->
+                <div
+                  class="dua"
+                  v-for="(dataSesion1,
+                  index) in pramenulisLanjutanDataSesion.resultMenulis"
+                  :key="index"
+                >
+                  <div class="kiri">
+                    <h5>
+                      <li>{{ dataSesion1.pramenulis }}</li>
+                    </h5>
                     <div class="kanan">
                       <button
                         class="tips-form"
@@ -562,14 +561,18 @@
                         <b>Tips</b>
                       </button>
                     </div>
+                  </div>
+                  <div class="form">
                     <b-form-input
+                      class="form_input"
                       v-model="dataForm.menulis[index]"
                     ></b-form-input>
                   </div>
                 </div>
+                <!-- </div> -->
               </ul>
-            </div>
-          </b-form-group>
+            </b-form-group>
+          </div>
         </div>
       </div>
 
@@ -601,12 +604,25 @@
     margin-top: 20px;
   }
 }
+
+.dua {
+  width: 95%;
+}
 .kiri {
-  width: 80%;
+  display: flex;
+  width: 100%;
   float: left;
+  font-size: 20px;
+  .tips-form {
+    color: blue;
+    border: none;
+    background: none;
+    font-family: Poppins;
+    float: right;
+  }
 }
 .kanan {
-  width: 20%;
+  width: 100%;
   float: left;
   text-align: right;
 }
@@ -852,11 +868,18 @@
     @media Screen and (max-width: 780px) {
       width: 100%;
     }
+    .isi {
+      width: 100%;
+    }
   }
-  .form {
-    border: 1px solid red;
-    background-color: red;
-    max-width: 200%;
+}
+.form {
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+  @media Screen and (max-width: 768px) {
+    width: auto;
+  }
+  &_input {
   }
 }
 // End Catatan Pramenulis
@@ -933,7 +956,10 @@
 }
 
 .modal-wrapper {
-  display: table-cell;
+  // display: table-cell;
+  // vertical-align: middle;
+  width: 100%;
+  height: auto;
   padding-top: 75px;
   @media (max-width: 768px) {
     padding-top: 95px;
@@ -944,14 +970,6 @@
 
 // penutup style css modal
 // Tips Form
-.tips-form {
-  color: blue;
-  font-size: 20px;
-  border: none;
-  background: none;
-  font-family: Poppins;
-  margin-top: 5px;
-}
 
 .tombol1 {
   /* background: red; */

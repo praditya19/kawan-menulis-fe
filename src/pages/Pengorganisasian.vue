@@ -840,525 +840,527 @@
 <script src="./js/pengorganisasian.js" />
 
 <style lang="scss" scoped>
-  // Tombol OK
-  .button_ok {
-    padding: 30px 0px 30px 0px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-    .button-ok {
-      background-color: #0a4da3;
-      height: 44px;
-      width: 110px;
-      border-radius: 42px;
-      border: none;
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-      border-radius: 30px;
-      display: flex;
-      padding-top: 7px;
-      b {
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 20px;
-      }
-    }
-    .button-ok:hover {
-      background-color: #0a4da3;
-    }
-  }
-  // End Tombol OK
-
-  .jarak1 {
-    padding: 0px 0px 0px 120px;
-    @media screen and (max-width: 700px) {
-      padding: 0px 0px 0px 30px;
-    }
-  }
-  .bereb {
-    background-color: #c1c8d3;
-    width: 80%;
-    padding: 13px;
-    border-radius: 0px 0 30px 30px;
-  }
-  .all {
-    overflow-x: hidden;
-    max-width: 1350px;
-    margin: auto;
-  }
-  // Judul
-  .content-satu {
-    margin-top: 120px;
-  }
-  .body {
-    display: flex;
-    padding: 0px 210px 0px 100px;
-    @media screen and(max-width: 768px) {
-      padding: 10px 10px 0px 0px;
-    }
-  }
-
-  // Jenis Paragraf
-  .jenis {
-    display: flex;
-    height: 49px;
-    font-size: 16px;
-    background-color: rgba(139, 181, 236, 0.1);
-    @media Screen and (max-width: 768px) {
-      height: auto;
-    }
-    &_paragraf {
-      padding: 11px 0px 0px 110px;
-      @media (max-width: 768px) {
-        padding: 11px 0px 0px 10px;
-      }
-    }
-    &_topik {
-      padding: 11px 0px 0px 70px;
-    }
-  }
-  // End Jenis Paragraf
-  .button2 {
-    background-color: #0a4da3;
-    color: rgb(243, 237, 237);
-    cursor: pointer;
-    // padding: 17px 10px;
-    border-radius: 30px;
-    display: flex;
-    position: relative;
-    max-width: 990px;
-    width: 130px;
-    height: 44px;
-    top: -10px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 200px;
-    b {
-      color: #f1f1f1;
-      margin: auto;
-      font-size: 20px;
-    }
-    &_tombol2 {
-      padding: 40px 0px 0px 0px;
-      left: 300px;
-      width: 190px;
-      height: 200px;
-    }
-  }
-  .button2:hover {
-    background-color: #0a4da3;
-  }
-  .response {
+// Tombol OK
+.button_ok {
+  padding: 30px 0px 30px 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  @media (max-width: 768px) {
     width: 100%;
-    @media screen and (max-width: 780px) {
-      width: 100%;
-    }
-    @media screen and (max-width: 425px) {
-      padding: 10px 0px 0px 10px;
-      width: 100%;
-    }
   }
-  // Button Konsep Menulis
-  .all-button_dua {
-    background-color: #e0e0e0;
+  .button-ok {
+    background-color: #0a4da3;
+    height: 44px;
+    width: 110px;
+    border-radius: 42px;
     border: none;
-    border-radius: 20px;
-    margin: 0.3%;
-    width: 100px;
-    height: 37px;
-    @media screen and (max-width: 768px) {
-      margin-left: 5px;
-    }
-  }
-  .dua {
-    padding: 10px 0px 0px 0px;
-    text-align: justify;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
-  .button {
-    background-color: #00a279;
-    border: none;
-    color: black;
+    color: white;
     text-decoration: none;
-    display: inline-block;
     cursor: pointer;
-    align-items: center;
-    padding: 10px 0px;
-    border-radius: 19px;
-    display: flex;
-    max-width: 990px;
-    width: 150px;
-    height: 40px;
-    margin-left: 45px;
-    margin-top: -10px;
-    &_catatan {
-      height: 45px;
-      max-width: 300px;
-      color: rgb(5, 4, 4);
-    }
-    &_tombol {
-      padding: 25px 0px 0px 0px;
-      position: absolute;
-      width: 190px;
-      height: 100px;
-      margin-left: -80px;
-      b {
-        color: #f1f1f1;
-        margin-left: 100%;
-      }
-      &_margin {
-        b {
-          text-align: center;
-          align-items: center;
-        }
-        color: black;
-        text-decoration: none;
-        display: inline-block;
-        cursor: pointer;
-        align-items: center;
-        margin-left: 13%;
-      }
-    }
-  }
-  .button:hover {
-    background-color: #00a279;
-  }
-  .button4 {
-    background-color: #0a4da3;
-    color: rgb(243, 237, 237);
     border-radius: 30px;
-    position: relative;
-    width: 130px;
-    height: 44px;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    padding-top: 7px;
     b {
-      // padding: 0% 3% 0% 3%;
-      color: #f1f1f1;
-      margin: auto;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
       font-size: 20px;
     }
-    &_tombol4 {
-      padding: 30px 0px;
-      margin-left: 500px;
-      width: 190px;
-      height: 200px;
-      margin-bottom: -30px;
-      @media screen and (max-width: 1024px) {
-        margin-left: 400px;
-      }
-      @media screen and (max-width: 800px) {
-        margin-left: 300px;
-      }
-      @media screen and (max-width: 600px) {
-        margin-left: 200px;
-      }
-      @media screen and (max-width: 400px) {
-        margin-left: 100px;
-      }
-      @media screen and (max-width: 300px) {
-        margin-left: 50px;
-      }
-    }
   }
-  .button4:hover {
+  .button-ok:hover {
     background-color: #0a4da3;
   }
-  // Stepper 1 -7
-  .container {
+}
+// End Tombol OK
+
+.jarak1 {
+  padding: 0px 0px 0px 120px;
+  @media screen and (max-width: 700px) {
+    padding: 0px 0px 0px 30px;
+  }
+}
+.bereb {
+  background-color: #c1c8d3;
+  width: 80%;
+  padding: 13px;
+  border-radius: 0px 0 30px 30px;
+}
+.all {
+  overflow-x: hidden;
+  max-width: 1350px;
+  margin: auto;
+}
+// Judul
+.content-satu {
+  margin-top: 120px;
+}
+.body {
+  display: flex;
+  padding: 0px 210px 0px 100px;
+  @media screen and(max-width: 768px) {
+    padding: 10px 10px 0px 0px;
+  }
+}
+
+// Jenis Paragraf
+.jenis {
+  display: flex;
+  height: 49px;
+  font-size: 16px;
+  background-color: rgba(139, 181, 236, 0.1);
+  @media Screen and (max-width: 768px) {
+    height: auto;
+  }
+  &_paragraf {
+    padding: 11px 0px 0px 110px;
+    @media (max-width: 768px) {
+      padding: 11px 0px 0px 10px;
+    }
+  }
+  &_topik {
+    padding: 11px 0px 0px 70px;
+  }
+}
+// End Jenis Paragraf
+.button2 {
+  background-color: #0a4da3;
+  color: rgb(243, 237, 237);
+  cursor: pointer;
+  // padding: 17px 10px;
+  border-radius: 30px;
+  display: flex;
+  position: relative;
+  max-width: 990px;
+  width: 130px;
+  height: 44px;
+  top: -10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+  b {
+    color: #f1f1f1;
+    margin: auto;
+    font-size: 20px;
+  }
+  &_tombol2 {
+    padding: 40px 0px 0px 0px;
+    left: 300px;
+    width: 190px;
+    height: 200px;
+  }
+}
+.button2:hover {
+  background-color: #0a4da3;
+}
+.response {
+  width: 100%;
+  @media screen and (max-width: 780px) {
     width: 100%;
-    &_bawah {
-      padding: 20px 0px 180px 0px;
-      margin-left: 15%;
-    }
   }
-  .tengah2 {
-    padding: 0px 0px 0px 100px;
-    display: flex;
+  @media screen and (max-width: 425px) {
+    padding: 10px 0px 0px 10px;
     width: 100%;
-    display: flex;
-    padding-top: 13px;
   }
-
-  .tengah {
-    text-align: right;
-    margin: 5px;
-    width: 100%;
-    @media Screen and (max-width: 660px) {
+}
+// Button Konsep Menulis
+.all-button_dua {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  margin: 0.3%;
+  width: 100px;
+  height: 37px;
+  @media screen and (max-width: 768px) {
+    margin-left: 5px;
+  }
+}
+.dua {
+  padding: 10px 0px 0px 0px;
+  text-align: justify;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.button {
+  background-color: #00a279;
+  border: none;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  align-items: center;
+  padding: 10px 0px;
+  border-radius: 19px;
+  display: flex;
+  max-width: 990px;
+  width: 150px;
+  height: 40px;
+  margin-left: 45px;
+  margin-top: -10px;
+  &_catatan {
+    height: 45px;
+    max-width: 300px;
+    color: rgb(5, 4, 4);
+  }
+  &_tombol {
+    padding: 25px 0px 0px 0px;
+    position: absolute;
+    width: 190px;
+    height: 100px;
+    margin-left: -80px;
+    b {
+      color: #f1f1f1;
+      margin-left: 100%;
     }
-    &_tips {
-      background-color: #00a279;
-      border: none;
-      width: 98px;
-      border-radius: 10px;
-      margin: 5px;
-      color: #fff;
-      @media Screen and (max-width: 768px) {
-        line-height: 22px;
+    &_margin {
+      b {
+        text-align: center;
+        align-items: center;
       }
-    }
-
-    // text page 2
-    &_text2 {
-      padding: 10px 0px 0px 15px;
-      font-family: Poppins;
-      font-weight: 400;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 30px;
-      color: #000000;
-      strong {
-        font-style: italic;
-        font-size: 20px;
-      }
-      @media Screen and (max-width: 780px) {
-        padding: 10px 0px 0px 10px;
-      }
-    }
-
-    &_text3 {
-      margin-left: 20px;
-      width: 100%;
-      font-family: Poppins;
-      font-size: 20px;
-      strong {
-        font-style: italic;
-        font-size: 20px;
-      }
-      @media screen and (max-width: 768px) {
-        margin-left: 10px;
-        width: 100%;
-        padding-right: 10px;
-      }
+      color: black;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      align-items: center;
+      margin-left: 13%;
     }
   }
-
-  .gabungan-icon {
-    display: flex;
+}
+.button:hover {
+  background-color: #00a279;
+}
+.button4 {
+  background-color: #0a4da3;
+  color: rgb(243, 237, 237);
+  border-radius: 30px;
+  position: relative;
+  width: 130px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  b {
+    // padding: 0% 3% 0% 3%;
+    color: #f1f1f1;
+    margin: auto;
+    font-size: 20px;
   }
-
-  .border {
-    background-color: #455a64;
-    height: 42px;
-    width: 238px;
-    border-radius: 7px 7px 0px 0px;
-    border: none;
-    @media Screen and (max-width: 780px) {
-      width: 50%;
+  &_tombol4 {
+    padding: 30px 0px;
+    margin-left: 500px;
+    width: 190px;
+    height: 200px;
+    margin-bottom: -30px;
+    @media screen and (max-width: 1024px) {
+      margin-left: 400px;
+    }
+    @media screen and (max-width: 800px) {
+      margin-left: 300px;
     }
     @media screen and (max-width: 600px) {
-      height: auto;
+      margin-left: 200px;
     }
-    h4 {
-      color: #fff;
-      font-size: 16px;
-      padding: 10px 0px 0px 10px;
+    @media screen and (max-width: 400px) {
+      margin-left: 100px;
     }
-    &_list {
-      font-family: Poppins;
-      background: #e0e0e0;
-      width: 100%;
-      padding: 13px;
-      border-radius: 0px 0px 14px 14px;
-      @media Screen and (max-width: 780px) {
-        width: 100%;
-      }
+    @media screen and (max-width: 300px) {
+      margin-left: 50px;
+    }
+  }
+}
+.button4:hover {
+  background-color: #0a4da3;
+}
+// Stepper 1 -7
+.container {
+  width: 100%;
+  &_bawah {
+    padding: 20px 0px 180px 0px;
+    margin-left: 15%;
+  }
+}
+.tengah2 {
+  padding: 0px 0px 0px 100px;
+  display: flex;
+  width: 100%;
+  display: flex;
+  padding-top: 13px;
+}
+
+.tengah {
+  text-align: right;
+  margin: 5px;
+  width: 100%;
+  @media Screen and (max-width: 660px) {
+  }
+  &_tips {
+    background-color: #00a279;
+    border: none;
+    width: 98px;
+    border-radius: 10px;
+    margin: 5px;
+    color: #fff;
+    @media Screen and (max-width: 768px) {
+      line-height: 22px;
     }
   }
 
-  // Stepper
-  .steper {
-    text-align: center;
-    padding: 10px 200px 10px 200px;
+  // text page 2
+  &_text2 {
+    padding: 10px 0px 0px 15px;
+    font-family: Poppins;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+    @media Screen and (max-width: 780px) {
+      padding: 10px 0px 0px 10px;
+    }
+  }
+
+  &_text3 {
+    margin-left: 20px;
+    width: 100%;
+    font-family: Poppins;
+    font-size: 20px;
+    strong {
+      font-style: italic;
+      font-size: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      margin-left: 10px;
+      width: 100%;
+      padding-right: 10px;
+    }
+  }
+}
+
+.gabungan-icon {
+  display: flex;
+}
+
+.border {
+  background-color: #455a64;
+  height: 42px;
+  width: 238px;
+  border-radius: 7px 7px 0px 0px;
+  border: none;
+  @media Screen and (max-width: 780px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    height: auto;
+  }
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0px 0px 10px;
+  }
+  &_list {
+    font-family: Poppins;
+    background: #e0e0e0;
+    width: 100%;
+    padding: 13px;
+    border-radius: 0px 0px 14px 14px;
+    @media Screen and (max-width: 780px) {
+      width: 100%;
+    }
+  }
+}
+
+// Stepper
+.steper {
+  text-align: center;
+  padding: 10px 200px 10px 200px;
+  &_image {
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
     &_image {
       width: 100%;
       height: auto;
     }
-    @media (max-width: 768px) {
-      padding: 10px 20px 10px 20px;
-      &_image {
-        width: 100%;
-        height: auto;
-      }
-    }
   }
-  // End Stepper
+}
+// End Stepper
 
-  .ok2 {
-    // background: red;
+.ok2 {
+  // background: red;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.mt-3 {
+  background: #0a4da3;
+  border-radius: 39px;
+  width: 108px;
+  padding-top: 5px;
+}
+// content konsep
+.content-konsep {
+  padding: 10px 230px 10px 230px;
+  @media screen and (max-width: 768px) {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.judul {
+  font-size: 50px;
+  margin-top: 70px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  margin-left: 30%;
+  h1 {
+    font-weight: bolder;
+    font-size: 47px;
+    margin-left: 10%;
+  }
+  @media Screen and (max-width: 780px) {
+    margin-left: 0%;
+    align-items: center;
     text-align: center;
-    margin-top: -20px;
-  }
-
-  .mt-3 {
-    background: #0a4da3;
-    border-radius: 39px;
-    width: 108px;
-    padding-top: 5px;
-  }
-  // content konsep
-  .content-konsep {
-    padding: 10px 230px 10px 230px;
-    @media screen and (max-width: 768px) {
-      padding: 10px 20px 10px 20px;
-    }
-  }
-
-  .judul {
-    font-size: 50px;
-    margin-top: 70px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    margin-left: 30%;
     h1 {
-      font-weight: bolder;
-      font-size: 47px;
-      margin-left: 10%;
-    }
-    @media Screen and (max-width: 780px) {
       margin-left: 0%;
-      align-items: center;
-      text-align: center;
-      h1 {
-        margin-left: 0%;
-      }
     }
-    @media Screen and (max-width: 400px) {
+  }
+  @media Screen and (max-width: 400px) {
+    margin-left: 0%;
+    align-items: center;
+    text-align: center;
+    h1 {
+      font-size: 30px;
       margin-left: 0%;
-      align-items: center;
-      text-align: center;
-      h1 {
-        font-size: 30px;
-        margin-left: 0%;
-      }
     }
   }
-  // End Judul
+}
+// End Judul
 
-  /* Style Modal */
-  .modal-dialog {
-    top: -100px;
-    left: auto;
-  }
+/* Style Modal */
+.modal-dialog {
+  // top: -100px;
+}
 
-  .modal-content {
-    background: #e8f1fd;
-    width: 500px;
-    border-radius: 34px;
-    @media screen and (max-width: 780px) {
-      width: 100%;
-    }
-  }
-
-  .modal-body {
-    background: #e8f1fd;
-    width: 500px;
-    border-radius: 34px;
-    @media screen and (max-width: 780px) {
-      width: 100%;
-    }
-  }
-
-  /* end style Modal */
-
-  /* Style Isi Modal */
-  .image-container {
-    text-align: center;
-    /* background: red; */
-  }
-
-  .kalimat2 {
-    font-family: Poppins;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 5px;
-    /* background: red; */
-  }
-
-  .kalimat3 {
-    font-family: Poppins;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 5px;
-    /* background: red; */
-  }
-
-  /* end style isi modal */
-
-  /* Background belakang modal */
-  .modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 780px) {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: table;
-    transition: opacity 0.3s ease;
   }
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+.kalimat2 {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+.kalimat3 {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  // transition: opacity 0.3s ease;
+}
 
 .modal-wrapper {
-  display: table-cell;
+  // display: table-cell;
+  // vertical-align: middle;
+  width: 100%;
+  height: auto;
   padding-top: 75px;
   @media (max-width: 768px) {
     padding-top: 95px;
   }
 }
 
-  /* End Background Belakang Modal */
-  .tombol {
-    // background: red;
-    padding: 20px 0px 0px 70px;
-  }
+/* End Background Belakang Modal */
+.tombol {
+  // background: red;
+  padding: 20px 0px 0px 70px;
+}
 
-  .ok {
-    background: #0a4da3;
-    border-radius: 39px;
-    border: none;
-    width: 108px;
-    height: 32.71px;
-    color: #fff;
-    font-family: Poppins;
-  }
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 
-  .ok3 {
-    background: #0a4da3;
-    border-radius: 39px;
-    border: none;
-    width: 108px;
-    height: 32.71px;
-    color: #fff;
-    font-family: Poppins;
-  }
+.ok3 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
 
-  .tombol1 {
-    /* background: red; */
-    text-align: center;
-    padding: 5px;
-  }
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
 
-  .ok1 {
-    background: #0a4da3;
-    border-radius: 39px;
-    border: none;
-    width: 108px;
-    height: 32.71px;
-    color: #fff;
-    font-family: Poppins;
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+.icon-up-down {
+  padding: 0px 0px 0px 20px;
+  @media screen and (max-width: 1000px) {
   }
-  .icon-up-down {
-    padding: 0px 0px 0px 20px;
-    @media screen and (max-width: 1000px) {
-    }
-  }
+}
 </style>

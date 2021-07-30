@@ -68,13 +68,23 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
+      if (this.pramenulisGuides[1] === undefined) {
+        this.topicDataSesion.resultMenulis.push({
+          pramenulis: this.dataForm.menulisPage1,
+          menulis: "",
+        });
+        const is1 = JSON.stringify(this.topicDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", is1);
+        this.pramenulisPage6 = true;
+        this.pramenulisPage1 = false;
+        return;
+      }
       this.topicDataSesion.resultMenulis.push({
         pramenulis: this.dataForm.menulisPage1,
         menulis: "",
       });
       var savePage1 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
-
       this.pramenulisPage2 = true;
       if (this.pramenulisPage2 === true) {
         this.pramenulisPage1 = false;
@@ -87,13 +97,23 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
+      if (this.pramenulisGuides[2] === undefined) {
+        this.topicDataSesion.resultMenulis.push({
+          pramenulis: this.dataForm.menulisPage2,
+          menulis: "",
+        });
+        const is2 = JSON.stringify(this.topicDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", is2);
+        this.pramenulisPage6 = true;
+        this.pramenulisPage2 = false;
+        return;
+      }
       this.topicDataSesion.resultMenulis.push({
         pramenulis: this.dataForm.menulisPage2,
         menulis: "",
       });
       var savePage2 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage2);
-
       this.pramenulisPage3 = true;
       if (this.pramenulisPage3 === true) {
         this.pramenulisPage2 = false;
@@ -106,13 +126,23 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
+      if (this.pramenulisGuides[3] === undefined) {
+        this.topicDataSesion.resultMenulis.push({
+          pramenulis: this.dataForm.menulisPage3,
+          menulis: "",
+        });
+        const is3 = JSON.stringify(this.topicDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+        this.pramenulisPage6 = true;
+        this.pramenulisPage3 = false;
+        return;
+      }
       this.topicDataSesion.resultMenulis.push({
         pramenulis: this.dataForm.menulisPage3,
         menulis: "",
       });
       var savePage3 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
-
       this.pramenulisPage4 = true;
       if (this.pramenulisPage4 === true) {
         this.pramenulisPage3 = false;
@@ -125,13 +155,23 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
+      if (this.pramenulisGuides[4] === undefined) {
+        this.topicDataSesion.resultMenulis.push({
+          pramenulis: this.dataForm.menulisPage4,
+          menulis: "",
+        });
+        const is4 = JSON.stringify(this.topicDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", is4);
+        this.pramenulisPage6 = true;
+        this.pramenulisPage4 = false;
+        return;
+      }
       this.topicDataSesion.resultMenulis.push({
         pramenulis: this.dataForm.menulisPage4,
         menulis: "",
       });
       var savePage4 = JSON.stringify(this.topicDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
-
       this.pramenulisPage5 = true;
       if (this.pramenulisPage5 === true) {
         this.pramenulisPage4 = false;
@@ -166,4 +206,3 @@ export default {
     ...mapGetters(["isMobile"]),
   },
 };
-

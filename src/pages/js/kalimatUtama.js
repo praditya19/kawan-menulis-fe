@@ -60,6 +60,15 @@ export default {
       });
     },
     page1Next() {
+      if (this.kalimatUtamaGuides[1] === undefined) {
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+          "",
+          "Bagaimana Pakar Membayangkan Apa yang Harus Difokuskan"
+        );
+        this.$router.push("/pramenulis-lanjutan");
+        this.kalimatUtamaPage1 = false;
+        return;
+      }
       this.kalimatUtamaPage2 = true;
       if (this.kalimatUtamaPage2 === true) {
         this.kalimatUtamaPage1 = false;
@@ -68,33 +77,21 @@ export default {
       }
     },
     page2Next() {
+      if (this.kalimatUtamaGuides[2] === undefined) {
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+          "",
+          "Bagaimana Pakar Membayangkan Apa yang Harus Difokuskan"
+        );
+        this.$router.push("/pramenulis-lanjutan");
+        this.kalimatUtamaPage2 = false;
+        return;
+      }
       this.kalimatUtamaPage3 = true;
       if (this.kalimatUtamaPage3 === true) {
         this.kalimatUtamaPage2 = false;
       } else {
         alert("error");
       }
-    },
-    page3Next() {
-      if (this.form.kalimatUtama1 === "") {
-        this.showModal5 = true;
-        return false;
-      }
-      var done = this.isValidHurufBesar(this.form.kalimatUtama1);
-      if (done === true) {
-        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
-          this.form.kalimatUtama1
-        );
-        var savePage3 = JSON.stringify(this.pramenulisDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
-        this.kalimatUtamaPage4 = true;
-        if (this.kalimatUtamaPage4 === true) {
-          this.kalimatUtamaPage3 = false;
-        } else {
-          alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
-        }
-      }
-      return false;
     },
     isValidHurufBesar(msg) {
       var checking = msg.substring(0, 1);
@@ -118,6 +115,38 @@ export default {
       } else {
         this.showModal5 = true;
       }
+    },
+    page3Next() {
+      if (this.form.kalimatUtama1 === "") {
+        this.showModal5 = true;
+        return false;
+      }
+      var done = this.isValidHurufBesar(this.form.kalimatUtama1);
+      if (done === true) {
+        if (this.kalimatUtamaGuides[3] === undefined) {
+          this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+            "",
+            this.form.kalimatUtama1
+          );
+          const is3 = JSON.stringify(this.pramenulisDataSesion);
+          sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+          this.$router.push("/pramenulis-lanjutan");
+          this.kalimatUtamaPage3 = false;
+          return;
+        }
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+          this.form.kalimatUtama1
+        );
+        var savePage3 = JSON.stringify(this.pramenulisDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+        this.kalimatUtamaPage4 = true;
+        if (this.kalimatUtamaPage4 === true) {
+          this.kalimatUtamaPage3 = false;
+        } else {
+          alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
+        }
+      }
+      return false;
     },
     page4Next() {
       if (this.form.kalimatUtama2 === "") {
