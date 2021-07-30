@@ -332,8 +332,8 @@
   font-size: 50px;
   text-align: center;
   @media (max-width: 768px) {
-    padding: 120px 5px 0px 5px;
-    font-size: 40px;
+    padding: 120px 10px 0px 10px;
+    font-size: 35px;
   }
 }
 

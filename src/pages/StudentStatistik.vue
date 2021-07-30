@@ -21,64 +21,115 @@
                 <!-- Modal Body -->
                 <div class="modal-atas">
                   <h3>Student actions</h3>
+                  <a
+                    @click="(statistik = false), (show = true)"
+                    class="close-popup"
+                    >&times;</a
+                  >
                 </div>
                 <div class="modal-tengah">
-                  <div style="padding: 20px 20px 20px 20px;">
+                  <div style="padding: 20px 20px 20px 20px">
                     <div class="jumbotron">
                       <div style="padding: 15px 0px 10px 20px">
-                        <div
-                          class="row"
-                          
-                        >
+                        <div class="row">
                           <div class="col-md-6">
-                            <p>
-                              <b>Name&nbsp;&nbsp;:&nbsp;</b
-                              ><font v-for="(studentStatistik, index) in studentStatistik"
-                          :key="index"><span
-                                v-if="index === 0"
-                                v-html="studentStatistik.student.name"
-                              ></span
-                              ></font><br />
-                              <b>NIM&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</b
-                              ><font v-for="(studentStatistik, index) in studentStatistik"
-                          :key="index"><span
-                                v-if="index === 0"
-                                v-html="studentStatistik.student.nim"
-                              ></span
-                              ></font>
-                            </p>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b>Name&nbsp;</b>
+                                </td>
+                                <td><b>:</b></td>
+                                <td>
+                                  &nbsp;&nbsp;
+                                  <font
+                                    v-for="(studentStatistik,
+                                    index) in studentStatistik"
+                                    :key="index"
+                                    ><span
+                                      v-if="index === 0"
+                                      v-html="studentStatistik.student.name"
+                                    ></span
+                                  ></font>
+                                </td>
+                              </tr>
+                              <br />
+                              <tr>
+                                <td>
+                                  <b>NIM&nbsp;&nbsp;&nbsp;&nbsp;</b>
+                                </td>
+                                <td><b>:</b></td>
+                                <td>
+                                  &nbsp;
+                                  <font
+                                    v-for="(studentStatistik,
+                                    index) in studentStatistik"
+                                    :key="index"
+                                    ><span
+                                      v-if="index === 0"
+                                      v-html="studentStatistik.student.nim"
+                                    ></span
+                                  ></font>
+                                </td>
+                              </tr>
+                            </table>
                           </div>
                           <div class="col-md-4">
-                            <p>
-                              <b>Email&nbsp;&nbsp;: </b>
-                              <font v-for="(studentStatistik, index) in studentStatistik"
-                          :key="index"><span
-                                v-if="index === 0"
-                                v-html="studentStatistik.student.email"
-                              ></span
-                              ></font>
+                            <table>
+                              <tr>
+                                <td>
+                                  <b>Email&nbsp;&nbsp; </b>
+                                </td>
+                                <td><b>:</b></td>
+                                <td>
+                                  <font
+                                    v-for="(studentStatistik,
+                                    index) in studentStatistik"
+                                    :key="index"
+                                    ><span
+                                      style="margin-left: 10px"
+                                      v-if="index === 0"
+                                      v-html="studentStatistik.student.email"
+                                    ></span
+                                  ></font>
+                                </td>
+                              </tr>
                               <br />
-                              <b>PRODI :&nbsp;</b
-                              ><font v-for="(studentStatistik, index) in studentStatistik"
-                          :key="index"><span
-                                v-if="index === 0"
-                                v-html="studentStatistik.student.prodi"
-                              ></span
-                              ></font>
-                            </p>
+                              <tr>
+                                <td>
+                                  <b>PRODI</b>
+                                </td>
+                                <td><b>:</b></td>
+                                <td>
+                                  &nbsp;
+                                  <font
+                                    v-for="(studentStatistik,
+                                    index) in studentStatistik"
+                                    :key="index"
+                                    ><span
+                                      v-if="index === 0"
+                                      v-html="studentStatistik.student.prodi"
+                                    ></span
+                                  ></font>
+                                </td>
+                              </tr>
+                            </table>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      style="text-align:right; aling-item:right; padding: 30px 20px 0px 20px"
+                      style="
+                        text-align: right;
+                        aling-item: right;
+                        padding: 30px 20px 0px 20px;
+                      "
                     >
-                      <label for="paginations">items per page :&nbsp;</label>
+                      <label for="paginations">Items per page :&nbsp;</label>
                       <b-form-select
                         v-model="selected"
                         class="mb-3"
                         id="paginations"
-                        style="height: 32px; width: 50px;"
+                        style="height: 32px; width: 50px"
                       >
                         <!-- These options will appear after the ones from 'options' prop -->
                         <b-form-select-option :value="null" disabled hidden
@@ -90,26 +141,94 @@
                         >
                       </b-form-select>
                     </div>
+                    <!-- Table Bawah -->
                     <div class="table">
                       <hr />
-                      <b-table-simple hover responsive>
+                      <b-table-simple sticky-header hover responsive>
                         <b-tr>
-                          <b-th>No</b-th>
-                          <b-th>Paragraphtype</b-th>
-                          <b-th>Perodi</b-th>
-                          <b-th>Duration</b-th>
-                          <b-th></b-th>
+                          <b-th class="th" style="width: 80px">No</b-th>
+                          <b-th class="th" style="width: 150px">Paragraphtype</b-th>
+                          <b-th class="th" style="width: 250px">Period</b-th>
+                          <b-th class="th">Duration</b-th>
+                          <!-- <b-th class="th"></b-th> -->
                         </b-tr>
-
                         <b-tbody>
-                          <b-tr v-for="(studentStatistik, index) in studentStatistik"
-                          :key="index">
-                            <b-td>{{studentStatistik.topic.id}}</b-td>
-                            <b-td>{{studentStatistik.topic.paragraphType.name}}</b-td>
-                            <b-td>{{studentStatistik.startDate}}</b-td>
-                            <b-td>413</b-td>
+                          <b-tr
+                            v-for="(studentStatistik, index) in duration"
+                            :key="index"
+                          >
+                            <b-td>{{ studentStatistik.no }}</b-td>
+                            <b-td>{{ studentStatistik.paragraphType }}</b-td>
                             <b-td
-                              style="text-align: right; align-item: right; justify-content: right;"
+                              ><b>Start : </b
+                              >{{
+                                new Date(studentStatistik.startDate).getDate()
+                              }}/{{
+                                new Date(
+                                  studentStatistik.startDate
+                                ).getMonth() + 1
+                              }}/
+                              {{
+                                new Date(
+                                  studentStatistik.startDate
+                                ).getFullYear()
+                              }}&nbsp;&nbsp;{{
+                                new Date(studentStatistik.startDate).getHours()
+                              }}:{{
+                                new Date(
+                                  studentStatistik.startDate
+                                ).getMinutes()
+                              }}:{{
+                                new Date(
+                                  studentStatistik.startDate
+                                ).getSeconds()
+                              }}
+                              <br />
+                              <b>End : </b>
+                              {{
+                                new Date(studentStatistik.endDate).getDate()
+                              }}/{{
+                                new Date(studentStatistik.endDate).getMonth() +
+                                  1
+                              }}/
+                              {{
+                                new Date(
+                                  studentStatistik.endDate
+                                ).getFullYear()
+                              }}&nbsp;&nbsp;{{
+                                new Date(studentStatistik.endDate).getHours()
+                              }}:{{
+                                new Date(studentStatistik.endDate).getMinutes()
+                              }}:{{
+                                new Date(studentStatistik.endDate).getSeconds()
+                              }}
+                            </b-td>
+                            <b-td>
+                              <div v-if="studentStatistik.durations.length > 1">
+                                {{ studentStatistik.durations[0].days }}, Days
+                              </div>
+                              {{ studentStatistik.durations.days }} Days,
+                              <div v-if="studentStatistik.durations.length > 1">
+                                {{ studentStatistik.durations[0].hours }}, Hours
+                              </div>
+                              {{ studentStatistik.durations.hours }} Hours,
+                              <div v-if="studentStatistik.durations.length > 0">
+                                {{ studentStatistik.durations[0].minutes }},
+                                Minutes
+                              </div>
+                              {{ studentStatistik.durations.minutes }} Minutes
+                              <!-- <div v-if="studentStatistik.durations.length > 0">
+                                Seconds
+                                {{ studentStatistik.durations[0].seconds }}
+                              </div>
+                              {{ studentStatistik.durations.seconds }} Seconds -->
+                            </b-td>
+                            <b-td
+                              style="
+                                text-align: right;
+                                align-item: right;
+                                justify-content: right;
+                              "
                             >
                               <b-button variant="outline-success"
                                 >Show</b-button
@@ -120,16 +239,18 @@
                       </b-table-simple>
                     </div>
                     <br />
+
                     <div class="kanan">
                       <b-button
+                        style=""
                         variant="secondary"
-                        @click="(statistik = false), (show = true)"
+                        @click="cancle()"
                         >Cancel</b-button
                       >
-                      &nbsp;&nbsp;&nbsp;
+                      &nbsp;
                       <b-button
-                        style="background-color: #47b139;"
-                        @click="(statistik = false), (show = true)"
+                        style="background-color: #47b139; width: 50px"
+                        @click="ok()"
                         >OK</b-button
                       >
                     </div>
@@ -196,6 +317,10 @@
   }
 }
 .modal-content {
+  // border: 1px solid red;
+  width: 902px;
+  margin-left: -190px;
+
   @media screen and (max-width: 770px) {
     width: 100%;
   }
@@ -206,7 +331,7 @@
 .modal-atas {
   height: auto;
   background: #47b139;
-  margin-left: -190px;
+  // margin-left: -190px;
   width: 900px;
   border-radius: 10px 10px 0px 0px;
   h3 {
@@ -214,6 +339,16 @@
     padding: 20px 0px 20px 20px;
     color: #fff;
     font-weight: bold;
+  }
+  .close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #eeee;
+    cursor: pointer;
   }
   @media screen and (max-width: 800px) {
     margin-left: 0px;
@@ -223,9 +358,9 @@
 .modal-tengah {
   height: auto;
   background: #fff;
-  margin-left: -190px;
-  width: 900px;
-  margin-top: -8px;
+  // margin-left: -190px;
+  // width: 900px;
+  // margin-top: -8px;
   border-radius: 0px 0px 10px 10px;
   h3 {
     font-size: 27px;
@@ -239,6 +374,7 @@
   }
 }
 .kanan {
+  // border: 1px solid red;
   text-align: right;
   align-items: right;
 }
@@ -247,7 +383,11 @@
   background-color: rgb(209, 204, 204);
 }
 .table {
-  padding: 0px 20px 10px 20px;
+  // padding: 0px 20px 10px 20px;
+  // border: 1px solid red;
+  .th {
+    padding: 0px 0px 15px 0px;
+  }
 }
 
 /* end style isi modal */
@@ -259,7 +399,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 70%;
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;

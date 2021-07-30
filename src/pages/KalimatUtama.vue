@@ -603,7 +603,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   .button {
     background-color: #0a4da3;
     border: none;
@@ -684,10 +684,6 @@
 }
 
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
 
 .modal-content {
   background: #e8f1fd;

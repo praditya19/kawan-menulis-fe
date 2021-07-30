@@ -610,10 +610,6 @@
 /* end style isi modal */
 
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
 
 .modal-content {
   background: #e8f1fd;

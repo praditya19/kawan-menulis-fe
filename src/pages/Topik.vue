@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="kalimat">
-                          <div style="padding: 10px 0px 0px 0px; width: 100%;">
+                          <div style="padding: 0% 0% 0% 12%; width: 85%;">
                             <p>
                               {{ topicsTips }}
                             </p>
@@ -123,7 +123,7 @@
   text-align: center;
   color: rgba(0, 0, 0, 0.9);
   @media (max-width: 768px) {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 

@@ -878,13 +878,6 @@
 // End Konsep Menulis
 
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-  @media (max-width: 768px) {
-    top: 0px;
-  }
-}
 
 .modal-content {
   background: #e8f1fd;

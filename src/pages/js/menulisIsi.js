@@ -166,7 +166,7 @@ export default {
     kirim() {
       this.cekValidate = [];
       this.demo = [];
-      if (this.dataForm.menulis.length < 5) {
+      if (this.dataForm.menulis.length < this.pramenulisGuides.length) {
         this.showModalErrorEmpety = true;
         return;
       }

@@ -210,7 +210,6 @@
   &_judul {
     background-color: #00a279;
     border: none;
-    line-height: 32px;
     width: 98px;
     border-radius: 10px;
     margin: 5px;
@@ -219,7 +218,7 @@
     }
   }
   &_kata {
-    padding: 12px 0px 0px 10px;
+    padding: 12px 0px 0px 0px;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;
@@ -228,7 +227,7 @@
     line-height: 30px;
     color: #000000;
     @media Screen and (max-width: 780px) {
-      padding: 20px 0px 0px 0px;
+      padding: 15px 0px 0px 0px;
     }
   }
 }

@@ -1011,11 +1011,7 @@
 }
 // End Konsep Menulis
   /* Style Modal */
-.modal-dialog {
-  top: 0px;
-  left: auto;
-}
-
+  
 .modal-content {
   background: #e8f1fd;
   width: 500px;

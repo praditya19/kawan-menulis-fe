@@ -559,7 +559,8 @@
         </div>
         <div class="col-md-9.5 tips_kata">
           <p>
-            Saat ini kamu memiliki 5 Ide dalam Catatan Pra Menulis.
+            Saat ini kamu memiliki {{ pramenulisGuides.length + 1 }}
+            Ide dalam Catatan Pra Menulis.
           </p>
           <p>
             Jika kamu ingin menambahkan ide yang lain, kamu dapat menambahkannya
@@ -821,10 +822,6 @@
 }
 
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
 
 .modal-content {
   background: #e8f1fd;
