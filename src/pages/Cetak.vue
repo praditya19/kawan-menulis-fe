@@ -418,21 +418,24 @@
 // End Konsep Menulis
 /* Background belakang modal */
 /* Style Modal */
-.modal-dialog {
-  top: -100px;
-  left: auto;
-}
+/* Style Modal */
 
 .modal-content {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .modal-body {
   background: #e8f1fd;
   width: 500px;
   border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 /* end style Modal */
@@ -441,6 +444,24 @@
 .image-container {
   text-align: center;
   /* background: red; */
+}
+
+.kalimat {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
 }
 
 /* end style isi modal */
@@ -460,7 +481,10 @@
 
 .modal-wrapper {
   display: table-cell;
-  vertical-align: middle;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
 }
 
 /* End Background Belakang Modal */

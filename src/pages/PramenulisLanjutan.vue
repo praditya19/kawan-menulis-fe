@@ -11,8 +11,6 @@
       <img class="steper_image" src="@/assets/icon_stepper/4.png" />
     </div>
     <!-- End Stepper  -->
-
-    <!-- popup tambah -->
     <div v-if="showModal1 === true">
       <transition name="model">
         <div class="modal-mask">
@@ -29,9 +27,7 @@
                   </div>
 
                   <div class="kalimat">
-                    <div
-                      style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
-                    >
+                    <div style="padding: 0% 0% 0% 12%; width: 85%;">
                       <p>
                         Setiap tambahan harus mendukung gagasan utama yang
                         diperkenalkan dalam kalimat utama.
@@ -39,8 +35,8 @@
                     </div>
                   </div>
 
-                  <div class="tombol1">
-                    <button class="ok1" block @click="showModal1 = false">
+                  <div class="tombol">
+                    <button class="ok" block @click="showModal1 = false">
                       OK
                     </button>
                   </div>
@@ -53,6 +49,8 @@
         </div>
       </transition>
     </div>
+
+    <!-- popup tambah -->
     <div v-if="showModal === true">
       <transition name="model">
         <div class="modal-mask">
@@ -62,59 +60,43 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                   <form action="">
-                    <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%;">
-                        <p
-                          style="color:black; margin-left: 6%; font-size: 20px;"
-                        >
-                          <b>
-                            Tambahan Catatan Pra Menulis
-                          </b>
-                        </p>
-                        <table>
-                          <tr>
-                            <td>
-                              <b-form-textarea
-                                v-model="dataForm.tambahPramenulis"
-                                style="width: 350px;"
-                                rows="4"
-                                no-resize
-                                type="text"
-                              ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
+                    <div class="kalimat2">
+                      <p>
+                        <b>
+                          Tambahan Catatan Pra Menulis
+                        </b>
+                      </p>
+                      <div class="text-area">
+                        <b-form-textarea
+                          v-model="dataForm.tambahPramenulis"
+                          rows="4"
+                          class="form-textarea"
+                          no-resize
+                          type="text"
+                        ></b-form-textarea>
                       </div>
                     </div>
                     <div class="tombol">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <button
-                            class="ok"
-                            block
-                            @click="
-                              (showModal = false),
-                                (dataForm.tambahPramenulis = '')
-                            "
-                          >
-                            Batal
-                          </button>
-                        </div>
-                        <div class="col-sm-6">
-                          <button
-                            class="ok2"
-                            type="button"
-                            block
-                            @click="handleOk()"
-                          >
-                            OK
-                          </button>
-                        </div>
-                      </div>
+                      <button
+                        class="ok"
+                        block
+                        @click="
+                          (showModal = false), (dataForm.tambahPramenulis = '')
+                        "
+                      >
+                        Batal
+                      </button>
+                      <button
+                        class="ok2"
+                        type="button"
+                        block
+                        @click="handleOk()"
+                      >
+                        OK
+                      </button>
                     </div>
                   </form>
                 </div>
-                <br />
               </div>
             </div>
           </div>
@@ -131,45 +113,30 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                   <b-form @submit="upCatatanMenulis">
-                    <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        <p
-                          style="color:black; margin-left: 15%; font-size: 20px;"
-                        >
-                          <b>
-                            Ubah Catatan Pra Menulis
-                          </b>
-                        </p>
-                        <table>
-                          <tr>
-                            <td>
-                              <b-form-textarea
-                                v-model="dataForm.pramenulisLanjutanPembaruan"
-                                style="width: 350px;"
-                                rows="4"
-                                no-resize
-                                type="text"
-                              ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
+                    <div class="kalimat2">
+                      <p>
+                        <b>
+                          Ubah Catatan Pra Menulis
+                        </b>
+                      </p>
+                      <div class="text-area">
+                        <b-form-textarea
+                          v-model="dataForm.pramenulisLanjutanPembaruan"
+                          rows="4"
+                          class="form-textarea"
+                          no-resize
+                          type="text"
+                        ></b-form-textarea>
                       </div>
                     </div>
                     <div class="tombol">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <button class="ok" block @click="showModal2 = false">
-                            Batal
-                          </button>
-                        </div>
-                        <div class="col-sm-6">
-                          <button class="ok2" block type="submit">
-                            OK
-                          </button>
-                        </div>
-                      </div>
+                      <button class="ok" block @click="showModal2 = false">
+                        Batal
+                      </button>
+                      <button class="ok2" block type="submit">
+                        OK
+                      </button>
                     </div>
-                    <br />
                   </b-form>
                 </div>
               </div>
@@ -458,26 +425,13 @@
   }
 }
 
-.ok {
-  .mt-3 {
-    // margin-bottom: 10px;
-    background: #0a4da3;
-    border-radius: 39px;
-    width: 108px;
-  }
-}
-.ok2 {
-  .mt-3 {
-    background: #0a4da3;
-    border-radius: 39px;
-    width: 108px;
-  }
-}
-
 // icon checklist
 .image-container {
   width: 470px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   // background: red;
 }
 
@@ -553,12 +507,6 @@
   background-color: #f3e8e8;
 }
 
-.tombol1 {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
 .ok1 {
   background: #0a4da3;
   border-radius: 39px;
@@ -575,16 +523,106 @@
   /* background: red; */
 }
 
-.kalimat {
+.kalimat2 {
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 5px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
   /* background: red; */
+}
+.text-area {
+  width: 100%;
+  padding: 0px 0px 10px 0px;
+  .form-textarea {
+    // width: 100%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.ok {
+  .mt-3 {
+    // margin-bottom: 10px;
+    background: #0a4da3;
+    border-radius: 39px;
+    width: 108px;
+  }
+}
+.ok2 {
+  .mt-3 {
+    background: #0a4da3;
+    border-radius: 39px;
+    width: 108px;
+  }
 }
 
 .tombol {
-  // background: red;
-  padding: 20px 0px 0px 70px;
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+  margin-right: 20px;
+}
+
+.ok2 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+  margin-left: 20px;
+}
+
+/* end style isi modal */
+
+/* Style Modal */
+
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+.kalimat {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
 }
 
 .ok {
@@ -597,33 +635,8 @@
   font-family: Poppins;
 }
 
-.ok2 {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
-
 /* end style isi modal */
 
-/* Style Modal */
-
-.modal-content {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-.modal-body {
-  background: #e8f1fd;
-  width: 500px;
-  border-radius: 34px;
-}
-
-/* end style Modal */
 /* Background belakang modal */
 .modal-mask {
   position: fixed;
@@ -646,19 +659,4 @@
 }
 
 /* End Background Belakang Modal */
-.tombol1 {
-  /* background: red; */
-  text-align: center;
-  padding: 5px;
-}
-
-.ok1 {
-  background: #0a4da3;
-  border-radius: 39px;
-  border: none;
-  width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
-}
 </style>

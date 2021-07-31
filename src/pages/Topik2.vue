@@ -293,7 +293,7 @@
 }
 
 .bawah {
-  padding: 0px 230px 30px 248px;
+  padding: 0px 230px 30px 235px;
   @media screen and (max-width: 768px) {
     padding: 0px 20px 30px 20px;
   }

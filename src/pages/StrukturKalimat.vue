@@ -49,6 +49,7 @@
         </div>
       </transition>
     </div>
+    <!-- pop up tambah-->
     <div v-if="modalTambah === true">
       <transition name="model">
         <div class="modal-mask">
@@ -58,33 +59,24 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                   <form action="">
-                    <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%;">
+                    <div class="kalimat5">
                         <p
-                          style="color:black; margin-left: 6%; font-size: 20px;"
                         >
                           <b>
                             Tambahan Catatan Paragraf
                           </b>
                         </p>
-                        <table>
-                          <tr>
-                            <td>
+                        <div class="textarea">
                               <b-form-textarea
+                              class="form-textarea"
                                 v-model="dataForm.tambahData"
-                                style="width: 350px;"
                                 rows="4"
                                 no-resize
                                 type="text"
                               ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
+                        </div>
                     </div>
                     <div class="tombol2">
-                      <div class="row">
-                        <div class="col-sm-6">
                           <button
                             class="ok2"
                             block
@@ -94,8 +86,6 @@
                           >
                             Batal
                           </button>
-                        </div>
-                        <div class="col-sm-6">
                           <button
                             class="ok3"
                             block
@@ -104,12 +94,9 @@
                           >
                             OK
                           </button>
-                        </div>
-                      </div>
                     </div>
                   </form>
                 </div>
-                <br />
               </div>
             </div>
           </div>
@@ -126,33 +113,24 @@
                 <!-- Modal Body -->
                 <div class="modal-body">
                   <b-form @submit="showModalUbahPage3 = false">
-                    <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
+                    <div class="kalimat5">
                         <p
-                          style="color:black; margin-left: 15%; font-size: 20px;"
                         >
                           <b>
                             Ubah Catatan Paragraf
                           </b>
                         </p>
-                        <table>
-                          <tr>
-                            <td>
+                        <div class="textarea">
                               <b-form-textarea
+                              class="form-textarea"
                                 v-model="dataForm.ubahData"
-                                style="width: 350px;"
                                 rows="4"
                                 no-resize
                                 type="text"
                               ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
+                    </div>
                     </div>
                     <div class="tombol2">
-                      <div class="row">
-                        <div class="col-sm-6">
                           <button
                             class="ok2"
                             block
@@ -162,8 +140,6 @@
                           >
                             Batal
                           </button>
-                        </div>
-                        <div class="col-sm-6">
                           <button
                             class="ok3"
                             block
@@ -171,8 +147,6 @@
                           >
                             OK
                           </button>
-                        </div>
-                      </div>
                     </div>
                     <br />
                   </b-form>
@@ -239,6 +213,7 @@
       </transition>
     </div>
     <!-- end modal area -->
+
       <!-- Stepper -->
       <div class="content-dua">
         <div class="steper">
@@ -309,20 +284,21 @@
                   @click="toSetKonsepParagraf()">Ubah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toDropKonsepParagraf()">Hapus</button>
+                  <div class="icon-up-down">
                 <a @click="ascending()">
                   <img
-                    class="icon-up-down"
+                  class="icon-up"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
                 <a @click="descending()">
                   <img
-                    class="icon-up-down"
+                  class="icon-down"
+
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
                   />
                 </a>
+                </div>
                 </div>
               </div>
               <div class="border_list">
@@ -465,20 +441,22 @@
                   @click="toSetKonsepParagraf()">Ubah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toDropKonsepParagraf()">Hapus</button>
+                  <div class="icon-up-down">
                 <a @click="ascending()">
                   <img
-                    class="icon-up-down"
+                  class="icon-up"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                   
                   />
                 </a>
                 <a @click="descending()">
                   <img
-                    class="icon-up-down"
+                    class="icon-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                   
                   />
                 </a>
+                </div>
                 </div>
               </div>
               <div class="border_list">
@@ -619,20 +597,23 @@
                   @click="toSetKonsepParagraf()">Ubah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toDropKonsepParagraf()">Hapus</button>
+                  <div    
+                    class="icon-up-down"
+                  >
                 <a @click="ascending()">
                   <img
-                    class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                    class="icon-up"  
                   />
                 </a>
                 <a @click="descending()">
                   <img
-                    class="icon-up-down"
+                    class="icon-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                   
                   />
                 </a>
+                  </div>
                 </div>
               </div>
               <div class="border_list">
@@ -765,20 +746,23 @@
                   @click="toSetKonsepParagraf()">Ubah</button>
                 <button class="all-button_dua" v-bind:disabled="dataForm.menulis.length === 0 ? true : false"
                   @click="toDropKonsepParagraf()">Hapus</button>
+                  <div 
+                    class="icon-up-down"
+                  >
                 <a @click="ascending()">
                   <img
-                    class="icon-up-down"
                     src="@/assets/up.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                    class="icon-up"                   
                   />
                 </a>
                 <a @click="descending()">
                   <img
-                    class="icon-up-down"
+                    class="icon-down"
                     src="@/assets/down.png"
-                    style="margin-bottom: 5px; margin-left: 5px;"
+                   
                   />
                 </a>
+                  </div>
                 </div>
               </div>
               <div class="border_list">
@@ -1195,9 +1179,10 @@
   border-radius: 20px;
   margin: 0.3%;
   line-height: 30px;
-  width: 98px;
+  width: 150px;
+  font-weight: bold;
   @media screen and (max-width: 780px) {
-    width: 70px;
+    // width: 70px;
   }
   @media screen and (max-width: 600px) {
     border: 0;
@@ -1216,8 +1201,10 @@
 
 .response {
   width: 100%;
-  @media screen and (max-width: 780px) {
+  display: flex;
+  @media screen and (max-width: 600px) {
     width: 100%;
+    display: inline;
   }
   @media screen and (max-width: 425px) {
     padding: 5px 0px 0px 10px;
@@ -1363,7 +1350,8 @@
 /* End Background Belakang Modal */
 .tombol2 {
   // background: red;
-  padding: 20px 0px 0px 70px;
+    text-align: center;
+    padding: 10px 0px 0px 0px;
 }
 
 .ok2 {
@@ -1374,6 +1362,7 @@
   height: 32.71px;
   color: #fff;
   font-family: Poppins;
+  margin-right: 10px;
 }
 
 .ok3 {
@@ -1384,6 +1373,8 @@
   height: 32.71px;
   color: #fff;
   font-family: Poppins;
+  margin-left: 10px;
+  
 }
 .tombol1 {
   /* background: red; */
@@ -1400,4 +1391,46 @@
   color: #fff;
   font-family: Poppins;
 }
+
+// icon up dan down
+.icon-up-down {
+  padding: 3px 0px 0px 0px;
+  width: 100%;
+  @media screen and(max-width:600px) {
+    padding: 3px 20px 3px 0px;    
+    text-align: center;
+  }
+ .icon-up {
+   width: auto;
+   margin-left: 5px;
+ }  
+ .icon-down{
+   width: auto;
+   margin-left: 5px;
+ }
+}
+
+// modal tambah & ubah
+  .text-area {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+    .form-textarea {
+      // width: 100%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  // kalimat modal
+  .kalimat5 {
+    font-family: Poppins;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    /* background: red; */
+  }
 </style>

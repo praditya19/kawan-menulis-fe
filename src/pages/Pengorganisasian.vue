@@ -169,58 +169,43 @@
                 <div class="modal-body">
                   <form action="">
                     <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%;">
-                        <p
-                          style="color:black; margin-left: 6%; font-size: 20px;"
-                        >
-                          <b>
-                            Tambahan Catatan Paragraf
-                          </b>
-                        </p>
-                        <table>
-                          <tr>
-                            <td>
-                              <b-form-textarea
-                                v-model="dataForm.tambahParagrafPage3"
-                                style="width: 350px;"
-                                rows="4"
-                                no-resize
-                                type="text"
-                              ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
+                      <p>
+                        <b>
+                          Tambahan Catatan Paragraf
+                        </b>
+                      </p>
+                      <div class="text-area">
+                        <b-form-textarea
+                          class="form-textarea"
+                          v-model="dataForm.tambahParagrafPage3"
+                          rows="4"
+                          no-resize
+                          type="text"
+                        ></b-form-textarea>
                       </div>
                     </div>
                     <div class="tombol">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <button
-                            class="ok"
-                            block
-                            @click="
-                              (showModalTambahPage3 = false),
-                                (dataForm.tambahParagrafPage3 = '')
-                            "
-                          >
-                            Batal
-                          </button>
-                        </div>
-                        <div class="col-sm-6">
-                          <button
-                            class="ok3"
-                            block
-                            type="button"
-                            @click="tambahPramenulis()"
-                          >
-                            OK
-                          </button>
-                        </div>
-                      </div>
+                      <button
+                        class="ok"
+                        block
+                        @click="
+                          (showModalTambahPage3 = false),
+                            (dataForm.tambahParagrafPage3 = '')
+                        "
+                      >
+                        Batal
+                      </button>
+                      <button
+                        class="ok3"
+                        block
+                        type="button"
+                        @click="tambahPramenulis()"
+                      >
+                        OK
+                      </button>
                     </div>
                   </form>
                 </div>
-                <br />
               </div>
             </div>
           </div>
@@ -238,51 +223,38 @@
                 <div class="modal-body">
                   <b-form @submit="showModalUbahPage3 = false">
                     <div class="kalimat">
-                      <div style="padding: 0% 0% 0% 12%; width: 85%;">
-                        <p
-                          style="color:black; margin-left: 15%; font-size: 20px;"
-                        >
+                      <div>
+                        <p>
                           <b>
                             Ubah Catatan Paragraf
                           </b>
                         </p>
-                        <table>
-                          <tr>
-                            <td>
-                              <b-form-textarea
-                                v-model="dataForm.ubahParagrafPage3"
-                                style="width: 350px;"
-                                rows="4"
-                                no-resize
-                                type="text"
-                              ></b-form-textarea>
-                            </td>
-                          </tr>
-                        </table>
+                        <div class="text-area">
+                          <b-form-textarea
+                            class="form-textarea"
+                            v-model="dataForm.ubahParagrafPage3"
+                            rows="4"
+                            no-resize
+                            type="text"
+                          ></b-form-textarea>
+                        </div>
                       </div>
                     </div>
                     <div class="tombol">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <button
-                            class="ok"
-                            block
-                            @click="
-                              (showModalUbahPage3 = false),
-                                (dataForm.ubahParagrafPage3 = '')
-                            "
-                          >
-                            Batal
-                          </button>
-                        </div>
-                        <div class="col-sm-6">
-                          <button class="ok3" block @click="ubahPramenulis()">
-                            OK
-                          </button>
-                        </div>
-                      </div>
+                      <button
+                        class="ok"
+                        block
+                        @click="
+                          (showModalUbahPage3 = false),
+                            (dataForm.ubahParagrafPage3 = '')
+                        "
+                      >
+                        Batal
+                      </button>
+                      <button class="ok3" block @click="ubahPramenulis()">
+                        OK
+                      </button>
                     </div>
-                    <br />
                   </b-form>
                 </div>
               </div>
@@ -972,8 +944,21 @@
   margin: 0.3%;
   width: 100px;
   height: 37px;
+  font-weight: bold;
+
   @media screen and (max-width: 768px) {
     margin-left: 5px;
+  }
+}
+// modal tambah & ubah
+.text-area {
+  width: 100%;
+  padding: 0px 0px 10px 0px;
+  .form-textarea {
+    // width: 100%;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
 .dua {
@@ -1274,7 +1259,16 @@
   text-align: center;
   /* background: red; */
 }
-
+.kalimat {
+  font-family: Poppins;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  /* background: red; */
+}
 .kalimat2 {
   font-family: Poppins;
   font-size: 16px;
@@ -1313,34 +1307,29 @@
   height: auto;
   padding-top: 75px;
   @media (max-width: 768px) {
-    padding-top: 95px;
+    padding-top: 0px;
   }
 }
 
 /* End Background Belakang Modal */
 .tombol {
-  // background: red;
-  padding: 20px 0px 0px 70px;
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
 }
 
 .ok {
+  // margin-bottom: 10px;
   background: #0a4da3;
   border-radius: 39px;
-  border: none;
   width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
+  margin-right: 10px;
 }
-
 .ok3 {
   background: #0a4da3;
   border-radius: 39px;
-  border: none;
   width: 108px;
-  height: 32.71px;
-  color: #fff;
-  font-family: Poppins;
+  margin-left: 10px;
 }
 
 .tombol1 {

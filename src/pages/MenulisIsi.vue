@@ -613,6 +613,9 @@
   width: 100%;
   float: left;
   font-size: 20px;
+  h5 {
+    width: 100%;
+  }
   .tips-form {
     color: blue;
     border: none;

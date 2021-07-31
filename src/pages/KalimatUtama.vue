@@ -586,6 +586,7 @@
   }
   &_kata_2 {
     padding: 6px 220px 0px 15px;
+    width: 100%;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;

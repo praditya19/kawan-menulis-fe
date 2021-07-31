@@ -12,11 +12,18 @@ export default {
       studentStatistik: {},
       nigga: {},
       duration: [],
+      studentId: -1,
+      nim: null,
+      tesla: true,
+      mark: "",
+      message: "",
+      topic: "",
     };
   },
   computed: {},
   mounted() {
-    this.getDataSesion();
+    this.studentId = parseInt(this.$route.params.studentId);
+    this.nim = this.$route.params.nim;
     this.getStudentList();
     this.time = new Date();
     window.scrollTo(0, 0);
@@ -32,8 +39,8 @@ export default {
         requestBody: {
           clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
           clientSecret: "27e78980e2419b308c86559ef0fb0105",
-          studentId: this.dataStudentSesion.id,
-          nim: this.dataStudentSesion.nim,
+          studentId: this.studentId,
+          nim: this.nim,
         },
         success: (res) => {
           // console.log(res.body.studentActions);
@@ -95,7 +102,7 @@ export default {
     },
     goToModal() {
       const req = {
-        studentId: this.dataStudentSesion[0].id,
+        studentId: this.studentId,
       };
       this.cariData(req);
       this.statistik = true;
@@ -122,6 +129,17 @@ export default {
       this.statistik = false;
       this.show = true;
       this.duration = [];
+    },
+    handleOpen(i) {
+      if (this.show === false) {
+        this.mark = i;
+        this.message = this.nigga[i].finalResult;
+        this.topic = this.nigga[i].topic.name
+        this.show = true;
+      } else {
+        this.show = false;
+        this.mark = "";
+      }
     },
   },
 };
