@@ -7,6 +7,10 @@ export default {
       clientSecret: "27e78980e2419b308c86559ef0fb0105",
       studentResultSession: {},
       studentDiagnostikSession: {},
+      // Send email is Succes
+      showModalSendEmailSucces: false,
+      // Send Email Error
+      erorSend: false,
     };
   },
   mounted() {
@@ -36,11 +40,12 @@ export default {
           scoreId: this.studentResultSession.id,
           actualScore: this.studentResultSession.endScore,
         },
-        success: (res) => {
-          console.log(res);
+        success: () => {
+          this.showModalSendEmailSucces = true;
         },
         fail: (res) => {
           console.log(res);
+          this.erorSend = true;
         },
       });
     },

@@ -3,7 +3,90 @@
     <img src="@/assets/diagnostis.png" alt="logo" class="image" />
     <div class="lebar">
       <!--Slide-->
+      <div v-if="showModalSendEmailSucces === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/checklist.png"
+                      />
+                    </div>
 
+                    <div class="kalimat">
+                      <div
+                        style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
+                      >
+                        <p></p>
+                        <p>
+                          Email terkirim! <br />
+                          Silahkan periksa email atau folder spam Anda.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="tombol1">
+                      <button
+                        class="ok1"
+                        block
+                        @click="showModalSendEmailSucces = false"
+                      >
+                        OK
+                      </button>
+                    </div>
+
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+      <div v-if="erorSend === true">
+        <transition name="model">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="image-container">
+                      <img
+                        style="width: 40px;height:38.49px;"
+                        src="@/assets/Warning.png"
+                      />
+                    </div>
+
+                    <div class="kalimat">
+                      <div
+                        style="padding: 0% 0% 0% 12%; width: 85%; text-align: center;"
+                      >
+                        <p></p>
+                        <p>
+                          Email belum terkirim! <br />
+                          Pastikan email yang anda masukkan benar.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="tombol1">
+                      <button class="ok1" block @click="erorSend = false">
+                        OK
+                      </button>
+                    </div>
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
       <!--artikel -->
       <div class="conten_home">
         <div class="conten_home_top">
@@ -70,6 +153,89 @@
 .lebar {
   width: 100%;
   overflow-x: hidden;
+}
+.modal-content {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.modal-body {
+  background: #e8f1fd;
+  width: 500px;
+  border-radius: 34px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+/* end style Modal */
+
+/* Style Isi Modal */
+.image-container {
+  text-align: center;
+  /* background: red; */
+}
+
+.kalimat {
+  font-family: Poppins;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+  /* background: red; */
+}
+
+.ok {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
+}
+
+/* end style isi modal */
+
+/* Background belakang modal */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  padding-top: 75px;
+  @media (max-width: 768px) {
+    padding-top: 95px;
+  }
+}
+
+/* End Background Belakang Modal */
+.tombol1 {
+  /* background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+.ok1 {
+  background: #0a4da3;
+  border-radius: 39px;
+  border: none;
+  width: 108px;
+  height: 32.71px;
+  color: #fff;
+  font-family: Poppins;
 }
 
 .conten_home {
