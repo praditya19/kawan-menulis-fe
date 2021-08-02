@@ -79,7 +79,6 @@
               <div class="modal-content">
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <form action="">
                     <div class="kalimat5">
                         <p
                         >
@@ -88,36 +87,36 @@
                           </b>
                         </p>
                       <div class="text-area">
-                              <b-form-textarea
-                          class="form-textarea"
-                                v-model="dataForm.tambahData"
-                                rows="4"
-                                no-resize
-                                type="text"
-                              ></b-form-textarea>
+                      <b-form-textarea
+                  class="form-textarea"
+                        v-model="dataForm.tambahData"
+                        rows="4"
+                        no-resize
+                        type="text"
+                      ></b-form-textarea>
                       </div>
                     </div>
                     <div class="tombol2">
-                          <button
-                            class="ok2"
-                            block
-                            @click="
-                              (modalTambah = false),
-                                (dataForm.tambahData = '')
-                            "
-                          >
-                            Batal
-                          </button>
-                          <button
-                            class="ok3"
-                            block
-                            type="button"
-                            @click="handelTambah()"
-                          >
-                            OK
-                          </button>
-                      </div>
-                  </form>
+                      <button
+                        class="ok2"
+                        block
+                        type="button"
+                        @click="
+                          (modalTambah = false),
+                            (dataForm.tambahData = '')
+                        "
+                      >
+                        Batal
+                      </button>
+                      <button
+                        class="ok3"
+                        block
+                        type="button"
+                        @click="handelTambah()"
+                      >
+                        OK
+                      </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -985,3 +984,4 @@
   font-family: Poppins;
 }
 </style>
+

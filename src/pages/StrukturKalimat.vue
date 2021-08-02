@@ -58,7 +58,6 @@
               <div class="modal-content">
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <form action="">
                     <div class="kalimat5">
                         <p
                         >
@@ -95,7 +94,6 @@
                             OK
                           </button>
                     </div>
-                  </form>
                 </div>
               </div>
             </div>
@@ -258,7 +256,7 @@
                   masing-masing mengungkapkan pemikiran yang lengkap?
                   <br />
                   <br />
-                  Jikasebuah kalimat tidak memiliki subjek atau kata kerja atau
+                  Jika sebuah kalimat tidak memiliki subjek atau kata kerja atau
                   pemikiran yang lengkap itu adalah fragmen kalimat.
                   <br />
                   <br />

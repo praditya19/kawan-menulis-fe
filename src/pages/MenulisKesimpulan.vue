@@ -82,7 +82,10 @@
                         v-for="(topicGuidesList, index) in topicGuides"
                         :key="index"
                       >
-                        <span v-html="topicGuidesList.tips"></span>
+                        <span
+                          v-if="index === 0"
+                          v-html="topicGuidesList.tips"
+                        ></span>
                       </p>
                     </div>
                   </div>

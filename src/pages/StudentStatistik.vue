@@ -263,7 +263,7 @@
                         <tr>
                           <td style="width: 200px"><b>Final Result</b></td>
                           <td>:</td>
-                          <td><br/>{{ message }}</td>
+                          <td><br />{{ message }}</td>
                         </tr>
                       </table>
                     </div>
@@ -342,7 +342,6 @@
   }
 }
 .modal-content {
-  border: 1px solid red;
   width: 902px;
   margin-left: -190px;
   height: 50%;

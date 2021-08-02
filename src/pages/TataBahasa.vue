@@ -914,6 +914,7 @@
   background-color: #e0e0e0;
   border: none;
   border-radius: 20px;
+  font-weight: bold;
   margin: 0.3%;
   line-height: 30px;
   width: 98px;
@@ -1144,4 +1145,5 @@
   font-family: Poppins;
 }
 </style>
+
 

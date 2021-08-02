@@ -28,7 +28,6 @@ export default {
     this.getDataSesion();
     this.getStudentAction();
     this.getDataJenisTopics();
-    console.log(this.dataStudent);
     window.scrollTo(0, 0);
   },
   methods: {

@@ -1303,11 +1303,12 @@
 .modal-wrapper {
   // display: table-cell;
   // vertical-align: middle;
+
   width: 100%;
   height: auto;
   padding-top: 75px;
   @media (max-width: 768px) {
-    padding-top: 0px;
+    padding-top: 95px;
   }
 }
 
@@ -1321,6 +1322,8 @@
 .ok {
   // margin-bottom: 10px;
   background: #0a4da3;
+  color: #fff;
+  border: none;
   border-radius: 39px;
   width: 108px;
   margin-right: 10px;
@@ -1329,6 +1332,8 @@
   background: #0a4da3;
   border-radius: 39px;
   width: 108px;
+  border: none;
+  color: #fff;
   margin-left: 10px;
 }
 

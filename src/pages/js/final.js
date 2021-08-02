@@ -34,8 +34,7 @@ export default {
             .replace(/\t/g, "")
             .toString(),
         },
-        success: (res) => {
-          console.log(res);
+        success: () => {
           this.$router.push("/cetak");
         },
 

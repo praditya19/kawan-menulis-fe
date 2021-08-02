@@ -85,7 +85,8 @@ export default {
       // This Show
       for (
         let a = 0;
-        a < 5 && a < this.pramenulisLanjutanDataSesion.resultMenulis.length;
+        a < this.pramenulisGuides.length &&
+        a < this.pramenulisLanjutanDataSesion.resultMenulis.length;
         a++
       ) {
         this.moustache.push(this.pramenulisLanjutanDataSesion.resultMenulis[a]);
