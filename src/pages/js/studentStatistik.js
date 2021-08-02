@@ -6,7 +6,6 @@ export default {
     return {
       statistik: false,
       show: true,
-      selected: null,
       time: "",
       dataStudentSesion: {},
       studentStatistik: {},
@@ -16,11 +15,39 @@ export default {
       nim: null,
       tesla: true,
       mark: "",
+      topik: "",
       message: "",
-      topic: "",
+      // paginations
+      currentPage: 1,
+      recordsPerPage: 5,
+      rounded: [],
+      yesOrNo: false,
     };
   },
-  computed: {},
+  watch: {
+    recordsPerPage: function(val) {
+      this.rounded = [];
+      if (this.currentPage < 1) this.currentPage = 1;
+      if (this.currentPage > this.numPages())
+        this.currentPage = this.numPages();
+      for (
+        var i = (this.currentPage - 1) * val;
+        i < this.currentPage * val && i < this.duration.length;
+        i++
+      ) {
+        this.rounded.push(this.duration[i]);
+      }
+      this.yesOrNo = false;
+      if (val < this.duration.length) {
+        this.yesOrNo = true;
+      }
+    },
+  },
+  computed: {
+    rows() {
+      return this.duration.length;
+    },
+  },
   mounted() {
     this.studentId = parseInt(this.$route.params.studentId);
     this.nim = this.$route.params.nim;
@@ -58,7 +85,7 @@ export default {
       if (cari.length > 0) {
         this.nigga = cari;
       } else {
-        console.log("Data tidak ditemukan");
+        alert("Data tidak ditemukan");
       }
     },
     beauty(t0, t1) {
@@ -105,8 +132,9 @@ export default {
         studentId: this.studentId,
       };
       this.cariData(req);
-      this.statistik = true;
-      this.show = false;
+      let page = this.currentPage; // Demo 5.4 Stackovervlow
+      if (page < 1) page = 1;
+      if (page > this.numPages()) page = this.numPages();
       for (let i = 0; i < this.nigga.length; i++) {
         let obj = {};
         obj["no"] = i + 1;
@@ -117,29 +145,54 @@ export default {
           this.nigga[i].startDate,
           this.nigga[i].endDate
         );
+        obj["message"] = this.nigga[i].finalResult;
+        obj["topic"] = this.nigga[i].topic.name;
         this.duration.push(obj);
       }
+      this.rounded = [];
+      if (this.currentPage < 1) this.currentPage = 1;
+      if (this.currentPage > this.numPages())
+        this.currentPage = this.numPages();
+      for (
+        var i = (this.currentPage - 1) * this.recordsPerPage;
+        i < this.currentPage * this.recordsPerPage && i < this.duration.length;
+        i++
+      ) {
+        this.rounded.push(this.duration[i]);
+      }
+      this.yesOrNo = false;
+      if (this.recordsPerPage < this.duration.length) {
+        this.yesOrNo = true;
+      }
+      this.statistik = true;
+      this.show = false;
     },
     cancle() {
       this.statistik = false;
       this.show = true;
       this.duration = [];
+      this.mark = "";
     },
     ok() {
       this.statistik = false;
       this.show = true;
       this.duration = [];
+      this.mark = "";
     },
     handleOpen(i) {
       if (this.show === false) {
         this.mark = i;
-        this.message = this.nigga[i].finalResult;
-        this.topic = this.nigga[i].topic.name
+        this.message = this.rounded[i].message;
+        this.topik = this.rounded[i].topic;
         this.show = true;
       } else {
         this.show = false;
         this.mark = "";
+        this.message = "";
       }
+    },
+    numPages() {
+      return Math.ceil(this.duration.length / this.recordsPerPage);
     },
   },
 };

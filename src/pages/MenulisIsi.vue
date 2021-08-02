@@ -625,7 +625,6 @@
   }
 }
 .kanan {
-  width: 100%;
   float: left;
   text-align: right;
 }

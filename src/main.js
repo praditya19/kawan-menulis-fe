@@ -11,6 +11,10 @@ import {
   TablePlugin,
   BButton,
   ButtonPlugin,
+  BPagination,
+  PaginationPlugin,
+  BCollapse,
+  CollapsePlugin,
 } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -27,11 +31,19 @@ Vue.use(TablePlugin);
 
 Vue.use(ButtonPlugin);
 
+Vue.use(PaginationPlugin);
+
+Vue.use(CollapsePlugin);
+
+Vue.component("b-pagination", BPagination);
+
 Vue.component("b-jumbotron", BJumbotron);
 
 Vue.component("b-table", BTable);
 
 Vue.component("b-button", BButton);
+
+Vue.component("b-collapse", BCollapse);
 
 Vue.config.productionTip = false;
 
