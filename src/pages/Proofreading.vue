@@ -289,9 +289,9 @@
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <h5>
-                                  {{data}}
-                              </h5>
+                              <p style="font-size: 20px, width: 300px">
+                                  &nbsp;{{data}}
+                              </p>
                                 </b-form-radio>
                             </div>
                         </ul>
@@ -415,9 +415,9 @@
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <h5>
-                                  {{data}}
-                              </h5>
+                               <p style="font-size: 20px, width: 300px">
+                                  &nbsp;{{data}}
+                              </p>
                                 </b-form-radio>
                             </div>
                         </ul>
@@ -540,9 +540,9 @@
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <h5>
-                                  {{data}}
-                              </h5>
+                               <p style="font-size: 20px, width: 300px">
+                                  &nbsp;{{data}}
+                              </p>
                                 </b-form-radio>
                             </div>
                         </ul>
@@ -667,9 +667,9 @@
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <h5>
-                                  {{data}}
-                              </h5>
+                               <p style="font-size: 20px, width: 300px">
+                                  &nbsp;{{data}}
+                              </p>
                                 </b-form-radio>
                             </div>
                         </ul>
@@ -797,9 +797,9 @@
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <h5>
-                                  {{data}}
-                              </h5>
+                               <p style="font-size: 20px, width: 300px">
+                                  &nbsp;{{data}}
+                              </p>
                                 </b-form-radio>
                             </div>
                         </ul>

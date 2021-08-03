@@ -559,15 +559,10 @@
         </div>
         <div class="col-md-9.5 tips_kata">
           <p>
-            Saat ini kamu memiliki {{ pramenulisGuides.length + 1 }}
-            Ide dalam Catatan Pra Menulis.
-          </p>
-          <p>
+            Saat ini kamu memiliki {{ pramenulisGuides.length + 1 }} Ide dalam
+            Catatan Pra Menulis. <br />
             Jika kamu ingin menambahkan ide yang lain, kamu dapat menambahkannya
-            kemudian
-          </p>
-          <p>
-            pada tahapan selanjutnya.
+            kemudian pada tahapan selanjutnya.
           </p>
         </div>
       </div>
@@ -710,7 +705,7 @@
     }
   }
   &_kata {
-    padding: 15px 220px 0px 15px;
+    padding: 15px 100px 0px 15px;
     font-family: Poppins;
     font-weight: 400;
     font-style: normal;
