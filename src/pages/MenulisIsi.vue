@@ -230,7 +230,7 @@
                         class="mb-4"
                         style="text-align: center; font-size: 20px"
                       >
-                        Form haru di isi semua
+                        Kotak isian harus diisi semua
                       </p>
                     </div>
                   </div>

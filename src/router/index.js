@@ -25,6 +25,7 @@ import Proofreading from "@/pages/Proofreading";
 import Final from "@/pages/Final";
 import Cetak from "@/pages/Cetak";
 import StudentStatistik from "@/pages/StudentStatistik";
+import AboutUs from "@/pages/AboutUs";
 
 Vue.use(Router);
 
@@ -204,6 +205,13 @@ let router = new Router({
       components: {
         default: StudentStatistik,
       },
+    },
+    {
+      path : "/tentang-kami",
+      name: "AboutUs",
+      components : {
+        default : AboutUs,
+      }
     },
   ],
   mode: "history",

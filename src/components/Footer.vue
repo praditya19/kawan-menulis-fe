@@ -21,7 +21,7 @@
             <a href="/tutor">Tutor</a>
           </div>
           <div class="mobile__footer__menu">
-            <a href="#">Tentang Kami</a>
+            <a href="/tentang-kami">Tentang Kami</a>
           </div>
           <div class="mobile__footer__address">
             <div class="mobile__footer__address--text">
@@ -80,7 +80,7 @@
               <router-link to="/tutor"> Tutor</router-link>
             </div>
             <div class="footer__belajar--tentangKami">
-              <router-link to="#"> Tentang Kami</router-link>
+              <router-link to="/tentang-kami"> Tentang Kami</router-link>
             </div>
           </div>
         </div>

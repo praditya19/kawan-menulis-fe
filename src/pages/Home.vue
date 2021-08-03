@@ -12,7 +12,7 @@
             <img src="../assets/vector.png" class="image2" />
             <p class="isi">Karena menulis itu menyenangkan ...</p>
             <div class="button-top">
-              <b-button class="button" to="mulai-menulis">
+              <b-button class="button" to="mulaimenulis">
                 Mulai Menulis
               </b-button>
             </div>

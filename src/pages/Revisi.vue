@@ -458,11 +458,7 @@
                 <p class="kalimat_p">
                   Selamat! <br />
                   Apa yang ingin Anda lakukan selanjutnya?
-                  <ul>
-                      <li>Untuk melanjutkan ke bagian penerbitan, klik <strong>Cetak.</strong></li>
-                  </ul>
                 </p>
-                  <br />
                   <p class="kalimat_p">
                   Untuk lebih banyak cara untuk meningkatkan tulisan Anda:
                   <ul>

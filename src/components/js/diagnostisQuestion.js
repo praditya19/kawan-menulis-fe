@@ -103,7 +103,7 @@ export default {
     ...mapActions(["getAnswerList"]),
     next() {
       if (this.answerId.length === 0) {
-        alert("Harus Memilih terlrbih dahulu");
+        alert("Silahkan memilih jawaban terlebih dahulu.");
         return;
       }
       const findPositions = this.show.steps.find(
