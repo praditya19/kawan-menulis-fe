@@ -279,25 +279,21 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="jarak">
                   <b-form-group>
                     <div>
-                        <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                              <p style="font-size: 20px, width: 300px">
-                                  &nbsp;{{data}}
-                              </p>
                                 </b-form-radio>
+                              <p>
+                                 {{data}}
+                              </p>
                             </div>
-                        </ul>
                     </div>
                   </b-form-group>
-                </div>
               </div>
             </div>
         
@@ -405,25 +401,21 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="jarak">
                   <b-form-group>
                     <div>
-                        <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                               <p style="font-size: 20px, width: 300px">
-                                  &nbsp;{{data}}
-                              </p>
                                 </b-form-radio>
+                             <p>
+                                {{data}}
+                              </p>
                             </div>
-                        </ul>
                     </div>
                   </b-form-group>
-                </div>
               </div>
             </div>
           
@@ -530,25 +522,21 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="jarak">
                   <b-form-group>
                     <div>
-                        <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                               <p style="font-size: 20px, width: 300px">
-                                  &nbsp;{{data}}
-                              </p>
                                 </b-form-radio>
+                             <p>
+                                {{data}}
+                              </p>
                             </div>
-                        </ul>
                     </div>
                   </b-form-group>
-                </div>
               </div>
             </div>
           
@@ -656,26 +644,22 @@
             </div>
                 </div>
               </div>
-              <div class="border_list">
-                <div style="jarak">
+               <div class="border_list">
                   <b-form-group>
                     <div>
-                        <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                               <p style="font-size: 20px, width: 300px">
-                                  &nbsp;{{data}}
-                              </p>
                                 </b-form-radio>
+                             <p>
+                                {{data}}
+                              </p>
                             </div>
-                        </ul>
                     </div>
                   </b-form-group>
-                </div>
               </div>
             </div>
           
@@ -786,26 +770,22 @@
             </div>
                 </div>
               </div>
-              <div class="border_list">
-                <div style="jarak">
+               <div class="border_list">
                   <b-form-group>
                     <div>
-                        <ul>
                           <div class="dua" v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                               <p style="font-size: 20px, width: 300px">
-                                  &nbsp;{{data}}
-                              </p>
                                 </b-form-radio>
+                             <p>
+                                 {{data}}
+                              </p>
                             </div>
-                        </ul>
-                      </div>
+                    </div>
                   </b-form-group>
-                </div>
               </div>
             </div>
           
@@ -928,7 +908,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 10px;" v-for="(data,
+                <div  v-for="(data,
                             index) in tataBahasaDataSesion.konsepParagraf"
                             :key="index">
                   <p>
@@ -999,19 +979,14 @@
   margin: auto;
 }
 .dua {
-  padding: 8px 0px 0px 0px;
-  h5 {
-    font-family: Poppins;
-    padding: 0px 0px 0px 20px;
-  }
+  font-size: 20px;
+  display: flex;
   @media screen and (max-width: 760px) {
     padding: 0px;
-    h5 {
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 10px 0px 0px 10px;
-      text-align: left;
-    }
   }
+  p{
+  padding-left: 10px;
+}
 }
 // Judul
 .content-satu {
@@ -1343,10 +1318,12 @@ margin-right: 10px;
     font-family: Poppins;
     background-color: #e0e0e0;
     width: 100%;
-    padding: 13px;
+    padding: 15px 10px 8px 30px;
     border-radius: 0px 0px 14px 14px;
+    font-size: 20px;
     @media Screen and (max-width: 780px) {
       width: 100%;
+      padding: 10px 10px 0px 10px;
     }
   }
 }
@@ -1367,15 +1344,15 @@ margin-right: 10px;
     }
   }
 }
-.jarak {
-  margin-left: 10px;
-  padding: 10px 30px 0px 0px;
-  @media screen and (max-width: 780px) {
-    margin-left: 0px;
-    padding: 0px;
-    width: 100%;
-  }
-}
+// .jarak {
+//   margin-left: 10px;
+//   padding: 10px 30px 0px 0px;
+//   @media screen and (max-width: 780px) {
+//     margin-left: 0px;
+//     padding: 0px;
+//     width: 100%;
+//   }
+// }
 .tombol1 {
   /* background: red; */
   text-align: center;

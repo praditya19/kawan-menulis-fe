@@ -484,22 +484,18 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in pramenulisLanjutanDataSesion.resultMenulis"
-                  :key="index"
-                >
-                  <h5>
-                    <b-form-radio
-                      v-bind:value="index"
-                      v-model="dataForm.resultMenulis"
-                      >&nbsp;&nbsp;{{ dataSesion.pramenulis }}</b-form-radio
-                    >
-                  </h5>
-                </div>
-              </ul>
+              <div
+                class="dua"
+                v-for="(dataSesion,
+                index) in pramenulisLanjutanDataSesion.resultMenulis"
+                :key="index"
+              >
+                <b-form-radio
+                  v-bind:value="index"
+                  v-model="dataForm.resultMenulis"
+                ></b-form-radio>
+                <p>{{ dataSesion.pramenulis }}</p>
+              </div>
             </div>
           </b-form-group>
         </div>
@@ -522,38 +518,34 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div class="dua">
-                  <h5
-                    v-for="(details,
-                    index) in pramenulisLanjutanDataSesion.resultParagraphKalimatUtama"
-                    :key="index"
-                  >
-                    <b>
-                      <span
-                        v-if="index === 1"
-                        v-html="details.replace('.', '')"
-                      ></span>
-                    </b>
-                  </h5>
+              <div class="dua">
+                <h5
+                  v-for="(details,
+                  index) in pramenulisLanjutanDataSesion.resultParagraphKalimatUtama"
+                  :key="index"
+                >
+                  <b>
+                    <span
+                      v-if="index === 1"
+                      v-html="details.replace('.', '')"
+                    ></span>
+                  </b>
+                </h5>
+              </div>
+              <b-form-group>
+                <div
+                  class="dua"
+                  v-for="(dataSesionNext2,
+                  index) in pramenulisLanjutanDataSesion.resultParagraph"
+                  :key="index"
+                >
+                  <b-form-radio
+                    v-bind:value="index"
+                    v-model="dataForm.resultMenulis1"
+                  ></b-form-radio>
+                  <p>&nbsp;&nbsp;{{ dataSesionNext2 }}</p>
                 </div>
-                <b-form-group>
-                  <div
-                    class="dua"
-                    v-for="(dataSesionNext2,
-                    index) in pramenulisLanjutanDataSesion.resultParagraph"
-                    :key="index"
-                  >
-                    <h5>
-                      <b-form-radio
-                        v-bind:value="index"
-                        v-model="dataForm.resultMenulis1"
-                        >&nbsp;&nbsp;{{ dataSesionNext2 }}</b-form-radio
-                      >
-                    </h5>
-                  </div>
-                </b-form-group>
-              </ul>
+              </b-form-group>
             </div>
           </b-form-group>
         </div>
@@ -603,18 +595,16 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in pramenulisLanjutanDataSesion.konsepParagraf"
-                  :key="index"
-                >
-                  <p>
-                    {{ dataSesion }}
-                  </p>
-                </div>
-              </ul>
+              <div
+                class="dua"
+                v-for="(dataSesion,
+                index) in pramenulisLanjutanDataSesion.konsepParagraf"
+                :key="index"
+              >
+                <p>
+                  {{ dataSesion }}
+                </p>
+              </div>
             </div>
           </b-form-group>
         </div>
@@ -688,23 +678,19 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
-                  :key="index"
-                >
-                  <h5>
-                    <b-form-radio
-                      name="radios-stacked"
-                      v-model="dataForm.pilih"
-                      v-bind:value="index"
-                      ><b>&nbsp; &nbsp;{{ dataSesion }}</b></b-form-radio
-                    >
-                  </h5>
-                </div>
-              </ul>
+              <div
+                class="dua"
+                v-for="(dataSesion,
+                index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  name="radios-stacked"
+                  v-model="dataForm.pilih"
+                  v-bind:value="index"
+                ></b-form-radio>
+                <p>{{ dataSesion }}</p>
+              </div>
             </div>
           </b-form-group>
         </div>
@@ -777,24 +763,20 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
-                  :key="index"
-                >
-                  <h5>
-                    <b-form-radio
-                      name="radios-stacked"
-                      v-model="dataForm.pilih"
-                      v-bind:value="index"
-                      stacked
-                      ><b>&nbsp; &nbsp;{{ dataSesion }}</b></b-form-radio
-                    >
-                  </h5>
-                </div>
-              </ul>
+              <div
+                class="dua"
+                v-for="(dataSesion,
+                index) in pramenulisLanjutanDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  name="radios-stacked"
+                  v-model="dataForm.pilih"
+                  v-bind:value="index"
+                  stacked
+                ></b-form-radio>
+                <p>{{ dataSesion }}</p>
+              </div>
             </div>
           </b-form-group>
         </div>
@@ -962,10 +944,14 @@
   }
 }
 .dua {
-  padding: 10px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  font-size: 20px;
+  display: flex;
+  @media screen and (max-width: 760px) {
+    padding: 0px;
+  }
+  p {
+    padding-left: 10px;
+  }
 }
 .button {
   background-color: #00a279;
@@ -1149,12 +1135,13 @@
   }
   &_list {
     font-family: Poppins;
-    background: #e0e0e0;
+    background-color: #e0e0e0;
     width: 100%;
-    padding: 13px;
+    padding: 15px 10px 8px 30px;
     border-radius: 0px 0px 14px 14px;
     @media Screen and (max-width: 780px) {
       width: 100%;
+      padding: 10px 10px 0px 10px;
     }
   }
 }

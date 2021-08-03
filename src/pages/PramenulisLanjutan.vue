@@ -221,15 +221,14 @@
             v-for="(dataSesion, index) in kalimatUtamaDataSesion.resultMenulis"
             :key="index"
           >
-            <h5>
-              <b-form-radio
-                v-model="dataForm.pramenulisLanjutan"
-                :aria-describedby="ariaDescribedby"
-                name="some-radios"
-                v-bind:value="index"
-                >&nbsp;&nbsp; {{ dataSesion.pramenulis }}</b-form-radio
-              >
-            </h5>
+            <b-form-radio
+              v-model="dataForm.pramenulisLanjutan"
+              :aria-describedby="ariaDescribedby"
+              name="some-radios"
+              v-bind:value="index"
+            ></b-form-radio>
+
+            <p>{{ dataSesion.pramenulis }}</p>
           </div>
         </b-form-group>
       </div>
@@ -394,7 +393,6 @@
 
   .daftar {
     overflow-x: hidden;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 13px 25px;
@@ -403,9 +401,6 @@
     font-weight: 400;
     background: #e0e0e0;
     border-radius: 0px 0px 14px 14px;
-    li {
-      margin-bottom: -10px;
-    }
   }
   @media (max-width: 768px) {
     padding: 50px 20px 80px 20px;
@@ -436,12 +431,12 @@
 }
 
 .dua {
-  padding: 8px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  h5 {
-    font-family: Poppins;
+  font-size: 20px;
+  display: flex;
+  @media screen and (max-width: 760px) {
+  }
+  p {
+    padding-left: 10px;
   }
 }
 .Button {

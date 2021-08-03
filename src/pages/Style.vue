@@ -280,23 +280,21 @@
         <div class="border_list">
           <b-form-group>
             <div>
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
-                  :key="index"
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  v-model="dataForm.menulis"
+                  name="some-radios"
+                  v-bind:value="index"
                 >
-                  <b-form-radio
-                    v-model="dataForm.menulis"
-                    name="some-radios"
-                    v-bind:value="index"
-                  >
-                    <h5>
-                      {{ data }}
-                    </h5>
-                  </b-form-radio>
-                </div>
-              </ul>
+                </b-form-radio>
+                <p>
+                  {{ data }}
+                </p>
+              </div>
             </div>
           </b-form-group>
         </div>
@@ -423,32 +421,25 @@
           </div>
         </div>
         <div class="border_list">
-          <div style="jarak">
-            <b-form-group>
-              <div>
-                <div class="col-sm-12">
-                  <ul>
-                    <div
-                      class="dua"
-                      v-for="(data,
-                      index) in revisiDataSesion.konsepParagrafArray"
-                      :key="index"
-                    >
-                      <b-form-radio
-                        v-model="dataForm.menulis"
-                        name="some-radios"
-                        v-bind:value="index"
-                      >
-                        <h5>
-                          {{ data }}
-                        </h5>
-                      </b-form-radio>
-                    </div>
-                  </ul>
-                </div>
+          <b-form-group>
+            <div>
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  v-model="dataForm.menulis"
+                  name="some-radios"
+                  v-bind:value="index"
+                >
+                </b-form-radio>
+                <p>
+                  {{ data }}
+                </p>
               </div>
-            </b-form-group>
-          </div>
+            </div>
+          </b-form-group>
         </div>
       </div>
       <!-- end catatan -->
@@ -571,30 +562,25 @@
           </div>
         </div>
         <div class="border_list">
-          <div style="jarak">
-            <b-form-group>
-              <div>
-                <ul>
-                  <div
-                    class="dua"
-                    v-for="(data,
-                    index) in revisiDataSesion.konsepParagrafArray"
-                    :key="index"
-                  >
-                    <b-form-radio
-                      v-model="dataForm.menulis"
-                      name="some-radios"
-                      v-bind:value="index"
-                    >
-                      <h5>
-                        {{ data }}
-                      </h5>
-                    </b-form-radio>
-                  </div>
-                </ul>
+          <b-form-group>
+            <div>
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  v-model="dataForm.menulis"
+                  name="some-radios"
+                  v-bind:value="index"
+                >
+                </b-form-radio>
+                <p>
+                  {{ data }}
+                </p>
               </div>
-            </b-form-group>
-          </div>
+            </div>
+          </b-form-group>
         </div>
       </div>
       <!-- end catatan -->
@@ -725,30 +711,25 @@
           </div>
         </div>
         <div class="border_list">
-          <div style="jarak">
-            <b-form-group>
-              <div>
-                <ul>
-                  <div
-                    class="dua"
-                    v-for="(data,
-                    index) in revisiDataSesion.konsepParagrafArray"
-                    :key="index"
-                  >
-                    <b-form-radio
-                      v-model="dataForm.menulis"
-                      name="some-radios"
-                      v-bind:value="index"
-                    >
-                      <h5>
-                        {{ data }}
-                      </h5>
-                    </b-form-radio>
-                  </div>
-                </ul>
+          <b-form-group>
+            <div>
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  v-model="dataForm.menulis"
+                  name="some-radios"
+                  v-bind:value="index"
+                >
+                </b-form-radio>
+                <p>
+                  {{ data }}
+                </p>
               </div>
-            </b-form-group>
-          </div>
+            </div>
+          </b-form-group>
         </div>
       </div>
       <!-- end catatan -->
@@ -873,30 +854,25 @@
           </div>
         </div>
         <div class="border_list">
-          <div style="jarak">
-            <b-form-group>
-              <div>
-                <ul>
-                  <div
-                    class="dua"
-                    v-for="(data,
-                    index) in revisiDataSesion.konsepParagrafArray"
-                    :key="index"
-                  >
-                    <b-form-radio
-                      v-model="dataForm.menulis"
-                      name="some-radios"
-                      v-bind:value="index"
-                    >
-                      <h5>
-                        {{ data }}
-                      </h5>
-                    </b-form-radio>
-                  </div>
-                </ul>
+          <b-form-group>
+            <div>
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagrafArray"
+                :key="index"
+              >
+                <b-form-radio
+                  v-model="dataForm.menulis"
+                  name="some-radios"
+                  v-bind:value="index"
+                >
+                </b-form-radio>
+                <p>
+                  {{ data }}
+                </p>
               </div>
-            </b-form-group>
-          </div>
+            </div>
+          </b-form-group>
         </div>
       </div>
       <!-- end catatan -->
@@ -1021,25 +997,19 @@
           </div>
         </div>
         <div class="border_list">
-          <div style="jarak">
-            <b-form-group>
-              <div>
-                <div class="col-sm-12">
-                  <ul>
-                    <div
-                      class="dua2"
-                      v-for="(data, index) in revisiDataSesion.konsepParagraf"
-                      :key="index"
-                    >
-                      <h5>
-                        {{ data }}
-                      </h5>
-                    </div>
-                  </ul>
-                </div>
+          <b-form-group>
+            <div>
+              <div
+                class="dua"
+                v-for="(data, index) in revisiDataSesion.konsepParagraf"
+                :key="index"
+              >
+                <p>
+                  {{ data }}
+                </p>
               </div>
-            </b-form-group>
-          </div>
+            </div>
+          </b-form-group>
         </div>
       </div>
       <!-- end catatan paragraf -->
@@ -1289,36 +1259,28 @@
   }
   &_list {
     font-family: Poppins;
-    padding: 10px 0px 10px 10px;
-    font-family: Poppins;
-    font-size: 20px;
-    background-color: #c1c8d3;
+    background-color: #e0e0e0;
     width: 100%;
-    border-radius: 0px 0 14px 14px;
+    padding: 15px 10px 8px 30px;
+    border-radius: 0px 0px 14px 14px;
     @media Screen and (max-width: 780px) {
-      padding: 10px 2px 0px 2px;
       width: 100%;
+      padding: 10px 10px 0px 10px;
+    }
+    p {
+      font-size: 20px;
     }
   }
 }
 
 .dua {
-  padding: 8px 0px 0px 0px;
-  text-align: justify;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  h5 {
-    font-family: Poppins;
-    padding: 0px 0px 0px 10px;
-    text-align: inline;
-  }
+  font-size: 20px;
+  display: flex;
   @media screen and (max-width: 760px) {
     padding: 0px;
-    h5 {
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 0px 0px 0px 10px;
-      text-align: left;
-    }
+  }
+  p {
+    padding-left: 10px;
   }
 }
 

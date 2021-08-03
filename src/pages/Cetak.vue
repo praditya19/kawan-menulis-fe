@@ -390,7 +390,7 @@
 .border {
   background-color: #455a64;
   height: 42px;
-  width: 101px;
+  width: 131px;
   border-radius: 7px 7px 0px 0px;
   border: none;
   h4 {
@@ -404,7 +404,7 @@
     font-family: Poppins;
     background-color: #e0e0e0;
     width: 100%;
-    padding: 13px;
+    padding: 15px 10px 8px 30px;
     border-radius: 0px 0px 14px 14px;
     font-family: Poppins;
     font-style: normal;

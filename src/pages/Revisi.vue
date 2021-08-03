@@ -420,19 +420,15 @@
               </div>
               <div class="border_list">
                   <b-form-group>
-                    <ul>
                       <div class="dua" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagrafArray" :key="index">
-                          <h5>
                             <b-form-radio v-model="dataForm.menulis"
                                   name="some-radios"
                                   v-bind:value="index"
-                              ><b
-                                > {{data}}</b
                               ></b-form-radio
                             >
-                          </h5>
+                            <p>
+                                 {{data}} </p>
                         </div>
-                    </ul>
                   </b-form-group>
               </div>
           </div>
@@ -498,7 +494,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 10px; padding: 10px 30px 0px 0px" v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagraf" :key="index">
+                <div v-for="(data, index) in menulisKesimpulanDataSesion.konsepParagraf" :key="index">
                   <p>
                     {{data}}
                   </p>
@@ -537,16 +533,16 @@
       }
     }
   }
-.dua {
-  b {
-    padding: 10px 0px 0px 10px;
-  }
-  @media screen and (max-width: 760px) {
-    b {
-      padding: 10px 0px 0px 10px;
+  .dua {
+    font-size: 20px;
+    display: flex;
+    @media screen and (max-width: 760px) {
+      padding: 0px;
+    }
+    p {
+      padding-left: 10px;
     }
   }
-}
 // .jarak {
 //   @media screen and (max-width: 780px) {
 //   }
@@ -859,20 +855,23 @@
     text-align: center;
     margin-top: 10px;
   }
-  &_list {
-    font-family: Poppins;
-    background-color: #e0e0e0;
-    width: 100%;
-    height: auto;
-    padding: 10px 0px 10px 10px;
-    border-radius: 0px 0px 14px 14px;
-    @media Screen and (max-width: 780px) {
+    &_list {
+      font-family: Poppins;
+      background-color: #e0e0e0;
       width: 100%;
+      padding: 15px 10px 8px 30px;
+      border-radius: 0px 0px 14px 14px;
+      @media Screen and (max-width: 780px) {
+        width: 100%;
+        padding: 10px 10px 0px 10px;
+      }
+      p {
+        font-size: 20px;
+      }
     }
-  }
   &_data {
-    margin-left: 10px; 
-    padding: 10px 30px 0px 0px;
+    font-size: 20px;
+    padding: 10px 20px 0px 10px;
     @media screen and (max-width: 600px) {
       padding: 10px 30px 0px 0px;
     }

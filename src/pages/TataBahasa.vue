@@ -309,19 +309,17 @@
             <div class="border_list">
                 <b-form-group>
                   <div>
-                      <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <h5>
-                                  <b>{{data}}</b>
-                                </h5>
                             </b-form-radio>
+                                <p>
+                                  {{data}}
+                                </p>
                         </div>
-                      </ul>
                   </div>
                 </b-form-group>
             </div>
@@ -401,21 +399,16 @@
             <div class="border_list">
                 <b-form-group>
                   <div>
-                    <div class="col-sm-12">
-                      <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <h5>
-                                  <b>{{data}}</b>
-                                </h5>
                             </b-form-radio>
+                                <p>
+                                  {{data}}</p>
                         </div>
-                      </ul>
-                    </div>
                   </div>
                 </b-form-group>
             </div>
@@ -492,19 +485,17 @@
             <div class="border_list">
                 <b-form-group>
                   <div>
-                      <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <h5>
-                                  <b>{{data}}</b>
-                                </h5>
                             </b-form-radio>
+                                <p>
+                                  {{data}}
+                                </p>
                         </div>
-                      </ul>
                   </div>
                 </b-form-group>
             </div>
@@ -583,19 +574,17 @@
             <div class="border_list">
                 <b-form-group>
                   <div>
-                      <ul>
                         <div class="dua" v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagrafArray"
                             :key="index">
                             <b-form-radio v-model="dataForm.menulis"
                                 name="some-radios"
                                 v-bind:value="index">
-                                <h5>
-                                  <b>{{data}}</b>
-                                </h5>
                             </b-form-radio>
+                                <p>
+                                  {{data}}
+                                </p>
                         </div>
-                      </ul>
                   </div>
                 </b-form-group>
             </div>
@@ -675,7 +664,7 @@
                 </div>
               </div>
               <div class="border_list">
-                <div style="margin-left: 30px;" v-for="(data,
+                <div v-for="(data,
                             index) in strukturKalimatDataSesion.konsepParagraf"
                             :key="index">
                   <p>
@@ -1000,15 +989,19 @@
     margin-top: 10px;
   }
   &_list {
-    font-family: Poppins;
-    background-color: #e0e0e0;
-    width: 100%;
-    padding: 13px;
-    border-radius: 0px 0px 14px 14px;
-    @media Screen and (max-width: 780px) {
+      font-family: Poppins;
+      background-color: #e0e0e0;
       width: 100%;
+      padding: 15px 10px 8px 30px;
+      border-radius: 0px 0px 14px 14px;
+      @media Screen and (max-width: 780px) {
+        width: 100%;
+        padding: 10px 10px 0px 10px;
+      }
+      p {
+        font-size: 20px;
+      }
     }
-  }
 }
 // End Konsep Menulis
   /* Style Modal */
@@ -1112,21 +1105,16 @@
 
 // End Stepper
 
-.dua {
-  padding: 8px 0px 0px 0px;
-  h5 {
-    font-family: Poppins;
-    padding: 0px 0px 0px 20px;
-  }
-  @media screen and (max-width: 760px) {
-    padding: 0px;
-    h5 {
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 10px 0px 0px 10px;
-      text-align: left;
+  .dua {
+    font-size: 20px;
+    display: flex;
+    @media screen and (max-width: 760px) {
+      padding: 0px;
+    }
+    p {
+      padding-left: 10px;
     }
   }
-}
 
 
 .tombol1 {

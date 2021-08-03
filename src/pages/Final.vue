@@ -59,11 +59,6 @@
     </div>
 
     <!-- body -->
-    <!-- <div class="tips2">
-      <b-button class="tips2_judul2" @click="showModal = true">
-        Tips
-      </b-button>
-    </div> -->
     <div class="body">
       <!-- Button Tips -->
       <div class="tips">
@@ -372,7 +367,7 @@
 .border {
   background-color: #455a64;
   height: 42px;
-  width: 101px;
+  width: 131px;
   border-radius: 7px 7px 0px 0px;
   border: none;
   @media screen and (max-width: 768px) {
@@ -389,7 +384,7 @@
     font-family: Poppins;
     background-color: #e0e0e0;
     width: 100%;
-    padding: 13px;
+    padding: 15px 10px 8px 30px;
     border-radius: 0px 0px 14px 14px;
     font-family: Poppins;
     font-style: normal;

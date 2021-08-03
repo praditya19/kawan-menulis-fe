@@ -867,6 +867,7 @@
     line-height: 30px;
     color: #030303;
     text-align: left;
+    overflow-y: scroll;
     @media Screen and (max-width: 780px) {
       width: 100%;
     }
