@@ -30,6 +30,9 @@ export default {
     this.getDataJenisTopics();
     this.getDataKalimatUtamaGuidesList();
     window.scrollTo(0, 0);
+    // window.onpopstate = function() {
+    //   alert("browser-back");
+    // };
   },
   methods: {
     getDataSesion() {
@@ -72,6 +75,7 @@ export default {
       this.kalimatUtamaPage2 = true;
       if (this.kalimatUtamaPage2 === true) {
         this.kalimatUtamaPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("error");
       }
@@ -89,6 +93,7 @@ export default {
       this.kalimatUtamaPage3 = true;
       if (this.kalimatUtamaPage3 === true) {
         this.kalimatUtamaPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("error");
       }
@@ -121,32 +126,49 @@ export default {
         this.showModal5 = true;
         return false;
       }
-      var done = this.isValidHurufBesar(this.form.kalimatUtama1);
-      if (done === true) {
-        if (this.kalimatUtamaGuides[3] === undefined) {
-          this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
-            "",
-            this.form.kalimatUtama1
-          );
-          const is3 = JSON.stringify(this.pramenulisDataSesion);
-          sessionStorage.setItem("student_topik_menulis_paragraph", is3);
-          this.$router.push("/pramenulis-lanjutan");
-          this.kalimatUtamaPage3 = false;
-          return;
-        }
-        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
-          this.form.kalimatUtama1
-        );
+      if (this.kalimatUtamaGuides[3] === undefined) {
+        const isYes = this.form.kalimatUtama1.replace(".", "");
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push("", isYes);
+        const is3 = JSON.stringify(this.pramenulisDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+        this.$router.push("/pramenulis-lanjutan");
+      } else {
+        const isYes2 = this.form.kalimatUtama1.replace(".", "");
+        this.pramenulisDataSesion.resultParagraphKalimatUtama.push(isYes2);
+        this.kalimatUtamaPage3 = false;
         var savePage3 = JSON.stringify(this.pramenulisDataSesion);
         sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
         this.kalimatUtamaPage4 = true;
-        if (this.kalimatUtamaPage4 === true) {
-          this.kalimatUtamaPage3 = false;
-        } else {
-          alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
-        }
+        window.scrollTo(0, 0);
+        this.kalimatUtamaPage3 = false;
       }
-      return false;
+      // Demo Valid 4.2
+      // var done = this.isValidHurufBesar(this.form.kalimatUtama1);
+      // if (done === true) {
+      //   if (this.kalimatUtamaGuides[3] === undefined) {
+      //     this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+      //       "",
+      //       this.form.kalimatUtama1
+      //     );
+      //     const is3 = JSON.stringify(this.pramenulisDataSesion);
+      //     sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+      //     this.$router.push("/pramenulis-lanjutan");
+      //     this.kalimatUtamaPage3 = false;
+      //     return;
+      //   }
+      //   this.pramenulisDataSesion.resultParagraphKalimatUtama.push(
+      //     this.form.kalimatUtama1
+      //   );
+      //   var savePage3 = JSON.stringify(this.pramenulisDataSesion);
+      //   sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+      //   this.kalimatUtamaPage4 = true;
+      //   if (this.kalimatUtamaPage4 === true) {
+      //     this.kalimatUtamaPage3 = false;
+      //   } else {
+      //     alert("{{Status: 500, Local: 'Sesion Storage empety 2!'}}");
+      //   }
+      // }
+      // return false;
     },
     page4Next() {
       if (this.form.kalimatUtama2 === "") {
@@ -170,3 +192,4 @@ export default {
     ...mapGetters(["isMobile"]),
   },
 };
+

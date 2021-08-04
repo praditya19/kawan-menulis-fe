@@ -110,6 +110,7 @@ export default {
       this.menulisIsiPage2 = true;
       if (this.menulisIsiPage2 === true) {
         this.menulisIsi = false;
+        window.scrollTo(0, 0);
       } else {
         alert("error");
       }

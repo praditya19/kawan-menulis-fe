@@ -645,7 +645,6 @@
           </p>
         </div>
       </div>
-
       <div class="content-konsep">
         <div class="gabungan-icon">
           <div class="border">
@@ -672,6 +671,13 @@
             >
               <b>Ubah</b>
             </button>
+            <!-- Descading -->
+            <a @click="ascending2()">
+              <img class="icon-up" src="@/assets/up.png" />
+            </a>
+            <a @click="descending2()">
+              <img class="icon-down" src="@/assets/down.png" />
+            </a>
           </div>
         </div>
 
@@ -758,6 +764,12 @@
             >
               <b>Ubah</b>
             </button>
+            <a @click="ascending2()">
+              <img class="icon-up" src="@/assets/up.png" />
+            </a>
+            <a @click="descending2()">
+              <img class="icon-down" src="@/assets/down.png" />
+            </a>
           </div>
         </div>
         <div class="border_list">
@@ -1122,11 +1134,11 @@
   width: 238px;
   border-radius: 7px 7px 0px 0px;
   border: none;
+  @media screen and (max-width: 1000px) {
+    height: auto;
+  }
   @media Screen and (max-width: 780px) {
     width: 50%;
-  }
-  @media screen and (max-width: 600px) {
-    height: auto;
   }
   h4 {
     color: #fff;
@@ -1343,5 +1355,16 @@
   padding: 0px 0px 0px 20px;
   @media screen and (max-width: 1000px) {
   }
+}
+
+.icon-up {
+  width: auto;
+  margin-left: 5px;
+  margin-top: -5px
+}
+.icon-down {
+  width: auto;
+  margin-left: 5px;
+  margin-top: -5px
 }
 </style>

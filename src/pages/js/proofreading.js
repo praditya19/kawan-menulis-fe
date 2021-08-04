@@ -146,6 +146,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.proofreadingPage2 === true) {
         this.proofreadingPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -155,6 +156,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.proofreadingPage3 === true) {
         this.proofreadingPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -164,6 +166,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.proofreadingPage4 === true) {
         this.proofreadingPage3 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -173,6 +176,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.proofreadingPage5 === true) {
         this.proofreadingPage4 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -200,6 +204,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.proofreadingPage6 === true) {
         this.proofreadingPage5 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }

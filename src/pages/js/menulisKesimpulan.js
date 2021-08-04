@@ -43,6 +43,7 @@ export default {
       this.menuliskesimpulanPage2 = true;
       if (this.menuliskesimpulanPage2 === true) {
         this.menuliskesimpulanPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -54,6 +55,7 @@ export default {
       sessionStorage.setItem("student_topik_menulis_paragraph", empety);
       if (this.menuliskesimpulanPage3 === true) {
         this.menuliskesimpulanPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }

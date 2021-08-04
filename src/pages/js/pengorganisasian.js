@@ -30,6 +30,9 @@ export default {
     this.getDataSesion();
     this.getDataJenisTopics();
     window.scrollTo(0, 0);
+    // window.onpopstate = function() {
+    //   alert("browser-back");
+    // };
   },
   methods: {
     getDataSesion() {
@@ -42,6 +45,52 @@ export default {
       var sv = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", sv);
     },
+    // Up down by index
+    ascending2() {
+      // <-- ATAS(up) -->
+      var now = this.dataForm.pilih;
+      if (now === "") {
+        alert("Silahkan memilih untuk menaikan");
+        return;
+      }
+      var index = now - 1;
+      if (index >= 0) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.pramenulisLanjutanDataSesion.konsepParagrafArray.move(now, index);
+        var ascending = JSON.stringify(this.pramenulisLanjutanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+        this.dataForm.pilih = index;
+      } else {
+        alert("Kalimat tidak bisa di naikan lagi");
+      }
+    },
+    descending2() {
+      // <---- BAWAH(down) ------>
+      var now = this.dataForm.pilih;
+      if (now === "") {
+        alert("Silahkan memilih untuk menurunkan");
+        return;
+      }
+      var index = now + 1;
+      var arr =
+        this.pramenulisLanjutanDataSesion.konsepParagrafArray.length - 1;
+      if (arr >= index) {
+        Array.prototype.move = function(from, to) {
+          this.splice(to, 0, this.splice(from, 1)[0]);
+          return this;
+        };
+        this.pramenulisLanjutanDataSesion.konsepParagrafArray.move(now, index);
+        var descending = JSON.stringify(this.pramenulisLanjutanDataSesion);
+        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
+        this.dataForm.pilih = index;
+      } else {
+        alert("Kalimat tidak bisa di turunkan lagi");
+      }
+    },
+    // end
     descending() {
       // <----- To Down
       if (this.dataForm.resultMenulis.length !== 0) {
@@ -127,6 +176,7 @@ export default {
     pengorganisasian1Next() {
       if (this.pramenulisLanjutanDataSesion.resultParagraph.length < 1) {
         this.showModalErrorEmpety = true;
+        window.scrollTo(0, 0);
         return;
       }
       this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
@@ -152,15 +202,16 @@ export default {
       this.pengorganisasianPage2 = true;
       if (this.pengorganisasianPage2 === true) {
         this.pengorganisasianPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
     },
     pengorganisasian2Next() {
       this.pengorganisasianPage3 = true;
-
       if (this.pengorganisasianPage3 === true) {
         this.pengorganisasianPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -171,6 +222,7 @@ export default {
 
       if (this.pengorganisasianPage4 === true) {
         this.pengorganisasianPage3 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 3 }}, status:500;");
       }
@@ -187,3 +239,4 @@ export default {
     ...mapGetters(["isMobile"]),
   },
 };
+

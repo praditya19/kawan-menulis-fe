@@ -147,6 +147,7 @@ export default {
 
       if (this.stylePage2 === true) {
         this.stylePage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -157,6 +158,7 @@ export default {
 
       if (this.stylePage3 === true) {
         this.stylePage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -167,6 +169,7 @@ export default {
 
       if (this.stylePage4 === true) {
         this.stylePage3 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -177,6 +180,7 @@ export default {
 
       if (this.stylePage5 === true) {
         this.stylePage4 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -204,6 +208,7 @@ export default {
 
       if (this.stylePageFinish === true) {
         this.stylePage5 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }

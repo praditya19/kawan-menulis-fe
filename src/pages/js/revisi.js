@@ -136,6 +136,7 @@ export default {
       this.revisiPage2 = true;
       if (this.revisiPage2 === true) {
         this.revisiPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -163,6 +164,7 @@ export default {
 
       if (this.revisiPage3 === true) {
         this.revisiPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }

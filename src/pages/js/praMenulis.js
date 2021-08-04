@@ -88,6 +88,7 @@ export default {
       this.pramenulisPage2 = true;
       if (this.pramenulisPage2 === true) {
         this.pramenulisPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -117,6 +118,7 @@ export default {
       this.pramenulisPage3 = true;
       if (this.pramenulisPage3 === true) {
         this.pramenulisPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -146,6 +148,7 @@ export default {
       this.pramenulisPage4 = true;
       if (this.pramenulisPage4 === true) {
         this.pramenulisPage3 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 3 }}, status:500;");
       }
@@ -175,6 +178,7 @@ export default {
       this.pramenulisPage5 = true;
       if (this.pramenulisPage5 === true) {
         this.pramenulisPage4 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 4 }}, status:500;");
       }
@@ -194,6 +198,7 @@ export default {
       this.pramenulisPage6 = true;
       if (this.pramenulisPage5 === true) {
         this.pramenulisPage5 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 5 }}, status:500;");
       }

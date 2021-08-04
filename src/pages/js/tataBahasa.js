@@ -138,6 +138,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.strukturkalimatPage2 === true) {
         this.strukturkalimatPage1 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -147,6 +148,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.strukturkalimatPage3 === true) {
         this.strukturkalimatPage2 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -156,6 +158,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.strukturkalimatPage4 === true) {
         this.strukturkalimatPage3 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
@@ -183,6 +186,7 @@ export default {
       this.dataForm.menulis = "";
       if (this.strukturkalimatPage5 === true) {
         this.strukturkalimatPage4 = false;
+        window.scrollTo(0, 0);
       } else {
         alert("{{ Internal Server Error to 2 }}, status:500;");
       }
