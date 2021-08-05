@@ -25,22 +25,26 @@
       </p>
     </div>
     <div class="profile">
-      <div v-for="(data, index) in profile" :key="index" class="profile_data">
-        <img :src="data.image" alt="logo" class="image_logo" />
-        <h6>{{ data.nama }}</h6>
-        <ul>
-          <li>{{ data.status1 }}</li>
-          <li>{{ data.status2 }}</li>
-        </ul>
+      <div class="profile_body">
+        <div v-for="(data, index) in profile" :key="index" class="profile_data">
+          <img :src="data.image" alt="logo" class="image_logo" />
+          <h6>{{ data.nama }}</h6>
+          <ul>
+            <li>{{ data.status1 }}</li>
+            <li>{{ data.status2 }}</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="foot">
-      <h3>Kami berharap, melalui website ini....</h3>
-      <p>
-        Pengguna website kaman menulis diharapkan dapat meningkatkan kemampuan
-        menulis mahasiswa sebagai modal awal untuk membangun keterampilan
-        menulis di perguruan tinggi.
-      </p>
+      <div class="foot_body">
+        <h3>Kami berharap, melalui website ini....</h3>
+        <p>
+          Pengguna website kaman menulis diharapkan dapat meningkatkan kemampuan
+          menulis mahasiswa sebagai modal awal untuk membangun keterampilan
+          menulis di perguruan tinggi.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -93,9 +97,12 @@
 
 .body {
   font-family: poppins;
-  padding: 20px 270px 0px 270px;
+  width: 60%;
+  margin: auto;
+  padding: 20px 0px 20px 0px;
   @media screen and(max-width:768px) {
     padding: 20px 20px 20px 20px;
+    width: auto;
   }
   h3 {
     text-align: center;
@@ -111,12 +118,22 @@
 
 .profile {
   background: #e5e5e5;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 50px 250px 50px 250px;
+  padding: 50px 0px 36px 0px;
   @media screen and(max-width:768px) {
     padding: 20px 20px 20px 20px;
     display: inline-block;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  &_body {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and(max-width:768px) {
+      width: 80%;
+    }
   }
   &_data {
     text-align: center;
@@ -130,10 +147,12 @@
     h6 {
       font-weight: 700;
       size: 18;
+      width: 100%;
     }
     ul {
       text-align: center;
       list-style-position: inside;
+      width: 100%;
     }
     li {
       font-size: 14px;
@@ -143,9 +162,16 @@
 
 .foot {
   background: rgba(147, 190, 255, 0.54);
-  padding: 20px 300px 20px 260px;
+  padding: 20px 0px 20px 0px;
   @media screen and(max-width:768px) {
     padding: 20px 20px 20px 20px;
+  }
+  &_body {
+    width: 60%;
+    margin: auto;
+    @media screen and(max-width:768px) {
+      width: auto;
+    }
   }
   h3 {
     font-size: 28px;

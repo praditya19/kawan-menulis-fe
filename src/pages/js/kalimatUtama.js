@@ -1,4 +1,5 @@
 import { mapGetters, mapActions } from "vuex";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default {
   name: "kalimatUtama",
@@ -23,6 +24,7 @@ export default {
 
       // db
       kalimatUtamaGuides: [],
+      isReloda: false,
     };
   },
   mounted() {
@@ -30,9 +32,25 @@ export default {
     this.getDataJenisTopics();
     this.getDataKalimatUtamaGuidesList();
     window.scrollTo(0, 0);
-    // window.onpopstate = function() {
-    //   alert("browser-back");
+    // this.reloadis();
+    // let popHandler = () => {
+    //   if (confirm("Go back?")) {
+    //     window.history.back();
+    //   } else {
+    //     window.history.forward();
+    //   }
     // };
+    // window.addEventListener("popstate", popHandler, { once: true });
+    // const he = (window.location.hash = "");
+    // window.onhashchange = function() {
+    //   window.location.hash = he;
+    // };
+    // history.replaceState(
+    //   {},
+    //   document.title,
+    //   window.location.href.split("#")[0]
+    // );
+    // window.addEventListener("popstate", this.reloadis());
   },
   methods: {
     getDataSesion() {
@@ -40,6 +58,9 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.pramenulisDataSesion = JSON.parse(pramenulisData);
+      this.pramenulisDataSesion.resultParagraphKalimatUtama = [];
+      var savePage3 = JSON.stringify(this.pramenulisDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
     },
     getDataJenisTopics() {
       var jenisTopic = sessionStorage.getItem("jenis_paragraph");
@@ -187,9 +208,25 @@ export default {
       }
       return false;
     },
+    reloadis() {
+      window.addEventListener("popstate", function() {
+        Swal.fire({
+          title: "Apa kamu yakin ingin kembali?",
+          text: "Data ini tidak akan kembali!",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Iya",
+          cancelButtonText: "Tidak",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.$router.push("/pramenulis-lanjutan");
+          }
+        });
+      });
+    },
   },
   computed: {
     ...mapGetters(["isMobile"]),
   },
 };
-

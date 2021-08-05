@@ -32,6 +32,7 @@ export default {
         alert("Tidak boleh kosong");
         return;
       }
+      this.result_menulis = [];
       var arr = this.result_menulis.push({
         pramenulis: this.form.kalimatSederhana,
         menulis: "",
@@ -59,7 +60,7 @@ export default {
         "student_topik_menulis_paragraph",
         convertToString
       );
-      sessionStorage.removeItem("student_actions");
+      // sessionStorage.removeItem("student_actions");
       this.$router.push("/pra-menulis");
     },
     getStudentDataSesion() {

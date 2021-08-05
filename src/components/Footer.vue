@@ -116,6 +116,7 @@
 
       a {
         color: #ffffff;
+        text-decoration: none;
       }
     }
     &__menu:first-child {
@@ -145,6 +146,7 @@
       a {
         color: #ffffff;
         padding-left: 10px;
+        text-decoration: none;
       }
       font-size: 12px;
       font-family: Poppins;

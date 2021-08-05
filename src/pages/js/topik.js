@@ -19,6 +19,11 @@ export default {
     this.getAllParagraphTypes();
     this.getStudentDataSession();
     window.scrollTo(0, 0);
+    window.location.hash = "";
+    window.location.hash = "Again-No-back";
+    window.onhashchange = function() {
+      window.location.hash = "";
+    };
   },
 
   computed: {},

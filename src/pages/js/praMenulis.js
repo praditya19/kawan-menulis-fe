@@ -1,4 +1,5 @@
 import { mapGetters, mapActions } from "vuex";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default {
   name: "PraMenulis",
@@ -40,6 +41,15 @@ export default {
     getDataSesion() {
       var topicData = sessionStorage.getItem("student_topik_menulis_paragraph");
       this.topicDataSesion = JSON.parse(topicData);
+      if (this.topicDataSesion.resultMenulis[1] !== undefined) {
+        this.topicDataSesion.resultMenulis.splice(1, 1);
+        this.topicDataSesion.resultMenulis.splice(1, 1);
+        this.topicDataSesion.resultMenulis.splice(1, 1);
+        this.topicDataSesion.resultMenulis.splice(1, 1);
+        this.topicDataSesion.resultMenulis.splice(1, 1);
+      }
+      const is2 = JSON.stringify(this.topicDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", is2);
     },
     ...mapActions(["getTopicGuidesList"]),
     getDataPramenulisGuidesList() {
@@ -53,7 +63,6 @@ export default {
         success: (res) => {
           this.pramenulisGuides = res;
         },
-
         fail: (res) => {
           console.log(res);
         },
@@ -73,9 +82,8 @@ export default {
           pramenulis: this.dataForm.menulisPage1,
           menulis: "",
         });
-        const is1 = JSON.stringify(this.topicDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", is1);
         this.pramenulisPage6 = true;
+        window.scrollTo(0, 0);
         this.pramenulisPage1 = false;
         return;
       }
@@ -83,12 +91,10 @@ export default {
         pramenulis: this.dataForm.menulisPage1,
         menulis: "",
       });
-      var savePage1 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
       this.pramenulisPage2 = true;
       if (this.pramenulisPage2 === true) {
-        this.pramenulisPage1 = false;
         window.scrollTo(0, 0);
+        this.pramenulisPage1 = false;
       } else {
         alert("{{ Internal Server Error to 1 }}, status:500;");
       }
@@ -103,9 +109,8 @@ export default {
           pramenulis: this.dataForm.menulisPage2,
           menulis: "",
         });
-        const is2 = JSON.stringify(this.topicDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", is2);
         this.pramenulisPage6 = true;
+        window.scrollTo(0, 0);
         this.pramenulisPage2 = false;
         return;
       }
@@ -113,10 +118,9 @@ export default {
         pramenulis: this.dataForm.menulisPage2,
         menulis: "",
       });
-      var savePage2 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage2);
       this.pramenulisPage3 = true;
       if (this.pramenulisPage3 === true) {
+        window.scrollTo(0, 0);
         this.pramenulisPage2 = false;
         window.scrollTo(0, 0);
       } else {
@@ -133,9 +137,8 @@ export default {
           pramenulis: this.dataForm.menulisPage3,
           menulis: "",
         });
-        const is3 = JSON.stringify(this.topicDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", is3);
         this.pramenulisPage6 = true;
+        window.scrollTo(0, 0);
         this.pramenulisPage3 = false;
         return;
       }
@@ -143,10 +146,9 @@ export default {
         pramenulis: this.dataForm.menulisPage3,
         menulis: "",
       });
-      var savePage3 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
       this.pramenulisPage4 = true;
       if (this.pramenulisPage4 === true) {
+        window.scrollTo(0, 0);
         this.pramenulisPage3 = false;
         window.scrollTo(0, 0);
       } else {
@@ -163,9 +165,8 @@ export default {
           pramenulis: this.dataForm.menulisPage4,
           menulis: "",
         });
-        const is4 = JSON.stringify(this.topicDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", is4);
         this.pramenulisPage6 = true;
+        window.scrollTo(0, 0);
         this.pramenulisPage4 = false;
         return;
       }
@@ -173,12 +174,10 @@ export default {
         pramenulis: this.dataForm.menulisPage4,
         menulis: "",
       });
-      var savePage4 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
       this.pramenulisPage5 = true;
       if (this.pramenulisPage5 === true) {
-        this.pramenulisPage4 = false;
         window.scrollTo(0, 0);
+        this.pramenulisPage4 = false;
       } else {
         alert("{{ Internal Server Error to 4 }}, status:500;");
       }
@@ -192,20 +191,49 @@ export default {
         pramenulis: this.dataForm.menulisPage5,
         menulis: "",
       });
-      var savePage5 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage5);
-
       this.pramenulisPage6 = true;
       if (this.pramenulisPage5 === true) {
-        this.pramenulisPage5 = false;
         window.scrollTo(0, 0);
+        this.pramenulisPage5 = false;
       } else {
         alert("{{ Internal Server Error to 5 }}, status:500;");
       }
     },
     pramenulis6Next() {
+      var savePage4 = JSON.stringify(this.topicDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
       this.$router.push("/kalimat-utama");
     },
+  },
+  created() {
+    window.history.pushState({ page: 1 }, null, null);
+    let kkk = (window.onpopstate = function() {
+      Swal.fire({
+        title: "Apa kamu yakin ingin kembali?",
+        text: "Data ini tidak akan kembali!",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Iya",
+        cancelButtonText: "Tidak",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.history.go(-1);
+          setTimeout(function() {
+            Swal.colose();
+          }, 100);
+        } else {
+          this.history.forward();
+          setTimeout(function() {
+            Swal.colose();
+          }, 100);
+        }
+        setTimeout(function() {
+          location.reload();
+        }, 100);
+      });
+    });
+    console.log(kkk);
   },
   computed: {
     ...mapGetters(["isMobile"]),
