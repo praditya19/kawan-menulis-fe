@@ -26,7 +26,12 @@
           :key="index"
           class="content_sumber-belajar_bottom_learning"
         >
-          <img :src="user.logo" alt="logo" @click="toLink(index)" />
+          <img
+            :src="user.logo"
+            alt="logo"
+            @click="toLink(index)"
+            style="cursor: pointer;"
+          />
           <h6>{{ user.title }}</h6>
         </div>
       </div>

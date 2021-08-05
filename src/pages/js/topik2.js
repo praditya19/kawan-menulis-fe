@@ -25,7 +25,6 @@ export default {
     this.getDataJenisTopics();
     window.scrollTo(0, 0);
   },
-  computed: {},
   methods: {
     onSubmit() {
       if (this.form.kalimatSederhana === "") {

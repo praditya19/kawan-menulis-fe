@@ -32,25 +32,6 @@ export default {
     this.getDataJenisTopics();
     this.getDataKalimatUtamaGuidesList();
     window.scrollTo(0, 0);
-    // this.reloadis();
-    // let popHandler = () => {
-    //   if (confirm("Go back?")) {
-    //     window.history.back();
-    //   } else {
-    //     window.history.forward();
-    //   }
-    // };
-    // window.addEventListener("popstate", popHandler, { once: true });
-    // const he = (window.location.hash = "");
-    // window.onhashchange = function() {
-    //   window.location.hash = he;
-    // };
-    // history.replaceState(
-    //   {},
-    //   document.title,
-    //   window.location.href.split("#")[0]
-    // );
-    // window.addEventListener("popstate", this.reloadis());
   },
   methods: {
     getDataSesion() {
@@ -157,8 +138,6 @@ export default {
         const isYes2 = this.form.kalimatUtama1.replace(".", "");
         this.pramenulisDataSesion.resultParagraphKalimatUtama.push(isYes2);
         this.kalimatUtamaPage3 = false;
-        var savePage3 = JSON.stringify(this.pramenulisDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
         this.kalimatUtamaPage4 = true;
         window.scrollTo(0, 0);
         this.kalimatUtamaPage3 = false;
@@ -208,23 +187,37 @@ export default {
       }
       return false;
     },
-    reloadis() {
-      window.addEventListener("popstate", function() {
-        Swal.fire({
-          title: "Apa kamu yakin ingin kembali?",
-          text: "Data ini tidak akan kembali!",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Iya",
-          cancelButtonText: "Tidak",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.$router.push("/pramenulis-lanjutan");
-          }
-        });
+  },
+  created() {
+    var msg = "Any thing which u want";
+    window.history.pushState({ html: msg, pageTitle: "AnyThing" }, "");
+    window.onpopstate = function() {
+      Swal.fire({
+        title: "Apa kamu yakin ingin kembali?",
+        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Iya",
+        cancelButtonText: "Tidak",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.close();
+          this.history.go(-1);
+          setTimeout(function() {
+            Swal.close();
+          }, 10);
+          setTimeout(function() {
+            window.location.reload();
+          }, 10);
+        } else {
+          this.history.forward();
+          setTimeout(function() {
+            Swal.close();
+          }, 50);
+        }
       });
-    },
+    };
   },
   computed: {
     ...mapGetters(["isMobile"]),

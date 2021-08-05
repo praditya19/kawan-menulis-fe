@@ -206,11 +206,12 @@ export default {
     },
   },
   created() {
-    window.history.pushState({ page: 1 }, null, null);
-    let kkk = (window.onpopstate = function() {
+    var msg = "Any thing which u want";
+    window.history.pushState({ html: msg, pageTitle: "AnyThing" }, "");
+    window.onpopstate = function() {
       Swal.fire({
         title: "Apa kamu yakin ingin kembali?",
-        text: "Data ini tidak akan kembali!",
+        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -218,22 +219,22 @@ export default {
         cancelButtonText: "Tidak",
       }).then((result) => {
         if (result.isConfirmed) {
+          Swal.close();
           this.history.go(-1);
           setTimeout(function() {
-            Swal.colose();
-          }, 100);
+            Swal.close();
+          }, 10);
+          setTimeout(function() {
+            window.location.reload();
+          }, 10);
         } else {
           this.history.forward();
           setTimeout(function() {
-            Swal.colose();
-          }, 100);
+            Swal.close();
+          }, 50);
         }
-        setTimeout(function() {
-          location.reload();
-        }, 100);
       });
-    });
-    console.log(kkk);
+    };
   },
   computed: {
     ...mapGetters(["isMobile"]),

@@ -1,4 +1,5 @@
 import { mapGetters } from "vuex";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default {
   name: "Pengorganisasian",
@@ -30,9 +31,6 @@ export default {
     this.getDataSesion();
     this.getDataJenisTopics();
     window.scrollTo(0, 0);
-    // window.onpopstate = function() {
-    //   alert("browser-back");
-    // };
   },
   methods: {
     getDataSesion() {
@@ -60,8 +58,6 @@ export default {
           return this;
         };
         this.pramenulisLanjutanDataSesion.konsepParagrafArray.move(now, index);
-        var ascending = JSON.stringify(this.pramenulisLanjutanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.pilih = index;
       } else {
         alert("Kalimat tidak bisa di naikan lagi");
@@ -83,8 +79,6 @@ export default {
           return this;
         };
         this.pramenulisLanjutanDataSesion.konsepParagrafArray.move(now, index);
-        var descending = JSON.stringify(this.pramenulisLanjutanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.pilih = index;
       } else {
         alert("Kalimat tidak bisa di turunkan lagi");
@@ -102,8 +96,6 @@ export default {
           this.dataForm.resultMenulis,
           1
         );
-        var descendingSv = JSON.stringify(this.pramenulisLanjutanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", descendingSv); // <-----  everything will be fine
         this.dataForm.resultMenulis = "";
       } else {
         alert("Silahkan memilih terlebih dahulu");
@@ -123,8 +115,6 @@ export default {
           this.dataForm.resultMenulis1,
           1
         );
-        var ascendingSv = JSON.stringify(this.pramenulisLanjutanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", ascendingSv); // <-----  everything will be fine
         this.dataForm.resultMenulis1 = "";
       } else {
         alert("Harus memilih terlebih dahulu");
@@ -138,8 +128,6 @@ export default {
       this.pramenulisLanjutanDataSesion.konsepParagrafArray[
         this.dataForm.pilih
       ] = this.dataForm.ubahParagrafPage3.replace(".", "");
-      var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.dataForm.ubahParagrafPage3 = "";
       this.showModalUbahPage3 = false;
     },
@@ -170,8 +158,6 @@ export default {
       this.pramenulisLanjutanDataSesion.konsepParagrafArray.push(
         tambah.replace(".", "")
       );
-      var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
     },
     pengorganisasian1Next() {
       if (this.pramenulisLanjutanDataSesion.resultParagraph.length < 1) {
@@ -197,8 +183,6 @@ export default {
       this.pramenulisLanjutanDataSesion.konsepParagraf.push(
         this.pramenulisLanjutanDataSesion.konsepParagrafArray.join(". ") + "."
       );
-      var savePage1 = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage1);
       this.pengorganisasianPage2 = true;
       if (this.pengorganisasianPage2 === true) {
         this.pengorganisasianPage1 = false;
@@ -219,7 +203,6 @@ export default {
     pengorganisasian3Next() {
       this.dataForm.pilih = "";
       this.pengorganisasianPage4 = true;
-
       if (this.pengorganisasianPage4 === true) {
         this.pengorganisasianPage3 = false;
         window.scrollTo(0, 0);
@@ -228,6 +211,8 @@ export default {
       }
     },
     pengorganisasian4Next() {
+      var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.$router.push("/menulis-kesimpulan");
     },
     getDataJenisTopics() {
@@ -235,8 +220,38 @@ export default {
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },
+  created() {
+    var msg = "Any thing which u want";
+    window.history.pushState({ html: msg, pageTitle: "AnyThing" }, "");
+    window.onpopstate = function() {
+      Swal.fire({
+        title: "Apa kamu yakin ingin kembali?",
+        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Iya",
+        cancelButtonText: "Tidak",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.close();
+          this.history.go(-1);
+          setTimeout(function() {
+            Swal.close();
+          }, 10);
+          setTimeout(function() {
+            window.location.reload();
+          }, 10);
+        } else {
+          this.history.forward();
+          setTimeout(function() {
+            Swal.close();
+          }, 50);
+        }
+      });
+    };
+  },
   computed: {
     ...mapGetters(["isMobile"]),
   },
 };
-

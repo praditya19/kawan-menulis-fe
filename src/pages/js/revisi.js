@@ -1,4 +1,5 @@
 import { mapGetters } from "vuex";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 export default {
   name: "Revisi",
@@ -51,8 +52,6 @@ export default {
           return this;
         };
         this.menulisKesimpulanDataSesion.konsepParagrafArray.move(now, index);
-        var ascending = JSON.stringify(this.menulisKesimpulanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat tidak bisa di naikan lagi");
@@ -73,8 +72,6 @@ export default {
           return this;
         };
         this.menulisKesimpulanDataSesion.konsepParagrafArray.move(now, index);
-        var descending = JSON.stringify(this.menulisKesimpulanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat tidak bisa di turunkan lagi");
@@ -85,8 +82,6 @@ export default {
         this.dataForm.menulis,
         1
       );
-      var deleteArr = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", deleteArr);
       this.dataForm.menulis = "";
     },
     toSetKonsepParagraf() {
@@ -103,8 +98,6 @@ export default {
       this.menulisKesimpulanDataSesion.konsepParagrafArray[
         this.dataForm.menulis
       ] = this.dataForm.ubahData.replace(".", "");
-      var update = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", update);
       this.dataForm.ubahData = "";
       this.modalUbah = false;
     },
@@ -128,8 +121,6 @@ export default {
       this.menulisKesimpulanDataSesion.konsepParagrafArray.push(
         value.replace(".", "")
       );
-      var tambah = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", tambah);
       this.modalTambah = false;
     },
     revisi1Next() {
@@ -155,13 +146,7 @@ export default {
       this.menulisKesimpulanDataSesion.konsepParagraf.push(
         this.formatToDot(this.intermediary) + "."
       );
-      var newKonsepParagraf = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem(
-        "student_topik_menulis_paragraph",
-        newKonsepParagraf
-      );
       this.revisiPage3 = true;
-
       if (this.revisiPage3 === true) {
         this.revisiPage2 = false;
         window.scrollTo(0, 0);
@@ -173,6 +158,8 @@ export default {
       return value.toString().replace(/,/g, ".");
     },
     revisi3Next() {
+      var ascending = JSON.stringify(this.menulisKesimpulanDataSesion);
+      sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
       this.$router.push("/gaya-menulis");
     },
     validation() {
@@ -184,6 +171,37 @@ export default {
       var jenisTopic = sessionStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
+  },
+  created() {
+    var msg = "Any thing which u want";
+    window.history.pushState({ html: msg, pageTitle: "AnyThing" }, "");
+    window.onpopstate = function() {
+      Swal.fire({
+        title: "Apa kamu yakin ingin kembali?",
+        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Iya",
+        cancelButtonText: "Tidak",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.close();
+          this.history.go(-1);
+          setTimeout(function() {
+            Swal.close();
+          }, 10);
+          setTimeout(function() {
+            window.location.reload();
+          }, 10);
+        } else {
+          this.history.forward();
+          setTimeout(function() {
+            Swal.close();
+          }, 50);
+        }
+      });
+    };
   },
   computed: {
     ...mapGetters(["isMobile"]),

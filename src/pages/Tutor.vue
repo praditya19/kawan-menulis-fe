@@ -3,19 +3,17 @@
     <img src="@/assets/Image.png" alt="logo" class="image" />
     <div class="content_tutor">
       <div class="header">
-        <div class="content_tutor_header row mt-3">
-          <div class="col-md-4 left">
-            <img src="@/assets/Ilustration.png" />
-          </div>
-          <div class="col-md-8 right">
-            <h1>
-              <b>Temukan Tutor</b>
-            </h1>
-            <p>
-              Jika kamu ingin berdiskusi dan membutuhkan bantuan, para tutor
-              siap membantumu dan belajar bersama.
-            </p>
-          </div>
+        <div class="col-md-5 left">
+          <img src="@/assets/Ilustration.png" />
+        </div>
+        <div class="col-md-7 right">
+          <h1>
+            <b>Temukan Tutor</b>
+          </h1>
+          <p>
+            Jika kamu ingin berdiskusi dan membutuhkan bantuan, para tutor siap
+            membantumu dan belajar bersama.
+          </p>
         </div>
       </div>
       <div class="content_tutor_bottom">
@@ -59,8 +57,9 @@
   color: black;
 }
 .header {
+  display: flex;
   img {
-    margin-left: 230px;
+    float: right;
     width: 304px;
     height: 304px;
   }
@@ -69,34 +68,33 @@
     font-style: normal;
     font-weight: bold;
     font-size: 75px;
-    padding-left: 80px;
   }
   p {
     font-family: Poppins;
     font-size: 20px;
     font-weight: 400;
-    width: 700px;
-    padding-left: 80px;
+    width: 78%;
   }
   @media (max-width: 768px) {
     text-align: center;
     padding: 0px 10px 0px 10px;
+    display: inline-block;
     img {
       width: 304px;
       height: 304px;
-      margin-left: -0px;
+      float: none;
     }
     h1 {
       width: 100%;
       font-size: 50px;
-      padding-left: 0px;
     }
     p {
       text-align: justify;
       width: 100%;
-      padding-left: 0px;
     }
   }
+}
+.left {
 }
 
 .right {

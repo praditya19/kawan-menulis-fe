@@ -18,17 +18,20 @@ export default {
   mounted() {
     this.getAllParagraphTypes();
     this.getStudentDataSession();
+  },
+  created() {
+    window.scrollTo(0, 0);
     window.location.hash = "";
     window.location.hash = "Again-No-back";
     window.onhashchange = function() {
       window.location.hash = "";
     };
+    history.replaceState(
+      {},
+      document.title,
+      window.location.href.split("#")[0]
+    );
   },
-
-  created() {
-    window.scrollTo(0, 0);
-  },
-
   computed: {},
 
   watch: {
