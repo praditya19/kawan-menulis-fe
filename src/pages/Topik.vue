@@ -111,7 +111,7 @@
 <style lang="scss" scoped>
 .all {
   padding-top: 120px;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .head {

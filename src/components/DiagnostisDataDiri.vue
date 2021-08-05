@@ -105,7 +105,7 @@
 
 <style lang="scss" scoped>
 .all {
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .body {

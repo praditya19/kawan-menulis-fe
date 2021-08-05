@@ -82,7 +82,7 @@
 <script src="./js/diagnostisQuestion.js" />
 <style lang="scss" scoped="scoped">
 .all {
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .kakak {

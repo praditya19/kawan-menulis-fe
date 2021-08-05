@@ -242,7 +242,7 @@ nav {
 .lebar1 {
   overflow-x: hidden;
   padding-top: 105px;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
   width: 100%;
   @media (max-width: 768px) {

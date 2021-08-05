@@ -689,7 +689,7 @@
   // all
   .all {
     overflow: hidden;
-    max-width: 1350px;
+    max-width: 1440px;
     margin: auto;
   }
 // Judul

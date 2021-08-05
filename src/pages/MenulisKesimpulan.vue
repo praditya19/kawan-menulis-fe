@@ -321,7 +321,7 @@
 // all
 .all {
   overflow-x: hidden;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -505,20 +505,21 @@
   margin-top: 10px;
 }
 
-.tombol {
-  /* background: red; */
-  text-align: center;
-  // padding: 5px;
-}
+// .tombol {
+//   /* background: red; */
+//   text-align: center;
+//   // padding: 5px;
+// }
 
 .ok {
   background: #0a4da3;
   border-radius: 39px;
   border: none;
   width: 108px;
-  height: 32.71px;
+  height: 40px;
   color: #fff;
   font-family: Poppins;
+  font-size: 20px;
 }
 
 /* end style isi modal */

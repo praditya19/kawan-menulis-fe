@@ -855,7 +855,7 @@
 }
 .all {
   overflow-x: hidden;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 // Judul
@@ -1360,11 +1360,11 @@
 .icon-up {
   width: auto;
   margin-left: 5px;
-  margin-top: -5px
+  margin-top: -5px;
 }
 .icon-down {
   width: auto;
   margin-left: 5px;
-  margin-top: -5px
+  margin-top: -5px;
 }
 </style>

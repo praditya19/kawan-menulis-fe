@@ -55,7 +55,7 @@
 <script src="./js/mulaiMenulis" />
 <style lang="scss" scoped>
 .all {
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .image {
@@ -64,7 +64,7 @@
   height: 296px;
   margin-top: 100px;
   @media (max-width: 768px) {
-    height: auto;
+    height: 200px;
   }
 }
 

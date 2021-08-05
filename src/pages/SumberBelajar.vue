@@ -39,7 +39,7 @@
 <style lang="scss" scoped>
 .slide {
   overflow: hidden;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
 .image {
@@ -48,7 +48,7 @@
   height: 296px;
   margin-top: 100px;
   @media (max-width: 768px) {
-    min-height: 100px;
+    height: 200px;
   }
 }
 

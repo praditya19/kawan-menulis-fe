@@ -484,19 +484,15 @@
         <!-- Form Centang -->
         <div class="border_list">
           <b-form-group>
-            <div class="col-sm-12">
-              <ul>
-                <div
-                  class="dua"
-                  v-for="(dataSesion,
-                  index) in pramenulisLanjutanDataSesion.resultMenulis"
-                  :key="index"
-                >
-                  <h5 style="padding: 10px 0px 0px 10px">
-                    <li>{{ dataSesion.pramenulis }}</li>
-                  </h5>
-                </div>
-              </ul>
+            <div
+              class="dua"
+              v-for="(dataSesion,
+              index) in pramenulisLanjutanDataSesion.resultMenulis"
+              :key="index"
+            >
+              <li>
+                {{ dataSesion.pramenulis }}
+              </li>
             </div>
           </b-form-group>
         </div>
@@ -543,7 +539,7 @@
               <ul>
                 <!-- <div style="padding: 0px 30px 0px 20px"> -->
                 <div
-                  class="dua"
+                  class="dua2"
                   v-for="(dataSesion1,
                   index) in pramenulisLanjutanDataSesion.resultMenulis"
                   :key="index"
@@ -606,7 +602,18 @@
 }
 
 .dua {
-  width: 95%;
+  font-size: 20px;
+  display: flex;
+  @media screen and (max-width: 760px) {
+    padding: 0px;
+  }
+  li {
+    padding-left: 10px;
+  }
+}
+
+.dua2 {
+  padding: 0px 10px 0px 0px;
 }
 .kiri {
   display: flex;
@@ -867,7 +874,6 @@
     line-height: 30px;
     color: #030303;
     text-align: left;
-    overflow-y: scroll;
     @media Screen and (max-width: 780px) {
       width: 100%;
     }

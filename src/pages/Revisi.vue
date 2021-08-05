@@ -516,7 +516,7 @@
 // all
 .all {
   overflow-x: hidden;
-  max-width: 1350px;
+  max-width: 1440px;
   margin: auto;
 }
   .text-area {
@@ -788,7 +788,6 @@
   padding: 5px;
   @media Screen and (max-width: 768px) {
   margin-left: 0px;
-
     align-items: center;  
     text-align: center;
   }
@@ -799,7 +798,8 @@
   border-radius: 39px;
   border: none;
   width: 108px;
-  height: 32.71px;
+  height: 40px;
+  font-size: 20px;
   color: #fff;
   font-family: Poppins;
 }
