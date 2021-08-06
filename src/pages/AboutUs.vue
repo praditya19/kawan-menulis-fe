@@ -40,7 +40,7 @@
       <div class="foot_body">
         <h3>Kami berharap, melalui website ini....</h3>
         <p>
-          Pengguna website kaman menulis diharapkan dapat meningkatkan kemampuan
+          Pengguna website kawan menulis diharapkan dapat meningkatkan kemampuan
           menulis mahasiswa sebagai modal awal untuk membangun keterampilan
           menulis di perguruan tinggi.
         </p>

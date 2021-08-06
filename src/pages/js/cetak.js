@@ -79,15 +79,11 @@ export default {
           studentId: this.studentActionsSession.studentId,
           topicId: this.studentActionsSession.topicId,
         },
-        success: (res) => {
-          if (res.body.sendEmai === "success") {
-            this.showModalSendEmailSucces = true;
-          } else {
-            this.erorSend = true;
-          }
+        success: () => {
+          this.showModalSendEmailSucces = true;
         },
-        fail: (res) => {
-          console.log(res);
+        fail: () => {
+          this.erorSend = true;
         },
       });
     },
@@ -106,7 +102,8 @@ export default {
     window.onpopstate = function() {
       Swal.fire({
         title: "Apa kamu yakin ingin kembali?",
-        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        text:
+          "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",

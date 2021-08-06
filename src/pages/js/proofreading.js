@@ -123,7 +123,7 @@ export default {
       } else if (this.dataForm.tambahData.length >= 60) {
         alert("Maksimal 60 Characters");
       } else {
-        if (this.tataBahasaDataSesion.konsepParagrafArray.length <= 5) {
+        if (this.tataBahasaDataSesion.konsepParagrafArray.length < 10) {
           this.handleSubmit(this.dataForm.tambahData);
           this.dataForm.tambahData = "";
         } else {
@@ -232,7 +232,8 @@ export default {
     window.onpopstate = function() {
       Swal.fire({
         title: "Apa kamu yakin ingin kembali?",
-        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        text:
+          "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
