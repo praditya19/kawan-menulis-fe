@@ -486,15 +486,14 @@
             <div>
               <div
                 class="dua"
-                v-for="(dataSesion,
-                index) in pramenulisLanjutanDataSesion.resultMenulis"
+                v-for="(data, index) in catatanMenulis"
                 :key="index"
               >
                 <b-form-radio
                   v-bind:value="index"
                   v-model="dataForm.resultMenulis"
                 ></b-form-radio>
-                <p>{{ dataSesion.pramenulis }}</p>
+                <p>{{ data }}</p>
               </div>
             </div>
           </b-form-group>

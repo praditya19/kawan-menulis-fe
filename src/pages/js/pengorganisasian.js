@@ -13,6 +13,7 @@ export default {
       showModalTambahPage3: false,
       showModalErrorEmpety: false,
       pramenulisLanjutanDataSesion: {},
+      catatanMenulis: [],
       dataForm: {
         tambahParagrafPage3: "",
         ubahParagrafPage3: "",
@@ -38,8 +39,23 @@ export default {
         "student_topik_menulis_paragraph"
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
+      this.pramenulisLanjutanDataSesion.resultParagraph = [];
       this.pramenulisLanjutanDataSesion.konsepParagraf = [];
       this.pramenulisLanjutanDataSesion.konsepParagrafArray = [];
+      for (
+        let i = 0;
+        i < this.pramenulisLanjutanDataSesion.resultMenulis.length;
+        i++
+      ) {
+        if (this.pramenulisLanjutanDataSesion.resultMenulis[i].menulis !== "") {
+          this.catatanMenulis.push(
+            this.pramenulisLanjutanDataSesion.resultMenulis[i].menulis.replace(
+              ".",
+              ""
+            )
+          );
+        }
+      }
       var sv = JSON.stringify(this.pramenulisLanjutanDataSesion);
       sessionStorage.setItem("student_topik_menulis_paragraph", sv);
     },
@@ -88,14 +104,9 @@ export default {
     descending() {
       // <----- To Down
       if (this.dataForm.resultMenulis.length !== 0) {
-        var instance = this.pramenulisLanjutanDataSesion.resultMenulis[
-          this.dataForm.resultMenulis
-        ].pramenulis;
+        var instance = this.catatanMenulis[this.dataForm.resultMenulis];
         this.pramenulisLanjutanDataSesion.resultParagraph.push(instance);
-        this.pramenulisLanjutanDataSesion.resultMenulis.splice(
-          this.dataForm.resultMenulis,
-          1
-        );
+        this.catatanMenulis.splice(this.dataForm.resultMenulis, 1);
         this.dataForm.resultMenulis = "";
       } else {
         alert("Silahkan memilih terlebih dahulu");
@@ -107,10 +118,7 @@ export default {
         var instance = this.pramenulisLanjutanDataSesion.resultParagraph[
           this.dataForm.resultMenulis1
         ];
-        this.pramenulisLanjutanDataSesion.resultMenulis.push({
-          pramenulis: instance,
-          menulis: "",
-        });
+        this.catatanMenulis.push(instance);
         this.pramenulisLanjutanDataSesion.resultParagraph.splice(
           this.dataForm.resultMenulis1,
           1
@@ -226,7 +234,8 @@ export default {
     window.onpopstate = function() {
       Swal.fire({
         title: "Apa kamu yakin ingin kembali?",
-        text: "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
+        text:
+          "semua yang anda masukkan di tahapan ini akan hilang. Yakin kembali?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
