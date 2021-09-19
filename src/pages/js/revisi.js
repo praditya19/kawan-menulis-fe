@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var menulisKesimpulanData = sessionStorage.getItem(
+      var menulisKesimpulanData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.menulisKesimpulanDataSesion = JSON.parse(menulisKesimpulanData);
@@ -159,7 +159,7 @@ export default {
     },
     revisi3Next() {
       var ascending = JSON.stringify(this.menulisKesimpulanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+      localStorage.setItem("student_topik_menulis_paragraph", ascending);
       this.$router.push("/gaya-menulis");
     },
     validation() {
@@ -168,7 +168,7 @@ export default {
       );
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

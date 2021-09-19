@@ -35,16 +35,16 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var pramenulisData = sessionStorage.getItem(
+      var pramenulisData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.pramenulisDataSesion = JSON.parse(pramenulisData);
       this.pramenulisDataSesion.resultParagraphKalimatUtama = [];
       var savePage3 = JSON.stringify(this.pramenulisDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+      localStorage.setItem("student_topik_menulis_paragraph", savePage3);
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
     ...mapActions(["getTopicGuidesList"]),
@@ -132,7 +132,7 @@ export default {
         const isYes = this.form.kalimatUtama1.replace(".", "");
         this.pramenulisDataSesion.resultParagraphKalimatUtama.push("", isYes);
         const is3 = JSON.stringify(this.pramenulisDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+        localStorage.setItem("student_topik_menulis_paragraph", is3);
         this.$router.push("/pramenulis-lanjutan");
       } else {
         const isYes2 = this.form.kalimatUtama1.replace(".", "");
@@ -151,7 +151,7 @@ export default {
       //       this.form.kalimatUtama1
       //     );
       //     const is3 = JSON.stringify(this.pramenulisDataSesion);
-      //     sessionStorage.setItem("student_topik_menulis_paragraph", is3);
+      //     localStorage.setItem("student_topik_menulis_paragraph", is3);
       //     this.$router.push("/pramenulis-lanjutan");
       //     this.kalimatUtamaPage3 = false;
       //     return;
@@ -160,7 +160,7 @@ export default {
       //     this.form.kalimatUtama1
       //   );
       //   var savePage3 = JSON.stringify(this.pramenulisDataSesion);
-      //   sessionStorage.setItem("student_topik_menulis_paragraph", savePage3);
+      //   localStorage.setItem("student_topik_menulis_paragraph", savePage3);
       //   this.kalimatUtamaPage4 = true;
       //   if (this.kalimatUtamaPage4 === true) {
       //     this.kalimatUtamaPage3 = false;
@@ -181,7 +181,7 @@ export default {
           this.form.kalimatUtama2
         );
         var savePage4 = JSON.stringify(this.pramenulisDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
+        localStorage.setItem("student_topik_menulis_paragraph", savePage4);
         this.showModal6 = false;
         this.$router.push("/pramenulis-lanjutan");
       }

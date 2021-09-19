@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var topicData = sessionStorage.getItem("student_topik_menulis_paragraph");
+      var topicData = localStorage.getItem("student_topik_menulis_paragraph");
       this.topicDataSesion = JSON.parse(topicData);
       if (this.topicDataSesion.resultMenulis[1] !== undefined) {
         this.topicDataSesion.resultMenulis.splice(1, 1);
@@ -49,7 +49,7 @@ export default {
         this.topicDataSesion.resultMenulis.splice(1, 1);
       }
       const is2 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", is2);
+      localStorage.setItem("student_topik_menulis_paragraph", is2);
     },
     ...mapActions(["getTopicGuidesList"]),
     getDataPramenulisGuidesList() {
@@ -69,7 +69,7 @@ export default {
       });
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
     pramenulis1Next() {
@@ -201,7 +201,7 @@ export default {
     },
     pramenulis6Next() {
       var savePage4 = JSON.stringify(this.topicDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", savePage4);
+      localStorage.setItem("student_topik_menulis_paragraph", savePage4);
       this.$router.push("/kalimat-utama");
     },
   },

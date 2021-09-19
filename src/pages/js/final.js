@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var proFreadingData = sessionStorage.getItem(
+      var proFreadingData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.proFeridingDataSesion = JSON.parse(proFreadingData);
@@ -50,7 +50,7 @@ export default {
       this.$router.push("/revisi");
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

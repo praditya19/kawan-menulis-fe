@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var styleData = sessionStorage.getItem("student_topik_menulis_paragraph");
+      var styleData = localStorage.getItem("student_topik_menulis_paragraph");
       this.strukturKalimatDataSesion = JSON.parse(styleData);
     },
     ascending() {
@@ -52,7 +52,7 @@ export default {
         };
         this.strukturKalimatDataSesion.konsepParagrafArray.move(now, index);
         var ascending = JSON.stringify(this.strukturKalimatDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+        localStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat tidak bisa di naikkan lagi");
@@ -74,7 +74,7 @@ export default {
         };
         this.strukturKalimatDataSesion.konsepParagrafArray.move(now, index);
         var descending = JSON.stringify(this.strukturKalimatDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
+        localStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat tidak bisa di turunkan lagi");
@@ -86,7 +86,7 @@ export default {
         1
       );
       var deleteArr = JSON.stringify(this.strukturKalimatDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", deleteArr);
+      localStorage.setItem("student_topik_menulis_paragraph", deleteArr);
       this.dataForm.menulis = "";
     },
     toSetKonsepParagraf() {
@@ -104,7 +104,7 @@ export default {
         this.dataForm.menulis
       ] = this.dataForm.ubahData.replace(".", "");
       var update = JSON.stringify(this.strukturKalimatDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", update);
+      localStorage.setItem("student_topik_menulis_paragraph", update);
       this.dataForm.ubahData = "";
       this.dataForm.menulis = "";
       this.modalUbah = false;
@@ -130,7 +130,7 @@ export default {
         value.replace(".", "")
       );
       var tambah = JSON.stringify(this.strukturKalimatDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", tambah);
+      localStorage.setItem("student_topik_menulis_paragraph", tambah);
       this.menulis = "";
       this.modalTambah = false;
     },
@@ -179,7 +179,7 @@ export default {
         this.formatToDot(this.intermediary) + "."
       );
       var newKonsepParagraf = JSON.stringify(this.strukturKalimatDataSesion);
-      sessionStorage.setItem(
+      localStorage.setItem(
         "student_topik_menulis_paragraph",
         newKonsepParagraf
       );
@@ -199,7 +199,7 @@ export default {
       this.$router.push("/proofreading");
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

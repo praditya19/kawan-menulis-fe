@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var revisiData = sessionStorage.getItem(
+      var revisiData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.revisiDataSesion = JSON.parse(revisiData);
@@ -60,7 +60,7 @@ export default {
         };
         this.revisiDataSesion.konsepParagrafArray.move(now, index);
         var ascending = JSON.stringify(this.revisiDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", ascending);
+        localStorage.setItem("student_topik_menulis_paragraph", ascending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat tidak bisa di naikkan lagi");
@@ -82,7 +82,7 @@ export default {
         };
         this.revisiDataSesion.konsepParagrafArray.move(now, index);
         var descending = JSON.stringify(this.revisiDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", descending);
+        localStorage.setItem("student_topik_menulis_paragraph", descending);
         this.dataForm.menulis = index;
       } else {
         alert("Kalimat kalimat tidak bisa di turunkan lagi");
@@ -94,7 +94,7 @@ export default {
         1
       );
       var deleteArr = JSON.stringify(this.revisiDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", deleteArr);
+      localStorage.setItem("student_topik_menulis_paragraph", deleteArr);
       this.dataForm.menulis = "";
     },
     toSetKonsepParagraf() {
@@ -112,7 +112,7 @@ export default {
         this.dataForm.menulis
       ] = this.dataForm.ubahData.replace(".", "");
       var update = JSON.stringify(this.revisiDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", update);
+      localStorage.setItem("student_topik_menulis_paragraph", update);
       this.dataForm.ubahData = "";
       this.modalUbah = false;
     },
@@ -136,13 +136,13 @@ export default {
     handleSubmit(value) {
       this.revisiDataSesion.konsepParagrafArray.push(value.replace(".", ""));
       var tambah = JSON.stringify(this.revisiDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", tambah);
+      localStorage.setItem("student_topik_menulis_paragraph", tambah);
       this.modalTambah = false;
     },
     style1Next() {
       this.revisiDataSesion.konsepParagraf = [];
       var empetyArray = JSON.stringify(this.revisiDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", empetyArray);
+      localStorage.setItem("student_topik_menulis_paragraph", empetyArray);
       this.dataForm.menulis = "";
       this.stylePage2 = true;
 
@@ -201,7 +201,7 @@ export default {
         this.formatToDot(this.intermediary) + "."
       );
       var newKonsepParagraf = JSON.stringify(this.revisiDataSesion);
-      sessionStorage.setItem(
+      localStorage.setItem(
         "student_topik_menulis_paragraph",
         newKonsepParagraf
       );
@@ -226,7 +226,7 @@ export default {
       );
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

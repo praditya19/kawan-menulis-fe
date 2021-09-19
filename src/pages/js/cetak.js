@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var proFreadingData = sessionStorage.getItem(
+      var proFreadingData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.proFeridingDataSesion = JSON.parse(proFreadingData);
@@ -65,7 +65,7 @@ export default {
       }
     },
     getStudentAction() {
-      var studentActions = sessionStorage.getItem(
+      var studentActions = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.studentActionsSession = JSON.parse(studentActions);
@@ -88,11 +88,11 @@ export default {
       });
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
     getStudentCetak() {
-      var student = sessionStorage.getItem("student_id_mulaimenulis");
+      var student = localStorage.getItem("student_id_mulaimenulis");
       this.dataStudent = JSON.parse(student);
     },
   },

@@ -1,4 +1,4 @@
-const BASE_PATH = "http://localhost:3000/api/";
+const BASE_PATH = "http://staging-api.kawanmenulis.com/api/";
 
 const config = {
   api: {

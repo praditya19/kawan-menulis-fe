@@ -88,7 +88,7 @@ export default {
           clientSecret: this.clientSecret,
         },
         success: (res) => {
-          sessionStorage.setItem(
+          localStorage.setItem(
             "result_student",
             JSON.stringify(res.body.score)
           );

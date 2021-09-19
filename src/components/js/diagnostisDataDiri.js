@@ -58,7 +58,7 @@ export default {
                 clientSecret: "27e78980e2419b308c86559ef0fb0105",
               },
               success: (res) => {
-                sessionStorage.setItem(
+                localStorage.setItem(
                   "student_diagnostis-data-diri",
                   JSON.stringify(res.data.student)
                 );

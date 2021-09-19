@@ -57,7 +57,7 @@ export default {
                 clientSecret: "27e78980e2419b308c86559ef0fb0105",
               },
               success: (res) => {
-                sessionStorage.setItem(
+                localStorage.setItem(
                   "student_id_mulaimenulis",
                   JSON.stringify(res.data.student)
                 );
@@ -83,6 +83,15 @@ export default {
         return true;
       }
       return false;
+    },
+    capitalizeWords(str) {
+      if (str) {
+        let val = str.replace(/\w\S*/g, function(txt){
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+        this.user.prodi = val
+      } else return ""
+
     },
   },
   computed: {

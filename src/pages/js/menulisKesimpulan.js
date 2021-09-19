@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var pramenulisLanjutanData = sessionStorage.getItem(
+      var pramenulisLanjutanData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.dataSesion = JSON.parse(pramenulisLanjutanData);
@@ -53,7 +53,7 @@ export default {
       this.menuliskesimpulanPage3 = true;
       this.dataSesion.konsepParagraf = [];
       var empety = JSON.stringify(this.dataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", empety);
+      localStorage.setItem("student_topik_menulis_paragraph", empety);
       if (this.menuliskesimpulanPage3 === true) {
         this.menuliskesimpulanPage2 = false;
         window.scrollTo(0, 0);
@@ -74,15 +74,15 @@ export default {
       );
       this.dataSesion.menulisKesimpulan.push(this.dataForm.menulis);
       var end = JSON.stringify(this.dataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", end);
+      localStorage.setItem("student_topik_menulis_paragraph", end);
       this.$router.push("/revisi");
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
     getStudentDataSesion() {
-      var studentData = sessionStorage.getItem(
+      var studentData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.studentDataSession = JSON.parse(studentData);

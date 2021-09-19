@@ -53,9 +53,10 @@ const actions = {
   },
   getMyList: ({ commit }, { requestBody, success, fail }) => {
     Vue.http.post(config.api.studentactions + "/myList", requestBody).then(
+
       (response) => {
         success && success(response);
-        console.log(commit);
+        // console.log(commit);
       },
       (response) => {
         fail && fail(response);

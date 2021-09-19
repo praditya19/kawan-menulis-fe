@@ -21,11 +21,11 @@ export default {
   computed: {},
   methods: {
     getStudentResultSession() {
-      var studentResult = sessionStorage.getItem("result_student");
+      var studentResult = localStorage.getItem("result_student");
       this.studentResultSession = JSON.parse(studentResult);
     },
     getStudentDiagnostikSession() {
-      var studentDiagnostik = sessionStorage.getItem(
+      var studentDiagnostik = localStorage.getItem(
         "student_diagnostis-data-diri"
       );
       this.studentDiagnostikSession = JSON.parse(studentDiagnostik);

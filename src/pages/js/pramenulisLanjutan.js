@@ -10,7 +10,7 @@ export default {
       showModal1: false,
       dataForm: {
         tambahPramenulis: "",
-        pramenulisLanjutan: "",
+        pramenulisLanjutan: 0,
         pramenulisLanjutanPembaruan: "",
       },
       kalimatUtamaDataSesion: {},
@@ -28,7 +28,7 @@ export default {
     buttonActiveSalin1() {},
     // end
     getDataSesion() {
-      var kalimatUtamaData = sessionStorage.getItem(
+      var kalimatUtamaData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.kalimatUtamaDataSesion = JSON.parse(kalimatUtamaData);
@@ -62,8 +62,8 @@ export default {
         menulis: "",
       };
       var saveDate = JSON.stringify(this.kalimatUtamaDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate);
-      var kalimatUtamaData = sessionStorage.getItem(
+      localStorage.setItem("student_topik_menulis_paragraph", saveDate);
+      var kalimatUtamaData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.kalimatUtamaDataSesion = JSON.parse(kalimatUtamaData);
@@ -108,7 +108,7 @@ export default {
         }
       }
       var benar = JSON.stringify(this.kalimatUtamaDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", benar);
+      localStorage.setItem("student_topik_menulis_paragraph", benar);
     },
     handleSubmit(tambah) {
       this.kalimatUtamaDataSesion.resultMenulis.push({
@@ -116,7 +116,7 @@ export default {
         menulis: "",
       });
       var saveDate2 = JSON.stringify(this.kalimatUtamaDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
+      localStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.showModal = false;
     },
     modal2() {
@@ -127,7 +127,7 @@ export default {
       this.showModal2 = true;
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

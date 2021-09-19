@@ -55,15 +55,15 @@ export default {
       };
       console.log(this.student_topik_menulis_paragrap);
       var convertToString = JSON.stringify(topik);
-      sessionStorage.setItem(
+      localStorage.setItem(
         "student_topik_menulis_paragraph",
         convertToString
       );
-      // sessionStorage.removeItem("student_actions");
+      // localStorage.removeItem("student_actions");
       this.$router.push("/pra-menulis");
     },
     getStudentDataSesion() {
-      var studentData = sessionStorage.getItem("student_actions");
+      var studentData = localStorage.getItem("student_actions");
       this.studentDataSession = JSON.parse(studentData);
     },
     ...mapActions(["getTopicGuidesList"]),
@@ -85,7 +85,7 @@ export default {
       });
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

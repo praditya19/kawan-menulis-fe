@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var dataStudent = sessionStorage.getItem("student_id_mulaimenulis");
+      var dataStudent = localStorage.getItem("student_id_mulaimenulis");
       this.dataStudentSesion = JSON.parse(dataStudent);
     },
     ...mapActions(["getMyList"]),
@@ -70,7 +70,6 @@ export default {
           nim: this.nim,
         },
         success: (res) => {
-          // console.log(res.body.studentActions);
           this.studentStatistik = res.body.studentActions;
         },
         fail: (res) => {

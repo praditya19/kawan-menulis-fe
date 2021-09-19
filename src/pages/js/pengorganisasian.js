@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var pramenulisLanjutanData = sessionStorage.getItem(
+      var pramenulisLanjutanData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
@@ -57,7 +57,7 @@ export default {
         }
       }
       var sv = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", sv);
+      localStorage.setItem("student_topik_menulis_paragraph", sv);
     },
     // Up down by index
     ascending2() {
@@ -220,11 +220,11 @@ export default {
     },
     pengorganisasian4Next() {
       var saveDate2 = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", saveDate2);
+      localStorage.setItem("student_topik_menulis_paragraph", saveDate2);
       this.$router.push("/menulis-kesimpulan");
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

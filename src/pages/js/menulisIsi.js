@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getDataSesion() {
-      var pramenulisLanjutanData = sessionStorage.getItem(
+      var pramenulisLanjutanData = localStorage.getItem(
         "student_topik_menulis_paragraph"
       );
       this.pramenulisLanjutanDataSesion = JSON.parse(pramenulisLanjutanData);
@@ -77,7 +77,7 @@ export default {
         }
       }
       var benar = JSON.stringify(this.pramenulisLanjutanDataSesion);
-      sessionStorage.setItem("student_topik_menulis_paragraph", benar);
+      localStorage.setItem("student_topik_menulis_paragraph", benar);
     },
     menulisIsiNext() {
       this.validasiTitik(this.pramenulisLanjutanDataSesion.resultParagraph);
@@ -203,12 +203,12 @@ export default {
           });
         }
         var final = JSON.stringify(this.pramenulisLanjutanDataSesion);
-        sessionStorage.setItem("student_topik_menulis_paragraph", final);
+        localStorage.setItem("student_topik_menulis_paragraph", final);
         this.$router.replace("/pengorganisasian");
       }
     },
     getDataJenisTopics() {
-      var jenisTopic = sessionStorage.getItem("jenis_paragraph");
+      var jenisTopic = localStorage.getItem("jenis_paragraph");
       this.jenisTopics = JSON.parse(jenisTopic);
     },
   },

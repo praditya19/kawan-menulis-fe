@@ -65,6 +65,7 @@
                           type="text"
                           v-model="user.prodi"
                           :state="isSalah3 === true ? false : null"
+                          @keypress="capitalizeWords(user.prodi)"
                         >
                         </b-form-input>
                         <b-form-invalid-feedback>

@@ -53,7 +53,7 @@ export default {
   methods: {
     ...mapActions(["getParagraphTypesList"]),
     getStudentDataSession() {
-      var studentData = sessionStorage.getItem("student_id_mulaimenulis");
+      var studentData = localStorage.getItem("student_id_mulaimenulis");
       this.studentDataSession = JSON.parse(studentData);
     },
     getTopics(topicId) {
@@ -119,7 +119,7 @@ export default {
                 topik: res.data.topic.name,
               };
               var dataOFsesion = JSON.stringify(seison);
-              sessionStorage.setItem("jenis_paragraph", dataOFsesion); // <--------- Finish of sesion storage
+              localStorage.setItem("jenis_paragraph", dataOFsesion); // <--------- Finish of sesion storage
               this.createStudentsActions({
                 requestBody: {
                   clientId: "8bb0dc63d320bba9723f66dd10c1adaf",
@@ -128,7 +128,7 @@ export default {
                   topicId: this.topicsSelect,
                 },
                 success: (res) => {
-                  sessionStorage.setItem(
+                  localStorage.setItem(
                     "student_actions",
                     JSON.stringify(res.data.studentAction)
                   );
